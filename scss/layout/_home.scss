@@ -1,0 +1,56 @@
+#search{
+  .search-home{
+    width: 580px;
+    height: 275px;
+    background: $search-background;
+    position: absolute;
+    bottom: -15px;
+    .list-tab{
+      width: 35%;
+      float: left;
+      height: 275px;
+      background: #ed8e31;
+      ul{
+        border: none;
+        li{
+          margin-bottom: 0;
+          width: 100%;
+          a{
+            border: none;
+            @include border-radius(0px);
+            width: 100%;
+            text-transform: uppercase;
+            color: #FFF;
+            padding: 15px;
+            &:hover, &:active, &:visited,&:focus{
+              background: #fd6235;
+            }
+          }
+        }
+        li.active{
+          a{
+            background: #fa501e;
+          }
+        }
+      }
+    }
+    .panel-tab{
+      width: 65%;
+      float: left;
+      padding: 15px;
+      h2{
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .form{
+        margin-bottom: 30px;
+      }
+      .form-control{
+        @include border-radius(0px);
+        border: none;
+      }
+    }
+  }
+}

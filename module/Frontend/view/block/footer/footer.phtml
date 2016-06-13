@@ -1,0 +1,407 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-block animated fadeInUp">
+                <p class="logo"><a href="#"><img src="<?php echo $this->basePath('img/logo.png'); ?>"></a></p>
+                <p class="address"><strong>Address: </strong>25 Le Lai, Phuong 25, Quan Tan Binh, HCMC</p>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <p class="coppyright">Coppyright 2015 <span>chance4all.net </span>all rights reserved</p>
+            </div>
+            <div class="col-md-4 animated fadeInUp">
+                <div class="news">
+                    <h2>News</h2>
+                    <ul>
+                        <li><a href="#">Sed do eiusmod tempor incididunt ut labore et dolore</a></li>
+                        <li><a href="#">Officia deserunt mollit anim id est laborum.</a></li>
+                        <li><a href="#">Laboris nisi ut aliquip ex ea commodo consequat. </a></li>
+                        <li><a href="#">Esse cillum dolore eu fugiat nulla pariatur</a></li>
+                        <li><a href="#">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</a></li>
+                    </ul>
+                    <p>
+                        <a href="#" class="readmove">Read move  <i class="fa fa-angle-double-right"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 animated fadeInUp">
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                    </ul>
+                </div>
+                <div class="phone-email">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i> vanlong200880@gmail.com</a></li>
+                        <li><a href="#"><i class="fa fa-mobile"></i> 09 6666 0127</a></li>
+                    </ul>
+                </div>
+                <div class="support">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-skype"></i> vanlong200880</a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i> vanlong200880</a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i> vanlong200880</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="login" class="modal fade bs-example-modal-sm deposit-form" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Sign In</h4>
+            </div>
+            <div class="modal-body">
+							<form id="login-form" action="<?php echo $this->url('login', array('controller' => 'user', 'action' => 'login')); ?>" method="post" enctype="multipart/form-data">
+                <div class="login-error"><p class="error" id="login-error"></p></div>
+								<div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" id="username" name="username" value="" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+									<button type="button" id="login-submit" class="btn btn-primary">Login</button>
+                    <a href="#" class="forgot-password control-label">Forgot password?</a>
+                </div>
+                <div class="login-line"></div>
+                <p>Don't have an account <a href="#" id="sign-up-here">Sign Up Here</a></p>
+							</form>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Button trigger modal -->
+
+
+    <!-- forgot password -->
+    <div id="forgot" class="modal fade deposit-form" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Forgot password?</h4>
+            </div>
+            <div class="modal-body">
+              <form id="forgotpassword-form" action="<?php echo $this->url('forgotpassword', array('controller' => 'user', 'action' => 'forgotpassword'));?>" method="post" enctype="multipart/form-data">
+                <div class="forgotpassword-error"><p class="error" id="forgotpassword-error"></p></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" name="email" class="form-control" id="email" value="" placeholder="Email">
+                    </div>
+                </div>
+                <button type="button" id="forgotpassword-submit" class="btn btn-primary">Send</button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade deposit-form" id="register" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Register User</h4>
+                </div>
+                <div class="modal-body">
+                  <form action="<?php echo $this->url('register', array('controller' => 'user', 'action' => 'register')) ?>" id="register-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="sponsor-id" class="col-sm-4 control-label">Sponsor ID:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="sponsor-id" id="sponsor-id">
+                                <p class="error" id="sponsor-error"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="member-name" class="col-sm-4 control-label">Full Name:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="fullname" id="fullname">
+                                <p class="error" id="fullname-error"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="member-name" class="col-sm-4 control-label">Username:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="username" id="username">
+                                <p class="error" id="username-error"></p>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group">
+                            <label for="member-name" class="col-sm-4 control-label">Password:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                              <input type="password" class="form-control" name="password" id="password">
+                              <p class="error" id="password-error"></p>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group">
+                            <label for="member-name" class="col-sm-4 control-label">Confirm Password:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                              <input type="password" class="form-control" name="confirm-password" id="confirm-password">
+                              <p class="error" id="confirm-password-error"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-4 control-label">Country:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                              <select class="form-control" id="country" name="country">
+                                    <option data-code="" value="">Select Country</option>
+                                    <?php
+                                      if($country): ?>
+                                        <?php foreach ($country as $value): ?>
+                                        <option data-code="<?php echo $value['code']; ?>" value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
+                                        <?php endforeach;
+                                      endif; ?>
+                                    ?>
+                                </select>
+                              <p class="error" id="country-error"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile" class="col-sm-4 control-label">Mobile No.:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                      <input type="tel" class="form-control" disabled="disabled" name="country-code" id="country-code">
+                                    </div>
+                                    <div class="col-sm-8">
+                                      <input type="text" size="12" class="form-control" name="phone" id="phone" min="6" max="16">
+                                      <p class="error" id="phone-error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-4 control-label">Email:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                              <input type="email" class="form-control" name="email" id="email">
+                              <p class="error" id="email-error"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="skype" class="col-sm-4 control-label">Skype:<span class="validation">*</span> </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="skype" id="skype">
+                                <p class="error" id="skype-error"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="security" class="col-sm-4 control-label"></label>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                      <button type="button" id="register-submit" class="btn btn-primary">Register</button>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p>you already have an account? <a href="#" id="login-here">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    jQuery(document).ready(function($){
+        var heightHeader        = $(".header").height();
+        var sliderHeight        = $("#slider").height();
+        var blockDepositHeight  = $(".block-deposit").height();
+        var blockAboutUsHeight  = $(".block-about-us").height();
+        var statisticsHeight    = $(".statistics").height();
+        var footerHeight        = $(".footer").height();
+        var wrapperHeight       = $(".wrapper").height();
+        var paymentHeight       = $(".payment").height();
+        $(window).scroll(function(){
+            var ScrollTop = parseInt($(window).scrollTop());
+            if (ScrollTop > (heightHeader+sliderHeight/10-100)) {
+                $("div.item-blance ul li").css("display", "block");
+            }
+            if (ScrollTop > (heightHeader+sliderHeight+blockDepositHeight/15)) {
+                $(".block-about-us .animated").css("display", "block");
+            }
+            if (ScrollTop > (heightHeader+sliderHeight+blockDepositHeight +statisticsHeight/2 - 300)) {
+                $(".statistics ul.animated").css("display", "block");
+            }
+            if (ScrollTop > (heightHeader+ wrapperHeight/2 + paymentHeight)) {
+                $(".payment .animated").css("display", "block");
+            }
+            if (ScrollTop > (heightHeader+ wrapperHeight/2 + paymentHeight + footerHeight)) {
+                $(".footer .animated").css("display", "block");
+            }
+        });
+        
+        // user login 
+        $("#sign-up-here").on('click', function(){
+            $(".close").trigger('click');
+            setTimeout(function(){ 
+                 $("#register").modal('show'); 
+             }, 500);
+        });
+        $("#login-here").on('click', function(){
+            $(".close").trigger('click');
+            setTimeout(function(){ 
+                 $("#login").modal('show'); 
+             }, 500);
+        });
+        $(".forgot-password.control-label").on('click', function(){
+            $(".close").trigger('click');
+            setTimeout(function(){ 
+                 $("#forgot").modal('show'); 
+             }, 500);
+        });
+        
+        // Select country
+        $("#country").on('change', function(){
+          var code = $(this).find(':selected').attr('data-code');
+          if(code == ''){
+            code = '';
+          }else{
+            code = '+'+code;
+          }
+          $("#country-code").val(code);
+        });
+        
+        // User forgot password
+        $("#forgotpassword-submit").on('click', function(){
+					$("#forgotpassword-form").submit(function(e){
+						var formObj = $(this);
+						var formUrl = formObj.attr('action');
+						var postData = $(this).serializeArray();
+						$.ajax({
+							url: formUrl,
+							type: 'POST',
+							data: postData,
+							dataType: 'JSON',
+							encode: true,
+							success: function(data, status){
+                console.log(data);
+								if(data.error){
+									$("#forgotpassword-form #forgotpassword-error").empty().append(data.error.email);
+								}else{
+									$("#forgotpassword-form #forgotpassword-error").empty();
+                  if(data.message === 'done'){
+//                    $("#forgotpassword-form input").val('');
+//                    window.location.href = "<?php //echo $this->url('user-profile', array('controller' => 'user', 'action' => 'index')) ?>";
+                  }
+								}
+							},
+							error: function(data, textStatus, jqXHR){
+								console.log('error');
+              }
+						});
+						e.preventDefault();
+            $(this).unbind(e);
+					});
+					$("#forgotpassword-form").submit();
+				});
+        
+        
+        // User login
+				$("#login-submit").on('click', function(){
+					$("#login-form").submit(function(e){
+						var formObj = $(this);
+						var formUrl = formObj.attr('action');
+						var postData = $(this).serializeArray();
+						$.ajax({
+							url: formUrl,
+							type: 'POST',
+							data: postData,
+							dataType: 'JSON',
+							encode: true,
+							success: function(data, status){
+								if(data.error){
+									$("#login-form #login-error").empty().append(data.error.username);
+								}else{
+									$("#login-form #login-error").empty();
+                  if(data.message === 'done'){
+                    $("#register-form input").val('');
+                    window.location.href = "<?php echo $this->url('user-profile', array('controller' => 'user', 'action' => 'index')) ?>";
+                  }
+								}
+							},
+							error: function(data, textStatus, jqXHR){
+								console.log('error');
+              }
+						});
+						e.preventDefault();
+            $(this).unbind(e);
+					});
+					$("#login-form").submit();
+				});
+				
+        // User register
+        $("#register-submit").on('click', function(){
+          $("#register-form").submit(function(e){
+            var formObj = $(this);
+            var formUrl = formObj.attr('action');
+            var postData = $(this).serializeArray();
+            
+            $.ajax({
+              url: formUrl,
+              type: 'POST',
+              data: postData,
+              dataType: 'JSON',
+              encode 		: true,
+              success: function(data, status){
+                if(data.error){
+                  $("#register-form #fullname-error").empty().append(data.error.fullname);
+                  $("#register-form #sponsor-error").empty().append(data.error.sponsor);
+                  $("#register-form #username-error").empty().append(data.error.username);
+                  $("#register-form #password-error").empty().append(data.error.password);
+                  $("#register-form #confirm-password-error").empty().append(data.error.repassword);
+                  $("#register-form #country-error").empty().append(data.error.country);
+                  $("#register-form #phone-error").empty().append(data.error.phone);
+                  $("#register-form #email-error").empty().append(data.error.email);
+                  $("#register-form #skype-error").empty().append(data.error.skype);
+                }else{
+                  $("#register-form #fullname-error").empty();
+                  $("#register-form #sponsor-error").empty();
+                  $("#register-form #username-error").empty();
+                  $("#register-form #password-error").empty();
+                  $("#register-form #confirm-password-error").empty();
+                  $("#register-form #country-error").empty();
+                  $("#register-form #phone-error").empty();
+                  $("#register-form #email-error").empty();
+                  $("#register-form #skype-error").empty();
+                  if(data.message == 'done'){
+                    $("#register-form input").val('');
+                    window.location.href = "<?php echo $this->url('user-profile', array('controller' => 'user', 'action' => 'index')) ?>";
+                  }
+                }
+              },
+              error: function(data, textStatus, jqXHR){
+              }
+            });
+            e.preventDefault();
+            $(this).unbind(e);
+          });
+          $("#register-form").submit();
+        });
+    });
+</script>

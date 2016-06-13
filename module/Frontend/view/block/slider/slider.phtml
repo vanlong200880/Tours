@@ -1,0 +1,35 @@
+<div id="owl-slider" class="owl-carousel">
+  <div class="item">
+    <img src="<?php echo $this->basePath('assets/demo/slider.png'); ?>" alt="The Last of us">
+  </div>
+  <div class="item">
+    <img src="<?php echo $this->basePath('assets/demo/slider.png'); ?>" alt="The Last of us">
+  </div> 
+</div>
+<script>
+  jQuery(document).ready(function($) {
+    $("#owl-slider").owlCarousel({
+    autoPlay: 6000,
+    navigation : true,
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem : true,
+    navigation : true,
+    paginationSpeed : 400,
+    pagination : false,
+    paginationNumbers: false,
+        //singleItem : true,
+    navigationText : ["<i class='icon icon-left-chevron'></i>","<i class='icon icon-right-chevron'></i>"],
+    rewindNav : true,
+    stopOnHover : true
+
+    // "singleItem:true" is a shortcut for:
+    // items : 1, 
+    // itemsDesktop : false,
+    // itemsDesktopSmall : false,
+    // itemsTablet: false,
+    // itemsMobile : false
+
+    });
+  });
+</script>

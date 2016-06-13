@@ -1,0 +1,55 @@
+#owl-slider{
+  .owl-buttons{
+    div{
+      position: absolute;
+      top: 50%;
+      padding: 0;
+      @include border-radius(0px);
+      background: transparent;
+      margin: 0;
+      font-size: 36px;
+    }
+    .owl-prev{
+      left: 0;
+    }
+    .owl-next{
+      right: 0;
+    }
+  }
+}
+#header{
+  .logo{
+    width: 100px;
+    height: 100px;
+    background: $background-default;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+  }
+  #menu-top{
+    li{
+      display: inline-block;
+      height: 50px;
+      a{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        font-size: 16px;
+        &:hover{
+          color: $hover;
+        }
+      }
+    }
+  }
+  #login{
+    li{
+      display: inline-block;
+      a{
+        display: inline-block;
+        line-height: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
