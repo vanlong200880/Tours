@@ -12,7 +12,7 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-            ->prependStylesheet($this->basePath('frontend/css/main.css'))
+            ->prependStylesheet($this->basePath('frontend/css/travel.css'))
             ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
 //            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
             ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
@@ -32,8 +32,10 @@
 
     </head>
     <body>
-      <?php $this->headerTravel(); ?>
-      <?php echo $this->content; ?>
-      <?php echo $this->inlineScript(); ?>
+      <div class="wrapper">
+        <?php $this->headerTravel(); ?>
+        <?php echo $this->content; ?>
+        <?php echo $this->inlineScript(); ?>
+      </div>
     </body>
 </html>

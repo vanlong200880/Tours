@@ -83,3 +83,6 @@
 .icon-star:before {
   content: "\6f";
 }
+.icon-menu:before {
+  content: "\70";
+}

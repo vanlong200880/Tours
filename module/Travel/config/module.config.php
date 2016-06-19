@@ -77,7 +77,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'trvel/index/index' => __DIR__ . '/../view/trvel/index/index.phtml',
+            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

@@ -12,5 +12,9 @@
  */
 
 return array(
+  'module_layouts' => array(
+		'Frontend' => 'layout/frontend',
+		'Backend' => 'layout/backend',
+	),
     // ...
 );

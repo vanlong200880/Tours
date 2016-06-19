@@ -66,6 +66,7 @@ ul, ol {
   margin-right: -8px;
   margin-left: -8px; }
 
+.container-fluid,
 .container {
   padding-right: 8px;
   padding-left: 8px; }
@@ -236,20 +237,20 @@ a:hover {
 .tour-home-content.taste {
   margin-top: 15px; }
   .tour-home-content.taste .nav-tabs {
-    border-bottom: 2px solid #71be0f; }
+    border-bottom: 2px solid #ff9000; }
     .tour-home-content.taste .nav-tabs li.tab-home a {
-      background: #71be0f; }
+      background: #ff9000; }
     .tour-home-content.taste .nav-tabs li.active a:before {
-      border-bottom: 5px solid #71be0f; }
+      border-bottom: 5px solid #ff9000; }
 
 .tour-home-content.hotel {
   margin-top: 15px; }
   .tour-home-content.hotel .nav-tabs {
-    border-bottom: 2px solid #0066ff; }
+    border-bottom: 2px solid #b400ff; }
     .tour-home-content.hotel .nav-tabs li.tab-home a {
-      background: #0066ff; }
+      background: #b400ff; }
     .tour-home-content.hotel .nav-tabs li.active a:before {
-      border-bottom: 5px solid #0066ff; }
+      border-bottom: 5px solid #b400ff; }
 
 .home-news {
   margin-top: 15px; }
