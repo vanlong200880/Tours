@@ -12,16 +12,18 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                        ->prependStylesheet($this->basePath('frontend/css/main.css'))
+            ->prependStylesheet($this->basePath('frontend/css/main.css'))
             ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.carousel.css'))
+//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
+            ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
+//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.carousel.css'))
 //                        ->prependStylesheet($this->basePath('frontend/css/bootstrap-theme.min.css'))
                         ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
 
         <!-- Scripts -->
         <?php echo $this->headScript()
-            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
+            ->prependFile($this->basePath('frontend/libs/Swiper/dist/js/swiper.min.js'))
+//            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
             ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))
             ->prependFile($this->basePath('frontend/js/jquery.min.js'))
             ->prependFile($this->basePath('frontend/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
@@ -33,7 +35,12 @@
       <?php $this->header(); ?>
       <?php $this->slider(); ?>
       <?php $this->search(); ?>
+      <?php $this->album(); ?>
+      <?php $this->userPost(); ?>
       <?php echo $this->content; ?>
-      <?php echo $this->inlineScript() ?>
+      <?php $this->news(); ?>
+      <?php $this->about(); ?>
+      <?php $this->footer(); ?>
+      <?php echo $this->inlineScript(); ?>
     </body>
 </html>

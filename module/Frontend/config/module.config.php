@@ -84,6 +84,10 @@ return array(
           'footer'        => 'Frontend\Block\footer',
           'slider'        => 'Frontend\Block\slider',
           'search'        => 'Frontend\Block\search',
+          'album'        => 'Frontend\Block\album',
+          'userPost'        => 'Frontend\Block\userPost',
+          'about'        => 'Frontend\Block\about',
+          'news'        => 'Frontend\Block\news',
         ),
     ),
     'view_manager' => array(

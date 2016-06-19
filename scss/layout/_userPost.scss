@@ -1,0 +1,78 @@
+.user-post{
+  margin-top: 20px;
+  .title{
+    border-bottom: 2px solid $default;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    a{
+      display: inline-block;
+      border-bottom: 4px solid #cc050a;
+      margin-bottom: -3px;
+    }
+    span{
+      font-size: 22px;
+      position: relative;
+      &:before{
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+  .col-md-7{
+    width: 60.5%;
+    .photo-big{
+      position: relative;
+      .album-title{
+        height: 30px;
+        padding-left: 5px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        font-weight: bold;
+        .name{
+          width: 70%;
+          float: left;
+          line-height: 30px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: #FFF;
+          a{
+            color: #FFF;
+          }
+        }
+        .author{
+          width: 30%;
+          float: left;
+          p{
+            height: 30px;
+            line-height: 30px;
+            color: #FFF;
+            text-align: right;
+            font-weight: normal;
+            padding-right: 5px;
+            font-size: 12px;
+            span{
+              font-size: 10px;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+  .col-md-5{
+    width: 39.5%;
+  }
+  ul{
+    li{
+      margin-bottom: 16px;
+      .photo-item{
+        position: relative;
+      }
+    }
+  }
+}

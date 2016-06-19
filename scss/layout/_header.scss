@@ -1,21 +1,5 @@
-#owl-slider{
-  .owl-buttons{
-    div{
-      position: absolute;
-      top: 50%;
-      padding: 0;
-      @include border-radius(0px);
-      background: transparent;
-      margin: 0;
-      font-size: 36px;
-    }
-    .owl-prev{
-      left: 0;
-    }
-    .owl-next{
-      right: 0;
-    }
-  }
+.swiper-container-slider{
+  overflow: hidden;
 }
 #header{
   .logo{

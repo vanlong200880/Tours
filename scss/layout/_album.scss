@@ -1,0 +1,54 @@
+.album{
+  margin-top: 30px;
+  .swiper-container{
+    margin-top: 15px;
+  }
+  .title{
+    border-bottom: 2px solid $default;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    a{
+      display: inline-block;
+      border-bottom: 4px solid #cc050a;
+      margin-bottom: -3px;
+    }
+    span{
+      font-size: 22px;
+      position: relative;
+      &:before{
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+  .swiper-btn{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    top: -20px;
+    z-index: 9;
+    right: 15px;
+  }
+  .swiper-button-disabled{
+    color: #DDD;
+  }
+  .button-next{
+    right: 35px;
+  }
+  ul{
+    li{
+      .item{
+        margin: 0 15px;
+      }
+    }
+  }
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  position: relative;
+}
