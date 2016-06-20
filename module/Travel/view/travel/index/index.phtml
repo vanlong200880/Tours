@@ -3,7 +3,43 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <div class="list-search">s</div>
+          <div class="list-search">
+            <div class="row">
+              <div class="col-md-3">
+                <select class="form-control selectpicker" data-live-search="true">
+                  <option value="">-- Tỉnh/Thành Phố -- </option>
+                  <option value="">Hồ Chí Minh</option>
+                  <option value="">Lâm Đồng</option>
+                  <option>Đồng Nai</option>
+                  <option>Bình Dương</option>
+                  <option>Bình Phước</option>
+                  <option>Hà Nội</option>
+                  <option>Hải Dương</option>
+                  <option>Bình Định</option>
+                  <option>Quản Trị</option>
+                  <option>Quảng Nam</option>
+                  <option>Huế</option>
+                  <option>Đà Nẵng</option>
+                  
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-control">
+                  <option value="">-- Quận/Huyện -- </option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-control">
+                  <option value="">-- Phường/Xã -- </option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-control">
+                  <option value="">-- Loại -- </option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -330,6 +366,9 @@
             </div>
           </li>
         </ul>
+      </div>
+      <div class="footer-travel">
+        <?php $this->footerTravel(); ?>
       </div>
     </div>
     

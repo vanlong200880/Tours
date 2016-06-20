@@ -67,6 +67,7 @@ return array(
     'view_helpers'    => array(
         'invokables'  => array(
           'headerTravel'        => 'Travel\Block\headerTravel',
+          'footerTravel'        => 'Travel\Block\footerTravel',
         ),
     ),
     'view_manager' => array(

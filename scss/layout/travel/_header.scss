@@ -9,7 +9,7 @@
   #container{
     height: 100%;
     .view{
-      width: 40%;
+      width: 35%;
       position: absolute;
       right: 0;
       top: 100px;
@@ -23,7 +23,7 @@
       }
     }
     .map-content{
-      width: 60%;
+      width: 65%;
       position: absolute;
       left: 0;
       height: 100%;
@@ -69,12 +69,12 @@
   background: #e2eef9;
   .page-search{
     padding-left: 110px;
-    width: 60%;
+    width: 65%;
     float: left;
     height: 50px;
   }
   .page-search-title{
-    width: 40%;
+    width: 35%;
     float: left;
     height: 50px;
     background: #232f3e;
@@ -164,6 +164,9 @@
             }
           }
         }
+      }
+      &:last-child{
+        border-bottom: none;
       }
     }
   }
