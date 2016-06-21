@@ -1,42 +1,62 @@
 <div class="search">
   <div class="page-search">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="list-search">
-            <div class="row">
-              <div class="col-md-3">
-                <select class="form-control selectpicker" data-live-search="true">
-                  <option value="">-- Tỉnh/Thành Phố -- </option>
-                  <option value="">Hồ Chí Minh</option>
-                  <option value="">Lâm Đồng</option>
-                  <option>Đồng Nai</option>
-                  <option>Bình Dương</option>
-                  <option>Bình Phước</option>
-                  <option>Hà Nội</option>
-                  <option>Hải Dương</option>
-                  <option>Bình Định</option>
-                  <option>Quản Trị</option>
-                  <option>Quảng Nam</option>
-                  <option>Huế</option>
-                  <option>Đà Nẵng</option>
-                  
-                </select>
-              </div>
-              <div class="col-md-3">
-                <select class="form-control">
-                  <option value="">-- Quận/Huyện -- </option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <select class="form-control">
-                  <option value="">-- Phường/Xã -- </option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <select class="form-control">
-                  <option value="">-- Loại -- </option>
-                </select>
+    <div class="search-item">
+      <div class="search-list">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="list-search">
+                <div class="row">
+                  <div class="col-md-3">
+                    <select class="form-control selectpicker" data-live-search="true">
+                      <option value="">-- Tỉnh/Thành Phố -- </option>
+                      <option value="">Hồ Chí Minh</option>
+                      <option value="">Lâm Đồng</option>
+                      <option>Đồng Nai</option>
+                      <option>Bình Dương</option>
+                      <option>Bình Phước</option>
+                      <option>Hà Nội</option>
+                      <option>Hải Dương</option>
+                      <option>Bình Định</option>
+                      <option>Quản Trị</option>
+                      <option>Quảng Nam</option>
+                      <option>Huế</option>
+                      <option>Đà Nẵng</option>
+
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control selectpicker">
+                      <option value="">-- Quận/Huyện -- </option>
+                      <option value="">Quận 1</option>
+                      <option value="">Quận 2</option>
+                      <option value="">Quận 3</option>
+                      <option value="">Quận 4</option>
+                      <option value="">Quận 5</option>
+                      <option value="">Quận 5</option>
+                      <option value="">Quận 6</option>
+                      <option value="">Quận 7</option>
+                      <option value="">Quận 8</option>
+                      <option value="">Quận 9</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control selectpicker">
+                      <option value="">-- Phường/Xã -- </option>
+                      <option value="">Phường 1</option>
+                      <option value="">Phường 2</option>
+                      <option value="">Phường 3</option>
+                      <option value="">Phường 4</option>
+                      <option value="">Phường 5</option>
+                      <option value="">Phường 6</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control">
+                      <option value="">-- Loại -- </option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -373,5 +393,55 @@
     </div>
     
   </div>
-  <div class="map-content"></div>
+  <div class="map-content">
+    <div style="width: 100%; height: 100%;" id="map"></div>
+  </div>
 </div>
+<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: -33.867, lng: 151.195};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
