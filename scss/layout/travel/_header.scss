@@ -14,7 +14,7 @@
       right: 0;
       top: 100px;
       bottom: 0;
-      z-index: 9;
+      z-index: 8;
       @include box-shadow(-2px 3px 5px 0px rgba(0, 0, 0, 0.4));
       .list-container-view{
         overflow-y: auto;
@@ -93,8 +93,152 @@
     background: #232f3e;
   }
   .list-search{
+    .item-search-type{
+      border: 1px solid #ccc;
+      ul.level{
+        li{
+          background: #FFF;
+          position: relative;
+          height: 38px;
+          line-height: 38px;
+          padding-left: 10px;
+          a{
+            height: 38px;
+            line-height: 38px;
+            display: inline-block;
+            width: 100%;
+            cursor: pointer;
+            color: #000;
+            &:after{
+              content: " ";
+              width: 0;
+              height: 0;
+              display: inline-block;
+              border-top: 5px solid #696969;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              margin-left: 5px;
+              right: 10px;
+              position: absolute;
+              top: 50%;
+            }
+          }
+          ul.search-type{
+            position: absolute;
+            top: 39px;
+            width: 100%;
+            display: none;
+            left: 0;
+            z-index: 9;
+            /*width: 200px;*/
+            background: #FFF;
+            @include box-shadow(0 1px 4px 0 rgba(0,0,0,.5));
+            li{
+              border: none;
+              .for-type{
+                width: 0;
+                height: 0;
+                border: 0;
+                position: absolute;
+                left: -9999999px;
+              }
+              label.fs-home{
+                position: relative;
+                display: block;
+                line-height: none;
+                cursor: pointer;
+                &:before{
+                  content: " ";
+                  height: 15px;
+                  width: 15px;
+                  border: 1px solid #ccc;
+                  background-color: #fff;
+                  display: inline-block;
+                  position: relative;
+                  top: 2px;
+                  margin-right: 5px;
+                }
+              }
+              input[type=checkbox]:checked+.fs-home>label:after, 
+              input[type=checkbox]:checked+label:after {
+                font-family: "tours" !important;
+                content: "\71";
+                font-style: normal!important;
+                font-weight: 400!important;
+                font-variant: normal!important;
+                text-transform: none!important;
+                speak: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                display: inline-block;
+                text-align: center;
+                line-height: 15px;
+                font-size: 12px;
+                position: absolute;
+                top: 12px;
+                left: 0;
+                height: 15px;
+                width: 15px;
+              }
+              .root-radius{
+                &:before{
+                    content: " ";
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  display: inline-block;
+                }
+              }
+            }
+            li.tours{
+              .root-radius{
+                &:before{
+                  background: $tours;
+                }
+              }
+            }
+            li.park{
+              .root-radius{
+                &:before{
+                  background: $park;
+                }
+              }
+            }
+            li.hotel{
+              .root-radius{
+                &:before{
+                  background: $hotel;
+                }
+              }
+            }
+            li.taste{
+              .root-radius{
+                &:before{
+                  background: $taste;
+                }
+              }
+            }
+
+          }
+          
+        }
+        li.selected{
+          ul.search-type{
+            display: block;
+          }
+            a{
+            &:after{
+              -webkit-transform: rotate(-180deg);
+              -ms-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
+    }
     
   }
+  
   .item-title{
     h1{
       height: 50px;
@@ -213,8 +357,3 @@
     @include border-radius(0px);
   }
 }
-/*.btn-default:hover, 
-.btn-default:focus, 
-.btn-default:active, 
-.btn-default.active, 
-.open .dropdown-toggle.btn-default*/
