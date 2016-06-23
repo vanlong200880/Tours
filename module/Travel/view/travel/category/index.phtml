@@ -114,6 +114,38 @@
   <div class="view">
     <div class="list-container-view">
       <div class="province-container">
+        <div class="province">
+          <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+          <div class="province-help">
+            <ul>
+              <li class="tours"><span></span> 1.500 điểm du lịch</li>
+              <li class="hotel"><span></span> 1.500 Khách sạn</li>
+              <li class="taste"><span></span> 1.500 Điểm ăn uống</li>
+              <li class="park"><span></span> 1.500 Công viên giải trí</li>
+            </ul>
+          </div>
+        </div>
+        <div class="current-position">
+          <input class="form-control" name="" placeholder="Nhập vị trí của bạn">
+        </div>
+        <div class="list-province-item">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">Du lịch</a></li>
+            <li role="presentation"><a href="#taste" aria-controls="taste" role="tab" data-toggle="tab">Điểm ăn uống</a></li>
+            <li role="presentation"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Khách sạn</a></li>
+            <li role="presentation"><a href="#park" aria-controls="park" role="tab" data-toggle="tab">Công viên</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tours">...</div>
+            <div role="tabpanel" class="tab-pane" id="taste">...</div>
+            <div role="tabpanel" class="tab-pane" id="hotel">...</div>
+            <div role="tabpanel" class="tab-pane" id="park">...</div>
+          </div>
+          
+        </div>
+        
         <ul>
           <li>
             <div class="province-item">
