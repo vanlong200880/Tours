@@ -168,3 +168,168 @@
     }
   }
 }
+.list-province-item{
+  ul.list-travel{
+    /*margin-top: 10px;*/
+    li{
+      display: inline-block;
+      width: 100%;
+          padding: 8px 0;
+      .item{
+        width: 100%;
+        display: inline-block;
+        h2{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        p.hour-open{
+          border-top: 1px solid #DDD;
+          margin-top: 3px;
+          padding-top: 5px;
+          span{
+            color: red;
+          }
+        }
+        .fs-game{
+          display: inline-block;
+          width: 100%;
+          position: relative; 
+          float: left;
+          .list-game{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+            width: 60%;
+            float: left;
+            li{
+              padding: 0;
+              border-bottom: none;
+              margin: 2px 0;
+              span{
+                font-size: 12px;
+              }
+              span.game{
+                color: $game;
+              }
+              span.restaurant{
+                color: $restaurant;
+              }
+              span.tours{
+                color: $tours;
+              }
+            }
+          }
+          .views{
+            display: inline-block;
+            width: 35%;
+            position: absolute;
+            top: 30px;
+            background: $background-default;
+            @include border-radius(3px);
+            padding: 5px 10px;
+            color: #FFF;
+            cursor: pointer;
+            text-align: center;
+            float: right;
+            right: 0;
+          }
+        }
+
+        p.strict-views{
+          font-style: italic;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+        .item-img{
+          position: relative;
+          .overlay_border{
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:1;
+            -o-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+            top: 0px;
+            right: 5px;
+            bottom: 5px;
+            left: 0px;
+            &:after,
+            &:before{
+              content: '';
+              display: block;
+              position: absolute;
+              z-index:10;
+              top: 10px;
+              left: 10px;
+              bottom: 10px;
+              right: 10px;
+              -o-transition: all 0.3s ease-in-out 0s;
+              -moz-transition: all 0.3s ease-in-out 0s;
+              -webkit-transition: all 0.3s ease-in-out 0s;
+              transition: all 0.3s ease-in-out 0s;
+            }
+            &:before{
+              border-top: 1px solid #fff;
+              border-bottom: 1px solid #fff;
+              -webkit-transform: scale(0, 1);
+              -ms-transform: scale(0, 1);
+              transform: scale(0, 1);
+            }
+            &:after{
+              border-left: 1px solid #fff;
+              border-right: 1px solid #fff;
+              -webkit-transform: scale(1, 0);
+              -ms-transform: scale(1, 0);
+              transform: scale(1, 0);
+            }
+          }
+          &:hover{
+            .overlay_border{
+              background: rgba(0,0,0, 0.3);
+              opacity: 0.5;
+              -o-transition: all 0.3s ease-in-out 0s;
+              -moz-transition: all 0.3s ease-in-out 0s;
+              -webkit-transition: all 0.3s ease-in-out 0s;
+              transition: all 0.3s ease-in-out 0s;
+              &:before,
+              &:after{
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+              }
+            }
+          }
+/*          .block-bottom .bottom-item .overlay_border{
+            
+          }
+          .block-bottom .bottom-item:hover .overlay_border{
+            
+          }
+          .block-bottom .bottom-item .overlay_border:before,
+          .block-bottom .bottom-item .overlay_border:after{
+            
+          }
+          .block-bottom .bottom-item .overlay_border:before{
+          }
+          .block-bottom .bottom-item .overlay_border:after{
+
+          }
+          .block-bottom .bottom-item:hover .overlay_border:before,
+          .block-bottom .bottom-item:hover .overlay_border:after,
+          .block-bottom .bottom-item.hover .overlay_border:before,
+          .block-bottom .bottom-item.hover .overlay_border:after{
+            
+          }
+          .block-bottom .bottom-item .overlay_border:before,
+          .block-bottom .bottom-item .overlay_border:before,
+          .block-bottom .bottom-item .overlay_border:after,
+          .block-bottom .bottom-item .overlay_border:after {
+            
+          }*/
+        }
+      }
+    }
+  }
+}

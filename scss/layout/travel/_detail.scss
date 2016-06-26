@@ -1,0 +1,113 @@
+/*.travel-detail-popup{
+  .modal-dialog{
+    margin: 0 auto;
+    @include border-radius(0px);
+    @include box-shadow(none);
+    .modal-content{
+      @include border-radius(0px);
+      @include box-shadow(none);
+      border: none;
+      .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+      }
+    }
+  }
+}*/
+
+.popup-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1050;
+  background: rgba(0,0,0,0.5);
+  overflow: auto;
+  .popup-container{
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+    .popup-header{
+      height: 40px;
+      background: #e2eef9;
+      padding: 0;
+      border: none;
+      position: fixed;
+      width: 1024px;
+      z-index: 1050;
+      h2{
+        font-size: 16px;
+        /*font-weight: bold;*/
+        height: 40px;
+        line-height: 40px;
+        background: #3871b8;
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #FFF;
+      }
+      .zoom{
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        border-left: 1px solid #cbcbcb;
+        padding: 0 5px;
+        span{
+          font-size: 26px;
+          top: 4px;
+          position: relative;
+          float: left;
+          margin-right: 5px;
+        }
+      }
+      .popup-close{
+        border-left: 1px solid #cbcbcb;
+        width: 40px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        font-size: 26px;
+        span{
+          top: 4px;
+          position: relative;
+          color: #333;
+        }
+      }
+    }
+    .popup-body{
+      padding: 50px 10px 10px 10px;
+      position: relative;
+      .slider{
+        .rsDefault,
+        .royalSlider{
+          width: 100%;
+          background: #FFFFFF;
+          .rsOverflow{
+            background: #FFFFFF;
+          }
+        }
+      }
+      .content-page-popup{
+        margin-top: 15px;
+        .about{
+          h2{
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+          p{
+            line-height: 22px;
+            margin-top: 10px;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+}
