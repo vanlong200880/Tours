@@ -111,3 +111,152 @@
     }
   }
 }
+.list-catelog{
+  h2{
+    margin: 15px 0;
+  }
+  table{
+    width: 100%;
+    border-left: 1px solid $color-border;
+    border-top: 1px solid $color-border;
+    thead{
+      th{
+        height: 30px;
+        padding: 5px;
+        border-bottom: 1px solid $color-border;
+        border-right: 1px solid $color-border;
+      }
+      th.no{
+        width: 5%;
+      }
+      th.name{
+        width: 45%;
+      }
+      th.price{
+        width: 25%;
+      }
+    }
+    tbody{
+      tr{
+        td.colspan{
+          text-align: center;
+          font-weight: bold;
+          background: #f5f5f5;
+          text-transform: uppercase;
+        }
+        td{
+          height: 30px;
+          padding: 5px;
+          border-bottom: 1px solid $color-border;
+          border-right: 1px solid $color-border;
+        }
+      }
+    }
+    
+  }
+}
+.list-related{
+  h2{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .map-related{
+    height: 315px;
+    background: #DDD;
+  }
+  .support{
+    
+  }
+}
+.list-icon-support{
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px;
+  ul{
+    li{
+      width: 50%;
+      float: left;
+      span{
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        @include border-radius(50%);
+      }
+    }
+    li.current{
+      span{
+        background: $current;
+      }
+    }
+    li.tours{
+      span{
+        background: $tours;
+      }
+    }
+    li.taste{
+      span{
+        background: $taste;
+      }
+    }
+    li.hotel{
+      span{
+        background: $hotel;
+      }
+    }
+    li.park{
+      span{
+        background: $park;
+      }
+    }
+  }
+}
+.support{
+  display: inline-block;
+  width: 100%;
+  float: left;
+  border-top: 2px solid #71be0f;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  padding: 10px;
+  h2{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  ul{
+    li{
+      border-bottom: 1px solid $color-border;
+      padding: 10px 0;
+      .item{
+        display: inline-block;
+        width: 100%;
+        .icon{
+          width: 50px;
+          height: 50px;
+          float: left;
+          @include border-radius(3px);
+          background: #DDD;
+        }
+        .content-support{
+          float: left;
+          padding-left: 5px;
+          padding-right: 5px;
+          p.hotline{
+            font-weight: bold;
+          }
+          p.name{
+            font-weight: bold;
+          }
+          a{
+            color: #000;
+          }
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+}

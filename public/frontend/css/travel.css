@@ -936,6 +936,111 @@ a:hover {
           margin-top: 10px;
           text-align: justify; }
 
+.list-catelog h2 {
+  margin: 15px 0; }
+.list-catelog table {
+  width: 100%;
+  border-left: 1px solid #DDD;
+  border-top: 1px solid #DDD; }
+  .list-catelog table thead th {
+    height: 30px;
+    padding: 5px;
+    border-bottom: 1px solid #DDD;
+    border-right: 1px solid #DDD; }
+  .list-catelog table thead th.no {
+    width: 5%; }
+  .list-catelog table thead th.name {
+    width: 45%; }
+  .list-catelog table thead th.price {
+    width: 25%; }
+  .list-catelog table tbody tr td.colspan {
+    text-align: center;
+    font-weight: bold;
+    background: #f5f5f5;
+    text-transform: uppercase; }
+  .list-catelog table tbody tr td {
+    height: 30px;
+    padding: 5px;
+    border-bottom: 1px solid #DDD;
+    border-right: 1px solid #DDD; }
+
+.list-related h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px; }
+.list-related .map-related {
+  height: 315px;
+  background: #DDD; }
+
+.list-icon-support {
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px; }
+  .list-icon-support ul li {
+    width: 50%;
+    float: left; }
+    .list-icon-support ul li span {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%; }
+  .list-icon-support ul li.current span {
+    background: #ff0000; }
+  .list-icon-support ul li.tours span {
+    background: #71be0f; }
+  .list-icon-support ul li.taste span {
+    background: #ff9000; }
+  .list-icon-support ul li.hotel span {
+    background: #b400ff; }
+  .list-icon-support ul li.park span {
+    background: #6ceb35; }
+
+.support {
+  display: inline-block;
+  width: 100%;
+  float: left;
+  border-top: 2px solid #71be0f;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  padding: 10px; }
+  .support h2 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold; }
+  .support ul li {
+    border-bottom: 1px solid #DDD;
+    padding: 10px 0; }
+    .support ul li .item {
+      display: inline-block;
+      width: 100%; }
+      .support ul li .item .icon {
+        width: 50px;
+        height: 50px;
+        float: left;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+        background: #DDD; }
+      .support ul li .item .content-support {
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px; }
+        .support ul li .item .content-support p.hotline {
+          font-weight: bold; }
+        .support ul li .item .content-support p.name {
+          font-weight: bold; }
+        .support ul li .item .content-support a {
+          color: #000; }
+    .support ul li:last-child {
+      border-bottom: none; }
+
 /*@import "layout/home";
 @import "layout/masterpage";
 @import "layout/details";
