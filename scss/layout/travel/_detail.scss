@@ -58,7 +58,7 @@
         border-left: 1px solid #cbcbcb;
         padding: 0 5px;
         span{
-          font-size: 26px;
+          font-size: 18px;
           top: 4px;
           position: relative;
           float: left;
@@ -72,7 +72,7 @@
         float: left;
         text-align: center;
         line-height: 40px;
-        font-size: 26px;
+        font-size: 16px;
         span{
           top: 4px;
           position: relative;
@@ -257,6 +257,102 @@
       &:last-child{
         border-bottom: none;
       }
+    }
+  }
+}
+.comment{
+  h2{
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    display: inline-block;
+    width: 100%;
+    span{
+      position: relative;
+      top: 10px;
+    }
+    a.buttom-comment{
+      padding: 5px 5px;
+      display: inline-block;
+      background: $comment;
+      color:#FFF;
+      font-weight: normal;
+      @include border-radius(2px);
+      cursor: pointer;
+    }
+  }
+  .list-comment{
+    li{
+      padding: 15px 0;
+      border-bottom: 1px solid $color-border;
+      .comment-item{
+        display: inline-block;
+        width: 100%;
+        .avartar{
+          width: 48px;
+          height: 48px;
+          float: left;
+          margin-right: 15px;
+          img{
+            width: 48px;
+            height: 48px;
+            @include border-radius(50%);
+          }
+        }
+        .comment-content{
+          overflow: hidden;
+          p{
+            margin-top: 0 !important;
+          }
+          .comment-info{
+            padding-bottom: 15px;
+            .list-gallery{
+              a{
+                width: 105px;
+                display: inline-block;
+                margin-bottom: 10px;
+                margin-right: 10px;
+                img{
+                  max-width: 104px;
+                  display: inline-block;
+                }
+              }
+            }
+            .form-replies{
+              a{
+                @include border-radius(2px);
+                padding: 1px 5px;
+                border: 1px solid $color-border;
+                background: #FFF;
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 12px;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .comment-replies{
+            border-top: 1px solid $color-border;
+            padding-top: 15px;
+          }
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .views-all{
+    text-align: center;
+    a{
+      padding: 5px 15px;
+      background: #f8f8f8;
+      border: 1px solid $color-border;
+      @include border-radius(3px);
+      display: inline-block;
+      cursor: pointer;
     }
   }
 }
