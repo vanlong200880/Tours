@@ -356,3 +356,14 @@
     }
   }
 }
+.poup-footer{
+  padding: 15px 8px 0px 8px;
+  border-top: 1px solid $color-border;
+  background: #f5f5f5;
+  h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+}
