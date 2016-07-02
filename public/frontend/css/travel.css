@@ -488,8 +488,7 @@ a:hover {
 .footer-travel {
   float: left;
   width: 100%;
-  border-top: 1px solid #DDD;
-  margin-top: 15px; }
+  border-top: 1px solid #DDD; }
   .footer-travel .footer-page .coppyright,
   .footer-travel .footer-page .menu-footer {
     width: 100%;
@@ -648,7 +647,9 @@ ul.connect li.youtube a:hover {
         font-weight: bold;
         height: 40px;
         line-height: 20px;
-        overflow: hidden; }
+        overflow: hidden;
+        display: inline-block;
+        width: 100%; }
     .list-item .item .item-content .price {
       padding: 10px 0; }
       .list-item .item .item-content .price .cost {
@@ -680,18 +681,20 @@ ul.connect li.youtube a:hover {
           position: absolute;
           left: -7px;
           top: 6px; }
-    .list-item .item .item-content .view .price-sale {
+    .list-item .item .item-content .view-user .price-sale {
       text-decoration: line-through;
       color: #9a9a9a; }
-    .list-item .item .item-content .view var {
+    .list-item .item .item-content .view-user var {
       position: relative;
       font-size: 14px;
       top: -5px;
       text-decoration: none;
       color: #9a9a9a; }
-    .list-item .item .item-content .view span.icon:before {
-      position: relative;
-      top: 2px; }
+    .list-item .item .item-content .view-user span.icon {
+      color: #3c539a; }
+      .list-item .item .item-content .view-user span.icon:before {
+        position: relative;
+        top: 2px; }
   .list-item .item .img {
     position: relative; }
     .list-item .item .img .highlight {

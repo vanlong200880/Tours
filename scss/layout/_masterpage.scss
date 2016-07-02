@@ -48,6 +48,8 @@
           height: 40px;
           line-height: 20px;
           overflow: hidden;
+          display: inline-block;
+          width: 100%;
         }
       }
       .price{
@@ -83,7 +85,7 @@
           }
         }
       }
-      .view{
+      .view-user{
         .price-sale{
           text-decoration: line-through;
           color: #9a9a9a;
@@ -96,6 +98,7 @@
           color: #9a9a9a;
         }
         span.icon{
+          color: $view-user;
           &:before{
             position: relative;
             top: 2px;

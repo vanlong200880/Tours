@@ -110,3 +110,9 @@
 .icon-cancel-music:before {
   content: "\78";
 }
+.icon-up-thin:before {
+  content: "\41";
+}
+.icon-down-thin:before {
+  content: "\42";
+}

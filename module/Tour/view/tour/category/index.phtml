@@ -1,0 +1,1076 @@
+<div class="search">
+  <div class="page-search">
+    <div class="search-item">
+      <div class="search-list">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="list-search">
+                <div class="row">
+                  <div class="col-md-3">
+                    <select class="form-control selectpicker" data-live-search="true">
+                      <option value="">-- Quốc gia -- </option>
+                      <option value="">Việt Nam</option>
+                      <option value="">Thái Lan</option>
+                      <option>Ấn Độ</option>
+                      <option>Mỹ</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-control selectpicker">
+                      <option value="">-- Tỉnh/Thành Phố -- </option>
+                      <option>Bình Phước</option>
+                      <option>Hà Nội</option>
+                      <option>Hải Dương</option>
+                      <option>Bình Định</option>
+                      <option>Quản Trị</option>
+                      <option>Quảng Nam</option>
+                      <option>Huế</option>
+                      <option>Đà Nẵng</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="item-search-type">
+                      <ul class="level">
+                        <li class="item">
+                          <a>
+                            <span>-- Loại --</span>
+                          </a>
+                          <ul class="search-type">
+                            <li class="tours">
+                              <input type="checkbox" class="for-type" name="fs-travel" id="fs-travel">
+                              <label class="fs-home" data-key="listings-1" for="fs-travel">
+                                <span class="root-radius"></span>
+                                <span>Điểm du lịch</span>
+                              </label>
+                            </li>
+                            <li class="hotel">
+                              <input type="checkbox" class="for-type" name="fs-hotel" id="fs-hotel">
+                              <label class="fs-home" data-key="listings-2"  for="fs-hotel">
+                                <span class="root-radius"></span>
+                                <span>Khách sạn</span>
+                              </label>
+                            </li>
+                            <li class="taste">
+                              <input type="checkbox" class="for-type" name="fs-taste" id="fs-taste">
+                              <label class="fs-home" data-key="listings-3" for="fs-taste">
+                                <span class="root-radius"></span>
+                                <span>Điểm ăn uống</span> 
+                              </label>
+                            </li>
+                            <li class="park">
+                              <input type="checkbox" class="for-type" name="fs-park" id="fs-park">
+                              <label class="fs-home" data-key="listings-4" for="fs-park">
+                                <span class="root-radius"></span>
+                                <span>Công viên giải trí</span> 
+                              </label>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <script>
+                    jQuery(document).ready(function($){
+                      var isClick = false;
+                      $(".item-search-type ul>li").on('click', function(e){
+                        $(".menu-search li").removeClass('selected');
+                        if(isClick != true){
+                          $(this).addClass('selected');
+                          isClick = true;
+                        }else{
+                          $(this).removeClass('selected');
+                          isClick = false;
+                        }
+                        e.stopPropagation();
+                    });
+                    $(document).click(function(e) {
+                      isClick = false;
+                      if (!$(e.target).is('.item, .item *')) {
+                        $(".item-search-type li.item").removeClass('selected');
+                      }
+                    });
+                  });
+                    </script>
+<!--                    <select class="form-control">
+                      <option value="">-- Loại -- </option>
+                    </select>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-search-title">
+    <div class="item-title">
+      <h1><span class="icon icon-menu"></span> Danh sách Tỉnh / Thành Phố</h1>
+    </div>
+  </div>
+  
+</div>
+<div id="container">
+  <div class="view">
+    <div class="list-container-view">
+      <div class="province-container">
+        <div class="province">
+          <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+          <div class="province-help">
+            <ul>
+              <li class="tours"><span></span> 1.500 điểm du lịch</li>
+              <li class="hotel"><span></span> 1.500 Khách sạn</li>
+              <li class="taste"><span></span> 1.500 Điểm ăn uống</li>
+              <li class="park"><span></span> 1.500 Công viên giải trí</li>
+            </ul>
+          </div>
+        </div>
+        <div class="current-position">
+          <input class="form-control" name="" placeholder="Nhập vị trí của bạn">
+        </div>
+        <div class="list-province-item">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">Du lịch</a></li>
+            <li role="presentation"><a href="#taste" aria-controls="taste" role="tab" data-toggle="tab">Điểm ăn uống</a></li>
+            <li role="presentation"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Khách sạn</a></li>
+            <li role="presentation"><a href="#park" aria-controls="park" role="tab" data-toggle="tab">Công viên</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tours">
+              <ul class="list-travel">
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="#">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="#">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="#">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="#">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="#">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="#">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="#">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="#">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="#">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="#">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                
+                
+              </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="taste">...</div>
+            <div role="tabpanel" class="tab-pane" id="hotel">...</div>
+            <div role="tabpanel" class="tab-pane" id="park">...</div>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="footer-travel">
+        <?php $this->footerTravel(); ?>
+      </div>
+    </div>
+    
+  </div>
+  <div class="map-content">
+    <div style="width: 100%; height: 100%;" id="map"></div>
+  </div>
+</div>
+<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: -33.867, lng: 151.195};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+      
+      
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
+   
+     
+     
+     
+     
+     
+     
+     
+
+     
+<div class="modal fade travel-detail-popup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><span class="icon icon-location"></span> Đầm sen</h2>
+        <div class="close-zoom pull-right">
+          <div class="zoom"><a href="#"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
+          <div class="popup-close"><span class="icon icon-cancel-music"></span></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="slider">
+          <div class="royalSlider rsDefault">
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+            <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+          </div>
+        </div>
+        <div class="content-page-popup">
+          <div class="row">
+            <div class="col-md-8 about">
+              <h2>Giới thiệu</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              
+            </div>
+            <div class="col-md-4">4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+     
+ 
+     
+     
+     <div class="popup-page">
+       <div class="popup-container tour">
+         <div class="popup-content">
+           <div class="popup-header">
+            <h2><span class="icon icon-location"></span> Đầm sen</h2>
+            <div class="close-zoom pull-right">
+              <div class="zoom"><a href="#"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
+              <div class="popup-close"><span class="icon icon-cancel-music"></span></div>
+            </div>
+           </div>
+           <div class="popup-body">
+             <div class="slider">
+               <div class="row">
+                 <div class="col-md-8">
+                   <div class="royalSlider rsDefault">
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                      <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+                    </div>
+                 </div>
+                 <div class="col-md-4">
+                   <div class="description">
+                      <h2>GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</h2>
+                      <p class="expt">Tour Campuchia – Lào – Đông Bắc Thái Lan Đi Về Bằng Xe Dành Cho 01 Khách
+    – Chuyến Hành Trình 4 Ngày 3 Đêm Cực Kỳ Thú Vị Và Đặc Sắc. Voucher 
+   7.890.000 VNĐ, Còn 5.790.000 VNĐ, Giảm 27%.</p>
+                      <div class="item">
+                        <p class="cost">Giá gốc: 800,000<span>đ</span></p>
+                        <p class="price-sale">1,800,000<span>đ</span> <var>-50%</var></p>
+                      </div>
+                      <div class="item">
+                        <div class="quanlity">
+                          Số lượng: <input type="number" name="quanlity">
+                        </div>
+                        <div class="payment">
+                          <a href="#" class="pull-right">Mua ngay</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <p class="count-user-payment"><span></span>102 người đã mua</p>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+            <div class="content-page-popup">
+              <div class="row">
+                <div class="col-md-8 about">
+                  <h2>Giới thiệu</h2>
+                  <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div class="list-catelog">
+                    <h2>Bảng giá vé trọn gói (combo)</h2>
+                    <table class="game-entertainment">
+                      <thead>
+                        <tr>
+                          <th class="no">STT</th>
+                          <th class="name">Tên dịch vụ</th>
+                          <th class="price">Mô tả</th>
+                          <th class="price">Giá vé</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Vé trọn giói</td>
+                          <td>Bao gồm vé vào cồng và tất cả trò chơi.</td>
+                          <td>500.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Combo 20 trò chơi</td>
+                          <td>Tàu lượn siêu tốc, ...</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>                   
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="list-catelog">
+                    <h2>Bảng giá trò chơi</h2>
+                    <table class="game-entertainment">
+                      <thead>
+                        <tr>
+                          <th class="no">STT</th>
+                          <th class="name">Tên dịch vụ</th>
+                          <th class="price">Giá người lớn</th>
+                          <th class="price">Giá trẻ em</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="4" class="colspan">Trò chơi cảm giác mạnh</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>                       
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td colspan="4" class="colspan">Trò chơi giải trí - khám phá</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Trượt tuyết</td>
+                          <td>150.000đ/1 người</td>
+                          <td>150.000đ/1 người</td>
+                        </tr>                       
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  
+                  
+                  <div class="list-catelog">
+                    <h2>Bảng giá vào cổng và phương tiện</h2>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th class="no">STT</th>
+                          <th class="name">Tên dịch vụ</th>
+                          <th colspan="2">Giá vé</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td rowspan="2">1</td>
+                          <td rowspan="2">Vé vào cổng</td>
+                          <td>Người lớn</td>
+                          <td>90.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Trẻ em</td>
+                          <td>50.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="3">2</td>
+                          <td rowspan="3">Vé giữ xe</td>
+                          <td>Xe số</td>
+                          <td>5.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Xe tay ga</td>
+                          <td>10.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Xe đạp</td>
+                          <td>2.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2"> 3</td>
+                          <td rowspan="2"> Xe lửa</td>
+                          <td>Người lớn</td>
+                          <td>90.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Trẻ em</td>
+                          <td>70.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2">4</td>
+                          <td rowspan="2">Vé giữ ô tô</td>
+                          <td>Dưới 10 chỗ</td>
+                          <td>20.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Trên 10 chỗ</td>
+                          <td>40.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2">5</td>
+                          <td rowspan="2">Taxi du lịch</td>
+                          <td>Dưới 10 chỗ</td>
+                          <td>200.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Trên 10 chỗ</td>
+                          <td>400.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Vé võng</td>
+                          <td></td>
+                          <td>200.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>Vé xe đẩy</td>
+                          <td></td>
+                          <td>200.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>Vé giữ hành lý</td>
+                          <td></td>
+                          <td>200.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>Vé xe lăn</td>
+                          <td></td>
+                          <td>200.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>Vé nhà rông</td>
+                          <td></td>
+                          <td>200.000 đ</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="comment">
+                    <h2><span>Bình luận</span> <a class="buttom-comment pull-right">Bình luận</a></h2>
+                    <ul class="list-comment">
+                      <li>
+                        <div class="comment-item">
+                          <div class="avartar">
+                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </div>
+                          <div class="comment-content">
+                            <div class="comment-info">
+                              <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              <div class="list-gallery">
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                              </div>
+                              <div class="form-replies">
+                                <a class="fs-comment">
+                                  Trả lời
+                                </a>
+                                <a class="fs-like">
+                                  Thích (10)
+                                </a>
+                                <a class="fs-share">
+                                  Chia sẻ
+                                </a>
+                              </div>
+                            </div>
+                            <div class="comment-replies">
+                              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+                              <div class="comment-content">
+                                <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="comment-item">
+                          <div class="avartar">
+                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </div>
+                          <div class="comment-content">
+                            <div class="comment-info">
+                              <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              <div class="list-gallery">
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                              </div>
+                              <div class="form-replies">
+                                <a class="fs-comment">
+                                  Trả lời
+                                </a>
+                                <a class="fs-like">
+                                  Thích (10)
+                                </a>
+                                <a class="fs-share">
+                                  Chia sẻ
+                                </a>
+                              </div>
+                            </div>
+                            <div class="comment-replies">
+                              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+                              <div class="comment-content">
+                                <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="comment-item">
+                          <div class="avartar">
+                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </div>
+                          <div class="comment-content">
+                            <div class="comment-info">
+                              <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              <div class="list-gallery">
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                              </div>
+                              <div class="form-replies">
+                                <a class="fs-comment">
+                                  Trả lời
+                                </a>
+                                <a class="fs-like">
+                                  Thích (10)
+                                </a>
+                                <a class="fs-share">
+                                  Chia sẻ
+                                </a>
+                              </div>
+                            </div>
+                            <div class="comment-replies">
+                              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+                              <div class="comment-content">
+                                <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="comment-item">
+                          <div class="avartar">
+                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </div>
+                          <div class="comment-content">
+                            <div class="comment-info">
+                              <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              <div class="list-gallery">
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                                </a>
+                              </div>
+                              <div class="form-replies">
+                                <a class="fs-comment">
+                                  Trả lời
+                                </a>
+                                <a class="fs-like">
+                                  Thích (10)
+                                </a>
+                                <a class="fs-share">
+                                  Chia sẻ
+                                </a>
+                              </div>
+                            </div>
+                            <div class="comment-replies">
+                              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+                              <div class="comment-content">
+                                <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                    <div class="views-all">
+                      <a>Xem thêm</a>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-4">
+                  <div class="list-related">
+                    <h2>Địa điểm khác gần Đầm sen</h2>
+                    <div class="map-related"></div>
+                    <div class="list-icon-support">
+                      <ul>
+                        <li class="current"><span></span> Địa điểm hiện tại</li>
+                        <li class="tours"><span></span> Địa du lịch</li>
+                        <li class="hotel"><span></span> Khách sạn</li>
+                        <li class="taste"><span></span> Địa điểm ăn uống</li>
+                        <li class="park"><span></span> Công viên - giải trí</li>
+                      </ul>
+                    </div>
+                    <div class="support">
+                      <h2>Liên hệ đặt trực tuyến</h2>
+                      <ul>
+                        <li>
+                          <div class="item">
+                            <div class="icon">
+                              
+                            </div>
+                            <div class="content-support">
+                              <p class="name">Pham Van Long</p>
+                              <p><a href="#">vanlong200880@gmail.com</a></p>
+                              <p class="hotline">Hotline: 1900 1248</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item">
+                            <div class="icon">
+                              
+                            </div>
+                            <div class="content-support">
+                              <p class="name">Pham Van Long</p>
+                              <p><a href="#">vanlong200880@gmail.com</a></p>
+                              <p class="hotline">Hotline: 1900 1248</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+         </div>
+         
+         <div class="poup-footer">
+           <div class="row">
+            <div class="col-md-4">
+              <h2>Công ty TNHH Smart Connector</h2>
+              <ul>
+                <li>294 Hòa bình, P. Hiệp Tân, Q. Tân Phú, TP.HCM</li>
+                <li>ĐT: 08.73055707 - Fax: 08.38666237</li>
+                <li><a href="#">sales@abc.vn</a></li>
+                <li>Mã số thuế: 0310955176 do Sở Kế hoạch đầu tư TP HCM 
+      cấp ngày 29/06/2011</li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h2>Về chúng tôi</h2>
+              <ul>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Quy định</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+                <li><a href="#">Đăng ký quảng cáo</a></li>
+                <li><a href="#">Liên hệ</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h2>Chăm sóc khách hàng</h2>
+              <ul class="support-footer">
+                <li><span class="hotline">HOTLINE</span> <span class="hotline-phone">08 7300 5757</span></li>
+                <li><a href="#">Chính sách giao hàng</a></li>
+                <li><a href="#">Chính sách đổi sản phẩm</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h2>Chứng nhận</h2>
+              <ul>
+                <li><img src="/tours/public/frontend/images/bocongthuong.png"></li>
+              </ul>
+              <h2>Liên kết</h2>
+              <ul class="connect">
+                <li class="facebook"><a href="#"><span class="icon icon-facebook"></span></a></li>
+                <li class="twitter"><a href="#"><span class="icon icon-twitter"></span></a></li>
+                <li class="youtube"><a href="#"><span class="icon icon-youtube"></span></a></li>
+                <li class="googleplus"><a href="#"><span class="icon icon-googleplus"></span></a></li>
+                <li class="linkedin"><a href="#"><span class="icon icon-linkedin"></span></a></li>
+                <li class="pinterest"><a href="#"><span class="icon icon-pinterest"></span></a></li>
+              </ul>
+            </div>
+          </div>
+         </div>
+         
+         <div class="coppyright">
+           <div class="row">
+             <div class="col-md-12">
+                <p>Coppyright © 2015 Long.pham. All Rights Reserved</p>
+              </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+<script>
+  jQuery(document).ready(function($){
+//    $('.travel-detail-popup').modal('show');
+    var slider = $('.royalSlider').royalSlider({
+      fullscreen: {
+        enabled: true,
+        nativeFS: true
+      },
+      controlNavigation: 'thumbnails',
+      autoScaleSlider: true, 
+      autoScaleSliderWidth: 768,
+      autoScaleSliderHeight: 614,
+      loop: false,
+//      imageScaleMode: 'fit-if-smaller',
+      imageScaleMode: 'none',
+      navigateByClick: true,
+      numImagesToPreload:2,
+      arrowsNav:true,
+      arrowsNavAutoHide: true,
+      arrowsNavHideOnTouch: true,
+      keyboardNavEnabled: true,
+      fadeinLoadedSlide: true,
+      globalCaption: true,
+      globalCaptionInside: false,
+      imageScalePadding: 0,
+      slidesSpacing: 0,
+      thumbs: {
+        appendSpan: true,
+        firstMargin: true,
+        paddingBottom: 4
+      }
+    }).data('royalSlider');
+    
+    $('.rsFullscreenBtn').click(function(e){
+      slider.enterFullscreen();
+      e.preventDefault();
+    });
+    
+//     console.log(slider.ev.on('rsEnterFullscreen', function(){}));
+//    var slider = $(".royalSlider").data('royalSlider');
+//    slider.enterFullscreen = function(event) {
+//    // do something there    
+////        $.rsProto.exitFullscreen.call(this, preventNative);
+//alert('dfdsfssdf')
+//    };
+    slider.ev.on("rsEnterFullscreen", function() {
+      // enter fullscreen mode 
+      $(".popup-page").css('position', 'relative');
+    });
+    slider.ev.on('rsExitFullscreen', function(event) {
+      // exit fullscreen mode
+      $(".popup-page").removeAttr('style');
+      console.log('sdfsf');
+  });
+  
+    
+  })
+</script>
