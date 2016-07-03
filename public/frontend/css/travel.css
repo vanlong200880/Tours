@@ -976,6 +976,16 @@ ul.connect li.youtube a:hover {
         .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
         .popup-page .popup-container .popup-body .slider .royalSlider .rsOverflow {
           background: #FFFFFF; }
+      .popup-page .popup-container .popup-body .slider .rsDefault,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsSlide,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsVideoFrameHolder,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsThumbs {
+        background: #FFFFFF; }
+      .popup-page .popup-container .popup-body .slider .rsThumbs {
+        margin-top: 15px; }
+        .popup-page .popup-container .popup-body .slider .rsThumbs .rsThumbsContainer {
+          margin-left: -4px !important; }
       .popup-page .popup-container .popup-body .content-page-popup {
         margin-top: 15px; }
         .popup-page .popup-container .popup-body .content-page-popup .about h2 {

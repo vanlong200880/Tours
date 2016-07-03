@@ -996,6 +996,170 @@ ul.connect li.youtube a:hover {
         color: #FFF;
         padding: 10px 15px;
         display: inline-block; }
+    .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment {
+      width: 50%;
+      float: left;
+      border-right: 1px solid #DDD;
+      font-weight: bold; }
+      .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment span {
+        margin-right: 5px;
+        display: inline-block; }
+        .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment span:before {
+          position: relative;
+          top: 2px; }
+    .popup-page .popup-container.tour .popup-body .description .item p.time {
+      width: 50%;
+      float: left;
+      text-align: right;
+      font-weight: bold; }
+
+.list-tours-related {
+  margin-top: 15px; }
+  .list-tours-related h2 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold; }
+  .list-tours-related ul {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 15px; }
+    .list-tours-related ul li {
+      margin-top: 8px;
+      display: inline-block; }
+      .list-tours-related ul li .item {
+        position: relative; }
+        .list-tours-related ul li .item .photo {
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          background: rgba(0, 0, 0, 0.5);
+          color: #FFF;
+          padding: 3px 5px;
+          font-size: 12px; }
+        .list-tours-related ul li .item p.img {
+          border: 1px solid transparent; }
+        .list-tours-related ul li .item p {
+          text-align: center; }
+        .list-tours-related ul li .item p.title {
+          height: 40px;
+          line-height: 20px;
+          overflow: hidden;
+          margin-top: 5px; }
+      .list-tours-related ul li:hover .item p.img {
+        border: 1px solid red; }
+
+.commitment {
+  margin-top: 15px; }
+  .commitment .commitment-view {
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 50px; }
+    .commitment .commitment-view .content {
+      height: 200px;
+      padding: 8px;
+      overflow: hidden; }
+      .commitment .commitment-view .content h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold; }
+      .commitment .commitment-view .content p {
+        line-height: 22px;
+        margin-top: 10px;
+        text-align: justify; }
+    .commitment .commitment-view .content.expanded {
+      height: auto; }
+  .commitment .readmove {
+    text-align: center; }
+    .commitment .readmove a {
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      background: #FFF;
+      position: relative;
+      top: -16px;
+      padding: 7px 15px; }
+      .commitment .readmove a span.icon {
+        font-size: 20px;
+        display: inline-block; }
+        .commitment .readmove a span.icon:before {
+          position: relative;
+          top: 5px; }
+    .commitment .readmove a.up span.icon {
+      transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg); }
+      .commitment .readmove a.up span.icon:before {
+        top: 0; }
+
+.about .detail {
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 15px;
+  display: inline-block;
+  width: 100%;
+  float: left; }
+.about .tab-title {
+  display: inline-block;
+  width: 100%;
+  float: left; }
+  .about .tab-title ul li {
+    display: inline-block;
+    float: left; }
+    .about .tab-title ul li a {
+      height: 30px;
+      padding: 0 15px;
+      display: inline-block;
+      line-height: 30px;
+      text-transform: uppercase; }
+  .about .tab-title ul li.active a {
+    background: #FFF;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    position: relative;
+    bottom: -1px; }
+
+.post-position {
+  margin-top: 30px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 5px; }
+  .post-position h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #DDD;
+    padding-bottom: 4px;
+    margin-bottom: 15px; }
+  .post-position .map-position {
+    width: 100%;
+    height: 200px;
+    background: #DDD;
+    margin-top: 15px; }
+
+.payment-now {
+  text-align: center; }
+  .payment-now a {
+    display: inline-block;
+    background: red;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px; }
 
 /*.travel-detail-popup{
   .modal-dialog{
@@ -1082,6 +1246,16 @@ ul.connect li.youtube a:hover {
         .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
         .popup-page .popup-container .popup-body .slider .royalSlider .rsOverflow {
           background: #FFFFFF; }
+      .popup-page .popup-container .popup-body .slider .rsDefault,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsSlide,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsVideoFrameHolder,
+      .popup-page .popup-container .popup-body .slider .rsDefault .rsThumbs {
+        background: #FFFFFF; }
+      .popup-page .popup-container .popup-body .slider .rsThumbs {
+        margin-top: 15px; }
+        .popup-page .popup-container .popup-body .slider .rsThumbs .rsThumbsContainer {
+          margin-left: -4px !important; }
       .popup-page .popup-container .popup-body .content-page-popup {
         margin-top: 15px; }
         .popup-page .popup-container .popup-body .content-page-popup .about h2 {

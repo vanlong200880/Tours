@@ -116,3 +116,7 @@
 .icon-down-thin:before {
   content: "\42";
 }
+.icon-angle-down:before {
+  content: "\79";
+}
+

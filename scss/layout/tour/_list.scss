@@ -115,8 +115,204 @@
               display: inline-block;
             }
           }
+          p.count-user-payment{
+            width: 50%;
+            float: left;
+            border-right: 1px solid #DDD;
+            font-weight: bold;
+            span{
+              margin-right: 5px;
+              display: inline-block;
+              &:before{
+                position: relative;
+                top: 2px;
+              }
+            }
+          }
+          p.time{
+            width: 50%;
+            float: left;
+            text-align: right;
+            font-weight: bold;
+          }
         }
       }
     }
+  }
+}
+.list-tours-related{
+  margin-top: 15px;
+  h2{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  ul{
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 15px;
+    li{
+      margin-top: 8px;
+      display: inline-block;
+      .item{
+        position: relative;
+        .photo{
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          background: rgba(0,0,0,0.5);
+          color: #FFF;
+          padding: 3px 5px;
+          font-size: 12px;
+        }
+        p.img{
+          border: 1px solid transparent;
+        }
+        p{
+          text-align: center;
+        }
+        p.title{
+          height: 40px;
+          line-height: 20px;
+          overflow: hidden;
+          margin-top: 5px;
+        }
+      }
+      &:hover{
+        .item{
+          p.img{
+            border: 1px solid red;
+          }
+        }
+      }
+    }
+    
+  }
+}
+.commitment{
+  margin-top: 15px;
+  .commitment-view{
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 50px;
+    .content{
+      height: 200px;
+      padding: 8px;
+      overflow: hidden;
+      h2{
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      p{
+        line-height: 22px;
+        margin-top: 10px;
+        text-align: justify;
+      }
+    }
+    .content.expanded{
+      height: auto;
+    }
+  }
+  .readmove{
+    text-align: center;
+    a{
+      border: 1px solid #DDD;
+      @include border-radius(3px);
+      background: #FFF;
+      position: relative;
+      top: -16px;
+      padding: 7px 15px;
+      span.icon{
+        font-size: 20px;
+        display: inline-block;
+        &:before{
+          position: relative;
+          top: 5px;
+        }
+      }
+    }
+    a.up{
+      span.icon{
+        @include transform-rotate(180deg);
+        &:before{
+          top: 0;
+        }
+      }
+    }
+  }
+}
+.about{
+  .detail{
+    background: #FFF;
+    border: 1px solid #DDD;
+    padding: 15px;
+    display:inline-block;
+    width: 100%;
+    float: left;
+  }
+  .tab-title{
+    display:inline-block;
+    width: 100%;
+    float: left;
+    ul{
+      li{
+        display: inline-block;
+        float: left;
+        a{
+          height: 30px;
+          padding: 0 15px;
+          display: inline-block;
+          line-height: 30px;
+          text-transform: uppercase;
+        }
+      }
+      li.active{
+        a{
+          background: #FFF;
+          border-top: 1px solid #DDD;
+          border-left: 1px solid #DDD;
+          border-right: 1px solid #DDD;
+          position: relative;
+          bottom: -1px;
+        }
+      }
+    }
+  }
+}
+.post-position{
+  margin-top: 30px;
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #DDD;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+  }
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 5px;
+  .map-position{
+    width: 100%;
+    height: 200px;
+    background: #DDD;
+    margin-top: 15px;
+  }
+}
+.payment-now{
+  text-align: center;
+  a{
+    display: inline-block;
+    background: red;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-top: 15px;
+    @include border-radius(3px);
   }
 }

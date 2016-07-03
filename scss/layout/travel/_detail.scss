@@ -92,6 +92,19 @@
             background: #FFFFFF;
           }
         }
+        .rsDefault, 
+        .rsDefault .rsOverflow, 
+        .rsDefault .rsSlide, 
+        .rsDefault .rsVideoFrameHolder, 
+        .rsDefault .rsThumbs{
+          background: #FFFFFF;
+        }
+        .rsThumbs{
+          margin-top: 15px;
+          .rsThumbsContainer{
+            margin-left: -4px !important;
+          }
+        }
       }
       .content-page-popup{
         margin-top: 15px;
