@@ -10,7 +10,11 @@ return array(
     'modules' => array(
       'Frontend',
       'Travel',
-      'Tour'
+      'Tour',
+      'Hotel',
+      'Taste',
+      'News',
+      'User',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
