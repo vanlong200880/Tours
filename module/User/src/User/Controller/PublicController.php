@@ -7,15 +7,20 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Travel\Controller;
+namespace User\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class TravelController extends AbstractActionController
+class PublicController extends AbstractActionController
 {
-    public function indexAction()
+    public function loginAction()
     {
+      echo 'login'; die;
         return new ViewModel();
+    }
+    public function registerAction(){
+      echo 'register'; die;
+      return new ViewModel();
     }
 }

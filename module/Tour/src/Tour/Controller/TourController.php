@@ -16,7 +16,6 @@ class TourController extends AbstractActionController
 {
     public function indexAction()
     {
-      echo 'tour'; die;
-        return new ViewModel();
+      return new ViewModel();
     }
 }

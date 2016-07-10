@@ -1,16 +1,16 @@
-<header id="header">
-  <div class="container">
+<div class="header">
+  <div class="logo">
+  
+  </div>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-9">
-        <div class="logo">
-          
-        </div>
-        <ul id="menu-top" class="pull-right">
+        <ul id="menu-top">
           <li>
-            <a href="<?php echo $this->url('travel', array('controller' => 'travel', 'action' => 'index')); ?>">Địa điểm phượt</a>
+            <a href="<?php echo $this->url('travel', array('controller' => 'tour', 'action' => 'index')); ?>">Địa điểm phượt</a>
           </li>
           <li>
-            <a href="<?php echo $this->url('tour', array('controller' => 'tour', 'action' => 'index')); ?>">Tìm tours</a>
+            <a href="<?php echo $this->url('tour', array('controller' => 'travel', 'action' => 'index')); ?>">Tìm tours</a>
           </li>
           <li>
             <a href="<?php echo $this->url('hotel', array('controller' => 'hotel', 'action' => 'index')); ?>">Khách sạn</a>
@@ -36,4 +36,4 @@
       </div>
     </div>
   </div>
-</header>
+</div>

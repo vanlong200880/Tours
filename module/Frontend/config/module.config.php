@@ -88,6 +88,8 @@ return array(
           'userPost'        => 'Frontend\Block\userPost',
           'about'        => 'Frontend\Block\about',
           'news'        => 'Frontend\Block\news',
+          'headerTravel'        => 'Frontend\Block\headerTravel',
+          'footerTravel'        => 'Frontend\Block\footerTravel',
         ),
     ),
     'view_manager' => array(

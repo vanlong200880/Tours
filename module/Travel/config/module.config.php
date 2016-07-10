@@ -15,7 +15,7 @@ return array(
             'travel' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/travel',
+                    'route'    => '/dia-diem-phuot',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Travel\Controller',
                         'controller'    => 'travel',
@@ -84,8 +84,8 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-          'headerTravel'        => 'Travel\Block\headerTravel',
-          'footerTravel'        => 'Travel\Block\footerTravel',
+//          'headerTravel'        => 'Travel\Block\headerTravel',
+//          'footerTravel'        => 'Travel\Block\footerTravel',
         ),
     ),
     'view_manager' => array(
