@@ -7,22 +7,22 @@
         </div>
         <ul id="menu-top" class="pull-right">
           <li>
-            <a href="#">Địa điểm phượt</a>
+            <a href="<?php echo $this->url('tour', array('controller' => 'tour', 'action' => 'index')); ?>">Địa điểm phượt</a>
           </li>
           <li>
-            <a href="#">Tìm tours</a>
+            <a href="<?php echo $this->url('travel', array('controller' => 'index', 'action' => 'index')); ?>">Tìm tours</a>
           </li>
           <li>
-            <a href="#">Khách sạn</a>
+            <a href="<?php echo $this->url('hotel', array('controller' => 'hotel', 'action' => 'index')); ?>">Khách sạn</a>
           </li>
           <li>
-            <a href="#">Điểm ăn uống</a>
+            <a href="<?php echo $this->url('taste', array('controller' => 'taste', 'action' => 'index')); ?>">Điểm ăn uống</a>
           </li>
           <li>
-            <a href="#">Nhật ký</a>
+            <a href="<?php echo $this->url('diary', array('controller' => 'diary', 'action' => 'index')); ?>">Nhật ký</a>
           </li>
           <li>
-            <a href="#">Tin tức</a>
+            <a href="<?php echo $this->url('news', array('controller' => 'news', 'action' => 'index')); ?>">Tin tức</a>
           </li>
         </ul>
       </div>

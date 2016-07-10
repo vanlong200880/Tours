@@ -18,7 +18,7 @@ return array(
                     'route'    => '/travel',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Travel\Controller',
-                        'controller'    => 'Index',
+                        'controller'    => 'travel',
                         'action'        => 'index',
                     ),
                 ),
@@ -36,23 +36,23 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-                  'category' => array(
-                    'type' => 'Segment',
-      //              'priority' => 9001,
-                    'options' => array(
-                      'route' => '/[:category][.html]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Travel\Controller',
-                        'controller' => 'Travel\Controller\Category',
-                        'action' => 'index',
-                        'category' => '[a-zA-Z0-9_-]*'
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
+//                  'category' => array(
+//                    'type' => 'Segment',
+//      //              'priority' => 9001,
+//                    'options' => array(
+//                      'route' => '/[:category][.html]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'index',
+//                        'category' => '[a-zA-Z0-9_-]*'
+//                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                      ),
+//                    ),
+//                  ),
                 ),
             ),
         ),
@@ -78,7 +78,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-          'Travel\Controller\Index' => Controller\IndexController::class,
+          'Travel\Controller\Travel' => Controller\TravelController::class,
           'Travel\Controller\Category' => Controller\CategoryController::class
         ),
     ),
@@ -95,7 +95,7 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/travel'           => __DIR__ . '/../view/layout/layout.phtml',
             'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',

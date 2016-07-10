@@ -12,7 +12,7 @@ namespace Hotel;
 return array(
     'router' => array(
         'routes' => array(
-            'tour' => array(
+            'hotel' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/hotel',
@@ -36,23 +36,23 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-                  'tour-category' => array(
-                    'type' => 'Segment',
-      //              'priority' => 9001,
-                    'options' => array(
-                      'route' => '/[:category][.html]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Category',
-                        'action' => 'index',
-                        'category' => '[a-zA-Z0-9_-]*'
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
+//                  'tour-category' => array(
+//                    'type' => 'Segment',
+//      //              'priority' => 9001,
+//                    'options' => array(
+//                      'route' => '/[:category][.html]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Tour\Controller',
+//                        'controller' => 'Tour\Controller\Category',
+//                        'action' => 'index',
+//                        'category' => '[a-zA-Z0-9_-]*'
+//                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                      ),
+//                    ),
+//                  ),
                 ),
             ),
         ),
@@ -95,8 +95,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/tour'           => __DIR__ . '/../view/layout/layout.phtml',
-            'tour/index/index' => __DIR__ . '/../view/tour/index/index.phtml',
+            'layout/hotel'           => __DIR__ . '/../view/layout/layout.phtml',
+            'hotel/index/index' => __DIR__ . '/../view/hotel/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

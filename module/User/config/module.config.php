@@ -12,7 +12,7 @@ namespace User;
 return array(
     'router' => array(
         'routes' => array(
-            'tour' => array(
+            'user' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/user',
@@ -94,8 +94,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/tour'           => __DIR__ . '/../view/layout/layout.phtml',
-            'tour/index/index' => __DIR__ . '/../view/tour/index/index.phtml',
+            'layout/user'           => __DIR__ . '/../view/layout/layout.phtml',
+            'user/index/index' => __DIR__ . '/../view/user/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

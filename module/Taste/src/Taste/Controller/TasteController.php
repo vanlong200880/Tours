@@ -16,6 +16,7 @@ class TasteController extends AbstractActionController
 {
     public function indexAction()
     {
+      echo 'taste'; die;
         return new ViewModel();
     }
 }

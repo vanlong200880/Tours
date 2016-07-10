@@ -12,7 +12,7 @@ namespace Taste;
 return array(
     'router' => array(
         'routes' => array(
-            'tour' => array(
+            'taste' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/taste',
@@ -36,23 +36,23 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-                  'tour-category' => array(
-                    'type' => 'Segment',
-      //              'priority' => 9001,
-                    'options' => array(
-                      'route' => '/[:category][.html]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Category',
-                        'action' => 'index',
-                        'category' => '[a-zA-Z0-9_-]*'
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
+//                  'tour-category' => array(
+//                    'type' => 'Segment',
+//      //              'priority' => 9001,
+//                    'options' => array(
+//                      'route' => '/[:category][.html]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Tour\Controller',
+//                        'controller' => 'Tour\Controller\Category',
+//                        'action' => 'index',
+//                        'category' => '[a-zA-Z0-9_-]*'
+//                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                      ),
+//                    ),
+//                  ),
                 ),
             ),
         ),
@@ -96,7 +96,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/tour'           => __DIR__ . '/../view/layout/layout.phtml',
-            'tour/index/index' => __DIR__ . '/../view/tour/index/index.phtml',
+            'taste/index/index' => __DIR__ . '/../view/taste/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

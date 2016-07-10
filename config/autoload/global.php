@@ -13,9 +13,15 @@
 
 return array(
   'module_layouts' => array(
-		'Frontend' => 'layout/frontend',
-		'Backend' => 'layout/backend',
-    'Tour' => 'layout/tour',
+		'Frontend'  => 'layout/frontend',
+		'Backend'   => 'layout/backend',
+    'Tour'      => 'layout/tour',
+    'News'      => 'layout/news',
+    'Taste'     => 'layout/taste',
+    'Tour'      => 'layout/tour',
+    'Travel'    => 'layout/travel',
+    'User'      => 'layout/user',
+    'Diary'     => 'layout/diary',
 	),
     // ...
 );

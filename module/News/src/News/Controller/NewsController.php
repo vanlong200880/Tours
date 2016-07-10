@@ -16,6 +16,7 @@ class NewsController extends AbstractActionController
 {
     public function indexAction()
     {
+      echo 'news'; die;
         return new ViewModel();
     }
 }

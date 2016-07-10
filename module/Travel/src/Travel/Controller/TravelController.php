@@ -12,10 +12,11 @@ namespace Travel\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
+class TravelController extends AbstractActionController
 {
     public function indexAction()
     {
+      echo 'travel'; die;
         return new ViewModel();
     }
 }
