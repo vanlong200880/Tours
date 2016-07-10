@@ -18,4 +18,7 @@ class CategoryController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function detailAction(){
+      return new ViewModel();
+    }
 }

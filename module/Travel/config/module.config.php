@@ -24,35 +24,37 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'default' => array(
-//                      'type'    => 'Segment',
-//                      'options' => array(
-//                          'route'    => '/[:controller[/:action]]',
-//                          'constraints' => array(
-//                              'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                              'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                          ),
-//                          'defaults' => array(
-//                          ),
-//                      ),
-//                  ),
-//                  'category' => array(
-//                    'type' => 'Segment',
-//      //              'priority' => 9001,
-//                    'options' => array(
-//                      'route' => '/[:category][.html]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Travel\Controller',
-//                        'controller' => 'Travel\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
+                  'travel-province' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/[:category]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Travel\Controller',
+                        'controller' => 'Travel\Controller\Category',
+                        'action' => 'index',
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
+                  'travel-detail' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/[:category]/[:slug]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Travel\Controller',
+                        'controller' => 'Travel\Controller\Category',
+                        'action' => 'detail',
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                        'slug'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),
