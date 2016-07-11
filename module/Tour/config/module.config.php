@@ -24,35 +24,21 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'default' => array(
-//                      'type'    => 'Segment',
-//                      'options' => array(
-//                          'route'    => '/[:controller[/:action]]',
-//                          'constraints' => array(
-//                              'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                              'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                          ),
-//                          'defaults' => array(
-//                          ),
-//                      ),
-//                  ),
-//                  'tour-category' => array(
-//                    'type' => 'Segment',
-//      //              'priority' => 9001,
-//                    'options' => array(
-//                      'route' => '/[:category][.html]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Tour\Controller',
-//                        'controller' => 'Tour\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
+                  'tour-category' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/[:category]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Tour\Controller',
+                        'controller' => 'Tour\Controller\Category',
+                        'action' => 'index',
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),

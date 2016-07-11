@@ -9,7 +9,7 @@
   #container{
     height: 100%;
     .view{
-      width: 35%;
+      width: 40%;
       position: absolute;
       right: 0;
       top: 100px;
@@ -23,7 +23,7 @@
       }
     }
     .map-content{
-      width: 65%;
+      width: 60%;
       position: absolute;
       left: 0;
       height: 100%;
@@ -69,7 +69,7 @@
   background: #e2eef9;
   .page-search{
     
-    width: 65%;
+    width: 60%;
     float: left;
     height: 50px;
     position: relative;
@@ -87,7 +87,7 @@
     }
   }
   .page-search-title{
-    width: 35%;
+    width:40%;
     float: left;
     height: 50px;
     background: #232f3e;
