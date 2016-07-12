@@ -1177,6 +1177,58 @@ ul.connect li.youtube a:hover {
     left: 0;
     z-index: 1052;
     background: #FFF; }
+    .views-popup .views-container .views-header {
+      background: #e2eef9;
+      position: fixed;
+      width: 60%; }
+      .views-popup .views-container .views-header h2 {
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px; }
+        .views-popup .views-container .views-header h2 span {
+          font-size: 14px; }
+      .views-popup .views-container .views-header .views-close {
+        height: 40px;
+        width: 50px;
+        line-height: 40px;
+        text-align: center;
+        border-left: 1px solid #DDD; }
+        .views-popup .views-container .views-header .views-close span {
+          top: 4px;
+          position: relative;
+          color: #333; }
+    .views-popup .views-container .views-content {
+      height: 100%;
+      padding-top: 40px; }
+      .views-popup .views-container .views-content .views-content-wp {
+        overflow-y: scroll;
+        height: 100%;
+        padding: 10px; }
+        .views-popup .views-container .views-content .views-content-wp h2 {
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-top: 15px;
+          display: inline-block;
+          width: 100%; }
+        .views-popup .views-container .views-content .views-content-wp .description p {
+          text-align: justify;
+          line-height: 22px;
+          margin-top: 10px; }
+        .views-popup .views-container .views-content .views-content-wp .views-slider {
+          display: inline-block;
+          width: 100%; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider {
+            width: 100%; }
+            .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider .rsThumbsHor {
+              margin-top: 10px;
+              background: #FFF; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .rsDefault {
+            background: #FFF; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .rsThumbsContainer {
+            transform: translate3d(0px, 0px, 0px) !important;
+            -moz-transform: translate3d(0px, 0px, 0px) !important;
+            -webkit-transform: translate3d(0px, 0px, 0px) !important; }
 
 /*.travel-detail-popup{
   .modal-dialog{
@@ -1436,14 +1488,18 @@ ul.connect li.youtube a:hover {
         margin-top: 0 !important; }
       .comment .list-comment li .comment-item .comment-content .comment-info {
         padding-bottom: 15px; }
-        .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
-          width: 105px;
+        .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery {
+          margin-top: 15px;
           display: inline-block;
-          margin-bottom: 10px;
-          margin-right: 10px; }
-          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
-            max-width: 104px;
-            display: inline-block; }
+          width: 100%; }
+          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
+            width: 105px;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 10px; }
+            .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
+              max-width: 104px;
+              display: inline-block; }
         .comment .list-comment li .comment-item .comment-content .comment-info .form-replies a {
           border-radius: 2px;
           -webkit-border-radius: 2px;

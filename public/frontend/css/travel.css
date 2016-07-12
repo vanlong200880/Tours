@@ -1149,14 +1149,18 @@ ul.connect li.youtube a:hover {
         margin-top: 0 !important; }
       .comment .list-comment li .comment-item .comment-content .comment-info {
         padding-bottom: 15px; }
-        .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
-          width: 105px;
+        .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery {
+          margin-top: 15px;
           display: inline-block;
-          margin-bottom: 10px;
-          margin-right: 10px; }
-          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
-            max-width: 104px;
-            display: inline-block; }
+          width: 100%; }
+          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
+            width: 105px;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 10px; }
+            .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
+              max-width: 104px;
+              display: inline-block; }
         .comment .list-comment li .comment-item .comment-content .comment-info .form-replies a {
           border-radius: 2px;
           -webkit-border-radius: 2px;

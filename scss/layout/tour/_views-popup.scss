@@ -14,5 +14,73 @@
     left: 0;
     z-index: 1052;
     background: #FFF;
+    .views-header{
+      background: #e2eef9;
+      position: fixed;
+      width: 60%;
+      h2{
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        span{
+          font-size: 14px;
+        }
+      }
+      .views-close{
+        height: 40px;
+        width: 50px;
+        line-height: 40px;
+        text-align: center;
+        border-left: 1px solid #DDD;
+        span{
+          top: 4px;
+          position: relative;
+          color: #333;
+        }
+      }
+    }
+    .views-content{
+      height: 100%;
+      padding-top: 40px;
+      .views-content-wp{
+        overflow-y: scroll;
+        height: 100%;
+        padding: 10px;
+        h2{
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-top: 15px;
+          display: inline-block;
+          width: 100%;
+        }
+        .description{
+          p{
+            text-align: justify;
+            line-height: 22px;
+            margin-top: 10px;
+          }
+        }
+        .views-slider{
+          display: inline-block;
+          width: 100%;
+          .royalSlider{
+            width: 100%;
+            .rsThumbsHor{
+              margin-top: 10px;
+              background: #FFF;
+            }
+          }
+          .rsDefault{
+            background: #FFF;
+          }
+          .rsThumbsContainer{
+            transform: translate3d(0px, 0px, 0px) !important;
+            -moz-transform: translate3d(0px, 0px, 0px)!important;
+            -webkit-transform: translate3d(0px, 0px, 0px) !important;
+          }
+        }
+      }
+    }
   }
 }
