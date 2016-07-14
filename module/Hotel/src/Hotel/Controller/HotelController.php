@@ -16,7 +16,6 @@ class HotelController extends AbstractActionController
 {
     public function indexAction()
     {
-      echo 'hotel'; die;
         return new ViewModel();
     }
 }

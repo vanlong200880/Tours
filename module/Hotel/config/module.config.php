@@ -36,23 +36,22 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-//                  'tour-category' => array(
-//                    'type' => 'Segment',
-//      //              'priority' => 9001,
-//                    'options' => array(
-//                      'route' => '/[:category][.html]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Tour\Controller',
-//                        'controller' => 'Tour\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
+                  'hotel-category' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/[:category]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Hotel\Controller',
+                        'controller' => 'Hotel\Controller\Category',
+                        'action' => 'index',
+                        'category' => '[a-zA-Z0-9_-]*'
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),
@@ -79,7 +78,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
           'Hotel\Controller\Hotel' => Controller\HotelController::class,
-//          'Tour\Controller\Category' => Controller\CategoryController::class
+          'Hotel\Controller\Category' => Controller\CategoryController::class
         ),
     ),
     'view_helpers'    => array(

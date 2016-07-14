@@ -22,6 +22,7 @@ return array(
     'Travel'    => 'layout/travel',
     'User'      => 'layout/user',
     'Diary'     => 'layout/diary',
+    'Hotel'      => 'layout/hotel',
 	),
     // ...
 );

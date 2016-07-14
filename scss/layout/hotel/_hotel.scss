@@ -1,0 +1,43 @@
+.list-item{
+  .star{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+    height: 20px;
+    @include border-radius(3px);
+    line-height: 20px;
+    padding: 0 2px;
+    img{
+      display: inline-block;
+    }
+  }
+}
+.utilities{
+  border: 1px solid #DDD;
+  height: 300px;
+  background: #FFF;
+  margin-top: 45px;
+  padding: 15px;
+  h2{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  ul{
+    li{
+      width: 12.5%;
+      display: inline-block;
+      float: left;
+      padding: 0 5px;
+      .item{
+        text-align: center;
+        height: 80px;
+        overflow: hidden;
+      }
+      margin-bottom: 15px;
+    }
+  }
+}
