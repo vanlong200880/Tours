@@ -1561,7 +1561,8 @@ ul.connect li.youtube a:hover {
 
 .utilities {
   border: 1px solid #DDD;
-  height: 300px;
+  display: inline-block;
+  width: 100%;
   background: #FFF;
   margin-top: 45px;
   padding: 15px; }
@@ -1580,6 +1581,158 @@ ul.connect li.youtube a:hover {
       text-align: center;
       height: 80px;
       overflow: hidden; }
+      .utilities ul li .item span {
+        font-size: 24px; }
+
+.list-room {
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 10px;
+  margin-top: 15px; }
+  .list-room h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold; }
+  .list-room .room .title h2 {
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 2px solid #3871b8;
+    margin-top: 15px; }
+    .list-room .room .title h2 span {
+      display: inline-block;
+      height: 30px;
+      background: #3871b8;
+      position: relative;
+      padding-right: 25px;
+      color: #FFF;
+      padding-left: 10px; }
+      .list-room .room .title h2 span var {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background: red;
+        color: #FFF;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        -ms-border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
+        top: 0;
+        right: -15px; }
+  .list-room .room .list-hotel-room {
+    display: inline-block;
+    width: 100%; }
+    .list-room .room .list-hotel-room ul {
+      display: inline-block;
+      float: left; }
+      .list-room .room .list-hotel-room ul li {
+        display: inline-block;
+        width: 12.5%;
+        text-align: center;
+        float: left;
+        margin-top: 15px;
+        position: relative; }
+        .list-room .room .list-hotel-room ul li .blank {
+          width: 300px;
+          background: #FFF;
+          border: 1px solid #DDD;
+          border-radius: 3px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -o-border-radius: 3px;
+          -ms-border-radius: 3px;
+          position: absolute;
+          z-index: 9;
+          bottom: 125px; }
+          .list-room .room .list-hotel-room ul li .blank .blank-title {
+            text-align: left;
+            padding: 5px 10px;
+            background: #b400ff;
+            border-top-left-radius: 3px;
+            -moz-border-top-left-radius: 3px;
+            -webkit-border-top-left-radius: 3px;
+            -ms-border-top-left-radius: 3px;
+            -o-border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            -moz-border-top-right-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -ms-border-top-right-radius: 3px;
+            -o-border-top-right-radius: 3px; }
+            .list-room .room .list-hotel-room ul li .blank .blank-title h3 {
+              color: #FFF;
+              font-weight: bold;
+              font-size: 14px;
+              display: inline-block;
+              width: 100%; }
+          .list-room .room .list-hotel-room ul li .blank .blank-content {
+            padding: 10px;
+            text-align: left; }
+            .list-room .room .list-hotel-room ul li .blank .blank-content .item {
+              display: inline-block;
+              width: 100%;
+              padding: 5px 0; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .item p {
+                line-height: 22px; }
+            .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot h3 {
+              text-transform: uppercase;
+              margin-bottom: 5px;
+              font-size: 14px;
+              font-weight: bold; }
+            .list-room .room .list-hotel-room ul li .blank .blank-content .description,
+            .list-room .room .list-hotel-room ul li .blank .blank-content .price,
+            .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot {
+              border-top: 1px solid #DDD;
+              position: relative; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .description p.cost span,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .price p.cost span,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot p.cost span {
+                font-size: 15px;
+                text-decoration: line-through;
+                color: #333; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .description p.sale,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .price p.sale,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot p.sale {
+                color: red;
+                font-weight: bold;
+                font-size: 22px; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .description .sale-pup,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .price .sale-pup,
+              .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot .sale-pup {
+                position: absolute;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background: red;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -o-border-radius: 50%;
+                -ms-border-radius: 50%;
+                color: #FFF;
+                text-align: center;
+                line-height: 30px;
+                top: 15px;
+                right: 0;
+                font-size: 12px; }
+            .list-room .room .list-hotel-room ul li .blank .blank-content .views {
+              border-top: 1px solid #DDD;
+              padding-top: 10px; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .views a {
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -o-border-radius: 3px;
+                -ms-border-radius: 3px;
+                padding: 3px 5px;
+                color: #FFF; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .views .views-room {
+                background: #71be0f; }
+              .list-room .room .list-hotel-room ul li .blank .blank-content .views .book-now {
+                background: #b400ff; }
 
 /*@import "layout/home";
 @import "layout/masterpage";

@@ -16,7 +16,8 @@
 }
 .utilities{
   border: 1px solid #DDD;
-  height: 300px;
+  display: inline-block;
+  width: 100%;
   background: #FFF;
   margin-top: 45px;
   padding: 15px;
@@ -36,8 +37,163 @@
         text-align: center;
         height: 80px;
         overflow: hidden;
+        span{
+          font-size: 24px;
+        }
       }
       margin-bottom: 15px;
+    }
+  }
+}
+.list-room{
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 10px;
+  margin-top: 15px;
+  h2{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .room{
+    .title{
+      h2{
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 2px solid #3871b8;
+        margin-top: 15px;
+        span{
+          display: inline-block;
+          height: 30px;
+          background: #3871b8;
+          position: relative;
+          padding-right: 25px;
+          color: #FFF;
+          padding-left: 10px;
+          var{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background: red;
+            color: #FFF;
+            @include border-radius(50%);
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            top: 0;
+            right: -15px;
+          }
+        }
+      }
+    }
+    .list-hotel-room{
+      display: inline-block;
+      width: 100%;
+      ul{
+        display: inline-block;
+        float: left;
+        li{
+          display: inline-block;
+          width: 12.5%;
+          text-align: center;
+          float: left;
+          margin-top: 15px;
+          position: relative;
+          .blank{
+            width: 300px;
+            background: #FFF;
+            border: 1px solid #DDD;
+            @include border-radius(3px);
+            position: absolute;
+            z-index: 9;
+            bottom: 125px;
+            .blank-title{
+              text-align: left;
+              padding: 5px 10px;
+              background: $hotel;
+              @include border-top-left-radius(3px);
+              @include border-top-right-radius(3px);
+              h3{
+                color: #FFF;
+                font-weight: bold;
+                font-size: 14px;
+                display: inline-block;
+                width: 100%;
+              }
+            }
+            .blank-content{
+              padding: 10px;
+              text-align: left;
+              .item{
+                display: inline-block;
+                width: 100%;
+                padding: 5px 0;
+                p{
+                  line-height: 22px;
+                }
+              }
+              .blank-hot{
+                h3{
+                  text-transform: uppercase;
+                  margin-bottom: 5px;
+                  font-size: 14px;
+                  font-weight: bold;
+                }
+              }
+              .description,
+              .price,
+              .blank-hot{
+                border-top: 1px solid #DDD;
+                position: relative;
+                p.cost{
+                  span{
+                    font-size: 15px;
+                    text-decoration: line-through;
+                    color: #333;
+                  }
+                }
+                p.sale{
+                  color: red;
+                  font-weight: bold;
+                  font-size: 22px;
+                }
+                .sale-pup{
+                  position: absolute;
+                  display: inline-block;
+                  width: 30px;
+                  height: 30px;
+                  background: red;
+                  @include border-radius(50%);
+                  color: #FFF;
+                  text-align: center;
+                  line-height: 30px;
+                  top: 15px;
+                  right: 0;
+                  font-size: 12px;
+                  
+                }
+              }
+              .views{
+                border-top: 1px solid #DDD;
+                padding-top: 10px;
+                a{
+                  @include border-radius(3px);
+                  padding: 3px 5px;
+                  color: #FFF;
+                }
+                .views-room{
+                  background: $tours;
+                  
+                }
+                .book-now{
+                  background: $hotel;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
