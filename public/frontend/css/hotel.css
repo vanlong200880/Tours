@@ -1628,14 +1628,16 @@ ul.connect li.youtube a:hover {
     width: 100%; }
     .list-room .room .list-hotel-room ul {
       display: inline-block;
-      float: left; }
+      float: left;
+      width: 100%; }
       .list-room .room .list-hotel-room ul li {
         display: inline-block;
         width: 12.5%;
         text-align: center;
         float: left;
-        margin-top: 15px;
-        position: relative; }
+        padding-top: 15px;
+        position: relative;
+        cursor: pointer; }
         .list-room .room .list-hotel-room ul li .blank {
           width: 300px;
           background: #FFF;
@@ -1646,8 +1648,9 @@ ul.connect li.youtube a:hover {
           -o-border-radius: 3px;
           -ms-border-radius: 3px;
           position: absolute;
-          z-index: 9;
-          bottom: 125px; }
+          z-index: 99999;
+          bottom: 123px;
+          display: none; }
           .list-room .room .list-hotel-room ul li .blank .blank-title {
             text-align: left;
             padding: 5px 10px;
@@ -1704,8 +1707,8 @@ ul.connect li.youtube a:hover {
               .list-room .room .list-hotel-room ul li .blank .blank-content .blank-hot .sale-pup {
                 position: absolute;
                 display: inline-block;
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
                 background: red;
                 border-radius: 50%;
                 -webkit-border-radius: 50%;
@@ -1714,10 +1717,10 @@ ul.connect li.youtube a:hover {
                 -ms-border-radius: 50%;
                 color: #FFF;
                 text-align: center;
-                line-height: 30px;
-                top: 15px;
+                line-height: 40px;
+                top: 7px;
                 right: 0;
-                font-size: 12px; }
+                font-size: 14px; }
             .list-room .room .list-hotel-room ul li .blank .blank-content .views {
               border-top: 1px solid #DDD;
               padding-top: 10px; }
@@ -1733,6 +1736,16 @@ ul.connect li.youtube a:hover {
                 background: #71be0f; }
               .list-room .room .list-hotel-room ul li .blank .blank-content .views .book-now {
                 background: #b400ff; }
+      .list-room .room .list-hotel-room ul li.active .blank {
+        display: block; }
+      .list-room .room .list-hotel-room ul li.active:before {
+        content: " ";
+        border-top: 7px solid #DDD;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        top: 10px;
+        left: 45%;
+        position: absolute; }
 
 /*@import "layout/home";
 @import "layout/masterpage";

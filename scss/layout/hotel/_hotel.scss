@@ -93,21 +93,24 @@
       ul{
         display: inline-block;
         float: left;
+        width: 100%;
         li{
           display: inline-block;
           width: 12.5%;
           text-align: center;
           float: left;
-          margin-top: 15px;
+          padding-top: 15px;
           position: relative;
+          cursor: pointer;
           .blank{
             width: 300px;
             background: #FFF;
             border: 1px solid #DDD;
             @include border-radius(3px);
             position: absolute;
-            z-index: 9;
-            bottom: 125px;
+            z-index: 99999;
+            bottom: 123px;
+            display:none;
             .blank-title{
               text-align: left;
               padding: 5px 10px;
@@ -161,16 +164,16 @@
                 .sale-pup{
                   position: absolute;
                   display: inline-block;
-                  width: 30px;
-                  height: 30px;
+                  width: 40px;
+                  height: 40px;
                   background: red;
                   @include border-radius(50%);
                   color: #FFF;
                   text-align: center;
-                  line-height: 30px;
-                  top: 15px;
+                  line-height: 40px;
+                  top: 7px;
                   right: 0;
-                  font-size: 12px;
+                  font-size: 14px;
                   
                 }
               }
@@ -191,6 +194,20 @@
                 }
               }
             }
+          }
+        }
+        li.active{
+          .blank{
+            display: block;
+          }
+          &:before{
+            content: " ";
+            border-top: 7px solid #DDD;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            top: 10px;
+            left: 45%;
+           position: absolute;
           }
         }
       }
