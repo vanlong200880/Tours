@@ -651,6 +651,18 @@
              
              <div class="list-room">
                <h2>Danh sách phòng</h2>
+               <div class="choose-date">
+                 <div class="item-date">
+                   <p>Ngày nhận phòng</p>
+                   <input type="text" name="start_date" class="form-control">
+                   <div class="calendar"><span class="icon icon-calendar"></div>
+                 </div>
+                 <div class="item-date">
+                   <p>Ngày trả phòng</p>
+                   <input type="text" name="end_date" class="form-control">
+                   <div class="calendar"><span class="icon icon-calendar"></div>
+                 </div>
+               </div>
                <div class="room">
                  <div class="title">
                    <h2><span>Tầng <var>1</var></span></h2>
@@ -1449,7 +1461,10 @@
                     </div>
                   </div>
 
-                  
+                  <div class="position-related">
+                    <h2>Địa điểm xung quanh</h2>
+                    <div class="related-map"></div>
+                  </div>
                   <div class="comment" id="detail-comment">
                     <h2><span>Bình luận</span> <a class="buttom-comment pull-right">Bình luận</a></h2>
                     <ul class="list-comment">

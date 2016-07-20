@@ -274,6 +274,8 @@
   }
 }
 .comment{
+  display: inline-block;
+  width: 100%;
   h2{
     text-transform: uppercase;
     border-bottom: 1px solid $color-border;

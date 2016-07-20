@@ -214,3 +214,54 @@
     }
   }
 }
+.choose-date{
+  width: 50%;
+  display: inline-block;
+  margin-top: 15px;
+  .item-date{
+    width: 46%;
+    display: inline-block;
+    float: left;
+    margin-right: 4%;
+    position: relative;
+    p{
+      padding-bottom: 5px;
+    }
+    input{
+      @include border-radius(0px);
+      outline: none;
+      height: 34px;
+      padding-right: 40px;
+    }
+    .calendar{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 34px;
+      height: 34px;
+      text-align: center;
+      line-height: 34px;
+      cursor: pointer;
+      span{
+        color: #565555;
+        font-size: 16px;
+      }
+    }
+  }
+}
+.position-related{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  margin-top: 15px;
+  h2{
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .related-map{
+    width: 100%;
+    height: 300px;
+  }
+}
