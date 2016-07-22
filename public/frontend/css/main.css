@@ -127,16 +127,16 @@ a:hover {
     height: 50px; }
 
 #search .search-home {
-  width: 580px;
-  height: 275px;
-  background: #fd6235;
+  width: 680px;
+  height: 220px;
+  background: #c1e6f7;
   position: absolute;
   bottom: -15px;
   z-index: 9999; }
   #search .search-home .list-tab {
-    width: 35%;
+    width: 30%;
     float: left;
-    height: 275px;
+    height: 220px;
     background: #ed8e31; }
     #search .search-home .list-tab ul {
       border: none; }
@@ -159,7 +159,7 @@ a:hover {
       #search .search-home .list-tab ul li.active a {
         background: #fa501e; }
   #search .search-home .panel-tab {
-    width: 65%;
+    width: 70%;
     float: left;
     padding: 15px; }
     #search .search-home .panel-tab h2 {
@@ -175,6 +175,26 @@ a:hover {
       -moz-border-radius: 0px;
       -o-border-radius: 0px;
       -ms-border-radius: 0px;
+      border: none;
+      margin-bottom: 15px; }
+    #search .search-home .panel-tab #search-list {
+      width: 100%;
+      height: 34px;
+      background: #86b817;
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      -o-border-radius: 0px;
+      -ms-border-radius: 0px;
+      outline: none;
       border: none; }
 
 .tour-home-content .nav-tabs {
@@ -291,6 +311,23 @@ a:hover {
       height: 24px;
       line-height: 24px;
       border-bottom: 4px solid #cc050a; }
+
+.top-destination {
+  background: #f3f3f3;
+  padding: 15px 0;
+  margin: 15px 0; }
+  .top-destination h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px; }
+  .top-destination ul li .item {
+    background: #FFF;
+    margin-bottom: 15px;
+    border: 1px solid #DDD; }
+    .top-destination ul li .item .title {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px 5px; }
 
 .like {
   position: absolute;

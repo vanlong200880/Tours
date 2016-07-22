@@ -1,15 +1,15 @@
 #search{
   .search-home{
-    width: 580px;
-    height: 275px;
+    width: 680px;
+    height: 220px;
     background: $search-background;
     position: absolute;
     bottom: -15px;
     z-index: 9999;
     .list-tab{
-      width: 35%;
+      width: 30%;
       float: left;
-      height: 275px;
+      height: 220px;
       background: #ed8e31;
       ul{
         border: none;
@@ -36,7 +36,7 @@
       }
     }
     .panel-tab{
-      width: 65%;
+      width: 70%;
       float: left;
       padding: 15px;
       h2{
@@ -50,6 +50,19 @@
       }
       .form-control{
         @include border-radius(0px);
+        border: none;
+        margin-bottom: 15px;
+      }
+      #search-list{
+        width: 100%;
+        height: 34px;
+        background: #86b817;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include box-shadow(none);
+        @include border-radius(0px);
+        outline: none;
         border: none;
       }
     }
@@ -205,6 +218,30 @@
       height: 24px;
       line-height: 24px;
       border-bottom: 4px solid #cc050a;
+    }
+  }
+}
+.top-destination{
+  background: #f3f3f3;
+  padding: 15px 0;
+  margin: 15px 0;
+  h2{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  ul{
+    li{
+      .item{
+        background: #FFF;
+        margin-bottom: 15px;
+        border: 1px solid #DDD;
+        .title{
+          font-size: 16px;
+          font-weight: bold;
+          padding: 15px 5px;
+        }
+      }
     }
   }
 }
