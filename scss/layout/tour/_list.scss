@@ -141,55 +141,75 @@
   }
 }
 .list-tours-related{
-  margin-top: 15px;
+  margin-top: 30px;
+  position: relative;
   h2{
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 5px;
   }
-  ul{
+  .swiper-btn{
+    top: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+  .button-next{
+    right: 0;
+  }
+  .button-prev{
+    right: 15px;
+  }
+  .swiper-btn.swiper-button-disabled{
+    color: #DDD;
+  }
+  
+  .swiper-container{
     width: 100%;
     display: inline-block;
     border: 1px solid #DDD;
     background: #FFF;
     padding-bottom: 15px;
-    li{
-      margin-top: 8px;
-      display: inline-block;
-      .item{
-        position: relative;
-        .photo{
-          position: absolute;
-          right: 1px;
-          top: 1px;
-          background: rgba(0,0,0,0.5);
-          color: #FFF;
-          padding: 3px 5px;
-          font-size: 12px;
-        }
-        p.img{
-          border: 1px solid transparent;
-        }
-        p{
-          text-align: center;
-        }
-        p.title{
-          height: 40px;
-          line-height: 20px;
-          overflow: hidden;
-          margin-top: 5px;
-        }
-      }
-      &:hover{
+    ul{
+      li{
+        margin-top: 8px;
+        display: inline-block;
         .item{
+          position: relative;
+          .photo{
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            background: rgba(0,0,0,0.5);
+            color: #FFF;
+            padding: 3px 5px;
+            font-size: 12px;
+          }
           p.img{
-            border: 1px solid red;
+            border: 1px solid transparent;
+          }
+          p{
+            text-align: center;
+          }
+          p.title{
+            height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+            margin-top: 5px;
+          }
+        }
+        &:hover{
+          .item{
+            p.img{
+              border: 1px solid red;
+            }
           }
         }
       }
+
     }
-    
   }
+  
 }
 .commitment{
   margin-top: 15px;

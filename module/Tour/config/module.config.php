@@ -39,6 +39,18 @@ return array(
                       ),
                     ),
                   ),
+                  'view' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/view',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Tour\Controller',
+                        'controller' => 'Tour\Controller\Category',
+                        'action' => 'view',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),
@@ -85,9 +97,13 @@ return array(
             'tour/index/index' => __DIR__ . '/../view/tour/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'layout/view'           => __DIR__ . '/../view/tour/category/view.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy'
         ),
     ),
     // Placeholder for console routes

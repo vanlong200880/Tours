@@ -1,30 +1,42 @@
 #search{
+  margin-top: -171px;
   .search-home{
-    width: 680px;
-    height: 220px;
-    background: $search-background;
-    position: absolute;
-    bottom: -15px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
     z-index: 9999;
     .list-tab{
-      width: 30%;
       float: left;
-      height: 220px;
+      height:50px;
       background: #ed8e31;
       ul{
         border: none;
         li{
           margin-bottom: 0;
-          width: 100%;
+          width: auto;
           a{
             border: none;
             @include border-radius(0px);
             width: 100%;
             text-transform: uppercase;
             color: #FFF;
-            padding: 15px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px 0 5px;
             &:hover, &:active, &:visited,&:focus{
-              background: #fd6235;
+              background: rgba(18,17,17,0.7);
+            }
+            span.round{
+              width: 40px;
+              height: 40px;
+              display: inline-block;
+              background: rgba(0, 0, 0, 0.46);
+              @include border-radius(50%);
+              margin-top: 5px;
+              float: left;
+              margin-right: 5px;
+              text-align: center;
+              font-size: 22px;
             }
           }
         }
@@ -36,28 +48,50 @@
       }
     }
     .panel-tab{
-      width: 70%;
+      width: 100%;
       float: left;
       padding: 15px;
+      background: $search-background;
+      .tab-content{
+        background: #FFF;
+        padding: 10px;
+      }
+      #hotel{
+        .form{
+          position: relative;
+          span{
+            height: 34px;
+            width: 34px;
+            background: #DDD;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0px;
+            text-align: center;
+            line-height: 34px;
+          }
+          .form-control{
+            padding-right: 40px;
+          }
+        }
+      }
       h2{
         text-transform: uppercase;
-        color: #FFF;
+        color: #000;
         font-size: 16px;
         margin-bottom: 5px;
       }
-      .form{
-        margin-bottom: 30px;
-      }
       .form-control{
         @include border-radius(0px);
-        border: none;
+        border: 1px solid #DDD;
         margin-bottom: 15px;
+        @include box-shadow(none);
       }
       #search-list{
         width: 100%;
         height: 34px;
-        background: #86b817;
-        color: #000;
+        background: #fa501e;
+        color: #FFF;
         font-weight: bold;
         text-transform: uppercase;
         @include box-shadow(none);

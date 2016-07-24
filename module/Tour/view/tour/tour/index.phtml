@@ -17,7 +17,7 @@
                     </select>
                   </div>
                   <div class="col-md-3">
-                    <select class="form-control selectpicker">
+                    <select class="form-control selectpicker" data-live-search="true">
                       <option value="">-- Tỉnh/Thành Phố -- </option>
                       <option>Bình Phước</option>
                       <option>Hà Nội</option>
@@ -30,46 +30,15 @@
                     </select>
                   </div>
                   <div class="col-md-3">
-                    <div class="item-search-type">
-                      <ul class="level">
-                        <li class="item">
-                          <a>
-                            <span>-- Loại --</span>
-                          </a>
-                          <ul class="search-type">
-                            <li class="tours">
-                              <input type="checkbox" class="for-type" name="fs-travel" id="fs-travel">
-                              <label class="fs-home" data-key="listings-1" for="fs-travel">
-                                <span class="root-radius"></span>
-                                <span>Điểm du lịch</span>
-                              </label>
-                            </li>
-                            <li class="hotel">
-                              <input type="checkbox" class="for-type" name="fs-hotel" id="fs-hotel">
-                              <label class="fs-home" data-key="listings-2"  for="fs-hotel">
-                                <span class="root-radius"></span>
-                                <span>Khách sạn</span>
-                              </label>
-                            </li>
-                            <li class="taste">
-                              <input type="checkbox" class="for-type" name="fs-taste" id="fs-taste">
-                              <label class="fs-home" data-key="listings-3" for="fs-taste">
-                                <span class="root-radius"></span>
-                                <span>Điểm ăn uống</span> 
-                              </label>
-                            </li>
-                            <li class="park">
-                              <input type="checkbox" class="for-type" name="fs-park" id="fs-park">
-                              <label class="fs-home" data-key="listings-4" for="fs-park">
-                                <span class="root-radius"></span>
-                                <span>Công viên giải trí</span> 
-                              </label>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <script>
+                    <select class="form-control selectpicker" data-live-search="true">
+                        <option value="">-- Quận/Huyện -- </option>
+                        <option>Quận 1</option>
+                        <option>Quận 2</option>
+                        <option>Quận 3</option>
+                        <option>Quận 4</option>
+                        <option>Quận 5</option>
+                      </select>
+<!--                    <script>
                     jQuery(document).ready(function($){
                       var isClick = false;
                       $(".item-search-type ul>li").on('click', function(e){
@@ -90,10 +59,7 @@
                       }
                     });
                   });
-                    </script>
-<!--                    <select class="form-control">
-                      <option value="">-- Loại -- </option>
-                    </select>-->
+                    </script>-->
                   </div>
                 </div>
               </div>
@@ -1153,7 +1119,9 @@
     
   </div>
   <div class="map-content">
-    <div style="width: 100%; height: 100%;" id="map"></div>
+    <div class="map-wp">
+      <div style="width: 100%; height: 100%;" id="map"></div>
+    </div>
   </div>
 </div>
 <script>

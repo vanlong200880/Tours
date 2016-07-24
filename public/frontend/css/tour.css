@@ -107,7 +107,8 @@ a:hover {
   left: 0;
   top: 0; }
   .wrapper #container {
-    height: 100%; }
+    height: 100%;
+    padding-bottom: 100px; }
     .wrapper #container .view {
       width: 40%;
       position: absolute;
@@ -126,10 +127,13 @@ a:hover {
         height: 100%; }
     .wrapper #container .map-content {
       width: 60%;
-      position: absolute;
+      /*position: absolute;*/
       left: 0;
       height: 100%;
       background: #DDD; }
+      .wrapper #container .map-content .map-wp {
+        width: 100%;
+        height: 100%; }
 
 .header {
   height: 50px;
@@ -1014,23 +1018,35 @@ ul.connect li.youtube a:hover {
       font-weight: bold; }
 
 .list-tours-related {
-  margin-top: 15px; }
+  margin-top: 30px;
+  position: relative; }
   .list-tours-related h2 {
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: bold; }
-  .list-tours-related ul {
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .list-tours-related .swiper-btn {
+    top: 0;
+    cursor: pointer;
+    position: absolute; }
+  .list-tours-related .button-next {
+    right: 0; }
+  .list-tours-related .button-prev {
+    right: 15px; }
+  .list-tours-related .swiper-btn.swiper-button-disabled {
+    color: #DDD; }
+  .list-tours-related .swiper-container {
     width: 100%;
     display: inline-block;
     border: 1px solid #DDD;
     background: #FFF;
     padding-bottom: 15px; }
-    .list-tours-related ul li {
+    .list-tours-related .swiper-container ul li {
       margin-top: 8px;
       display: inline-block; }
-      .list-tours-related ul li .item {
+      .list-tours-related .swiper-container ul li .item {
         position: relative; }
-        .list-tours-related ul li .item .photo {
+        .list-tours-related .swiper-container ul li .item .photo {
           position: absolute;
           right: 1px;
           top: 1px;
@@ -1038,16 +1054,16 @@ ul.connect li.youtube a:hover {
           color: #FFF;
           padding: 3px 5px;
           font-size: 12px; }
-        .list-tours-related ul li .item p.img {
+        .list-tours-related .swiper-container ul li .item p.img {
           border: 1px solid transparent; }
-        .list-tours-related ul li .item p {
+        .list-tours-related .swiper-container ul li .item p {
           text-align: center; }
-        .list-tours-related ul li .item p.title {
+        .list-tours-related .swiper-container ul li .item p.title {
           height: 40px;
           line-height: 20px;
           overflow: hidden;
           margin-top: 5px; }
-      .list-tours-related ul li:hover .item p.img {
+      .list-tours-related .swiper-container ul li:hover .item p.img {
         border: 1px solid red; }
 
 .commitment {
@@ -1168,13 +1184,21 @@ ul.connect li.youtube a:hover {
   z-index: 1051;
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+  display: none; }
   .views-popup .views-container {
     width: 60%;
+    left: -60%;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    float: left;
+    display: block;
     z-index: 1052;
     background: #FFF; }
     .views-popup .views-container .views-header {
@@ -1192,7 +1216,8 @@ ul.connect li.youtube a:hover {
         width: 50px;
         line-height: 40px;
         text-align: center;
-        border-left: 1px solid #DDD; }
+        border-left: 1px solid #DDD;
+        cursor: pointer; }
         .views-popup .views-container .views-header .views-close span {
           top: 4px;
           position: relative;
@@ -1229,6 +1254,73 @@ ul.connect li.youtube a:hover {
             transform: translate3d(0px, 0px, 0px) !important;
             -moz-transform: translate3d(0px, 0px, 0px) !important;
             -webkit-transform: translate3d(0px, 0px, 0px) !important; }
+  .views-popup .views-container.open {
+    left: 0;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease; }
+@-moz-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-o-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+  .views-popup .loading {
+    width: 50px;
+    height: 50px;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid #FFF;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-animation: spin 600ms infinite linear;
+    -moz-animation: spin 600ms infinite linear;
+    -o-animation: spin 600ms infinite linear;
+    -ms-animation: spin 600ms infinite linear;
+    animation: spin 600ms infinite linear; }
+
+.views-popup.view {
+  display: block;
+  /*  .views-container.open{
+      left: 0;*/
+  /*    webkit-transition: left 0.35s ease;
+      -moz-transition: left 0.35s ease;
+      -o-transition: left 0.35s ease;
+      -ms-transition: left 0.35s ease;
+      transition: left 0.35s ease;*/
+  /*}*/ }
 
 /*.travel-detail-popup{
   .modal-dialog{
@@ -1259,7 +1351,7 @@ ul.connect li.youtube a:hover {
   background: rgba(0, 0, 0, 0.5);
   overflow: auto; }
   .popup-page .popup-container {
-    width: 1024px;
+    width: 1140px;
     margin: 0 auto;
     position: relative;
     background-color: #fff; }
@@ -1269,7 +1361,7 @@ ul.connect li.youtube a:hover {
       padding: 0;
       border: none;
       position: fixed;
-      width: 1024px;
+      width: 1140px;
       z-index: 1050; }
       .popup-page .popup-container .popup-header h2 {
         font-size: 16px;

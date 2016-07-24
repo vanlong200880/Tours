@@ -5,32 +5,32 @@
         <div class="search-home">
           <div class="list-tab">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#travel" aria-controls="travel" role="tab" data-toggle="tab">Tìm địa điểm phượt</a></li>
-              <li role="presentation"><a href="#tour" aria-controls="tour" role="tab" data-toggle="tab">Tìm tour du lịch</a></li>
-              <li role="presentation"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Tìm khách sạn</a></li>
-              <li role="presentation"><a href="#food" aria-controls="food" role="tab" data-toggle="tab">Tìm điểm ăn uống</a></li>
+              <li role="presentation"><a href="#travel" aria-controls="travel" role="tab" data-toggle="tab"><span class="round"><i class="icon icon-suitcasesocial"></i></span>Tìm địa điểm phượt</a></li>
+              <li role="presentation"><a href="#tour" aria-controls="tour" role="tab" data-toggle="tab"><span class="round"></span> Tìm tour du lịch</a></li>
+              <li role="presentation" class="active"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab"><span class="round"></span> Tìm khách sạn</a></li>
+              <li role="presentation"><a href="#food" aria-controls="food" role="tab" data-toggle="tab"><span class="round"></span> Tìm điểm ăn uống</a></li>
             </ul>
           </div>
           <div class="panel-tab">
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="travel">
+              <div role="tabpanel" class="tab-pane" id="travel">
                 <div class="row">
                   <div class="col-md-12">
                     <h2>Bạn muốn đi đâu?</h2>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col-md-5">
                     <div class="form">
                       <input type="text" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <select class="form-control">
                       <option> -- Quốc gia --</option>
                       <option value="viet-nam" selected="">Việt Nam</option>
                       <option value="thai-lan">Thái Lan</option>
                     </select>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <select class="form-control">
                       <option> -- Tỉnh/Thành phố --</option>
                       <option value="ho-chi-minh">Hồ Chí Minh</option>
@@ -38,7 +38,7 @@
                     </select>
                   </div>
                   
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <select class="form-control">
                       <option> -- Quận/Huyện --</option>
                       <option value="ho-chi-minh">Quận 1</option>
@@ -46,25 +46,138 @@
                     </select>
                   </div>
                   
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="col-md-4 pull-right">
-                        <button class="button-search" id="search-list" attr="search">Tìm kiếm</button>
-                      </div>
-                    </div>
+                  <div class="col-md-1">
+                    <button class="button-search pull-right" id="search-list" attr="search">Tìm</button>
                   </div>
                 </div>
                 
                 
               </div>
               <div role="tabpanel" class="tab-pane" id="tour">
-                
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2>Bạn muốn tìm tour du lịch?</h2>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="form">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quốc gia --</option>
+                      <option value="viet-nam" selected="">Việt Nam</option>
+                      <option value="thai-lan">Thái Lan</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Tỉnh/Thành phố --</option>
+                      <option value="ho-chi-minh">Hồ Chí Minh</option>
+                      <option value="ho-chi-minh">Đồng Nai</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quận/Huyện --</option>
+                      <option value="ho-chi-minh">Quận 1</option>
+                      <option value="ho-chi-minh">Quận 3</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-1">
+                    <button class="button-search pull-right" id="search-list" attr="search">Tìm</button>
+                  </div>
+                </div>
               </div>
-              <div role="tabpanel" class="tab-pane" id="hotel">
-                
+              <div role="tabpanel" class="tab-pane active" id="hotel">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2>Tìm kiếm, đặt phòng khách sạn giá tốt nhất?</h2>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form">
+                          <input type="text" class="form-control" placeholder="Ngày nhận phòng">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form">
+                          <input type="text" class="form-control" placeholder="Ngày trả phòng">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quốc gia --</option>
+                      <option value="viet-nam" selected="">Việt Nam</option>
+                      <option value="thai-lan">Thái Lan</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Tỉnh/Thành phố --</option>
+                      <option value="ho-chi-minh">Hồ Chí Minh</option>
+                      <option value="ho-chi-minh">Đồng Nai</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quận/Huyện --</option>
+                      <option value="ho-chi-minh">Quận 1</option>
+                      <option value="ho-chi-minh">Quận 3</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-1">
+                    <button class="button-search pull-right" id="search-list" attr="search">Tìm</button>
+                  </div>
+                </div>
               </div>
               <div role="tabpanel" class="tab-pane" id="food">
-                
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2>Bạn muốn ăn gì?</h2>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="form">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quốc gia --</option>
+                      <option value="viet-nam" selected="">Việt Nam</option>
+                      <option value="thai-lan">Thái Lan</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Tỉnh/Thành phố --</option>
+                      <option value="ho-chi-minh">Hồ Chí Minh</option>
+                      <option value="ho-chi-minh">Đồng Nai</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <select class="form-control">
+                      <option> -- Quận/Huyện --</option>
+                      <option value="ho-chi-minh">Quận 1</option>
+                      <option value="ho-chi-minh">Quận 3</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-1">
+                    <button class="button-search pull-right" id="search-list" attr="search">Tìm</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

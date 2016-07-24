@@ -6,12 +6,21 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
   .views-container{
     width: 60%;
+    left: -60%;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    float: left;
+    display: block;
+    
     z-index: 1052;
     background: #FFF;
     .views-header{
@@ -32,6 +41,7 @@
         line-height: 40px;
         text-align: center;
         border-left: 1px solid #DDD;
+        cursor: pointer;
         span{
           top: 4px;
           position: relative;
@@ -83,4 +93,83 @@
       }
     }
   }
+  .views-container.open{
+    left: 0;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease;
+  }
+  @-moz-keyframes spin { 
+    100% {
+      -webkit-transform:rotate(360deg);
+      -moz-transform:rotate(360deg);
+      -o-transform:rotate(360deg);
+      -ms-transform:rotate(360deg);
+      transform:rotate(360deg)
+    }
+  }
+  @-webkit-keyframes spin { 
+    100% {
+      -webkit-transform:rotate(360deg);
+      -moz-transform:rotate(360deg);
+      -o-transform:rotate(360deg);
+      -ms-transform:rotate(360deg);
+      transform:rotate(360deg)
+    }
+  }
+  @-o-keyframes spin { 
+    100% {
+      -webkit-transform:rotate(360deg);
+      -moz-transform:rotate(360deg);
+      -o-transform:rotate(360deg);
+      -ms-transform:rotate(360deg);
+      transform:rotate(360deg)
+    }
+  }
+  @keyframes spin { 
+    100% {
+      -webkit-transform:rotate(360deg);
+      -moz-transform:rotate(360deg);
+      -o-transform:rotate(360deg);
+      -ms-transform:rotate(360deg);
+      transform:rotate(360deg)
+    }
+  }
+  
+  .loading{
+    width: 50px;
+    height: 50px;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid #FFF;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-animation: spin 600ms infinite linear;
+    -moz-animation: spin 600ms infinite linear;
+    -o-animation: spin 600ms infinite linear;
+    -ms-animation: spin 600ms infinite linear;
+     animation: spin 600ms infinite linear; 
+  }
+}
+.views-popup.view{
+  display: block;
+/*  .views-container.open{
+    left: 0;*/
+/*    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease;*/
+    
+  /*}*/
 }
