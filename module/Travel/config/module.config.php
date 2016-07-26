@@ -55,6 +55,34 @@ return array(
                       ),
                     ),
                   ),
+                  
+                  'popup-view' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/view',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Travel\Controller',
+                        'controller' => 'Travel\Controller\Category',
+                        'action' => 'view',
+                      ),
+                    ),
+                  ),
+                  
+                  'popup-map' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/view-map',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Travel\Controller',
+                        'controller' => 'Travel\Controller\Category',
+                        'action' => 'map',
+                      ),
+                    ),
+                  ),
+                  
+                  
                 ),
             ),
         ),
@@ -101,9 +129,14 @@ return array(
             'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'layout/popup-view'           => __DIR__ . '/../view/travel/category/view.phtml',
+            'layout/popup-map'           => __DIR__ . '/../view/travel/category/map.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy'
         ),
     ),
     // Placeholder for console routes

@@ -11,6 +11,7 @@ namespace Travel\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 
 class CategoryController extends AbstractActionController
 {
@@ -20,5 +21,31 @@ class CategoryController extends AbstractActionController
     }
     public function detailAction(){
       return new ViewModel();
+    }
+    public function viewAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/popup-view')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
+    }
+    public function mapAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/popup-map')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
     }
 }

@@ -126,7 +126,7 @@
           </div>
         </div>
         <div class="current-position">
-          <input class="form-control" name="" placeholder="Nhập vị trí của bạn">
+          <input class="form-control" name="current-map" id="current-map" placeholder="Nhập vị trí của bạn">
         </div>
         <div class="list-province-item">
           <ul class="nav nav-tabs" role="tablist">
@@ -145,7 +145,7 @@
                     <div class="row">
                       <div class="col-md-5">
                         <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
+                          <a href="javascript:void(0);" title="dam sen">
                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
                             <div class="overlay_border"></div>
                           </a>
@@ -153,7 +153,7 @@
                         <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
                       </div>
                       <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
+                        <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
                         <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
                         <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
                         <div class="fs-game">
@@ -162,7 +162,7 @@
                             <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
                             <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
                           </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
+                          <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
                         </div>
                       </div>
                     </div>
@@ -174,7 +174,7 @@
                     <div class="row">
                       <div class="col-md-5">
                         <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
+                          <a href="javascript:void(0);" title="dam sen">
                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
                             <div class="overlay_border"></div>
                           </a>
@@ -182,7 +182,7 @@
                         <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
                       </div>
                       <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
+                        <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
                         <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
                         <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
                         <div class="fs-game">
@@ -191,547 +191,41 @@
                             <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
                             <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
                           </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item">
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="item-img">
-                          <a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">
-                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                            <div class="overlay_border"></div>
-                          </a>
-                        </div>
-                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                      </div>
-                      <div class="col-md-7">
-                        <h2><a href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="dam sen">Đầm sen</a></h2>
-                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                        <div class="fs-game">
-                          <ul class="list-game">
-                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                          </ul>
-                          <a class="views" href="<?php echo $this->url('travel/travel-detail', array('controller' => 'category', 'action' => 'detail', 'category' => 'ho-chi-minh', 'slug' => 'dam-sen')); ?>" title="Xem ngay">Xem ngay</a>
+                          <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </li>
                 
-                
-                
+                <li>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="item-img">
+                          <a href="javascript:void(0);" title="dam sen">
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                            <div class="overlay_border"></div>
+                          </a>
+                        </div>
+                        <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+                      </div>
+                      <div class="col-md-7">
+                        <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
+                        <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                        <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                        <div class="fs-game">
+                          <ul class="list-game">
+                            <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                            <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                            <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          </ul>
+                          <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="taste">...</div>
@@ -802,3 +296,135 @@
     </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
+<script>
+  jQuery(document).ready(function($){
+    $(".list-province-item .list-travel li").on('click','a',function(){
+      var id = 'abc';
+      var url = 'http://localhost/tours/public/dia-diem-phuot/view';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".popup-page").addClass('on');
+            $(".popup-page").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".popup-container").empty().append(data.html);
+            
+            // call royalSlider
+            var slider = $('.royalSlider').royalSlider({
+            fullscreen: {
+              enabled: true,
+              nativeFS: true
+            },
+            controlNavigation: 'thumbnails',
+            autoScaleSlider: true, 
+            autoScaleSliderWidth: 1024,
+            autoScaleSliderHeight: 614,
+            loop: false,
+            imageScaleMode: 'none',
+            navigateByClick: true,
+            numImagesToPreload:2,
+            arrowsNav:true,
+            arrowsNavAutoHide: true,
+            arrowsNavHideOnTouch: true,
+            keyboardNavEnabled: true,
+            fadeinLoadedSlide: true,
+            globalCaption: true,
+            globalCaptionInside: false,
+            imageScalePadding: 0,
+            slidesSpacing: 0,
+            thumbs: {
+              appendSpan: true,
+              firstMargin: true,
+              paddingBottom: 4
+            }
+            }).data('royalSlider');
+
+            $('.rsFullscreenBtn').click(function(e){
+              slider.enterFullscreen();
+              e.preventDefault();
+            });
+
+            slider.ev.on("rsEnterFullscreen", function() {
+              // enter fullscreen mode 
+              $(".popup-page").css('position', 'relative');
+            });
+            slider.ev.on('rsExitFullscreen', function(event) {
+              // exit fullscreen mode
+              $(".popup-page").removeAttr('style');
+            });
+          }
+        });
+    });
+    // close popup
+    $(".popup-page").on('click','.popup-close' ,function(){
+      $(".popup-page").removeClass('on');
+      $(".popup-page .popup-container").empty();
+    });
+    
+    // view map
+    $(".list-province-item .tab-content ul > li").on('click','.strict-views', function(){
+      var current = $("#current-map").val();
+      var id = 'abc';
+      var url = 'http://localhost/tours/public/dia-diem-phuot/view-map';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".views-popup").addClass('view');
+            $(".views-popup").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".views-popup .views-container").empty().append(data.html);
+            var pyrmont = {lat: -33.867, lng: 151.195};
+            // view google map
+            map = new google.maps.Map(document.getElementById('view-map'), {
+              center: pyrmont,
+              zoom: 15
+            });
+
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+              location: pyrmont,
+              radius: 500,
+              type: ['store']
+            }, callback);
+            // view map popup
+            $(".views-popup .views-container").addClass('open');
+          }
+        });
+    });
+    
+    // view map popup close
+    $(".views-popup").on('click','.views-close' ,function(){
+      $(".views-popup .views-container").removeClass('open');
+      setTimeout(function () {
+       $(".views-popup").removeClass('view');
+       $(".views-popup .views-container").empty();
+      }, 350);
+    });
+  });
+</script>
+
+
+
+
+<div class="views-popup">
+  <div class="views-container">
+    
+  </div>
+</div>
+
+<div class="popup-page">
+  <div class="popup-container">
+    
+  </div>
+</div>

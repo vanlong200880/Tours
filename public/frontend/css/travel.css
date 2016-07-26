@@ -895,6 +895,59 @@ ul.connect li.youtube a:hover {
             -ms-transform: scale(1);
             transform: scale(1); }
 
+@-moz-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-o-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+.loading {
+  width: 50px;
+  height: 50px;
+  display: block;
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #FFF;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-animation: spin 600ms infinite linear;
+  -moz-animation: spin 600ms infinite linear;
+  -o-animation: spin 600ms infinite linear;
+  -ms-animation: spin 600ms infinite linear;
+  animation: spin 600ms infinite linear; }
+
+.views-popup.view {
+  display: block; }
+
 /*.travel-detail-popup{
   .modal-dialog{
     margin: 0 auto;
@@ -922,7 +975,8 @@ ul.connect li.youtube a:hover {
   width: 100%;
   z-index: 1050;
   background: rgba(0, 0, 0, 0.5);
-  overflow: auto; }
+  overflow: auto;
+  display: none; }
   .popup-page .popup-container {
     width: 1140px;
     margin: 0 auto;
@@ -965,7 +1019,8 @@ ul.connect li.youtube a:hover {
         float: left;
         text-align: center;
         line-height: 40px;
-        font-size: 16px; }
+        font-size: 16px;
+        cursor: pointer; }
         .popup-page .popup-container .popup-header .popup-close span {
           top: 4px;
           position: relative;
@@ -973,23 +1028,26 @@ ul.connect li.youtube a:hover {
     .popup-page .popup-container .popup-body {
       padding: 50px 10px 10px 10px;
       position: relative; }
-      .popup-page .popup-container .popup-body .slider .rsDefault,
-      .popup-page .popup-container .popup-body .slider .royalSlider {
-        width: 100%;
-        background: #FFFFFF; }
-        .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
-        .popup-page .popup-container .popup-body .slider .royalSlider .rsOverflow {
+      .popup-page .popup-container .popup-body .slider {
+        display: inline-block;
+        width: 100%; }
+        .popup-page .popup-container .popup-body .slider .rsDefault,
+        .popup-page .popup-container .popup-body .slider .royalSlider {
+          width: 100%;
           background: #FFFFFF; }
-      .popup-page .popup-container .popup-body .slider .rsDefault,
-      .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
-      .popup-page .popup-container .popup-body .slider .rsDefault .rsSlide,
-      .popup-page .popup-container .popup-body .slider .rsDefault .rsVideoFrameHolder,
-      .popup-page .popup-container .popup-body .slider .rsDefault .rsThumbs {
-        background: #FFFFFF; }
-      .popup-page .popup-container .popup-body .slider .rsThumbs {
-        margin-top: 15px; }
-        .popup-page .popup-container .popup-body .slider .rsThumbs .rsThumbsContainer {
-          margin-left: -4px !important; }
+          .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
+          .popup-page .popup-container .popup-body .slider .royalSlider .rsOverflow {
+            background: #FFFFFF; }
+        .popup-page .popup-container .popup-body .slider .rsDefault,
+        .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
+        .popup-page .popup-container .popup-body .slider .rsDefault .rsSlide,
+        .popup-page .popup-container .popup-body .slider .rsDefault .rsVideoFrameHolder,
+        .popup-page .popup-container .popup-body .slider .rsDefault .rsThumbs {
+          background: #FFFFFF; }
+        .popup-page .popup-container .popup-body .slider .rsThumbs {
+          margin-top: 15px; }
+          .popup-page .popup-container .popup-body .slider .rsThumbs .rsThumbsContainer {
+            margin-left: -4px !important; }
       .popup-page .popup-container .popup-body .content-page-popup {
         margin-top: 15px; }
         .popup-page .popup-container .popup-body .content-page-popup .about h2 {
@@ -1000,6 +1058,9 @@ ul.connect li.youtube a:hover {
           line-height: 22px;
           margin-top: 10px;
           text-align: justify; }
+
+.popup-page.on {
+  display: block; }
 
 .list-catelog h2 {
   margin: 15px 0; }
@@ -1209,6 +1270,123 @@ ul.connect li.youtube a:hover {
     font-weight: bold;
     font-size: 14px;
     padding-bottom: 10px; }
+
+.views-popup {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1051;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none; }
+  .views-popup .views-container {
+    width: 60%;
+    left: -60%;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    float: left;
+    display: block;
+    z-index: 1052;
+    background: #FFF; }
+    .views-popup .views-container .views-header {
+      background: #e2eef9;
+      position: fixed;
+      width: 60%; }
+      .views-popup .views-container .views-header h2 {
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px; }
+        .views-popup .views-container .views-header h2 span {
+          font-size: 14px; }
+      .views-popup .views-container .views-header .views-close {
+        height: 40px;
+        width: 50px;
+        line-height: 40px;
+        text-align: center;
+        border-left: 1px solid #DDD;
+        cursor: pointer; }
+        .views-popup .views-container .views-header .views-close span {
+          top: 4px;
+          position: relative;
+          color: #333; }
+    .views-popup .views-container .views-content {
+      height: 100%;
+      padding-top: 40px; }
+      .views-popup .views-container .views-content .views-content-wp {
+        overflow-y: scroll;
+        height: 100%;
+        padding: 10px; }
+        .views-popup .views-container .views-content .views-content-wp h2 {
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-top: 15px;
+          display: inline-block;
+          width: 100%; }
+        .views-popup .views-container .views-content .views-content-wp .description p {
+          text-align: justify;
+          line-height: 22px;
+          margin-top: 10px; }
+        .views-popup .views-container .views-content .views-content-wp .views-slider {
+          display: inline-block;
+          width: 100%; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider {
+            width: 100%; }
+            .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider .rsThumbsHor {
+              margin-top: 10px;
+              background: #FFF; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .rsDefault {
+            background: #FFF; }
+          .views-popup .views-container .views-content .views-content-wp .views-slider .rsThumbsContainer {
+            transform: translate3d(0px, 0px, 0px) !important;
+            -moz-transform: translate3d(0px, 0px, 0px) !important;
+            -webkit-transform: translate3d(0px, 0px, 0px) !important; }
+      .views-popup .views-container .views-content .views-content-wp.map {
+        overflow: visible; }
+  .views-popup .views-container.open {
+    left: 0;
+    webkit-transition: left 0.35s ease;
+    -moz-transition: left 0.35s ease;
+    -o-transition: left 0.35s ease;
+    -ms-transition: left 0.35s ease;
+    transition: left 0.35s ease; }
+@-moz-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-o-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+.views-popup.view {
+  display: block; }
 
 /*@import "layout/home";
 @import "layout/masterpage";

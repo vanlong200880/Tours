@@ -51,6 +51,18 @@ return array(
                       ),
                     ),
                   ),
+                  'detail' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/detail',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Tour\Controller',
+                        'controller' => 'Tour\Controller\Tour',
+                        'action' => 'detail',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),
@@ -98,6 +110,7 @@ return array(
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/view'           => __DIR__ . '/../view/tour/category/view.phtml',
+            'layout/detail'           => __DIR__ . '/../view/tour/tour/detail.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

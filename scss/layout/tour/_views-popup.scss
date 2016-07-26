@@ -91,6 +91,9 @@
           }
         }
       }
+      .views-content-wp.map{
+        overflow: visible;
+      }
     }
   }
   .views-container.open{
@@ -100,7 +103,7 @@
     -o-transition: left 0.35s ease;
     -ms-transition: left 0.35s ease;
     transition: left 0.35s ease;
-  }
+}
   @-moz-keyframes spin { 
     100% {
       -webkit-transform:rotate(360deg);
@@ -137,39 +140,8 @@
       transform:rotate(360deg)
     }
   }
-  
-  .loading{
-    width: 50px;
-    height: 50px;
-    display: block;
-    z-index: 999;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    border: 1px solid #FFF;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    -webkit-animation: spin 600ms infinite linear;
-    -moz-animation: spin 600ms infinite linear;
-    -o-animation: spin 600ms infinite linear;
-    -ms-animation: spin 600ms infinite linear;
-     animation: spin 600ms infinite linear; 
-  }
 }
+
 .views-popup.view{
   display: block;
-/*  .views-container.open{
-    left: 0;*/
-/*    webkit-transition: left 0.35s ease;
-    -moz-transition: left 0.35s ease;
-    -o-transition: left 0.35s ease;
-    -ms-transition: left 0.35s ease;
-    transition: left 0.35s ease;*/
-    
-  /*}*/
 }

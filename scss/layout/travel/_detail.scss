@@ -27,6 +27,7 @@
   z-index: 1050;
   background: rgba(0,0,0,0.5);
   overflow: auto;
+  display: none;
   .popup-container{
     width: 1140px;
     margin: 0 auto;
@@ -73,6 +74,7 @@
         text-align: center;
         line-height: 40px;
         font-size: 16px;
+        cursor: pointer;
         span{
           top: 4px;
           position: relative;
@@ -84,6 +86,8 @@
       padding: 50px 10px 10px 10px;
       position: relative;
       .slider{
+        display: inline-block;
+        width: 100%;
         .rsDefault,
         .royalSlider{
           width: 100%;
@@ -123,6 +127,9 @@
       }
     }
   }
+}
+.popup-page.on{
+  display: block;
 }
 .list-catelog{
   h2{
