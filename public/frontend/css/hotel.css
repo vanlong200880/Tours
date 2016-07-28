@@ -1778,6 +1778,7 @@ ul.connect li.youtube a:hover {
           position: absolute;
           z-index: 99999;
           bottom: 123px;
+          left: -50%;
           display: none; }
           .list-room .room .list-hotel-room ul li .blank .blank-title {
             text-align: left;
@@ -1922,6 +1923,78 @@ ul.connect li.youtube a:hover {
   .position-related .related-map {
     width: 100%;
     height: 300px; }
+
+.room-detail .views-content-wp {
+  padding-bottom: 30px !important; }
+  .room-detail .views-content-wp .utilities {
+    padding: 0;
+    border: none;
+    margin-top: 15px; }
+    .room-detail .views-content-wp .utilities h2 {
+      padding: 0 0 5px 0;
+      margin-top: 0;
+      border-bottom: 2px solid #b400ff; }
+    .room-detail .views-content-wp .utilities .price {
+      position: relative; }
+      .room-detail .views-content-wp .utilities .price p.price-sale {
+        font-size: 30px;
+        font-weight: bold;
+        color: red; }
+      .room-detail .views-content-wp .utilities .price p.cost {
+        text-decoration: line-through;
+        color: #333; }
+      .room-detail .views-content-wp .utilities .price p.sale {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        -ms-border-radius: 50%;
+        background: red;
+        text-align: center;
+        line-height: 40px;
+        color: #FFF;
+        position: absolute;
+        right: 0;
+        top: 0; }
+    .room-detail .views-content-wp .utilities .booking-now {
+      background: red;
+      padding: 10px 15px;
+      text-transform: uppercase;
+      color: #FFF;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      float: right;
+      margin-top: 20px; }
+    .room-detail .views-content-wp .utilities .booking-hotel {
+      position: relative; }
+      .room-detail .views-content-wp .utilities .booking-hotel .form-control {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -o-border-radius: 0;
+        -ms-border-radius: 0;
+        border: 1px solid #DDD;
+        outline: none;
+        height: 34px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none; }
+      .room-detail .views-content-wp .utilities .booking-hotel span.icon {
+        position: absolute;
+        height: 34px;
+        width: 34px;
+        top: 0;
+        right: 0;
+        text-align: center;
+        line-height: 34px; }
 
 /*@import "layout/home";
 @import "layout/masterpage";

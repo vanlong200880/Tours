@@ -66,6 +66,19 @@ return array(
                     ),
                   ),
                   
+                  'hotel-room' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/room',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Hotel\Controller',
+                        'controller' => 'Hotel\Controller\Hotel',
+                        'action' => 'room',
+                      ),
+                    ),
+                  ),
+                  
                 ),
             ),
         ),
@@ -113,6 +126,7 @@ return array(
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/popup-hotel-detail'           => __DIR__ . '/../view/hotel/hotel/detail.phtml',
+            'layout/popup-hotel-room'           => __DIR__ . '/../view/hotel/hotel/room.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

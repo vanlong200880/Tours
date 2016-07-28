@@ -32,4 +32,17 @@ class HotelController extends AbstractActionController
 
       return $jsonModel;
     }
+    public function roomAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/popup-hotel-room')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
+    }
 }
