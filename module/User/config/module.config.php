@@ -79,6 +79,18 @@ return array(
                 ),
               ),
             ),
+            'forgot' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/quen-mat-khau',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'User\Controller',
+                  'controller' => 'User\Controller\Public',
+                  'action' => 'forgot'
+                ),
+              ),
+            ),
         ),
     ),
     'service_manager' => array(

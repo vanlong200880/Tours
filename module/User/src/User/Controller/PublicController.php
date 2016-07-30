@@ -16,11 +16,12 @@ class PublicController extends AbstractActionController
 {
     public function loginAction()
     {
-      echo 'login'; die;
         return new ViewModel();
     }
     public function registerAction(){
-      echo 'register'; die;
+      return new ViewModel();
+    }
+    public function forgotAction(){
       return new ViewModel();
     }
 }

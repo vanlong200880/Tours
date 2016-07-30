@@ -119,4 +119,15 @@
 .icon-angle-down:before {
   content: "\79";
 }
-
+.icon-facebook-1:before {
+  content: "\7a";
+}
+.icon-gplus:before {
+  content: "\43";
+}
+.icon-lock:before {
+  content: "\44";
+}
+.icon-man-people-streamline-user:before {
+  content: "\45";
+}

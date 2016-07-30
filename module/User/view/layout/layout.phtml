@@ -12,21 +12,12 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-            ->prependStylesheet($this->basePath('frontend/css/tour.css'))
+            ->prependStylesheet($this->basePath('frontend/css/login.css'))
             ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
-//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/royalSlider/skins/default/rs-default.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/royalSlider/royalslider.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
-//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.carousel.css'))
-                        ->prependStylesheet($this->basePath('frontend/libs/bootstrapSelect/css/bootstrap-select.min.css'))
                         ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
 
         <!-- Scripts -->
         <?php echo $this->headScript()
-            ->prependFile($this->basePath('frontend/libs/royalSlider/jquery.royalslider.min.js'))
-            ->prependFile($this->basePath('frontend/libs/bootstrapSelect/js/bootstrap-select.min.js'))
-//            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
             ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))
             ->prependFile($this->basePath('frontend/js/jquery.min.js'))
             ->prependFile($this->basePath('frontend/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
@@ -35,10 +26,59 @@
 
     </head>
     <body>
-      <div class="wrapper">
-        <?php $this->headerTravel(); ?>
-        <?php echo $this->content; ?>
-        <?php echo $this->inlineScript(); ?>
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <header class="menu-header">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a class="logo" href="<?php echo $this->url('home'); ?>">
+                      <img src="<?php echo $this->basePath('/assets/logo.png'); ?>">
+                    </a>
+                  </div>
+                  <div class="col-md-10">
+                    <ul id="menu-top" class="pull-left">
+                      <li>
+                        <a href="<?php echo $this->url('travel'); ?>">Địa điểm phượt</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $this->url('tour'); ?>">Tìm tours</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $this->url('hotel'); ?>">Khách sạn</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $this->url('taste'); ?>">Điểm ăn uống</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $this->url('diary'); ?>">Nhật ký</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $this->url('news'); ?>">Tin tức</a>
+                      </li>
+                    </ul>
+                    <ul class="pull-right">
+                      <li class="login">
+                        <a href="<?php echo $this->url('register'); ?>">Đăng ký</a>/
+                        <a href="<?php echo $this->url('login'); ?>">Đăng nhập</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </header>
+            </div>
+          </div>
+        </div>
+        
       </div>
+      
+      <div class="body">
+        <div class="container">
+          <?php echo $this->content; ?>
+        </div>
+      </div>
+      <?php $this->footer(); ?>
+      <?php echo $this->inlineScript(); ?>
     </body>
 </html>
