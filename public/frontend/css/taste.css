@@ -1690,6 +1690,9 @@ ul.connect li.youtube a:hover {
     font-size: 14px;
     padding-bottom: 10px; }
 
+.list-item .item .item-content .view-user {
+  margin-top: 10px; }
+
 /*@import "layout/home";
 @import "layout/masterpage";
 @import "layout/details";
@@ -1706,4 +1709,4 @@ ul.connect li.youtube a:hover {
 /*@import "layout/footer";*/
 /*@import "components/button";*/
 
-/*# sourceMappingURL=tour.css.map */
+/*# sourceMappingURL=taste.css.map */

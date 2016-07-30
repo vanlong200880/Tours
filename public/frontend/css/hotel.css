@@ -654,6 +654,10 @@ ul.connect li.youtube a:hover {
         overflow: hidden;
         display: inline-block;
         width: 100%; }
+    .list-item .item .item-content .address {
+      height: 40px;
+      line-height: 20px;
+      overflow: hidden; }
     .list-item .item .item-content .price {
       padding: 10px 0; }
       .list-item .item .item-content .price .cost {
@@ -685,20 +689,34 @@ ul.connect li.youtube a:hover {
           position: absolute;
           left: -7px;
           top: 6px; }
-    .list-item .item .item-content .view-user .price-sale {
-      text-decoration: line-through;
-      color: #9a9a9a; }
-    .list-item .item .item-content .view-user var {
-      position: relative;
-      font-size: 14px;
-      top: -5px;
-      text-decoration: none;
-      color: #9a9a9a; }
-    .list-item .item .item-content .view-user span.icon {
-      color: #3c539a; }
-      .list-item .item .item-content .view-user span.icon:before {
+    .list-item .item .item-content .view-user {
+      display: inline-block;
+      width: 100%; }
+      .list-item .item .item-content .view-user .sale {
+        background: red;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+        color: #FFF;
+        padding: 2px 5px;
         position: relative;
-        top: 2px; }
+        height: 20px; }
+      .list-item .item .item-content .view-user .price-sale {
+        text-decoration: line-through;
+        color: #9a9a9a; }
+      .list-item .item .item-content .view-user var {
+        position: relative;
+        font-size: 14px;
+        top: -5px;
+        text-decoration: none;
+        color: #9a9a9a; }
+      .list-item .item .item-content .view-user span.icon {
+        color: #3c539a; }
+        .list-item .item .item-content .view-user span.icon:before {
+          position: relative;
+          top: 2px; }
   .list-item .item .img {
     position: relative; }
     .list-item .item .img .highlight {
@@ -751,8 +769,10 @@ ul.connect li.youtube a:hover {
           text-transform: uppercase;
           background: #4285f4;
           padding: 7px 10px; }
-  .list-item .item:hover .img .item-hover {
-    display: block; }
+  .list-item .item:hover {
+    border-color: #71be0f; }
+    .list-item .item:hover .img .item-hover {
+      display: block; }
 
 .list-province-item ul.list-travel {
   /*margin-top: 10px;*/ }

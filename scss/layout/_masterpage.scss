@@ -52,6 +52,11 @@
           width: 100%;
         }
       }
+      .address{
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+      }
       .price{
         padding: 10px 0;
         .cost{
@@ -86,6 +91,16 @@
         }
       }
       .view-user{
+        display: inline-block;
+        width: 100%;
+        .sale{
+          background: red;
+          @include border-radius(3px);
+          color: #FFF;
+          padding: 2px 5px;
+          position: relative;
+          height: 20px;
+        }
         .price-sale{
           text-decoration: line-through;
           color: #9a9a9a;
@@ -163,6 +178,7 @@
       }
     }
     &:hover{
+        border-color: $tours;
       .img{
         .item-hover{
           display: block;

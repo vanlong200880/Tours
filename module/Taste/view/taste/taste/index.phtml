@@ -30,70 +30,18 @@
                     </select>
                   </div>
                   <div class="col-md-3">
-                    <div class="item-search-type">
-                      <ul class="level">
-                        <li class="item">
-                          <a>
-                            <span>-- Loại --</span>
-                          </a>
-                          <ul class="search-type">
-                            <li class="tours">
-                              <input type="checkbox" class="for-type" name="fs-travel" id="fs-travel">
-                              <label class="fs-home" data-key="listings-1" for="fs-travel">
-                                <span class="root-radius"></span>
-                                <span>Điểm du lịch</span>
-                              </label>
-                            </li>
-                            <li class="hotel">
-                              <input type="checkbox" class="for-type" name="fs-hotel" id="fs-hotel">
-                              <label class="fs-home" data-key="listings-2"  for="fs-hotel">
-                                <span class="root-radius"></span>
-                                <span>Khách sạn</span>
-                              </label>
-                            </li>
-                            <li class="taste">
-                              <input type="checkbox" class="for-type" name="fs-taste" id="fs-taste">
-                              <label class="fs-home" data-key="listings-3" for="fs-taste">
-                                <span class="root-radius"></span>
-                                <span>Điểm ăn uống</span> 
-                              </label>
-                            </li>
-                            <li class="park">
-                              <input type="checkbox" class="for-type" name="fs-park" id="fs-park">
-                              <label class="fs-home" data-key="listings-4" for="fs-park">
-                                <span class="root-radius"></span>
-                                <span>Công viên giải trí</span> 
-                              </label>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <script>
-                    jQuery(document).ready(function($){
-                      var isClick = false;
-                      $(".item-search-type ul>li").on('click', function(e){
-                        $(".menu-search li").removeClass('selected');
-                        if(isClick != true){
-                          $(this).addClass('selected');
-                          isClick = true;
-                        }else{
-                          $(this).removeClass('selected');
-                          isClick = false;
-                        }
-                        e.stopPropagation();
-                    });
-                    $(document).click(function(e) {
-                      isClick = false;
-                      if (!$(e.target).is('.item, .item *')) {
-                        $(".item-search-type li.item").removeClass('selected');
-                      }
-                    });
-                  });
-                    </script>
-<!--                    <select class="form-control">
+                    <select class="form-control selectpicker" data-live-search="true">
                       <option value="">-- Loại -- </option>
-                    </select>-->
+                      <option value="">Trà sữa</option>
+                      <option value="">Quán ăn</option>
+                      <option>Quán nhậu</option>
+                      <option>Tiệm bánh</option>
+                      <option>Nhà hàng</option>
+                      <option>Ăn vặt/vỉa hè</option>
+                      <option>Ăn chay</option>
+                      <option>Cafe</option>
+                      <option>Kem</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -105,7 +53,7 @@
   </div>
   <div class="page-search-title">
     <div class="item-title">
-      <h1><span class="icon icon-menu"></span> Tour du lịch</h1>
+      <h1><span class="icon icon-menu"></span> Điểm ăn uống</h1>
     </div>
   </div>
   
@@ -116,8 +64,8 @@
       <div class="list-cat">
         <div class="filter">
           <ul>
-            <li><a href="#">Bán chạy <span class="icon icon-down-thin"></span></a></li>
-            <li><a href="#">Mới nhất <span class="icon icon-up-thin"></span></a></li>
+            <li><a href="#">Mới khai trương <span class="icon icon-down-thin"></span></a></li>
+            <li><a href="#">Nổi bật <span class="icon icon-up-thin"></span></a></li>
             <li><a href="#">Giá <span class="icon icon-up-thin"></span></a></li>
             <li><a href="#">Khuyến mãi <span class="icon icon-up-thin"></span></a></li>
           </ul>
@@ -126,29 +74,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -159,29 +105,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -192,29 +136,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -225,29 +167,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -258,29 +198,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -291,29 +229,27 @@
           <li class="col-md-6">
             <div class="item">
               <div class="img">
-                <div class="highlight"><span>HOT</span></div>
-                <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
+                <div class="highlight"><span>Mới</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></a>
                 <div class="item-hover">
                   <div class="item-voucher">
-                    Nhân voucher điện tử qua email/SMS
+                    
                   </div>
                   <div class="readmove">
-                    <a href="#">Xem ngay</a>
+                    <a href="javascript:void(0);">Xem ngay</a>
                   </div>
                 </div>
               </div>
               <div class="item-content">
                 <div class="title">
-                  <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                  <a href="javascript:void(0);">L'angfarm Buffet - Đặc Sản Đà Lạt</a>
                 </div>
-                <div class="price">
-                  <p>
-                    <span class="cost">350,000 <var>đ</var></span>
-                    <span class="sale">-50%</span>
-                  </p>
+                <div class="address">
+                  771 Trần Hưng Đạo, P. 11, Quận 5, TP. HCM
                 </div>
+
                 <div class="view-user">
-                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <span class="sale">-50%</span>
                   <div class="pull-right">
                     <span class="icon icon-user-profile"> 1124</span>
                   </div>
@@ -381,4 +317,172 @@
       }
     </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
+<div class="views-popup">
+  <div class="views-container">
+    
+  </div>
+</div>
+     
+<div class="popup-page">
+  <div class="popup-container tour">
+    
+  </div>
+</div>
+     
+<script>
+  jQuery(document).ready(function($){
+    $(".list-cat .list-item li").on('click','a',function(){
+      var id = 'abc';
+      var url = 'http://localhost/tours/public/taste/detail';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".popup-page").addClass('on');
+            $(".popup-page").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".popup-container").empty().append(data.html);
+            
+            // call royalSlider
+//            var slider = $('.royalSlider').royalSlider({
+//            fullscreen: {
+//              enabled: true,
+//              nativeFS: true
+//            },
+//            controlNavigation: 'thumbnails',
+//            autoScaleSlider: true, 
+//            autoScaleSliderWidth: 1024,
+//            autoScaleSliderHeight: 614,
+//            loop: false,
+//            imageScaleMode: 'none',
+//            navigateByClick: true,
+//            numImagesToPreload:2,
+//            arrowsNav:true,
+//            arrowsNavAutoHide: true,
+//            arrowsNavHideOnTouch: true,
+//            keyboardNavEnabled: true,
+//            fadeinLoadedSlide: true,
+//            globalCaption: true,
+//            globalCaptionInside: false,
+//            imageScalePadding: 0,
+//            slidesSpacing: 0,
+//            thumbs: {
+//              appendSpan: true,
+//              firstMargin: true,
+//              paddingBottom: 4
+//            }
+//            }).data('royalSlider');
+//
+//            $('.rsFullscreenBtn').click(function(e){
+//              slider.enterFullscreen();
+//              e.preventDefault();
+//            });
+//
+//            slider.ev.on("rsEnterFullscreen", function() {
+//              // enter fullscreen mode 
+//              $(".popup-page").css('position', 'relative');
+//            });
+//            slider.ev.on('rsExitFullscreen', function(event) {
+//              // exit fullscreen mode
+//              $(".popup-page").removeAttr('style');
+//            });
+            //hotel room hover
+            $(".list-hotel-room ul > li").hover(
+              function () {
+                $(this).addClass('active');
+              },
+              function () {
+                $(this).removeClass('active');
+              }
+            );
+    
+            // view room
+//            $(".list-hotel-room ul li").on('click','.view-room-hotel', function(){
+//              var current = $("#current-map").val();
+//              var id = 'abc';
+//              var url = 'http://localhost/tours/public/hotel/room';
+//              $.ajax({
+//                  url : url,
+//                  type : 'POST',
+//                  dataType : "json",
+//                  data: {id: id},
+//                  beforeSend: function(){
+//                    $(".views-popup").addClass('view');
+//                    $(".views-popup").append('<div class="loading"></div>');
+//                  },
+//                  success : function (data){
+//                    $( ".loading" ).remove();
+//                    $(".views-popup .views-container").empty().append(data.html);
+//                    // call royalSlider
+//                    var slider = $('.royalSlider').royalSlider({
+//                    fullscreen: {
+//                      enabled: true,
+//                      nativeFS: true
+//                    },
+//                    controlNavigation: 'thumbnails',
+//                    autoScaleSlider: true, 
+//                    autoScaleSliderWidth: 1024,
+//                    autoScaleSliderHeight: 614,
+//                    loop: false,
+//                    imageScaleMode: 'none',
+//                    navigateByClick: true,
+//                    numImagesToPreload:2,
+//                    arrowsNav:true,
+//                    arrowsNavAutoHide: true,
+//                    arrowsNavHideOnTouch: true,
+//                    keyboardNavEnabled: true,
+//                    fadeinLoadedSlide: true,
+//                    globalCaption: true,
+//                    globalCaptionInside: false,
+//                    imageScalePadding: 0,
+//                    slidesSpacing: 0,
+//                    thumbs: {
+//                      appendSpan: true,
+//                      firstMargin: true,
+//                      paddingBottom: 4
+//                    }
+//                    }).data('royalSlider');
+//
+//                    $('.rsFullscreenBtn').click(function(e){
+//                      slider.enterFullscreen();
+//                      e.preventDefault();
+//                    });
+//
+//                    slider.ev.on("rsEnterFullscreen", function() {
+//                      // enter fullscreen mode 
+//                      $(".popup-page").css('position', 'relative');
+//                    });
+//                    slider.ev.on('rsExitFullscreen', function(event) {
+//                      // exit fullscreen mode
+//                      $(".popup-page").removeAttr('style');
+//                    });
+//                    // view map popup
+//                    $(".views-popup .views-container").addClass('open');
+//                  }
+//                });
+//            });
+            
+            // close room
+            $(".views-popup").on('click','.views-close' ,function(){
+              $(".views-popup .views-container").removeClass('open');
+              setTimeout(function () {
+               $(".views-popup").removeClass('view');
+               $(".views-popup .views-container").empty();
+              }, 350);
+            });
+          }
+        });
+    });
+    // close popup
+    $(".popup-page").on('click','.popup-close' ,function(){
+      $(".popup-page").removeClass('on');
+      $(".popup-page .popup-container").empty();
+    });
+    
+   
+  });
+</script>

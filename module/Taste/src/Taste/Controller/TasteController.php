@@ -11,12 +11,25 @@ namespace Taste\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 
 class TasteController extends AbstractActionController
 {
     public function indexAction()
     {
-      echo 'taste'; die;
         return new ViewModel();
+    }
+    public function detailAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/taste-detail')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
     }
 }
