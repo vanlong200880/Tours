@@ -55,6 +55,7 @@
       img{
         width: 150px;
         @include border-radius(3px);
+        cursor: pointer;
       }
     }
   }
@@ -77,6 +78,7 @@
             @include border-radius(50%);
             position: absolute;
             left: 0;
+            cursor: pointer;
           }
         p{
           border-bottom: 1px dotted #DDD;

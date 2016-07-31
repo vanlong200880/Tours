@@ -32,4 +32,18 @@ class TasteController extends AbstractActionController
 
       return $jsonModel;
     }
+    
+    public function orderAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/taste-order')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
+    }
 }

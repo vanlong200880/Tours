@@ -1724,7 +1724,8 @@ ul.connect li.youtube a:hover {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
-    -ms-border-radius: 3px; }
+    -ms-border-radius: 3px;
+    cursor: pointer; }
 
 .menu-order h2 {
   border-bottom: 2px solid #DDD;
@@ -1743,7 +1744,8 @@ ul.connect li.youtube a:hover {
     -o-border-radius: 50%;
     -ms-border-radius: 50%;
     position: absolute;
-    left: 0; }
+    left: 0;
+    cursor: pointer; }
   .menu-order ul li .item p {
     border-bottom: 1px dotted #DDD; }
     .menu-order ul li .item p var,

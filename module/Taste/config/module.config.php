@@ -36,6 +36,18 @@ return array(
                       ),
                     ),
                   ),
+                  'taste-order' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/order',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Taste\Controller',
+                        'controller' => 'Taste\Controller\Taste',
+                        'action' => 'order',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),
@@ -83,6 +95,7 @@ return array(
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/taste-detail'           => __DIR__ . '/../view/taste/taste/detail.phtml',
+          'layout/taste-order'           => __DIR__ . '/../view/taste/taste/order.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
