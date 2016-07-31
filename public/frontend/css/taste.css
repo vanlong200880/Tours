@@ -1693,6 +1693,65 @@ ul.connect li.youtube a:hover {
 .list-item .item .item-content .view-user {
   margin-top: 10px; }
 
+.popup-page .popup-container.tour .popup-body .description .item.taste-description p {
+  line-height: 24px; }
+  .popup-page .popup-container.tour .popup-body .description .item.taste-description p strong {
+    font-size: 18px;
+    color: red; }
+  .popup-page .popup-container.tour .popup-body .description .item.taste-description p strong.time-open {
+    color: #05CD15;
+    font-size: 14px; }
+  .popup-page .popup-container.tour .popup-body .description .item.taste-description p strong.time-close {
+    color: #05CD15;
+    font-size: 14px; }
+
+.commitment .commitment-view .content {
+  height: 440px; }
+  .commitment .commitment-view .content h2.map-title {
+    margin-bottom: 10px; }
+
+#map-current {
+  height: 400px;
+  border: 1px solid #DDD; }
+
+.gallery ul li {
+  width: 16.6666666667%;
+  float: left;
+  padding: 5px; }
+  .gallery ul li img {
+    width: 150px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px; }
+
+.menu-order h2 {
+  border-bottom: 2px solid #DDD;
+  padding-bottom: 5px;
+  margin: 15px 0; }
+.menu-order ul li .item {
+  position: relative;
+  padding-left: 45px;
+  height: 45px; }
+  .menu-order ul li .item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: absolute;
+    left: 0; }
+  .menu-order ul li .item p {
+    border-bottom: 1px dotted #DDD; }
+    .menu-order ul li .item p var,
+    .menu-order ul li .item p span {
+      position: relative;
+      background: #FFF;
+      top: 9px; }
+
 /*@import "layout/home";
 @import "layout/masterpage";
 @import "layout/details";

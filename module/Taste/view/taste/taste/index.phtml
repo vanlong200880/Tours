@@ -346,7 +346,27 @@
           success : function (data){
             $( ".loading" ).remove();
             $(".popup-container").empty().append(data.html);
+            // call map api
+            var pyrmont = {lat: -33.867, lng: 151.195};
+
+              map = new google.maps.Map(document.getElementById('map-current'), {
+                center: pyrmont,
+                zoom: 15
+              });
+
+              infowindow = new google.maps.InfoWindow();
+              var service = new google.maps.places.PlacesService(map);
+              service.nearbySearch({
+                location: pyrmont,
+                radius: 500,
+                type: ['store']
+              }, callback); 
+
+
             
+
+            
+
             // call royalSlider
 //            var slider = $('.royalSlider').royalSlider({
 //            fullscreen: {

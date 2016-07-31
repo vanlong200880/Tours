@@ -131,3 +131,15 @@
 .icon-man-people-streamline-user:before {
   content: "\45";
 }
+.icon-location-arrow:before {
+  content: "\46";
+}
+.icon-phone:before {
+  content: "\47";
+}
+.icon-clock-o:before {
+  content: "\48";
+}
+.icon-tag:before {
+  content: "\49";
+}
