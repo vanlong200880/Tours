@@ -1,21 +1,3 @@
-/*.travel-detail-popup{
-  .modal-dialog{
-    margin: 0 auto;
-    @include border-radius(0px);
-    @include box-shadow(none);
-    .modal-content{
-      @include border-radius(0px);
-      @include box-shadow(none);
-      border: none;
-      .modal-content {
-        height: auto;
-        min-height: 100%;
-        border-radius: 0;
-      }
-    }
-  }
-}*/
-
 .popup-page{
   position: fixed;
   top: 0;
@@ -88,27 +70,6 @@
       .slider{
         display: inline-block;
         width: 100%;
-        .rsDefault,
-        .royalSlider{
-          width: 100%;
-          background: #FFFFFF;
-          .rsOverflow{
-            background: #FFFFFF;
-          }
-        }
-        .rsDefault, 
-        .rsDefault .rsOverflow, 
-        .rsDefault .rsSlide, 
-        .rsDefault .rsVideoFrameHolder, 
-        .rsDefault .rsThumbs{
-          background: #FFFFFF;
-        }
-        .rsThumbs{
-          margin-top: 15px;
-          .rsThumbsContainer{
-            margin-left: -4px !important;
-          }
-        }
       }
       .content-page-popup{
         margin-top: 15px;

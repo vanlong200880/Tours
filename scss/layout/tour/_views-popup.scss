@@ -74,21 +74,6 @@
         .views-slider{
           display: inline-block;
           width: 100%;
-          .royalSlider{
-            width: 100%;
-            .rsThumbsHor{
-              margin-top: 10px;
-              background: #FFF;
-            }
-          }
-          .rsDefault{
-            background: #FFF;
-          }
-          .rsThumbsContainer{
-            transform: translate3d(0px, 0px, 0px) !important;
-            -moz-transform: translate3d(0px, 0px, 0px)!important;
-            -webkit-transform: translate3d(0px, 0px, 0px) !important;
-          }
         }
       }
       .views-content-wp.map{

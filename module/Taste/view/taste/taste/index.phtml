@@ -363,53 +363,51 @@
               }, callback); 
 
 
-            
+              // call royalSlider
+              var slider = $('#order-royalSlider').royalSlider({
+              fullscreen: {
+                enabled: true,
+                nativeFS: true
+              },
+              controlNavigation: 'thumbnails',
+              autoScaleSlider: true, 
+              autoScaleSliderWidth: "100%",
+              autoScaleSliderHeight: 478,
+              loop: false,
+              imageScaleMode: 'fit-if-smaller',
+              navigateByClick: true,
+              numImagesToPreload:2,
+              arrowsNav:true,
+              arrowsNavAutoHide: true,
+              arrowsNavHideOnTouch: true,
+              keyboardNavEnabled: true,
+              fadeinLoadedSlide: true,
+              globalCaption: false,
+              globalCaptionInside: false,
+              imageScalePadding: 0,
+              slidesSpacing: 0,
+              thumbs: {
+                appendSpan: true,
+                firstMargin: true,
+                paddingBottom: 4
+              }
+              }).data('royalSlider');
+
+              $('.rsFullscreenBtn').click(function(e){
+                slider.enterFullscreen();
+                e.preventDefault();
+              });
+
+              slider.ev.on("rsEnterFullscreen", function() {
+                // enter fullscreen mode 
+                $(".popup-page").css('position', 'relative');
+              });
+              slider.ev.on('rsExitFullscreen', function(event) {
+                // exit fullscreen mode
+                $(".popup-page").removeAttr('style');
+              });
 
             
-
-            // call royalSlider
-//            var slider = $('.royalSlider').royalSlider({
-//            fullscreen: {
-//              enabled: true,
-//              nativeFS: true
-//            },
-//            controlNavigation: 'thumbnails',
-//            autoScaleSlider: true, 
-//            autoScaleSliderWidth: 1024,
-//            autoScaleSliderHeight: 614,
-//            loop: false,
-//            imageScaleMode: 'none',
-//            navigateByClick: true,
-//            numImagesToPreload:2,
-//            arrowsNav:true,
-//            arrowsNavAutoHide: true,
-//            arrowsNavHideOnTouch: true,
-//            keyboardNavEnabled: true,
-//            fadeinLoadedSlide: true,
-//            globalCaption: true,
-//            globalCaptionInside: false,
-//            imageScalePadding: 0,
-//            slidesSpacing: 0,
-//            thumbs: {
-//              appendSpan: true,
-//              firstMargin: true,
-//              paddingBottom: 4
-//            }
-//            }).data('royalSlider');
-//
-//            $('.rsFullscreenBtn').click(function(e){
-//              slider.enterFullscreen();
-//              e.preventDefault();
-//            });
-//
-//            slider.ev.on("rsEnterFullscreen", function() {
-//              // enter fullscreen mode 
-//              $(".popup-page").css('position', 'relative');
-//            });
-//            slider.ev.on('rsExitFullscreen', function(event) {
-//              // exit fullscreen mode
-//              $(".popup-page").removeAttr('style');
-//            });
             //hotel room hover
             $(".list-hotel-room ul > li").hover(
               function () {

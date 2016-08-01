@@ -968,23 +968,6 @@ ul.connect li.youtube a:hover {
 .views-popup.view {
   display: block; }
 
-/*.travel-detail-popup{
-  .modal-dialog{
-    margin: 0 auto;
-    @include border-radius(0px);
-    @include box-shadow(none);
-    .modal-content{
-      @include border-radius(0px);
-      @include box-shadow(none);
-      border: none;
-      .modal-content {
-        height: auto;
-        min-height: 100%;
-        border-radius: 0;
-      }
-    }
-  }
-}*/
 .popup-page {
   position: fixed;
   top: 0;
@@ -1051,23 +1034,6 @@ ul.connect li.youtube a:hover {
       .popup-page .popup-container .popup-body .slider {
         display: inline-block;
         width: 100%; }
-        .popup-page .popup-container .popup-body .slider .rsDefault,
-        .popup-page .popup-container .popup-body .slider .royalSlider {
-          width: 100%;
-          background: #FFFFFF; }
-          .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
-          .popup-page .popup-container .popup-body .slider .royalSlider .rsOverflow {
-            background: #FFFFFF; }
-        .popup-page .popup-container .popup-body .slider .rsDefault,
-        .popup-page .popup-container .popup-body .slider .rsDefault .rsOverflow,
-        .popup-page .popup-container .popup-body .slider .rsDefault .rsSlide,
-        .popup-page .popup-container .popup-body .slider .rsDefault .rsVideoFrameHolder,
-        .popup-page .popup-container .popup-body .slider .rsDefault .rsThumbs {
-          background: #FFFFFF; }
-        .popup-page .popup-container .popup-body .slider .rsThumbs {
-          margin-top: 15px; }
-          .popup-page .popup-container .popup-body .slider .rsThumbs .rsThumbsContainer {
-            margin-left: -4px !important; }
       .popup-page .popup-container .popup-body .content-page-popup {
         margin-top: 15px; }
         .popup-page .popup-container .popup-body .content-page-popup .about h2 {
@@ -1357,17 +1323,6 @@ ul.connect li.youtube a:hover {
         .views-popup .views-container .views-content .views-content-wp .views-slider {
           display: inline-block;
           width: 100%; }
-          .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider {
-            width: 100%; }
-            .views-popup .views-container .views-content .views-content-wp .views-slider .royalSlider .rsThumbsHor {
-              margin-top: 10px;
-              background: #FFF; }
-          .views-popup .views-container .views-content .views-content-wp .views-slider .rsDefault {
-            background: #FFF; }
-          .views-popup .views-container .views-content .views-content-wp .views-slider .rsThumbsContainer {
-            transform: translate3d(0px, 0px, 0px) !important;
-            -moz-transform: translate3d(0px, 0px, 0px) !important;
-            -webkit-transform: translate3d(0px, 0px, 0px) !important; }
       .views-popup .views-container .views-content .views-content-wp.map {
         overflow: visible; }
   .views-popup .views-container.open {
