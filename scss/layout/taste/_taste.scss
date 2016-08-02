@@ -99,3 +99,41 @@
     height: 460px;
   }
 }
+.rating{
+  .rating-item{
+    span{
+      display: inline-block;
+      float: left;
+      height: 30px;
+      line-height: 30px;
+    }
+    .space{
+      width: 20%;
+    }
+    .line{
+      width: 70%;
+      line-height: 22px;
+      var{
+        height: 3px;
+        background: #eee;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        i{
+          height: 3px;
+          width: 50%;
+          background: #ff5a00;
+          display: inline-block;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+    .rate-number{
+      width: 10%;
+      text-align: right;
+      font-weight: bold;
+      color: #05CD15;
+    }
+  }
+}

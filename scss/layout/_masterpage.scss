@@ -415,3 +415,77 @@
 .views-popup.view{
   display: block;
 }
+#modal-comment{
+  .modal-header{
+    padding: 10px 15px;
+    .modal-title{
+      text-transform: uppercase;
+    }
+  }
+  .modal-body{
+    textarea.form-control{
+      height: 200px;
+    }
+    .preview{
+      ul{
+        display: inline-block;
+        float: left;
+        li{
+          display: inline-block;
+          margin-right: 5px;
+          position: relative;
+          float: left;
+          margin-bottom: 10px;
+          img{
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+      a{
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        border: 2px dashed #DDD;
+        float: left;
+        margin-bottom: 10px;
+        span.icon{
+          font-size: 20px;
+          padding-top: 20px;
+        }
+        span{
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    .rating{
+      h2{
+        text-transform: uppercase;
+        border-bottom: 2px solid #DDD;
+        padding-bottom: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+  .modal-footer{
+    .btn.btn-default{
+      background: #ccc;
+      border: none;
+      @include box-shadow(none);
+      outline: none;
+    }
+    .btn.btn-primary{
+      background: #028ed6;
+      border: none;
+      @include box-shadow(none);
+      outline: none;
+      font-weight: bold;
+      &:hover{
+        background: #0589ce;
+      }
+    }
+  }
+  
+}

@@ -143,3 +143,6 @@
 .icon-tag:before {
   content: "\49";
 }
+.icon-plus:before {
+  content: "\4a";
+}
