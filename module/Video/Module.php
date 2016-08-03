@@ -7,7 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace News;
+namespace Video;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -36,7 +36,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
     // End Set Layout
     $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function(MvcEvent $event) {
         $viewModel = $event->getViewModel();
-        $viewModel->setTemplate('layout/news');
+        $viewModel->setTemplate('layout/video');
     }, -200);
 
     // get controller name

@@ -108,17 +108,19 @@ a:hover {
   position: absolute;
   top: 0;
   z-index: 9999; }
-#header #menu-top li {
-  display: inline-block;
-  height: 50px; }
-  #header #menu-top li a {
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 15px;
-    font-size: 16px; }
-    #header #menu-top li a:hover {
-      color: #fa501e; }
+#header #menu-top {
+  padding-left: 115px; }
+  #header #menu-top li {
+    display: inline-block;
+    height: 50px; }
+    #header #menu-top li a {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 15px;
+      font-size: 16px; }
+      #header #menu-top li a:hover {
+        color: #fa501e; }
 #header #login li {
   display: inline-block; }
   #header #login li a {
@@ -787,7 +789,7 @@ a:hover {
     background: #0589ce; }
 
 .album {
-  margin-top: 30px; }
+  margin-bottom: 15px; }
   .album .swiper-container {
     margin-top: 15px; }
   .album .title {

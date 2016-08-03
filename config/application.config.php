@@ -13,7 +13,7 @@ return array(
       'Tour',
       'Hotel',
       'Taste',
-      'News',
+      'Video',
       'User',
       'Diary',
     ),

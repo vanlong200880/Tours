@@ -146,3 +146,7 @@
 .icon-plus:before {
   content: "\4a";
 }
+.icon-video-camera:before {
+  content: "\4b";
+}
+

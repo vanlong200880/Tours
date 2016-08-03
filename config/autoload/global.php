@@ -16,7 +16,7 @@ return array(
 		'Frontend'  => 'layout/frontend',
 		'Backend'   => 'layout/backend',
     'Tour'      => 'layout/tour',
-    'News'      => 'layout/news',
+    'Video'      => 'layout/video',
     'Taste'     => 'layout/taste',
     'Tour'      => 'layout/tour',
     'Travel'    => 'layout/travel',

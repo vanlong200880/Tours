@@ -7,18 +7,18 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace News;
+namespace Video;
 
 return array(
     'router' => array(
         'routes' => array(
-            'news' => array(
+            'video' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/news',
+                    'route'    => '/video',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'News\Controller',
-                        'controller'    => 'news',
+                        '__NAMESPACE__' => 'Video\Controller',
+                        'controller'    => 'video',
                         'action'        => 'index',
                     ),
                 ),
@@ -78,7 +78,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-          'News\Controller\News' => Controller\NewsController::class,
+          'Video\Controller\Video' => Controller\VideoController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -94,8 +94,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/news'           => __DIR__ . '/../view/layout/layout.phtml',
-            'news/index/index' => __DIR__ . '/../view/news/index/index.phtml',
+            'layout/video'           => __DIR__ . '/../view/layout/layout.phtml',
+            'video/index/index' => __DIR__ . '/../view/video/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

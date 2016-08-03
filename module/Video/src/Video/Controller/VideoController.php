@@ -7,16 +7,16 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace News\Controller;
+namespace Video\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class NewsController extends AbstractActionController
+class VideoController extends AbstractActionController
 {
     public function indexAction()
     {
-      echo 'news'; die;
+      echo 'video'; die;
         return new ViewModel();
     }
 }
