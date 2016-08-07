@@ -16,7 +16,9 @@ class VideoController extends AbstractActionController
 {
     public function indexAction()
     {
-      echo 'video'; die;
         return new ViewModel();
+    }
+    public function detailAction(){
+      return new ViewModel();
     }
 }

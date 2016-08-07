@@ -101,6 +101,9 @@ a:hover {
 body {
   background: #e9ebee; }
 
+.body {
+  background: url("../images/bg-login.png"); }
+
 .header {
   height: 50px;
   background: #71be0f; }

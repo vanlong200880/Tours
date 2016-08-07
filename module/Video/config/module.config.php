@@ -36,23 +36,23 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-//                  'tour-category' => array(
-//                    'type' => 'Segment',
-//      //              'priority' => 9001,
-//                    'options' => array(
-//                      'route' => '/[:category][.html]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Tour\Controller',
-//                        'controller' => 'Tour\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
+                  'tour-category' => array(
+                    'type' => 'Segment',
+      //              'priority' => 9001,
+                    'options' => array(
+                      'route' => '/[:category]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Video\Controller',
+                        'controller' => 'Video\Controller\Video',
+                        'action' => 'detail',
+                        'category' => '[a-zA-Z0-9_-]*'
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
                 ),
             ),
         ),

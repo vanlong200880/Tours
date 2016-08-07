@@ -72,6 +72,51 @@
       margin-bottom: 16px;
       .photo-item{
         position: relative;
+        overflow: hidden;
+        .hover-posts,
+        .position-name{
+          transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+        }
+        .position-name{
+          
+        }
+        .hover-posts{
+          visibility: hidden;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          text-align: center;
+          transform: scale(0);
+          span{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 13px;
+            text-transform: capitalize;
+            i{
+              color: #fff;
+              font-size: 36px;
+              display: block;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+      &:hover a.hover-posts {
+        visibility: visible;
+        transform: scale(1);
+      }
+      &:hover .position-name{
+        transform: translateY(70px);
       }
     }
   }

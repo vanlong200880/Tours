@@ -927,6 +927,17 @@ a:hover {
     .user-post ul li:hover .position-name {
       transform: translateY(70px); }
 
+.video {
+  margin-top: 0;
+  background: #000;
+  padding-top: 16px; }
+
+.video-list ul li {
+  margin-bottom: 16px; }
+
+.video-wp #header .logo {
+  height: 50px; }
+
 .home-about {
   background: #f5f5f5;
   margin-top: 15px; }
@@ -1057,4 +1068,4 @@ ul.connect li.youtube a:hover {
   .btn-user:hover {
     background-color: #000; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=video.css.map */

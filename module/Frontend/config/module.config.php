@@ -90,6 +90,7 @@ return array(
           'news'        => 'Frontend\Block\news',
           'headerTravel'        => 'Frontend\Block\headerTravel',
           'footerTravel'        => 'Frontend\Block\footerTravel',
+          'video'        => 'Video\Block\video',
         ),
     ),
     'view_manager' => array(
