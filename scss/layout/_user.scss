@@ -1,0 +1,61 @@
+.user{
+  background: #e9ebee;
+  height: 800px;
+  .banner-profile{
+    position: relative;
+    border: 1px solid #DDD;
+    background: #FFF;
+    .menu-profile-top{
+      height: 40px;
+      background: #FFF;
+      ul{
+        li{
+          display: inline-block;
+          position: relative;
+          float: left;
+          a{
+            height: 40px;
+            line-height: 40px;
+            padding: 0 15px;
+            border-left: 1px solid #DDD;
+            display: inline-block;
+          }
+          ul{
+            position: absolute;
+            width: 150px;
+            background: #FFF;
+            border: 1px solid #DDD;
+            display: none;
+            li{
+              display: inline-block;
+              width: 100%;
+              a{
+                border-left: none;
+              }
+              &:hover{
+                background: #f5f5f5;
+              }
+            }
+          }
+          &:hover{
+            background: #f5f5f5;
+          }
+          &:hover ul{
+            display: block;
+          }
+        }
+      }
+    }
+    .profile-pic{
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: #FFF;
+      border: 1px solid #DDD;
+      bottom: 15px;
+      left: 15px;
+      @include border-radius(3px);
+      padding: 5px;
+    }
+  }
+}

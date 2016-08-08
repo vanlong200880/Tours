@@ -1,5 +1,9 @@
 .swiper-container-slider{
   overflow: hidden;
+  position: relative;
+  .swiper-button-next, .swiper-button-prev{
+    top: 40%;
+  }
 }
 #header{
   .logo{

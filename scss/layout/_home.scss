@@ -270,11 +270,27 @@
         background: #FFF;
         margin-bottom: 15px;
         border: 1px solid #DDD;
+        .img{
+          position: relative;
+          overflow: hidden;
+        }
         .title{
           font-size: 16px;
           font-weight: bold;
           padding: 15px 5px;
         }
+        img{
+          -webkit-transition: all 0.3s ease;
+          -moz-transition:    all 0.3s ease;
+          -o-transition:      all 0.3s ease;
+          -ms-transition:     all 0.3s ease;
+          transition:         all 0.3s ease;
+        }
+      }
+      &:hover img{
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
       }
     }
   }

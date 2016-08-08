@@ -99,7 +99,10 @@ a:hover {
   color: #fa501e; }
 
 .swiper-container-slider {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+  .swiper-container-slider .swiper-button-next, .swiper-container-slider .swiper-button-prev {
+    top: 40%; }
 
 #header .logo {
   width: 100px;
@@ -363,10 +366,23 @@ a:hover {
     background: #FFF;
     margin-bottom: 15px;
     border: 1px solid #DDD; }
+    .top-destination ul li .item .img {
+      position: relative;
+      overflow: hidden; }
     .top-destination ul li .item .title {
       font-size: 16px;
       font-weight: bold;
       padding: 15px 5px; }
+    .top-destination ul li .item img {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .top-destination ul li:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
 
 .like {
   position: absolute;
