@@ -24,18 +24,29 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'default' => array(
-//                      'type'    => 'Segment',
-//                      'options' => array(
-//                          'route'    => '/[:controller[/:action]]',
-//                          'constraints' => array(
-//                              'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                              'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                          ),
-//                          'defaults' => array(
-//                          ),
-//                      ),
-//                  ),
+                  'post' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/post',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'User',
+                            'action'        => 'post',
+                          ),
+                      ),
+                  ),
+                  
+                  'album' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/album',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Album',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
 //                  'tour-category' => array(
 //                    'type' => 'Segment',
 //      //              'priority' => 9001,
@@ -116,11 +127,12 @@ return array(
         'invokables' => array(
           'User\Controller\User' => Controller\UserController::class,
           'User\Controller\Public' => Controller\PublicController::class,
+          'User\Controller\Album' => Controller\AlbumController::class,
         ),
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'headerTravel'        => 'Travel\Block\headerTravel',
+          'timeline'        => 'User\Block\timeline',
 //          'footerTravel'        => 'Travel\Block\footerTravel',
         ),
     ),

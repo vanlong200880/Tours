@@ -244,8 +244,7 @@ body {
   min-height: 500px; }
 
 .user {
-  background: #e9ebee;
-  height: 800px; }
+  background: #e9ebee; }
   .user .banner-profile {
     position: relative;
     border: 1px solid #DDD;
@@ -268,7 +267,8 @@ body {
           width: 150px;
           background: #FFF;
           border: 1px solid #DDD;
-          display: none; }
+          display: none;
+          z-index: 99; }
           .user .banner-profile .menu-profile-top ul li ul li {
             display: inline-block;
             width: 100%; }
@@ -294,6 +294,93 @@ body {
       -o-border-radius: 3px;
       -ms-border-radius: 3px;
       padding: 5px; }
+
+.post .post-container {
+  background: #f3f3f3;
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #DDD;
+  margin-top: 15px; }
+  .post .post-container .sidebar-left {
+    width: 20%;
+    float: left; }
+    .post .post-container .sidebar-left ul li a {
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid #DDD; }
+      .post .post-container .sidebar-left ul li a span {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-right: 1px solid #DDD;
+        display: inline-block;
+        float: left;
+        margin-right: 10px; }
+    .post .post-container .sidebar-left ul li:first-child a {
+      background: #f6f7f9; }
+  .post .post-container .content {
+    width: 80%;
+    float: left;
+    border-left: 1px solid #DDD; }
+    .post .post-container .content .user-breadcrumb {
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #DDD;
+      background: #f6f7f9;
+      padding-left: 15px; }
+      .post .post-container .content .user-breadcrumb .breadcrumb {
+        background: none;
+        margin: 0;
+        padding: 0; }
+    .post .post-container .content .body-container {
+      padding: 15px;
+      width: 100%; }
+      .post .post-container .content .body-container .body-content {
+        background: #FFF;
+        border: 1px solid #DDD; }
+        .post .post-container .content .body-container .body-content h2 {
+          font-size: 16px;
+          height: 40px;
+          background: #f7f7f8;
+          line-height: 40px;
+          padding-left: 10px;
+          border-bottom: 1px solid #DDD; }
+        .post .post-container .content .body-container .body-content .page {
+          padding: 10px;
+          min-height: 500px; }
+
+.user.album .post .post-container .content {
+  width: 100%; }
+
+.list-album-profile li .item {
+  margin-bottom: 15px;
+  border: 1px solid #DDD; }
+  .list-album-profile li .item .img {
+    width: 167px;
+    height: 167px; }
+  .list-album-profile li .item .album-title {
+    padding: 5px; }
+    .list-album-profile li .item .album-title p {
+      height: 20px;
+      line-height: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 12px; }
+    .list-album-profile li .item .album-title p.total-photos {
+      color: #afadad; }
+.list-album-profile li .item.upload {
+  width: 167px;
+  border: 1px dashed #7f7f7f;
+  height: 219px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px; }
 
 .footer {
   border-top: 1px solid #DDD;
