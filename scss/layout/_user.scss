@@ -129,6 +129,58 @@
           .page{
             padding: 10px;
             min-height: 500px;
+            .form-control{
+              @include border-radius(0px);
+              @include box-shadow(none);
+            }
+            textarea.form-control{
+              height: 200px;
+            }
+            .post-list-tour{
+              h2{
+                font-size: 16px;
+                font-weight: bold;
+                border-bottom: 2px solid #DDD;
+                height: auto;
+                line-height: normal;
+                margin-bottom: 15px;
+                background: none;
+                padding-left: 0;
+                padding-bottom: 5px;
+              }
+
+              ul{
+                li{
+                  margin-bottom: 15px;
+                  .item{
+                    border: 1px solid #DDD;
+                    .img{
+                      position: relative;
+                      .item-checked{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 9;
+                        input{
+                          margin: 0;
+                        }
+                      }
+                    }
+                  }
+                  .album-title{
+                    height: 40px;
+                    line-height: 20px;
+                    overflow: hidden;
+                    padding: 0 5px;
+                  }
+                  &:hover{
+                    .item{
+                      border-color: red;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

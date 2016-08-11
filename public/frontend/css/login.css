@@ -351,6 +351,49 @@ body {
         .post .post-container .content .body-container .body-content .page {
           padding: 10px;
           min-height: 500px; }
+          .post .post-container .content .body-container .body-content .page .form-control {
+            border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -o-border-radius: 0px;
+            -ms-border-radius: 0px;
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none; }
+          .post .post-container .content .body-container .body-content .page textarea.form-control {
+            height: 200px; }
+          .post .post-container .content .body-container .body-content .page .post-list-tour h2 {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid #DDD;
+            height: auto;
+            line-height: normal;
+            margin-bottom: 15px;
+            background: none;
+            padding-left: 0;
+            padding-bottom: 5px; }
+          .post .post-container .content .body-container .body-content .page .post-list-tour ul li {
+            margin-bottom: 15px; }
+            .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item {
+              border: 1px solid #DDD; }
+              .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img {
+                position: relative; }
+                .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img .item-checked {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  z-index: 9; }
+                  .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img .item-checked input {
+                    margin: 0; }
+            .post .post-container .content .body-container .body-content .page .post-list-tour ul li .album-title {
+              height: 40px;
+              line-height: 20px;
+              overflow: hidden;
+              padding: 0 5px; }
+            .post .post-container .content .body-container .body-content .page .post-list-tour ul li:hover .item {
+              border-color: red; }
 
 .user.album .post .post-container .content {
   width: 100%; }
