@@ -149,4 +149,27 @@
 .icon-video-camera:before {
   content: "\4b";
 }
-
+.icon-delete-garbage-streamline:before {
+  content: "\4c";
+}
+.icon-pencil-square-o:before {
+  content: "\4e";
+}
+.icon-minus-circle:before {
+  content: "\4d";
+}
+.icon-refresh:before {
+  content: "\4f";
+}
+.icon-file-add:before {
+  content: "\50";
+}
+.icon-help-circled:before {
+  content: "\51";
+}
+.icon-sitemap:before {
+  content: "\52";
+}
+.icon-pencil:before {
+  content: "\53";
+}

@@ -30,7 +30,7 @@ return array(
                           'route'    => '/post',
                           'defaults' => array(
                             '__NAMESPACE__' => 'User\Controller',
-                            'controller'    => 'User',
+                            'controller'    => 'Tours',
                             'action'        => 'post',
                           ),
                       ),
@@ -43,6 +43,51 @@ return array(
                           'defaults' => array(
                             '__NAMESPACE__' => 'User\Controller',
                             'controller'    => 'Album',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  
+                  'list-tours' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/list-tours',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Tours',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  'tours-order' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/tours-order',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Tours',
+                            'action'        => 'order',
+                          ),
+                      ),
+                  ),
+                  'tours-comment' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/tours-comment',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Tours',
+                            'action'        => 'comment',
+                          ),
+                      ),
+                  ),
+                  'user-mail' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/mail',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Mail',
                             'action'        => 'index',
                           ),
                       ),
@@ -128,6 +173,8 @@ return array(
           'User\Controller\User' => Controller\UserController::class,
           'User\Controller\Public' => Controller\PublicController::class,
           'User\Controller\Album' => Controller\AlbumController::class,
+          'User\Controller\Tours' => Controller\ToursController::class,
+          'User\Controller\Mail' => Controller\MailController::class,
         ),
     ),
     'view_helpers'    => array(

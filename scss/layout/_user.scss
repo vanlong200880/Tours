@@ -18,6 +18,27 @@
             padding: 0 15px;
             border-left: 1px solid #DDD;
             display: inline-block;
+            position: relative;
+            .mail-box{
+              position: absolute;
+              top: -25px;
+              background: #fa501e;
+              padding: 0 7px;
+              font-size: 10px;
+              color: #FFF;
+              @include border-radius(3px);
+              line-height: 20px;
+              height: 20px;
+              &:before{
+                content: " ";
+                border-top: 5px solid  #fa501e;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                position: absolute;
+                bottom: -5px;
+                display: inline-block;
+              }
+            }
           }
           ul{
             position: absolute;
@@ -148,7 +169,19 @@
                 padding-left: 0;
                 padding-bottom: 5px;
               }
-
+              .post-search{
+                margin-bottom: 15px;
+                .btn-search{
+                  height: 34px;
+                  background: $tours;
+                  line-height: 34px;
+                  text-align: center;
+                  display: inline-block;
+                  width: 100%;
+                  color: #FFF;
+                  @include border-radius(3px);
+                }
+              }
               ul{
                 li{
                   margin-bottom: 15px;
@@ -225,6 +258,139 @@
       border: 1px dashed #7f7f7f;
       height: 219px;
       @include border-radius(3px);
+    }
+  }
+}
+.list-table{
+  width: 100%;
+  thead{
+    th{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 5px;
+      background: #f7f7f8;
+      text-transform: uppercase;
+    }
+  }
+  tbody{
+    tr{
+      td{
+        padding: 5px;
+        border-top: 1px solid #DDD;
+      }
+      .function{
+        a{
+          display: inline-block;
+          margin-right: 5px;
+          font-size: 15px;
+        }
+      }
+      &:nth-child(2n+2){
+        background: #f9f9f9;
+      }
+      &:hover{
+        background: #f7f7f7;
+      }
+    }
+  }
+}
+.timeline{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  .about{
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding: 10px;
+    .instroduction{
+      display: inline-block;
+      width: 100%;
+      p{
+        line-height: 22px;
+        text-align: justify;
+      }
+    }
+    h2{
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 3px;
+    }
+    ul{
+      li{
+        line-height: 24px;
+      }
+    }
+  }
+  .photos{
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    background: #FFF;
+    border: 1px solid #DDD;
+    padding: 10px;
+    h2{
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 3px;
+      margin-bottom: 15px;
+    }
+  }
+  .blog{
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    background: #FFF;
+    border: 1px solid #DDD;
+    padding: 10px;
+    h2{
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+    }
+    ul{
+      li{
+        border-bottom: 1px solid #DDD;
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        img{
+          max-width: 30%;
+          float: left;
+          padding-right: 5px;
+        }
+        p{
+          text-align: justify;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  
+  .content{
+    border: 1px solid #DDD;
+    padding: 10px;
+    background: #FFF;
+    margin-bottom: 15px;
+    h2{
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 3px;
+    }
+    .timeline-block-item{
+      display: inline-block;
+      width: 100%;
+      margin-top: 10px;
     }
   }
 }

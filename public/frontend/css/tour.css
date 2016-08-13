@@ -1027,6 +1027,100 @@ ul.connect li.youtube a:hover {
   #modal-comment .modal-footer .btn.btn-primary:hover {
     background: #0589ce; }
 
+.comment {
+  display: inline-block;
+  width: 100%; }
+  .comment h2 {
+    text-transform: uppercase;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    display: inline-block;
+    width: 100%; }
+    .comment h2 span {
+      position: relative;
+      top: 10px; }
+    .comment h2 a.buttom-comment {
+      padding: 5px 5px;
+      display: inline-block;
+      background: #71be0f;
+      color: #FFF;
+      font-weight: normal;
+      border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -o-border-radius: 2px;
+      -ms-border-radius: 2px;
+      cursor: pointer; }
+  .comment .list-comment li {
+    padding: 15px 0;
+    border-bottom: 1px solid #DDD; }
+    .comment .list-comment li .comment-item {
+      display: inline-block;
+      width: 100%; }
+      .comment .list-comment li .comment-item .avartar {
+        width: 48px;
+        height: 48px;
+        float: left;
+        margin-right: 15px; }
+        .comment .list-comment li .comment-item .avartar img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -o-border-radius: 50%;
+          -ms-border-radius: 50%; }
+      .comment .list-comment li .comment-item .comment-content {
+        overflow: hidden; }
+        .comment .list-comment li .comment-item .comment-content p {
+          margin-top: 0 !important; }
+        .comment .list-comment li .comment-item .comment-content .comment-info {
+          padding-bottom: 15px; }
+          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery {
+            margin-top: 15px;
+            display: inline-block;
+            width: 100%; }
+            .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
+              width: 105px;
+              display: inline-block;
+              margin-bottom: 10px;
+              margin-right: 10px; }
+              .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
+                max-width: 104px;
+                display: inline-block; }
+          .comment .list-comment li .comment-item .comment-content .comment-info .form-replies a {
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            -ms-border-radius: 2px;
+            padding: 1px 5px;
+            border: 1px solid #DDD;
+            background: #FFF;
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 12px;
+            cursor: pointer; }
+        .comment .list-comment li .comment-item .comment-content .comment-replies {
+          border-top: 1px solid #DDD;
+          padding-top: 15px; }
+    .comment .list-comment li:last-child {
+      border-bottom: none; }
+  .comment .views-all {
+    text-align: center; }
+    .comment .views-all a {
+      padding: 5px 15px;
+      background: #f8f8f8;
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      display: inline-block;
+      cursor: pointer; }
+
 .list-cat {
   padding: 8px;
   background: #F8f8f8; }
@@ -1599,100 +1693,6 @@ ul.connect li.youtube a:hover {
           color: #000; }
     .support ul li:last-child {
       border-bottom: none; }
-
-.comment {
-  display: inline-block;
-  width: 100%; }
-  .comment h2 {
-    text-transform: uppercase;
-    border-bottom: 1px solid #DDD;
-    padding-bottom: 5px;
-    margin-top: 30px;
-    display: inline-block;
-    width: 100%; }
-    .comment h2 span {
-      position: relative;
-      top: 10px; }
-    .comment h2 a.buttom-comment {
-      padding: 5px 5px;
-      display: inline-block;
-      background: #71be0f;
-      color: #FFF;
-      font-weight: normal;
-      border-radius: 2px;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      -o-border-radius: 2px;
-      -ms-border-radius: 2px;
-      cursor: pointer; }
-  .comment .list-comment li {
-    padding: 15px 0;
-    border-bottom: 1px solid #DDD; }
-    .comment .list-comment li .comment-item {
-      display: inline-block;
-      width: 100%; }
-      .comment .list-comment li .comment-item .avartar {
-        width: 48px;
-        height: 48px;
-        float: left;
-        margin-right: 15px; }
-        .comment .list-comment li .comment-item .avartar img {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -o-border-radius: 50%;
-          -ms-border-radius: 50%; }
-      .comment .list-comment li .comment-item .comment-content {
-        overflow: hidden; }
-        .comment .list-comment li .comment-item .comment-content p {
-          margin-top: 0 !important; }
-        .comment .list-comment li .comment-item .comment-content .comment-info {
-          padding-bottom: 15px; }
-          .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery {
-            margin-top: 15px;
-            display: inline-block;
-            width: 100%; }
-            .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
-              width: 105px;
-              display: inline-block;
-              margin-bottom: 10px;
-              margin-right: 10px; }
-              .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
-                max-width: 104px;
-                display: inline-block; }
-          .comment .list-comment li .comment-item .comment-content .comment-info .form-replies a {
-            border-radius: 2px;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            -o-border-radius: 2px;
-            -ms-border-radius: 2px;
-            padding: 1px 5px;
-            border: 1px solid #DDD;
-            background: #FFF;
-            display: inline-block;
-            margin-right: 5px;
-            font-size: 12px;
-            cursor: pointer; }
-        .comment .list-comment li .comment-item .comment-content .comment-replies {
-          border-top: 1px solid #DDD;
-          padding-top: 15px; }
-    .comment .list-comment li:last-child {
-      border-bottom: none; }
-  .comment .views-all {
-    text-align: center; }
-    .comment .views-all a {
-      padding: 5px 15px;
-      background: #f8f8f8;
-      border: 1px solid #DDD;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -o-border-radius: 3px;
-      -ms-border-radius: 3px;
-      display: inline-block;
-      cursor: pointer; }
 
 .poup-footer {
   padding: 15px 8px 0px 8px;

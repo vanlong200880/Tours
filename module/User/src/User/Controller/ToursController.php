@@ -12,10 +12,19 @@ namespace User\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class UserController extends AbstractActionController
+class ToursController extends AbstractActionController
 {
     public function indexAction()
     {
         return new ViewModel();
+    }
+    public function postAction(){
+      return new ViewModel();
+    }
+    public function orderAction(){
+      return new ViewModel();
+    }
+    public function commentAction(){
+      return new ViewModel();
     }
 }
