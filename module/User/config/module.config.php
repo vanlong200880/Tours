@@ -36,7 +36,7 @@ return array(
                       ),
                   ),
                   
-                  'album' => array(
+                  'user-photos' => array(
                       'type'    => 'Segment',
                       'options' => array(
                           'route'    => '/album',
@@ -44,6 +44,18 @@ return array(
                             '__NAMESPACE__' => 'User\Controller',
                             'controller'    => 'Album',
                             'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  
+                  'user-profile' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/profile',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'User',
+                            'action'        => 'profile',
                           ),
                       ),
                   ),
@@ -89,6 +101,31 @@ return array(
                             '__NAMESPACE__' => 'User\Controller',
                             'controller'    => 'Mail',
                             'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  'user-order' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/order-history',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'User',
+                            'action'        => 'order',
+                          ),
+                      ),
+                  ),
+                  'user-order-view' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/order-history/detail/:orderId[/]',
+                          'constraints' => array(
+                            'orderId'     => '[0-9]+',
+                          ),
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'User',
+                            'action'        => 'viewOrder',
                           ),
                       ),
                   ),
@@ -180,7 +217,8 @@ return array(
     'view_helpers'    => array(
         'invokables'  => array(
           'timeline'        => 'User\Block\timeline',
-//          'footerTravel'        => 'Travel\Block\footerTravel',
+          'menuTours'        => 'User\Block\menuTours',
+          'menuProfile'        => 'User\Block\menuProfile',
         ),
     ),
     'view_manager' => array(

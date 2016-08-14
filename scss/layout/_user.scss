@@ -285,11 +285,22 @@
           font-size: 15px;
         }
       }
+      td.order-id{
+        a{
+          color: $tours;
+          font-weight: bold;
+        }
+      }
       &:nth-child(2n+2){
         background: #f9f9f9;
       }
       &:hover{
         background: #f7f7f7;
+      }
+    }
+    tr.active{
+      td{
+        font-weight: bold;
       }
     }
   }
@@ -393,4 +404,131 @@
       margin-top: 10px;
     }
   }
+}
+.view-order{
+  padding: 10px;
+  h3{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  ul{
+    margin-bottom: 30px;
+    li{
+      line-height: 24px;
+      span{
+        color: #fa501e;
+        font-style: italic;
+      }
+    }
+  }
+  .table-order-detail{
+    width: 100%;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    margin-top: 10px;
+    thead{
+      th{
+        background: #f7f7f8;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 5px;
+        border-bottom: 1px solid #DDD;
+        border-right: 1px solid #DDD;
+      }
+    }
+    tbody{
+      td{
+        padding: 5px 5px;
+        border-right: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
+      }
+    }
+    tfoot{
+      td{
+        height: 40px;
+        padding: 0 5px;
+      }
+      .summary{
+        padding-right: 10px;
+        text-align: right;
+      }
+      .summary-price{
+        border-right: 1px solid #DDD;
+      }
+    }
+  }
+}
+.back,
+.print{
+  background: #fa501e;
+  padding: 5px 15px;
+  @include border-radius(3px);
+  color: #FFF;
+  margin-top: 15px;
+  &:hover{
+    color: #000;
+  }
+}
+.back{
+  background: $tours;
+}
+
+.user-profile{
+  label{
+    font-weight: normal;
+  }
+  .form-input{
+    position: relative;
+    .form-control{
+      height: 40px;
+      @include border-radius(0px);
+      @include box-shadow(none);
+      padding-left: 45px;
+    }
+    select.form-control{
+      padding: 6px 12px;
+    }
+    textArea.form-control{
+      height: 200px;
+      padding: 6px 12px;
+    }
+    span.icon{
+      width: 38px;
+      height: 38px;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      display: inline-block;
+      border-right: 1px solid #DDD;
+      text-align: center;
+      line-height: 40px;
+      font-size: 18px;
+    }
+  }
+  .btn{
+      background: #fa501e;
+      padding: 0 30px;
+      border: none;
+      @include border-radius(3px);
+      text-transform: uppercase;
+      color: #FFF;
+      outline: none;
+      height: 40px;
+      line-height: 40px;
+      &:focus,
+      &:visited,
+      &:active,
+      &:hover{
+        border: none;
+        @include border-radius(3px);
+        text-transform: uppercase;
+        color: #FFF;
+        outline: none;
+        @include box-shadow(none);
+      }
+      &:hover{
+        background: #e84e20;
+      }
+    }
 }

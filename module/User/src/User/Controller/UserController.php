@@ -18,4 +18,13 @@ class UserController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function profileAction(){
+      return new ViewModel();
+    }
+    public function orderAction(){
+      return new ViewModel();
+    }
+    public function viewOrderAction(){
+      return new ViewModel();
+    }
 }
