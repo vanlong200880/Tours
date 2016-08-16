@@ -60,6 +60,18 @@ return array(
                       ),
                   ),
                   
+                  'user-changepassword' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/change-password',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'User',
+                            'action'        => 'changePassword',
+                          ),
+                      ),
+                  ),
+                  
                   'list-tours' => array(
                       'type'    => 'Segment',
                       'options' => array(
@@ -126,6 +138,41 @@ return array(
                             '__NAMESPACE__' => 'User\Controller',
                             'controller'    => 'User',
                             'action'        => 'viewOrder',
+                          ),
+                      ),
+                  ),
+                  
+                  'user-blog' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/blog',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Blog',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  'user-blog-create' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/blog-create',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Blog',
+                            'action'        => 'post',
+                          ),
+                      ),
+                  ),
+                  
+                  'user-blog-comment' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/blog-comment',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Blog',
+                            'action'        => 'comment',
                           ),
                       ),
                   ),
@@ -212,6 +259,7 @@ return array(
           'User\Controller\Album' => Controller\AlbumController::class,
           'User\Controller\Tours' => Controller\ToursController::class,
           'User\Controller\Mail' => Controller\MailController::class,
+          'User\Controller\Blog' => Controller\BlogController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -219,6 +267,7 @@ return array(
           'timeline'        => 'User\Block\timeline',
           'menuTours'        => 'User\Block\menuTours',
           'menuProfile'        => 'User\Block\menuProfile',
+          'menuBlog'        => 'User\Block\menuBlog',
         ),
     ),
     'view_manager' => array(

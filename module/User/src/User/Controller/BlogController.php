@@ -12,22 +12,19 @@ namespace User\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class UserController extends AbstractActionController
+class BlogController extends AbstractActionController
 {
     public function indexAction()
     {
         return new ViewModel();
     }
-    public function profileAction(){
+    public function postAction(){
       return new ViewModel();
     }
     public function orderAction(){
       return new ViewModel();
     }
-    public function viewOrderAction(){
-      return new ViewModel();
-    }
-    public function changePasswordAction(){
+    public function commentAction(){
       return new ViewModel();
     }
 }

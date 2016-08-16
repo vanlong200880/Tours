@@ -12,7 +12,11 @@
       <span class="icon icon-file-add"></span>Thông tin tài khoản</a>
   </li>
   <li>
-    <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+    <a href="<?php echo $this->url('user/user-changepassword', array('controller' => 'user', 'action' => 'changePassword')) ?>">
+      <span class="icon icon-file-add"></span>Đổi mật khẩu</a>
+  </li>
+  <li>
+    <a href="<?php echo $this->url('user/user-order', array('controller' => 'user', 'action' => 'order')) ?>">
       <span></span>Đơn hàng của tôi</a>
   </li>
   <li>
@@ -31,26 +35,26 @@
   </li>
   
   <li>
-    <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+    <a target="_blank" href="<?php echo $this->url('user/list-tours', array('controller' => 'tours', 'action' => 'order')) ?>">
       <span></span>Quản lý Tours</a>
   </li>
   
   <li>
-    <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+    <a target="_blank" href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
       <span></span>Quản lý khách sạn</a>
   </li>
   
   <li>
-    <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+    <a target="_blank" href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
       <span></span>Quản lý Blog</a>
   </li>
   
   <li>
-    <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+    <a target="_blank" href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
       <span></span>Quản lý điểm ăn uống</a>
   </li>
 
   <li>
-    <a href="#"><span class="icon icon-help-circled"></span>Trợ giúp</a>
+    <a target="_blank" href="#"><span class="icon icon-help-circled"></span>Trợ giúp</a>
   </li>
 </ul>

@@ -1,0 +1,17 @@
+<ul>
+  <li>
+    <a href="<?php echo $this->url('user/user-blog', array('controller' => 'blog', 'action' => 'index')) ?>"><span></span>Quản lý Blog</a>
+  </li>
+  <li class="active">
+    <a href="<?php echo $this->url('user/user-blog', array('controller' => 'blog', 'action' => 'index')) ?>"><span class="icon icon-menu"></span>Blog đã đăng</a>
+  </li>
+  <li>
+    <a href="<?php echo $this->url('user/user-blog-create', array('controller' => 'blog', 'action' => 'post')) ?>"><span class="icon icon-file-add"></span>Viết blog</a>
+  </li>
+  <li>
+    <a href="<?php echo $this->url('user/user-blog-comment', array('controller' => 'blog', 'action' => 'comment')) ?>"><span class="icon icon-file-add"></span>Bình luận</a>
+  </li>
+  <li>
+    <a href="#"><span class="icon icon-help-circled"></span>Trợ giúp</a>
+  </li>
+</ul>
