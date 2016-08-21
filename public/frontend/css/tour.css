@@ -1151,6 +1151,31 @@ ul.connect li.youtube a:hover {
       background: #FFF;
       top: 9px; }
 
+.utilities {
+  border: 1px solid #DDD;
+  display: inline-block;
+  width: 100%;
+  background: #FFF;
+  margin-top: 45px;
+  padding: 15px; }
+  .utilities h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  .utilities ul li {
+    width: 12.5%;
+    display: inline-block;
+    float: left;
+    padding: 0 5px;
+    margin-bottom: 15px; }
+    .utilities ul li .item {
+      text-align: center;
+      height: 80px;
+      overflow: hidden; }
+      .utilities ul li .item span {
+        font-size: 24px; }
+
 .list-cat {
   padding: 8px;
   background: #F8f8f8; }

@@ -224,6 +224,42 @@ return array(
                           ),
                       ),
                   ),
+                  
+                  // hotel
+                  'user-hotel' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/hotel',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Hotel',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
+                  'user-hotel-create' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/create-hotel',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Hotel',
+                            'action'        => 'create',
+                          ),
+                      ),
+                  ),
+                  'user-hotel-create-room' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/create-room/:id',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Hotel',
+                            'action'        => 'create-room',
+                          ),
+                      ),
+                  ),
+                  // 
 //                  'tour-category' => array(
 //                    'type' => 'Segment',
 //      //              'priority' => 9001,
@@ -309,6 +345,7 @@ return array(
           'User\Controller\Mail' => Controller\MailController::class,
           'User\Controller\Blog' => Controller\BlogController::class,
           'User\Controller\Taste' => Controller\TasteController::class,
+          'User\Controller\Hotel' => Controller\HotelController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -318,6 +355,7 @@ return array(
           'menuProfile'        => 'User\Block\menuProfile',
           'menuBlog'        => 'User\Block\menuBlog',
           'menuTaste'        => 'User\Block\menuTaste',
+          'menuHotel'        => 'User\Block\menuHotel',
         ),
     ),
     'view_manager' => array(

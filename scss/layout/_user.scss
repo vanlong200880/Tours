@@ -139,6 +139,7 @@
         .body-content{
           background: #FFF;
           border: 1px solid #DDD;
+          min-height: 500px;
           h2{
             font-size: 16px;
             height: 40px;
@@ -213,6 +214,11 @@
                   }
                 }
               }
+            }
+            .utilities{
+              margin-top: 0;
+              margin-bottom: 15px;
+              padding: 0;
             }
           }
         }

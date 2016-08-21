@@ -642,6 +642,31 @@ a:hover {
       background: #FFF;
       top: 9px; }
 
+.utilities {
+  border: 1px solid #DDD;
+  display: inline-block;
+  width: 100%;
+  background: #FFF;
+  margin-top: 45px;
+  padding: 15px; }
+  .utilities h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  .utilities ul li {
+    width: 12.5%;
+    display: inline-block;
+    float: left;
+    padding: 0 5px;
+    margin-bottom: 15px; }
+    .utilities ul li .item {
+      text-align: center;
+      height: 80px;
+      overflow: hidden; }
+      .utilities ul li .item span {
+        font-size: 24px; }
+
 body {
   background: #e9ebee; }
 
@@ -907,7 +932,8 @@ body {
       width: 100%; }
       .post .post-container .content .body-container .body-content {
         background: #FFF;
-        border: 1px solid #DDD; }
+        border: 1px solid #DDD;
+        min-height: 500px; }
         .post .post-container .content .body-container .body-content h2 {
           font-size: 16px;
           height: 40px;
@@ -976,6 +1002,10 @@ body {
               padding: 0 5px; }
             .post .post-container .content .body-container .body-content .page .post-list-tour ul li:hover .item {
               border-color: red; }
+          .post .post-container .content .body-container .body-content .page .utilities {
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding: 0; }
 
 .user.album .post .post-container .content {
   width: 100%; }
