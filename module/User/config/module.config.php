@@ -176,6 +176,54 @@ return array(
                           ),
                       ),
                   ),
+                  'user-taste' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/taste',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Taste',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
+
+                  'user-taste-create' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/taste/create',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Taste',
+                            'action'        => 'create',
+                          ),
+                      ),
+                  ),
+                  'user-taste-create-menu-group' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/taste/create-menu-group',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Taste',
+                            'action'        => 'createMenuGroup',
+                          ),
+                      ),
+                  ),
+                  'user-taste-create-menu' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/taste/create-menu/:id',
+                          'constraints' => array(
+                            'id'     => '[0-9]+',
+                          ),
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Taste',
+                            'action'        => 'createMenu',
+                          ),
+                      ),
+                  ),
 //                  'tour-category' => array(
 //                    'type' => 'Segment',
 //      //              'priority' => 9001,
@@ -260,6 +308,7 @@ return array(
           'User\Controller\Tours' => Controller\ToursController::class,
           'User\Controller\Mail' => Controller\MailController::class,
           'User\Controller\Blog' => Controller\BlogController::class,
+          'User\Controller\Taste' => Controller\TasteController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -268,6 +317,7 @@ return array(
           'menuTours'        => 'User\Block\menuTours',
           'menuProfile'        => 'User\Block\menuProfile',
           'menuBlog'        => 'User\Block\menuBlog',
+          'menuTaste'        => 'User\Block\menuTaste',
         ),
     ),
     'view_manager' => array(

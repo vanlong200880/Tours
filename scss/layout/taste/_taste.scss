@@ -60,40 +60,7 @@
     }
   }
 }
-.menu-order{
-  h2{
-    border-bottom: 2px solid #DDD;
-    padding-bottom: 5px;
-    margin: 15px 0;
-  }
-  ul{
-    li{
-      .item{
-        position: relative;
-        padding-left: 45px;
-        height: 45px;
-        img{
-            width: 40px;
-            height: 40px;
-            @include border-radius(50%);
-            position: absolute;
-            left: 0;
-            cursor: pointer;
-          }
-        p{
-          border-bottom: 1px dotted #DDD;
-          var,
-          span{
-            position: relative;
-            background: #FFF;
-            top: 9px;
-          }
-        }
-      }
-      
-    }
-  }
-}
+
 .taste-detail{
   .royalSlider{
     height: 460px;
