@@ -7,12 +7,12 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Video\Controller;
+namespace Photo\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class VideoController extends AbstractActionController
+class PhotoController extends AbstractActionController
 {
     public function indexAction()
     {

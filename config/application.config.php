@@ -16,6 +16,7 @@ return array(
       'Video',
       'User',
       'Diary',
+      'Photo',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

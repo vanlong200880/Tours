@@ -7,18 +7,18 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Video;
+namespace Photo;
 
 return array(
     'router' => array(
         'routes' => array(
-            'video' => array(
+            'photo' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/video',
+                    'route'    => '/photo',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Video\Controller',
-                        'controller'    => 'video',
+                        '__NAMESPACE__' => 'Photo\Controller',
+                        'controller'    => 'Photo',
                         'action'        => 'index',
                     ),
                 ),
@@ -36,14 +36,14 @@ return array(
 //                          ),
 //                      ),
 //                  ),
-                  'video-category' => array(
+                  'photo-category' => array(
                     'type' => 'Segment',
       //              'priority' => 9001,
                     'options' => array(
                       'route' => '/[:category]',
                       'defaults' => array(
                         '__NAMESPACE__' => 'Video\Controller',
-                        'controller' => 'Video\Controller\Video',
+                        'controller' => 'Photo\Controller\Photo',
                         'action' => 'category'
                       ),
                       'constraints' => array(
@@ -51,14 +51,14 @@ return array(
                       ),
                     ),
                   ),
-                  'video-detail' => array(
+                  'photo-detail' => array(
                     'type' => 'Segment',
       //              'priority' => 9001,
                     'options' => array(
                       'route' => '/[:category][/:id]',
                       'defaults' => array(
                         '__NAMESPACE__' => 'Video\Controller',
-                        'controller' => 'Video\Controller\Video',
+                        'controller' => 'Photo\Controller\Photo',
                         'action' => 'detail',
                       ),
                       'constraints' => array(
@@ -92,7 +92,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-          'Video\Controller\Video' => Controller\VideoController::class,
+          'Photo\Controller\Photo' => Controller\PhotoController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -108,8 +108,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/video'           => __DIR__ . '/../view/layout/layout.phtml',
-            'video/index/index' => __DIR__ . '/../view/video/index/index.phtml',
+            'layout/photo'           => __DIR__ . '/../view/layout/layout.phtml',
+            'photo/index/index' => __DIR__ . '/../view/photo/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

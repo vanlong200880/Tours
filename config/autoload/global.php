@@ -23,6 +23,7 @@ return array(
     'User'      => 'layout/user',
     'Diary'     => 'layout/diary',
     'Hotel'      => 'layout/hotel',
+    'Photo'      => 'layout/photo',
 	),
     // ...
 );
