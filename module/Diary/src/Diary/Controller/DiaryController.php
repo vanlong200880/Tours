@@ -19,4 +19,10 @@ class DiaryController extends AbstractActionController
       echo 'diary'; die;
         return new ViewModel();
     }
+    public function categoryAction(){
+      return new ViewModel();
+    }
+    public function detailAction(){
+      return new ViewModel();
+    }
 }

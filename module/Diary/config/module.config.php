@@ -18,24 +18,43 @@ return array(
                     'route'    => '/diary',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Diary\Controller',
-                        'controller'    => 'diary',
+                        'controller' => 'Diary\Controller\Diary',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'default' => array(
-//                      'type'    => 'Segment',
-//                      'options' => array(
-//                          'route'    => '/[:controller[/:action]]',
-//                          'constraints' => array(
-//                              'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                              'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                          ),
-//                          'defaults' => array(
-//                          ),
-//                      ),
-//                  ),
+                  'diary-category' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/[:category]',
+                          'constraints' => array(
+                              'category' => '[a-zA-Z0-9_-]*'
+                          ),
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'Diary\Controller',
+                            'controller' => 'Diary\Controller\Diary',
+                            'action'     => 'category',
+                          ),
+                          
+                      ),
+                  ),
+                  'diary-detail' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/[:category][/:id]',
+                          'constraints' => array(
+                              'category' => '[a-zA-Z0-9_-]*',
+                              'id' => '[a-zA-Z0-9_-]*'
+                          ),
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'Diary\Controller',
+                            'controller' => 'Diary\Controller\Diary',
+                            'action'     => 'detail',
+                          ),
+                          
+                      ),
+                  ),
 //                  'tour-category' => array(
 //                    'type' => 'Segment',
 //      //              'priority' => 9001,
