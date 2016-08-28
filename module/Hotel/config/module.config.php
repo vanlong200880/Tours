@@ -15,7 +15,7 @@ return array(
             'hotel' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/hotel',
+                    'route'    => '/khach-san',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Hotel\Controller',
                         'controller'    => 'Hotel',

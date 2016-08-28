@@ -42,6 +42,10 @@
       <?php $this->news(); ?>
       <?php $this->about(); ?>
       <?php $this->footer(); ?>
-      <?php echo $this->inlineScript(); ?>
+      <?php //echo $this->inlineScript(); ?>
+      <?php
+        echo $this->inlineScript()
+            ->prependFile($this->basePath('frontend/js/search.js'));
+    ?>
     </body>
 </html>

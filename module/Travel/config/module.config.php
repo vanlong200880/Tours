@@ -15,7 +15,7 @@ return array(
             'travel' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/dia-diem-phuot',
+                    'route'    => '/dia-diem-di-choi',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Travel\Controller',
                         'controller'    => 'travel',

@@ -26,52 +26,37 @@ return array(
                 'child_routes' => array(
                   'diary-category' => array(
                       'type'    => 'Segment',
+                      'priority' => 9002,
                       'options' => array(
                           'route'    => '/[:category]',
-                          'constraints' => array(
-                              'category' => '[a-zA-Z0-9_-]*'
-                          ),
+                          
                           'defaults' => array(
                             '__NAMESPACE__' => 'Diary\Controller',
                             'controller' => 'Diary\Controller\Diary',
                             'action'     => 'category',
+                          ),
+                          'constraints' => array(
+                            'category' => '[a-zA-Z0-9_-]*'
                           ),
                           
                       ),
                   ),
                   'diary-detail' => array(
                       'type'    => 'Segment',
+                      'priority' => 9001,
                       'options' => array(
-                          'route'    => '/[:category][/:id]',
-                          'constraints' => array(
-                              'category' => '[a-zA-Z0-9_-]*',
-                              'id' => '[a-zA-Z0-9_-]*'
-                          ),
+                          'route'    => '/[:category][/:slug]',
                           'defaults' => array(
                             '__NAMESPACE__' => 'Diary\Controller',
                             'controller' => 'Diary\Controller\Diary',
                             'action'     => 'detail',
                           ),
-                          
+                        'constraints' => array(
+                          'category'     => '[a-zA-Z0-9_-]*',
+                          'slug' => '[a-zA-Z0-9_-]*'
+                        ),
                       ),
                   ),
-//                  'tour-category' => array(
-//                    'type' => 'Segment',
-//      //              'priority' => 9001,
-//                    'options' => array(
-//                      'route' => '/[:category][.html]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Tour\Controller',
-//                        'controller' => 'Tour\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
                 ),
             ),
         ),

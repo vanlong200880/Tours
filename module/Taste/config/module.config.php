@@ -15,7 +15,7 @@ return array(
             'taste' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/taste',
+                    'route'    => '/diem-an-uong',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Taste\Controller',
                         'controller'    => 'Taste',

@@ -15,7 +15,7 @@ return array(
             'tour' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/tour',
+                    'route'    => '/tours-du-lich',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Tour\Controller',
                         'controller'    => 'tour',
