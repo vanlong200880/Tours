@@ -194,6 +194,26 @@
 //      $carousel.carousel($carousel.data())
 //    })
 //  })
+  var getDaysInMonth = function(month,year) {
+    return new Date(year, month, 0).getDate();
+  }
+  $( "#hotelStartDay" ).datepicker({
+    minDate: new Date(),
+    changeMonth: true,
+    changeYear: true,
+     dateFormat: 'dd-mm-yy'
+  });
+  
+  var currentDate = new Date();
+  $( "#hotelEndDay" ).datepicker({
+//    defaultDate: "+1d",
+    minDate: "+1d",
+    maxDate: "+1y",
+    changeMonth: true,
+    changeYear: true,
+     dateFormat: 'dd-mm-yy'
+  });
+  
   var search = {
     homeItem : "search-home",
     item: {

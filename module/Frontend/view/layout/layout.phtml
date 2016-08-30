@@ -13,6 +13,7 @@
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
             ->prependStylesheet($this->basePath('frontend/css/main.css'))
+            ->prependStylesheet($this->basePath('assets/Datepicker/css/jquery-ui.css'))
             ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
 //            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
             ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
@@ -22,6 +23,7 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()
+            ->prependFile($this->basePath('assets/Datepicker/js/jquery-ui.js'))
             ->prependFile($this->basePath('frontend/libs/Swiper/dist/js/swiper.min.js'))
 //            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
             ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))

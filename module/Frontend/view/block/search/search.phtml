@@ -5,15 +5,15 @@
         <div class="search-home">
           <div class="list-tab">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" data-key="travel" class="active"><a href="#travel" aria-controls="travel" role="tab" data-toggle="tab"><span class="round"><i class="icon icon-suitcasesocial"></i></span>Tìm địa điểm phượt</a></li>
+              <li role="presentation" data-key="travel"><a href="#travel" aria-controls="travel" role="tab" data-toggle="tab"><span class="round"><i class="icon icon-suitcasesocial"></i></span>Tìm địa điểm phượt</a></li>
               <li role="presentation" data-key="tour"><a href="#tour" aria-controls="tour" role="tab" data-toggle="tab"><span class="round"></span> Tìm tour du lịch</a></li>
-              <li role="presentation" data-key="hotel"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab"><span class="round"></span> Tìm khách sạn</a></li>
+              <li role="presentation" data-key="hotel" class="active"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab"><span class="round"></span> Tìm khách sạn</a></li>
               <li role="presentation" data-key="taste"><a href="#taste" aria-controls="taste" role="tab" data-toggle="tab"><span class="round"></span> Tìm điểm ăn uống</a></li>
             </ul>
           </div>
           <div class="panel-tab">
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="travel">
+              <div role="tabpanel" class="tab-pane" id="travel">
                 <div class="row">
                   <div class="col-md-12">
                     <h2>Bạn muốn đi đâu?</h2>
@@ -91,7 +91,7 @@
                   </div>
                 </div>
               </div>
-              <div role="tabpanel" class="tab-pane" id="hotel">
+              <div role="tabpanel" class="tab-pane active" id="hotel">
                 <div class="row">
                   <div class="col-md-12">
                     <h2>Tìm kiếm, đặt phòng khách sạn giá tốt nhất?</h2>
@@ -101,13 +101,13 @@
                       <div class="col-md-6">
                         <div class="form">
                           <input type="text" class="form-control" id="hotelStartDay" name="hotelStartDay" placeholder="Ngày nhận phòng">
-                          <span class="icon icon-calendar"></span>
+                          <span onclick="$('#hotelStartDay').focus()" id="spanHotelStartDay" class="icon icon-calendar"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form">
                           <input type="text" class="form-control" id="hotelEndDay" name="hotelEndDay" placeholder="Ngày trả phòng">
-                          <span class="icon icon-calendar"></span>
+                          <span id="spanHotelEndDay" class="icon icon-calendar"></span>
                         </div>
                       </div>
                     </div>
