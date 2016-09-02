@@ -14,11 +14,13 @@
     top: 0;
     z-index: 9999;
   }
+  
   #menu-top{
     padding-left: 115px;
     li{
       display: inline-block;
       height: 50px;
+      position: relative;
       a{
         display: block;
         height: 50px;
@@ -27,6 +29,68 @@
         font-size: 16px;
         &:hover{
           color: $hover;
+        }
+      }
+      .item-menu-level{
+        position: fixed;
+        top: 50px;
+        left: 0;
+        background: #e1effa;
+        width: 100%;
+        z-index: 11;
+        display: none;
+        @include box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.4));
+        .item-level{
+          padding-left: 115px;
+          h2{
+            text-transform: uppercase;
+            margin-left: 15px;
+            font-size: 14px;
+            color: #0074e4;
+            font-weight: bold;
+            border-bottom: 1px solid #f4f9fd;
+            padding: 10px 0 5px 0;
+          }
+          ul{
+            padding: 0 0 5px 0;
+            li{
+              height: 35px;
+              a{
+                height: 35px;
+                line-height: 35px;
+                overflow: hidden;
+                &:before{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      
+    }
+    li{
+      &:nth-child(4),
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3){
+        &:hover{
+          .item-menu-level{
+            display: block;
+          }
+          a{
+            &:before{
+              content: " ";
+              border-bottom: 10px solid #e2eef9;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              position: absolute;
+              bottom: -1px;
+              left: 45%;
+              z-index: 999;
+            }
+          }
         }
       }
     }

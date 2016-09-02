@@ -300,7 +300,7 @@
   jQuery(document).ready(function($){
     $(".list-province-item .list-travel li").on('click','a',function(){
       var id = 'abc';
-      var url = 'http://localhost/tours/public/dia-diem-phuot/view';
+      var url = 'http://localhost/tours/public/dia-diem-di-choi/view';
       $.ajax({
           url : url,
           type : 'POST',
@@ -370,7 +370,7 @@
     $(".list-province-item .tab-content ul > li").on('click','.strict-views', function(){
       var current = $("#current-map").val();
       var id = 'abc';
-      var url = 'http://localhost/tours/public/dia-diem-phuot/view-map';
+      var url = 'http://localhost/tours/public/dia-diem-di-choi/view-map';
       $.ajax({
           url : url,
           type : 'POST',
