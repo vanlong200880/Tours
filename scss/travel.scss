@@ -6,11 +6,15 @@
 @import "base/typography";
 
 // @import "base/base";
+@import "layout/header";
+@import "layout/home";
 @import "layout/travel/header";
+@import "layout/about";
 @import "layout/travel/footer";
 @import "layout/footer";
 @import "layout/masterpage";
 @import "layout/travel/detail";
+@import "layout/detail";
 @import "layout/tour/views-popup";
 
 /*@import "layout/home";

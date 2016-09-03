@@ -998,6 +998,17 @@ a:hover {
       .utilities ul li .item span {
         font-size: 24px; }
 
+.content-page-popup {
+  margin-top: 15px; }
+  .content-page-popup .about h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .content-page-popup .about p {
+    line-height: 22px;
+    margin-top: 10px;
+    text-align: justify; }
+
 .album {
   margin-bottom: 15px; }
   .album .swiper-container {

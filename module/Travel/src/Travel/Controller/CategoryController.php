@@ -19,7 +19,9 @@ class CategoryController extends AbstractActionController
     {
         return new ViewModel();
     }
+    
     public function detailAction(){
+      $this->layout('layout/detail-page');
       return new ViewModel();
     }
     public function viewAction(){

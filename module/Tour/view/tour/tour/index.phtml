@@ -301,7 +301,7 @@
   jQuery(document).ready(function($){
     $(".list-container-view ul >li a").on('click', function(){
       var id = 'abc';
-      var url = 'http://localhost/tours/public/tour/detail';
+      var url = 'http://localhost/tours/public/tours-du-lich/detail';
       $.ajax({
           url : url,
           type : 'POST',
@@ -392,7 +392,7 @@
     // get tour detail
     $(".popup-page").on('click','.list-tours-related ul > li', function(){
       var id = 'abc';
-      var url = 'http://localhost/tours/public/tour/view';
+      var url = 'http://localhost/tours/public/tours-du-lich/view';
       $.ajax({
         url : url,
         type : 'POST',

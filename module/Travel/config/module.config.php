@@ -131,6 +131,7 @@ return array(
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/popup-view'           => __DIR__ . '/../view/travel/category/view.phtml',
             'layout/popup-map'           => __DIR__ . '/../view/travel/category/map.phtml',
+            'layout/detail-page'           => __DIR__ . '/../view/layout/detail.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

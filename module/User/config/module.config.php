@@ -356,6 +356,7 @@ return array(
           'menuBlog'        => 'User\Block\menuBlog',
           'menuTaste'        => 'User\Block\menuTaste',
           'menuHotel'        => 'User\Block\menuHotel',
+          'userHeader'        => 'User\Block\userHeader',
         ),
     ),
     'view_manager' => array(
@@ -369,6 +370,7 @@ return array(
             'user/index/index' => __DIR__ . '/../view/user/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'layout/login'           => __DIR__ . '/../view/layout/login.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

@@ -16,12 +16,15 @@ class PublicController extends AbstractActionController
 {
     public function loginAction()
     {
+      $this->layout('layout/login');
         return new ViewModel();
     }
     public function registerAction(){
+      $this->layout('layout/login');
       return new ViewModel();
     }
     public function forgotAction(){
+      $this->layout('layout/login');
       return new ViewModel();
     }
 }

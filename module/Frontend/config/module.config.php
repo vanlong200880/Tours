@@ -91,6 +91,7 @@ return array(
           'headerTravel'        => 'Frontend\Block\headerTravel',
           'footerTravel'        => 'Frontend\Block\footerTravel',
           'video'        => 'Video\Block\video',
+          'headerDetail'        => 'Frontend\Block\headerDetail',
         ),
     ),
     'view_manager' => array(
