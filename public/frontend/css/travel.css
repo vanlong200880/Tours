@@ -456,6 +456,22 @@ a:hover {
         overflow-y: auto;
         width: 100%;
         height: 100%; }
+        .wrapper #container .view .list-container-view .page-search-title {
+          width: 100%;
+          height: 50px;
+          background: #232f3e; }
+          .wrapper #container .view .list-container-view .page-search-title .item-title h1 {
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            color: #FFF;
+            text-transform: uppercase;
+            padding: 0 15px; }
+            .wrapper #container .view .list-container-view .page-search-title .item-title h1 span {
+              font-size: 24px; }
+              .wrapper #container .view .list-container-view .page-search-title .item-title h1 span:before {
+                position: relative;
+                top: 5px; }
     .wrapper #container .map-content {
       width: 60%;
       /*position: absolute;*/
@@ -540,7 +556,7 @@ a:hover {
   height: 50px;
   background: #e2eef9; }
   .search .page-search {
-    width: 60%;
+    width: 100%;
     float: left;
     height: 50px;
     position: relative; }
@@ -558,11 +574,6 @@ a:hover {
         padding-left: 110px;
         height: 50px;
         width: 100%; }
-  .search .page-search-title {
-    width: 40%;
-    float: left;
-    height: 50px;
-    background: #232f3e; }
   .search .list-search .item-search-type {
     border: 1px solid #ccc; }
     .search .list-search .item-search-type ul.level li {
@@ -667,18 +678,6 @@ a:hover {
       -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
       transform: rotate(-180deg); }
-  .search .item-title h1 {
-    height: 50px;
-    line-height: 50px;
-    font-size: 18px;
-    color: #FFF;
-    text-transform: uppercase;
-    padding: 0 15px; }
-    .search .item-title h1 span {
-      font-size: 24px; }
-      .search .item-title h1 span:before {
-        position: relative;
-        top: 5px; }
 
 .province-container {
   padding: 10px; }

@@ -1,0 +1,301 @@
+.cart-page{
+  #header{
+    background: #f4f4f4;
+  }
+  .steps{
+    height: 50px;
+    padding-left: 175px;
+    padding-right: 60px;
+    padding-top: 15px;
+    .step{
+      width: 33.3333333333%;
+      float: left;
+      min-height: 3px;
+      position: relative;
+      background-color: #999;
+      a{
+        position: relative;
+        display: inherit;
+        &:before{
+          content: '';
+          height: 3px;
+          width: 100%;
+          background-color: #999;
+          position: absolute;
+          top: 50%;
+          left: -100%;
+        }
+        &:after{
+          content: ' ';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          background-color: #999;
+          @include border-radius(100%);
+          width: 25px;
+          height: 25px;
+          margin-top: -12px;
+          color: #fff;
+          font-size: 11px;
+          text-align: center;
+          line-height: 25px;
+          font-family: arial;
+          z-index: 1;
+          left: -25px;
+        }
+        span{
+          position: absolute;
+          left: 0;
+          top: 15px;
+        }
+      }
+      span.done{
+        right: -15px;
+        left: auto;
+        top: 15px;
+        position: absolute;
+      }
+    }
+    .step1{
+      a{
+        span{
+          left: -40px;
+        }
+        &:after{
+          content: "1";
+        }
+        &:before{
+          display: none;
+        }
+      }
+    }
+    .step2{
+      a{
+        &:after{
+          content: "2";
+        }
+        span{
+          left: -80px;
+        }
+      }
+    }
+    .step3{
+      a{
+        &:after{
+          content: "3";
+        }
+        span{
+          left: -40px;
+        }
+      }
+      &:before{
+          content: '';
+          height: 3px;
+          width: 100%;
+          background-color: #999;
+          position: absolute;
+        }
+      &:after{
+        content: '4';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background-color: #999;
+        @include border-radius(100%);
+        width: 25px;
+        height: 25px;
+        margin-top: -12px;
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        line-height: 25px;
+        font-family: arial;
+        z-index: 1;
+      }
+    }
+    
+    .step.active{
+      a{
+        &:after{
+          color: #FFF;
+          background: #71be0f;
+        }
+        &:before{
+          background: #71be0f;
+        }
+        span{
+          color: #71be0f;
+        }
+      }
+    }
+    .step.active.complate{
+      &:before{
+        background: #71be0f;
+      }
+      &:after{
+        color: #FFF;
+        background: #71be0f;
+      }
+      span.done{
+        color: #71be0f; 
+      }
+    }
+  }
+}
+.cart-content{
+  /*background: #f7f7f7;*/
+  margin-top: 15px;
+  padding: 15px 0;
+  .cart-order{
+    background: #FFF;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    width: 100%;
+    th{
+      padding: 5px;
+      background: #f7f7f7;
+      border-bottom: 1px solid #DDD;
+    }
+    tbody{
+      td{
+        padding: 10px 5px;
+        border-bottom: 1px solid #DDD;
+        vertical-align: top;
+        .view-cart-item{
+          .image{
+            width: 20%;
+            float: left;
+            position: relative;
+            overflow: hidden;
+            span.sale{
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 44px;
+              height: 22px;
+              background: #ff9500;
+              line-height: 22px;
+              padding: 0 5px;
+              color: #FFF;
+              &:before{
+                content: " ";
+                width: 0;
+                height: 0;
+                border-top: 12px solid #ff9500;
+                border-left: 22px solid transparent;
+                border-right: 22px solid transparent;
+                position: absolute;
+                bottom: -12px;
+                left: 0;
+              }
+              
+            }
+          }
+          .name{
+            width: 80%;
+            float: left;
+            padding-left: 15px;
+            font-weight: bold;
+          }
+        }
+        .quanlity{
+          width: 70px;
+          height: 30px;
+        }
+      }
+      td.price{
+        width: 15%;
+      }
+    }
+  }
+  .summary{
+    background: #FFF;
+    border: 1px solid #DDD;
+    @include border-radius(3px);
+    padding: 15px;
+    p.total{
+      margin-bottom: 13px;
+      span{
+        float: right;
+      }
+    }
+    p.total2{
+      border-top: 2px solid #e54d42;
+      padding-top: 12px;
+      margin-bottom: 0;
+      line-height: 19px;
+      span{
+        color: #ee2347;
+        font-size: 19px;
+        float: right;
+      }
+    }
+    p.text-right{
+      margin-bottom: 13px;
+      text-align: right;
+    }
+  }
+  .coupon{
+    background: #FFF;
+    border: 1px solid #DDD;
+    @include border-radius(3px);
+    margin-top: 15px;
+    .input-group{
+      padding: 15px;
+    }
+    h4{
+      border-bottom: 1px solid #f5f5f5;
+      padding: 5px 15px;
+    }
+    input{
+      outline: none;
+      @include box-shadow(none);
+    }
+    .btn{
+      background: #00b7f1;
+      font-size: 12px;
+      color: #fff;
+      border: none;
+      padding-top: 9px;
+      padding-bottom: 8px;
+      outline: 0;
+      -webkit-transition: all .5s linear;
+      -o-transition: all .5s linear;
+      transition: all .5s linear;
+      -webkit-border-radius: 0 3px 3px 0;
+      -moz-border-radius: 0 3px 3px 0;
+      -ms-border-radius: 0 3px 3px 0;
+      -o-border-radius: 0 3px 3px 0;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+  .btn-checkout{
+    margin-top: 15px;
+    color: #fff;
+    padding: 8px 12px;
+    border: 1px solid #cd1233;
+    outline-color: #ccc;
+    background: #e54d42;
+    background: -webkit-gradient(linear,0 0,0 bottom,from(#e54d42),to(#e54d42));
+    background: -webkit-linear-gradient(#e54d42,#d72041);
+    background: -moz-linear-gradient(#e54d42,#d72041);
+    background: -ms-linear-gradient(#e54d42,#d72041);
+    background: -o-linear-gradient(#e54d42,#d72041);
+    background: linear-gradient(#e54d42,#d72041);
+    -webkit-transistion: all .5s linear;
+    -moz-transistion: all .5s linear;
+    -ms-transistion: all .5s linear;
+    -o-transistion: all .5s linear;
+    transistion: all .5s linear;
+    @include box-shadow(none);
+    outline: none;
+    &:active,
+    &:visited,
+    &:focus,
+    &:hover{
+      background: #e54d42;
+      outline: none;
+    }
+  }
+}

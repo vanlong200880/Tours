@@ -110,8 +110,7 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'headerTravel'        => 'Travel\Block\headerTravel',
-//          'footerTravel'        => 'Travel\Block\footerTravel',
+          'searchHotel'        => 'Hotel\Block\searchHotel',
         ),
     ),
     'view_manager' => array(

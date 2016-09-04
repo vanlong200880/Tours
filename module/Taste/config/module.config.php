@@ -79,8 +79,7 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'headerTravel'        => 'Travel\Block\headerTravel',
-//          'footerTravel'        => 'Travel\Block\footerTravel',
+          'searchTaste'        => 'Taste\Block\searchTaste',
         ),
     ),
     'view_manager' => array(

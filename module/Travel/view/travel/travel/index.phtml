@@ -1,64 +1,16 @@
 <div class="search">
   <div class="page-search">
-    <div class="search-item">
-      <div class="search-list">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="list-search">
-                <div class="row">
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" name="tasteKeyword" id="tasteKeyword">
-                  </div>
-                  <div class="col-md-2">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">Quốc Gia</option>
-                      <option value="">Việt Nam</option>
-                      <option value="">Thái Lan</option>
-                      <option>Ấn Độ</option>
-                      <option>Mỹ</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker">
-                      <option value="">Tỉnh/Thành Phố</option>
-                      <option>Bình Phước</option>
-                      <option>Hà Nội</option>
-                      <option>Hải Dương</option>
-                      <option>Bình Định</option>
-                      <option>Quản Trị</option>
-                      <option>Quảng Nam</option>
-                      <option>Huế</option>
-                      <option>Đà Nẵng</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker">
-                      <option value="">Quận/Huyện</option>
-                      <option>Quận 1</option>
-                    </select>
-                  </div>
-                  <div class="col-md-1">
-                    <button class="button-search pull-right" id="tour-search-button">Tìm</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php $this->searchTravel(); ?>
   </div>
-  <div class="page-search-title">
-    <div class="item-title">
-      <h1><span class="icon icon-menu"></span> Danh sách Tỉnh / Thành Phố</h1>
-    </div>
-  </div>
-  
 </div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
+      <div class="page-search-title">
+        <div class="item-title">
+          <h1><span class="icon icon-menu"></span> Danh sách Tỉnh / Thành Phố</h1>
+        </div>
+      </div>
       <div class="province-container">
         <ul>
           <li>

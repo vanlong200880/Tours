@@ -1,84 +1,16 @@
 <div class="search">
   <div class="page-search">
-    <div class="search-item">
-      <div class="search-list">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="list-search">
-                <div class="row">
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">-- Quốc gia -- </option>
-                      <option value="">Việt Nam</option>
-                      <option value="">Thái Lan</option>
-                      <option>Ấn Độ</option>
-                      <option>Mỹ</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">-- Tỉnh/Thành Phố -- </option>
-                      <option>Bình Phước</option>
-                      <option>Hà Nội</option>
-                      <option>Hải Dương</option>
-                      <option>Bình Định</option>
-                      <option>Quản Trị</option>
-                      <option>Quảng Nam</option>
-                      <option>Huế</option>
-                      <option>Đà Nẵng</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                        <option value="">-- Quận/Huyện -- </option>
-                        <option>Quận 1</option>
-                        <option>Quận 2</option>
-                        <option>Quận 3</option>
-                        <option>Quận 4</option>
-                        <option>Quận 5</option>
-                      </select>
-<!--                    <script>
-                    jQuery(document).ready(function($){
-                      var isClick = false;
-                      $(".item-search-type ul>li").on('click', function(e){
-                        $(".menu-search li").removeClass('selected');
-                        if(isClick != true){
-                          $(this).addClass('selected');
-                          isClick = true;
-                        }else{
-                          $(this).removeClass('selected');
-                          isClick = false;
-                        }
-                        e.stopPropagation();
-                    });
-                    $(document).click(function(e) {
-                      isClick = false;
-                      if (!$(e.target).is('.item, .item *')) {
-                        $(".item-search-type li.item").removeClass('selected');
-                      }
-                    });
-                  });
-                    </script>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php $this->searchTour(); ?>
   </div>
-  <div class="page-search-title">
-    <div class="item-title">
-      <h1><span class="icon icon-menu"></span> Tour du lịch</h1>
-    </div>
-  </div>
-  
 </div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
+      <div class="page-search-title">
+      <div class="item-title">
+        <h1><span class="icon icon-menu"></span> Tour du lịch</h1>
+      </div>
+    </div>
       <div class="list-cat">
         <div class="filter">
           <ul>

@@ -94,7 +94,7 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'headerTravel'        => 'Travel\Block\headerTravel',
+          'searchTour'        => 'Tour\Block\searchTour',
 //          'footerTravel'        => 'Travel\Block\footerTravel',
         ),
     ),

@@ -17,6 +17,7 @@ return array(
       'User',
       'Diary',
       'Photo',
+      'Cart',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

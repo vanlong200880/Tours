@@ -1,118 +1,17 @@
 <div class="search">
   <div class="page-search">
-    <div class="search-item">
-      <div class="search-list">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="list-search">
-                <div class="row">
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">-- Quốc gia -- </option>
-                      <option value="">Việt Nam</option>
-                      <option value="">Thái Lan</option>
-                      <option>Ấn Độ</option>
-                      <option>Mỹ</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker">
-                      <option value="">-- Tỉnh/Thành Phố -- </option>
-                      <option>Bình Phước</option>
-                      <option>Hà Nội</option>
-                      <option>Hải Dương</option>
-                      <option>Bình Định</option>
-                      <option>Quản Trị</option>
-                      <option>Quảng Nam</option>
-                      <option>Huế</option>
-                      <option>Đà Nẵng</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="item-search-type">
-                      <ul class="level">
-                        <li class="item">
-                          <a>
-                            <span>-- Loại --</span>
-                          </a>
-                          <ul class="search-type">
-                            <li class="tours">
-                              <input type="checkbox" class="for-type" name="fs-travel" id="fs-travel">
-                              <label class="fs-home" data-key="listings-1" for="fs-travel">
-                                <span class="root-radius"></span>
-                                <span>Điểm du lịch</span>
-                              </label>
-                            </li>
-                            <li class="hotel">
-                              <input type="checkbox" class="for-type" name="fs-hotel" id="fs-hotel">
-                              <label class="fs-home" data-key="listings-2"  for="fs-hotel">
-                                <span class="root-radius"></span>
-                                <span>Khách sạn</span>
-                              </label>
-                            </li>
-                            <li class="taste">
-                              <input type="checkbox" class="for-type" name="fs-taste" id="fs-taste">
-                              <label class="fs-home" data-key="listings-3" for="fs-taste">
-                                <span class="root-radius"></span>
-                                <span>Điểm ăn uống</span> 
-                              </label>
-                            </li>
-                            <li class="park">
-                              <input type="checkbox" class="for-type" name="fs-park" id="fs-park">
-                              <label class="fs-home" data-key="listings-4" for="fs-park">
-                                <span class="root-radius"></span>
-                                <span>Công viên giải trí</span> 
-                              </label>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <script>
-                    jQuery(document).ready(function($){
-                      var isClick = false;
-                      $(".item-search-type ul>li").on('click', function(e){
-                        $(".menu-search li").removeClass('selected');
-                        if(isClick != true){
-                          $(this).addClass('selected');
-                          isClick = true;
-                        }else{
-                          $(this).removeClass('selected');
-                          isClick = false;
-                        }
-                        e.stopPropagation();
-                    });
-                    $(document).click(function(e) {
-                      isClick = false;
-                      if (!$(e.target).is('.item, .item *')) {
-                        $(".item-search-type li.item").removeClass('selected');
-                      }
-                    });
-                  });
-                    </script>
-<!--                    <select class="form-control">
-                      <option value="">-- Loại -- </option>
-                    </select>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="page-search-title">
-    <div class="item-title">
-      <h1><span class="icon icon-menu"></span> Thành phố Hồ Chí Minh</h1>
-    </div>
+    <?php echo $this->searchTravel(); ?>
   </div>
   
 </div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
+      <div class="page-search-title">
+        <div class="item-title">
+          <h1><span class="icon icon-menu"></span> Thành phố Hồ Chí Minh</h1>
+        </div>
+      </div>
       <div class="province-container">
         <div class="province">
           <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">

@@ -1,66 +1,16 @@
 <div class="search">
   <div class="page-search">
-    <div class="search-item">
-      <div class="search-list">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="list-search">
-                <div class="row">
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">-- Quốc gia -- </option>
-                      <option value="">Việt Nam</option>
-                      <option value="">Thái Lan</option>
-                      <option>Ấn Độ</option>
-                      <option>Mỹ</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker">
-                      <option value="">-- Tỉnh/Thành Phố -- </option>
-                      <option>Bình Phước</option>
-                      <option>Hà Nội</option>
-                      <option>Hải Dương</option>
-                      <option>Bình Định</option>
-                      <option>Quản Trị</option>
-                      <option>Quảng Nam</option>
-                      <option>Huế</option>
-                      <option>Đà Nẵng</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-control selectpicker" data-live-search="true">
-                      <option value="">-- Loại -- </option>
-                      <option value="">Trà sữa</option>
-                      <option value="">Quán ăn</option>
-                      <option>Quán nhậu</option>
-                      <option>Tiệm bánh</option>
-                      <option>Nhà hàng</option>
-                      <option>Ăn vặt/vỉa hè</option>
-                      <option>Ăn chay</option>
-                      <option>Cafe</option>
-                      <option>Kem</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php $this->searchTaste(); ?>
   </div>
-  <div class="page-search-title">
-    <div class="item-title">
-      <h1><span class="icon icon-menu"></span> Điểm ăn uống</h1>
-    </div>
-  </div>
-  
 </div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
+      <div class="page-search-title">
+        <div class="item-title">
+          <h1><span class="icon icon-menu"></span> Điểm ăn uống</h1>
+        </div>
+      </div>
       <div class="list-cat">
         <div class="filter">
           <ul>
@@ -333,7 +283,7 @@
   jQuery(document).ready(function($){
     $(".list-cat .list-item li").on('click','a',function(){
       var id = 'abc';
-      var url = 'http://localhost/tours/public/taste/detail';
+      var url = 'http://localhost/tours/public/diem-an-uong/detail';
       $.ajax({
           url : url,
           type : 'POST',
@@ -422,7 +372,7 @@
             $(".menu-order ul li").on('click','img', function(){
               var current = $("#current-map").val();
               var id = 'abc';
-              var url = 'http://localhost/tours/public/taste/order';
+              var url = 'http://localhost/tours/public/diem-an-uong/order';
               $.ajax({
                   url : url,
                   type : 'POST',
