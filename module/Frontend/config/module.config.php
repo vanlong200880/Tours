@@ -92,6 +92,7 @@ return array(
           'footerTravel'        => 'Frontend\Block\footerTravel',
           'video'        => 'Video\Block\video',
           'headerDetail'        => 'Frontend\Block\headerDetail',
+          'cart'        => 'Frontend\Block\cart',
         ),
     ),
     'view_manager' => array(
