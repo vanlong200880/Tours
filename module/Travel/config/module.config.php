@@ -25,65 +25,141 @@ return array(
                 'may_terminate' => true,
                 'child_routes' => array(
                   'travel-province' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/[:category]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Travel\Controller',
-                        'controller' => 'Travel\Controller\Category',
-                        'action' => 'index',
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                      ),
+                  'type' => 'Segment',
+                  'options' => array(
+                    'route' => '/[:nation][/:province][/:district][/trang-:page]',
+                    'defaults' => array(
+                      '__NAMESPACE__' => 'Travel\Controller',
+                      'controller' => 'Travel\Controller\Category',
+                      'action' => 'index',
+                    ),
+                    'constraints' => array(
+//                      'category'     => '[a-zA-Z0-9_-]*',
+                      'nation'     => '[a-zA-Z0-9_-]*',
+                      'province'     => '[a-zA-Z0-9_-]*',
+                      'district'     => '[a-zA-Z0-9_-]*',
+                      'page'     	=> '[0-9]+',
                     ),
                   ),
-                  'travel-detail' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/[:category]/[:slug]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Travel\Controller',
-                        'controller' => 'Travel\Controller\Category',
-                        'action' => 'detail',
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                        'slug'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
-                  
-                  'popup-view' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/view',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Travel\Controller',
-                        'controller' => 'Travel\Controller\Category',
-                        'action' => 'view',
-                      ),
-                    ),
-                  ),
-                  
-                  'popup-map' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/view-map',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Travel\Controller',
-                        'controller' => 'Travel\Controller\Category',
-                        'action' => 'map',
-                      ),
-                    ),
-                  ),
+                ),
+//                  'travel-province' => array (
+//                      'type' => 'Zend\Mvc\Router\Http\Regex',
+//                      'options' => array (
+//                          'regex' => '/(?<slug>[a-zA-Z0-9-]+)/(?<nation>[a-zA-Z0-9-]+)(/trang-(?<page>[0-9]+))?(\.(?<format>(html)))?',
+//                          'defaults' => array(
+//                            '__NAMESPACE__' => 'Travel\Controller',
+//                            'controller' => 'Travel\Controller\Category',
+//                            'action' => 'index',
+//                            'format' => 'html',
+////                            'page' => 1
+//                          ),
+//                          'spec' => '/%slug%/%nation%/trang-%page%.%format%'
+//                      )
+//                  ),
+//                  'travel-province' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/[:category][/:nation][/:province][/:district]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'index',
+//                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                        'nation'     => '[a-zA-Z0-9_-]*',
+//                        'province'     => '[a-zA-Z0-9_-]*',
+//                        'district'     => '[a-zA-Z0-9_-]*',
+//                      ),
+//                    ),
+//                  ),
+//                  'travel-detail' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/[:category]/[:slug]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'detail',
+//                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                        'slug'     => '[a-zA-Z0-9_-]*',
+//                        'id'     	=> '[0-9]+',
+//                      ),
+//                    ),
+//                  ),
+////                  
+//                  'popup-view' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/view',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'view',
+//                      ),
+//                    ),
+//                  ),
+//                  
+//                  'popup-map' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/view-map',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'map',
+//                      ),
+//                    ),
+//                  ),
                   
                   
                 ),
+            ),
+          
+            'travel-detail' => array (
+              'type' => 'Zend\Mvc\Router\Http\Regex',
+              'options' => array (
+                'regex' => '/dia-diem-di-choi/(?<slug>[a-zA-Z0-9-]+)-pr-(?<id>[0-9]+)?(\.(?<format>(html)))?',
+                  'defaults' => array(
+                    '__NAMESPACE__' => 'Travel\Controller',
+                    'controller' => 'Travel\Controller\Category',
+                    'action' => 'detail',
+                    'format' => 'html',
+                  ),
+                  'spec' => '/dia-diem-di-choi/%slug%-pr-%id%.%format%'
+              )
+            ),
+          
+            'popup-view' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/view',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Travel\Controller',
+                  'controller' => 'Travel\Controller\Category',
+                  'action' => 'view',
+                ),
+              ),
+            ),
+
+            'popup-map' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/view-map',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Travel\Controller',
+                  'controller' => 'Travel\Controller\Category',
+                  'action' => 'map',
+                ),
+              ),
             ),
         ),
     ),

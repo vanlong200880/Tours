@@ -2,15 +2,15 @@ $(document).ready(function() {
       var _numStay=1;
       $("#hotelStartDay").length && ($("#hotelStartDay").datepicker({
         numberOfMonths: 2,
-        dateFormat: "dd/mm/yy",
+        dateFormat: "dd-mm-yy",
         firstDay: 1,
         minDate: new Date,
         onClose: function(e, t) {
             var a = new Date,
-                n = e.split("/"),
+                n = e.split("-"),
                 i = "";
             if ("" != n) var i = n[2] + "-" + n[1] + "-" + n[0];
-            var r = $("#hotelEndDay").val().split("/"),
+            var r = $("#hotelEndDay").val().split("-"),
                 o = r[2] + "-" + r[1] + "-" + r[0];
             if ("" != $("#hotelEndDay").val()) {
                 var c = new Date(i),
@@ -35,15 +35,15 @@ $(document).ready(function() {
         }
     }), $("#hotelEndDay").datepicker({
         numberOfMonths: 2,
-        dateFormat: "dd/mm/yy",
+        dateFormat: "dd-mm-yy",
         firstDay: 1,
         minDate: new Date,
         onClose: function(e, t) {
             var a = new Date,
-                n = e.split("/"),
+                n = e.split("-"),
                 i = "";
             if ("" != n) var i = n[2] + "-" + n[1] + "-" + n[0];
-            var r = $("#hotelStartDay").val().split("/"),
+            var r = $("#hotelStartDay").val().split("-"),
                 o = r[2] + "-" + r[1] + "-" + r[0];
             if ("" != $("#hotelStartDay").val()) {
                 var c = new Date(o),
@@ -153,7 +153,7 @@ search.render = function(){
           $.each(search.item.travel, function(key, value){
             data.travel[key] = $("#" + value).val();
           });
-            link += 'dia-diem-di-choi';
+            link += '/dia-diem-di-choi';
             link += (data.travel.travelNation !== '')?'/'+data.travel.travelNation:'';
             link += (data.travel.travelProvince !== '')?'/'+data.travel.travelProvince:'';
             link += (data.travel.travelDistrict !== '')?'/'+data.travel.travelDistrict:'';
@@ -163,20 +163,37 @@ search.render = function(){
             $.each(search.item.tour, function(key, value){
               data.tour[key] = $("#" + value).val();
             });
-            link += 'tours-du-lich';
+            link += '/tours-du-lich';
             link += (data.tour.tourNation !== '')?'/'+data.tour.tourNation:'';
             link += (data.tour.tourProvince !== '')?'/'+data.tour.tourProvince:'';
             link += (data.tour.tourDistrict !== '')?'/'+data.tour.tourDistrict:'';
             link += (data.tour.tourKeyword !== '')?'?keyword='+data.tour.tourKeyword:'';
           break;
         case 'hotel':
-          console.log(active);
+          $.each(search.item.hotel, function(key, value){
+            data.hotel[key] = $("#" + value).val();
+          });
+            link += '/khach-san';
+            link += (data.hotel.hotelNation !== '')?'/'+data.hotel.hotelNation:'';
+            link += (data.hotel.hotelProvince !== '')?'/'+data.hotel.hotelProvince:'';
+            link += (data.hotel.hotelDistrict !== '')?'/'+data.hotel.hotelDistrict:'';
+            link += (data.hotel.hotelStartDay !== '')?'/'+data.hotel.hotelStartDay:'';
+            link += (data.hotel.hotelEndDay !== '')?'/'+data.hotel.hotelEndDay:'';
           break;
         case 'taste':
-          console.log(active);
+          $.each(search.item.taste, function(key, value){
+             data.taste[key] = $("#" + value).val();
+          });
+          link += '/diem-an-uong';
+          link += (data.taste.tasteNation !== '')?'/'+data.taste.tasteNation:'';
+          link += (data.taste.tasteProvince !== '')?'/'+data.taste.tasteProvince:'';
+          link += (data.taste.tasteDistrict !== '')?'/'+data.taste.tasteDistrict:'';
+          link += (data.taste.tasteKeyword !== '')?'?keyword='+data.taste.tasteKeyword:'';
           break;
     }
-    console.log(link);
+    var root = location.protocol + '//' + location.host + '/tours/public';
+    window.location.href = root + link;
+    console.log(root, link);
     console.log(data);
   });
 };

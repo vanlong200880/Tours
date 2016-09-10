@@ -2,6 +2,11 @@
   padding: 8px;
   background: #F8f8f8;
 }
+.detail-page{
+  background: #f8f8f8;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DDD;
+}
 .filter{
   ul{
     display: inline-block;
@@ -24,120 +29,119 @@
     }
   }
 }
-.popup-page {
-  .popup-container.tour{
-    background: #f8f8f8;
-    .popup-body{
-      .slider{
-        background: #FFF;
-        padding: 8px;
-        border: 1px solid #DDD;
+.slider{
+  background: #FFF;
+  padding: 8px;
+  border: 1px solid #DDD;
+}
+
+.description{
+  h2{
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  p.expt{
+    padding-bottom: 10px;
+  }
+  .item{
+    border-top: 1px solid #DDD;
+    padding: 10px 0;
+    display: inline-block;
+    width: 100%;
+    p.cost{
+      position: relative;
+      text-decoration: line-through;
+      font-size: 16px;
+      span{
+        position: relative;
+        top: -5px;
       }
-      .description{
-        h2{
-          font-size: 14px;
-          font-weight: bold;
-          padding-bottom: 10px;
-        }
-        p.expt{
-          padding-bottom: 10px;
-        }
-        .item{
-          border-top: 1px solid #DDD;
-          padding: 10px 0;
-          display: inline-block;
-          width: 100%;
-          p.cost{
-            position: relative;
-            text-decoration: line-through;
-            font-size: 16px;
-            span{
-              position: relative;
-              top: -5px;
-            }
-          }
-          p.price-sale{
-            font-size: 30px;
-            font-weight: bold;
-            color: red;
-            position: relative;
-            margin-top: 15px;
-            span{
-              position: relative;
-              top: -19px;
-              font-size: 20px;
-            }
-            var{
-              background: red;
-              @include border-radius(3px);
-              position: relative;
-              color: #FFF;
-              font-size: 16px;
-              font-weight: normal;
-              padding: 5px 10px;
-              height: 30px;
-              display: inline-block;
-              position: relative;
-              top: -8px;
-              margin-left: 15px;
-              &:before{
-                content: " ";
-                border-right: 8px solid red;
-                border-top: 5px solid transparent;
-                border-bottom: 5px solid transparent;
-                position: absolute;
-                left: -8px;
-                top: 40%;
-              }
-            }
-          }
-          .quanlity{
-            width: 50%;
-            float: left;
-            padding-top: 5px;
-            input{
-              display: inline-block;
-              width: 80px;
-              height: 30px;
-            }
-          }
-          .payment{
-            width: 50%;
-            float: left;
-            a{
-              text-transform: uppercase;
-              font-weight: bold;
-              text-align: center;
-              @include border-radius(3px);
-              background: red;
-              color: #FFF;
-              padding: 10px 15px;
-              display: inline-block;
-            }
-          }
-          p.count-user-payment{
-            width: 50%;
-            float: left;
-            border-right: 1px solid #DDD;
-            font-weight: bold;
-            span{
-              margin-right: 5px;
-              display: inline-block;
-              &:before{
-                position: relative;
-                top: 2px;
-              }
-            }
-          }
-          p.time{
-            width: 50%;
-            float: left;
-            text-align: right;
-            font-weight: bold;
-          }
+    }
+    p.price-sale{
+      font-size: 30px;
+      font-weight: bold;
+      color: red;
+      position: relative;
+      margin-top: 15px;
+      span{
+        position: relative;
+        top: -19px;
+        font-size: 20px;
+      }
+      var{
+        background: red;
+        @include border-radius(3px);
+        position: relative;
+        color: #FFF;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 5px 10px;
+        height: 30px;
+        display: inline-block;
+        position: relative;
+        top: -8px;
+        margin-left: 15px;
+        &:before{
+          content: " ";
+          border-right: 8px solid red;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          position: absolute;
+          left: -8px;
+          top: 40%;
         }
       }
     }
+    .quanlity{
+      width: 50%;
+      float: left;
+      padding-top: 5px;
+      input{
+        display: inline-block;
+        width: 80px;
+        height: 30px;
+      }
+    }
+    .payment{
+      width: 50%;
+      float: left;
+      a{
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        @include border-radius(3px);
+        background: red;
+        color: #FFF;
+        padding: 10px 15px;
+        display: inline-block;
+      }
+    }
+    p.count-user-payment{
+      width: 50%;
+      float: left;
+      border-right: 1px solid #DDD;
+      font-weight: bold;
+      span{
+        margin-right: 5px;
+        display: inline-block;
+        &:before{
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+    p.time{
+      width: 50%;
+      float: left;
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+}
+.popup-page {
+  .popup-container.tour{
+    background: #f8f8f8;
   }
 }
 .list-tours-related{

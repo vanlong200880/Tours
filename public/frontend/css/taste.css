@@ -1300,6 +1300,11 @@ ul.connect li.youtube a:hover {
   padding: 8px;
   background: #F8f8f8; }
 
+.detail-page {
+  background: #f8f8f8;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DDD; }
+
 .filter ul {
   display: inline-block;
   width: 100%;
@@ -1318,105 +1323,107 @@ ul.connect li.youtube a:hover {
       position: relative;
       top: 3px; }
 
+.slider {
+  background: #FFF;
+  padding: 8px;
+  border: 1px solid #DDD; }
+
+.description h2 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px; }
+.description p.expt {
+  padding-bottom: 10px; }
+.description .item {
+  border-top: 1px solid #DDD;
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%; }
+  .description .item p.cost {
+    position: relative;
+    text-decoration: line-through;
+    font-size: 16px; }
+    .description .item p.cost span {
+      position: relative;
+      top: -5px; }
+  .description .item p.price-sale {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    position: relative;
+    margin-top: 15px; }
+    .description .item p.price-sale span {
+      position: relative;
+      top: -19px;
+      font-size: 20px; }
+    .description .item p.price-sale var {
+      background: red;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      position: relative;
+      color: #FFF;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 5px 10px;
+      height: 30px;
+      display: inline-block;
+      position: relative;
+      top: -8px;
+      margin-left: 15px; }
+      .description .item p.price-sale var:before {
+        content: " ";
+        border-right: 8px solid red;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        left: -8px;
+        top: 40%; }
+  .description .item .quanlity {
+    width: 50%;
+    float: left;
+    padding-top: 5px; }
+    .description .item .quanlity input {
+      display: inline-block;
+      width: 80px;
+      height: 30px; }
+  .description .item .payment {
+    width: 50%;
+    float: left; }
+    .description .item .payment a {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      background: red;
+      color: #FFF;
+      padding: 10px 15px;
+      display: inline-block; }
+  .description .item p.count-user-payment {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #DDD;
+    font-weight: bold; }
+    .description .item p.count-user-payment span {
+      margin-right: 5px;
+      display: inline-block; }
+      .description .item p.count-user-payment span:before {
+        position: relative;
+        top: 2px; }
+  .description .item p.time {
+    width: 50%;
+    float: left;
+    text-align: right;
+    font-weight: bold; }
+
 .popup-page .popup-container.tour {
   background: #f8f8f8; }
-  .popup-page .popup-container.tour .popup-body .slider {
-    background: #FFF;
-    padding: 8px;
-    border: 1px solid #DDD; }
-  .popup-page .popup-container.tour .popup-body .description h2 {
-    font-size: 14px;
-    font-weight: bold;
-    padding-bottom: 10px; }
-  .popup-page .popup-container.tour .popup-body .description p.expt {
-    padding-bottom: 10px; }
-  .popup-page .popup-container.tour .popup-body .description .item {
-    border-top: 1px solid #DDD;
-    padding: 10px 0;
-    display: inline-block;
-    width: 100%; }
-    .popup-page .popup-container.tour .popup-body .description .item p.cost {
-      position: relative;
-      text-decoration: line-through;
-      font-size: 16px; }
-      .popup-page .popup-container.tour .popup-body .description .item p.cost span {
-        position: relative;
-        top: -5px; }
-    .popup-page .popup-container.tour .popup-body .description .item p.price-sale {
-      font-size: 30px;
-      font-weight: bold;
-      color: red;
-      position: relative;
-      margin-top: 15px; }
-      .popup-page .popup-container.tour .popup-body .description .item p.price-sale span {
-        position: relative;
-        top: -19px;
-        font-size: 20px; }
-      .popup-page .popup-container.tour .popup-body .description .item p.price-sale var {
-        background: red;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -o-border-radius: 3px;
-        -ms-border-radius: 3px;
-        position: relative;
-        color: #FFF;
-        font-size: 16px;
-        font-weight: normal;
-        padding: 5px 10px;
-        height: 30px;
-        display: inline-block;
-        position: relative;
-        top: -8px;
-        margin-left: 15px; }
-        .popup-page .popup-container.tour .popup-body .description .item p.price-sale var:before {
-          content: " ";
-          border-right: 8px solid red;
-          border-top: 5px solid transparent;
-          border-bottom: 5px solid transparent;
-          position: absolute;
-          left: -8px;
-          top: 40%; }
-    .popup-page .popup-container.tour .popup-body .description .item .quanlity {
-      width: 50%;
-      float: left;
-      padding-top: 5px; }
-      .popup-page .popup-container.tour .popup-body .description .item .quanlity input {
-        display: inline-block;
-        width: 80px;
-        height: 30px; }
-    .popup-page .popup-container.tour .popup-body .description .item .payment {
-      width: 50%;
-      float: left; }
-      .popup-page .popup-container.tour .popup-body .description .item .payment a {
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -o-border-radius: 3px;
-        -ms-border-radius: 3px;
-        background: red;
-        color: #FFF;
-        padding: 10px 15px;
-        display: inline-block; }
-    .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment {
-      width: 50%;
-      float: left;
-      border-right: 1px solid #DDD;
-      font-weight: bold; }
-      .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment span {
-        margin-right: 5px;
-        display: inline-block; }
-        .popup-page .popup-container.tour .popup-body .description .item p.count-user-payment span:before {
-          position: relative;
-          top: 2px; }
-    .popup-page .popup-container.tour .popup-body .description .item p.time {
-      width: 50%;
-      float: left;
-      text-align: right;
-      font-weight: bold; }
 
 .list-tours-related {
   margin-top: 30px;

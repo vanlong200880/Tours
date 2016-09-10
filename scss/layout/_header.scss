@@ -106,3 +106,33 @@
     }
   }
 }
+#header.fixed{
+  position: fixed;
+  top: -100px;
+  width: 100%;
+  z-index: 999999;
+  background: $tours;
+  margin-top: 100px;
+  @include transition(margin-top 1s ease);
+  #menu-top{
+    li{
+      a{
+        color: #FFF;
+      }
+      ul{
+        li{
+          a{
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  #login{
+    li{
+      a{
+        color: #fff;
+      }
+    }
+  }
+}

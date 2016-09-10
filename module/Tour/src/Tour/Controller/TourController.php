@@ -32,4 +32,8 @@ class TourController extends AbstractActionController
 
       return $jsonModel;
     }
+    public function pageDetailAction(){
+      $this->layout('layout/tour-page-detail');
+       return new ViewModel();
+    }
 }

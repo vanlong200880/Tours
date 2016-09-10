@@ -36,9 +36,30 @@ return array(
                       ),
                       'constraints' => array(
                         'category'     => '[a-zA-Z0-9_-]*',
+                        'nation'     => '[a-zA-Z0-9_-]*',
+                        'province'     => '[a-zA-Z0-9_-]*',
+                        'district'     => '[a-zA-Z0-9_-]*',
                       ),
                     ),
                   ),
+                  
+                  'tour-page-detail' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '/[:category][/:slug]',
+
+                      'defaults' => array(
+                        '__NAMESPACE__' => 'Tour\Controller',
+                        'controller' => 'Tour\Controller\Tour',
+                        'action' => 'pageDetail',
+                      ),
+                      'constraints' => array(
+                        'category'     => '[a-zA-Z0-9_-]*',
+                        'slug'     => '[a-zA-Z0-9_-]*',
+                      ),
+                    ),
+                  ),
+                  
                   'view' => array(
                     'type' => 'Segment',
                     'options' => array(
@@ -111,6 +132,7 @@ return array(
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/view'           => __DIR__ . '/../view/tour/category/view.phtml',
             'layout/detail'           => __DIR__ . '/../view/tour/tour/detail.phtml',
+            'layout/tour-page-detail'           => __DIR__ . '/../view/layout/tour-detail.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
