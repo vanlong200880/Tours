@@ -13,7 +13,7 @@ return array(
     'router' => array(
         'routes' => array(
             'travel' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/dia-diem-di-choi',
                     'defaults' => array(
@@ -24,24 +24,24 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                  'travel-province' => array(
-                  'type' => 'Segment',
-                  'options' => array(
-                    'route' => '/[:nation][/:province][/:district][/trang-:page]',
-                    'defaults' => array(
-                      '__NAMESPACE__' => 'Travel\Controller',
-                      'controller' => 'Travel\Controller\Category',
-                      'action' => 'index',
-                    ),
-                    'constraints' => array(
-//                      'category'     => '[a-zA-Z0-9_-]*',
-                      'nation'     => '[a-zA-Z0-9_-]*',
-                      'province'     => '[a-zA-Z0-9_-]*',
-                      'district'     => '[a-zA-Z0-9_-]*',
-                      'page'     	=> '[0-9]+',
-                    ),
-                  ),
-                ),
+//                  'travel-province' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/[:nation][/:province][/:district][/trang-:page]',
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Travel\Controller',
+//                        'controller' => 'Travel\Controller\Category',
+//                        'action' => 'index',
+//                      ),
+//                      'constraints' => array(
+//  //                      'category'     => '[a-zA-Z0-9_-]*',
+//                        'nation'     => '[a-zA-Z0-9_-]*',
+//                        'province'     => '[a-zA-Z0-9_-]*',
+//                        'district'     => '[a-zA-Z0-9_-]*',
+//                        'page'     	=> '[0-9]+',
+//                      ),
+//                    ),
+//                  ),
 //                  'travel-province' => array (
 //                      'type' => 'Zend\Mvc\Router\Http\Regex',
 //                      'options' => array (
@@ -122,6 +122,24 @@ return array(
                 ),
             ),
           
+            'travel-province' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/dia-diem-di-choi[/:nation][/:province][/:district][/trang-:page]',
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Travel',
+                  'controller' => 'Travel\Controller\Category',
+                  'action' => 'index',
+                ),
+                'constraints' => array(
+                  'nation'     => '[a-zA-Z0-9_-]*',
+                  'province'     => '[a-zA-Z0-9_-]*',
+                  'district'     => '[a-zA-Z0-9_-]*',
+                  'page'     	=> '[0-9]+',
+                ),
+              ),
+            ),
+          
             'travel-detail' => array (
               'type' => 'Zend\Mvc\Router\Http\Regex',
               'options' => array (
@@ -139,7 +157,7 @@ return array(
             'popup-view' => array(
               'type' => 'Segment',
               'options' => array(
-                'route' => '/view',
+                'route' => '/travel-view',
 
                 'defaults' => array(
                   '__NAMESPACE__' => 'Travel\Controller',

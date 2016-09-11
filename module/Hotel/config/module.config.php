@@ -13,73 +13,119 @@ return array(
     'router' => array(
         'routes' => array(
             'hotel' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/khach-san',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Hotel\Controller',
-                        'controller'    => 'Hotel',
+                        'controller' => 'Hotel\Controller\Hotel',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'default' => array(
-//                      'type'    => 'Segment',
-//                      'options' => array(
-//                          'route'    => '/[:controller[/:action]]',
-//                          'constraints' => array(
-//                              'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                              'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-//                          ),
-//                          'defaults' => array(
-//                          ),
+//                  'hotel-category' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/[:category]',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Hotel\Controller',
+//                        'controller' => 'Hotel\Controller\Category',
+//                        'action' => 'index',
+//                        'category' => '[a-zA-Z0-9_-]*'
 //                      ),
+//                      'constraints' => array(
+//                        'category'     => '[a-zA-Z0-9_-]*',
+//                      ),
+//                    ),
 //                  ),
-                  'hotel-category' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/[:category]',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Hotel\Controller',
-                        'controller' => 'Hotel\Controller\Category',
-                        'action' => 'index',
-                        'category' => '[a-zA-Z0-9_-]*'
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
+//                  
+//                  'hotel-detail' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/detail',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Hotel\Controller',
+//                        'controller' => 'Hotel\Controller\Hotel',
+//                        'action' => 'detail',
+//                      ),
+//                    ),
+//                  ),
                   
-                  'hotel-detail' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/detail',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Hotel\Controller',
-                        'controller' => 'Hotel\Controller\Hotel',
-                        'action' => 'detail',
-                      ),
-                    ),
-                  ),
-                  
-                  'hotel-room' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/room',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Hotel\Controller',
-                        'controller' => 'Hotel\Controller\Hotel',
-                        'action' => 'room',
-                      ),
-                    ),
-                  ),
+//                  'hotel-room' => array(
+//                    'type' => 'Segment',
+//                    'options' => array(
+//                      'route' => '/room',
+//
+//                      'defaults' => array(
+//                        '__NAMESPACE__' => 'Hotel\Controller',
+//                        'controller' => 'Hotel\Controller\Hotel',
+//                        'action' => 'room',
+//                      ),
+//                    ),
+//                  ),
                   
                 ),
+            ),
+          
+            'hotel-category' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/khach-san/[:nation][/:province][/:district][/trang-:page]',
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Hotel\Controller',
+                  'controller' => 'Hotel\Controller\Hotel',
+                  'action' => 'index',
+                ),
+                'constraints' => array(
+                  'nation'     => '[a-zA-Z0-9_-]*',
+                  'province'     => '[a-zA-Z0-9_-]*',
+                  'district'     => '[a-zA-Z0-9_-]*',
+                  'page'     	=> '[0-9]+',
+                ),
+              ),
+            ),
+          
+            'hotel-detail' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/hotel-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Hotel\Controller',
+                  'controller' => 'Hotel\Controller\Hotel',
+                  'action' => 'detail',
+                ),
+              ),
+            ),
+                  
+            'hotel-room' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/hotel-room',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Hotel\Controller',
+                  'controller' => 'Hotel\Controller\Hotel',
+                  'action' => 'room',
+                ),
+              ),
+            ),
+          
+            'hotel-page-detail' => array (
+              'type' => 'Zend\Mvc\Router\Http\Regex',
+              'options' => array (
+                'regex' => '/khach-san/(?<slug>[a-zA-Z0-9-]+)-pr-(?<id>[0-9]+)?(\.(?<format>(html)))?',
+                  'defaults' => array(
+                    '__NAMESPACE__' => 'Hotel\Controller',
+                    'controller' => 'Hotel\Controller\Hotel',
+                    'action' => 'pageDetail',
+                    'format' => 'html',
+                  ),
+                  'spec' => '/khach-san/%slug%-pr-%id%.%format%'
+              )
             ),
         ),
     ),
@@ -126,6 +172,7 @@ return array(
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'layout/popup-hotel-detail'           => __DIR__ . '/../view/hotel/hotel/detail.phtml',
             'layout/popup-hotel-room'           => __DIR__ . '/../view/hotel/hotel/room.phtml',
+            'layout/hotel-page-detail'           => __DIR__ . '/../view/layout/page-detail.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

@@ -13,78 +13,73 @@ return array(
     'router' => array(
         'routes' => array(
             'tour' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
                     'route'    => '/tours-du-lich',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Tour\Controller',
-                        'controller'    => 'tour',
+                        'controller'    => 'Tour',
                         'action'        => 'index',
                     ),
                 ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                  'tour-category' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/[:category]',
+            ),
+          
+          'tour-category' => array(
+            'type' => 'Segment',
+            'options' => array(
+              'route' => '/tours-du-lich/[:nation][/:province][/:district][/trang-:page]',
+              'defaults' => array(
+                '__NAMESPACE__' => 'Tour\Controller',
+                'controller' => 'Tour\Controller\Tour',
+                'action' => 'index',
+              ),
+              'constraints' => array(
+                'nation'     => '[a-zA-Z0-9_-]*',
+                'province'     => '[a-zA-Z0-9_-]*',
+                'district'     => '[a-zA-Z0-9_-]*',
+                'page'     	=> '[0-9]+',
+              ),
+            ),
+          ),
+          
+          'tour-view' => array(
+            'type' => 'Segment',
+            'options' => array(
+              'route' => '/tour-view',
 
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Category',
-                        'action' => 'index',
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                        'nation'     => '[a-zA-Z0-9_-]*',
-                        'province'     => '[a-zA-Z0-9_-]*',
-                        'district'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
-                  ),
-                  
-                  'tour-page-detail' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/[:category][/:slug]',
+              'defaults' => array(
+                '__NAMESPACE__' => 'Tour\Controller',
+                'controller' => 'Tour\Controller\Category',
+                'action' => 'view',
+              ),
+            ),
+          ),
+          
+          'tour-detail' => array(
+            'type' => 'Segment',
+            'options' => array(
+              'route' => '/tour-detail',
 
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Tour',
-                        'action' => 'pageDetail',
-                      ),
-                      'constraints' => array(
-                        'category'     => '[a-zA-Z0-9_-]*',
-                        'slug'     => '[a-zA-Z0-9_-]*',
-                      ),
-                    ),
+              'defaults' => array(
+                '__NAMESPACE__' => 'Tour\Controller',
+                'controller' => 'Tour\Controller\Tour',
+                'action' => 'detail',
+              ),
+            ),
+          ),
+          
+          'tour-page-detail' => array (
+              'type' => 'Zend\Mvc\Router\Http\Regex',
+              'options' => array (
+                'regex' => '/tours-du-lich/(?<slug>[a-zA-Z0-9-]+)-pr-(?<id>[0-9]+)?(\.(?<format>(html)))?',
+                  'defaults' => array(
+                    '__NAMESPACE__' => 'Tour\Controller',
+                    'controller' => 'Tour\Controller\Tour',
+                    'action' => 'pageDetail',
+                    'format' => 'html',
                   ),
-                  
-                  'view' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/view',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Category',
-                        'action' => 'view',
-                      ),
-                    ),
-                  ),
-                  'detail' => array(
-                    'type' => 'Segment',
-                    'options' => array(
-                      'route' => '/detail',
-
-                      'defaults' => array(
-                        '__NAMESPACE__' => 'Tour\Controller',
-                        'controller' => 'Tour\Controller\Tour',
-                        'action' => 'detail',
-                      ),
-                    ),
-                  ),
-                ),
+                  'spec' => '/tours-du-lich/%slug%-pr-%id%.%format%'
+              )
             ),
         ),
     ),

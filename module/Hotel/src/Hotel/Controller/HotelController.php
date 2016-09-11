@@ -45,4 +45,8 @@ class HotelController extends AbstractActionController
 
       return $jsonModel;
     }
+    public function pageDetailAction(){
+      $this->layout('layout/hotel-page-detail');
+      return new ViewModel();
+    }
 }

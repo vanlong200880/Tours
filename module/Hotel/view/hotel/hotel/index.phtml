@@ -417,7 +417,7 @@
   jQuery(document).ready(function($){
     $(".list-cat .list-item li").on('click','a',function(){
       var id = 'abc';
-      var url = 'http://localhost/tours/public/khach-san/detail';
+      var url = 'http://localhost/tours/public/hotel-detail';
       $.ajax({
           url : url,
           type : 'POST',
@@ -488,7 +488,7 @@
             $(".list-hotel-room ul li").on('click','.view-room-hotel', function(){
               var current = $("#current-map").val();
               var id = 'abc';
-              var url = 'http://localhost/tours/public/khach-san/room';
+              var url = 'http://localhost/tours/public/hotel-room';
               $.ajax({
                   url : url,
                   type : 'POST',

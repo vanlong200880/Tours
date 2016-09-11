@@ -6,14 +6,19 @@
 @import "base/typography";
 
 // @import "base/base";
+@import "layout/header";
+@import "layout/home";
 @import "layout/travel/header";
 @import "layout/travel/footer";
+@import "layout/about";
 @import "layout/footer";
 @import "layout/masterpage";
 @import "layout/tour/list";
 @import "layout/tour/views-popup";
 @import "layout/travel/detail";
 @import "layout/hotel/hotel";
+@import "layout/detail";
+
 /*@import "layout/home";
 @import "layout/masterpage";
 @import "layout/details";
