@@ -47,13 +47,24 @@
     }
     .map-content{
       width: 60%;
-      /*position: absolute;*/
+      position: relative;
       left: 0;
       height: 100%;
       background: #DDD;
       .map-wp{
         width: 100%;
         height: 100%;
+      }
+      .shoppingcart{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 9;
+        .views-cart{
+          position: relative;
+          right: auto;
+          bottom: auto;
+        }
       }
     }
   }

@@ -143,13 +143,22 @@ a:hover {
                 top: 5px; }
     .wrapper #container .map-content {
       width: 60%;
-      /*position: absolute;*/
+      position: relative;
       left: 0;
       height: 100%;
       background: #DDD; }
       .wrapper #container .map-content .map-wp {
         width: 100%;
         height: 100%; }
+      .wrapper #container .map-content .shoppingcart {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 9; }
+        .wrapper #container .map-content .shoppingcart .views-cart {
+          position: relative;
+          right: auto;
+          bottom: auto; }
 
 .header {
   height: 50px;
@@ -1270,7 +1279,7 @@ ul.connect li.youtube a:hover {
     border-bottom: 1px solid #004ac5; }
     .views-cart .views-cart-item var.icon {
       font-size: 18px; }
-  .views-cart .views-cart-item.help {
+  .views-cart .views-cart-item.language {
     border-bottom: none; }
   .views-cart .shopping-cart span.num {
     position: absolute;
