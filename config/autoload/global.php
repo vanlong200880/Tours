@@ -25,6 +25,7 @@ return array(
     'Hotel'      => 'layout/hotel',
     'Photo'      => 'layout/photo',
     'Cart'      => 'layout/cart',
+    'Gallery'      => 'layout/gallery',
 	),
     // ...
 );

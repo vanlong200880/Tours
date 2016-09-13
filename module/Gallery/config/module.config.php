@@ -7,66 +7,33 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Diary;
+namespace Gallery;
 
 return array(
     'router' => array(
         'routes' => array(
-            'diary' => array(
+            'gallery' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/trai-nghiem',
+                    'route'    => '/thu-vien-anh',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Diary\Controller',
-                        'controller' => 'Diary\Controller\Diary',
+                        '__NAMESPACE__' => 'Gallery\Controller',
+                        'controller' => 'Gallery\Controller\Gallery',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'diary-category' => array(
-//                      'type'    => 'Segment',
-//                      'priority' => 9002,
-//                      'options' => array(
-//                          'route'    => '/[:category]',
-//                          
-//                          'defaults' => array(
-//                            '__NAMESPACE__' => 'Diary\Controller',
-//                            'controller' => 'Diary\Controller\Diary',
-//                            'action'     => 'category',
-//                          ),
-//                          'constraints' => array(
-//                            'category' => '[a-zA-Z0-9_-]*'
-//                          ),
-//                          
-//                      ),
-//                  ),
-//                  'diary-detail' => array(
-//                      'type'    => 'Segment',
-//                      'priority' => 9001,
-//                      'options' => array(
-//                          'route'    => '/[:category][/:slug]',
-//                          'defaults' => array(
-//                            '__NAMESPACE__' => 'Diary\Controller',
-//                            'controller' => 'Diary\Controller\Diary',
-//                            'action'     => 'detail',
-//                          ),
-//                        'constraints' => array(
-//                          'category'     => '[a-zA-Z0-9_-]*',
-//                          'slug' => '[a-zA-Z0-9_-]*'
-//                        ),
-//                      ),
-//                  ),
                 ),
             ),
-            'diary-category' => array(
+            'gallery-category' => array(
               'type' => 'Segment',
               'options' => array(
-                'route' => '/trai-nghiem/[:category][/trang-:page]',
+                'route' => '/thu-vien-anh/[:category][/trang-:page]',
                 'defaults' => array(
-                  '__NAMESPACE__' => 'Diary\Controller',
-                  'controller' => 'Diary\Controller\Diary',
-                  'action' => 'index',
+                  '__NAMESPACE__' => 'Gallery\Controller',
+                  'controller' => 'Gallery\Controller\Gallery',
+                  'action' => 'category',
                 ),
                 'constraints' => array(
                   'category'     => '[a-zA-Z0-9_-]*'
@@ -74,17 +41,17 @@ return array(
               ),
             ),
             
-            'diary-detail' => array (
+            'gallery-detail' => array (
               'type' => 'Zend\Mvc\Router\Http\Regex',
               'options' => array (
-                'regex' => '/trai-nghiem/(?<slug>[a-zA-Z0-9-]+)-pr-(?<id>[0-9]+)?(\.(?<format>(html)))?',
+                'regex' => '/thu-vien-anh/(?<slug>[a-zA-Z0-9-]+)-pr-(?<id>[0-9]+)?(\.(?<format>(html)))?',
                   'defaults' => array(
-                    '__NAMESPACE__' => 'Diary\Controller',
-                    'controller' => 'Diary\Controller\Diary',
+                    '__NAMESPACE__' => 'Gallery\Controller',
+                    'controller' => 'Gallery\Controller\Gallery',
                     'action' => 'detail',
                     'format' => 'html',
                   ),
-                  'spec' => '/trai-nghiem/%slug%-pr-%id%.%format%'
+                  'spec' => '/thu-vien-anh/%slug%-pr-%id%.%format%'
               )
             ),
         ),
@@ -110,7 +77,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-          'Diary\Controller\Diary' => Controller\DiaryController::class,
+          'Gallery\Controller\Gallery' => Controller\GalleryController::class,
 //          'Tour\Controller\Category' => Controller\CategoryController::class
         ),
     ),
@@ -127,8 +94,8 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/diary'           => __DIR__ . '/../view/layout/layout.phtml',
-            'diary/index/index' => __DIR__ . '/../view/diary/index/index.phtml',
+            'layout/gallery'           => __DIR__ . '/../view/layout/layout.phtml',
+            'gallery/index/index' => __DIR__ . '/../view/diary/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
