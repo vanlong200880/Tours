@@ -181,7 +181,7 @@ a:hover {
   top: -100px;
   width: 100%;
   z-index: 999999;
-  background: #71be0f;
+  background: #28b6f6;
   margin-top: 100px;
   transition: margin-top 1s ease;
   -moz-transition: margin-top 1s ease;
@@ -611,7 +611,7 @@ a:hover {
           background: #4285f4;
           padding: 7px 10px; }
   .list-item .item:hover {
-    border-color: #71be0f; }
+    border-color: #28b6f6; }
     .list-item .item:hover .img .item-hover {
       display: block; }
 
@@ -655,7 +655,7 @@ a:hover {
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.restaurant {
               color: #e400ff; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.tours {
-              color: #71be0f; }
+              color: #28b6f6; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
           width: 35%;
@@ -1034,7 +1034,7 @@ a:hover {
   right: 0;
   bottom: 20%;
   width: 40px;
-  background: #4285f4;
+  background: #28b6f6;
   z-index: 13; }
   .views-cart .views-cart-item {
     position: relative;
@@ -1353,7 +1353,7 @@ a:hover {
       .item-cart-hotel .cart-list-room ul li .item p {
         line-height: 22px; }
       .item-cart-hotel .cart-list-room ul li .item h3 {
-        background: #71be0f;
+        background: #28b6f6;
         color: #FFF;
         padding: 5px;
         font-size: 14px;

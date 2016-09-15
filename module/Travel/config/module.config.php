@@ -125,7 +125,7 @@ return array(
             'travel-province' => array(
               'type' => 'Segment',
               'options' => array(
-                'route' => '/dia-diem-di-choi[/:nation][/:province][/:district][/trang-:page]',
+                'route' => '/dia-diem-di-choi/[:nation][/:province][/:district][/trang-:page]',
                 'defaults' => array(
                   '__NAMESPACE__' => 'Travel',
                   'controller' => 'Travel\Controller\Category',

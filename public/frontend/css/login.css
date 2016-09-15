@@ -261,7 +261,7 @@ a:hover {
           background: #4285f4;
           padding: 7px 10px; }
   .list-item .item:hover {
-    border-color: #71be0f; }
+    border-color: #28b6f6; }
     .list-item .item:hover .img .item-hover {
       display: block; }
 
@@ -305,7 +305,7 @@ a:hover {
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.restaurant {
               color: #e400ff; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.tours {
-              color: #71be0f; }
+              color: #28b6f6; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
           width: 35%;
@@ -684,7 +684,7 @@ a:hover {
   right: 0;
   bottom: 20%;
   width: 40px;
-  background: #4285f4;
+  background: #28b6f6;
   z-index: 13; }
   .views-cart .views-cart-item {
     position: relative;
@@ -730,7 +730,7 @@ body {
 
 .header {
   height: 50px;
-  background: #71be0f; }
+  background: #28b6f6; }
   .header .menu-header a.logo img {
     width: 120px; }
   .header ul li {
@@ -772,7 +772,7 @@ body {
     .login-row .form-login p.register {
       padding-top: 10px; }
     .login-row .form-login a {
-      color: #71be0f;
+      color: #28b6f6;
       font-style: italic; }
     .login-row .form-login .btn {
       background: #fa501e;
@@ -1026,7 +1026,7 @@ body {
             margin-bottom: 15px; }
             .post .post-container .content .body-container .body-content .page .post-list-tour .post-search .btn-search {
               height: 34px;
-              background: #71be0f;
+              background: #28b6f6;
               line-height: 34px;
               text-align: center;
               display: inline-block;
@@ -1108,7 +1108,7 @@ body {
     margin-right: 5px;
     font-size: 15px; }
   .list-table tbody tr td.order-id a {
-    color: #71be0f;
+    color: #28b6f6;
     font-weight: bold; }
   .list-table tbody tr:nth-child(2n+2) {
     background: #f9f9f9; }
@@ -1250,7 +1250,7 @@ body {
     color: #000; }
 
 .back {
-  background: #71be0f; }
+  background: #28b6f6; }
 
 .user-profile label {
   font-weight: normal; }
