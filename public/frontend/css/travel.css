@@ -201,7 +201,7 @@ a:hover {
     display: inline-block;
     width: 100%;
     position: relative;
-    z-index: 9999; }
+    z-index: 9; }
     #search .search-home .list-tab {
       float: left;
       height: 50px;
@@ -1673,9 +1673,47 @@ ul.connect li.youtube a:hover {
     line-height: 40px;
     text-align: center;
     color: #FFF;
-    border-bottom: 1px solid #004ac5; }
+    border-bottom: 1px solid #63caf9; }
     .views-cart .views-cart-item var.icon {
       font-size: 18px; }
+    .views-cart .views-cart-item a {
+      height: 40px;
+      width: 40px;
+      z-index: 999;
+      display: inline-block;
+      color: #FFF; }
+    .views-cart .views-cart-item span.img {
+      position: absolute;
+      height: 39px;
+      width: 40px;
+      z-index: 99;
+      top: 0;
+      left: 0;
+      background: #28b6f6; }
+    .views-cart .views-cart-item span.des {
+      position: absolute;
+      height: 40px;
+      top: 0;
+      right: -400px;
+      background: #ff9000;
+      color: #FFF;
+      padding: 0 10px;
+      -webkit-transition: right 0.3s ease;
+      -moz-transition: right 0.3s ease;
+      -o-transition: right 0.3s ease;
+      transition: right 0.3s ease;
+      z-index: 98;
+      white-space: nowrap; }
+    .views-cart .views-cart-item:hover {
+      background: #ff9000; }
+      .views-cart .views-cart-item:hover span.img {
+        background: #ff9000; }
+      .views-cart .views-cart-item:hover span.des {
+        right: 40px;
+        -webkit-transition: right 0.3s ease;
+        -moz-transition: right 0.3s ease;
+        -o-transition: right 0.3s ease;
+        transition: right 0.3s ease; }
   .views-cart .views-cart-item.language {
     border-bottom: none; }
   .views-cart .shopping-cart span.num {

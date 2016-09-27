@@ -46,4 +46,7 @@ class TasteController extends AbstractActionController
 
       return $jsonModel;
     }
+    public function pageDetailAction(){
+      return new ViewModel();
+    }
 }
