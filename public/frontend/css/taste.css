@@ -146,7 +146,8 @@ a:hover {
       position: relative;
       left: 0;
       height: 100%;
-      background: #DDD; }
+      background: #DDD;
+      overflow: hidden; }
       .wrapper #container .map-content .map-wp {
         width: 100%;
         height: 100%; }
@@ -154,7 +155,7 @@ a:hover {
         position: absolute;
         top: 5px;
         right: 5px;
-        z-index: 9; }
+        z-index: 8; }
         .wrapper #container .map-content .shoppingcart .views-cart {
           position: relative;
           right: auto;

@@ -18,7 +18,8 @@ return array(
       'Diary',
       'Photo',
       'Cart',
-      'Gallery'
+      'Gallery',
+      'Backend'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
