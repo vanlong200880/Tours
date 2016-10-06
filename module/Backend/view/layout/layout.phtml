@@ -12,32 +12,56 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-            ->prependStylesheet($this->basePath('frontend/css/cart.css'))
-            ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
-//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.theme.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/royalSlider/skins/default/rs-default.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/royalSlider/royalslider.css'))
-            ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
-//            ->prependStylesheet($this->basePath('frontend/libs/carousel/owl.carousel.css'))
-                        ->prependStylesheet($this->basePath('frontend/libs/bootstrapSelect/css/bootstrap-select.min.css'))
-                        ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
+            ->prependStylesheet($this->basePath('/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'))
+            ->prependStylesheet($this->basePath('/backend/plugins/daterangepicker/daterangepicker.css'))
+            ->prependStylesheet($this->basePath('/backend/plugins/datepicker/datepicker3.css'))
+            ->prependStylesheet($this->basePath('/backend/plugins/jvectormap/jquery-jvectormap-1.2.2.css'))
+            ->prependStylesheet($this->basePath('/backend/plugins/morris/morris.css'))
+            ->prependStylesheet($this->basePath('/backend/plugins/iCheck/flat/blue.css'))
+            ->prependStylesheet($this->basePath('/backend/dist/css/skins/_all-skins.min.css'))
+            ->prependStylesheet($this->basePath('/backend/dist/css/skins/_all-skins.min.css'))
+            ->prependStylesheet($this->basePath('/backend/dist/css/AdminLTE.min.css'))
+            ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
+            ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
+            ->prependStylesheet($this->basePath('/libs/bootstrap/css/bootstrap.min.css')) ?>
 
         <!-- Scripts -->
         <?php echo $this->headScript()
+            ->prependFile($this->basePath('/backend/dist/js/demo.js'))
+            ->prependFile($this->basePath('/backend/dist/js/pages/dashboard.js'))
+            ->prependFile($this->basePath('/backend/dist/js/app.min.js'))
+            ->prependFile($this->basePath('/backend/plugins/fastclick/fastclick.js'))
+            ->prependFile($this->basePath('/backend/plugins/slimScroll/jquery.slimscroll.min.js'))
+            ->prependFile($this->basePath('/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'))
+            ->prependFile($this->basePath('/backend/plugins/datepicker/bootstrap-datepicker.js'))
+            ->prependFile($this->basePath('/backend/plugins/daterangepicker/daterangepicker.js'))
+            ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js')
+            ->prependFile($this->basePath('/backend/plugins/knob/jquery.knob.js'))
+            ->prependFile($this->basePath('/backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'))
+            ->prependFile($this->basePath('/backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'))
+            ->prependFile($this->basePath('/backend/plugins/sparkline/jquery.sparkline.min.js'))
             
-            ->prependFile($this->basePath('frontend/libs/royalSlider/jquery.royalslider.min.js'))
-            ->prependFile($this->basePath('frontend/libs/bootstrapSelect/js/bootstrap-select.min.js'))
-//            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
-            ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))
-            ->prependFile($this->basePath('frontend/js/jquery.min.js'))
+            
+            ->prependFile($this->basePath('/backend/plugins/morris/morris.min.js'))
+            ->prependFile($this->basePath('/libs/bootstrapSelect/js/bootstrap-select.min.js'))
+            ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+            ->prependFile($this->basePath('/libs/bootstrap/js/bootstrap.min.js'))
+            ->prependFile('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+            ->prependFile($this->basePath('/backend/plugins/jQuery/jquery-2.2.3.min.js'))
             ->prependFile($this->basePath('frontend/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath('frontend/js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
 
     </head>
-    <body>
+    <body class="hold-transition skin-blue sidebar-mini">
       <div class="wrapper">
+
+        <?php $this->backendHeader(); ?>
+        <?php $this->backendMenu(); ?>
+
         <?php echo $this->content; ?>
+        <?php $this->backendFooter(); ?>
       </div>
+      <!-- ./wrapper -->
     </body>
 </html>

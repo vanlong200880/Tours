@@ -97,7 +97,9 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'searchHotel'        => 'Cart\Block\searchHotel',
+          'backendHeader'        => 'Backend\Block\backendHeader',
+          'backendMenu'        => 'Backend\Block\backendMenu',
+          'backendFooter'        => 'Backend\Block\backendFooter',
         ),
     ),
     'view_manager' => array(
