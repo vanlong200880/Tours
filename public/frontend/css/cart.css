@@ -104,9 +104,12 @@ a:hover {
   .swiper-container-slider .swiper-button-next, .swiper-container-slider .swiper-button-prev {
     top: 40%; }
 
+#header .row,
+#header .col-md-9 {
+  position: inherit; }
 #header .logo {
   width: 100px;
-  height: 100px;
+  height: 50px;
   background: #4285f4;
   position: absolute;
   top: 0;
@@ -114,24 +117,23 @@ a:hover {
 #header #menu-top {
   padding-left: 115px; }
   #header #menu-top li {
-    display: inline-block;
-    height: 50px;
-    position: relative; }
+    display: inline-block; }
     #header #menu-top li a {
       display: block;
       height: 50px;
       line-height: 50px;
       padding: 0 15px;
+      position: relative;
       font-size: 16px; }
       #header #menu-top li a:hover {
         color: #fa501e; }
     #header #menu-top li .item-menu-level {
-      position: fixed;
+      position: absolute;
       top: 50px;
       left: 0;
-      background: #e1effa;
+      background: #183544;
       width: 100%;
-      z-index: 11;
+      z-index: 99;
       display: none;
       padding-top: 10px;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
@@ -140,7 +142,7 @@ a:hover {
       -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
       -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4); }
       #header #menu-top li .item-menu-level .item-level {
-        padding-left: 135px; }
+        /*padding-left: 135px;*/ }
         #header #menu-top li .item-menu-level .item-level h2 {
           text-transform: uppercase;
           font-size: 14px;
@@ -158,13 +160,14 @@ a:hover {
             height: 100%; }
             #header #menu-top li .item-menu-level .item-level ul li a {
               width: 100%;
-              height: 160px;
+              /*                height: 160px;*/
               background: #FFF;
               line-height: 35px;
               overflow: hidden;
               margin-bottom: 6px;
               padding: 0;
-              position: relative; }
+              position: relative;
+              display: inline-table; }
               #header #menu-top li .item-menu-level .item-level ul li a span {
                 position: absolute;
                 bottom: 0;
@@ -183,7 +186,8 @@ a:hover {
             float: left;
             font-size: 14px;
             overflow: hidden;
-            padding-left: 0; }
+            padding-left: 0;
+            color: #FFF; }
             #header #menu-top li .item-menu-level .item-level ul .item-taste a span {
               display: inline-block;
               width: 30px;
@@ -203,7 +207,7 @@ a:hover {
     display: block; }
   #header #menu-top li:nth-child(4):hover a:before, #header #menu-top li:nth-child(1):hover a:before, #header #menu-top li:nth-child(2):hover a:before, #header #menu-top li:nth-child(3):hover a:before {
     content: " ";
-    border-bottom: 10px solid #e2eef9;
+    border-bottom: 10px solid #183544;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
@@ -222,7 +226,7 @@ a:hover {
   top: -100px;
   width: 100%;
   z-index: 999999;
-  background: #28b6f6;
+  background: #112530;
   margin-top: 100px;
   transition: margin-top 1s ease;
   -moz-transition: margin-top 1s ease;
@@ -652,7 +656,7 @@ a:hover {
           background: #4285f4;
           padding: 7px 10px; }
   .list-item .item:hover {
-    border-color: #28b6f6; }
+    border-color: #183544; }
     .list-item .item:hover .img .item-hover {
       display: block; }
 
@@ -696,7 +700,7 @@ a:hover {
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.restaurant {
               color: #e400ff; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.tours {
-              color: #28b6f6; }
+              color: #183544; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
           width: 35%;
@@ -1075,7 +1079,7 @@ a:hover {
   right: 0;
   bottom: 20%;
   width: 40px;
-  background: #28b6f6;
+  background: #183544;
   z-index: 13; }
   .views-cart .views-cart-item {
     position: relative;
@@ -1432,7 +1436,7 @@ a:hover {
       .item-cart-hotel .cart-list-room ul li .item p {
         line-height: 22px; }
       .item-cart-hotel .cart-list-room ul li .item h3 {
-        background: #28b6f6;
+        background: #183544;
         color: #FFF;
         padding: 5px;
         font-size: 14px;
@@ -1512,7 +1516,7 @@ a:hover {
   .album .swiper-container {
     margin-top: 15px; }
   .album .title {
-    border-bottom: 2px solid #4278bc;
+    border-bottom: 2px solid #183544;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold; }
@@ -1553,7 +1557,7 @@ a:hover {
 .user-post {
   margin-top: 20px; }
   .user-post .title {
-    border-bottom: 2px solid #4278bc;
+    border-bottom: 2px solid #183544;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;

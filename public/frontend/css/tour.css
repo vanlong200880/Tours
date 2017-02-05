@@ -104,9 +104,12 @@ a:hover {
   .swiper-container-slider .swiper-button-next, .swiper-container-slider .swiper-button-prev {
     top: 40%; }
 
+#header .row,
+#header .col-md-9 {
+  position: inherit; }
 #header .logo {
   width: 100px;
-  height: 100px;
+  height: 50px;
   background: #4285f4;
   position: absolute;
   top: 0;
@@ -114,24 +117,23 @@ a:hover {
 #header #menu-top {
   padding-left: 115px; }
   #header #menu-top li {
-    display: inline-block;
-    height: 50px;
-    position: relative; }
+    display: inline-block; }
     #header #menu-top li a {
       display: block;
       height: 50px;
       line-height: 50px;
       padding: 0 15px;
+      position: relative;
       font-size: 16px; }
       #header #menu-top li a:hover {
         color: #fa501e; }
     #header #menu-top li .item-menu-level {
-      position: fixed;
+      position: absolute;
       top: 50px;
       left: 0;
-      background: #e1effa;
+      background: #183544;
       width: 100%;
-      z-index: 11;
+      z-index: 99;
       display: none;
       padding-top: 10px;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
@@ -140,7 +142,7 @@ a:hover {
       -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
       -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4); }
       #header #menu-top li .item-menu-level .item-level {
-        padding-left: 135px; }
+        /*padding-left: 135px;*/ }
         #header #menu-top li .item-menu-level .item-level h2 {
           text-transform: uppercase;
           font-size: 14px;
@@ -158,13 +160,14 @@ a:hover {
             height: 100%; }
             #header #menu-top li .item-menu-level .item-level ul li a {
               width: 100%;
-              height: 160px;
+              /*                height: 160px;*/
               background: #FFF;
               line-height: 35px;
               overflow: hidden;
               margin-bottom: 6px;
               padding: 0;
-              position: relative; }
+              position: relative;
+              display: inline-table; }
               #header #menu-top li .item-menu-level .item-level ul li a span {
                 position: absolute;
                 bottom: 0;
@@ -183,7 +186,8 @@ a:hover {
             float: left;
             font-size: 14px;
             overflow: hidden;
-            padding-left: 0; }
+            padding-left: 0;
+            color: #FFF; }
             #header #menu-top li .item-menu-level .item-level ul .item-taste a span {
               display: inline-block;
               width: 30px;
@@ -203,7 +207,7 @@ a:hover {
     display: block; }
   #header #menu-top li:nth-child(4):hover a:before, #header #menu-top li:nth-child(1):hover a:before, #header #menu-top li:nth-child(2):hover a:before, #header #menu-top li:nth-child(3):hover a:before {
     content: " ";
-    border-bottom: 10px solid #e2eef9;
+    border-bottom: 10px solid #183544;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
@@ -222,7 +226,7 @@ a:hover {
   top: -100px;
   width: 100%;
   z-index: 999999;
-  background: #28b6f6;
+  background: #112530;
   margin-top: 100px;
   transition: margin-top 1s ease;
   -moz-transition: margin-top 1s ease;
@@ -575,7 +579,7 @@ a:hover {
       position: fixed;
       top: 50px;
       left: 0;
-      background: #e1effa;
+      background: #183544;
       width: 100%;
       z-index: 11;
       display: none;
@@ -583,9 +587,10 @@ a:hover {
       -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
       -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
       -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4); }
+      -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+      padding-top: 10px; }
       .header #menu-top li .item-menu-level .item-level {
-        padding-left: 15px; }
+        padding-left: 10px; }
         .header #menu-top li .item-menu-level .item-level h2 {
           text-transform: uppercase;
           margin-left: 0px;
@@ -596,19 +601,50 @@ a:hover {
           padding: 10px 0 5px 0; }
         .header #menu-top li .item-menu-level .item-level ul {
           padding: 0 0 5px 0; }
+          .header #menu-top li .item-menu-level .item-level ul .lst-menu {
+            margin-right: -3px;
+            margin-left: -3px; }
           .header #menu-top li .item-menu-level .item-level ul li {
-            height: 35px; }
+            /*height: 35px;*/
+            position: relative;
+            padding-right: 3px;
+            padding-left: 3px;
+            height: 100%; }
             .header #menu-top li .item-menu-level .item-level ul li a {
-              height: 35px;
+              width: 100%;
+              height: 160px;
+              background: #FFF;
               line-height: 35px;
-              overflow: hidden; }
+              overflow: hidden;
+              margin-bottom: 6px;
+              padding: 0;
+              position: relative;
+              display: block;
+              /*                height: 35px;
+                              line-height: 35px;
+                              overflow: hidden;
+                              &:before{
+                                display: none;
+                              }*/ }
+              .header #menu-top li .item-menu-level .item-level ul li a span {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 9;
+                background: rgba(0, 0, 0, 0.5);
+                color: #FFF;
+                width: 100%;
+                display: inline-block;
+                padding-left: 5px; }
               .header #menu-top li .item-menu-level .item-level ul li a:before {
                 display: none; }
+          .header #menu-top li .item-menu-level .item-level ul li.four a {
+            height: 326px; }
   .header #menu-top li:nth-child(4):hover .item-menu-level, .header #menu-top li:nth-child(1):hover .item-menu-level, .header #menu-top li:nth-child(2):hover .item-menu-level, .header #menu-top li:nth-child(3):hover .item-menu-level {
     display: block; }
   .header #menu-top li:nth-child(4):hover a:before, .header #menu-top li:nth-child(1):hover a:before, .header #menu-top li:nth-child(2):hover a:before, .header #menu-top li:nth-child(3):hover a:before {
     content: " ";
-    border-bottom: 10px solid #e2eef9;
+    border-bottom: 10px solid #183544;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
@@ -735,7 +771,7 @@ a:hover {
             border-radius: 50%;
             display: inline-block; }
         .search .list-search .item-search-type ul.level li ul.search-type li.tours .root-radius:before {
-          background: #28b6f6; }
+          background: #183544; }
         .search .list-search .item-search-type ul.level li ul.search-type li.park .root-radius:before {
           background: #6ceb35; }
         .search .list-search .item-search-type ul.level li ul.search-type li.hotel .root-radius:before {
@@ -787,7 +823,7 @@ a:hover {
             padding-left: 12px;
             font-size: 16px; }
           .province-container ul li .province-item .province-content .list-count-content .list-count-item p.tours span {
-            background: #28b6f6; }
+            background: #183544; }
           .province-container ul li .province-item .province-content .list-count-content .list-count-item p.hotel span {
             background: #b400ff; }
           .province-container ul li .province-item .province-content .list-count-content .list-count-item p.park span {
@@ -866,7 +902,7 @@ a:hover {
         position: relative;
         display: inline-block; }
     .province .province-help ul li.tours span {
-      background: #28b6f6; }
+      background: #183544; }
     .province .province-help ul li.hotel span {
       background: #b400ff; }
     .province .province-help ul li.park span {
@@ -1213,7 +1249,7 @@ ul.connect li.youtube a:hover {
           background: #4285f4;
           padding: 7px 10px; }
   .list-item .item:hover {
-    border-color: #28b6f6; }
+    border-color: #183544; }
     .list-item .item:hover .img .item-hover {
       display: block; }
 
@@ -1257,7 +1293,7 @@ ul.connect li.youtube a:hover {
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.restaurant {
               color: #e400ff; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.tours {
-              color: #28b6f6; }
+              color: #183544; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
           width: 35%;
@@ -1636,7 +1672,7 @@ ul.connect li.youtube a:hover {
   right: 0;
   bottom: 20%;
   width: 40px;
-  background: #28b6f6;
+  background: #183544;
   z-index: 13; }
   .views-cart .views-cart-item {
     position: relative;
@@ -2302,7 +2338,7 @@ ul.connect li.youtube a:hover {
   .list-icon-support ul li.current span {
     background: #ff0000; }
   .list-icon-support ul li.tours span {
-    background: #28b6f6; }
+    background: #183544; }
   .list-icon-support ul li.taste span {
     background: #ff9000; }
   .list-icon-support ul li.hotel span {
@@ -2364,7 +2400,7 @@ ul.connect li.youtube a:hover {
 
 /* detail view expend post */
 .wrapper-detail #header {
-  background: #28b6f6; }
+  background: #183544; }
 .wrapper-detail .detail-page h1 {
   font-size: 16px;
   font-weight: bold;
