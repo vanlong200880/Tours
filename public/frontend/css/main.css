@@ -110,7 +110,7 @@ a:hover {
 #header .logo {
   width: 100px;
   height: 50px;
-  background: #4285f4;
+  background: #232f3e;
   position: absolute;
   top: 0;
   z-index: 9999; }
@@ -146,7 +146,7 @@ a:hover {
         #header #menu-top li .item-menu-level .item-level h2 {
           text-transform: uppercase;
           font-size: 14px;
-          color: #0074e4;
+          color: #fff;
           font-weight: bold;
           padding: 10px 0 5px 0; }
         #header #menu-top li .item-menu-level .item-level ul {
@@ -155,16 +155,16 @@ a:hover {
           margin-left: -3px; }
           #header #menu-top li .item-menu-level .item-level ul li {
             position: relative;
-            padding-right: 3px;
+            padding-right: 8px;
             padding-left: 3px;
             height: 100%; }
             #header #menu-top li .item-menu-level .item-level ul li a {
               width: 100%;
               /*                height: 160px;*/
               background: #FFF;
-              line-height: 35px;
+              line-height: 30px;
               overflow: hidden;
-              margin-bottom: 6px;
+              margin-bottom: 13px;
               padding: 0;
               position: relative;
               display: inline-table; }
@@ -202,7 +202,7 @@ a:hover {
               top: 10px;
               margin-right: 5px; }
           #header #menu-top li .item-menu-level .item-level ul li.four a {
-            height: 326px; }
+            height: 250px; }
   #header #menu-top li:nth-child(4):hover .item-menu-level, #header #menu-top li:nth-child(1):hover .item-menu-level, #header #menu-top li:nth-child(2):hover .item-menu-level, #header #menu-top li:nth-child(3):hover .item-menu-level {
     display: block; }
   #header #menu-top li:nth-child(4):hover a:before, #header #menu-top li:nth-child(1):hover a:before, #header #menu-top li:nth-child(2):hover a:before, #header #menu-top li:nth-child(3):hover a:before {
@@ -653,7 +653,7 @@ a:hover {
           -ms-border-radius: 3px;
           color: #FFF;
           text-transform: uppercase;
-          background: #4285f4;
+          background: #232f3e;
           padding: 7px 10px; }
   .list-item .item:hover {
     border-color: #183544; }
@@ -706,7 +706,7 @@ a:hover {
           width: 35%;
           position: absolute;
           top: 30px;
-          background: #4285f4;
+          background: #232f3e;
           border-radius: 3px;
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
@@ -1154,6 +1154,80 @@ a:hover {
       border-bottom: 5px solid transparent;
       position: absolute;
       top: 5px; }
+
+.rating {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%; }
+  .rating h2 {
+    padding-bottom: 3px;
+    border-bottom: 1px solid #DDD; }
+  .rating ul .summary-rating {
+    width: 30%;
+    margin-top: 10px;
+    float: left; }
+    .rating ul .summary-rating p {
+      text-align: center;
+      margin-top: 0; }
+    .rating ul .summary-rating .rating-post {
+      font-size: 13px;
+      color: #dedddc; }
+      .rating ul .summary-rating .rating-post .rating-box {
+        line-height: 1;
+        position: relative;
+        white-space: nowrap;
+        display: inline-block;
+        margin: 0 auto; }
+        .rating ul .summary-rating .rating-post .rating-box span {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          overflow: hidden;
+          line-height: 1;
+          color: #ffd300; }
+  .rating ul .rating__row {
+    width: 70%;
+    float: left;
+    padding: 0 0 0 10px;
+    border-left: 1px solid #DDD;
+    margin-top: 10px; }
+    .rating ul .rating__row .rrow__label {
+      margin: 2px 0 0 0;
+      width: 70px;
+      font-size: 12px;
+      float: left; }
+    .rating ul .rating__row .rrow__percent {
+      width: 180px;
+      padding: 8px 20px 0 0;
+      float: left; }
+      .rating ul .rating__row .rrow__percent .progress-bar {
+        height: 4px;
+        width: 100%;
+        background-color: #eeeeee;
+        box-shadow: inset 1px 1px 0 #dcdcdc; }
+        .rating ul .rating__row .rrow__percent .progress-bar .progress-bar__inner {
+          background-color: red;
+          height: 100%; }
+    .rating ul .rating__row .rrow__counting {
+      display: inline-block;
+      width: 30px;
+      margin-right: 15px;
+      color: #999999;
+      font-size: 12px; }
+    .rating ul .rating__row .rrow__descr {
+      display: inline-block;
+      color: #bababa;
+      font-size: 12px; }
 
 .album {
   margin-bottom: 15px; }

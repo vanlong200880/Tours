@@ -767,3 +767,88 @@
     }
   }
 }
+.rating{
+  border: 1px solid #DDD;
+  @include border-radius(3px);
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%;
+  h2{
+    padding-bottom: 3px;
+    border-bottom: 1px solid #DDD;
+  }
+  ul{
+    .summary-rating{
+      width: 30%;
+      margin-top: 10px;
+      float: left;
+      p{
+        text-align: center;
+        margin-top: 0;
+      }
+      .rating-post{
+        font-size: 13px;
+        color: #dedddc;
+        .rating-box{
+          line-height: 1;
+          position: relative;
+          white-space: nowrap;
+          display: inline-block;
+          margin: 0 auto;
+          span{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            overflow: hidden;
+            line-height: 1;
+            color: #ffd300;
+          }
+        }
+      }
+    }
+    .rating__row{
+      width: 70%;
+      float: left;
+      padding: 0 0 0 10px;
+      border-left: 1px solid #DDD;
+      margin-top: 10px;
+      .rrow__label{
+        margin: 2px 0 0 0;
+        width: 70px;
+        font-size: 12px;
+        float: left;
+      }
+      .rrow__percent{
+        width: 180px;
+        padding: 8px 20px 0 0;
+        float: left;
+        .progress-bar{
+          height: 4px;
+          width: 100%;
+          background-color: #eeeeee;
+          box-shadow: inset 1px 1px 0 #dcdcdc;
+          .progress-bar__inner{
+            background-color: red;
+            height: 100%;
+          }
+        }
+      }
+      .rrow__counting{
+        display: inline-block;
+        width: 30px;
+        margin-right: 15px;
+        color: #999999;
+        font-size: 12px;
+      }
+      .rrow__descr{
+        display: inline-block;
+        color: #bababa;
+        font-size: 12px;
+      }
+    }
+  }
+}

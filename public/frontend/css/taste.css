@@ -167,7 +167,7 @@ a:hover {
   .header .logo {
     width: 100px;
     height: 100px;
-    background: #4285f4;
+    background: #232f3e;
     position: absolute;
     top: 0;
     left: 0;
@@ -874,7 +874,7 @@ ul.connect li.youtube a:hover {
           -ms-border-radius: 3px;
           color: #FFF;
           text-transform: uppercase;
-          background: #4285f4;
+          background: #232f3e;
           padding: 7px 10px; }
   .list-item .item:hover {
     border-color: #183544; }
@@ -927,7 +927,7 @@ ul.connect li.youtube a:hover {
           width: 35%;
           position: absolute;
           top: 30px;
-          background: #4285f4;
+          background: #232f3e;
           border-radius: 3px;
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
@@ -1375,6 +1375,80 @@ ul.connect li.youtube a:hover {
       border-bottom: 5px solid transparent;
       position: absolute;
       top: 5px; }
+
+.rating {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%; }
+  .rating h2 {
+    padding-bottom: 3px;
+    border-bottom: 1px solid #DDD; }
+  .rating ul .summary-rating {
+    width: 30%;
+    margin-top: 10px;
+    float: left; }
+    .rating ul .summary-rating p {
+      text-align: center;
+      margin-top: 0; }
+    .rating ul .summary-rating .rating-post {
+      font-size: 13px;
+      color: #dedddc; }
+      .rating ul .summary-rating .rating-post .rating-box {
+        line-height: 1;
+        position: relative;
+        white-space: nowrap;
+        display: inline-block;
+        margin: 0 auto; }
+        .rating ul .summary-rating .rating-post .rating-box span {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          overflow: hidden;
+          line-height: 1;
+          color: #ffd300; }
+  .rating ul .rating__row {
+    width: 70%;
+    float: left;
+    padding: 0 0 0 10px;
+    border-left: 1px solid #DDD;
+    margin-top: 10px; }
+    .rating ul .rating__row .rrow__label {
+      margin: 2px 0 0 0;
+      width: 70px;
+      font-size: 12px;
+      float: left; }
+    .rating ul .rating__row .rrow__percent {
+      width: 180px;
+      padding: 8px 20px 0 0;
+      float: left; }
+      .rating ul .rating__row .rrow__percent .progress-bar {
+        height: 4px;
+        width: 100%;
+        background-color: #eeeeee;
+        box-shadow: inset 1px 1px 0 #dcdcdc; }
+        .rating ul .rating__row .rrow__percent .progress-bar .progress-bar__inner {
+          background-color: red;
+          height: 100%; }
+    .rating ul .rating__row .rrow__counting {
+      display: inline-block;
+      width: 30px;
+      margin-right: 15px;
+      color: #999999;
+      font-size: 12px; }
+    .rating ul .rating__row .rrow__descr {
+      display: inline-block;
+      color: #bababa;
+      font-size: 12px; }
 
 .list-cat {
   padding: 8px;
