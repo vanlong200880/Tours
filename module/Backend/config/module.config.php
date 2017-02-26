@@ -24,49 +24,28 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-//                  'hotel-category' => array(
-//                    'type' => 'Segment',
-//                    'options' => array(
-//                      'route' => '/[:category]',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Hotel\Controller',
-//                        'controller' => 'Hotel\Controller\Category',
-//                        'action' => 'index',
-//                        'category' => '[a-zA-Z0-9_-]*'
-//                      ),
-//                      'constraints' => array(
-//                        'category'     => '[a-zA-Z0-9_-]*',
-//                      ),
-//                    ),
-//                  ),
-//                  
-//                  'hotel-detail' => array(
-//                    'type' => 'Segment',
-//                    'options' => array(
-//                      'route' => '/detail',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Hotel\Controller',
-//                        'controller' => 'Hotel\Controller\Hotel',
-//                        'action' => 'detail',
-//                      ),
-//                    ),
-//                  ),
-                  
-//                  'hotel-room' => array(
-//                    'type' => 'Segment',
-//                    'options' => array(
-//                      'route' => '/room',
-//
-//                      'defaults' => array(
-//                        '__NAMESPACE__' => 'Hotel\Controller',
-//                        'controller' => 'Hotel\Controller\Hotel',
-//                        'action' => 'room',
-//                      ),
-//                    ),
-//                  ),
-//                  
+                  'hotel-category' => array(
+                    'type' => 'Segment',
+                    'options' => array(
+                      'route' => '[/:controller][/:action][/:id][/page/:page][/type/:type][/sort/:sort][/order/:order][/textSearch/:textSearch]',
+
+                      'defaults' => array(
+                      ),
+                      'constraints' => array(
+                        'controller'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+								'action'        => '[a-zA-Z][a-zA-Z0-9_-]*',
+								'page'          => '[0-9]+',
+								'id'            => '[0-9]+',
+
+								'type'          => '[0-9]+',
+								'sort'          => '[a-zA-Z][a-zA-Z0-9_-]*',
+								'order'         => 'asc|desc',
+								'textSearch'    => '.+',
+                      ),
+                    ),
+                  ),
+
+
                 ),
             ),
         ),
@@ -92,7 +71,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-          'Backend\Controller\Index' => Controller\IndexController::class
+          'Backend\Controller\Index' => Controller\IndexController::class,
+          'Backend\Controller\Category' => Controller\CategoryController::class
         ),
     ),
     'view_helpers'    => array(

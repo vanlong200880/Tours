@@ -13,6 +13,7 @@
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
             ->prependStylesheet($this->basePath('frontend/css/login.css'))
+            ->prependStylesheet($this->basePath('frontend/css/main.css'))
             ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
                         ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
 
@@ -26,7 +27,7 @@
 
     </head>
     <body>
-      <?php $this->userHeader(); ?>
+      <?php $this->header(); ?>
       
       <div class="body">
         <?php echo $this->timeline(); ?>

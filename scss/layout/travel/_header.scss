@@ -10,7 +10,7 @@
     height: 100%;
     padding-bottom: 100px;
     .view{
-      width: 40%;
+      width: 45%;
       position: absolute;
       right: 0;
       top: 100px;
@@ -23,12 +23,12 @@
         height: 100%;
         .page-search-title{
           width:100%;
-          height: 50px;
+          height: 40px;
           background: #232f3e;
           .item-title{
             h1{
-              height: 50px;
-              line-height: 50px;
+              height: 40px;
+              line-height: 40px;
               font-size: 18px;
               color: #FFF;
               text-transform: uppercase;
@@ -46,7 +46,7 @@
       }
     }
     .map-content{
-      width: 60%;
+      width: 55%;
       position: relative;
       left: 0;
       height: 100%;
@@ -96,7 +96,7 @@
         position: fixed;
         top: 50px;
         left: 0;
-        background: #183544;
+        background: $submenu;
         width: 100%;
         z-index: 11;
         display: none;
@@ -127,41 +127,75 @@
                 padding-left: 3px;
                 height: 100%;
               a{
-                  width: 100%;
-                    height: 160px;
-                    background: #FFF;
-                    line-height: 35px;
-                    overflow: hidden;
-                    margin-bottom: 6px;
-                    padding: 0;
-                    position: relative;
-                    display: block;
-                    span{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        z-index: 9;
-                        background: rgba(0, 0, 0, 0.5);
-                        color: #FFF;
-                        width: 100%;
-                        display: inline-block;
-                        padding-left: 5px;
-                    }
-                    &:before{
-                        display: none;
-                      }
-/*                height: 35px;
-                line-height: 35px;
+                width: 100%;
+                background: #FFF;
+                line-height: 30px;
                 overflow: hidden;
+                margin-bottom: 13px;
+                padding: 0;
+                position: relative;
+                display: inline-table;
+                border: 1px solid #fff;
+                img{
+                  @include transition(all 0.4s ease-out);
+                }
+                span{
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 9;
+                  background: rgba(0, 0, 0, 0.5);
+                  color: #FFF;
+                  width: 100%;
+                  display: inline-block;
+                  padding-left: 5px;
+                }
                 &:before{
-                  display: none;
-                }*/
+                    display: none;
+                  }
+                &:hover{
+                  border-color: $menu;
+                  img{
+                    @include transform-scale(1.2);
+                  }
+                  span{
+                    background: rgba(0,0,0,0.4);
+                  }
+                }
+              }
+            }
+            .item-taste{
+              a{
+                display: inline-block;
+                width: 25%;
+                float: left;
+                font-size: 14px;
+                overflow: hidden;
+                color: #000;
+                span{
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  @include border-radius(50%);
+                  background: #FFF;
+                  position: relative;
+                  top: 5px;
+                  margin-right: 5px;
+                  float: left;
+                  border: 1px solid transparent;
+                }
+                &:hover{
+                  color: $orange;
+                  span{
+                    border: 1px solid $orange;
+                  }
+                }
               }
             }
             li.four{
                 
                 a{
-                    height: 326px;
+                    height: 252px;
                 }
             }
           }
@@ -180,7 +214,7 @@
           a{
             &:before{
               content: " ";
-              border-bottom: 10px solid #183544;
+              border-bottom: 10px solid $submenu;
               border-left: 10px solid transparent;
               border-right: 10px solid transparent;
               position: absolute;

@@ -1,0 +1,56 @@
+.box{
+  .box-header{
+    border-bottom: 1px solid #DDD;
+    ul{
+      border-top: 1px solid #DDD;
+      border-left: 1px solid #DDD;
+      border-bottom: 1px solid #DDD;
+      li{
+        display: inline-block;
+        float: left;
+        a{
+          border-right: 1px solid #DDD;
+          padding: 5px 10px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .box-body{
+    table{
+      th.status{
+        width: 90px;
+      }
+      th.function{
+        width: 100px;
+      }
+      .status{
+        .fa-check{
+          color: #00cc24;
+        }
+        .fa-minus-circle{
+          color: #bb1515;
+        }
+      }
+      .function{
+        a{
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+      .check-all{
+        width: 20px;
+      }
+      .menu-order{
+        width: 80px;
+        input{
+          width: 70px;
+          border: 1px solid #DDD;
+        }
+      }
+    }
+  }
+}
+.box-search{
+  padding-bottom: 15px;
+}

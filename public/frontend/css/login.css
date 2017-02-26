@@ -983,8 +983,39 @@ body {
   background: #e9ebee; }
   .user .banner-profile {
     position: relative;
-    border: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
     background: #FFF; }
+    .user .banner-profile .cover-photo {
+      overflow: hidden;
+      position: relative; }
+      .user .banner-profile .cover-photo .change-cover-photo {
+        position: absolute;
+        top: -100px;
+        right: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+        cursor: pointer; }
+        .user .banner-profile .cover-photo .change-cover-photo var {
+          color: #e8e8e8;
+          font-size: 18px;
+          position: relative;
+          top: 3px; }
+        .user .banner-profile .cover-photo .change-cover-photo span {
+          color: #FFF; }
+      .user .banner-profile .cover-photo:hover .change-cover-photo {
+        top: 5px; }
     .user .banner-profile .menu-profile-top {
       height: 40px;
       background: #FFF; }
@@ -1053,6 +1084,32 @@ body {
       -o-border-radius: 3px;
       -ms-border-radius: 3px;
       padding: 5px; }
+      .user .banner-profile .profile-pic a {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        overflow: hidden; }
+        .user .banner-profile .profile-pic a .change-avatar {
+          position: absolute;
+          bottom: -100px;
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 5px;
+          transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease; }
+          .user .banner-profile .profile-pic a .change-avatar var {
+            color: #e8e8e8;
+            font-size: 18px;
+            position: relative;
+            top: 3px; }
+          .user .banner-profile .profile-pic a .change-avatar span {
+            color: #FFF; }
+        .user .banner-profile .profile-pic a:hover .change-avatar {
+          bottom: 0; }
 
 .post .post-container {
   background: #f3f3f3;

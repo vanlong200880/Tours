@@ -3,7 +3,13 @@
     <div class="row">
       <div class="col-md-12">
         <div class="banner-profile">
-          <img src="<?php echo $this->basePath('/assets/demo/slider.png'); ?>">
+          <div class="cover-photo">
+            <img src="<?php echo $this->basePath('/assets/demo/slider.png'); ?>">
+            <div class="change-cover-photo">
+              <var class="icon icon-camera"></var>
+              <span>Update Cover Photo</span>
+            </div>
+          </div>
           <div class="menu-profile-top">
             <ul class="pull-right">
               <li>
@@ -48,7 +54,14 @@
             </ul>
           </div>
           <div class="profile-pic">
-            <img src="<?php echo $this->basePath('/assets/demo/taste.jpg'); ?>">
+            <a href="javascript:void(0)">
+              <img src="<?php echo $this->basePath('/assets/demo/taste.jpg'); ?>">
+              <div class="change-avatar">
+                <var class="icon icon-camera"></var>
+                <span>Đổi avatar</span>
+              </div>
+            </a>
+            
           </div>
         </div>
       </div>

@@ -124,6 +124,7 @@ a:hover {
       line-height: 50px;
       padding: 0 15px;
       position: relative;
+      color: #FFF;
       font-size: 16px; }
       #header #menu-top li a:hover {
         color: #fa501e; }
@@ -131,7 +132,7 @@ a:hover {
       position: absolute;
       top: 50px;
       left: 0;
-      background: #183544;
+      background: #e2eef9;
       width: 100%;
       z-index: 99;
       display: none;
@@ -146,7 +147,7 @@ a:hover {
         #header #menu-top li .item-menu-level .item-level h2 {
           text-transform: uppercase;
           font-size: 14px;
-          color: #fff;
+          color: #000;
           font-weight: bold;
           padding: 10px 0 5px 0; }
         #header #menu-top li .item-menu-level .item-level ul {
@@ -167,7 +168,14 @@ a:hover {
               margin-bottom: 13px;
               padding: 0;
               position: relative;
-              display: inline-table; }
+              display: inline-table;
+              border: 1px solid #fff; }
+              #header #menu-top li .item-menu-level .item-level ul li a img {
+                transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -webkit-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out; }
               #header #menu-top li .item-menu-level .item-level ul li a span {
                 position: absolute;
                 bottom: 0;
@@ -180,6 +188,16 @@ a:hover {
                 padding-left: 5px; }
               #header #menu-top li .item-menu-level .item-level ul li a:before {
                 display: none; }
+              #header #menu-top li .item-menu-level .item-level ul li a:hover {
+                border-color: #0ebcf2; }
+                #header #menu-top li .item-menu-level .item-level ul li a:hover img {
+                  webkit-transform: scale(1.2);
+                  -moz-transform: scale(1.2);
+                  -ms-transform: scale(1.2);
+                  -o-transform: scale(1.2);
+                  transform: scale(1.2); }
+                #header #menu-top li .item-menu-level .item-level ul li a:hover span {
+                  background: rgba(0, 0, 0, 0.4); }
           #header #menu-top li .item-menu-level .item-level ul .item-taste a {
             display: inline-block;
             width: 25%;
@@ -187,11 +205,11 @@ a:hover {
             font-size: 14px;
             overflow: hidden;
             padding-left: 0;
-            color: #FFF; }
+            color: #000; }
             #header #menu-top li .item-menu-level .item-level ul .item-taste a span {
               display: inline-block;
-              width: 30px;
-              height: 30px;
+              width: 40px;
+              height: 40px;
               border-radius: 50%;
               -webkit-border-radius: 50%;
               -moz-border-radius: 50%;
@@ -199,15 +217,21 @@ a:hover {
               -ms-border-radius: 50%;
               background: #FFF;
               position: relative;
-              top: 10px;
-              margin-right: 5px; }
+              top: 5px;
+              margin-right: 5px;
+              float: left;
+              border: 1px solid transparent; }
+            #header #menu-top li .item-menu-level .item-level ul .item-taste a:hover {
+              color: #fa501e; }
+              #header #menu-top li .item-menu-level .item-level ul .item-taste a:hover span {
+                border: 1px solid #fa501e; }
           #header #menu-top li .item-menu-level .item-level ul li.four a {
-            height: 250px; }
+            height: 252px; }
   #header #menu-top li:nth-child(4):hover .item-menu-level, #header #menu-top li:nth-child(1):hover .item-menu-level, #header #menu-top li:nth-child(2):hover .item-menu-level, #header #menu-top li:nth-child(3):hover .item-menu-level {
     display: block; }
   #header #menu-top li:nth-child(4):hover a:before, #header #menu-top li:nth-child(1):hover a:before, #header #menu-top li:nth-child(2):hover a:before, #header #menu-top li:nth-child(3):hover a:before {
     content: " ";
-    border-bottom: 10px solid #183544;
+    border-bottom: 10px solid #e2eef9;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
@@ -219,14 +243,15 @@ a:hover {
   #header #login li a {
     display: inline-block;
     line-height: 50px;
-    height: 50px; }
+    height: 50px;
+    color: #FFF; }
 
 #header.fixed {
   position: fixed;
   top: -100px;
   width: 100%;
   z-index: 999999;
-  background: #112530;
+  /*background: $menu;*/
   margin-top: 100px;
   transition: margin-top 1s ease;
   -moz-transition: margin-top 1s ease;
@@ -464,7 +489,8 @@ a:hover {
       border-bottom: 4px solid #cc050a; }
 
 .top-destination {
-  background: #f3f3f3;
+  /*background: #f3f3f3;*/
+  background: url("../../images/bg-user-rate.jpg") scroll no-repeat center top transparent;
   padding: 15px 0;
   margin: 15px 0; }
   .top-destination h2 {
@@ -481,7 +507,7 @@ a:hover {
     .top-destination ul li .item .title {
       font-size: 16px;
       font-weight: bold;
-      padding: 15px 5px; }
+      padding: 5px 5px; }
     .top-destination ul li .item img {
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
@@ -492,6 +518,9 @@ a:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
+
+#header {
+  background: #0388cd; }
 
 .wrapper {
   overflow: hidden;
@@ -505,7 +534,7 @@ a:hover {
     height: 100%;
     padding-bottom: 100px; }
     .wrapper #container .view {
-      width: 40%;
+      width: 45%;
       position: absolute;
       right: 0;
       top: 100px;
@@ -522,11 +551,11 @@ a:hover {
         height: 100%; }
         .wrapper #container .view .list-container-view .page-search-title {
           width: 100%;
-          height: 50px;
+          height: 40px;
           background: #232f3e; }
           .wrapper #container .view .list-container-view .page-search-title .item-title h1 {
-            height: 50px;
-            line-height: 50px;
+            height: 40px;
+            line-height: 40px;
             font-size: 18px;
             color: #FFF;
             text-transform: uppercase;
@@ -537,7 +566,7 @@ a:hover {
                 position: relative;
                 top: 5px; }
     .wrapper #container .map-content {
-      width: 60%;
+      width: 55%;
       position: relative;
       left: 0;
       height: 100%;
@@ -579,7 +608,7 @@ a:hover {
       position: fixed;
       top: 50px;
       left: 0;
-      background: #183544;
+      background: #e2eef9;
       width: 100%;
       z-index: 11;
       display: none;
@@ -612,20 +641,20 @@ a:hover {
             height: 100%; }
             .header #menu-top li .item-menu-level .item-level ul li a {
               width: 100%;
-              height: 160px;
               background: #FFF;
-              line-height: 35px;
+              line-height: 30px;
               overflow: hidden;
-              margin-bottom: 6px;
+              margin-bottom: 13px;
               padding: 0;
               position: relative;
-              display: block;
-              /*                height: 35px;
-                              line-height: 35px;
-                              overflow: hidden;
-                              &:before{
-                                display: none;
-                              }*/ }
+              display: inline-table;
+              border: 1px solid #fff; }
+              .header #menu-top li .item-menu-level .item-level ul li a img {
+                transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                -webkit-transition: all 0.4s ease-out;
+                -ms-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out; }
               .header #menu-top li .item-menu-level .item-level ul li a span {
                 position: absolute;
                 bottom: 0;
@@ -638,13 +667,49 @@ a:hover {
                 padding-left: 5px; }
               .header #menu-top li .item-menu-level .item-level ul li a:before {
                 display: none; }
+              .header #menu-top li .item-menu-level .item-level ul li a:hover {
+                border-color: #0ebcf2; }
+                .header #menu-top li .item-menu-level .item-level ul li a:hover img {
+                  webkit-transform: scale(1.2);
+                  -moz-transform: scale(1.2);
+                  -ms-transform: scale(1.2);
+                  -o-transform: scale(1.2);
+                  transform: scale(1.2); }
+                .header #menu-top li .item-menu-level .item-level ul li a:hover span {
+                  background: rgba(0, 0, 0, 0.4); }
+          .header #menu-top li .item-menu-level .item-level ul .item-taste a {
+            display: inline-block;
+            width: 25%;
+            float: left;
+            font-size: 14px;
+            overflow: hidden;
+            color: #000; }
+            .header #menu-top li .item-menu-level .item-level ul .item-taste a span {
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -o-border-radius: 50%;
+              -ms-border-radius: 50%;
+              background: #FFF;
+              position: relative;
+              top: 5px;
+              margin-right: 5px;
+              float: left;
+              border: 1px solid transparent; }
+            .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover {
+              color: #fa501e; }
+              .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover span {
+                border: 1px solid #fa501e; }
           .header #menu-top li .item-menu-level .item-level ul li.four a {
-            height: 326px; }
+            height: 252px; }
   .header #menu-top li:nth-child(4):hover .item-menu-level, .header #menu-top li:nth-child(1):hover .item-menu-level, .header #menu-top li:nth-child(2):hover .item-menu-level, .header #menu-top li:nth-child(3):hover .item-menu-level {
     display: block; }
   .header #menu-top li:nth-child(4):hover a:before, .header #menu-top li:nth-child(1):hover a:before, .header #menu-top li:nth-child(2):hover a:before, .header #menu-top li:nth-child(3):hover a:before {
     content: " ";
-    border-bottom: 10px solid #183544;
+    border-bottom: 10px solid #e2eef9;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
