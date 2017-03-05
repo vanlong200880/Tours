@@ -499,6 +499,8 @@
     margin-top: 30px;
     display: inline-block;
     width: 100%;
+    font-size: 14px;
+    font-weight: bold;
     span{
       position: relative;
       top: 10px;
@@ -662,15 +664,74 @@
 .content-page-popup{
   margin-top: 15px;
   .about{
-    h2{
-      font-size: 14px;
-      text-transform: uppercase;
-      font-weight: bold;
+    ul.tab-travel{
+      border-bottom: 2px solid #0388cd;
+      visibility: visible;
+      li{
+        display: inline-block;
+        bottom: -2px;
+        position: relative;
+        h2{
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: bold;
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 15px;
+          cursor: pointer;
+        }
+      }
+      li.active{
+        border-bottom: 2px solid red;
+        background: #e2eef9;
+      }
+    }
+    ul.tab-travel.fixed{
+      position: fixed;
+      top: 0;
+      margin-top: 40px;
+      @include transition(margin-top 0.3s ease-in-out 0s);
+      background: #FFF;
+      z-index: 999;
     }
     p{
       line-height: 22px;
       margin-top: 10px;
       text-align: justify;
+    }
+  }
+}
+.detail-hostory{
+  h2.history{
+    text-transform: uppercase;
+    font-size: 16px;
+    border-bottom: 2px solid #3871b8;
+    margin-bottom: 15px;
+    span{
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      position: relative;
+      top: 2px;
+      border-bottom: 2px solid #bb1010;
+    }
+  }
+  p{
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 15px;
+  }
+  ul{
+    li{
+      display: inline-block;
+      width: 100%;
+      line-height: 22px;
+      list-style-type: initial;
+      margin-left: 30px;
+      p{
+        line-height: 22px;
+      }
     }
   }
 }

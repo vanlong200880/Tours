@@ -1,0 +1,130 @@
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="row">
+        <div class="col-lg-12">
+          <a class="btn btn-default pull-right">Trở về</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-lg-12">
+          <div class="box box-danger">
+            <div class="box-header">
+              <h3 class="box-title">Thêm chuyên mục</h3>
+            </div>
+            <div class="box-body">
+              <fieldset>
+                <legend>
+                  <span>Thông tin chung</span>
+                </legend>
+                <div class="form-group">
+                  <label for="category-name">Tên chuyên mục</label>
+                  <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                </div>
+
+                <div class="form-group">
+                  <label for="permark-link">Permark Link</label>
+                  <input type="text" class="form-control" id="permark-link" placeholder="Permark Link">
+                </div>
+
+                <div class="form-group">
+                  <label>Danh mục cha </label>
+                  <select class="form-control selectpicker">
+                    <option selected="selected">Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="category-name">Mô tả</label>
+                  <textarea class="form-control" rows="10"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="" for="image">Hình ảnh</label>
+                  <div class="view-upload-image">
+                    <a href="#" id="thumb-image" data-toggle="image" class="img-thumbnail">
+                      <img src="http://shopmazavn.chiliweb.org/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="">
+                    </a>
+                  </div>
+                  <input type="hidden" id="image" name="image">
+                </div>
+                
+                <div class="form-group">
+                  <label for="category-icon">Icon</label>
+                  <input type="text" class="form-control" id="category-icon" placeholder="Icon">
+                </div>
+              </fieldset>
+              
+              
+              <fieldset>
+                <legend>
+                  <span>Hỗ trợ SEO</span>
+                </legend>
+                <div class="form-group">
+                  <label for="meta-tag-title">Meta Tag Title</label>
+                  <input type="text" class="form-control" id="meta-tag-title" placeholder="Meta Tag Title">
+                </div>
+                
+                <div class="form-group">
+                  <label for="meta-tag-title">Meta Tag Description</label>
+                  <textarea class="form-control" rows="5" placeholder="Meta Tag Description:"></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label for="meta-tag-title">Meta Tag Keywords</label>
+                  <textarea class="form-control" rows="5" placeholder="Meta Tag Keywords:"></textarea>
+                </div>
+              </fieldset>
+              
+              <fieldset>
+                <legend>
+                  <span>Hiển thị</span>
+                </legend>
+                <div class="form-group">
+                  <label for="menu-order">Thứ tự</label>
+                  <input type="number" min="0" value="0" class="form-control" id="menu-order">
+                </div>
+
+                <div class="form-group">
+                  <label>
+                    <input type="checkbox"> Hiện trên menu
+                  </label>
+                </div>
+
+                <div class="form-group">
+                  <label>Trạng thái</label>
+                  <select class="form-control">
+                    <option>Bật</option>
+                    <option>Tắt</option>
+                  </select>
+                </div>
+              </fieldset>
+              
+            </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info">Lưu</button>
+              <button type="submit" class="btn btn-default">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

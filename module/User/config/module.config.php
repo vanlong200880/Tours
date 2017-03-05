@@ -24,6 +24,24 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    'post-tour' => array(
+                      'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/post-travel/[:action]',
+                            'defaults' => array(
+                              '__NAMESPACE__' => 'User\Controller',
+                              'controller'    => 'Tours',
+                              'action'        => 'add',
+                            ),
+                            'constraints' => array(
+                              'action' => '[a-zA-Z0-9_-]+'
+                            ),
+                        ),
+                    ),
+                    
+                    
+                    
+                    
                   'post' => array(
                       'type'    => 'Segment',
                       'options' => array(
@@ -346,6 +364,7 @@ return array(
           'User\Controller\Blog' => Controller\BlogController::class,
           'User\Controller\Taste' => Controller\TasteController::class,
           'User\Controller\Hotel' => Controller\HotelController::class,
+          'User\Controller\Travel' => Controller\TravelController::class,
         ),
     ),
     'view_helpers'    => array(

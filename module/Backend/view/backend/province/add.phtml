@@ -1,0 +1,84 @@
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="row">
+        <div class="col-lg-12">
+          <a href="<?php echo $this->url('backend/category', array('controller' => 'province', 'action' => 'index')); ?>" class="btn btn-default pull-right">Trở về</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-lg-12">
+          <div class="box box-danger">
+            <div class="box-header">
+              <h3 class="box-title">Thêm quốc gia</h3>
+            </div>
+            <div class="box-body">
+              <div class="body-entertaiment">
+                <fieldset>
+                  <legend>
+                    <span></span>
+                  </legend>
+                  <div class="form-group">
+                    <label for="category-name">Tên (nhập nhiều cách nhau bằng dấu ",")</label>
+                    <input type="text" class="form-control" id="category-name" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label>Quốc gia</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">Việt Nam</option>
+                      <option>Thái Lan</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Loại</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">Tỉnh</option>
+                      <option>Thành Phố</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="" for="image">Hình đại diện</label>
+                    <div class="view-upload-image">
+                      <a href="#" id="thumb-image" data-toggle="image" class="img-thumbnail">
+                        <img src="http://shopmazavn.chiliweb.org/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="">
+                      </a>
+                    </div>
+                    <input type="hidden" id="image" name="image">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="menu-order">Thứ tự</label>
+                    <input type="number" min="0" value="0" class="form-control" id="menu-order">
+                  </div>
+                  <div class="form-group">
+                    <label>Trạng thái</label>
+                    <select class="form-control">
+                      <option>Bật</option>
+                      <option>Tắt</option>
+                    </select>
+                  </div>
+                </fieldset>
+
+              </div>
+            </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-info">Lưu</button>
+              <button type="submit" class="btn btn-default">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

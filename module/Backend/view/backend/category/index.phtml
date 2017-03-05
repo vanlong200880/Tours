@@ -40,13 +40,12 @@
                     <div class="row">
                       <div class="col-md-4">
                         <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                          <option selected="selected">--Choose --</option>
-                          <option>Delete</option>
+                          <option selected="selected">-- Chọn --</option>
+                          <option>Xóa</option>
                           <option>Update Order</option>
-                          <option>Active</option>
-                          <option>Deactive</option>
-                          <option>Refesh</option>
-                          <option>Recycle</option>
+                          <option>Bật</option>
+                          <option>Tắt</option>
+                          <option>Làm mới</option>
                         </select>
                       </div>
                       <div class="col-md-2">
@@ -70,14 +69,28 @@
                 <thead>
                 <tr role="row">
                   <th class="check-all"><input class="cbox" id="check-all" type="checkbox"></th>
-                  <th>Id</th>
-                  <th>Tên</th>
-                  <th>Danh mục cha</th>
-                  <th class="menu-order">Vị trí</th>
-                  <th class="status">Trạng thái</th>
+                  <th><a class="desc" href="#">Id</a></th>
+                  <th><a href="#">Tên</a></th>
+                  <th><a class="asc" href="#">Danh mục cha</a></th>
+                  <th class="menu-order"><a href="#">Vị trí</a></th>
+                  <th class="status"><a href="#">Trạng thái</a></th>
                   <th class="function"></th></tr>
                 </thead>
                 <tbody>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
                   <tr role="row" class="odd">
                     <td><input class="cbox" name="cbox[]" type="checkbox"></td>
                     <td>1</td>

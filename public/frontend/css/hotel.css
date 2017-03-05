@@ -1650,7 +1650,9 @@ ul.connect li.youtube a:hover {
     padding-bottom: 5px;
     margin-top: 30px;
     display: inline-block;
-    width: 100%; }
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold; }
     .comment h2 span {
       position: relative;
       top: 10px; }
@@ -1792,14 +1794,65 @@ ul.connect li.youtube a:hover {
 
 .content-page-popup {
   margin-top: 15px; }
-  .content-page-popup .about h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold; }
+  .content-page-popup .about ul.tab-travel {
+    border-bottom: 2px solid #0388cd;
+    visibility: visible; }
+    .content-page-popup .about ul.tab-travel li {
+      display: inline-block;
+      bottom: -2px;
+      position: relative; }
+      .content-page-popup .about ul.tab-travel li h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        cursor: pointer; }
+    .content-page-popup .about ul.tab-travel li.active {
+      border-bottom: 2px solid red;
+      background: #e2eef9; }
+  .content-page-popup .about ul.tab-travel.fixed {
+    position: fixed;
+    top: 0;
+    margin-top: 40px;
+    transition: margin-top 0.3s ease-in-out 0s;
+    -moz-transition: margin-top 0.3s ease-in-out 0s;
+    -webkit-transition: margin-top 0.3s ease-in-out 0s;
+    -ms-transition: margin-top 0.3s ease-in-out 0s;
+    -o-transition: margin-top 0.3s ease-in-out 0s;
+    background: #FFF;
+    z-index: 999; }
   .content-page-popup .about p {
     line-height: 22px;
     margin-top: 10px;
     text-align: justify; }
+
+.detail-hostory h2.history {
+  text-transform: uppercase;
+  font-size: 16px;
+  border-bottom: 2px solid #3871b8;
+  margin-bottom: 15px; }
+  .detail-hostory h2.history span {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    top: 2px;
+    border-bottom: 2px solid #bb1010; }
+.detail-hostory p {
+  text-align: justify;
+  line-height: 22px;
+  margin-top: 15px; }
+.detail-hostory ul li {
+  display: inline-block;
+  width: 100%;
+  line-height: 22px;
+  list-style-type: initial;
+  margin-left: 30px; }
+  .detail-hostory ul li p {
+    line-height: 22px; }
 
 /*block view cart */
 .views-cart {
@@ -2422,8 +2475,47 @@ ul.connect li.youtube a:hover {
 .popup-page.on {
   display: block; }
 
-.list-catelog h2 {
-  margin: 15px 0; }
+.list-catelog h2.title {
+  margin: 20px 0 5px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold; }
+.list-catelog a.history {
+  position: relative;
+  width: 30px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  display: inline-block; }
+  .list-catelog a.history .view-gallery {
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    background: #0388cd;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #FFF;
+    white-space: nowrap;
+    width: 100px;
+    height: 24px;
+    line-height: 24px;
+    display: none; }
+    .list-catelog a.history .view-gallery:before {
+      content: " ";
+      border-top: 5px solid #0388cd;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      bottom: -5px;
+      position: absolute;
+      left: 50%;
+      margin-left: -2px; }
+  .list-catelog a.history:hover .view-gallery {
+    display: block; }
 .list-catelog table {
   width: 100%;
   border-left: 1px solid #DDD;

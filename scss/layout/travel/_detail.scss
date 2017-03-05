@@ -78,8 +78,49 @@
   display: block;
 }
 .list-catelog{
-  h2{
-    margin: 15px 0;
+  h2.title{
+    margin: 20px 0 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  a.history{
+    position: relative;
+    width: 30px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    display: inline-block;
+    .view-gallery{
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      background: $header;
+      @include border-radius(3px);
+      padding: 0 5px;
+      font-size: 12px;
+      color: #FFF;
+      white-space: nowrap;
+      width: 100px;
+      height: 24px;
+      line-height: 24px;
+      display: none;
+      &:before{
+        content: " ";
+        border-top: 5px solid $header;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        bottom: -5px;
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+      }
+    }
+    &:hover{
+      .view-gallery{
+        display: block;
+      }
+    }
   }
   table{
     width: 100%;

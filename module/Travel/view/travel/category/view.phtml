@@ -32,7 +32,14 @@
           <div class="content-page-popup">
             <div class="row">
               <div class="col-md-12 about">
-                <h2>Giới thiệu</h2>
+                <ul class="tab-travel">
+                  <li class="active"><h2>Giới thiệu</h2></li>
+                  <li><h2>Bảng giá</h2></li>
+                  <li><h2>Lịch sử</h2></li>
+                  <li><h2>Video</h2></li>
+                  <li><h2>Đánh giá</h2></li>
+                </ul>
+                
                 <div class="description">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -48,14 +55,15 @@
          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="list-catelog">
-                  <h2>Bảng giá vé trọn gói (combo)</h2>
+                  <h2 class="title">Bảng giá vé trọn gói (combo)</h2>
                   <table class="game-entertainment">
                     <thead>
                       <tr>
                         <th class="no">STT</th>
                         <th class="name">Tên dịch vụ</th>
                         <th class="price">Mô tả</th>
-                        <th class="price">Giá vé</th>
+                        <th class="price">Giá vé người lớn</th>
+                        <th class="price">Giá vé trẻ em</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -64,19 +72,28 @@
                         <td>Vé trọn giói</td>
                         <td>Bao gồm vé vào cồng và tất cả trò chơi.</td>
                         <td>500.000đ/1 người</td>
+                        <td>500.000đ/1 người</td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>Combo 20 trò chơi</td>
                         <td>Tàu lượn siêu tốc, ...</td>
                         <td>150.000đ/1 người</td>
-                      </tr>                   
+                        <td>500.000đ/1 người</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Vé vào cổng</td>
+                        <td></td>
+                        <td>90.000đ/1 người</td>
+                        <td>50.000đ/1 người</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
 
                 <div class="list-catelog">
-                  <h2>Bảng giá trò chơi</h2>
+                  <h2 class="title">Bảng giá trò chơi</h2>
                   <table class="game-entertainment">
                     <thead>
                       <tr>
@@ -84,76 +101,107 @@
                         <th class="name">Tên dịch vụ</th>
                         <th class="price">Giá người lớn</th>
                         <th class="price">Giá trẻ em</th>
+                        <th class="price"></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="4" class="colspan">Trò chơi cảm giác mạnh</td>
+                        <td colspan="5" class="colspan">Trò chơi cảm giác mạnh</td>
                       </tr>
                       <tr>
                         <td>1</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>3</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>4</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>5</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>                       
                     </tbody>
                     <tbody>
                       <tr>
-                        <td colspan="4" class="colspan">Trò chơi giải trí - khám phá</td>
+                        <td colspan="5" class="colspan">Trò chơi giải trí - khám phá</td>
                       </tr>
                       <tr>
                         <td>1</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>3</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>4</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>
                       <tr>
                         <td>5</td>
                         <td>Trượt tuyết</td>
                         <td>150.000đ/1 người</td>
                         <td>150.000đ/1 người</td>
+                        <td><a class="history" href="javascript:void(0);">
+                            <div class="view-gallery">Xem album ảnh</div>
+                            <i class="icon icon-picture-o"></i></a></td>
                       </tr>                       
                     </tbody>
                   </table>
@@ -162,7 +210,7 @@
 
 
                 <div class="list-catelog">
-                  <h2>Bảng giá vào cổng và phương tiện</h2>
+                  <h2 class="title">Bảng giá phương tiện</h2>
                   <table>
                     <thead>
                       <tr>
@@ -172,16 +220,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td rowspan="2">1</td>
-                        <td rowspan="2">Vé vào cổng</td>
-                        <td>Người lớn</td>
-                        <td>90.000 đ</td>
-                      </tr>
-                      <tr>
-                        <td>Trẻ em</td>
-                        <td>50.000 đ</td>
-                      </tr>
                       <tr>
                         <td rowspan="3">2</td>
                         <td rowspan="3">Vé giữ xe</td>
@@ -652,3 +690,86 @@
      </div>
   </div>
   </div>
+<script>
+  jQuery(document).ready(function($){
+    // menu fixed 
+//    var topHeight = $(window).scrollTop();
+    $(".popup-page.on").scroll(function(){
+      var topHeight = $(".popup-page.on").scrollTop();
+      var divWidth = $(".tab-travel").width();
+      $(".tab-travel").css('width', divWidth);
+      if(topHeight >= 600){
+        $("ul.tab-travel").addClass('fixed');
+      }else{
+        $("ul.tab-travel").removeClass('fixed');
+      }
+      console.log(topHeight);
+    });
+  
+    // show detail gallery
+    $(".game-entertainment tr td").on('click','.history', function(){
+      var id = 'abc';
+      var url = 'http://localhost/tours/public/view-gallery';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".views-popup").addClass('view');
+            $(".views-popup").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".views-popup .views-container").empty().append(data.html);
+            // call royalSlider
+            var slider = $('.royalSlider').royalSlider({
+            fullscreen: {
+              enabled: false,
+              nativeFS: false
+            },
+            controlNavigation: 'thumbnails',
+            autoScaleSlider: true, 
+            autoScaleSliderWidth: 725,
+            autoScaleSliderHeight: 478,
+            loop: false,
+            imageScaleMode: 'none',
+            navigateByClick: true,
+            numImagesToPreload:2,
+            arrowsNav:true,
+            arrowsNavAutoHide: true,
+            arrowsNavHideOnTouch: true,
+            keyboardNavEnabled: true,
+            fadeinLoadedSlide: true,
+            globalCaption: false,
+            globalCaptionInside: false,
+            imageScalePadding: 0,
+            slidesSpacing: 0,
+            thumbs: {
+              appendSpan: false,
+              firstMargin: false,
+              paddingBottom: 4
+            }
+            }).data('royalSlider');
+
+            $('.rsFullscreenBtn').click(function(e){
+              slider.enterFullscreen();
+              e.preventDefault();
+            });
+
+            slider.ev.on("rsEnterFullscreen", function() {
+              // enter fullscreen mode 
+              $(".popup-page").css('position', 'relative');
+            });
+            slider.ev.on('rsExitFullscreen', function(event) {
+              // exit fullscreen mode
+              $(".popup-page").removeAttr('style');
+            });
+            // view map popup
+            $(".views-popup .views-container").addClass('open');
+          }
+        });
+    });
+    
+  });
+</script>

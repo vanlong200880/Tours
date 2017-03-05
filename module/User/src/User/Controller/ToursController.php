@@ -18,7 +18,7 @@ class ToursController extends AbstractActionController
     {
         return new ViewModel();
     }
-    public function postAction(){
+    public function addAction(){
       return new ViewModel();
     }
     public function orderAction(){

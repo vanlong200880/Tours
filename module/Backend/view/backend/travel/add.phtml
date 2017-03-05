@@ -1,0 +1,870 @@
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="row">
+        <div class="col-lg-12">
+          <a class="btn btn-default pull-right">Trở về</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-lg-12">
+          <div class="box box-danger">
+            <div class="box-header">
+              <h3 class="box-title">Thêm điểm du lịch</h3>
+            </div>
+            <div class="box-body">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"><a href="#default" aria-controls="default" role="tab" data-toggle="tab">Tổng quan</a></li>
+                <li role="presentation"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">Thư viện ảnh</a></li>
+                <li role="presentation"><a href="#entertaiment" aria-controls="entertaiment" role="tab" data-toggle="tab">Tạo trò chơi</a></li>
+                <li role="presentation"><a href="#entertaiment-add-price" aria-controls="entertaiment-add-price" role="tab" data-toggle="tab">Tạo bảng giá khuyến mãi</a></li>
+                <li role="presentation"><a href="#entertaiment-gallery" aria-controls="entertaiment-gallery" role="tab" data-toggle="tab">Ảnh trò chơi</a></li>
+                <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Thông tin hỗ trợ</a></li>
+                <li role="presentation" class="active"><a href="#service-price" aria-controls="service-price" role="tab" data-toggle="tab">Gói dịch vụ</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane" id="default">
+                  <div class="body-entertaiment">
+                    <fieldset>
+                      <legend>
+                        <span>Thông tin chung</span>
+                      </legend>
+                      <div class="form-group">
+                        <label for="category-name">Tên chuyên mục</label>
+                        <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="permark-link">Permark Link</label>
+                        <input type="text" class="form-control" id="permark-link" placeholder="Permark Link">
+                      </div>
+
+                      <div class="form-group">
+                        <label>Danh mục cha </label>
+                        <select class="form-control selectpicker">
+                          <option selected="selected">Alabama</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="category-name">Mô tả</label>
+                        <textarea class="form-control" rows="10"></textarea>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="" for="image">Hình ảnh</label>
+                        <div class="view-upload-image">
+                          <a href="#" id="thumb-image" data-toggle="image" class="img-thumbnail">
+                            <img src="http://shopmazavn.chiliweb.org/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="">
+                          </a>
+                        </div>
+                        <input type="hidden" id="image" name="image">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="category-icon">Icon</label>
+                        <input type="text" class="form-control" id="category-icon" placeholder="Icon">
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                  <legend>
+                    <span>Hỗ trợ SEO</span>
+                  </legend>
+                  <div class="form-group">
+                    <label for="meta-tag-title">Meta Tag Title</label>
+                    <input type="text" class="form-control" id="meta-tag-title" placeholder="Meta Tag Title">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="meta-tag-title">Meta Tag Description</label>
+                    <textarea class="form-control" rows="5" placeholder="Meta Tag Description:"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="meta-tag-title">Meta Tag Keywords</label>
+                    <textarea class="form-control" rows="5" placeholder="Meta Tag Keywords:"></textarea>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <legend>
+                    <span>Hiển thị</span>
+                  </legend>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="menu-order">Thứ tự</label>
+                            <input type="number" min="0" value="0" class="form-control" id="menu-order">
+                          </div>
+                          <div class="form-group">
+                            <label>Trạng thái</label>
+                            <select class="form-control">
+                              <option>Bật</option>
+                              <option>Tắt</option>
+                            </select>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="menu-order">Giờ mở cửa</label>
+                            <input type="time" value="" class="form-control" id="menu-order">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="menu-order">Giờ đóng cửa</label>
+                            <input type="time" value="" class="form-control" id="menu-order">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> Hiện trên menu
+                                </label>
+                              </div>
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> Hot
+                                </label>
+                              </div>
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> New
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> Sticky
+                                </label>
+                              </div>
+
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> Promotion
+                                </label>
+                              </div>
+
+                              <div class="form-group">
+                                <label>
+                                  <input type="checkbox"> Highlight
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <legend>
+                    <span>Địa chỉ</span>
+                  </legend>
+                  <div class="form-group">
+                    <label for="menu-order">Số nhà</label>
+                    <input type="text"  value="" class="form-control" id="menu-order">
+                  </div>
+                  <div class="form-group">
+                    <label for="menu-order">Tên đường</label>
+                    <input type="text"  value="" class="form-control" id="menu-order">
+                  </div>
+                  <div class="form-group">
+                    <label>Quốc gia</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">-- Chọn -- </option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Tỉnh / Thành Phố</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">-- Chọn -- </option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Quận / Huyện</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">-- Chọn -- </option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Phường / Xã</label>
+                    <select class="form-control selectpicker">
+                      <option selected="selected">-- Chọn -- </option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+                </fieldset>
+                  </div>
+                  
+                  
+                </div>
+                <div role="tabpanel" class="tab-pane" id="gallery">
+                  <div class="body-entertaiment">
+                    <div class="add-muilti-gallery">
+                    <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Chèn nhiều hình</a>
+                  </div>
+                  <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                    <thead>
+                      <tr role="row">
+                        <th>Hình ảnh</th>
+                        <th>Chọn ảnh đại diện</th>
+                        <th>Title</th>
+                        <th>Alt</th>
+                        <th class="status">Thứ tự</th>
+                        <th class="function"></th></tr>
+                      </thead>
+                      <tbody>
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                      <tfoot>
+                          <tr class="image-row ui-sortable-handle">
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td class="menu-order"></td>
+                          <td class="function">
+                            <a href="#" class="add-gallery-js btn btn-info"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                </div>
+                <div role="tabpanel" class="tab-pane" id="entertaiment">
+                  <div class="body-entertaiment">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <fieldset>
+                          <legend>
+                            <span>Thông tin chung</span>
+                          </legend>
+                          <div class="form-group">
+                            <label>
+                              <input type="radio" checked="" name="entertaiment"> Trò chơi
+                            </label>
+                          </div>
+                          <div class="form-group">
+                            <label>
+                              <input type="radio" name="entertaiment"> Điểm tham quan
+                            </label>
+                          </div>
+                          <div class="form-group">
+                            <label for="category-name">Tên trò chơi</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+
+                          <div class="form-group">
+                            <label>Nhóm trò chơi </label>
+                            <select class="form-control selectpicker">
+                              <option selected="selected">Trò chơi cảm giác mạnh</option>
+                              <option>Trò chơi giải trí - khám phá</option>
+                            </select>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="category-name">Mô tả</label>
+                            <textarea class="form-control" rows="10"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label>
+                              <input type="checkbox"> Vé trọn gói (combo)
+                            </label>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                        <fieldset>
+                          <legend>
+                            <span>Giá mặc định</span>
+                          </legend>
+                          <div class="form-group">
+                            <label for="category-name">Người lớn</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="category-name">Trẻ em</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="entertaiment-add-price">
+                  <div class="body-entertaiment">
+                    <fieldset>
+                      <legend>
+                        <span>Vé trọn gói</span>
+                      </legend>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="form-group">
+                              <label for="category-name">Tên chương trình</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            <div class="form-group">
+                              <label for="category-name">Mã giảm giá</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            <div class="form-group">
+                              <label for="category-name">Ngày bắt đầu</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="category-name">Ngày kết thúc</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          
+                          <div class="form-group">
+                            <label for="category-name">Số lượng</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                          <div class="form-group">
+                            <label for="category-name">Giá người lớn</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="category-name">Giá trẻ em</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="box-footer">
+                            <button type="submit" class="btn btn-info">Lưu</button>
+                            <button type="submit" class="btn btn-default">Reset</button>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="body-entertaiment">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                    <thead>
+                    <tr role="row">
+                      <th>Tên chương trình</th>
+                      <th>Mã giảm giá</th>
+                      <th>Số lượng</th>
+                      <th>Giá người lớn</th>
+                      <th>Giá trẻ em</th>
+                      <th>Ngày bắt đầu</th>
+                      <th>Ngày kết thúc</th>
+                      <th style="width: 20px;"></th></tr>
+                    </thead>
+                    <tbody>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+              </table>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="entertaiment-gallery">
+                  <div class="body-entertaiment">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                      <thead>
+                        <tr role="row">
+                          <th>Mã</th>
+                          <th>Tên trò chơi</th>
+                          <th>Giá người lớn</th>
+                          <th>Giá trẻ em</th>
+                          <th>Thuộc nhóm</th>
+                          <th style="width: 20px;"></th></tr>
+                        </thead>
+                        <tbody>
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+
+                        </tbody>
+                  </table>
+                  </div>
+                  
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="support">
+                  <div class="body-entertaiment">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                      <thead>
+                      <tr role="row">
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                        <th>Hotline</th>
+                        <th class="status">Thứ tự</th>
+                        <th class="function"></th></tr>
+                      </thead>
+                      <tbody>
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            Phạm Văn Long
+                          </td>
+                          <td>vanlong200880@gmail.com</td>
+                          <td>096 666 0127</td>
+                          <td>1900 4545</td>
+                          <td class="menu-order">0</td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-pencil-square-o"></i></a>
+                          </td>
+                        </tr>
+                        
+
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <input type="text" name="image-title" class="form-control"/>
+                          </td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <div class="add-muilti-gallery">
+                              <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm hỗ trợ</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane active" id="service-price">
+                  <div class="body-entertaiment">
+                    <div class="add-muilti-gallery">
+                      <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Lưu</a>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="item-service">
+                          Miễn phí
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-service">
+                          Miễn phí
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-service">
+                          Miễn phí
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-service">
+                          Miễn phí
+                        </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

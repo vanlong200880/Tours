@@ -24,7 +24,7 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                  'hotel-category' => array(
+                  'category' => array(
                     'type' => 'Segment',
                     'options' => array(
                       'route' => '[/:controller][/:action][/:id][/page/:page][/type/:type][/sort/:sort][/order/:order][/textSearch/:textSearch]',
@@ -72,7 +72,12 @@ return array(
     'controllers' => array(
         'invokables' => array(
           'Backend\Controller\Index' => Controller\IndexController::class,
-          'Backend\Controller\Category' => Controller\CategoryController::class
+          'Backend\Controller\Category' => Controller\CategoryController::class,
+          'Backend\Controller\Travel' => Controller\TravelController::class,
+          'Backend\Controller\Nation' => Controller\NationController::class,
+          'Backend\Controller\Province' => Controller\ProvinceController::class,
+          'Backend\Controller\District' => Controller\DistrictController::class,
+          'Backend\Controller\Ward' => Controller\WardController::class
         ),
     ),
     'view_helpers'    => array(

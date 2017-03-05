@@ -166,6 +166,7 @@ return array(
                 ),
               ),
             ),
+            
 
             'popup-map' => array(
               'type' => 'Segment',
@@ -176,6 +177,19 @@ return array(
                   '__NAMESPACE__' => 'Travel\Controller',
                   'controller' => 'Travel\Controller\Category',
                   'action' => 'map',
+                ),
+              ),
+            ),
+            
+            'view-gallery' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/view-gallery',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Travel\Controller',
+                  'controller' => 'Travel\Controller\Category',
+                  'action' => 'viewGallery',
                 ),
               ),
             ),
@@ -226,6 +240,7 @@ return array(
             'layout/popup-view'           => __DIR__ . '/../view/travel/category/view.phtml',
             'layout/popup-map'           => __DIR__ . '/../view/travel/category/map.phtml',
             'layout/detail-page'           => __DIR__ . '/../view/layout/detail.phtml',
+            'layout/view-gallery'           => __DIR__ . '/../view/travel/category/view-gallery.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

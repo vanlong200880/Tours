@@ -50,4 +50,17 @@ class CategoryController extends AbstractActionController
 
       return $jsonModel;
     }
+    public function viewGalleryAction(){
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('layout/view-gallery')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables(['html' => $htmlOutput]);
+
+      return $jsonModel;
+    }
 }
