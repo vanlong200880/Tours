@@ -307,4 +307,50 @@ a:hover {
   #service-price ul li:hover .item-service {
     border-color: #dd4b39; }
 
+.post-list-tour h2 {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #DDD;
+  height: auto;
+  line-height: normal;
+  margin-bottom: 15px;
+  background: none;
+  padding-left: 0;
+  padding-bottom: 5px; }
+.post-list-tour .post-search {
+  margin-bottom: 15px; }
+  .post-list-tour .post-search .btn-search {
+    height: 34px;
+    background: #183544;
+    line-height: 34px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    color: #FFF;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px; }
+.post-list-tour ul li {
+  margin-bottom: 15px; }
+  .post-list-tour ul li .item {
+    border: 1px solid #DDD; }
+    .post-list-tour ul li .item .img {
+      position: relative; }
+      .post-list-tour ul li .item .img .item-checked {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 9; }
+        .post-list-tour ul li .item .img .item-checked input {
+          margin: 0; }
+  .post-list-tour ul li .album-title {
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 5px; }
+  .post-list-tour ul li:hover .item {
+    border-color: red; }
+
 /*# sourceMappingURL=admin.css.map */

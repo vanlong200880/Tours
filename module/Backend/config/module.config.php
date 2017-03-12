@@ -73,11 +73,15 @@ return array(
         'invokables' => array(
           'Backend\Controller\Index' => Controller\IndexController::class,
           'Backend\Controller\Category' => Controller\CategoryController::class,
-          'Backend\Controller\Travel' => Controller\TravelController::class,
           'Backend\Controller\Nation' => Controller\NationController::class,
           'Backend\Controller\Province' => Controller\ProvinceController::class,
           'Backend\Controller\District' => Controller\DistrictController::class,
-          'Backend\Controller\Ward' => Controller\WardController::class
+          'Backend\Controller\Ward' => Controller\WardController::class,
+          'Backend\Controller\Travel' => Controller\TravelController::class,
+          'Backend\Controller\Tour' => Controller\TourController::class,
+          'Backend\Controller\Diary' => Controller\DiaryController::class,
+          'Backend\Controller\Taste' => Controller\TasteController::class,
+          'Backend\Controller\Video' => Controller\VideoController::class,
         ),
     ),
     'view_helpers'    => array(

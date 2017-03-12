@@ -1,0 +1,187 @@
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="row">
+        <div class="col-lg-12">
+          <a class="btn btn-info pull-right">Thêm mới</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-lg-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Danh sách Tour</h3>
+              <ul class="pull-right">
+                <li>
+                  <a href="#">CSV</a>
+                </li>
+                <li>
+                  <a href="#">PDF</a>
+                </li>
+                <li>
+                  <a href="#">Excel</a>
+                </li>
+                <li>
+                  <a href="#">Print</a>
+                </li>
+              </ul>
+            </div>
+            <div class="box-body">
+              <div class="box-search">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                          <option selected="selected">-- Chọn --</option>
+                          <option>Xóa</option>
+                          <option>Update Order</option>
+                          <option>Bật</option>
+                          <option>Tắt</option>
+                          <option>Làm mới</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-info pull-right">Áp dụng</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="Từ khóa">
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-info pull-right">Tìm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <table id="data" class="table table-bordered table-striped dataTable">
+                <thead>
+                <tr role="row">
+                  <th class="check-all"><input class="cbox" id="check-all" type="checkbox"></th>
+                  <th><a class="desc" href="#">Id</a></th>
+                  <th><a href="#">Tên</a></th>
+                  <th><a class="asc" href="#">Danh mục cha</a></th>
+                  <th class="menu-order"><a href="#">Vị trí</a></th>
+                  <th class="status"><a href="#">Trạng thái</a></th>
+                  <th class="function"></th></tr>
+                </thead>
+                <tbody>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr role="row" class="odd">
+                    <td><input class="cbox" name="cbox[]" type="checkbox"></td>
+                    <td>1</td>
+                    <td>Trung tâm thương mại</td>
+                    <td>Du lịch</td>
+                    <td class="menu-order"><input type="number" min="0" value="0" name="menu_order[]"></td>
+                    <td class="status"><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td class="function">
+                      <a class="func" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                      <a class="func" href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+                
+              </table>
+            </div>
+            <div class="box-footer">
+              <div class="dataTables_paginate" id="example2_paginate">
+                <ul class="pagination pull-right">
+                  <li class="paginate_button previous disabled" id="example2_previous">
+                    <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                  <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#">2</a></li>
+                  <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#">4</a></li>
+                  <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#">6</a></li>
+                  <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li></ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

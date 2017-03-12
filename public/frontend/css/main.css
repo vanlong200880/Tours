@@ -970,8 +970,10 @@ a:hover {
       -ms-border-radius: 2px;
       cursor: pointer; }
   .comment .list-comment li {
-    padding: 15px 0;
-    border-bottom: 1px solid #DDD; }
+    padding: 15px;
+    border: 1px solid #DDD;
+    margin-bottom: 15px;
+    background: #FFF; }
     .comment .list-comment li .comment-item {
       display: inline-block;
       width: 100%; }
@@ -999,12 +1001,12 @@ a:hover {
             display: inline-block;
             width: 100%; }
             .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
-              width: 105px;
+              width: 135px;
               display: inline-block;
               margin-bottom: 10px;
               margin-right: 10px; }
               .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
-                max-width: 104px;
+                max-width: 135px;
                 display: inline-block; }
           .comment .list-comment li .comment-item .comment-content .comment-info .form-replies a {
             border-radius: 2px;
@@ -1022,8 +1024,6 @@ a:hover {
         .comment .list-comment li .comment-item .comment-content .comment-replies {
           border-top: 1px solid #DDD;
           padding-top: 15px; }
-    .comment .list-comment li:last-child {
-      border-bottom: none; }
   .comment .views-all {
     text-align: center; }
     .comment .views-all a {
@@ -1095,6 +1095,9 @@ a:hover {
 
 .content-page-popup {
   margin-top: 15px; }
+  .content-page-popup .about .content {
+    background: #FFF;
+    padding: 0 10px 10px 10px; }
   .content-page-popup .about ul.tab-travel {
     border-bottom: 2px solid #0388cd;
     visibility: visible; }
@@ -1127,7 +1130,7 @@ a:hover {
     z-index: 999; }
   .content-page-popup .about p {
     line-height: 22px;
-    margin-top: 10px;
+    padding-top: 15px;
     text-align: justify; }
 
 .detail-hostory h2.history {
@@ -1247,7 +1250,8 @@ a:hover {
   padding: 10px;
   margin-top: 15px;
   display: inline-block;
-  width: 100%; }
+  width: 100%;
+  background: #FFF; }
   .rating h2 {
     padding-bottom: 3px;
     border-bottom: 1px solid #DDD; }
@@ -1257,7 +1261,8 @@ a:hover {
     float: left; }
     .rating ul .summary-rating p {
       text-align: center;
-      margin-top: 0; }
+      margin-top: 0;
+      padding: 0; }
     .rating ul .summary-rating .rating-post {
       font-size: 13px;
       color: #dedddc; }

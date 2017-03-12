@@ -17,22 +17,21 @@
         <div class="col-lg-12">
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Thêm điểm du lịch</h3>
+              <h3 class="box-title">Tạo điểm ăn uống</h3>
             </div>
             <div class="box-body">
               <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="#default" aria-controls="default" role="tab" data-toggle="tab">Tổng quan</a></li>
+                <li role="presentation" class="active"><a href="#default" aria-controls="default" role="tab" data-toggle="tab">Tổng quan</a></li>
                 <li role="presentation"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">Thư viện ảnh</a></li>
-                <li role="presentation"><a href="#entertaiment" aria-controls="entertaiment" role="tab" data-toggle="tab">Tạo trò chơi</a></li>
-                <li role="presentation"><a href="#entertaiment-add-price" aria-controls="entertaiment-add-price" role="tab" data-toggle="tab">Tạo bảng giá khuyến mãi</a></li>
-                <li role="presentation"><a href="#entertaiment-gallery" aria-controls="entertaiment-gallery" role="tab" data-toggle="tab">Ảnh trò chơi</a></li>
+                <li role="presentation"><a href="#entertaiment" aria-controls="entertaiment" role="tab" data-toggle="tab">Điểm tham quan</a></li>
+                <li role="presentation"><a href="#entertaiment-add-price" aria-controls="entertaiment-add-price" role="tab" data-toggle="tab">Tạo bảng giá</a></li>
                 <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Thông tin hỗ trợ</a></li>
-                <li role="presentation" class="active"><a href="#service-price" aria-controls="service-price" role="tab" data-toggle="tab">Gói dịch vụ</a></li>
+                <li role="presentation"><a href="#service-price" aria-controls="service-price" role="tab" data-toggle="tab">Gói dịch vụ</a></li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane" id="default">
+                <div role="tabpanel" class="tab-pane active" id="default">
                   <div class="body-entertaiment">
                     <fieldset>
                       <legend>
@@ -65,6 +64,11 @@
                         <label for="category-name">Mô tả</label>
                         <textarea class="form-control" rows="10"></textarea>
                       </div>
+                      
+                      <div class="form-group">
+                        <label for="category-name">Nội dung</label>
+                        <textarea class="form-control" rows="10"></textarea>
+                      </div>
 
 
                       <div class="form-group">
@@ -80,6 +84,21 @@
                       <div class="form-group">
                         <label for="category-icon">Icon</label>
                         <input type="text" class="form-control" id="category-icon" placeholder="Icon">
+                      </div>
+                    </fieldset>
+                    
+                    
+                    <fieldset>
+                      <legend>
+                        <span>Giá mặc định</span>
+                      </legend>
+                      <div class="form-group">
+                        <label for="category-name">Giá từ</label>
+                        <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                      </div>
+                      <div class="form-group">
+                        <label for="category-name">Giá đến</label>
+                        <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
                       </div>
                     </fieldset>
 
@@ -243,8 +262,6 @@
                   </div>
                 </fieldset>
                   </div>
-                  
-                  
                 </div>
                 <div role="tabpanel" class="tab-pane" id="gallery">
                   <div class="body-entertaiment">
@@ -401,67 +418,206 @@
                 <div role="tabpanel" class="tab-pane" id="entertaiment">
                   <div class="body-entertaiment">
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <fieldset>
                           <legend>
-                            <span>Thông tin chung</span>
+                            <span>Thêm điểm tham quan trong Tour</span>
                           </legend>
-                          <div class="form-group">
-                            <label>
-                              <input type="radio" checked="" name="entertaiment"> Trò chơi
-                            </label>
-                          </div>
-                          <div class="form-group">
-                            <label>
-                              <input type="radio" name="entertaiment"> Điểm tham quan
-                            </label>
-                          </div>
-                          <div class="form-group">
-                            <label for="category-name">Tên trò chơi</label>
-                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
-                          </div>
-
-                          <div class="form-group">
-                            <label>Nhóm trò chơi </label>
-                            <select class="form-control selectpicker">
-                              <option selected="selected">Trò chơi cảm giác mạnh</option>
-                              <option>Trò chơi giải trí - khám phá</option>
-                            </select>
+                          
+                          <div class="post-list-tour">
+                            <div class="row post-search">
+                              <div class="col-md-3">
+                                <input type="text" class="form-control">
+                              </div>
+                              <div class="col-md-2">
+                                <select class="form-control">
+                                  <option>Quốc Gia</option>
+                                </select>
+                              </div>
+                              <div class="col-md-3">
+                                <select class="form-control">
+                                  <option>Tỉnh/Thành Phố</option>
+                                </select>
+                              </div>
+                              <div class="col-md-2">
+                                <select class="form-control">
+                                  <option>Quận/Huyện</option>
+                                </select>
+                              </div>
+                              <div class="col-md-1">
+                                <a href="#" class="btn-search">Tìm</a>
+                              </div>
+                            </div>
+                            <ul class="row">
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="col-md-2">
+                                  <div class="item">
+                                    <div class="img">
+                                      <div class="item-checked">
+                                        <input type="checkbox" class="cbox" name="">
+                                      </div>
+                                      <img src="/tours/public/assets/demo/deal.jpg">
+                                    </div>
+                                    <div class="album-title">
+                                      <p>Khu du lịch bọ cạp vàng</p>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="box-footer">
+                                  <button type="submit" class="btn btn-info">Lưu</button>
+                                  <button type="submit" class="btn btn-default">Reset</button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           
-                          <div class="form-group">
-                            <label for="category-name">Mô tả</label>
-                            <textarea class="form-control" rows="10"></textarea>
-                          </div>
-                          
-                          <div class="form-group">
-                            <label for="category-name">Lịch sử</label>
-                            <textarea class="form-control" rows="10"></textarea>
-                          </div>
-                          
-                          <div class="form-group">
-                            <label>
-                              <input type="checkbox"> Vé trọn gói (combo)
-                            </label>
-                          </div>
                         </fieldset>
-                      </div>
-                      <div class="col-md-6">
-                        <fieldset>
-                          <legend>
-                            <span>Giá mặc định</span>
-                          </legend>
-                          <div class="form-group">
-                            <label for="category-name">Người lớn</label>
-                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="category-name">Trẻ em</label>
-                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
-                          </div>
-                        </fieldset>
-                      </div>
+                      </div>            
                     </div>
                   </div>
                 </div>
@@ -469,7 +625,7 @@
                   <div class="body-entertaiment">
                     <fieldset>
                       <legend>
-                        <span>Vé trọn gói</span>
+                        <span>Chương trình khuyến mãi</span>
                       </legend>
                       <div class="row">
                         <div class="col-md-6">
@@ -500,12 +656,11 @@
                             <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
                           </div>
                           <div class="form-group">
-                            <label for="category-name">Giá người lớn</label>
+                            <label for="category-name">Giá gốc</label>
                             <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
                           </div>
-                          
                           <div class="form-group">
-                            <label for="category-name">Giá trẻ em</label>
+                            <label for="category-name">Giá khuyến mãi</label>
                             <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
                           </div>
                         </div>
@@ -525,8 +680,8 @@
                       <th>Tên chương trình</th>
                       <th>Mã giảm giá</th>
                       <th>Số lượng</th>
-                      <th>Giá người lớn</th>
-                      <th>Giá trẻ em</th>
+                      <th>Giá gốc</th>
+                      <th>Giá giảm</th>
                       <th>Ngày bắt đầu</th>
                       <th>Ngày kết thúc</th>
                       <th style="width: 20px;"></th></tr>
@@ -546,243 +701,13 @@
                           <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                       </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
-                      <tr class="image-row ui-sortable-handle">
-                        <td>
-                          Ngày 8/3
-                        </td>
-                        <td>DAY8-3</td>
-                        <td>200</td>
-                        <td>1.500.000 đ</td>
-                        <td>1.500.000 đ</td>
-                        <td>12/12/2017</td>
-                        <td>12/12/2017</td>
-                        <td class="function">
-                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        </td>
-                      </tr>
+                      
 
                     </tbody>
               </table>
                   </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="entertaiment-gallery">
-                  <div class="body-entertaiment">
-                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
-                      <thead>
-                        <tr role="row">
-                          <th>Mã</th>
-                          <th>Tên trò chơi</th>
-                          <th>Giá người lớn</th>
-                          <th>Giá trẻ em</th>
-                          <th>Thuộc nhóm</th>
-                          <th style="width: 20px;"></th></tr>
-                        </thead>
-                        <tbody>
-                          <tr class="image-row ui-sortable-handle">
-                            <td>
-                              1
-                            </td>
-                            <td>Trượt tuyết</td>
-                            <td>1.500.000 đ</td>
-                            <td>1.500.000 đ</td>
-                            <td>Cảm giác mạnh</td>
-                            <td class="function">
-                              <a href="#" class="btn btn-info">
-                                <div class="info-help">Thêm ảnh</div>
-                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            </td>
-                          </tr>
-                          <tr class="image-row ui-sortable-handle">
-                            <td colspan="5">
-                              <div class="list-entertaiment-gallery">
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                              </div>
-                            </td>
-                            <td class="function"></td>
-
-                          </tr>
-
-                          <tr class="image-row ui-sortable-handle">
-                            <td>
-                              1
-                            </td>
-                            <td>Trượt tuyết</td>
-                            <td>1.500.000 đ</td>
-                            <td>1.500.000 đ</td>
-                            <td>Cảm giác mạnh</td>
-                            <td class="function">
-                              <a href="#" class="btn btn-info">
-                                <div class="info-help">Thêm ảnh</div>
-                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            </td>
-                          </tr>
-                          <tr class="image-row ui-sortable-handle">
-                            <td colspan="5">
-                              <div class="list-entertaiment-gallery">
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                              </div>
-                            </td>
-                            <td class="function"></td>
-
-                          </tr>
-
-                          <tr class="image-row ui-sortable-handle">
-                            <td>
-                              1
-                            </td>
-                            <td>Trượt tuyết</td>
-                            <td>1.500.000 đ</td>
-                            <td>1.500.000 đ</td>
-                            <td>Cảm giác mạnh</td>
-                            <td class="function">
-                              <a href="#" class="btn btn-info">
-                                <div class="info-help">Thêm ảnh</div>
-                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            </td>
-                          </tr>
-                          <tr class="image-row ui-sortable-handle">
-                            <td colspan="5">
-                              <div class="list-entertaiment-gallery">
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                                <a href="#">
-                                  <span class="delete-image fa fa-times"></span>
-                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
-                                </a>
-                              </div>
-                            </td>
-                            <td class="function"></td>
-
-                          </tr>
-
-
-                        </tbody>
-                  </table>
-                  </div>
-                  
-                </div>
+                
                 
                 <div role="tabpanel" class="tab-pane" id="support">
                   <div class="body-entertaiment">
@@ -832,7 +757,7 @@
                   </div>
                 </div>
                 
-                <div role="tabpanel" class="tab-pane active" id="service-price">
+                <div role="tabpanel" class="tab-pane" id="service-price">
                   <div class="body-entertaiment">
                     <div class="add-muilti-gallery">
                       <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Lưu</a>
