@@ -1,8 +1,75 @@
-.list-item{
-  .item{
-    .item-content{
-      .view-user{
-        margin-top: 10px;
+.taste{
+  .list-item {
+    .item {
+      .usr-order{
+        color: white;
+        z-index: 9;
+        position: absolute;
+        display: block;
+        top: 5px;
+        left: 5px;
+        background: rgba(0,0,0,0.8);
+        padding: 3px 10px;
+        display: none;
+        @include border-radius(3px);
+        span{
+          &:before{
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+      .item-content {
+        .title {
+          border-bottom: none;
+          padding-bottom: 0px;
+          a{
+            height: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .address{
+          height: 20px;
+          line-height: 20px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-style: italic;
+          font-size: 12px;
+        }
+        .view-user{
+          border-top: 1px solid #DDD;
+          padding-top: 5px;
+          .items-review{
+            .user-post-avatar{
+              width: 30px;
+              height: 30px;
+              float: left;
+              border: 1px solid #DDD;
+              @include border-radius(50%);
+              text-align: center;
+              line-height: 30px;
+              img{
+                @include border-radius(50%);
+                display: inline-block;
+                max-width: 30px;
+              }
+            }
+            .user-post{
+              width: 87%;
+              float: right;
+              height: 60px;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+      &:hover{
+        .usr-order{
+          display: block;
+        }
       }
     }
   }
