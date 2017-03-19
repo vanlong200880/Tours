@@ -24,7 +24,7 @@
         .page-search-title{
           width:100%;
           height: 40px;
-          background: #232f3e;
+          background: $menu;
           .item-title{
             h1{
               height: 40px;
@@ -76,7 +76,7 @@
   .logo{
     width: 100px;
     height: 100px;
-    background: $background-default;
+    background: $menu;
     position: absolute;
     top: 0;
     left: 0;
@@ -553,9 +553,50 @@
   }
 }
 .current-position{
+  border: 1px solid #DDD;
   margin-top: 15px;
+  border-bottom: 2px solid $menu;
+  padding: 10px;
+  .col-md-9{
+    padding-right: 0;
+    width: 82%;
+  }
+  .col-md-3{
+    padding-left: 0;
+    width: 18%;
+  }
   input{
     @include border-radius(0px);
+  }
+  .btn-filter-advance{
+    padding: 6px 15px;
+    background: #fa501e;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #fa501e;
+    cursor: pointer;
+    color: #FFF;
+  }
+  .filter-advance{
+    display: inline-block;
+    width: 100%;
+    padding-top: 10px;
+    display: none;
+    ul{
+      li{
+        display:inline-block;
+        border: none;
+        padding: 0;
+        width: auto;
+        a{
+          display: inline-block;
+          padding: 3px 15px;
+          border: 1px solid #DDD;
+          @include border-radius(3px);
+          margin: 5px 5px 5px 0;
+        }
+      }
+    }
   }
 }
 .list-province-item{

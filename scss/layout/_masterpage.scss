@@ -240,10 +240,9 @@
           }
           .views{
             display: inline-block;
-            width: 35%;
             position: absolute;
             top: 30px;
-            background: $background-default;
+            background: $menu;
             @include border-radius(3px);
             padding: 5px 10px;
             color: #FFF;
@@ -320,33 +319,6 @@
               }
             }
           }
-/*          .block-bottom .bottom-item .overlay_border{
-            
-          }
-          .block-bottom .bottom-item:hover .overlay_border{
-            
-          }
-          .block-bottom .bottom-item .overlay_border:before,
-          .block-bottom .bottom-item .overlay_border:after{
-            
-          }
-          .block-bottom .bottom-item .overlay_border:before{
-          }
-          .block-bottom .bottom-item .overlay_border:after{
-
-          }
-          .block-bottom .bottom-item:hover .overlay_border:before,
-          .block-bottom .bottom-item:hover .overlay_border:after,
-          .block-bottom .bottom-item.hover .overlay_border:before,
-          .block-bottom .bottom-item.hover .overlay_border:after{
-            
-          }
-          .block-bottom .bottom-item .overlay_border:before,
-          .block-bottom .bottom-item .overlay_border:before,
-          .block-bottom .bottom-item .overlay_border:after,
-          .block-bottom .bottom-item .overlay_border:after {
-            
-          }*/
         }
       }
     }

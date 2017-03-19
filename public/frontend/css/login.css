@@ -308,10 +308,9 @@ a:hover {
               color: #183544; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
-          width: 35%;
           position: absolute;
           top: 30px;
-          background: #232f3e;
+          background: #0ebcf2;
           border-radius: 3px;
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
@@ -328,34 +327,7 @@ a:hover {
         cursor: pointer;
         margin-top: 10px; }
       .list-province-item ul.list-travel li .item .item-img {
-        position: relative;
-        /*          .block-bottom .bottom-item .overlay_border{
-                    
-                  }
-                  .block-bottom .bottom-item:hover .overlay_border{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:after{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before{
-                  }
-                  .block-bottom .bottom-item .overlay_border:after{
-        
-                  }
-                  .block-bottom .bottom-item:hover .overlay_border:before,
-                  .block-bottom .bottom-item:hover .overlay_border:after,
-                  .block-bottom .bottom-item.hover .overlay_border:before,
-                  .block-bottom .bottom-item.hover .overlay_border:after{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:after,
-                  .block-bottom .bottom-item .overlay_border:after {
-                    
-                  }*/ }
+        position: relative; }
         .list-province-item ul.list-travel li .item .item-img .overlay_border {
           position: absolute;
           width: 100%;

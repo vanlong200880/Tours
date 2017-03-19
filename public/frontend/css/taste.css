@@ -128,7 +128,7 @@ a:hover {
         .wrapper #container .view .list-container-view .page-search-title {
           width: 100%;
           height: 40px;
-          background: #232f3e; }
+          background: #0ebcf2; }
           .wrapper #container .view .list-container-view .page-search-title .item-title h1 {
             height: 40px;
             line-height: 40px;
@@ -167,7 +167,7 @@ a:hover {
   .header .logo {
     width: 100px;
     height: 100px;
-    background: #232f3e;
+    background: #0ebcf2;
     position: absolute;
     top: 0;
     left: 0;
@@ -552,13 +552,50 @@ a:hover {
       background: #ff9000; }
 
 .current-position {
-  margin-top: 15px; }
+  border: 1px solid #DDD;
+  margin-top: 15px;
+  border-bottom: 2px solid #0ebcf2;
+  padding: 10px; }
+  .current-position .col-md-9 {
+    padding-right: 0;
+    width: 82%; }
+  .current-position .col-md-3 {
+    padding-left: 0;
+    width: 18%; }
   .current-position input {
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -o-border-radius: 0px;
     -ms-border-radius: 0px; }
+  .current-position .btn-filter-advance {
+    padding: 6px 15px;
+    background: #fa501e;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #fa501e;
+    cursor: pointer;
+    color: #FFF; }
+  .current-position .filter-advance {
+    display: inline-block;
+    width: 100%;
+    padding-top: 10px;
+    display: none; }
+    .current-position .filter-advance ul li {
+      display: inline-block;
+      border: none;
+      padding: 0;
+      width: auto; }
+      .current-position .filter-advance ul li a {
+        display: inline-block;
+        padding: 3px 15px;
+        border: 1px solid #DDD;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+        margin: 5px 5px 5px 0; }
 
 .list-province-item ul.nav {
   border-bottom: 2px solid #bd0808; }
@@ -960,10 +997,9 @@ ul.connect li.youtube a:hover {
               color: #183544; }
         .list-province-item ul.list-travel li .item .fs-game .views {
           display: inline-block;
-          width: 35%;
           position: absolute;
           top: 30px;
-          background: #232f3e;
+          background: #0ebcf2;
           border-radius: 3px;
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
@@ -980,34 +1016,7 @@ ul.connect li.youtube a:hover {
         cursor: pointer;
         margin-top: 10px; }
       .list-province-item ul.list-travel li .item .item-img {
-        position: relative;
-        /*          .block-bottom .bottom-item .overlay_border{
-                    
-                  }
-                  .block-bottom .bottom-item:hover .overlay_border{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:after{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before{
-                  }
-                  .block-bottom .bottom-item .overlay_border:after{
-        
-                  }
-                  .block-bottom .bottom-item:hover .overlay_border:before,
-                  .block-bottom .bottom-item:hover .overlay_border:after,
-                  .block-bottom .bottom-item.hover .overlay_border:before,
-                  .block-bottom .bottom-item.hover .overlay_border:after{
-                    
-                  }
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:before,
-                  .block-bottom .bottom-item .overlay_border:after,
-                  .block-bottom .bottom-item .overlay_border:after {
-                    
-                  }*/ }
+        position: relative; }
         .list-province-item ul.list-travel li .item .item-img .overlay_border {
           position: absolute;
           width: 100%;
