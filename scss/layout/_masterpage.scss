@@ -511,9 +511,19 @@
           overflow: hidden;
           p{
             margin-top: 0 !important;
+            padding-top: 5px;
           }
           .comment-info{
             padding-bottom: 15px;
+            .user-comment-info{
+              p{
+                padding-top: 0;
+                line-height: 20px;
+                span{
+                  font-size: 13px;
+                }
+              }
+            }
             .list-gallery{
               margin-top: 15px;
               display: inline-block;
@@ -530,15 +540,53 @@
               }
             }
             .form-replies{
-              a{
-                @include border-radius(2px);
+              display: inline-block;
+              width: 100%;
+              div{
                 padding: 1px 5px;
-                border: 1px solid $color-border;
                 background: #FFF;
                 display: inline-block;
                 margin-right: 5px;
                 font-size: 12px;
                 cursor: pointer;
+                float: left;
+                position: relative;
+                .share-page{
+                  position: absolute;
+                  top: 20px;
+                  left: 0;
+                  padding: 0;
+                  margin: 0;
+                  display: none;
+                  &:before{
+                    content: "";
+                    border-bottom: 5px solid #DDD;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    position: absolute;
+                    top: -5px;
+                    left: 10px;
+                  }
+                  ul{
+                    padding: 5px;
+                    border: 1px solid #DDD;
+                    width: 150px;
+                    li{
+                      padding: 0;
+                      border: none;
+                      margin: 0;
+                      height: 24px;
+                      line-height: 24px;
+                    }
+                  }
+                }
+              }
+              .fs-share{
+                &:hover{
+                  .share-page{
+                    display: block;
+                  }
+                }
               }
             }
           }

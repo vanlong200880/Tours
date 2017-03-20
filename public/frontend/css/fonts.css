@@ -185,3 +185,16 @@
 .icon-plus-square:before {
   content: "\57";
 }
+.icon-001-cell-phone:before {
+  content: "\58";
+}
+.icon-002-world:before {
+  content: "\59";
+}
+.icon-heart-1:before {
+  content: "\5a";
+}
+.icon-comment:before {
+  content: "\30";
+}
+
