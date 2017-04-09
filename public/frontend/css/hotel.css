@@ -1668,7 +1668,7 @@ ul.connect li.youtube a:hover {
     .comment h2 a.buttom-comment {
       padding: 5px 5px;
       display: inline-block;
-      background: #71be0f;
+      background: #0388cd;
       color: #FFF;
       font-weight: normal;
       border-radius: 2px;
@@ -1710,6 +1710,20 @@ ul.connect li.youtube a:hover {
             line-height: 20px; }
             .comment .list-comment li .comment-item .comment-content .comment-info .user-comment-info p span {
               font-size: 13px; }
+          .comment .list-comment li .comment-item .comment-content .comment-info .review-options {
+            display: inline-block;
+            width: 100%; }
+            .comment .list-comment li .comment-item .comment-content .comment-info .review-options ul li {
+              display: inline-block;
+              padding: 0;
+              border: none;
+              color: #1a3a61; }
+              .comment .list-comment li .comment-item .comment-content .comment-info .review-options ul li:after {
+                content: "|";
+                margin: 0 5px;
+                color: #000; }
+              .comment .list-comment li .comment-item .comment-content .comment-info .review-options ul li:last-child:after {
+                content: ""; }
           .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery {
             margin-top: 15px;
             display: inline-block;
@@ -1717,8 +1731,9 @@ ul.connect li.youtube a:hover {
             .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a {
               width: 135px;
               display: inline-block;
-              margin-bottom: 10px;
-              margin-right: 10px; }
+              margin-bottom: 1px;
+              margin-right: 1px;
+              float: left; }
               .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
                 max-width: 135px;
                 display: inline-block; }
@@ -2039,6 +2054,90 @@ ul.connect li.youtube a:hover {
       position: absolute;
       top: 5px; }
 
+.video {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%;
+  background: #FFF; }
+  .video h2 {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 3px; }
+  .video ul li {
+    margin-bottom: 15px; }
+    .video ul li .item-video {
+      position: relative;
+      border: 1px solid #DDD; }
+      .video ul li .item-video .video-thumbnail {
+        position: relative;
+        overflow: hidden; }
+        .video ul li .item-video .video-thumbnail .author-view {
+          position: absolute;
+          z-index: 8;
+          top: 5px;
+          left: 5px;
+          background: #585858;
+          padding: 0 5px;
+          border-radius: 3px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -o-border-radius: 3px;
+          -ms-border-radius: 3px;
+          color: #FFF; }
+        .video ul li .item-video .video-thumbnail .icon-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: none;
+          z-index: 9; }
+          .video ul li .item-video .video-thumbnail .icon-video var {
+            position: absolute;
+            top: 45%;
+            left: 45%;
+            color: #a7a7a7;
+            font-size: 26px; }
+      .video ul li .item-video .video-content {
+        padding: 5px; }
+        .video ul li .item-video .video-content .title {
+          height: 40px;
+          line-height: 20px;
+          overflow: hidden; }
+          .video ul li .item-video .video-content .title a {
+            font-weight: bold; }
+        .video ul li .item-video .video-content .view ul li {
+          display: inline-block;
+          font-style: italic; }
+          .video ul li .item-video .video-content .view ul li:after {
+            content: "-";
+            position: relative;
+            margin: 0 5px; }
+          .video ul li .item-video .video-content .view ul li:last-child:after {
+            content: ""; }
+      .video ul li .item-video:hover {
+        border-color: #183544; }
+        .video ul li .item-video:hover .author-view {
+          top: -100%;
+          transition: top 0.4s ease 0.1s;
+          -moz-transition: top 0.4s ease 0.1s;
+          -webkit-transition: top 0.4s ease 0.1s;
+          -ms-transition: top 0.4s ease 0.1s;
+          -o-transition: top 0.4s ease 0.1s; }
+        .video ul li .item-video:hover .icon-video {
+          display: block; }
+
 .rating {
   border: 1px solid #DDD;
   border-radius: 3px;
@@ -2114,6 +2213,59 @@ ul.connect li.youtube a:hover {
       display: inline-block;
       color: #bababa;
       font-size: 12px; }
+
+.video-play {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  overflow-y: scroll; }
+  .video-play .warpper-video {
+    overflow: auto; }
+    .video-play .warpper-video .content-video {
+      background: #f1f1f1;
+      padding: 8px; }
+    .video-play .warpper-video .watch-header {
+      margin: 0 0 10px;
+      padding: 15px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      background: #FFF;
+      margin-top: 15px;
+      display: inline-block;
+      width: 100%; }
+      .video-play .warpper-video .watch-header .watch-title-container {
+        line-height: normal;
+        word-wrap: break-word;
+        vertical-align: top;
+        display: inline-block;
+        font-size: 20px; }
+      .video-play .warpper-video .watch-header .watch-user-header {
+        display: inline-block;
+        width: 100%;
+        float: left; }
+        .video-play .warpper-video .watch-header .watch-user-header .view {
+          position: relative;
+          float: right;
+          border-bottom: 2px solid #183544;
+          text-align: right;
+          font-size: 19px;
+          color: #666;
+          white-space: nowrap;
+          bottom: -1px;
+          z-index: 10; }
+      .video-play .warpper-video .watch-header .watch-action-buttons {
+        position: relative;
+        padding-top: 5px;
+        border-top: 1px solid #e2e2e2;
+        display: inline-block;
+        width: 100%; }
 
 .list-cat {
   padding: 8px;
@@ -2540,7 +2692,7 @@ ul.connect li.youtube a:hover {
         /*font-weight: bold;*/
         height: 40px;
         line-height: 40px;
-        background: #3871b8;
+        background: #0388cd;
         display: inline-block;
         padding-left: 10px;
         padding-right: 10px;

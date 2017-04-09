@@ -33,11 +33,11 @@
             <div class="row">
               <div class="col-md-12 about">
                 <ul class="tab-travel">
-                  <li class="active"><h2>Giới thiệu</h2></li>
-                  <li><h2>Bảng giá</h2></li>
-                  <li><h2>Lịch sử</h2></li>
-                  <li><h2>Video</h2></li>
-                  <li><h2>Đánh giá</h2></li>
+                  <li data-id="about" class="active"><h2>Giới thiệu</h2></li>
+                  <li data-id="table-price"><h2>Bảng giá</h2></li>
+                  <li data-id="history"><h2>Lịch sử</h2></li>
+                  <li data-id="video"><h2>Video</h2></li>
+                  <li data-id="rating"><h2>Đánh giá</h2></li>
                 </ul>
                 <div class="content">
                   <div class="description">
@@ -55,7 +55,7 @@
            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                   
-                  <div class="list-catelog">
+                  <div id="table-price" class="list-catelog">
                     <h2 class="title">Bảng giá vé trọn gói (combo)</h2>
                     <table class="game-entertainment">
                       <thead>
@@ -300,8 +300,140 @@
                   </div>
                 </div>
                 
+                <div id="video" class="video">
+                  <h2>Video</h2>
+                  <ul class="row">
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <div class="item-video">
+                        <div class="video-thumbnail">
+                          <div class="author-view">521 lượt xem</div>
+                          <a href="#">
+                            <div class="icon-video"><var class="icon icon-video-camera"></var></div>
+                            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                          </a>
+                        </div>
+                        <div class="video-content">
+                          <div class="title">
+                            <a href="#">Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất.</a>
+                          </div>
+                          <div class="view">
+                            <ul>
+                              <li><a href="#">Pham Long</a> - <span>12/12/2017 18:40</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
                 
-                <div class="rating">
+                <div id="rating" class="rating">
                   <h2>Khách hàng nhận xét</h2>
                   <ul>
                     <li class="summary-rating">
@@ -404,6 +536,13 @@
                             </div>
                             <p><a href="#"><strong>Facebook for Developers</strong></a></p>
                             <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+                            <div class="review-options">
+                              <ul>
+                                <li><span>Số người: 4</span></li>
+                                <li><span>Chi phí: 1,000,000đ</span></li>
+                                <li><span>Muốn quay lại: Chắc chắn</span></li>
+                              </ul>
+                            </div>
                             <div class="list-gallery">
                               <a href="#">
                                 <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
@@ -804,6 +943,14 @@
       }
     });
   
+    // scroll div
+    $(".tab-travel").on('click', 'li', function(){
+      var id = $(this).attr('data-id');
+//      h  = $('#'+id).offset().top;
+//      console.log(h);
+//      $('.popup-page').animate({scrollTop: $("#"+id).position().top}, 800, 'swing');
+//      $('.popup-page').animate({ scrollTop: h}, 800, 'swing');
+    });
     // show detail gallery
     $(".game-entertainment tr td").on('click','.history', function(){
       var id = 'abc';
@@ -876,3 +1023,4 @@
     });
   });
 </script>
+
