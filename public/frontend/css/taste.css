@@ -1795,6 +1795,62 @@ ul.connect li.youtube a:hover {
         border-top: 1px solid #e2e2e2;
         display: inline-block;
         width: 100%; }
+        .video-play .warpper-video .watch-header .watch-action-buttons .watch-secondary-actions {
+          width: 50%;
+          display: inline-block;
+          min-height: 1px;
+          float: left; }
+        .video-play .warpper-video .watch-header .watch-action-buttons .watch-sentiment-actions {
+          width: 50%;
+          display: inline-block;
+          min-height: 1px;
+          float: left;
+          text-align: right; }
+          .video-play .warpper-video .watch-header .watch-action-buttons .watch-sentiment-actions span {
+            position: relative;
+            top: auto;
+            color: #000; }
+            .video-play .warpper-video .watch-header .watch-action-buttons .watch-sentiment-actions span var {
+              font-size: 16px;
+              position: relative;
+              top: 3px;
+              opacity: .5;
+              display: inline-block;
+              transform: rotate(-20deg);
+              -moz-transform: rotate(-20deg);
+              -webkit-transform: rotate(-20deg);
+              -ms-transform: rotate(-20deg);
+              -o-transform: rotate(-20deg);
+              cursor: pointer; }
+            .video-play .warpper-video .watch-header .watch-action-buttons .watch-sentiment-actions span:hover var {
+              opacity: .7; }
+          .video-play .warpper-video .watch-header .watch-action-buttons .watch-sentiment-actions span.unlike var {
+            transform: rotate(205deg);
+            -moz-transform: rotate(205deg);
+            -webkit-transform: rotate(205deg);
+            -ms-transform: rotate(205deg);
+            -o-transform: rotate(205deg);
+            top: -2px; }
+  .video-play .list-video ul li .video-item {
+    margin-bottom: 15px;
+    background: #FFF;
+    border-bottom: 1px solid #DDD; }
+    .video-play .list-video ul li .video-item .content {
+      padding: 0 5px; }
+      .video-play .list-video ul li .video-item .content a.title {
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden; }
+      .video-play .list-video ul li .video-item .content .view,
+      .video-play .list-video ul li .video-item .content a.author {
+        opacity: 0.7; }
+      .video-play .list-video ul li .video-item .content .view {
+        padding-bottom: 5px; }
+    .video-play .list-video ul li .video-item:hover {
+      border-bottom-color: #183544; }
 
 .list-cat {
   padding: 8px;

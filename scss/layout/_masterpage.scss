@@ -1174,6 +1174,76 @@
         border-top: 1px solid #e2e2e2;
         display: inline-block;
         width: 100%;
+        .watch-secondary-actions{
+          width: 50%;
+          display: inline-block;
+          min-height: 1px;
+          float: left;
+        }
+        .watch-sentiment-actions{
+          width: 50%;
+          display: inline-block;
+          min-height: 1px;
+          float: left;
+          text-align: right;
+          span{
+            position: relative;
+            top: auto;
+            color: #000;
+            var{
+              font-size: 16px;
+              position: relative;
+              top: 3px;
+              opacity: .5;
+              display: inline-block;
+              @include transform-rotate(-20deg);
+              cursor: pointer;
+            }
+            &:hover{
+              var{
+                opacity: .7;
+              }
+            }
+          }
+          span.unlike{
+            var{
+              @include transform-rotate(205deg);
+              top: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .list-video{
+    ul{
+      li{
+        .video-item{
+          margin-bottom: 15px;
+          background: #FFF;
+          border-bottom: 1px solid #DDD;
+          .content{
+            padding: 0 5px;
+            a.title{
+              font-weight: bold;
+              display: inline-block;
+              width: 100%;
+              height: 40px;
+              line-height: 20px;
+              overflow: hidden;
+            }
+            .view,
+            a.author{
+              opacity: 0.7;
+            }
+            .view{
+              padding-bottom: 5px;
+            }
+          }
+          &:hover{
+            border-bottom-color: $default;
+          }
+        }
       }
     }
   }

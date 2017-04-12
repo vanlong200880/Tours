@@ -197,4 +197,12 @@
 .icon-comment:before {
   content: "\30";
 }
-
+.icon-thumbs-up-hand-symbol:before {
+  content: "\31";
+}
+.icon-eye:before {
+  content: "\32";
+}
+.icon-eye-1:before {
+  content: "\33";
+}
