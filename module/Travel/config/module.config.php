@@ -193,6 +193,19 @@ return array(
                 ),
               ),
             ),
+            'video-detail-popup' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/view-video-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Travel\Controller',
+                  'controller' => 'Travel\Controller\Category',
+                  'action' => 'VideoDetailPopup',
+                ),
+              ),
+            ),
+            
         ),
     ),
     'service_manager' => array(
@@ -241,6 +254,7 @@ return array(
             'layout/popup-map'           => __DIR__ . '/../view/travel/category/map.phtml',
             'layout/detail-page'           => __DIR__ . '/../view/layout/detail.phtml',
             'layout/view-gallery'           => __DIR__ . '/../view/travel/category/view-gallery.phtml',
+            'layout/video-detail-popup'           => __DIR__ . '/../view/travel/category/video-detail-popup.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

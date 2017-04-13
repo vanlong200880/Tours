@@ -206,3 +206,13 @@
 .icon-eye-1:before {
   content: "\33";
 }
+.icon-play-button:before {
+  content: "\34";
+}
+.icon-label:before {
+  content: "\35";
+}
+.icon-delete:before {
+  content: "\36";
+}
+
