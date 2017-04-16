@@ -991,7 +991,8 @@ a:hover {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -o-border-radius: 0px;
-    -ms-border-radius: 0px; }
+    -ms-border-radius: 0px;
+    height: 32px; }
   .current-position .btn-filter-advance {
     padding: 6px 15px;
     background: #fa501e;

@@ -567,6 +567,7 @@
   }
   input{
     @include border-radius(0px);
+    height: 32px;
   }
   .btn-filter-advance{
     padding: 6px 15px;
