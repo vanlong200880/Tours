@@ -12,8 +12,8 @@
     }
   .logo{
     width: 100px;
-    height: 50px;
-    background: $background-default;
+    height: 40px;
+    background: $logo;
     position: absolute;
     top: 0;
     z-index: 9999;
@@ -25,19 +25,19 @@
       display: inline-block;
       a{
         display: block;
-        height: 50px;
-        line-height: 50px;
+        height: 40px;
+        line-height: 40px;
         padding: 0 15px;
         position: relative;
         color: #FFF;
-        font-size: 16px;
+        font-size: 14px;
         &:hover{
           color: $hover;
         }
       }
       .item-menu-level{
         position: absolute;
-        top: 50px;
+        top: 40px;
         left: 0;
         background: $submenu;
         width: 100%;
@@ -172,8 +172,8 @@
       display: inline-block;
       a{
         display: inline-block;
-        line-height: 50px;
-        height: 50px;
+        line-height: 40px;
+        height: 40px;
         color: #FFF;
       }
     }

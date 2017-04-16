@@ -9,17 +9,18 @@ return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
       'Frontend',
-      'Travel',
-      'Tour',
-      'Hotel',
-      'Taste',
-      'Video',
-      'User',
-      'Diary',
-      'Photo',
-      'Cart',
-      'Gallery',
-      'Backend'
+//      'Travel',
+//      'Tour',
+//      'Hotel',
+//      'Taste',
+//      'Video',
+//      'User',
+//      'Diary',
+//      'Photo',
+//      'Cart',
+//      'Gallery',
+      'Category',
+//      'Backend'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

@@ -93,6 +93,7 @@ return array(
           'video'        => 'Video\Block\video',
           'headerDetail'        => 'Frontend\Block\headerDetail',
           'cart'        => 'Frontend\Block\cart',
+          'searchTravel'        => 'Frontend\Block\searchTravel',
         ),
     ),
     'view_manager' => array(

@@ -27,6 +27,7 @@ return array(
     'Cart'      => 'layout/cart',
     'Gallery'      => 'layout/gallery',
     'Backend'      => 'layout/backend',
+    'Category'      => 'layout/category',
 	),
     // ...
 );

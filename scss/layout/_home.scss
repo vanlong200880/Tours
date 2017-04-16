@@ -8,7 +8,7 @@
     .list-tab{
       float: left;
       height:50px;
-      background: #ed8e31;
+      background: $default;
       ul{
         border: none;
         li{
@@ -42,7 +42,7 @@
         }
         li.active{
           a{
-            background: #fa501e;
+            background: $orange;
           }
         }
       }
@@ -90,7 +90,7 @@
       .button-search{
         width: 100%;
         height: 34px;
-        background: #fa501e;
+        background: $orange;
         color: #FFF;
         font-weight: bold;
         text-transform: uppercase;
@@ -156,7 +156,7 @@
   text-align: center;
   margin: 10px 0;
   a{
-    background: #ff9100;
+    background: $default;
     @include border-radius(3px);
     padding: 7px 30px;
     text-transform: uppercase;

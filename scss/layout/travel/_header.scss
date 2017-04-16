@@ -8,12 +8,12 @@
   top: 0;
   #container{
     height: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     .view{
       width: 45%;
       position: absolute;
       right: 0;
-      top: 100px;
+      top: 80px;
       bottom: 0;
       z-index: 8;
       @include box-shadow(-2px 3px 5px 0px rgba(0, 0, 0, 0.4));
@@ -24,7 +24,7 @@
         .page-search-title{
           width:100%;
           height: 40px;
-          background: $menu;
+          background: $default;
           .item-title{
             h1{
               height: 40px;
@@ -71,12 +71,12 @@
   }
 }
 .header{
-  height: 50px;
-  padding-left: 110px;
+  height: 40px;
+  padding-left: 90px;
   .logo{
-    width: 100px;
-    height: 100px;
-    background: $menu;
+    width: 80px;
+    height: 80px;
+    background: $logo;
     position: absolute;
     top: 0;
     left: 0;
@@ -87,14 +87,14 @@
       display: inline-block;
       position: relative;
       a{
-        height: 50px;
-        line-height: 50px;
+        height: 40px;
+        line-height: 40px;
         margin-right: 30px;
         font-size: 16px;
       }
       .item-menu-level{
         position: fixed;
-        top: 50px;
+        top: 40px;
         left: 0;
         background: $submenu;
         width: 100%;
@@ -232,29 +232,29 @@
       display: inline-block;
       a{
         display: inline-block;
-        line-height: 50px;
-        height: 50px;
+        line-height: 40px;
+        height: 40px;
       }
     }
   }
 }
 .search{
-  height: 50px;
+  height: 40px;
   background: #e2eef9;
   .page-search{
     width: 100%;
     float: left;
-    height: 50px;
+    height: 40px;
     position: relative;
     .search-item{
-      height: 50px;
+      height: 40px;
       width: 100%;
       position: absolute;
       z-index: 9;
       @include box-shadow(0px 3px 5px 0px rgba(0, 0, 0, 0.4));
       .search-list{
-        padding-left: 110px;
-        height: 50px;
+        padding-left: 90px;
+        height: 40px;
         width: 100%;
       }
     }
@@ -482,7 +482,7 @@
   margin-top: 5px;
   .form-control,
   .btn-default{
-    height: 40px;
+    height: 30px;
     @include border-radius(0px);
     @include box-shadow(none);
     &:focus,
@@ -653,7 +653,7 @@
 }
 .button-search{
   width: 100%;
-  height: 38px;
+  height: 30px;
   background: #fa501e;
   color: #FFF;
   font-weight: bold;
