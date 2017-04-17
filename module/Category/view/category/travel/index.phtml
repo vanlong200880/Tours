@@ -375,3 +375,101 @@
   
 </div>
 
+
+
+
+
+<div class="modal fade" id="modal-comment" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!--<h4 class="modal-title">Bình luận</h4>-->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#tab-comment" aria-controls="tab-comment" role="tab" data-toggle="tab">Bình luận</a></li>
+          <li role="presentation"><a href="#tab-rating" aria-controls="tab-rating" role="tab" data-toggle="tab">Đánh giá</a></li>
+          <li role="presentation"><a href="#tab-video" aria-controls="tab-video" role="tab" data-toggle="tab">Upload Video</a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-7">
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="tab-comment">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" ty placeholder="Tiêu đề">
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" placeholder="Nội dung"></textarea>
+                      </div>
+                    <div class="form-group">
+                      TẢI ẢNH LÊN
+                    </div>
+                    <div class="preview">
+                      <ul>
+                        <li><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></li>
+                        <li><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></li>
+                        <li><img src="<?php echo $this->basePath('/assets/taste.jpg'); ?>"></li>
+                      </ul>
+                      <a href="#">
+                        <span class="icon icon-plus"></span>
+                        <span>Thêm ảnh</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tab-rating">
+                <div class="col-md-6">
+                  <h2>
+                    Đánh giá
+                  </h2>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="tab-video">...</div>
+              <div role="tabpanel" class="tab-pane" id="settings">...</div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <img src="<?php echo $this->basePath('/defaults/da-nang.jpg') ?>">
+            <p class="title">Meet Fresh - Ngô Đức Kế</p>
+            <p class="address">46 Ngô Đức Kế, Quận 1, TP. HCM</p>
+            <div class="view-rating">
+              <p class="total-comment">295 Bình luận</p>
+              <ul>
+                <li>
+                    <div class="counts">5</div>
+                    <div>Tuyệt vời</div>
+                </li>
+                <li>
+                    <div class="counts">167</div>
+                    <div>Khá tốt</div>
+                </li>
+                <li>
+                    <div class="counts">105</div>
+                    <div>Trung bình</div>
+                </li>
+                <li>
+                    <div class="counts">18</div>
+                    <div>Kém</div>
+                </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng lại</button>
+        <button type="button" class="btn btn-primary">Gửi bình luận</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#modal-comment').modal('show');
+  </script>
