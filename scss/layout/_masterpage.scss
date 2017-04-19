@@ -390,10 +390,49 @@
 #modal-comment{
   .modal-content{
     background: #f5f5f5;
+    @include box-shadow(none);
+    border: none;
     .modal-header{
-      padding: 10px 15px;
+      padding: 0 15px 0 0;
+      background: #028ed6;
+      border: none;
+      overflow: hidden;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
       .modal-title{
         text-transform: uppercase;
+      }
+      .close{
+        margin-top: 7px;
+        color: #fff;
+        opacity: 1;
+      }
+      ul{
+        border: none;
+        li{
+          margin-bottom: 0;
+          a{
+            color: #FFF;
+            border: none;
+            @include border-radius(0);
+            text-transform: uppercase;
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited{
+              background: #0b9ae4;
+              color: #000;
+            }
+          }
+        }
+        li.active{
+          a{
+            background: #f5f5f5;
+            color: #000;
+            @include border-top-left-radius(3px);
+            @include border-top-right-radius(3px);
+          }
+        }
       }
     }
     .modal-body{
@@ -1340,4 +1379,51 @@
 }
 .video-play.on{
   display: block;
+}
+#modal-comment{
+  .comment-post-view{
+    p.title{
+      font-size: 16px;
+      font-weight: bold;
+      padding: 5px 0;
+    }
+    p.address{
+      color: #928686;
+      font-style: italic;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .view-rating{
+      background: #FFF;
+      border: 1px solid #DDD;
+      @include border-radius(3px);
+      padding: 5px;
+      margin-top: 5px;
+      p.total-comment{
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 15px;
+      }
+      ul{
+        margin-bottom: 10px;
+        li{
+          padding: 3px 0;
+          display: inline-block;
+          float: none;
+          width: 22%;
+          clear: both;
+          margin-right: 5px;
+          font-size: 12px;
+          text-align: center;
+          white-space: nowrap;
+          .counts{
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
 }
