@@ -389,7 +389,7 @@
 }
 #modal-comment{
   .modal-content{
-    background: #f5f5f5;
+    background: #f7f7f7;
     @include box-shadow(none);
     border: none;
     .modal-header{
@@ -479,6 +479,78 @@
           border-bottom: 2px solid #DDD;
           padding-bottom: 5px;
           font-size: 16px;
+        }
+      }
+      .write-rating{
+        position: relative;
+        min-height: 384px;
+        overflow: hidden;
+        background: #FFF;
+        padding: 10px;
+        border: 1px solid #DDD;
+        @include border-radius(3px);
+        .rating-box{
+          .item-box{
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            ul{
+              li{
+                margin-bottom: 14px;
+              }
+            }
+          }
+        }
+        .options-box{
+          li{
+            select{
+              width: 100%;
+              padding: 5px;
+              box-sizing: border-box;
+              border: 1px solid #efefef;
+              outline: 0;
+            }
+          }
+        }
+      }
+      .file-video{
+        position: relative;
+        min-height: 384px;
+        overflow: hidden;
+        background: #FFF;
+        padding: 10px;
+        border: 1px solid #DDD;
+        @include border-radius(3px);
+        #write-video{
+          z-index: -1;
+          position: relative;
+          visibility: hidden;
+          position: absolute;
+        }
+        label{
+          width: 100%;
+          height: 100%;
+          background: #f5f5f5;
+          height: 357px;
+          padding-top: 120px;
+          cursor: pointer;
+          @include border-radius(3px);
+          span{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            var{
+              display: block;
+              font-size: 50px;
+              height: 50px;
+              color: #FFF;
+            }
+          }
+          span.size{
+            font-size: 12px;
+            color: #717070;
+            font-style: italic;
+          }
         }
       }
     }
