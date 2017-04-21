@@ -865,7 +865,7 @@ a:hover {
   border: none; }
   #modal-comment .modal-content .modal-header {
     padding: 0 15px 0 0;
-    background: #028ed6;
+    background: #232f3e;
     border: none;
     overflow: hidden;
     border-top-left-radius: 5px;
@@ -898,10 +898,10 @@ a:hover {
           -ms-border-radius: 0;
           text-transform: uppercase; }
           #modal-comment .modal-content .modal-header ul li a:hover, #modal-comment .modal-content .modal-header ul li a:active, #modal-comment .modal-content .modal-header ul li a:focus, #modal-comment .modal-content .modal-header ul li a:visited {
-            background: #0b9ae4;
-            color: #000; }
+            background: #37485d;
+            color: #fff; }
       #modal-comment .modal-content .modal-header ul li.active a {
-        background: #f5f5f5;
+        background: #f7f7f7;
         color: #000;
         border-top-left-radius: 3px;
         -moz-border-top-left-radius: 3px;
@@ -1012,6 +1012,62 @@ a:hover {
         font-size: 12px;
         color: #717070;
         font-style: italic; }
+  #modal-comment .modal-content .modal-body .write-share {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 15px; }
+    #modal-comment .modal-content .modal-body .write-share ul li {
+      margin-bottom: 15px; }
+      #modal-comment .modal-content .modal-body .write-share ul li label {
+        display: block;
+        float: left;
+        padding: 5px 0 0;
+        cursor: pointer; }
+      #modal-comment .modal-content .modal-body .write-share ul li .switch {
+        display: block;
+        position: relative;
+        width: 44px;
+        height: 24px;
+        float: right; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input {
+          visibility: hidden;
+          position: absolute; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round + label {
+          display: block;
+          background: #ddd;
+          width: 100%;
+          height: 24px;
+          padding: 2px;
+          box-sizing: border-box;
+          border-radius: 60px;
+          -webkit-border-radius: 60px;
+          -moz-border-radius: 60px;
+          -o-border-radius: 60px;
+          -ms-border-radius: 60px; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round + label:after,
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round + label:before {
+          display: block;
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          bottom: 1px;
+          content: ""; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round + label:before {
+          right: 1px;
+          background-color: #f1f1f1;
+          border-radius: 60px;
+          transition: background .4s; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round + label:after {
+          width: 22px;
+          background-color: #fff;
+          border-radius: 100%;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          transition: margin .4s; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round:checked + label:after {
+          margin-left: 20px; }
+        #modal-comment .modal-content .modal-body .write-share ul li .switch input.cmn-toggle-round:checked + label:before {
+          background-color: #0090f2; }
   #modal-comment .modal-content .modal-footer .btn.btn-default {
     background: #ccc;
     border: none;
@@ -1022,7 +1078,7 @@ a:hover {
     -o-box-shadow: none;
     outline: none; }
   #modal-comment .modal-content .modal-footer .btn.btn-primary {
-    background: #028ed6;
+    background: #232f3e;
     border: none;
     box-shadow: none;
     -moz-box-shadow: none;
