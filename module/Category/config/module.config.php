@@ -120,6 +120,33 @@ return array(
               ),
             ),
             
+            // ------------------------------ tour ---------------------
+            'tour-detail' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/tour-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Tour',
+                  'action' => 'detail',
+                ),
+              ),
+            ),
+            
+            'tour-view' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/tour-view',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Tour',
+                  'action' => 'view',
+                ),
+              ),
+            ),
+            
         ),
     ),
     'service_manager' => array(
@@ -145,6 +172,8 @@ return array(
         'invokables' => array(
           'Category\Controller\Travel' => Controller\TravelController::class,
           'Category\Controller\Category' => Controller\CategoryController::class,
+          'Category\Controller\Tour' => Controller\TourController::class,
+          'Category\Controller\Comment' => Controller\CommentController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -167,6 +196,13 @@ return array(
             'travel/popup-map'           => __DIR__ . '/../view/category/travel/map.phtml',
             'travel/view-gallery'           => __DIR__ . '/../view/category/travel/view-gallery.phtml',
             'travel/video-detail-popup'           => __DIR__ . '/../view/category/travel/video-detail-popup.phtml',
+            
+            'view/comment'           => __DIR__ . '/../view/category/comment/view.phtml',
+            'view/comment-popup'           => __DIR__ . '/../view/category/comment/comment-popup.phtml',
+            'layout/tour'           => __DIR__ . '/../view/layout/layout-tour.phtml',
+            'tour/index'           => __DIR__ . '/../view/category/tour/index.phtml',
+            'tour/detail'          => __DIR__ . '/../view/category/tour/detail.phtml',
+            'tour/view'          => __DIR__ . '/../view/category/tour/view.phtml',
 //            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
 //            'error/404'               => __DIR__ . '/../view/error/404.phtml',
 //            'error/index'             => __DIR__ . '/../view/error/index.phtml',

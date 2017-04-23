@@ -15,7 +15,7 @@ return array(
 //      'Hotel',
 //      'Taste',
 //      'Video',
-//      'User',
+      'User',
 //      'Diary',
 //      'Photo',
 //      'Cart',

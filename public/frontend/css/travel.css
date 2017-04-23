@@ -978,7 +978,7 @@ a:hover {
 .current-position {
   border: 1px solid #DDD;
   margin-top: 15px;
-  border-bottom: 2px solid #0ebcf2;
+  border-bottom: 2px solid #232f3e;
   padding: 10px; }
   .current-position .col-md-9 {
     padding-right: 0;
@@ -1471,7 +1471,7 @@ ul.connect li.youtube a:hover {
           display: inline-block;
           position: absolute;
           top: 30px;
-          background: #0ebcf2;
+          background: #232f3e;
           border-radius: 3px;
           -webkit-border-radius: 3px;
           -moz-border-radius: 3px;
@@ -2625,7 +2625,7 @@ ul.connect li.youtube a:hover {
   bottom: 0;
   height: 100%;
   width: 100%;
-  z-index: 1050;
+  z-index: 1020;
   background: rgba(0, 0, 0, 0.5);
   overflow: auto;
   display: none; }
@@ -2641,7 +2641,7 @@ ul.connect li.youtube a:hover {
       border: none;
       position: fixed;
       width: 1140px;
-      z-index: 1050; }
+      z-index: 1030; }
       .popup-page .popup-container .popup-header h2 {
         font-size: 16px;
         /*font-weight: bold;*/
@@ -2886,11 +2886,300 @@ ul.connect li.youtube a:hover {
   padding-bottom: 3px;
   margin-top: 15px; }
 
+.list-cat {
+  padding: 8px;
+  background: #F8f8f8; }
+
+.detail-page {
+  background: #f8f8f8;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DDD; }
+
+.filter ul {
+  display: inline-block;
+  width: 100%;
+  background: #FFF;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-bottom: 1px solid #DDD; }
+  .filter ul li {
+    display: inline-block;
+    border-right: 1px solid #DDD;
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding: 5px 0; }
+    .filter ul li span {
+      position: relative;
+      top: 3px; }
+
+.slider {
+  background: #FFF;
+  padding: 8px;
+  border: 1px solid #DDD; }
+
+.description h2 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px; }
+.description p.expt {
+  padding-bottom: 10px; }
+.description .item {
+  border-top: 1px solid #DDD;
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%; }
+  .description .item p.cost {
+    position: relative;
+    text-decoration: line-through;
+    font-size: 16px; }
+    .description .item p.cost span {
+      position: relative;
+      top: -5px; }
+  .description .item p.price-sale {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    position: relative;
+    margin-top: 15px; }
+    .description .item p.price-sale span {
+      position: relative;
+      top: -19px;
+      font-size: 20px; }
+    .description .item p.price-sale var {
+      background: red;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      position: relative;
+      color: #FFF;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 5px 10px;
+      height: 30px;
+      display: inline-block;
+      position: relative;
+      top: -8px;
+      margin-left: 15px; }
+      .description .item p.price-sale var:before {
+        content: " ";
+        border-right: 8px solid red;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        left: -8px;
+        top: 40%; }
+  .description .item .quanlity {
+    width: 50%;
+    float: left;
+    padding-top: 5px; }
+    .description .item .quanlity input {
+      display: inline-block;
+      width: 80px;
+      height: 30px; }
+  .description .item .payment {
+    width: 50%;
+    float: left; }
+    .description .item .payment a {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      background: red;
+      color: #FFF;
+      padding: 10px 15px;
+      display: inline-block; }
+  .description .item p.count-user-payment {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #DDD;
+    font-weight: bold; }
+    .description .item p.count-user-payment span {
+      margin-right: 5px;
+      display: inline-block; }
+      .description .item p.count-user-payment span:before {
+        position: relative;
+        top: 2px; }
+  .description .item p.time {
+    width: 50%;
+    float: left;
+    text-align: right;
+    font-weight: bold; }
+
+.popup-page .popup-container.tour {
+  background: #f8f8f8; }
+
+.list-tours-related {
+  margin-top: 30px;
+  position: relative; }
+  .list-tours-related h2 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .list-tours-related .swiper-btn {
+    top: 0;
+    cursor: pointer;
+    position: absolute; }
+  .list-tours-related .button-next {
+    right: 0; }
+  .list-tours-related .button-prev {
+    right: 15px; }
+  .list-tours-related .swiper-btn.swiper-button-disabled {
+    color: #DDD; }
+  .list-tours-related .swiper-container {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 15px; }
+    .list-tours-related .swiper-container ul li {
+      margin-top: 8px;
+      display: inline-block; }
+      .list-tours-related .swiper-container ul li .item {
+        position: relative; }
+        .list-tours-related .swiper-container ul li .item .photo {
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          background: rgba(0, 0, 0, 0.5);
+          color: #FFF;
+          padding: 3px 5px;
+          font-size: 12px; }
+        .list-tours-related .swiper-container ul li .item p.img {
+          border: 1px solid transparent; }
+        .list-tours-related .swiper-container ul li .item p {
+          text-align: center; }
+        .list-tours-related .swiper-container ul li .item p.title {
+          height: 40px;
+          line-height: 20px;
+          overflow: hidden;
+          margin-top: 5px; }
+      .list-tours-related .swiper-container ul li:hover .item p.img {
+        border: 1px solid red; }
+
+.commitment {
+  margin-top: 15px; }
+  .commitment .commitment-view {
+    border: 1px solid #DDD;
+    background: #FFF;
+    padding-bottom: 50px; }
+    .commitment .commitment-view .content {
+      height: 200px;
+      padding: 8px;
+      overflow: hidden; }
+      .commitment .commitment-view .content h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold; }
+      .commitment .commitment-view .content p {
+        line-height: 22px;
+        margin-top: 10px;
+        text-align: justify; }
+    .commitment .commitment-view .content.expanded {
+      height: auto; }
+  .commitment .readmove {
+    text-align: center; }
+    .commitment .readmove a {
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      background: #FFF;
+      position: relative;
+      top: -16px;
+      padding: 7px 15px; }
+      .commitment .readmove a span.icon {
+        font-size: 20px;
+        display: inline-block; }
+        .commitment .readmove a span.icon:before {
+          position: relative;
+          top: 5px; }
+    .commitment .readmove a.up span.icon {
+      transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg); }
+      .commitment .readmove a.up span.icon:before {
+        top: 0; }
+
+.about .detail {
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 15px;
+  display: inline-block;
+  width: 100%;
+  float: left; }
+.about .tab-title {
+  display: inline-block;
+  width: 100%;
+  float: left; }
+  .about .tab-title ul li {
+    display: inline-block;
+    float: left; }
+    .about .tab-title ul li a {
+      height: 30px;
+      padding: 0 15px;
+      display: inline-block;
+      line-height: 30px;
+      text-transform: uppercase; }
+  .about .tab-title ul li.active a {
+    background: #FFF;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    position: relative;
+    bottom: -1px; }
+
+.post-position {
+  margin-top: 30px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  padding: 5px; }
+  .post-position h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #DDD;
+    padding-bottom: 4px;
+    margin-bottom: 15px; }
+  .post-position .map-position {
+    width: 100%;
+    height: 200px;
+    background: #DDD;
+    margin-top: 15px; }
+
+.payment-now {
+  text-align: center; }
+  .payment-now a {
+    display: inline-block;
+    background: red;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px; }
+
 .views-popup {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1051;
+  z-index: 1031;
   position: fixed;
   top: 0;
   left: 0;
@@ -2908,7 +3197,7 @@ ul.connect li.youtube a:hover {
     top: 0;
     float: left;
     display: block;
-    z-index: 1052;
+    z-index: 1032;
     background: #FFF; }
     .views-popup .views-container .views-header {
       background: #e2eef9;

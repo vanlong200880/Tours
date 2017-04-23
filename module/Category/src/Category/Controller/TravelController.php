@@ -16,11 +16,16 @@ class TravelController extends AbstractActionController
       $htmlViewPart->setTemplate('travel/popup-view')
                    ->setTerminal(true)
                    ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
-
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
-
+      
+      // get comment
+      $htmlCommentPart = new ViewModel();
+      $htmlCommentPart->setTemplate('view/comment')
+                   ->setTerminal(true)
+                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+      $htmlCommentOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlCommentPart);
       $jsonModel = new JsonModel();
-      $jsonModel->setVariables(['html' => $htmlOutput]);
+      $jsonModel->setVariables(['html' => $htmlOutput, 'htmlComment' => $htmlCommentOutput]);
 
       return $jsonModel;
     }

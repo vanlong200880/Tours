@@ -35,7 +35,8 @@ class CategoryController extends AbstractActionController
         break;
       /* ----------------------------------------------------*/
       case 'tour-du-lich':
-        die('a');
+        $this->layout('layout/tour');
+        $this->viewModel->setTemplate('tour/index');
         break;
       /* ----------------------------------------------------*/
       case 'diary':
