@@ -147,6 +147,59 @@ return array(
               ),
             ),
             
+            // ------------------- hotel ------------
+            'hotel-detail' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/hotel-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Hotel',
+                  'action' => 'detail',
+                ),
+              ),
+            ),
+            'hotel-room' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/hotel-room',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Hotel',
+                  'action' => 'viewRoom',
+                ),
+              ),
+            ),
+            
+            /* ------------------------------- taste ---------------------*/
+            'taste-detail' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/taste-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Taste',
+                  'action' => 'detail',
+                ),
+              ),
+            ),
+          
+            'taste-order' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/taste-order',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Taste',
+                  'action' => 'order',
+                ),
+              ),
+            ),
+            
         ),
     ),
     'service_manager' => array(
@@ -174,6 +227,8 @@ return array(
           'Category\Controller\Category' => Controller\CategoryController::class,
           'Category\Controller\Tour' => Controller\TourController::class,
           'Category\Controller\Comment' => Controller\CommentController::class,
+          'Category\Controller\Hotel' => Controller\HotelController::class,
+          'Category\Controller\Taste' => Controller\TasteController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -203,6 +258,18 @@ return array(
             'tour/index'           => __DIR__ . '/../view/category/tour/index.phtml',
             'tour/detail'          => __DIR__ . '/../view/category/tour/detail.phtml',
             'tour/view'          => __DIR__ . '/../view/category/tour/view.phtml',
+            
+            
+            'layout/hotel'           => __DIR__ . '/../view/layout/layout-hotel.phtml',
+            'hotel/index'           => __DIR__ . '/../view/category/hotel/index.phtml',
+            'hotel/detail'           => __DIR__ . '/../view/category/hotel/detail.phtml',
+            'hotel/view-room'           => __DIR__ . '/../view/category/hotel/view-room.phtml',
+            
+            
+            'layout/taste'           => __DIR__ . '/../view/layout/layout-taste.phtml',
+            'taste/index'           => __DIR__ . '/../view/category/taste/index.phtml',
+            'taste/detail'           => __DIR__ . '/../view/category/taste/detail.phtml',
+            'taste/taste-order'           => __DIR__ . '/../view/category/taste/order.phtml',
 //            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
 //            'error/404'               => __DIR__ . '/../view/error/404.phtml',
 //            'error/index'             => __DIR__ . '/../view/error/index.phtml',

@@ -31,7 +31,13 @@ class CategoryController extends AbstractActionController
         break;
       /* ----------------------------------------------------*/
       case 'diem-an-uong':
-        die('a');
+        $this->layout('layout/taste');
+        $this->viewModel->setTemplate('taste/index');
+        break;
+      /* ----------------------------------------------------*/
+      case 'khach-san':
+        $this->layout('layout/hotel');
+        $this->viewModel->setTemplate('hotel/index');
         break;
       /* ----------------------------------------------------*/
       case 'tour-du-lich':
