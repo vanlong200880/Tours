@@ -45,6 +45,11 @@ class CategoryController extends AbstractActionController
         $this->viewModel->setTemplate('tour/index');
         break;
       /* ----------------------------------------------------*/
+      case 'video':
+        $this->layout('layout/video');
+        $this->viewModel->setTemplate('video/index');
+        break;
+      /* ----------------------------------------------------*/
       case 'diary':
         die('a');
         break;

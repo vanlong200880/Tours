@@ -2,7 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 13px;
-  color: #000; }
+  color: #000;
+  background: #f7f7f7; }
 
 * {
   margin: 0;
@@ -2546,6 +2547,21 @@ ul.connect li.youtube a:hover {
       #modal-comment .comment-post-view .view-rating ul li .counts {
         font-size: 16px;
         font-weight: 700; }
+
+.block-like {
+  padding: 7px 0; }
+  .block-like li {
+    display: inline-block;
+    margin-bottom: 0 !important; }
+    .block-like li:first-child:after {
+      content: "/";
+      position: relative;
+      margin: 0 3px; }
+    .block-like li span {
+      cursor: pointer; }
+    .block-like li .icon {
+      position: relative;
+      top: 2px; }
 
 .footer-travel {
   float: left;

@@ -2,7 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 13px;
-  color: #000; }
+  color: #000;
+  background: #f7f7f7; }
 
 * {
   margin: 0;

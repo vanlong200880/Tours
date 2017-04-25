@@ -2,7 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 13px;
-  color: #000; }
+  color: #000;
+  background: #f7f7f7; }
 
 * {
   margin: 0;
@@ -1880,6 +1881,21 @@ a:hover {
         font-size: 16px;
         font-weight: 700; }
 
+.block-like {
+  padding: 7px 0; }
+  .block-like li {
+    display: inline-block;
+    margin-bottom: 0 !important; }
+    .block-like li:first-child:after {
+      content: "/";
+      position: relative;
+      margin: 0 3px; }
+    .block-like li span {
+      cursor: pointer; }
+    .block-like li .icon {
+      position: relative;
+      top: 2px; }
+
 /* detail view expend post */
 .wrapper-detail #header {
   background: #183544; }
@@ -2030,16 +2046,85 @@ a:hover {
     .user-post ul li:hover .position-name {
       transform: translateY(70px); }
 
-.video {
+.video-block {
   margin-top: 0;
   background: #000;
   padding-top: 16px; }
 
 .video-list ul li {
   margin-bottom: 16px; }
-
-.video-wp #header .logo {
-  height: 50px; }
+  .video-list ul li .item-video {
+    background: #FFF;
+    border-bottom: 1px solid #DDD; }
+    .video-list ul li .item-video .img {
+      position: relative;
+      overflow: hidden; }
+      .video-list ul li .item-video .img .hover-posts {
+        visibility: hidden;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        text-align: center;
+        transform: scale(0);
+        transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease; }
+        .video-list ul li .item-video .img .hover-posts span {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          color: #fff;
+          font-size: 13px;
+          text-transform: capitalize; }
+          .video-list ul li .item-video .img .hover-posts span i {
+            color: #fff;
+            font-size: 36px;
+            display: block;
+            margin-bottom: 5px; }
+      .video-list ul li .item-video .img .date {
+        position: absolute;
+        bottom: 0;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #FFF;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        padding-left: 5px; }
+    .video-list ul li .item-video .content {
+      padding: 0 5px; }
+      .video-list ul li .item-video .content h2.title {
+        font-size: 13px;
+        font-weight: bold;
+        height: 40px;
+        line-height: 20px;
+        margin-top: 5px; }
+  .video-list ul li:hover .item-video .img .date {
+    webkit-transform: translateY(70px);
+    -moz-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    -o-transform: translateY(70px);
+    transform: translateY(70px); }
+  .video-list ul li:hover .item-video .img a.hover-posts {
+    visibility: visible;
+    transform: scale(1); }
 
 .home-about {
   background: #f5f5f5;

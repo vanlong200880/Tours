@@ -90,7 +90,7 @@ return array(
           'news'        => 'Frontend\Block\news',
           'headerTravel'        => 'Frontend\Block\headerTravel',
           'footerTravel'        => 'Frontend\Block\footerTravel',
-          'video'        => 'Video\Block\video',
+          'video'        => 'Frontend\Block\video',
           'headerDetail'        => 'Frontend\Block\headerDetail',
           'cart'        => 'Frontend\Block\cart',
           'searchTravel'        => 'Frontend\Block\searchTravel',

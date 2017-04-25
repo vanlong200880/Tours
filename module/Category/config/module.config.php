@@ -229,6 +229,7 @@ return array(
           'Category\Controller\Comment' => Controller\CommentController::class,
           'Category\Controller\Hotel' => Controller\HotelController::class,
           'Category\Controller\Taste' => Controller\TasteController::class,
+          'Category\Controller\Video' => Controller\VideoController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -270,6 +271,10 @@ return array(
             'taste/index'           => __DIR__ . '/../view/category/taste/index.phtml',
             'taste/detail'           => __DIR__ . '/../view/category/taste/detail.phtml',
             'taste/taste-order'           => __DIR__ . '/../view/category/taste/order.phtml',
+            
+            
+            'layout/video'           => __DIR__ . '/../view/layout/layout-video.phtml',
+            'video/index'           => __DIR__ . '/../view/category/video/index.phtml',
 //            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
 //            'error/404'               => __DIR__ . '/../view/error/404.phtml',
 //            'error/index'             => __DIR__ . '/../view/error/index.phtml',

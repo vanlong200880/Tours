@@ -96,4 +96,11 @@
   -o-transform: scale($scale);
   transform: scale($scale);
 }
+@mixin translateY($deg) {
+  webkit-transform: translateY($deg);
+  -moz-transform: translateY($deg);
+  -ms-transform: translateY($deg);
+  -o-transform: translateY($deg);
+  transform: translateY($deg);
+}
 

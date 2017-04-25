@@ -1564,3 +1564,24 @@
     }
   }
 }
+.block-like{
+  padding: 7px 0;
+  li{
+    display: inline-block;
+    margin-bottom: 0 !important;
+    &:first-child{
+      &:after{
+        content: "/";
+        position: relative;
+        margin: 0 3px;
+      }
+    }
+    span{
+      cursor: pointer;
+    }
+    .icon{
+      position: relative;
+      top: 2px;
+    }
+  }
+}
