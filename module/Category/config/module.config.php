@@ -13,27 +13,37 @@ return array(
     'router' => array(
         'routes' => array(
             'category' => array(
-                'type'    => 'Segment',
-                'options' => array(
-                    'route'    => '/[:category][/:nation][/:province][/:district]',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Category\Controller',
-                        'controller'    => 'Category',
-                        'action'        => 'index',
+              'type'    => 'Segment',
+              'options' => array(
+                  'route'    => '/[:category][/:nation][/:province][/:district]',
+                  'defaults' => array(
+                      '__NAMESPACE__' => 'Category\Controller',
+                      'controller'    => 'Category',
+                      'action'        => 'index',
 //                        'format' => 'html',
-                    ),
-                    'constraints' => array(
-                      'category'     => '[a-zA-Z0-9_-]*',
-                      'nation'     => '[a-zA-Z0-9_-]*',
-                      'province'     => '[a-zA-Z0-9_-]*',
-                      'district'     => '[a-zA-Z0-9_-]*',
+                  ),
+                  'constraints' => array(
+                    'category'     => '[a-zA-Z0-9_-]*',
+                    'nation'     => '[a-zA-Z0-9_-]*',
+                    'province'     => '[a-zA-Z0-9_-]*',
+                    'district'     => '[a-zA-Z0-9_-]*',
 //                      'page'     	=> '[0-9]+',
-                    ),
+                  ),
 //                    'spec' => '/%category%/%nation%.%format%',
-                ),
-                
-                
-                
+              ),
+            ),
+            'detail' => array (
+              'type' => 'Zend\Mvc\Router\Http\Regex',
+              'options' => array (
+                'regex' => '/(?<slug>[a-zA-Z0-9-]+)-(?<id>[0-9]+)?(\.(?<format>(html)))?',
+                  'defaults' => array(
+                    '__NAMESPACE__' => 'Category\Controller',
+                    'controller' => 'Category\Controller\Category',
+                    'action' => 'detail',
+                    'format' => 'html',
+                  ),
+                  'spec' => '/%slug%-%id%.%format%'
+              )
             ),
           
 //            'travel-province' => array(
@@ -272,9 +282,10 @@ return array(
             'taste/detail'           => __DIR__ . '/../view/category/taste/detail.phtml',
             'taste/taste-order'           => __DIR__ . '/../view/category/taste/order.phtml',
             
-            
+            'layout/video-detail'           => __DIR__ . '/../view/layout/layout-video-detail.phtml',
             'layout/video'           => __DIR__ . '/../view/layout/layout-video.phtml',
             'video/index'           => __DIR__ . '/../view/category/video/index.phtml',
+            'video/detail'           => __DIR__ . '/../view/category/video/detail.phtml',
 //            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
 //            'error/404'               => __DIR__ . '/../view/error/404.phtml',
 //            'error/index'             => __DIR__ . '/../view/error/index.phtml',

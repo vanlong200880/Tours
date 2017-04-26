@@ -61,7 +61,43 @@ class CategoryController extends AbstractActionController
   }
 
   public function detailAction(){
-    $this->layout('layout/detail-page');
-    return new ViewModel();
+    $slug = 'video';
+    switch ($slug){
+      case 'diem-du-lich':
+        if($nation || $province):
+          $this->viewModel->setTemplate('travel/index');
+        else:
+          $this->viewModel->setTemplate('travel/index-nation');
+        endif;
+        break;
+      /* ----------------------------------------------------*/
+      case 'diem-an-uong':
+        $this->layout('layout/taste');
+        $this->viewModel->setTemplate('taste/index');
+        break;
+      /* ----------------------------------------------------*/
+      case 'khach-san':
+        $this->layout('layout/hotel');
+        $this->viewModel->setTemplate('hotel/index');
+        break;
+      /* ----------------------------------------------------*/
+      case 'tour-du-lich':
+        $this->layout('layout/tour');
+        $this->viewModel->setTemplate('tour/index');
+        break;
+      /* ----------------------------------------------------*/
+      case 'video':
+        $this->layout('layout/video-detail');
+        $this->viewModel->setTemplate('video/detail');
+        break;
+      /* ----------------------------------------------------*/
+      case 'diary':
+        die('a');
+        break;
+      /* ----------------------------------------------------*/
+      default :
+        break;
+    }
+    return $this->viewModel;
   }
 }

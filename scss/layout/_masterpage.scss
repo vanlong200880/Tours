@@ -1336,119 +1336,6 @@
       background: #f1f1f1;
       padding: 8px;
     }
-    .watch-header{
-      margin: 0 0 10px;
-      padding: 15px;
-      @include box-shadow(0 1px 2px rgba(0,0,0,.1));
-      background: #FFF;
-      margin-top: 15px;
-      display: inline-block;
-      width: 100%;
-      .watch-title-container{
-        line-height: normal;
-        word-wrap: break-word;
-        vertical-align: top;
-        display: inline-block;
-        font-size: 20px;
-      }
-      .watch-user-header{
-        display: inline-block;
-        width: 100%;
-        float: left;
-        .view{
-          position: relative;
-          float: right;
-          border-bottom: 2px solid $default;
-          text-align: right;
-          font-size: 19px;
-          color: #666;
-          white-space: nowrap;
-          bottom: -1px;
-          z-index: 10;
-        }
-      }
-      .watch-action-buttons{
-        position: relative;
-        padding-top: 5px;
-        border-top: 1px solid #e2e2e2;
-        display: inline-block;
-        width: 100%;
-        .watch-secondary-actions{
-          width: 50%;
-          display: inline-block;
-          min-height: 1px;
-          float: left;
-          ul.share{
-            li{
-              display: inline-block;
-              width: 32px;
-              height: 32px;
-              background: #3b5999;
-              position: relative;
-              span{
-                position: absolute;
-                white-space: nowrap;
-                top: -25px;
-                height: 20px;
-                background: #000;
-                color: #FFF;
-                @include border-radius(3px);
-                padding: 0 5px;
-                font-size: 12px;
-                line-height: 20px;
-                display: none;
-                &:before{
-                  content: "";
-                  border-top: 5px solid #000;
-                  border-left: 5px solid transparent;
-                  border-right: 5px solid transparent;
-                  position: absolute;
-                  bottom: -5px;
-                  left: 10px;
-                }
-              }
-              &:hover{
-                span{
-                  display: block;
-                }
-              }
-            }
-          }
-        }
-        .watch-sentiment-actions{
-          width: 50%;
-          display: inline-block;
-          min-height: 1px;
-          float: left;
-          text-align: right;
-          span{
-            position: relative;
-            top: auto;
-            color: #000;
-            var{
-              font-size: 16px;
-              position: relative;
-              top: 3px;
-              opacity: .5;
-              display: inline-block;
-              @include transform-rotate(-20deg);
-              cursor: pointer;
-            }
-            &:hover{
-              var{
-                opacity: .7;
-              }
-            }
-          }
-          span.unlike{
-            var{
-              @include transform-rotate(205deg);
-              top: -2px;
-            }
-          }
-        }
-      }
-    }
   }
   .list-video{
     ul{
@@ -1509,6 +1396,119 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+.watch-header{
+  margin: 0 0 10px;
+  padding: 15px;
+  @include box-shadow(0 1px 2px rgba(0,0,0,.1));
+  background: #FFF;
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%;
+  .watch-title-container{
+    line-height: normal;
+    word-wrap: break-word;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 20px;
+  }
+  .watch-user-header{
+    display: inline-block;
+    width: 100%;
+    float: left;
+    .view{
+      position: relative;
+      float: right;
+      border-bottom: 2px solid $default;
+      text-align: right;
+      font-size: 19px;
+      color: #666;
+      white-space: nowrap;
+      bottom: -1px;
+      z-index: 10;
+    }
+  }
+  .watch-action-buttons{
+    position: relative;
+    padding-top: 5px;
+    border-top: 1px solid #e2e2e2;
+    display: inline-block;
+    width: 100%;
+    .watch-secondary-actions{
+      width: 50%;
+      display: inline-block;
+      min-height: 1px;
+      float: left;
+      ul.share{
+        li{
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          background: #3b5999;
+          position: relative;
+          span{
+            position: absolute;
+            white-space: nowrap;
+            top: -25px;
+            height: 20px;
+            background: #000;
+            color: #FFF;
+            @include border-radius(3px);
+            padding: 0 5px;
+            font-size: 12px;
+            line-height: 20px;
+            display: none;
+            &:before{
+              content: "";
+              border-top: 5px solid #000;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              position: absolute;
+              bottom: -5px;
+              left: 10px;
+            }
+          }
+          &:hover{
+            span{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .watch-sentiment-actions{
+      width: 50%;
+      display: inline-block;
+      min-height: 1px;
+      float: left;
+      text-align: right;
+      span{
+        position: relative;
+        top: auto;
+        color: #000;
+        var{
+          font-size: 16px;
+          position: relative;
+          top: 3px;
+          opacity: .5;
+          display: inline-block;
+          @include transform-rotate(-20deg);
+          cursor: pointer;
+        }
+        &:hover{
+          var{
+            opacity: .7;
+          }
+        }
+      }
+      span.unlike{
+        var{
+          @include transform-rotate(205deg);
+          top: -2px;
         }
       }
     }
@@ -1582,6 +1582,33 @@
     .icon{
       position: relative;
       top: 2px;
+    }
+  }
+}
+.video-detail{
+  padding: 15px 0;
+}
+.video-related{
+  padding: 0 10px;
+  background: #FFF;
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  ul{
+    li{
+      .video-item{
+        padding: 10px 0;
+        h3{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        p{
+          color: #767676;
+        }
+      }
+      &:first-child{
+        .video-item{
+          border-bottom: 1px solid #DDD;
+        }
+      }
     }
   }
 }
