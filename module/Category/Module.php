@@ -11,6 +11,7 @@ namespace Category;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\Db\TableGateway\Feature;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
@@ -48,6 +49,16 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
     $eventManager        = $e->getApplication()->getEventManager();
     $moduleRouteListener = new ModuleRouteListener();
     $moduleRouteListener->attach($eventManager);
+    
+    $translator = $e->getApplication()->getServiceManager()->get('translator');
+    $translator->addTranslationFile('phpArray', 
+                             'vendor/Sky/Validate.php',
+                           'default');
+    \Zend\Validator\AbstractValidator::setDefaultTranslator($translator);
+    $serviceManager = $e->getApplication()->getServiceManager();
+    $dbAdapter = $serviceManager->get('Zend\Db\Adapter\Adapter');
+    Feature\GlobalAdapterFeature::setStaticAdapter($dbAdapter);
+    $e->stopPropagation();
   }
   public function loadConfiguration(MvcEvent $e)
   {

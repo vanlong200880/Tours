@@ -221,6 +221,7 @@ return array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
         ),
     ),
+    
     'translator' => array(
         'locale' => 'en_US',
         'translation_file_patterns' => array(
