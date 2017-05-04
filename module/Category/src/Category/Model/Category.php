@@ -34,7 +34,7 @@ class Category extends AbstractTableGateway
       // Sắp Xếp
       $select->order('menu_order ASC');
       // Lấy danh sách thể loại gốc
-      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order'))->where(array('parent' => 0, 'status' => 1));
+      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order', 'thumbnail'))->where(array('parent' => 0, 'status' => 1));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
       if($resultSet){
@@ -44,7 +44,7 @@ class Category extends AbstractTableGateway
           if($root){
             foreach ($root as $k => $val){
               $child = $this->listCategoryByParent(array('parent' => $val['id']));
-              $resultSet[$key]['root'][$key]['child'] = $child;
+              $resultSet[$key]['root'][$k]['child'] = $child;
             }
           }
         }
@@ -60,7 +60,7 @@ class Category extends AbstractTableGateway
       // Sắp Xếp
       $select->order('menu_order ASC');
       // Lấy danh sách thể loại gốc
-      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order'))->where(array('parent' => $arrayParam['parent'], 'status' => 1));
+      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order','thumbnail'))->where(array('parent' => $arrayParam['parent'], 'status' => 1));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
       return $resultSet;

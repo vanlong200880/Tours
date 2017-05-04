@@ -8,8 +8,7 @@ class header extends AbstractHelper
     public function __invoke() {
       $category = new Category();
       $listCategoryMenu = $category->listCategoryMenu();
-      var_dump($listCategoryMenu[0]); die;
-      $data = $this->view->partial('block/header/header.phtml', array());
+      $data = $this->view->partial('block/header/header.phtml', array('listCategoryMenu' => $listCategoryMenu));
       echo $data;
     }
 }

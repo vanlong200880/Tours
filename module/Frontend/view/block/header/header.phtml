@@ -6,276 +6,183 @@
           
         </div>
         <ul id="menu-top">
-          <li>
-            <a href="<?php  echo $this->url('category', array('category' => 'diem-du-lich')); ?>">Điểm du lịch</a>
-            <div class="item-menu-level">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-level">
-                      <ul class="row">
-                        <div class="col-md-8">
-                          <div class="row">
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/da-ngoai.jpg'); ?>">
-                                <span>Dã ngoại</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/nghi-duong.jpg'); ?>">
-                                <span>Nghỉ dưỡng</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/kham-pha.jpg'); ?>">
-                                <span>Khám phá</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/leo-nui.jpg'); ?>">
-                                <span>Leo núi</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/tham-quan.jpg'); ?>">
-                                <span>Tham quan</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/tro-choi.jpg'); ?>">
-                                <span>Giải trí - trò chơi</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/cong-vien.jpg'); ?>">
-                                <span>Công viên</span></a></li>
-                            <li class="col-md-3"><a href="#">
-                                <img src="<?php echo $this->basePath('/defaults/trung-tam-thuong-mai.jpg'); ?>">
-                                <span>Trung tâm thương mại</span></a></li>
-                          </div>
+          <?php if($listCategoryMenu): ?>
+          <?php foreach ($listCategoryMenu as $value): ?>
+          <?php 
+            switch ($value['type']){
+              case 'travel': ?>
+              <li>
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+                <?php if($value['root']): ?>
+                <div class="item-menu-level">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="item-level">
+                          <ul class="row">
+                            <?php foreach ($value['root'] as $val): ?>
+                            <li class="col-md-2">
+                              <a href="<?php echo $this->url('category', array('category' => $val['slug'])); ?>">
+                                <img src="<?php echo $this->basePath('/defaults/'.$val['thumbnail']); ?>">
+                                <span><?php echo $val['name']; ?></span>
+                              </a>
+                            </li>
+                            <?php endforeach; ?>
+                          </ul>
                         </div>
-                        <div class="col-md-4">
-                          <div class="row">
-                                <li class="col-md-12 four"><a href="#">
-                                    <img src="<?php echo $this->basePath('/assets/28851_original.jpg'); ?>">
-                              </a></li>
-                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <?php endif; ?>
+              </li>
+              <?php break; ?>
+              <?php case 'tour': ?>
+              <li>
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+                <?php if($value['root']): ?>
+                <div class="item-menu-level">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="item-level">
+                          <?php foreach ($value['root'] as $val): 
+                            ?>
+                          <?php if($val['child']): ?>
+                          <h2><a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>"><?php echo $val['name'] ?></a></h2>
+                          <ul class="row">
+                            <?php foreach ($val['child'] as $v): ?>
+                            <li class="col-md-2">
+                              <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
+                                <img src="<?php echo $this->basePath('/defaults/'.$v['thumbnail']); ?>">
+                                <span><?php echo $v['name']; ?></span>
+                              </a>
+                            </li>
+                            <?php endforeach; ?>
+                          </ul>
+                          <?php endif; ?>
+                          <?php endforeach; ?>
                         </div>
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="<?php echo $this->url('category', array('category' => 'tour-du-lich')); ?>">Tours du lịch</a>
-            <div class="item-menu-level">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-level">
-                      <h2>Tour trong nước</h2>
-                      <ul class="row">
-                            <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/da-lat.jpg'); ?>">
-                                <span>Đà Lạt</span>
-                          </a></li>
-                          <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/nha-trang.jpg'); ?>">
-                              <span>Nha Trang</span></a></li>
-                          <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/phan-thiet.jpg'); ?>">
-                              <span>Phan Thiết</span></a></li>
-                          <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/hue.jpg'); ?>">
-                              <span>Huế</span></a></li>
-                          <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/da-nang.jpg'); ?>">
-                              <span>Đà Nẵng</span></a></li>
-                          <li class="col-md-2"><a href="#">
-                              <img src="<?php echo $this->basePath('/defaults/binh-duong.jpg'); ?>">
-                              <span>Bình Dương</span></a></li>
-                          
-                      </ul>
-                      <h2>Tour nước ngoài</h2>
-                      <ul class="row">
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/thai-lan.jpg'); ?>">
-                            <span>Thái Lan</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/lao.jpg'); ?>">
-                            <span>Lào</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/singapore.jpg'); ?>">
-                            <span>Singapore</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/my.jpg'); ?>">
-                            <span>Mỹ</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/uc.jpg'); ?>">
-                            <span>Úc</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/nhat-ban.jpg'); ?>">
-                            <span>Nhật  Bản</span></a></li>
-                        
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="<?php echo $this->url('category', array('category' => 'khach-san')); ?>">Khách sạn</a>
-            <div class="item-menu-level">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-level">
-                      <ul class="row">
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/sang-trong.jpg'); ?>">
-                            <span>Khách sạn cao cấp</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/tam-trung.jpg'); ?>">
-                            <span>Khách sạn tầm trung</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/gia-re.jpg'); ?>">
-                            <span>Khách sạn giá rẻ</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/nha-nghi.jpg'); ?>">
-                            <span>Nhà nghỉ</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/phong-tro.jpg'); ?>">
-                            <span>Phòng trọ</span></a></li>
-                        <li class="col-md-2"><a href="#">
-                            <img src="<?php echo $this->basePath('/defaults/resort.jpg'); ?>">
-                            <span>Resort</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="taste">
-            <a href="<?php echo $this->url('category', array('category' => 'diem-an-uong')); ?>">Điểm ăn uống</a>
-            <div class="item-menu-level">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-level">
-                      <ul class="row">
-                        <div class="col-md-8">
-                          <div class="row item-taste">
-                            <a class="col-md-3" href="#"><span></span> Sang trọng</a>
-                            <a class="col-md-3" href="#"><span></span> Buffet</a>
-                            <a class="col-md-3" href="#"><span></span> Nhà hàng</a>
-                            <a class="col-md-3" href="#"><span></span> Ăn vặt/vỉa hè</a>
-                            <a class="col-md-3" href="#"><span></span> Ăn chay</a>
-                            <a class="col-md-3" href="#"><span></span> Café/Dessert</a>
-                            <a class="col-md-3" href="#"><span></span> Quán ăn</a>
-                            <a class="col-md-3" href="#"><span></span> Bar/Pub</a>
-                            <a class="col-md-3" href="#"><span></span> Quán nhậu</a>
-                            <a class="col-md-3" href="#"><span></span> Beer club</a>
-                            <a class="col-md-3" href="#"><span></span> Tiệm bánh</a>
-                            <a class="col-md-3" href="#"><span></span> Tiệc tận nơi</a>
-                            <a class="col-md-3" href="#"><span></span> Shop Online</a>
-                            <a class="col-md-3" href="#"><span></span> Giao cơm văn phòng</a>
-                            <a class="col-md-3" href="#"><span></span> Khu Ẩm Thực</a>
-                          </div>
+                <?php endif; ?>
+              </li>
+              <?php break; ?>
+              <?php case 'hotel': ?>
+              <li>
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+                <?php if($value['root']): ?>
+                <div class="item-menu-level">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="item-level">
+                          <ul class="row">
+                            <?php foreach ($value['root'] as $val): ?>
+                            <li class="col-md-2">
+                              <a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>">
+                                <img src="<?php echo $this->basePath('/defaults/'.$val['thumbnail']); ?>">
+                                <span><?php echo $val['name']; ?></span>
+                              </a>
+                            </li>
+                            <?php endforeach; ?>
+                          </ul>
                         </div>
-                        <div class="col-md-4">
-                          <div class="row">
-                            <li class="col-md-12 four"><a href="#">Nhà Hàng</a></li>
-                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <?php endif; ?>
+              </li>
+              <?php break; ?>
+              <?php case 'taste': ?>
+              <li class="taste">
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+                <?php if($value['root']): ?>
+                <div class="item-menu-level">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="item-level">
+                          <ul class="row">
+                            <div class="col-md-8">
+                              <div class="row item-taste">
+                                <?php foreach ($value['root'] as $val): ?>
+                                  <a class="col-md-3" href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>">
+                                    <span></span> 
+                                    <?php echo $val['name']; ?>
+                                  </a>
+                                <?php endforeach; ?>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="row">
+                                <li class="col-md-12 four"><a href="#">Nhà Hàng</a></li>
+                              </div>
+                            </div>
+                          </ul>
                         </div>
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="<?php echo $this->url('category', array('category' => 'video')); ?>">Video</a>
-          </li>
-          <li>
-            <a href="<?php echo $this->url('category', array('category' => 'trai-nghiem')); ?>">Trải nghiệm</a>
-          </li>
-          
-          <li class="service">
-            <a href="<?php echo $this->url('category', array('category' => 'diem-an-uong')); ?>">Tiện ích</a>
-            <div class="item-menu-level">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-level">
-                      <ul class="row">
-                        <li class="col-md-12">
-                          <div class="row item-taste item-all">
-                            <div class="col-md-2">
-                              <div class="service-item">
-                                <h2><a href="#">Dịch vụ</a></h2>
-                                <a href="#"><span></span> Bank - ATM <var>120</var></a>
-                                <a href="#"><span></span> Trạm xăng <var>120</var></a>
-                                <a href="#"><span></span> Viễn thông <var>120</var></a>
-                                <a href="#"><span></span> Vận tải <var>120</var></a>
-                                <a href="#"><span></span> Giặt ủi <var>120</var></a>
-                                <a href="#"><span></span> Trụ sở ban ngành <var>120</var></a>
-                                <a href="#"><span></span> Dịch vụ vệ sinh <var>120</var></a>
+                <?php endif; ?>
+              </li>
+              <?php break; ?>
+              <?php case 'video': ?>
+              <li>
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+              </li>
+              <?php break; ?>
+              <?php case 'diary': ?>
+              <li>
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+              </li>
+              <?php break; ?>
+              <?php case 'utilities': ?>
+              <li class="service">
+                <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+                <?php if($value['root']): ?>
+                <div class="item-menu-level">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="item-level">
+                          <ul class="row">
+                            <li class="col-md-12">
+                              <div class="row item-taste item-all">
+                                <?php foreach ($value['root'] as $val): ?>
+                                <?php if($val['child']): ?>
+                                <div class="col-md-2">
+                                  <div class="service-item">
+                                    <h2><a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>"><?php echo $val['name'] ?></a></h2>
+                                    <?php foreach ($val['child'] as $v): ?>
+                                    <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
+                                      <span></span> 
+                                        <?php echo $v['name']; ?> 
+                                      <var>120</var>
+                                    </a>
+                                    <?php endforeach; ?>
+                                  </div>
+                                </div>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
                               </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="service-item">
-                                <h2><a href="#">Giáo dục</a></h2>
-                                <a href="#"><span></span> Đại Học & Cao Đẳng <var>120</var></a>
-                                <a href="#"><span></span> Trung tâm giáo dục <var>120</var></a>
-                                <a href="#"><span></span> Trung tâm ngoại ngữ <var>120</var></a>
-                                <a href="#"><span></span> Nhà sách & Thư viện <var>120</var></a>
-                                <a href="#"><span></span> Nhà trẻ & Mẫu giáo <var>120</var></a>
-                                <a href="#"><span></span> Trung học & Phổ Thông <var>120</var></a>
-                                <a href="#"><span></span> Trường dạy nghề <var>120</var></a>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="service-item">
-                                <h2><a href="#">Mua sắm</a></h2>
-                                <a href="#"><span></span> Shop/Cửa hàng<var>120</var></a>
-                                <a href="#"><span></span> Siêu thị <var>120</var></a>
-                                <a href="#"><span></span> Trung tâm thương mại <var>120</var></a>
-                                <a href="#"><span></span> Chợ <var>120</var></a>
-                                <a href="#"><span></span> Mua sắm Online <var>120</var></a>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="service-item">
-                                <h2><a href="#">Cưới hỏi</a></h2>
-                                <a href="#"><span></span> Tiệc cưới/Hội nghị  <var>120</var></a>
-                                <a href="#"><span></span> Chụp hình cưới <var>120</var></a>
-                                <a href="#"><span></span> Trang điểm <var>120</var></a>
-                                <a href="#"><span></span> Áo cưới <var>120</var></a>
-                                <a href="#"><span></span> Hoa cưới - Shop hoa <var>120</var></a>
-                                <a href="#"><span></span> Tiệc tại gia <var>120</var></a>
-                              </div>
-                            </div>
-                            
-                            <div class="col-md-2">
-                              <div class="service-item">
-                                <h2><a href="@">Đẹp khỏe</a></h2>
-                                <a href="#"><span></span> Spa/Massage <var>120</var></a>
-                                <a href="#"><span></span> Làm tóc/Gội đầu/Nối mi <var>120</var></a>
-                                <a href="#"><span></span> Thể dục thẩm mỹ <var>120</var></a>
-                                <a href="#"><span></span> Tiệm nail <var>120</var></a>
-                                <a href="#"><span></span> Chăm sóc da <var>120</var></a>
-                                <a href="#"><span></span> Shop hóa mỹ phẩm <var>120</var></a>
-                                <a href="#"><span></span> Thể dục thể thao <var>120</var></a>
-                                <a href="#"><span></span> Thẩm mỹ viện <var>120</var></a>
-                                <a href="#"><span></span> Xăm hình <var>120</var></a>
-                                <a href="#"><span></span> Phòng khám <var>120</var></a>
-                                <a href="#"><span></span> Nha khoa <var>120</var></a>
-                                <a href="#"><span></span> Nhà thuốc <var>120</var></a>
-                                <a href="#"><span></span> Bệnh viện <var>120</var></a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </li>
+                <?php endif; ?>
+              </li>
+              <?php break; ?>
+          <?php } ?>
+          <?php endforeach; ?>
+          <?php endif; ?>
         </ul>
       </div>
       <div class="col-md-3">
