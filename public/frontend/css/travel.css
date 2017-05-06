@@ -951,6 +951,8 @@ a:hover {
 .list-search {
   height: 40px;
   margin-top: 5px; }
+  .list-search .col-md-2 {
+    width: 14.2857142857%; }
   .list-search .form-control,
   .list-search .btn-default {
     height: 30px;

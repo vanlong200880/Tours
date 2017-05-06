@@ -37,5 +37,7 @@
       <?php $this->about(); ?>
       <?php $this->footer(); ?>
       <?php echo $this->inlineScript(); ?>
+      <?php echo $this->headScript()
+            ->prependFile($this->basePath('assets/js/common.js')); ?>
     </body>
 </html>

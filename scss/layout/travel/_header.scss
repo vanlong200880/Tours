@@ -480,6 +480,9 @@
 .list-search{
   height: 40px;
   margin-top: 5px;
+  .col-md-2{
+      width: 14.2857142857%;
+    }
   .form-control,
   .btn-default{
     height: 30px;

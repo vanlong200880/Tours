@@ -1,30 +1,43 @@
-<div class="search">
-  <div class="page-search">
-    <?php echo $this->searchTravel(); ?>
-  </div>
-  
-</div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
       <div class="page-search-title">
         <div class="item-title">
-          <h1><span class="icon icon-menu"></span> Thành phố Hồ Chí Minh</h1>
+          <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>
         </div>
       </div>
       <div class="province-container">
         <div class="province">
           <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+          <?php if($countPost): ?>
           <div class="province-help">
             <ul>
-              <li class="tours"><span></span> 1.500 điểm du lịch</li>
-              <li class="hotel"><span></span> 1.500 Khách sạn</li>
-              <li class="taste"><span></span> 1.500 Điểm ăn uống</li>
-              <li class="park"><span></span> 1.500 Công viên giải trí</li>
+              <?php foreach ($countPost as $value): ?>
+              <?php switch ($value['type']){
+                case 'travel': ?>
+              <li class="park"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('diem-du-lich'); ?></li>
+              
+                  <?php break; ?>
+                <?php case 'tour': ?>
+              <li class="tours"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('tour'); ?></li>
+                  <?php break; ?>
+                <?php case 'hotel': ?>
+              <li class="hotel"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('khach-san'); ?></li>
+                  <?php break; ?>
+                <?php case 'taste': ?>
+              <li class="taste"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('diem-an-uong'); ?></li>
+                  <?php break; ?>
+              <?php } ?>
+              
+              
+              
+              
+              <?php endforeach; ?>
             </ul>
           </div>
+          <?php endif; ?>
         </div>
-        <div class="current-position">
+<!--        <div class="current-position">
           <div class="row">
             <div class="col-md-9">
               <input class="form-control" name="current-map" id="current-map" placeholder="Nhập vị trí của bạn">
@@ -44,7 +57,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="list-province-item">
           <ul class="list-travel">
             <li>

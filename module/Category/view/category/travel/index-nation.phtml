@@ -1,8 +1,3 @@
-<div class="search">
-  <div class="page-search">
-    <?php $this->searchTravel(); ?>
-  </div>
-</div>
 <div id="container">
   <div class="view">
     <div class="list-container-view">
@@ -11,8 +6,10 @@
           <h1><span class="icon icon-menu"></span> Danh sách Tỉnh / Thành Phố</h1>
         </div>
       </div>
+      <?php if($listProvince): ?>
       <div class="province-container">
         <ul>
+          <?php foreach ($listProvince as $value): ?>
           <li>
             <div class="province-item">
               <div class="province-img">
@@ -21,7 +18,7 @@
                 </a>
               </div>
               <div class="province-content">
-                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">Thành Phố Hồ Chí Minh</a></h2>
+                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh"><?php echo $value['name'] ?></a></h2>
                 <div class="list-count-content">
                   <div class="list-count-item">
                     <p class="tours"><span></span> Điểm du lịch</p>
@@ -43,133 +40,10 @@
               </div>
             </div>
           </li>
-          
-          <li>
-            <div class="province-item">
-              <div class="province-img">
-                <a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">
-                  <img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>">
-                </a>
-              </div>
-              <div class="province-content">
-                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">Thành Phố Hồ Chí Minh</a></h2>
-                <div class="list-count-content">
-                  <div class="list-count-item">
-                    <p class="tours"><span></span> Điểm du lịch</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="hotel"><span></span> Khách sạn</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="taste"><span></span> Điểm ăn uống</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="park"><span></span> Công viên giải trí</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="province-item">
-              <div class="province-img">
-                <a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">
-                  <img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>">
-                </a>
-              </div>
-              <div class="province-content">
-                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">Thành Phố Hồ Chí Minh</a></h2>
-                <div class="list-count-content">
-                  <div class="list-count-item">
-                    <p class="tours"><span></span> Điểm du lịch</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="hotel"><span></span> Khách sạn</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="taste"><span></span> Điểm ăn uống</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="park"><span></span> Công viên giải trí</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="province-item">
-              <div class="province-img">
-                <a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">
-                  <img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>">
-                </a>
-              </div>
-              <div class="province-content">
-                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">Thành Phố Hồ Chí Minh</a></h2>
-                <div class="list-count-content">
-                  <div class="list-count-item">
-                    <p class="tours"><span></span> Điểm du lịch</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="hotel"><span></span> Khách sạn</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="taste"><span></span> Điểm ăn uống</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="park"><span></span> Công viên giải trí</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="province-item">
-              <div class="province-img">
-                <a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">
-                  <img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>">
-                </a>
-              </div>
-              <div class="province-content">
-                <h2><a href="<?php echo $this->url('category', array('category' => 'diem-du-lich', 'nation' => 'viet-nam', 'province' => 'ho-chi-minh')); ?>" title="Ho chi minh">Thành Phố Hồ Chí Minh</a></h2>
-                <div class="list-count-content">
-                  <div class="list-count-item">
-                    <p class="tours"><span></span> Điểm du lịch</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="hotel"><span></span> Khách sạn</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="taste"><span></span> Điểm ăn uống</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                  <div class="list-count-item">
-                    <p class="park"><span></span> Công viên giải trí</p>
-                    <p><strong>1500</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          
+          <?php endforeach; ?>
         </ul>
       </div>
+      <?php endif; ?>
       <div class="footer-travel">
         <?php $this->footerTravel(); ?>
       </div>

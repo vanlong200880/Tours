@@ -17,9 +17,11 @@
             ->prependStylesheet($this->basePath('frontend/libs/royalSlider/skins/default/rs-default.css'))
             ->prependStylesheet($this->basePath('frontend/libs/royalSlider/royalslider.css'))
             ->prependStylesheet($this->basePath('frontend/libs/Swiper/dist/css/swiper.min.css'))
+            ->prependStylesheet($this->basePath('libs/bootstrapSelect/css/bootstrap-select.min.css'))
             ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
         <!-- Scripts -->
         <?php echo $this->headScript()
+            ->prependFile($this->basePath('libs/bootstrapSelect/js/bootstrap-select.min.js'))
             ->prependFile($this->basePath('frontend/libs/royalSlider/jquery.royalslider.min.js'))
             ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))
             ->prependFile($this->basePath('frontend/js/jquery.min.js'))
@@ -30,12 +32,13 @@
     </head>
     <body>
       <div class="wrapper">
-        <?php $this->headerTravel(); ?>
+        <?php $this->headerCategory(); ?>
+        <?php echo $this->searchCategory(); ?>
         <?php echo $this->content; ?>
         <?php echo $this->inlineScript(); ?>
       </div>
       <!-- Scripts -->
-        <?php echo $this->headScript()
-            ->prependFile($this->basePath('frontend/js/common.js')); ?>
+        <?php echo $this->inlineScript()
+            ->prependFile($this->basePath('assets/js/common.js')); ?>
     </body>
 </html>

@@ -57,12 +57,22 @@ class Category extends AbstractTableGateway
    {
       $select = new Select();
       $select->from($this->table);
-      // Sắp Xếp
       $select->order('menu_order ASC');
-      // Lấy danh sách thể loại gốc
       $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order','thumbnail'))->where(array('parent' => $arrayParam['parent'], 'status' => 1));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
+      return $resultSet;
+   }
+   
+   // Lấy danh mục theo slug
+   public function listCategoryBySlug($arrayParam = null)
+   {
+      $select = new Select();
+      $select->from($this->table);
+      $select->order('menu_order ASC');
+      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order'))->where(array('slug' => $arrayParam['slug'], 'status' => 1));
+      $resultSet = $this->selectWith($select);
+      $resultSet = $resultSet->current();
       return $resultSet;
    }
 }   

@@ -1,0 +1,67 @@
+<div class="search">
+  <div class="page-search">
+    <div class="search-item">
+      <div class="search-list">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="list-search">
+                <div class="row">
+                  <div class="col-md-2">
+                    <input type="text" placeholder="Keyword" class="form-control" name="tasteKeyword" id="tasteKeyword">
+                  </div>
+                  <?php if($categoryType): ?>
+                  <div class="col-md-2">
+                    <select id="category-type" class="form-control selectpicker">
+                      <option value="">Loại</option>
+                      <?php foreach ($categoryType as $value): ?>
+                      <option <?php echo ($value['id'] == CATEGORY)? 'selected': ''; ?> id="<?php echo $value['id']; ?>" value="<?php echo $value['slug']; ?>"><?php echo $value['name']; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                  <?php endif; ?>
+                  <div class="col-md-2">
+                    <select id="nation" class="form-control selectpicker" data-live-search="true">
+                      <option value="">Quốc gia</option>
+                      <?php if($listNation): ?>
+                      <?php foreach ($listNation as $value): ?>
+                      <option <?php echo ($value['id'] == NATION)? 'selected': ''; ?> value="<?php echo $value['alias']; ?>"><?php echo $value['name']; ?></option>
+                      <?php endforeach; ?>
+                      <?php endif; ?>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <select id="province" class="form-control selectpicker" data-live-search="true">
+                      <option value="">Tỉnh/Thành Phố</option>
+                      <?php if($listProvince): ?>
+                      <?php foreach ($listProvince as $value): ?>
+                      <option <?php echo ($value['id'] == NATION)? 'selected': ''; ?> value="<?php echo $value['alias']; ?>"><?php echo $value['name']; ?></option>
+                      <?php endforeach; ?>
+                      <?php endif; ?>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <select id="ward" class="form-control selectpicker" data-live-search="true">
+                      <option value="">Quận/Huyện</option>
+                      <?php if($listDistrict): ?>
+                      <?php foreach ($listDistrict as $value): ?>
+                      <option <?php echo ($value['id'] == DISTRICT)? 'selected': ''; ?> value="<?php echo $value['alias']; ?>"><?php echo $value['type']; ?> <?php echo $value['name']; ?></option>
+                      <?php endforeach; ?>
+                      <?php endif; ?>
+                    </select>
+                  </div>
+                  <div class="col-md-1">
+                    <button class="button-search pull-right" id="tour-search-button">Nâng cao</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

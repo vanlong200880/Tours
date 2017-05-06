@@ -40,6 +40,8 @@
         <?php $this->headerTravel(); ?>
         <?php echo $this->content; ?>
         <?php echo $this->inlineScript(); ?>
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('assets/js/common.js')); ?>
       </div>
     </body>
 </html>

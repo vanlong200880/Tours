@@ -15,7 +15,7 @@ return array(
             'category' => array(
               'type'    => 'Segment',
               'options' => array(
-                  'route'    => '/[:category][/:nation][/:province][/:district]',
+                  'route'    => '/[:category][/:province][/:district]',
                   'defaults' => array(
                       '__NAMESPACE__' => 'Category\Controller',
                       'controller'    => 'Category',
@@ -24,7 +24,7 @@ return array(
                   ),
                   'constraints' => array(
                     'category'     => '[a-zA-Z0-9_-]*',
-                    'nation'     => '[a-zA-Z0-9_-]*',
+//                    'nation'     => '[a-zA-Z0-9_-]*',
                     'province'     => '[a-zA-Z0-9_-]*',
                     'district'     => '[a-zA-Z0-9_-]*',
 //                      'page'     	=> '[0-9]+',
@@ -245,8 +245,8 @@ return array(
     ),
     'view_helpers'    => array(
         'invokables'  => array(
-//          'searchTravel'        => 'Travel\Block\searchTravel',
-//          'footerTravel'        => 'Travel\Block\footerTravel',
+          'searchCategory'        => 'Category\Block\searchCategory',
+          'headerCategory'        => 'Category\Block\headerCategory',
         ),
     ),
     'view_manager' => array(
