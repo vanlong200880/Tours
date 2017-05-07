@@ -1,7 +1,7 @@
 (function ($) { 
   "use strict";
   var defaults = {
-    URL : ''
+    URL : '',
   };
   $.fn.callAjaxRegion = function(url, method, postId, id){
     $.ajax({
@@ -17,10 +17,27 @@
     $("body").on("change", "#country_id", function(e) {
       
     });
+  },
+  $.fn.loadData = function(url, id, category){
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: {category: category },
+      beforeSend: function(){
+        $(".view-loading").css('display','block');
+      },
+      success: function(data){
+        console.log(data);
+        $(id).empty().append(data.html);
+        $(".view-loading").css('display','none');
+      }
+    });
   }
   ;
   
   $.fn.callAjaxRegion();
+  var categoryType = $("body .list-search").find('#category-type').val();
+  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data', categoryType);
   
 //  var search = {
 //    homeItem : "search-home",

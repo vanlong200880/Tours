@@ -36,3 +36,4 @@ define('PROVINCE', '', true);
 define('DISTRICT', '', true);
 define('WARD', '', true);
 define('CATEGORY', '', true);
+define('CATEGORY_TYPE', '', true);

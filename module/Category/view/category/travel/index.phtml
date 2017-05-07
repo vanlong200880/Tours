@@ -1,390 +1,65 @@
-<div id="container">
-  <div class="view">
-    <div class="list-container-view">
-      <div class="page-search-title">
-        <div class="item-title">
-          <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>
-        </div>
-      </div>
-      <div class="province-container">
-        <div class="province">
-          <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-          <?php if($countPost): ?>
-          <div class="province-help">
-            <ul>
-              <?php foreach ($countPost as $value): ?>
-              <?php switch ($value['type']){
-                case 'travel': ?>
-              <li class="park"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('diem-du-lich'); ?></li>
-              
-                  <?php break; ?>
-                <?php case 'tour': ?>
-              <li class="tours"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('tour'); ?></li>
-                  <?php break; ?>
-                <?php case 'hotel': ?>
-              <li class="hotel"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('khach-san'); ?></li>
-                  <?php break; ?>
-                <?php case 'taste': ?>
-              <li class="taste"><span></span> <?php echo number_format($value['totalPost'],0 ,',',','); ?> <?php echo $this->translate('diem-an-uong'); ?></li>
-                  <?php break; ?>
-              <?php } ?>
-              
-              
-              
-              
-              <?php endforeach; ?>
-            </ul>
-          </div>
-          <?php endif; ?>
-        </div>
-<!--        <div class="current-position">
-          <div class="row">
-            <div class="col-md-9">
-              <input class="form-control" name="current-map" id="current-map" placeholder="Nhập vị trí của bạn">
-            </div>
-            <div class="col-md-3">
-              <a class="btn-filter-advance">Nâng cao</a>
-            </div>
-            <div class="col-md-12">
-              <div class="filter-advance">
-                <ul>
-                  <li><a href="#">Giá: Thấp đến Cao</a></li>
-                  <li><a href="#">Giá: Cao đến Thấp</a></li>
-                  <li><a href="#">Giảm giá nhiều nhất</a></li>
-                  <li><a href="#">Bán chạy nhất</a></li>
-                  <li><a href="#">Mới nhất</a></li>
-                </ul>
+<div class="list-container-view">
+  <div class="page-search-title">
+    <div class="item-title">
+      <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>
+    </div>
+  </div>
+  <div class="province-container">
+    <div class="province">
+      <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+    </div>
+    <?php if($paginator): ?>
+    <div class="list-province-item">
+      <ul class="list-travel">
+        <?php foreach ($paginator as $value): ?>
+        <li>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="item-img">
+                  <a href="javascript:void(0);" title="dam sen">
+                    <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+                    <div class="overlay_border"></div>
+                  </a>
+                </div>
+                <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
+              </div>
+              <div class="col-md-7">
+                <h2><a href="javascript:void(0);" title="dam sen"><?php echo $value->name; ?></a></h2>
+                <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
+                <div class="fs-game">
+                  <ul class="list-game">
+                    <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
+                    <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
+                    <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                  </ul>
+                  <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>-->
-        <div class="list-province-item">
-          <ul class="list-travel">
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                    <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                  </div>
-                  <div class="col-md-7">
-                    <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                    <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                    <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                    <div class="fs-game">
-                      <ul class="list-game">
-                        <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                        <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                        <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                      </ul>
-                      <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                    <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                  </div>
-                  <div class="col-md-7">
-                    <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                    <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                    <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                    <div class="fs-game">
-                      <ul class="list-game">
-                        <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                        <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                        <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                      </ul>
-                      <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                    <p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p>
-                  </div>
-                  <div class="col-md-7">
-                    <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                    <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                    <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                    <div class="fs-game">
-                      <ul class="list-game">
-                        <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                        <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                        <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                      </ul>
-                      <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+        </li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <?php var_dump($page); ?>
+        <div class="paging">
+            <?php
+            echo $this->paginationControl($paginator, 'Sliding', 'paginationAjax', array(
+                $this->route,
+                'category' => $category->slug,
+            ));
+            ?>
         </div>
-        
-      </div>
-      <div class="footer-travel">
-        <?php $this->footerTravel(); ?>
       </div>
     </div>
-    <!--<div class="loading"></div>-->
+    <?php endif; ?>
   </div>
-  <div class="map-content">
-    <div style="width: 100%; height: 100%;" id="map"></div>
-    <div class="shoppingcart">
-      <?php $this->cart() ?>
-    </div>
+  <div class="footer-travel">
+    <?php $this->footerTravel(); ?>
   </div>
-</div>
-<script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-      var map;
-      var infowindow;
-
-      function initMap() {
-        var pyrmont = {lat: -33.867, lng: 151.195};
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
-          zoom: 15
-        });
-
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-          location: pyrmont,
-          radius: 500,
-          type: ['store']
-        }, callback);
-      }
-
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
-
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
-      
-      
-    </script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
-<script>
-  jQuery(document).ready(function($){
-    $(".list-province-item .list-travel li").on('click','a',function(){
-      var id = 'abc';
-      var url = 'http://localhost/tours/public/travel-view';
-      $.ajax({
-          url : url,
-          type : 'POST',
-          dataType : "json",
-          data: {id: id},
-          beforeSend: function(){
-            $(".popup-page").addClass('on');
-            $(".popup-page").append('<div class="loading"></div>');
-          },
-          success : function (data){
-            $( ".loading" ).remove();
-            $(".popup-container").empty().append(data.html);
-            $("#page-comment").empty().append(data.htmlComment);
-            
-            // call royalSlider
-            var slider = $('.royalSlider').royalSlider({
-            fullscreen: {
-              enabled: true,
-              nativeFS: true
-            },
-            controlNavigation: 'thumbnails',
-            autoScaleSlider: true, 
-            autoScaleSliderWidth: 725,
-            autoScaleSliderHeight: 478,
-            loop: false,
-            imageScaleMode: 'none',
-            navigateByClick: true,
-            numImagesToPreload:2,
-            arrowsNav:true,
-            arrowsNavAutoHide: true,
-            arrowsNavHideOnTouch: true,
-            keyboardNavEnabled: true,
-            fadeinLoadedSlide: true,
-            globalCaption: false,
-            globalCaptionInside: false,
-            imageScalePadding: 0,
-            slidesSpacing: 0,
-            thumbs: {
-              appendSpan: false,
-              firstMargin: false,
-              paddingBottom: 4
-            }
-            }).data('royalSlider');
-
-            $('.rsFullscreenBtn').click(function(e){
-              slider.enterFullscreen();
-              e.preventDefault();
-            });
-
-            slider.ev.on("rsEnterFullscreen", function() {
-              // enter fullscreen mode 
-              $(".popup-page").css('position', 'relative');
-            });
-            slider.ev.on('rsExitFullscreen', function(event) {
-              // exit fullscreen mode
-              $(".popup-page").removeAttr('style');
-            });
-          }
-        });
-    });
-    // close popup
-    $(".popup-page").on('click','.popup-close' ,function(){
-      $(".popup-page").removeClass('on');
-      $(".popup-page .popup-container").empty();
-    });
-    
-    // view map
-    $(".list-province-item ul > li").on('click','.strict-views', function(){
-      var current = $("#current-map").val();
-      var id = 'abc';
-      var url = 'http://localhost/tours/public/view-map';
-      $.ajax({
-          url : url,
-          type : 'POST',
-          dataType : "json",
-          data: {id: id},
-          beforeSend: function(){
-            $(".views-popup").addClass('view');
-            $(".views-popup").append('<div class="loading"></div>');
-          },
-          success : function (data){
-            $( ".loading" ).remove();
-            $(".views-popup .views-container").empty().append(data.html);
-            var pyrmont = {lat: -33.867, lng: 151.195};
-            // view google map
-            map = new google.maps.Map(document.getElementById('view-map'), {
-              center: pyrmont,
-              zoom: 15
-            });
-
-            infowindow = new google.maps.InfoWindow();
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch({
-              location: pyrmont,
-              radius: 500,
-              type: ['store']
-            }, callback);
-            // view map popup
-            $(".views-popup .views-container").addClass('open');
-          }
-        });
-    });
-    
-    
-    // show detail gallery
-    $(".game-entertainment tr td").on('click','.history', function(){
-      alert('a');
-      var id = 'abc';
-      var url = 'http://localhost/tours/public/view-map';
-      $.ajax({
-          url : url,
-          type : 'POST',
-          dataType : "json",
-          data: {id: id},
-          beforeSend: function(){
-            $(".views-popup").addClass('view');
-            $(".views-popup").append('<div class="loading"></div>');
-          },
-          success : function (data){
-            $( ".loading" ).remove();
-            $(".views-popup .views-container").empty().append(data.html);
-            var pyrmont = {lat: -33.867, lng: 151.195};
-            // view google map
-            map = new google.maps.Map(document.getElementById('view-map'), {
-              center: pyrmont,
-              zoom: 15
-            });
-
-            infowindow = new google.maps.InfoWindow();
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch({
-              location: pyrmont,
-              radius: 500,
-              type: ['store']
-            }, callback);
-            // view map popup
-            $(".views-popup .views-container").addClass('open');
-          }
-        });
-    });
-    
-    // view map popup close
-    $(".views-popup").on('click','.views-close' ,function(){
-      $(".views-popup .views-container").removeClass('open');
-      setTimeout(function () {
-       $(".views-popup").removeClass('view');
-       $(".views-popup .views-container").empty();
-      }, 350);
-    });
-  });
-</script>
-
-
-
-
-<div class="views-popup">
-  <div class="views-container">
-    
-  </div>
-</div>
-
-<div class="popup-page">
-  <div class="popup-container">
-    
-  </div>
-</div>
-
-<div class="video-play">
-  
 </div>

@@ -1,0 +1,69 @@
+<?php if($this->pageCount > 1){ ?>
+    <?php $urlParams = array(
+        "controller" => $this->controller,
+        "action" => $this->action,
+        "page" => $this->previous,
+        "order_by" => $this->orderBy,
+        "order" => $this->order,
+        "category" => $this->category,
+        'slug' => $this->slug,
+        'detail' => $this->detail,
+    );
+    if(!empty($this->param)){
+      $paramRoute = "?".$this->param;
+    }else{
+      $paramRoute = '';
+    }
+    ?>
+    <ul class="pagination">
+        <?php if(!isset($this->previous)){
+            $this->previous = $this->first;
+        } ?>
+        <?php if ($this->current != 1) { 
+          $urlParams['page'] = $this->first;
+          ?>
+                <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">Trang đầu</a></li>
+        <?php } ?>
+                
+        <?php $urlParams["page"] = $this->previous; ?>
+        <?php if($this->current != $this->previous){ ?>
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">
+                Lùi lại
+            </a>
+        </li>
+        <?php } ?>
+        <?php foreach($this->pagesInRange as $key => $page){ ?>
+            <?php $urlParams["page"] = $page; ?>
+        <?php if($this->current == $key): ?>
+        <li class="active">
+            <a href="javascript:void(0)">
+                <?php echo $page; ?>
+            </a>
+        </li>
+        <?php else: ?>
+        <li>
+            <a data-page="<?php echo $page; ?>" href="javascript:void(0)">
+                <?php echo $page; ?>
+            </a>
+        </li>
+        <?php endif; ?>
+        <?php } ?>
+        <?php if(!isset($this->next)){
+            $this->next = $this->last;
+        } ?>
+        <?php if ($urlParams["page"] != $this->next) {
+          $urlParams["page"] = $this->next;
+          ?>
+        <li>
+            <a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">
+                Trang kế
+            </a>
+        </li>
+        <?php } ?>
+        <?php if ($this->current != $this->last) { 
+          $urlParams["page"] = $this->last;
+          ?>
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)" title="Trang Cuối">Trang cuối</a></li>
+        <?php } ?> 
+    </ul>
+<?php } ?>  

@@ -50,4 +50,18 @@ class Post extends AbstractTableGateway
       $resultSet = $resultSet->toArray();
       return $resultSet;
    }
+   
+   // Lấy bài viết theo danh mục
+   public function getPostByCategory(){
+     $select = new Select();
+      $select->from($this->table);
+      $select->columns(array('id', 'name'))
+//              ->join('category', 'category.id = post.category_id', array('type'))
+//              ->group('category.type')
+              ->where(array('status_id' => 1));
+//              ->where->in('category.type', array('travel', 'tour', 'hotel', 'taste'));
+      $resultSet = $this->selectWith($select);
+      $resultSet->buffer();
+      return $resultSet;
+   }
 }   

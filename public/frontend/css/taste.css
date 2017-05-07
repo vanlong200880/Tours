@@ -117,31 +117,40 @@ a:hover {
       top: 80px;
       bottom: 0;
       z-index: 8;
+      background: #FFF;
       box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.4);
       -moz-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.4);
       -webkit-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.4);
       -ms-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.4);
       -o-box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.4); }
-      .wrapper #container .view .list-container-view {
+      .wrapper #container .view .view-data {
         overflow-y: auto;
         width: 100%;
         height: 100%; }
-        .wrapper #container .view .list-container-view .page-search-title {
+        .wrapper #container .view .view-data .list-container-view .page-search-title {
           width: 100%;
           height: 40px;
           background: #232f3e; }
-          .wrapper #container .view .list-container-view .page-search-title .item-title h1 {
+          .wrapper #container .view .view-data .list-container-view .page-search-title .item-title h1 {
             height: 40px;
             line-height: 40px;
             font-size: 18px;
             color: #FFF;
             text-transform: uppercase;
             padding: 0 15px; }
-            .wrapper #container .view .list-container-view .page-search-title .item-title h1 span {
+            .wrapper #container .view .view-data .list-container-view .page-search-title .item-title h1 span {
               font-size: 24px; }
-              .wrapper #container .view .list-container-view .page-search-title .item-title h1 span:before {
+              .wrapper #container .view .view-data .list-container-view .page-search-title .item-title h1 span:before {
                 position: relative;
                 top: 5px; }
+      .wrapper #container .view .view-loading {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.1);
+        display: none; }
     .wrapper #container .map-content {
       width: 55%;
       position: relative;
@@ -2257,6 +2266,23 @@ ul.connect li.youtube a:hover {
   -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 0 15px; }
+
+.paging {
+  text-align: center; }
+  .paging ul.pagination li {
+    width: auto;
+    border: none;
+    padding: 0; }
+    .paging ul.pagination li a {
+      margin: 0 3px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border: 1px solid #DDD; }
+  .paging ul.pagination li.active a {
+    background: #232f3e; }
 
 .list-cat {
   padding: 8px;

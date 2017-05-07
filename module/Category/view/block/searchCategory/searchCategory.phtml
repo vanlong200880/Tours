@@ -36,7 +36,7 @@
                       <option value="">Tỉnh/Thành Phố</option>
                       <?php if($listProvince): ?>
                       <?php foreach ($listProvince as $value): ?>
-                      <option <?php echo ($value['id'] == NATION)? 'selected': ''; ?> value="<?php echo $value['alias']; ?>"><?php echo $value['name']; ?></option>
+                      <option <?php echo ($value['id'] == PROVINCE)? 'selected': ''; ?> value="<?php echo $value['alias']; ?>"><?php echo $value['name']; ?></option>
                       <?php endforeach; ?>
                       <?php endif; ?>
                     </select>

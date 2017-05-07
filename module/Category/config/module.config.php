@@ -104,6 +104,19 @@ return array(
               ),
             ),
             
+            'load-data' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/load-data',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Category',
+                  'action' => 'loadData',
+                ),
+              ),
+            ),
+            
             'view-gallery' => array(
               'type' => 'Segment',
               'options' => array(
@@ -287,6 +300,9 @@ return array(
             'layout/video'           => __DIR__ . '/../view/layout/layout-video.phtml',
             'video/index'           => __DIR__ . '/../view/category/video/index.phtml',
             'video/detail'           => __DIR__ . '/../view/category/video/detail.phtml',
+            
+            
+            'paginationAjax' => __DIR__ . '/../view/partial/paginationAjax.phtml',
 //            'travel/index/index' => __DIR__ . '/../view/travel/index/index.phtml',
 //            'error/404'               => __DIR__ . '/../view/error/404.phtml',
 //            'error/index'             => __DIR__ . '/../view/error/index.phtml',

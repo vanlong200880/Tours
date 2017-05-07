@@ -1,8 +1,10 @@
 <?php
 namespace Category\Model;
 
+use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Db\Sql\Select;
+use Zend\Db\Sql\Combine;
 use Zend\Db\TableGateway\Feature;
 class Category extends AbstractTableGateway
 {
@@ -74,5 +76,28 @@ class Category extends AbstractTableGateway
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->current();
       return $resultSet;
+   }
+   
+   // get all cat id by slug
+   public function getAllCategoryChildBySlug($parent){
+      $select = new Select();
+      $select->from($this->table);
+      $select->columns(array('id'))
+              ->where(array('parent' => $parent));
+      
+      $sub = new Select();
+      $sub->from($this->table);
+      $sub->columns(array('id'))
+              ->where(array('parent' => $parent));
+      
+      $select1 = new Select();
+      $select1->from($this->table);
+      $select1->columns(array('id'))
+              ->where->in('parent', $sub);
+      
+      $select->combine($select1);
+      $resultSet = $this->selectWith($select);
+      $resultset = $resultSet->toArray();
+    return $resultset;
    }
 }   
