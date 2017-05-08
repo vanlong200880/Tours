@@ -200,6 +200,7 @@
         h2{
           font-size: 14px;
           font-weight: bold;
+          margin-bottom: 5px;
         }
         p.hour-open{
           border-top: 1px solid #DDD;
@@ -374,8 +375,7 @@
     bottom: 0;
     margin: auto;
     border: 1px solid #FFF;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+    @include border-radius(50%);
     border-top-color: transparent;
     border-left-color: transparent;
     -webkit-animation: spin 600ms infinite linear;
@@ -1690,6 +1690,7 @@
       width: auto;
       border: none;
       padding: 0;
+      span,
       a{
         margin: 0 3px;
         @include border-radius(3px);
@@ -1697,8 +1698,10 @@
       }
     }
     li.active{
+      span,
       a{
         background: $default;
+        border-color: #DDD;
       }
     }
   }

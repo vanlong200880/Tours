@@ -26,6 +26,7 @@ class CategoryController extends AbstractActionController
   {
     $slug = $this->params()->fromRoute('category');
     $nationSlug = $this->params()->fromQuery('nation');
+    $page = $this->params()->fromQuery('page',1);
     $provinceSlug = $this->params()->fromRoute('province');
     $districtSlug = $this->params()->fromRoute('district');
     // Check category exists
@@ -77,7 +78,8 @@ class CategoryController extends AbstractActionController
     $countPostByParent = $post->countPostByCategoryParent(array('nation_id' => NATION, 'province_id' => PROVINCE, 'district_id' => DISTRICT));
     $this->viewModel->setVariable('countPost', $countPostByParent);
     $this->viewModel->setVariable('regionExists', $regionExists);
-    
+    $this->viewModel->setVariable('currentPage', $page);
+    $this->viewModel->setTemplate('travel/index');
     // set category variable
     $this->viewModel->setVariable('category', $categoryExists);
 //    switch ($slug){
@@ -125,9 +127,10 @@ class CategoryController extends AbstractActionController
   public function loadDataAction(){
     if($this->getRequest()->isXmlHttpRequest()){
       $slug = $this->params()->fromPost('category');
-      $nationSlug = $this->params()->fromQuery('nation');
-      $provinceSlug = $this->params()->fromRoute('province');
-      $districtSlug = $this->params()->fromRoute('district');
+      $nationSlug = $this->params()->fromPost('nation');
+      $provinceSlug = $this->params()->fromPost('province');
+      $districtSlug = $this->params()->fromPost('district');
+      $page = $this->params()->fromPost('page', 1);
       // Check category exists
       $category = new category();
       $categoryExists = $category->listCategoryBySlug(array('slug' => $slug));
@@ -181,20 +184,14 @@ class CategoryController extends AbstractActionController
       // Lấy danh sách bài viết
       $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
       $dataPost = $post->getPostByCategory();
-      $page = $this->params()->fromQuery('page',1);
       $paginator = new Paginator(new paginatorIterator($dataPost));
-      $itemsPerPage = 2;
       $paginator->setCurrentPageNumber($page)
-                ->setItemCountPerPage($itemsPerPage)
-                ->setPageRange(7);
-//      $paginator->setItemCountPerPage(10);
-//      $paginator->setCurrentPageNumber($page);
-//      $paginator->setPageRange(PAGE_RAND);
-      
+                ->setItemCountPerPage(ITEM_PAGE)
+                ->setPageRange(PAGE_RAND);
       $htmlViewPart = new ViewModel();
-      $htmlViewPart->setTemplate('travel/index')
+      $htmlViewPart->setTemplate('travel/load-data-travel')
                    ->setTerminal(true)
-                   ->setVariables(['page' => $page,'paginator' => $paginator,'regionExists' => $regionExists,'category' => $categoryExists]);
+                   ->setVariables(['province' => $provinceSlug, 'district' => $districtSlug, 'nation' => $nationSlug,'page' => $page,'paginator' => $paginator,'regionExists' => $regionExists,'category' => $categoryExists]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       $jsonModel = new JsonModel();
       $jsonModel->setVariables(['html' => $htmlOutput]);

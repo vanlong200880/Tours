@@ -1,14 +1,26 @@
-<?php if($this->pageCount > 1){ ?>
-    <?php $urlParams = array(
-        "controller" => $this->controller,
-        "action" => $this->action,
-        "page" => $this->previous,
-        "order_by" => $this->orderBy,
-        "order" => $this->order,
-        "category" => $this->category,
-        'slug' => $this->slug,
-        'detail' => $this->detail,
+<?php
+if($this->pageCount > 1){ ?>
+    <?php 
+    $urlParams = array(
+        "category" => $category,
+        "province" => $province,
+        "nation" => $nation,
+        "district" => $district,
+        "page" => $page
+//        "order" => $this->order,
+//        "category" => $this->category,
+//        'slug' => $this->slug,
+//        'detail' => $this->detail,
     );
+    if($urlParams['province'] && $urlParams['district']){
+      $url = $this->url('category', array('category' => $category, 'province' => $urlParams['province'], 'district' => $urlParams['district']));;
+    }
+    if($urlParams['province'] && $urlParams['district'] == ''){
+      $url = $this->url('category', array('category' => $category, 'province' => $urlParams['province']));;
+    }
+    if($urlParams['province'] == '' && $urlParams['district'] == ''){
+      $url = $this->url('category', array('category' => $category));;
+    }
     if(!empty($this->param)){
       $paramRoute = "?".$this->param;
     }else{
@@ -22,12 +34,12 @@
         <?php if ($this->current != 1) { 
           $urlParams['page'] = $this->first;
           ?>
-                <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">Trang đầu</a></li>
+                <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->first ?>">Trang đầu</a></li>
         <?php } ?>
                 
         <?php $urlParams["page"] = $this->previous; ?>
         <?php if($this->current != $this->previous){ ?>
-        <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->previous ?>">
                 Lùi lại
             </a>
         </li>
@@ -36,13 +48,13 @@
             <?php $urlParams["page"] = $page; ?>
         <?php if($this->current == $key): ?>
         <li class="active">
-            <a href="javascript:void(0)">
+            <span>
                 <?php echo $page; ?>
-            </a>
+            </span>
         </li>
         <?php else: ?>
         <li>
-            <a data-page="<?php echo $page; ?>" href="javascript:void(0)">
+            <a data-page="<?php echo $page; ?>" href="<?php echo $url ; ?>?page=<?php echo $page ?>">
                 <?php echo $page; ?>
             </a>
         </li>
@@ -55,7 +67,7 @@
           $urlParams["page"] = $this->next;
           ?>
         <li>
-            <a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)">
+            <a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->next ?>">
                 Trang kế
             </a>
         </li>
@@ -63,7 +75,7 @@
         <?php if ($this->current != $this->last) { 
           $urlParams["page"] = $this->last;
           ?>
-        <li><a data-page="<?php echo $urlParams['page']; ?>" href="javascript:void(0)" title="Trang Cuối">Trang cuối</a></li>
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->last ?>" title="Trang Cuối">Trang cuối</a></li>
         <?php } ?> 
     </ul>
 <?php } ?>  

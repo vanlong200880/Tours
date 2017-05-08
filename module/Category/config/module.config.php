@@ -20,6 +20,7 @@ return array(
                       '__NAMESPACE__' => 'Category\Controller',
                       'controller'    => 'Category',
                       'action'        => 'index',
+                      'page'     	=> '[0-9]+',
 //                        'format' => 'html',
                   ),
                   'constraints' => array(
@@ -27,7 +28,7 @@ return array(
 //                    'nation'     => '[a-zA-Z0-9_-]*',
                     'province'     => '[a-zA-Z0-9_-]*',
                     'district'     => '[a-zA-Z0-9_-]*',
-//                      'page'     	=> '[0-9]+',
+//                    'page'     	=> 1,
                   ),
 //                    'spec' => '/%category%/%nation%.%format%',
               ),
@@ -276,6 +277,7 @@ return array(
             'travel/popup-map'           => __DIR__ . '/../view/category/travel/map.phtml',
             'travel/view-gallery'           => __DIR__ . '/../view/category/travel/view-gallery.phtml',
             'travel/video-detail-popup'           => __DIR__ . '/../view/category/travel/video-detail-popup.phtml',
+            'travel/load-data-travel'           => __DIR__ . '/../view/category/travel/load-data-travel.phtml',
             
             'view/comment'           => __DIR__ . '/../view/category/comment/view.phtml',
             'view/comment-popup'           => __DIR__ . '/../view/category/comment/comment-popup.phtml',

@@ -37,3 +37,6 @@ define('DISTRICT', '', true);
 define('WARD', '', true);
 define('CATEGORY', '', true);
 define('CATEGORY_TYPE', '', true);
+
+define('PAGE_RAND', 5);
+define('ITEM_PAGE', 2);

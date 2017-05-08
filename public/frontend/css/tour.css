@@ -622,8 +622,9 @@ a:hover {
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.1);
-        display: none; }
+        background: rgba(0, 0, 0, 0.3);
+        display: none;
+        z-index: 99; }
     .wrapper #container .map-content {
       width: 55%;
       position: relative;
@@ -1428,7 +1429,8 @@ ul.connect li.youtube a:hover {
       display: inline-block; }
       .list-province-item ul.list-travel li .item h2 {
         font-size: 14px;
-        font-weight: bold; }
+        font-weight: bold;
+        margin-bottom: 5px; }
       .list-province-item ul.list-travel li .item p.hour-open {
         border-top: 1px solid #DDD;
         margin-top: 3px;
@@ -1570,8 +1572,11 @@ ul.connect li.youtube a:hover {
   bottom: 0;
   margin: auto;
   border: 1px solid #FFF;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
   border-top-color: transparent;
   border-left-color: transparent;
   -webkit-animation: spin 600ms infinite linear;
@@ -2723,6 +2728,7 @@ ul.connect li.youtube a:hover {
     width: auto;
     border: none;
     padding: 0; }
+    .paging ul.pagination li span,
     .paging ul.pagination li a {
       margin: 0 3px;
       border-radius: 3px;
@@ -2731,8 +2737,10 @@ ul.connect li.youtube a:hover {
       -o-border-radius: 3px;
       -ms-border-radius: 3px;
       border: 1px solid #DDD; }
+  .paging ul.pagination li.active span,
   .paging ul.pagination li.active a {
-    background: #232f3e; }
+    background: #232f3e;
+    border-color: #DDD; }
 
 .footer-travel {
   float: left;

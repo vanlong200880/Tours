@@ -17,12 +17,23 @@
     $("body").on("change", "#country_id", function(e) {
       
     });
+    
+    $("body .view").on('click','.paging ul li a', function(e){
+      var url = $(this).attr('href');
+      var page = $(this).attr('data-page');
+      if(url){
+        history.pushState(null, null, url);
+        $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', categoryType, nation, province, district, page);
+        e.preventDefault();
+      }
+      
+    });
   },
-  $.fn.loadData = function(url, id, category){
+  $.fn.loadData = function(url, id, category, nation, province, district, page){
     $.ajax({
       method: 'POST',
       url: url,
-      data: {category: category },
+      data: {category: category, nation: nation, province: province, district: district, page: page},
       beforeSend: function(){
         $(".view-loading").css('display','block');
       },
@@ -32,13 +43,26 @@
         $(".view-loading").css('display','none');
       }
     });
+  },
+  $.fn.getUrlParam = function(param, url){
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + param + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
   ;
-  
   $.fn.callAjaxRegion();
   var categoryType = $("body .list-search").find('#category-type').val();
-  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data', categoryType);
+  var nation = $("body .list-search").find('#nation').val();
+  var province = $("body .list-search").find('#province').val();
+  var district = $("body .list-search").find('#district').val();
+  var page = $.fn.getUrlParam('page');
+  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', categoryType, nation, province, district, page);
   
+  $.fn.render();
 //  var search = {
 //    homeItem : "search-home",
 //    item: {
