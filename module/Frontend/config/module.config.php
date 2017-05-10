@@ -88,7 +88,7 @@ return array(
           'userPost'        => 'Frontend\Block\userPost',
           'about'        => 'Frontend\Block\about',
           'news'        => 'Frontend\Block\news',
-//          'headerTravel'        => 'Frontend\Block\headerTravel',
+          'meta'        => 'Frontend\Block\meta',
           'footerTravel'        => 'Frontend\Block\footerTravel',
           'video'        => 'Frontend\Block\video',
           'headerDetail'        => 'Frontend\Block\headerDetail',

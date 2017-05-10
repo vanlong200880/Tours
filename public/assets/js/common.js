@@ -1,7 +1,12 @@
 (function ($) { 
   "use strict";
   var defaults = {
-    URL : '',
+    url : 'http://localhost/tours/public',
+    categoryType: $("body .list-search").find('#category-type').val(),
+    nation: $("body .list-search").find('#nation').val(),
+    province: $("body .list-search").find('#province').val(),
+    district: $("body .list-search").find('#district').val(),
+    param: window.location.search.substring(1)
   };
   $.fn.callAjaxRegion = function(url, method, postId, id){
     $.ajax({
@@ -18,6 +23,19 @@
       
     });
     
+    //get data type
+    $("body").on("change", "#category-type", function(e) {
+      defaults['categoryType'] = $(this).val();
+      if(defaults['province'] && defaults['district']){
+        window.location.href = defaults['url'] + '/' + defaults['categoryType'] + '/' + defaults['province'] + '/' + defaults['district'] + '?' + defaults['param'];
+      }else{
+        if(defaults['province'] && defaults['district'] == ''){
+          window.location.href = defaults['url'] + '/' + defaults['categoryType']+ '/' + defaults['province'] + '?' + defaults['param'];
+        }else{
+          window.location.href = defaults['url'] + '/' + defaults['categoryType'] + '?' + defaults['param'];
+        }
+      }
+    });
     $("body .view").on('click','.paging ul li a', function(e){
       var url = $(this).attr('href');
       var page = $(this).attr('data-page');
@@ -38,7 +56,7 @@
         $(".view-loading").css('display','block');
       },
       success: function(data){
-        console.log(data);
+//        console.log(data);
         $(id).empty().append(data.html);
         $(".view-loading").css('display','none');
       }
@@ -55,12 +73,8 @@
   }
   ;
   $.fn.callAjaxRegion();
-  var categoryType = $("body .list-search").find('#category-type').val();
-  var nation = $("body .list-search").find('#nation').val();
-  var province = $("body .list-search").find('#province').val();
-  var district = $("body .list-search").find('#district').val();
   var page = $.fn.getUrlParam('page');
-  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', categoryType, nation, province, district, page);
+  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
   
   $.fn.render();
 //  var search = {

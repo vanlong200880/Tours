@@ -40,3 +40,13 @@ define('CATEGORY_TYPE', '', true);
 
 define('PAGE_RAND', 5);
 define('ITEM_PAGE', 2);
+
+define('META_TITLE', 'meta title');
+define('META_KEYWORD', 'meta keyword');
+define('META_DESCRIPTION', 'meta description');
+define('URL_HOME', 'http://localhost/tours/public');
+define('IMAGE_DEFAULT', '');
+define('TYPE', '');
+define('FACEBOOK_ID', '131231231231');
+ 
+

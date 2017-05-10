@@ -1,0 +1,27 @@
+<?php
+// $this->headTitle('Vinarealtor')->setSeparator(' - ')->setAutoEscape(false);
+// echo $this->headMeta()
+//      ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+//      ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+ $this->headLink(
+                array('rel' => 'shortcut icon', 'type' => 'image', 'href' => $this->basePath() . '/defaults/57x57.png'));
+
+ 
+$this->headTitle()
+        ->setSeparator(' - ')
+        ->setAutoEscape(true)
+        ->append($metaTitle);
+$this->headMeta()
+            ->setCharset('UTF-8')
+            ->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+            ->appendName('keywords', $metaKeyword)
+            ->appendName('description', $metaDescription)
+            ->setProperty('og:title', $metaTitle)
+            ->setProperty('og:description', $metaDescription)
+            ->setProperty('og:url', $url)
+            ->setProperty('og:image', $img)
+            ->setProperty('fb:app_id', FACEBOOK_ID);
+ $this->headLink(
+                array('rel' => 'canonical', 'href' => $url));
