@@ -91,6 +91,32 @@ return array(
                 ),
               ),
             ),
+            
+            'region-province' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/province',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Region',
+                  'action' => 'province',
+                ),
+              ),
+            ),
+            
+            'region-district' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/district',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Region',
+                  'action' => 'district',
+                ),
+              ),
+            ),
 
             'popup-map' => array(
               'type' => 'Segment',
@@ -255,6 +281,7 @@ return array(
           'Category\Controller\Hotel' => Controller\HotelController::class,
           'Category\Controller\Taste' => Controller\TasteController::class,
           'Category\Controller\Video' => Controller\VideoController::class,
+          'Category\Controller\Region' => Controller\RegionController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -302,6 +329,9 @@ return array(
             'layout/video'           => __DIR__ . '/../view/layout/layout-video.phtml',
             'video/index'           => __DIR__ . '/../view/category/video/index.phtml',
             'video/detail'           => __DIR__ . '/../view/category/video/detail.phtml',
+            
+            
+            'region/province'           => __DIR__ . '/../view/category/region/province.phtml',
             
             
             'paginationAjax' => __DIR__ . '/../view/partial/paginationAjax.phtml',

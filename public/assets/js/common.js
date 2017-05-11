@@ -8,19 +8,29 @@
     district: $("body .list-search").find('#district').val(),
     param: window.location.search.substring(1)
   };
-  $.fn.callAjaxRegion = function(url, method, postId, id){
+  $.fn.callAjaxRegion = function(url, alias, id, idRemove){
     $.ajax({
-      method: method,
+      method: 'POST',
       url: url,
-      data: { postId: postId}
+      data: { alias: alias}
     })
     .done(function( data ) {
-      $(id).empty().append(data.html);
+      console.log(data);
+      $(id + " option[value!='']").each(function() {
+        $(this).remove();
+      });
+      if(idRemove){
+        $(idRemove + " option[value!='']").each(function() {
+          $(this).remove();
+        });
+      }
+      $(id).append(data.html);
+      $(id).selectpicker('refresh');
+      $(idRemove).selectpicker('refresh');
     });
   }, 
   $.fn.render = function(){
     $("body").on("change", "#country_id", function(e) {
-      
     });
     
     //get data type
@@ -36,12 +46,23 @@
         }
       }
     });
+    // get nation
+    $("body").on('change', '#nation', function(){
+      defaults['nation'] = $(this).val();
+      $.fn.callAjaxRegion(defaults['url'] + '/province', defaults['nation'], '#province', '#district');
+     });
+     
+     $("body").on('change', '#province', function(){
+      defaults['province'] = $(this).val();
+      $.fn.callAjaxRegion(defaults['url'] + '/district', defaults['province'], '#district', '');
+     });
+     
     $("body .view").on('click','.paging ul li a', function(e){
       var url = $(this).attr('href');
       var page = $(this).attr('data-page');
       if(url){
         history.pushState(null, null, url);
-        $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', categoryType, nation, province, district, page);
+        $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
         e.preventDefault();
       }
       
@@ -72,7 +93,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
   ;
-  $.fn.callAjaxRegion();
+//  $.fn.callAjaxRegion();
   var page = $.fn.getUrlParam('page');
   $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
   

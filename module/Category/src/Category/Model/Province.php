@@ -43,7 +43,8 @@ class Province extends AbstractTableGateway
       $select = new Select();
       $select->from($this->table);
       $select->order('menu_order ASC');
-      $select->columns(array('id', 'name','type', 'alias', 'thumbnail', 'nation_id', 'highlight', 'status','menu_order','name_en', 'active'))->where(array('alias' => $arrayParam['alias'],'status' => 1));
+      $select->columns(array('id', 'name','type', 'alias', 'thumbnail', 'nation_id', 'highlight', 'status','menu_order','name_en', 'active'))
+              ->where(array('alias' => $arrayParam['alias'],'status' => 1));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->current();
       return $resultSet;
