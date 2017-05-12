@@ -94,7 +94,7 @@
             <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
         <script>
           jQuery(document).ready(function($){
-            $(".list-province-item .list-travel li").on('click','a',function(){
+            $("#view-data").on('click','.province-container li a',function(){
               var id = 'abc';
               var url = 'http://localhost/tours/public/travel-view';
               $.ajax({

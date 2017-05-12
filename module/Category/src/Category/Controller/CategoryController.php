@@ -82,6 +82,9 @@ class CategoryController extends AbstractActionController
     $this->viewModel->setTemplate('travel/index');
     // set category variable
     $this->viewModel->setVariable('category', $categoryExists);
+    $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
+    $dataPost = $post->getPostByCategory(array('categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
+//    var_dump($dataPost); die;
 //    switch ($slug){
 //      case 'du-lich':
 ////        if($nation || $province):
@@ -137,53 +140,39 @@ class CategoryController extends AbstractActionController
       if($categoryExists){
         define('CATEGORY', $categoryExists->id);
       }
-
+      $nationId = $districtId = $provinceId = '';
+      $nation = new Nation();
+      $nationCurrent = $nation->currentNation(array('alias' => $nationSlug));
+      if($nationCurrent){
+        $nationId = $nationCurrent->id;
+      }
       // get district
       $district = new District();
-  //    $districtExists = $district->currentDistrict(array('alias' => $districtSlug));
-  //    if($districtExists){
-  //      define('DISTRICT', $districtExists->id);
-  //    }
-  //    
-      $nation = new Nation();
-  //    $nationSlugDefine = ($nationSlug) ? $nationSlug : 'viet-nam';
-  //    $nationExists = $nation->currentNation(array('alias' => $nationSlugDefine));
-  //    if($nationExists){
-  //      define('NATION', $nationExists->id);
-  //    }
-  //    
+      
       $province = new Province();
       $provinceExists = $province->currentProvince(array('alias' => $provinceSlug));
       if($provinceExists){
         define('PROVINCE', $provinceExists->id);
+        $provinceId = $provinceExists->id;
       }
   //     get title region
       if($districtSlug && $provinceSlug){
         $regionExists = $district->currentDistrict(array('alias' => $districtSlug));
-  //      if(!$regionExists){ return $this->redirect()->toRoute('home'); }
+        $districtId = $regionExists->id;
       }
 
       if($districtSlug == '' && $provinceSlug){
         $regionExists = $province->currentProvince(array('alias' => $provinceSlug));
-  //      if(!$regionExists){ return $this->redirect()->toRoute('home'); }
       }
 
       if(($districtSlug == '' && $provinceSlug == '') || ($districtSlug && $provinceSlug && $nationSlug)){
         $nationSlug = ($nationSlug) ? $nationSlug : 'viet-nam';
         $regionExists = $nation->currentNation(array('alias' => $nationSlug));
-  //      if(!$regionExists){ return $this->redirect()->toRoute('home'); }
       }
-      // Count total post by parent
       $post = new Post();
-//      $countPostByParent = $post->countPostByCategoryParent(array('nation_id' => NATION, 'province_id' => PROVINCE, 'district_id' => DISTRICT));
-  //    $this->viewModel->setVariable('countPost', $countPostByParent);
-  //    $this->viewModel->setVariable('regionExists', $regionExists);
-
-      // set category variable
-  //    $this->viewModel->setVariable('category', $categoryExists);
       // Lấy danh sách bài viết
       $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
-      $dataPost = $post->getPostByCategory();
+     $dataPost = $post->getPostByCategory(array('categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
       $paginator = new Paginator(new paginatorIterator($dataPost));
       $paginator->setCurrentPageNumber($page)
                 ->setItemCountPerPage(ITEM_PAGE)
