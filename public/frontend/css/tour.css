@@ -1478,8 +1478,7 @@ ul.connect li.youtube a:hover {
           right: 0; }
       .list-province-item ul.list-travel li .item p.strict-views {
         font-style: italic;
-        cursor: pointer;
-        margin-top: 10px; }
+        cursor: pointer; }
       .list-province-item ul.list-travel li .item .item-img {
         position: relative; }
         .list-province-item ul.list-travel li .item .item-img .overlay_border {

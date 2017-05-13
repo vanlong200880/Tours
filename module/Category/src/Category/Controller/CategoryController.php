@@ -83,7 +83,7 @@ class CategoryController extends AbstractActionController
     // set category variable
     $this->viewModel->setVariable('category', $categoryExists);
     $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
-    $dataPost = $post->getPostByCategory(array('categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
+    $dataPost = $post->getPostByCategory(array('language' => 'vi','categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
 //    var_dump($dataPost); die;
 //    switch ($slug){
 //      case 'du-lich':

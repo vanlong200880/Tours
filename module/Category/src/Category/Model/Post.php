@@ -5,6 +5,8 @@ use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Db\Sql\Select;
 use Zend\Db\TableGateway\Feature;
 use Zend\Db\Sql\Expression;
+use Category\Model\EntertainmentType;
+use Category\Model\Entertainment;
 class Post extends AbstractTableGateway
 {
 	//Tên bảng
@@ -65,25 +67,54 @@ class Post extends AbstractTableGateway
       }
       $select->where->in('category_id', $arrId);
       if($arrayParam['nationId']){
-        $select->where(array('nation_id' => $arrayParam['nationId']));
+        $select->where(array('post.nation_id' => $arrayParam['nationId']));
       }
       if($arrayParam['provinceId']){
-        $select->where(array('province_id' => $arrayParam['provinceId']));
+        $select->where(array('post.province_id' => $arrayParam['provinceId']));
       }
       if($arrayParam['districtId']){
-        $select->where(array('district_id' => $arrayParam['districtId']));
+        $select->where(array('post.district_id' => $arrayParam['districtId']));
       }
       
       if($arrayParam['categoryType']){
         switch ($arrayParam['categoryType']){
         case 'travel':
-          $totalEntertaiment   = new Select( 'category' );
-          $totalEntertaiment->columns( array( 'total' => new Expression('COUNT(*)') ) );
+          // Lấy tổng trò chơi
+          $entertainmentType = new EntertainmentType();
+          $listEntertainmentType = $entertainmentType->getAllCategoryChildById(2, 'vi');
+          $arrEntertainmentType = array();
+          if($listEntertainmentType){
+            foreach ($listEntertainmentType as $value){
+              array_push($arrEntertainmentType, $value['id']);
+            }
+          }
+          
+          $entertaiment = new Entertainment();
+          $totalEntertaiment = $entertaiment->getAllEntertainmentByListId($arrEntertainmentType);
+//          var_dump($totalEntertaiment); die;
+//          $totalEntertaiment   = new Select( 'category' );
+//          $totalEntertaiment->columns( array( 'total' => new Expression('COUNT(*)') ) );
           $select->columns(
               array(
-                  'id', 'name', 'slug', 'hot', 'new', 'sticky',
-                  'totalEntertaiment' => new \Zend\Db\Sql\Expression( '?', array( $totalEntertaiment ) )
+                  'id', 'name', 'slug', 'hot', 'new', 'sticky', 'address', 'lat', 'lng'
+//                  'totalEntertaiment' => new \Zend\Db\Sql\Expression( '?', array( ($totalEntertaiment)? $totalEntertaiment->total: 0 ) )
                   ));
+          $select->join('travel', 'post.id = travel.post_id', array());
+//          $select->join(
+//                  array(
+//                      'd' => 'entertainment',
+////                      'd.travel_id' => 'travel.id'
+//                      ),
+//                  'd.travel_id = travel.id',
+//                  array('totala' => new Expression('COUNT(*)')),
+//                  Select::SQL_STAR,
+//                  Select::JOIN_RIGHT
+//                  array(),
+//    Select::JOIN_RIGHT
+//                  array('totala' => new Expression('COUNT(*)')), 
+//                  Select::SQL_STAR ,
+//                  Select::JOIN_RIGHT
+//                  );
           break;
         case 'tour':
           break;
@@ -99,6 +130,11 @@ class Post extends AbstractTableGateway
             break;
         }
       }
+      $select->join('nation', 'post.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
+      $select->join('province', 'post.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      $select->join('district', 'post.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      $select->join('ward', 'post.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+      
       $resultSet = $this->selectWith($select);
       $resultSet->buffer()->toArray();
       return $resultSet;
