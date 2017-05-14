@@ -1,12 +1,13 @@
 (function ($) { 
   "use strict";
   var defaults = {
-    url : 'http://localhost/tours/public',
+    url : 'http://gonow.dev',
     categoryType: $("body .list-search").find('#category-type').val(),
     nation: $("body .list-search").find('#nation').val(),
     province: $("body .list-search").find('#province').val(),
     district: $("body .list-search").find('#district').val(),
-    param: window.location.search.substring(1)
+    param: window.location.search.substring(1),
+    keyword: $("body .list-search").find('#tasteKeyword').val(),
   };
   $.fn.callAjaxRegion = function(url, alias, id, idRemove){
     $.ajax({
@@ -28,11 +29,55 @@
       $(id).selectpicker('refresh');
       $(idRemove).selectpicker('refresh');
     });
-  }, 
+  },
+  
+  $.fn.getParamString = function(nation, page, filter, sort, keyword){
+      var urlParam = [];
+      var urlString = '';
+      if(nation){
+        urlParam.push({nation: nation});
+      }
+      if(page){
+        urlParam.push({page: page});
+      }
+      if(filter){
+        urlParam.push({filter: filter});
+      }
+      if(sort){
+        urlParam.push({sort: sort});
+      }
+      if(keyword){
+        urlParam.push({keyword: keyword});
+      }
+      if(urlParam){
+        var count = 1;
+        $.each(urlParam, function (index, value){
+          $.each(value, function (k, v){
+            if(count == urlParam.length){
+              urlString = urlString + k + "=" + v;
+            }
+            else{
+              urlString = urlString + k + "=" + v + '&';
+            }
+            count++;
+          });
+        });
+      }
+      return urlString;
+  }
   $.fn.render = function(){
     $("body").on("change", "#country_id", function(e) {
     });
-    
+    // show form filter
+    $('.filter-adv').css('width', $('body .page-search-title h1').innerWidth());
+    $("body").on('click','#tour-search-button' ,function(){
+      $(".filter-adv").toggleClass('open', 1000);
+      $(this).toggleClass('on', 1000);
+    });
+    $('body').on('click', '.close-filter', function(){
+      $(".filter-adv").toggleClass('open', 1000);
+      $('#tour-search-button').toggleClass('on', 1000);
+    })
     //get data type
     $("body").on("change", "#category-type", function(e) {
       defaults['categoryType'] = $(this).val();
@@ -46,14 +91,52 @@
         }
       }
     });
+    // get keyword
+    $("#tasteKeyword").on('propertychange change keyup paste input', function(e){
+      e.preventDefault();
+      defaults['keyword'] = $(this).val();
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var keyword = defaults['keyword'];
+      var nation = $.fn.getUrlParam('nation');
+      var filter = $.fn.getUrlParam('filter');
+      var sort = $.fn.getUrlParam('sort');
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword);
+      if(defaults['province'] && defaults['district'] ){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'];
+      }
+      if(defaults['province'] && defaults['district'] == '' ){
+        url = url + '/' + defaults['province'];
+      }
+      history.pushState(null, null, url + '?' + urlString);
+    });
+    $('#tasteKeyword').keypress(function(e){
+      if(e.which === 13)
+         $('#tasteKeyword').click();
+   });
     // get nation
     $("body").on('change', '#nation', function(){
       defaults['nation'] = $(this).val();
       $.fn.callAjaxRegion(defaults['url'] + '/province', defaults['nation'], '#province', '#district');
      });
      
+     $("body").on('change', '#district', function(){
+      defaults['district'] = $(this).val();
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      if(defaults['province'] && defaults['district']){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'] + ((defaults['param'])?'?' + defaults['param'] : '');
+      }
+      history.pushState(null, null, url);
+//      $.fn.callAjaxRegion(defaults['url'] + '/district', defaults['province'], '#district', '');
+     });
+     
      $("body").on('change', '#province', function(){
       defaults['province'] = $(this).val();
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      if(defaults['province']){
+        url = url + '/' + defaults['province'] + ((defaults['param'])?'?' + defaults['param'] : '');
+      }
+      history.pushState(null, null, url);
       $.fn.callAjaxRegion(defaults['url'] + '/district', defaults['province'], '#district', '');
      });
      
@@ -95,7 +178,7 @@
   ;
 //  $.fn.callAjaxRegion();
   var page = $.fn.getUrlParam('page');
-  $.fn.loadData('http://localhost/tours/public/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
+  $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
   
   $.fn.render();
 //  var search = {

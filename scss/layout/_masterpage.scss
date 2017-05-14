@@ -1705,3 +1705,90 @@
     }
   }
 }
+.list-container-view{
+  overflow: hidden;
+  .filter-adv{
+    position: absolute;
+    top: -100%;
+    background: $default;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    padding: 10px;
+    @include transition(top 0.3s ease-in-out 0s);
+    ul{
+      li{
+        line-height: 30px;
+        label{
+          color: #FFF;
+          padding-left: 0;
+        }
+        input[type="radio"], 
+        .radio input[type="radio"], 
+        .radio-inline input[type="radio"], 
+        input[type="checkbox"], 
+        .checkbox input[type="checkbox"], 
+        .checkbox-inline input[type="checkbox"] {
+            position: relative;
+            width: 13px;
+            width: 16px \0;
+            height: 13px;
+            height: 16px \0;
+            -webkit-appearance: none;
+            background: white;
+            border: 1px solid #dcdcdc;
+            border: 1px solid transparent \0;
+            border-radius: 1px;
+            outline: none;
+        }
+
+        input[type="checkbox"]:checked::after,
+        input[type="radio"]:checked::after,
+        .radio input[type="radio"]:checked::after,
+        .radio-inline input[type="radio"]:checked::after,
+        .checkbox input[type="checkbox"]:checked::after,
+        .checkbox-inline input[type="checkbox"]:checked::after {
+            position: absolute;
+            top: -6px;
+            left: -5px;
+            display: block;
+            content: url(../../assets/images/checkmark.png);
+            outline: none;
+        }
+      }
+    }
+    .address-search{
+      border-top: 1px solid #5b7698;
+      padding-top: 10px;
+      margin-top: 5px;
+      label{
+        color: #FFF;
+      }
+      .current-address{
+        @include box-shadow(none);
+        outline: none;
+      }
+    }
+    .close-filter{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #FFF;
+      @include border-radius(50%);
+      text-align: center;
+      line-height: 20px;
+      color: $default;
+      cursor: pointer;
+      var{
+        font-size: 8px;
+      }
+    }
+  }
+  .filter-adv.open{
+    top: 0;
+    @include transition(top 0.3s ease-in-out 0s);
+  }
+}
+

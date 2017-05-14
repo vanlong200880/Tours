@@ -2,6 +2,7 @@
         $category->name . ' ' .$regionExists->name
         ); ?>  
 <div class="list-container-view">
+  <?php $this->searchAdvance(); ?>
   <div class="page-search-title">
     <div class="item-title">
       <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>

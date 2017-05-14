@@ -34,6 +34,7 @@ class CategoryController extends AbstractActionController
     $categoryExists = $category->listCategoryBySlug(array('slug' => $slug));
     if($categoryExists){
       define('CATEGORY', $categoryExists->id);
+      define('CATEGORY_TYPE', $categoryExists->type);
     }
     if(!$categoryExists){
       return $this->redirect()->toRoute('home');

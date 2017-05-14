@@ -1,0 +1,54 @@
+<div class="filter-adv">
+    <ul class="row">
+      <?php if($categoryType): ?>
+      <?php switch ($categoryType){
+        case 'travel': ?>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-new" name="filter-news" value="news"> Mới nhất
+          </label>
+        </li>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-sale" name="filter-news" value="hot"> Bán chạy
+          </label>
+        </li>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-hot" name="filter-news" value="option2"> Mới nhất
+          </label>
+          <span></span>
+        </li>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-view" name="filter-news" value="view"> Xem nhiều nhất
+          </label>
+        </li>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-price-desc" name="filter-news" value="price-desc"> Giá giảm dần
+          </label>
+        </li>
+        <li class="col-md-4">
+          <label class="checkbox-inline">
+            <input type="radio" id="filter-price-asc" name="filter-news" value="price-asc"> Giá tăng dần
+          </label>
+        </li>
+          <?php break; ?>
+        <?php case 'tour': ?>
+          <?php break; ?>
+        <?php case 'hotel': ?>
+          <?php break; ?>
+        <?php case 'taste': ?>
+          <?php break; ?>
+      <?php } ?>
+      <?php endif; ?>
+    </ul>
+    <div class="address-search">
+      <label for="current-address">Địa chỉ hiện tại của bạn</label>
+      <input type="text" name="current-address" class="form-control" id="current-address">
+    </div>
+    <div class="close-filter">
+      <var class="icon icon-delete"></var>
+    </div>
+  </div>

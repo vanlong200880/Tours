@@ -288,6 +288,7 @@ return array(
         'invokables'  => array(
           'searchCategory'        => 'Category\Block\searchCategory',
           'headerCategory'        => 'Category\Block\headerCategory',
+          'searchAdvance'        => 'Category\Block\searchAdvance',
         ),
     ),
     'view_manager' => array(
