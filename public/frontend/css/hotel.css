@@ -2857,8 +2857,8 @@ ul.connect li.youtube a:hover {
         height: 13px;
         height: 16px \0;
         -webkit-appearance: none;
-        background: white;
-        border: 1px solid #dcdcdc;
+        background: #fa501e;
+        border: 1px solid #fa501e;
         border: 1px solid transparent \0;
         border-radius: 1px;
         outline: none; }
@@ -2905,6 +2905,17 @@ ul.connect li.youtube a:hover {
       cursor: pointer; }
       .list-container-view .filter-adv .close-filter var {
         font-size: 8px; }
+    .list-container-view .filter-adv h2 {
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      color: #FFF;
+      margin: 5px 0; }
+    .list-container-view .filter-adv .star .star-item span.icon {
+      color: #ffd21f; }
+    .list-container-view .filter-adv .taste-type {
+      border-top: 1px solid #5b7698;
+      padding: 10px 0; }
   .list-container-view .filter-adv.open {
     top: 0;
     transition: top 0.3s ease-in-out 0s;
