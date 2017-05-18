@@ -8,6 +8,13 @@
     district: $("body .list-search").find('#district').val(),
     param: window.location.search.substring(1),
     keyword: $("body .list-search").find('#tasteKeyword').val(),
+    filterType: $("body .filter-adv input.filter-param").val(),
+    sortType: $("body .filter-adv input.filter-param").attr('data-sort'),
+    starType: $("body .filter-adv input.filter-star").val(),
+    minValue: $("body .filter-adv input.filter-star").attr('data-min'),
+    maxValue: $("body .filter-adv input.filter-star").attr('data-min'),
+    nationType: $("body .filter-adv input.filter-nation").val(),
+    locationType: $("body .filter-adv input.filter-location").val(),
   };
   $.fn.callAjaxRegion = function(url, alias, id, idRemove){
     $.ajax({
@@ -31,7 +38,7 @@
     });
   },
   
-  $.fn.getParamString = function(nation, page, filter, sort, keyword){
+  $.fn.getParamString = function(nation, page, filter, sort, keyword,starType, minValue, maxValue ,nationType, locationType ){
       var urlParam = [];
       var urlString = '';
       if(nation){
@@ -48,6 +55,21 @@
       }
       if(keyword){
         urlParam.push({keyword: keyword});
+      }
+      if(starType){
+        urlParam.push({star: starType});
+      }
+      if(minValue){
+        urlParam.push({min: minValue});
+      }
+      if(maxValue){
+        urlParam.push({max: maxValue});
+      }
+      if(nationType){
+        urlParam.push({nationType: nationType});
+      }
+      if(locationType){
+        urlParam.push({location: locationType});
       }
       if(urlParam){
         var count = 1;
@@ -96,12 +118,14 @@
       e.preventDefault();
       defaults['keyword'] = $(this).val();
       var url = defaults['url'] + '/' + defaults['categoryType'] ;
-      var keyword = defaults['keyword'];
+      defaults['starType'] = $.fn.getUrlParam('star');
+      defaults['minValue'] = $.fn.getUrlParam('min');
+      defaults['maxValue'] = $.fn.getUrlParam('max');
       var nation = $.fn.getUrlParam('nation');
       var filter = $.fn.getUrlParam('filter');
       var sort = $.fn.getUrlParam('sort');
       var page = $.fn.getUrlParam('page');
-      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword);
+      var urlString = $.fn.getParamString(nation,page,filter, sort, defaults['keyword'], defaults['starType'], defaults['minValue'], defaults['maxValue']);
       if(defaults['province'] && defaults['district'] ){
         url = url + '/' + defaults['province'] + '/' + defaults['district'];
       }
@@ -149,6 +173,74 @@
         e.preventDefault();
       }
       
+    });
+    
+    // filter param
+    $("body .filter-adv").on('click', 'input[name=filter-param]', function(){
+      defaults['filterType'] = $(this).val();
+      defaults['sortType'] = $(this).attr('data-sort');
+      defaults['starType'] = $.fn.getUrlParam('star');
+      defaults['minValue'] = $.fn.getUrlParam('min');
+      defaults['maxValue'] = $.fn.getUrlParam('max');
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var keyword = $.fn.getUrlParam('keyword');
+      var nation = defaults['nation'];
+      var filter = defaults['filterType'];
+      var sort = defaults['sortType'];
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue']);
+      if(defaults['province'] && defaults['district'] ){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'];
+      }
+      if(defaults['province'] && defaults['district'] == '' ){
+        url = url + '/' + defaults['province'];
+      }
+      history.pushState(null, null, url + '?' + urlString);
+    });
+    
+    // filter star
+    $("body .filter-adv").on('click', 'input[name=filter-star]', function(){
+      defaults['filterType'] = $.fn.getUrlParam('filter');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
+      defaults['starType'] = $(this).val();
+      defaults['minValue'] = $.fn.getUrlParam('min');
+      defaults['maxValue'] = $.fn.getUrlParam('max');
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var keyword = $.fn.getUrlParam('keyword');
+      var nation = defaults['nation'];
+      var filter = defaults['filterType'];
+      var sort = defaults['sortType'];
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue'] );
+      if(defaults['province'] && defaults['district'] ){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'];
+      }
+      if(defaults['province'] && defaults['district'] == '' ){
+        url = url + '/' + defaults['province'];
+      }
+      history.pushState(null, null, url + '?' + urlString);
+    });
+    
+    $("body .filter-adv").on('click', 'input[name=filter-price]', function(){
+      defaults['filterType'] = $.fn.getUrlParam('filter');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
+      defaults['starType'] = $.fn.getUrlParam('star');
+      defaults['minValue'] = $(this).attr('data-min');
+      defaults['maxValue'] = $(this).attr('data-max');
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var keyword = $.fn.getUrlParam('keyword');
+      var nation = defaults['nation'];
+      var filter = defaults['filterType'];
+      var sort = defaults['sortType'];
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue']);
+      if(defaults['province'] && defaults['district'] ){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'];
+      }
+      if(defaults['province'] && defaults['district'] == '' ){
+        url = url + '/' + defaults['province'];
+      }
+      history.pushState(null, null, url + '?' + urlString);
     });
   },
   $.fn.loadData = function(url, id, category, nation, province, district, page){

@@ -6,27 +6,17 @@
         <ul class="row">
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-new" name="filter-news" value="news"> Mới nhất
+              <input type="radio" id="filter-new" name="filter-param" value="news"> Mới nhất
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-sale" name="filter-news" value="hot"> Bán chạy
+              <input type="radio" id="filter-sale" name="filter-param" value="hot"> Bán chạy
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-view" name="filter-news" value="view"> Xem nhiều nhất
-            </label>
-          </li>
-          <li class="col-md-4">
-            <label class="checkbox-inline">
-              <input type="radio" id="filter-price-desc" name="filter-news" value="price-desc"> Giá giảm dần
-            </label>
-          </li>
-          <li class="col-md-4">
-            <label class="checkbox-inline">
-              <input type="radio" id="filter-price-asc" name="filter-news" value="price-asc"> Giá tăng dần
+              <input type="radio" id="filter-view" name="filter-param" value="view"> Xem nhiều nhất
             </label>
           </li>
         </ul>
@@ -35,32 +25,32 @@
         <ul class="row">
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-new" name="filter-news" value="news"> Mới nhất
+              <input type="radio" id="filter-new" name="filter-param" value="news"> Mới nhất
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-sale" name="filter-news" value="hot"> Bán chạy
+              <input type="radio" id="filter-sale" name="filter-param" value="hot"> Bán chạy
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-view" name="filter-news" value="view"> Xem nhiều nhất
+              <input type="radio" id="filter-view" name="filter-param" value="view"> Xem nhiều nhất
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-price-asc" name="filter-news" value="price-asc"> Khuyến mãi
+              <input type="radio" id="filter-price-asc" name="filter-param" value="sale"> Khuyến mãi
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-price-desc" name="filter-news" value="price-desc"> Giá giảm dần
+              <input type="radio" id="filter-price-desc" name="filter-param" data-sort="asc" value="price"> Giá giảm dần
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-price-asc" name="filter-news" value="price-asc"> Giá tăng dần
+              <input type="radio" id="filter-price-asc" name="filter-param" data-sort="desc" value="price"> Giá tăng dần
             </label>
           </li>
         </ul>
@@ -119,33 +109,33 @@
                   <h2>Theo mức giá</h2>
                   <div class="betw-item">
                     <label class="checkbox-inline">
-                      <input type="radio" id="filter-max-1" name="filter-news" value="">
+                      <input type="radio" id="filter-max-1" data-max="1000000" name="filter-price" value="">
                       Dưới 1.000.000
                     </label>
                   </div>
                   <div class="betw-item">
                     <label class="checkbox-inline">
-                      <input type="radio" id="filter-max-3" name="filter-news" value="">
+                      <input type="radio" id="filter-max-3" data-min="1000000" data-max="3000000" name="filter-price" value="">
                       1.000.000 - 3.000.000
                     </label>
                   </div>
                   <div class="betw-item">
                     <label class="checkbox-inline">
-                      <input type="radio" id="filter-max-5" name="filter-news" value="">
+                      <input type="radio" id="filter-max-5" data-min="3000000" data-max="5000000" name="filter-price" value="">
                       3.000.000 - 5.000.000
                     </label>
                   </div>
                   
                   <div class="betw-item">
                     <label class="checkbox-inline">
-                      <input type="radio" id="filter-max-7" name="filter-news" value="">
+                      <input type="radio" id="filter-max-7" data-min="5000000" data-max="7000000" name="filter-price" value="">
                       5.000.000 - 7.000.000
                     </label>
                   </div>
                   
                   <div class="betw-item">
                     <label class="checkbox-inline">
-                      <input type="radio" id="filter-min-7" name="filter-news" value="">
+                      <input type="radio" id="filter-min-7" data-min="7000000" name="filter-price" value="">
                       Trên 7.000.000
                     </label>
                   </div>
@@ -155,32 +145,32 @@
                 <h2>Khác</h2>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-nation" name="filter-news" value="viet-nam"> Trong nước
+                    <input type="radio" id="filter-nation" name="filter-nation" value="viet-nam"> Trong nước
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-location" name="filter-news" value="nuoc-ngoai"> Nước ngoài
+                    <input type="radio" id="filter-location" name="filter-nation" value="nuoc-ngoai"> Nước ngoài
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-new" name="filter-hotel" value="news"> Mới nhất
+                    <input type="radio" id="filter-new" name="filter-param" value="news"> Mới nhất
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-sale" name="filter-hotel" value="hot"> Bán chạy
+                    <input type="radio" id="filter-sale" name="filter-param" value="hot"> Bán chạy
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-hotel" value="view"> Xem nhiều nhất
+                    <input type="radio" id="filter-view" name="filter-param" value="view"> Xem nhiều nhất
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-sale-asc" name="filter-hotel" value="price-asc"> Khuyến mãi
+                    <input type="radio" id="filter-sale-asc" name="filter-param" value="sale"> Khuyến mãi
                   </label>
                 </div>
               </div>
@@ -192,17 +182,17 @@
         <ul class="row">
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-new" name="filter-news" value="news"> Mới nhất
+              <input type="radio" id="filter-new" name="filter-param" value="news"> Mới nhất
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-sale" name="filter-news" value="hot"> Bán chạy
+              <input type="radio" id="filter-sale" name="filter-param" value="hot"> Bán chạy
             </label>
           </li>
           <li class="col-md-4">
             <label class="checkbox-inline">
-              <input type="radio" id="filter-view" name="filter-news" value="view"> Xem nhiều nhất
+              <input type="radio" id="filter-view" name="filter-param" value="view"> Xem nhiều nhất
             </label>
           </li>
           
@@ -212,154 +202,154 @@
               <div class="row">
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Miền Bắc
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Miền Bắc
                   </label>
                 </div>
                 
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Miền Trung
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Miền Trung
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Trung Hoa
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Trung Hoa
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Miền Nam
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Miền Nam
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Singapore
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Singapore
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Malaysia
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Malaysia
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Tây Nguyên
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Tây Nguyên
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Indonesia
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Indonesia
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Thụy sĩ
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Thụy sĩ
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Mỹ
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Mỹ
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Hàn Quốc
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Hàn Quốc
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Nhật Bản
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Nhật Bản
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Đức
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Đức
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Pháp
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Pháp
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Ý
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Ý
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Thái Lan
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Thái Lan
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Ấn Độ
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Ấn Độ
                   </label>
                 </div>
                 
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Đài Loan
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Đài Loan
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Bánh Pizza
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Bánh Pizza
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Argentina
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Argentina
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Philippines
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Philippines
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Tiệp (Séc)
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Tiệp (Séc)
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Thổ Nhĩ Kỳ
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Thổ Nhĩ Kỳ
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Ả Rập
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Ả Rập
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Canada
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Canada
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Mexico
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Mexico
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Campuchia
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Campuchia
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Tây Ban Nha
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Tây Ban Nha
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Brazil
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Brazil
                   </label>
                 </div>
                 <div class="col-md-3">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-view" name="filter-taste" value=""> Iran
+                    <input type="radio" id="filter-view" name="filter-location" value=""> Iran
                   </label>
                 </div>
               </div>
