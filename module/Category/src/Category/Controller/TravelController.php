@@ -4,6 +4,9 @@ namespace Category\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
+use Category\Model\Post;
+use Zend\Session\Container;
+use Category\Util\MapGeoCode;
 
 class TravelController extends AbstractActionController
 {
@@ -13,6 +16,7 @@ class TravelController extends AbstractActionController
 //    }
     public function viewAction(){
       $htmlViewPart = new ViewModel();
+      
       $htmlViewPart->setTemplate('travel/popup-view')
                    ->setTerminal(true)
                    ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
@@ -31,17 +35,61 @@ class TravelController extends AbstractActionController
     }
     
     public function mapAction(){
-      $htmlViewPart = new ViewModel();
-      $htmlViewPart->setTemplate('travel/popup-map')
-                   ->setTerminal(true)
-                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+      if($this->getRequest()->isXmlHttpRequest()){
+        $category = new Post();
+        $id = $this->params()->fromPost('id');
+        $post = $category->getPostById(array('id' => $id));
+        $fromLatitude = '';
+        $fromLongitude = '';
+        $toLatitude = '';
+        $toLongitude = '';
+        $message = '';
+        // get address from ip
+        $address = $this->params()->fromPost('address');
+        $session = new Container('currentAddress');
+        $session->address = $address;
+        if($address){
+          $geoCode = new MapGeoCode();
+          $geoAddress = $geoCode->geocode($address);
+          if($geoAddress){
+            $fromLatitude = $geoAddress[0];
+            $fromLongitude = $geoAddress[1];
+          }
+        }
 
-      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+        if($fromLatitude == '' || $fromLongitude == '' || $toLatitude == '' || $toLongitude == ''){
+          $message = 'Rất tiếc! Chúng tôi không tìm thấy địa chỉ của bạn trên google map.';
+        }
+        if($post){
+          $toLatitude = $post->lat;
+          $toLongitude = $post->lng;
+        }
+        $htmlViewPart = new ViewModel();
+        $htmlViewPart->setTemplate('travel/popup-map')
+                     ->setTerminal(true)
+                     ->setVariables([
+                        'post' => $post,
+                        'fromLatitude' => $fromLatitude,
+                        'fromLongitude' => $fromLongitude,
+                        'toLatitude' => $toLatitude,
+                        'toLongitude' => $toLongitude,
+                             ]);
 
-      $jsonModel = new JsonModel();
-      $jsonModel->setVariables(['html' => $htmlOutput]);
+        $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+        $jsonModel = new JsonModel();
+        $jsonModel->setVariables([
+            'html' => $htmlOutput, 
+            'fromLatitude' => $fromLatitude,
+            'fromLongitude' => $fromLongitude,
+            'toLatitude' => $toLatitude,
+            'toLongitude' => $toLongitude,
+            'message' => $message
+                ]);
 
-      return $jsonModel;
+        return $jsonModel;
+      }else{
+        die('Forbidden access');
+      }
     }
     public function viewGalleryAction(){
       $htmlViewPart = new ViewModel();

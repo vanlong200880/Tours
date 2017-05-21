@@ -164,41 +164,41 @@
             });
 
             // view map
-            $(".list-province-item ul > li").on('click','.strict-views', function(){
-              var current = $("#current-map").val();
-              var id = 'abc';
-              var url = 'http://localhost/tours/public/view-map';
-              $.ajax({
-                  url : url,
-                  type : 'POST',
-                  dataType : "json",
-                  data: {id: id},
-                  beforeSend: function(){
-                    $(".views-popup").addClass('view');
-                    $(".views-popup").append('<div class="loading"></div>');
-                  },
-                  success : function (data){
-                    $( ".loading" ).remove();
-                    $(".views-popup .views-container").empty().append(data.html);
-                    var pyrmont = {lat: -33.867, lng: 151.195};
-                    // view google map
-                    map = new google.maps.Map(document.getElementById('view-map'), {
-                      center: pyrmont,
-                      zoom: 15
-                    });
-
-                    infowindow = new google.maps.InfoWindow();
-                    var service = new google.maps.places.PlacesService(map);
-                    service.nearbySearch({
-                      location: pyrmont,
-                      radius: 500,
-                      type: ['store']
-                    }, callback);
-                    // view map popup
-                    $(".views-popup .views-container").addClass('open');
-                  }
-                });
-            });
+//            $(".list-province-item ul > li").on('click','.strict-views', function(){
+//              var current = $("#current-map").val();
+//              var id = 'abc';
+//              var url = 'http://localhost/tours/public/view-map';
+//              $.ajax({
+//                  url : url,
+//                  type : 'POST',
+//                  dataType : "json",
+//                  data: {id: id},
+//                  beforeSend: function(){
+//                    $(".views-popup").addClass('view');
+//                    $(".views-popup").append('<div class="loading"></div>');
+//                  },
+//                  success : function (data){
+//                    $( ".loading" ).remove();
+//                    $(".views-popup .views-container").empty().append(data.html);
+//                    var pyrmont = {lat: -33.867, lng: 151.195};
+//                    // view google map
+//                    map = new google.maps.Map(document.getElementById('view-map'), {
+//                      center: pyrmont,
+//                      zoom: 15
+//                    });
+//
+//                    infowindow = new google.maps.InfoWindow();
+//                    var service = new google.maps.places.PlacesService(map);
+//                    service.nearbySearch({
+//                      location: pyrmont,
+//                      radius: 500,
+//                      type: ['store']
+//                    }, callback);
+//                    // view map popup
+//                    $(".views-popup .views-container").addClass('open');
+//                  }
+//                });
+//            });
 
 
             // show detail gallery

@@ -29,6 +29,22 @@ class CategoryController extends AbstractActionController
     $page = $this->params()->fromQuery('page',1);
     $provinceSlug = $this->params()->fromRoute('province');
     $districtSlug = $this->params()->fromRoute('district');
+    $filter = $this->params()->fromQuery('filter');
+    $star = $this->params()->fromQuery('star');
+    $sort = $this->params()->fromPost('sort');
+    $min = $this->params()->fromQuery('min');
+    $max = $this->params()->fromQuery('max');
+    $area = $this->params()->fromQuery('area');
+    $keyword = $this->params()->fromQuery('keyword');
+    
+    define('FILTER', $filter);
+    define('STAR', $star);
+    define('MIN', $min);
+    define('MAX', $max);
+    define('AREA', $area);
+    define('KEYWORD', $keyword);
+    define('SORT', $keyword);
+    
     // Check category exists
     $category = new category();
     $categoryExists = $category->listCategoryBySlug(array('slug' => $slug));
@@ -84,7 +100,7 @@ class CategoryController extends AbstractActionController
     // set category variable
     $this->viewModel->setVariable('category', $categoryExists);
     $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
-    $dataPost = $post->getPostByCategory(array('language' => 'vi','categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
+//    $dataPost = $post->getPostByCategory(array('language' => 'vi','categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
 //    var_dump($dataPost); die;
 //    switch ($slug){
 //      case 'du-lich':
@@ -135,6 +151,20 @@ class CategoryController extends AbstractActionController
       $provinceSlug = $this->params()->fromPost('province');
       $districtSlug = $this->params()->fromPost('district');
       $page = $this->params()->fromPost('page', 1);
+      $filter = $this->params()->fromPost('filter');
+      $sort = $this->params()->fromPost('sort');
+      $star = $this->params()->fromPost('star');
+      $min = $this->params()->fromPost('min');
+      $max = $this->params()->fromPost('max');
+      $area = $this->params()->fromPost('area');
+      $keyword = $this->params()->fromPost('keyword');
+
+//      define('FILTER', $filter);
+//      define('STAR', $star);
+//      define('MIN', $min);
+//      define('MAX', $max);
+//      define('AREA', $area);
+//      define('KEYWORD', $keyword);
       // Check category exists
       $category = new category();
       $categoryExists = $category->listCategoryBySlug(array('slug' => $slug));
@@ -173,7 +203,21 @@ class CategoryController extends AbstractActionController
       $post = new Post();
       // Lấy danh sách bài viết
       $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
-     $dataPost = $post->getPostByCategory(array('categoryType' => $categoryExists->type,'CategoryIdCurrent' => $categoryExists->id,'categoryId' => $listIdCatgory,'nationId' => 1, 'provinceId' => 1, 'districtId' => 1));
+     $dataPost = $post->getPostByCategory(array(
+         'categoryType' => $categoryExists->type,
+         'CategoryIdCurrent' => $categoryExists->id,
+         'categoryId' => $listIdCatgory,
+         'nationId' => 1, 
+         'provinceId' => 1, 
+         'districtId' => 1,
+         'filter' => $filter,
+         'sort' => $sort,
+         'star' => $star,
+         'min' => $min,
+         'max' => $max,
+         'area' => $area,
+         'keyword' => $keyword
+         ));
       $paginator = new Paginator(new paginatorIterator($dataPost));
       $paginator->setCurrentPageNumber($page)
                 ->setItemCountPerPage(ITEM_PAGE)
@@ -181,7 +225,21 @@ class CategoryController extends AbstractActionController
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('travel/load-data-travel')
                    ->setTerminal(true)
-                   ->setVariables(['province' => $provinceSlug, 'district' => $districtSlug, 'nation' => $nationSlug,'page' => $page,'paginator' => $paginator,'regionExists' => $regionExists,'category' => $categoryExists]);
+                   ->setVariables([
+                       'filter' => $filter,
+                       'min' => $min,
+                       'max' => $max,
+                       'area' => $area,
+                       'sort' => $sort,
+                       'keyword' => $keyword,
+                       'star' => $star,
+                       'province' => $provinceSlug, 
+                       'district' => $districtSlug, 
+                       'nation' => $nationSlug,
+                       'page' => $page,
+                       'paginator' => $paginator,
+                       'regionExists' => $regionExists,
+                       'category' => $categoryExists]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       $jsonModel = new JsonModel();
       $jsonModel->setVariables(['html' => $htmlOutput]);

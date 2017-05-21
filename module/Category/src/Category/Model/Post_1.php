@@ -79,19 +79,42 @@ class Post extends AbstractTableGateway
       if($arrayParam['categoryType']){
         switch ($arrayParam['categoryType']){
         case 'travel':
+          // Lấy tổng trò chơi
+          $entertainmentType = new EntertainmentType();
+          $listEntertainmentType = $entertainmentType->getAllCategoryChildById(2, 'vi');
+          $arrEntertainmentType = array();
+          if($listEntertainmentType){
+            foreach ($listEntertainmentType as $value){
+              array_push($arrEntertainmentType, $value['id']);
+            }
+          }
+          
+          $entertaiment = new Entertainment();
+          $totalEntertaiment = $entertaiment->getAllEntertainmentByListId($arrEntertainmentType);
+//          var_dump($totalEntertaiment); die;
+//          $totalEntertaiment   = new Select( 'category' );
+//          $totalEntertaiment->columns( array( 'total' => new Expression('COUNT(*)') ) );
           $select->columns(
-              array('id', 'name', 'slug', 'hot', 'new', 'sticky', 'address', 'lat', 'lng', 'menu_order'));
-          if($arrayParam['filter'] == 'news'){
-            $select->order('new ASC');
-          }
-          if($arrayParam['filter'] == 'hot'){
-            $select->order('hot ASC');
-          }
-          if($arrayParam['filter'] == 'view'){
-            $select->order('view DESC');
-          }
-          $select->order('menu_order ASC');
-          $select->order('publish_date DESC');
+              array(
+                  'id', 'name', 'slug', 'hot', 'new', 'sticky', 'address', 'lat', 'lng'
+//                  'totalEntertaiment' => new \Zend\Db\Sql\Expression( '?', array( ($totalEntertaiment)? $totalEntertaiment->total: 0 ) )
+                  ));
+          $select->join('travel', 'post.id = travel.post_id', array());
+//          $select->join(
+//                  array(
+//                      'd' => 'entertainment',
+////                      'd.travel_id' => 'travel.id'
+//                      ),
+//                  'd.travel_id = travel.id',
+//                  array('totala' => new Expression('COUNT(*)')),
+//                  Select::SQL_STAR,
+//                  Select::JOIN_RIGHT
+//                  array(),
+//    Select::JOIN_RIGHT
+//                  array('totala' => new Expression('COUNT(*)')), 
+//                  Select::SQL_STAR ,
+//                  Select::JOIN_RIGHT
+//                  );
           break;
         case 'tour':
           break;
@@ -114,22 +137,6 @@ class Post extends AbstractTableGateway
       
       $resultSet = $this->selectWith($select);
       $resultSet->buffer()->toArray();
-      return $resultSet;
-   }
-   
-   public function getPostById($arrayParam = null)
-   {
-      $select = new Select();
-      $select->from($this->table);
-      $select->columns(array('name', 'lng', 'lat'))
-              ->join('category', 'category.id = post.category_id', array('type'))
-              ->where(array('status_id' => 1, 'post.id' => $arrayParam['id']));
-      $select->join('nation', 'post.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
-      $select->join('province', 'post.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
-      $select->join('district', 'post.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
-      $select->join('ward', 'post.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
-      $resultSet = $this->selectWith($select);
-      $resultSet = $resultSet->current();
       return $resultSet;
    }
 }   

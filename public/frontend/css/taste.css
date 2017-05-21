@@ -2367,6 +2367,14 @@ ul.connect li.youtube a:hover {
         -ms-box-shadow: none;
         -o-box-shadow: none;
         outline: none; }
+      .list-container-view .filter-adv .address-search .error {
+        border-color: red;
+        color: red; }
+      .list-container-view .filter-adv .address-search .has-error {
+        color: red;
+        display: inline-block;
+        width: 100%;
+        padding-top: 10px; }
     .list-container-view .filter-adv .close-filter {
       width: 20px;
       height: 20px;

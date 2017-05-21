@@ -1,17 +1,26 @@
-<div class="views-header">
-  <div class="row">
-    <div class="col-md-10">
-      <h2><span class="icon icon-location"></span> Hướng dẫn đường đến đầm sem</h2>
-    </div>
-    <div class="col-md-2">
-      <div class="views-close pull-right">
-        <span class="icon icon-cancel-music"></span>
+<?php
+  if($post): ?>
+  <div class="views-header">
+    <div class="row">
+      <div class="col-md-10">
+        <h2><span class="icon icon-location"></span> Hướng dẫn đường đi: <?php echo $post->name; ?></h2>
+      </div>
+      <div class="col-md-2">
+        <div class="views-close pull-right">
+          <span class="icon icon-cancel-music"></span>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="views-content">
-  <div class="views-content-wp map">
-    <div id="view-map" style="width: 100%;height: 100%;"></div>
+  <div class="views-content">
+    <div class="views-content-wp map">
+      
+      <div id="view-map" style="width: 100%;height: 100%;">
+        <?php if($fromLatitude == '' || $fromLongitude  == '' ||  $toLatitude == '' || $toLongitude == ''): ?>
+        <div class="data-empty"><span>Rất tiếc! Chúng tôi không tìm thấy địa chỉ của bạn trên Google Map. Bạn vui lòng kiểm tra lại !!!</span></div>
+      <?php endif; ?>
+      </div>
+      
+    </div>
   </div>
-</div>
+  <?php endif; ?>

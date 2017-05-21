@@ -12,7 +12,7 @@
                 </div>
               </div>
               <div class="col-md-7">
-                <h2><a href="javascript:void(0);" title="dam sen"><?php echo $value->name; ?></a></h2>
+                <h2><a href="javascript:void(0);" title="dam sen"><?php echo $value->name; ?> - <?php echo $value->new; ?></a></h2>
                 <p class="address">
                   <?php echo $value->address; ?>, 
                   <?php echo $value->ward_type; ?>  <?php echo $value->ward_name; ?>, 
@@ -27,7 +27,7 @@
                     <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
                     <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
                     <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                    <li><p class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p></li>
+                    <li><p data-id="<?php echo $value->id; ?>" class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p></li>
                   </ul>
                   <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
                 </div>
@@ -45,7 +45,14 @@
                 'province' => $province,
                 'district' => $district,
                 'nation' => $nation,
-                'page' => $page
+                'page' => $page,
+                'filter' => $filter,
+                'sort' => $sort,
+                'star' => $star,
+                'min' => $min,
+                'max' => $max,
+                'area' => $area,
+                'keyword' => $keyword
             ));
             ?>
         </div>

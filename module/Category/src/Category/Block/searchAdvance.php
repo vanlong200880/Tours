@@ -5,10 +5,12 @@ use Category\Model\Category;
 use Category\Model\Nation;
 use Category\Model\Province;
 use Category\Model\District;
+use Zend\Session\Container;
 class searchAdvance extends AbstractHelper
 {    
   public function __invoke() {
-    $data = $this->view->partial('block/searchAdvance/searchAdvance.phtml', array('categoryType' => CATEGORY_TYPE));
+    $session = new Container('currentAddress');
+    $data = $this->view->partial('block/searchAdvance/searchAdvance.phtml', array('currentAddress' => $session->address,'categoryType' => CATEGORY_TYPE));
     echo $data;
   }
 }

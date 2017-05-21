@@ -6,7 +6,14 @@ if($this->pageCount > 1){ ?>
         "province" => $province,
         "nation" => $nation,
         "district" => $district,
-        "page" => $page
+        "page" => $page,
+        'filter' => $filter,
+        'star' => $star,
+        'sort' => $sort,
+        'min' => $min,
+        'max' => $max,
+        'area' => $area,
+        'keyword' => $keyword
 //        "order" => $this->order,
 //        "category" => $this->category,
 //        'slug' => $this->slug,
@@ -19,12 +26,47 @@ if($this->pageCount > 1){ ?>
       $url = $this->url('category', array('category' => $category, 'province' => $urlParams['province']));;
     }
     if($urlParams['province'] == '' && $urlParams['district'] == ''){
-      $url = $this->url('category', array('category' => $category));;
+      $url = $this->url('category', array('category' => $category));
     }
-    if(!empty($this->param)){
-      $paramRoute = "?".$this->param;
-    }else{
-      $paramRoute = '';
+    
+    $arrString = array();
+    if($urlParams['nation']){
+      $arrString['nation'] = $urlParams['nation'];
+    }
+    if($urlParams['filter']){
+      $arrString['filter'] = $urlParams['filter'];
+    }
+    if($urlParams['sort']){
+      $arrString['sort'] = $urlParams['sort'];
+    }
+    if($urlParams['star']){
+      $arrString['star'] = $urlParams['star'];
+    }
+    if($urlParams['min']){
+      $arrString['min'] = $urlParams['min'];
+    }
+    if($urlParams['max']){
+      $arrString['max'] = $urlParams['max'];
+    }
+    if($urlParams['area']){
+      $arrString['area'] = $urlParams['area'];
+    }
+    if($urlParams['keyword']){
+      $arrString['keyword'] = $urlParams['keyword'];
+    }
+    $paramString = '';
+    if($arrString){
+      $totalParam = count($arrString);
+      $i = 1;
+      foreach ($arrString as $key => $value){
+        
+        if($i === $totalParam){
+          $paramString .= $key .'='.$value;
+        }else{
+          $paramString .= $key .'='.$value.'&';
+        }
+        $i++;
+      }
     }
     ?>
     <ul class="pagination">
@@ -34,12 +76,12 @@ if($this->pageCount > 1){ ?>
         <?php if ($this->current != 1) { 
           $urlParams['page'] = $this->first;
           ?>
-                <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->first ?>">Trang đầu</a></li>
+                <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->first ?>&<?php echo $paramString; ?>">Trang đầu</a></li>
         <?php } ?>
                 
         <?php $urlParams["page"] = $this->previous; ?>
         <?php if($this->current != $this->previous){ ?>
-        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->previous ?>">
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->previous ?>&<?php echo $paramString; ?>">
                 Lùi lại
             </a>
         </li>
@@ -54,7 +96,7 @@ if($this->pageCount > 1){ ?>
         </li>
         <?php else: ?>
         <li>
-            <a data-page="<?php echo $page; ?>" href="<?php echo $url ; ?>?page=<?php echo $page ?>">
+            <a data-page="<?php echo $page; ?>" href="<?php echo $url ; ?>?page=<?php echo $page ?>&<?php echo $paramString; ?>">
                 <?php echo $page; ?>
             </a>
         </li>
@@ -67,7 +109,7 @@ if($this->pageCount > 1){ ?>
           $urlParams["page"] = $this->next;
           ?>
         <li>
-            <a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->next ?>">
+            <a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->next ?>&<?php echo $paramString; ?>">
                 Trang kế
             </a>
         </li>
@@ -75,7 +117,7 @@ if($this->pageCount > 1){ ?>
         <?php if ($this->current != $this->last) { 
           $urlParams["page"] = $this->last;
           ?>
-        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->last ?>" title="Trang Cuối">Trang cuối</a></li>
+        <li><a data-page="<?php echo $urlParams['page']; ?>" href="<?php echo $url ; ?>?page=<?php echo $this->last ?>&<?php echo $paramString; ?>" title="Trang Cuối">Trang cuối</a></li>
         <?php } ?> 
     </ul>
 <?php } ?>  

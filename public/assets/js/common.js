@@ -15,6 +15,7 @@
     maxValue: $("body .filter-adv input.filter-star").attr('data-min'),
     nationType: $("body .filter-adv input.filter-nation").val(),
     locationType: $("body .filter-adv input.filter-location").val(),
+    area: $("body .filter-adv input.filter-area").val()
   };
   $.fn.callAjaxRegion = function(url, alias, id, idRemove){
     $.ajax({
@@ -38,23 +39,21 @@
     });
   },
   
-  $.fn.getParamString = function(nation, page, filter, sort, keyword,starType, minValue, maxValue ,nationType, locationType ){
+  $.fn.getParamString = function(page, nation, filter, sort,starType, minValue, maxValue , area, keyword){
       var urlParam = [];
       var urlString = '';
-      if(nation){
-        urlParam.push({nation: nation});
-      }
       if(page){
         urlParam.push({page: page});
       }
+      if(nation){
+        urlParam.push({nation: nation});
+      }
+      
       if(filter){
         urlParam.push({filter: filter});
       }
       if(sort){
         urlParam.push({sort: sort});
-      }
-      if(keyword){
-        urlParam.push({keyword: keyword});
       }
       if(starType){
         urlParam.push({star: starType});
@@ -65,11 +64,11 @@
       if(maxValue){
         urlParam.push({max: maxValue});
       }
-      if(nationType){
-        urlParam.push({nationType: nationType});
+      if(area){
+        urlParam.push({area: area});
       }
-      if(locationType){
-        urlParam.push({location: locationType});
+      if(keyword){
+        urlParam.push({keyword: keyword});
       }
       if(urlParam){
         var count = 1;
@@ -116,16 +115,16 @@
     // get keyword
     $("#tasteKeyword").on('propertychange change keyup paste input', function(e){
       e.preventDefault();
-      defaults['keyword'] = $(this).val();
-      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      defaults['keyword']  = $(this).val();
+      defaults['filterType'] = $.fn.getUrlParam('filter');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
       defaults['starType'] = $.fn.getUrlParam('star');
       defaults['minValue'] = $.fn.getUrlParam('min');
       defaults['maxValue'] = $.fn.getUrlParam('max');
-      var nation = $.fn.getUrlParam('nation');
-      var filter = $.fn.getUrlParam('filter');
-      var sort = $.fn.getUrlParam('sort');
+      defaults['area'] = $.fn.getUrlParam('area');
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
       var page = $.fn.getUrlParam('page');
-      var urlString = $.fn.getParamString(nation,page,filter, sort, defaults['keyword'], defaults['starType'], defaults['minValue'], defaults['maxValue']);
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
       if(defaults['province'] && defaults['district'] ){
         url = url + '/' + defaults['province'] + '/' + defaults['district'];
       }
@@ -140,8 +139,21 @@
    });
     // get nation
     $("body").on('change', '#nation', function(){
+      defaults['keyword']  = $.fn.getUrlParam('keyword');
+      defaults['filterType'] = $.fn.getUrlParam('filter');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
+      defaults['starType'] = $.fn.getUrlParam('star');
+      defaults['minValue'] = $.fn.getUrlParam('min');
+      defaults['maxValue'] = $.fn.getUrlParam('max');
+      defaults['area'] = $.fn.getUrlParam('area');
       defaults['nation'] = $(this).val();
       $.fn.callAjaxRegion(defaults['url'] + '/province', defaults['nation'], '#province', '#district');
+      defaults['province'] = $("body .list-search").find('#province').val();
+      console.log($("body .list-search").find('#province').val());
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
+      history.pushState(null, null, url + '?' + urlString);
      });
      
      $("body").on('change', '#district', function(){
@@ -151,7 +163,6 @@
         url = url + '/' + defaults['province'] + '/' + defaults['district'] + ((defaults['param'])?'?' + defaults['param'] : '');
       }
       history.pushState(null, null, url);
-//      $.fn.callAjaxRegion(defaults['url'] + '/district', defaults['province'], '#district', '');
      });
      
      $("body").on('change', '#province', function(){
@@ -177,18 +188,16 @@
     
     // filter param
     $("body .filter-adv").on('click', 'input[name=filter-param]', function(){
+      defaults['keyword']  = $.fn.getUrlParam('keyword');
       defaults['filterType'] = $(this).val();
-      defaults['sortType'] = $(this).attr('data-sort');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
       defaults['starType'] = $.fn.getUrlParam('star');
       defaults['minValue'] = $.fn.getUrlParam('min');
       defaults['maxValue'] = $.fn.getUrlParam('max');
+      defaults['area'] = $.fn.getUrlParam('area');
       var url = defaults['url'] + '/' + defaults['categoryType'] ;
-      var keyword = $.fn.getUrlParam('keyword');
-      var nation = defaults['nation'];
-      var filter = defaults['filterType'];
-      var sort = defaults['sortType'];
       var page = $.fn.getUrlParam('page');
-      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue']);
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
       if(defaults['province'] && defaults['district'] ){
         url = url + '/' + defaults['province'] + '/' + defaults['district'];
       }
@@ -200,18 +209,16 @@
     
     // filter star
     $("body .filter-adv").on('click', 'input[name=filter-star]', function(){
+      defaults['keyword']  = $.fn.getUrlParam('keyword');
       defaults['filterType'] = $.fn.getUrlParam('filter');
       defaults['sortType'] = $.fn.getUrlParam('sort');
       defaults['starType'] = $(this).val();
       defaults['minValue'] = $.fn.getUrlParam('min');
       defaults['maxValue'] = $.fn.getUrlParam('max');
+      defaults['area'] = $.fn.getUrlParam('area');
       var url = defaults['url'] + '/' + defaults['categoryType'] ;
-      var keyword = $.fn.getUrlParam('keyword');
-      var nation = defaults['nation'];
-      var filter = defaults['filterType'];
-      var sort = defaults['sortType'];
       var page = $.fn.getUrlParam('page');
-      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue'] );
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
       if(defaults['province'] && defaults['district'] ){
         url = url + '/' + defaults['province'] + '/' + defaults['district'];
       }
@@ -221,19 +228,19 @@
       history.pushState(null, null, url + '?' + urlString);
     });
     
+    // fitler price
     $("body .filter-adv").on('click', 'input[name=filter-price]', function(){
+      defaults['keyword']  = $.fn.getUrlParam('keyword');
       defaults['filterType'] = $.fn.getUrlParam('filter');
       defaults['sortType'] = $.fn.getUrlParam('sort');
       defaults['starType'] = $.fn.getUrlParam('star');
       defaults['minValue'] = $(this).attr('data-min');
       defaults['maxValue'] = $(this).attr('data-max');
-      var url = defaults['url'] + '/' + defaults['categoryType'] ;
-      var keyword = $.fn.getUrlParam('keyword');
-      var nation = defaults['nation'];
-      var filter = defaults['filterType'];
-      var sort = defaults['sortType'];
+      defaults['area'] = $.fn.getUrlParam('area');
+      
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;  
       var page = $.fn.getUrlParam('page');
-      var urlString = $.fn.getParamString(nation,page,filter, sort, keyword, defaults['starType'], defaults['minValue'], defaults['maxValue']);
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
       if(defaults['province'] && defaults['district'] ){
         url = url + '/' + defaults['province'] + '/' + defaults['district'];
       }
@@ -242,12 +249,125 @@
       }
       history.pushState(null, null, url + '?' + urlString);
     });
+    
+    // filter nation
+    $("body .filter-adv").on('click', 'input[name=filter-area]', function(){
+      defaults['keyword']  = $.fn.getUrlParam('keyword');
+      defaults['filterType'] = $.fn.getUrlParam('filter');
+      defaults['sortType'] = $.fn.getUrlParam('sort');
+      defaults['starType'] = $.fn.getUrlParam('star');
+      defaults['minValue'] = $.fn.getUrlParam('min');
+      defaults['maxValue'] = $.fn.getUrlParam('max');
+      defaults['area'] = $(this).val();
+      var url = defaults['url'] + '/' + defaults['categoryType'] ;
+      var page = $.fn.getUrlParam('page');
+      var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
+      if(defaults['province'] && defaults['district'] ){
+        url = url + '/' + defaults['province'] + '/' + defaults['district'];
+      }
+      if(defaults['province'] && defaults['district'] == '' ){
+        url = url + '/' + defaults['province'];
+      }
+      history.pushState(null, null, url + '?' + urlString);
+    });
+    
+    // get location current
+    var id = '';
+    var currentAddress = '';
+    $("body").on('click', '.list-travel .strict-views', function(){
+      $("body .list-travel li .strict-views").removeClass('show-map');
+      $(this).addClass('show-map');
+      var currentAddress = $("body").find('#current-address').val();
+      id = $(this).attr('data-id');
+      if(currentAddress == ''){
+        $(".filter-adv").toggleClass('open', 1000);
+        $('#tour-search-button').toggleClass('on', 1000);
+        $("#current-address").focus();
+      }
+      else{
+        $.fn.callMapSearchAddress(id, currentAddress);
+      }
+    });
+    // enter input address
+    $('#current-address').keypress(function(e){
+      if(e.which === 13)
+      {
+        currentAddress = $(this).val();
+        $.fn.callMapSearchAddress(id, currentAddress);
+      }
+    });
   },
-  $.fn.loadData = function(url, id, category, nation, province, district, page){
+  $.fn.callMapSearchAddress = function(id, currentAddress){
+    $.ajax({
+          url : '/view-map',
+          type : 'POST',
+          dataType : "json",
+          data: {id: id, address : currentAddress },
+          beforeSend: function(){
+            $(".views-popup").addClass('view');
+            $(".views-popup").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            if(data.message == ''){
+              $( ".loading" ).remove();
+              $(".views-popup .views-container").empty().append(data.html);
+              var fromLatitude = data.fromLatitude;
+              var fromLongitude = data.fromLongitude;
+              var toLatitude = data.toLatitude;
+              var toLongitude = data.toLongitude;
+              var map;
+              var directionsService = new google.maps.DirectionsService();
+              var directionsDisplay;
+              var map_canvas  = document.getElementById('view-map');
+              map_canvas.style.width = '100%';
+              map_canvas.style.height = '100%';
+              // Option map
+              var map_options = {
+                  zoom: 12,
+                  mapTypeId : google.maps.MapTypeId.ROADMAP
+              };
+              // Object map
+              map = new google.maps.Map(map_canvas, map_options);
+              directionsDisplay = new google.maps.DirectionsRenderer();
+              directionsDisplay.setMap(map);
+              var request = {
+                  origin: new google.maps.LatLng(fromLatitude, fromLongitude),
+                  destination: new google.maps.LatLng(toLatitude, toLongitude),
+                  travelMode: google.maps.TravelMode.DRIVING
+              };
+              directionsService.route(request, function(result, status) {
+                  if (status == google.maps.DirectionsStatus.OK) {
+                      directionsDisplay.setDirections(result);
+                  }
+              });
+              $(".views-popup .views-container").addClass('open');
+              if($("body .view .filter-adv").hasClass('open')){
+                $(".filter-adv").toggleClass('open', 1000);
+                $('#tour-search-button').toggleClass('on', 1000);
+              }
+              $("body #current-address").removeClass('error');
+              $(".has-error").remove();
+            }else{
+              $( ".loading" ).remove();
+              $(".views-popup").removeClass('view');
+              $("body #current-address").addClass('error').parent().append('<span class="has-error">'+data.message+'</span>');
+              if(!$("body .view .filter-adv").hasClass('open')){
+                $(".filter-adv").toggleClass('open', 1000);
+                $('#tour-search-button').toggleClass('on', 1000);
+              }
+//              alert('aaa');
+            }
+            
+            
+          
+          }
+        });
+  }
+  $.fn.loadData = function(url, id, category, nation, province, district, page, filter, sort, star, min, max, area, keyword){
     $.ajax({
       method: 'POST',
       url: url,
-      data: {category: category, nation: nation, province: province, district: district, page: page},
+      data: {category: category, nation: nation, province: province, district: district, page: page, filter: filter, sort: sort, star: star, min: min, max: max, area: area, keyword: keyword},
       beforeSend: function(){
         $(".view-loading").css('display','block');
       },
@@ -270,7 +390,14 @@
   ;
 //  $.fn.callAjaxRegion();
   var page = $.fn.getUrlParam('page');
-  $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page);
+  var filter = $.fn.getUrlParam('filter');
+  var sort = $.fn.getUrlParam('sort');
+  var star = $.fn.getUrlParam('star');
+  var min = $.fn.getUrlParam('min');
+  var max = $.fn.getUrlParam('max');
+  var area = $.fn.getUrlParam('area');
+  var keyword = $.fn.getUrlParam('keyword');
+  $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page, filter, sort, star, min, max, area, keyword);
   
   $.fn.render();
 //  var search = {

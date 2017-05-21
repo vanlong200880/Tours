@@ -1768,6 +1768,16 @@
         @include box-shadow(none);
         outline: none;
       }
+      .error{
+        border-color: red;
+        color: red;
+      }
+      .has-error{
+        color: red;
+        display: inline-block;
+        width: 100%;
+        padding-top: 10px;
+      }
     }
     .close-filter{
       width: 20px;

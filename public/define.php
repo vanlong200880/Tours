@@ -37,6 +37,13 @@ define('DISTRICT', '', true);
 define('WARD', '', true);
 define('CATEGORY', '', true);
 define('CATEGORY_TYPE', '', true);
+define('MIN', '', true);
+define('MAX', '', true);
+define('AREA', '', true);
+define('FILTER', '', true);
+define('STAR', '', true);
+define('KEYWORD', '', true);
+define('SORT', 'asc', true);
 
 define('PAGE_RAND', 5);
 define('ITEM_PAGE', 2);

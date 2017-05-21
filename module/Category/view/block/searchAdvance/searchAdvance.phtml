@@ -145,12 +145,12 @@
                 <h2>Khác</h2>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-nation" name="filter-nation" value="viet-nam"> Trong nước
+                    <input type="radio" id="filter-area" name="filter-area" value="viet-nam"> Trong nước
                   </label>
                 </div>
                 <div class="item-filter">
                   <label class="checkbox-inline">
-                    <input type="radio" id="filter-location" name="filter-nation" value="nuoc-ngoai"> Nước ngoài
+                    <input type="radio" id="filter-area" name="filter-area" value="nuoc-ngoai"> Nước ngoài
                   </label>
                 </div>
                 <div class="item-filter">
@@ -363,7 +363,7 @@
     </ul>
     <div class="address-search">
       <label for="current-address">Địa chỉ hiện tại của bạn</label>
-      <input type="text" name="current-address" class="form-control" id="current-address">
+      <input type="text" name="current-address" value="<?php echo ($currentAddress)? $currentAddress: ''; ?>" class="form-control" id="current-address" placeholder="26 Đồng Xoài, Phường 13, Quận Tân Bình, TP. Hồ Chí Minh">
     </div>
     <div class="close-filter">
       <var class="icon icon-delete"></var>
