@@ -24,6 +24,7 @@
             ->prependFile($this->basePath('frontend/js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
         <script src="http://content.jwplatform.com/libraries/uxA8ETX2.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&language=vi"></script>
     </head>
     <body>
       <div class="wrapper">
@@ -46,51 +47,134 @@
             </div>
           </div>
         </div>
+        
         <script>
-              var map;
-              var infowindow;
+//              var map;
+//              var infowindow;
+//
+//              function initMap() {
+//                var pyrmont = {lat: 16.1724728, lng: 107.182617};
+//
+//                map = new google.maps.Map(document.getElementById('map'), {
+//                  center: pyrmont,
+//                  zoom: 6
+//                });
+//
+//                infowindow = new google.maps.InfoWindow();
+//                var service = new google.maps.places.PlacesService(map);
+//                service.nearbySearch({
+//                  location: pyrmont,
+//                  radius: 500,
+//                  type: ['store']
+//                }, callback);
+//              }
+//
+//              function callback(results, status) {
+//                if (status === google.maps.places.PlacesServiceStatus.OK) {
+//                  for (var i = 0; i < results.length; i++) {
+//                    createMarker(results[i]);
+//                  }
+//                }
+//              }
+//
+//              function createMarker(place) {
+//                var data = 	[
+//                    {"latitude":"21.014199","longtitude":"105.848317"},
+//                    {"latitude":"21.001269","longtitude":"105.802404"},
+//                    {"latitude":"21.036927","longtitude":"105.780119"},
+//                    {"latitude":"21.019763","longtitude":"105.807979"},
+//                    {"latitude":"10.771929","longtitude":"106.653169"},
+//                    {"latitude":"10.770537","longtitude":"106.672307"},
+//                    {"latitude":"21.047366","longtitude":"105.807651"},
+//                    {"latitude":"20.995875","longtitude":"105.860988"},
+//                    {"latitude":"21.0211","longtitude":"105.826317"},
+//                    {"latitude":"21.046255","longtitude":"105.876507"},
+//                    {"latitude":"21.053855","longtitude":"105.73299"},
+//                    {"latitude":"21.001144","longtitude":"105.827103"},
+//                    {"latitude":"21.024973","longtitude":"105.819097"},
+//                    {"latitude":"20.982916","longtitude":"105.79102"},
+//                    {"latitude":"21.013083","longtitude":"105.835074"},
+//                    {"latitude":"10.781741","longtitude":"106.650057"},
+//                 ];
+//                var placeLoc = place.geometry.location;
+//                var marker = new google.maps.Marker({
+//                  map: map,
+//                  position: place.geometry.location
+//                });
+//
+//                google.maps.event.addListener(marker, 'click', function() {
+//                  infowindow.setContent(place.name);
+//                  infowindow.open(map, this);
+//                });
+//              }
 
-              function initMap() {
-                var pyrmont = {lat: 16.1724728, lng: 107.182617};
+function initialize() {
+  var mapOptions = {
+    zoom: 10,
+    center: new google.maps.LatLng(21.033333300000000000, 105.850000000000020000)
+  };
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  setMarkers(map, beaches);
+}
+var beaches = [
+  ['a',21.014199,105.848317],
+  ['b',21.001269,105.802404],
+  ['c',21.036927,105.780119],
+  ['d',21.019763,105.807979],
+  ['e',10.771929,106.653169],
+  ['f',10.770537,106.672307],
+  ['g',21.047366,105.807651],
+  ['h',20.995875,105.860988],
+  ['i',21.046255,105.876507],
+  ['j',21.053855,105.73299],
+  ['k',21.001144,105.827103],
+  ['l',21.024973,105.819097],
+  ['m',20.982916,105.79102],
+  ['n',21.013083,105.835074],
+  ['t',10.781741,106.650057],
+];
 
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: pyrmont,
-                  zoom: 6
-                });
-
-                infowindow = new google.maps.InfoWindow();
-                var service = new google.maps.places.PlacesService(map);
-                service.nearbySearch({
-                  location: pyrmont,
-                  radius: 500,
-                  type: ['store']
-                }, callback);
-              }
-
-              function callback(results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                  for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i]);
-                  }
+function setMarkers(map, locations) {
+                 
+                // Icon Image Marker
+                var image = {
+                    url: 'https://www.zita.vn/images/numbers/number_1_gray.png',
+                    // Kích cỡ hình
+                    size: new google.maps.Size(50, 50),
+                    // Gốc cho hình là oo
+                    origin: new google.maps.Point(0, 0),
+                    // Neo cho hình là 0, 32
+                    anchor: new google.maps.Point(50, 50)
+                };
+                 
+                // Hình dạng
+                var shape = {
+                    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+                    type: 'poly'
+                };
+                 
+                // Lặp qua từng locations
+                for (var i = 0; i < locations.length; i++) 
+                {
+                    var beach = locations[i];
+                    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        icon: image,
+                        shape: shape,
+                        title: beach[0],
+                        zIndex: beach[3]
+                    });
                 }
-              }
+            }
+            google.maps.event.addDomListener(window, 'load', initialize); 
 
-              function createMarker(place) {
-                var placeLoc = place.geometry.location;
-                var marker = new google.maps.Marker({
-                  map: map,
-                  position: place.geometry.location
-                });
-
-                google.maps.event.addListener(marker, 'click', function() {
-                  infowindow.setContent(place.name);
-                  infowindow.open(map, this);
-                });
-              }
 
 
             </script>
-             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
+            
+             <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>-->
             <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
         <script>
           jQuery(document).ready(function($){

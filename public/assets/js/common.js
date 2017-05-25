@@ -350,12 +350,12 @@
             }else{
               $( ".loading" ).remove();
               $(".views-popup").removeClass('view');
+              $(".has-error").remove();
               $("body #current-address").addClass('error').parent().append('<span class="has-error">'+data.message+'</span>');
               if(!$("body .view .filter-adv").hasClass('open')){
                 $(".filter-adv").toggleClass('open', 1000);
                 $('#tour-search-button').toggleClass('on', 1000);
               }
-//              alert('aaa');
             }
             
             

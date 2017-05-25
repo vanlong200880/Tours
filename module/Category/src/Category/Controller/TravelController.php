@@ -48,21 +48,22 @@ class TravelController extends AbstractActionController
         $address = $this->params()->fromPost('address');
         $session = new Container('currentAddress');
         $session->address = $address;
-        if($address){
+        if($session->address){
           $geoCode = new MapGeoCode();
-          $geoAddress = $geoCode->geocode($address);
+          $geoAddress = $geoCode->geocode($session->address);
           if($geoAddress){
             $fromLatitude = $geoAddress[0];
             $fromLongitude = $geoAddress[1];
           }
         }
 
-        if($fromLatitude == '' || $fromLongitude == '' || $toLatitude == '' || $toLongitude == ''){
-          $message = 'Rất tiếc! Chúng tôi không tìm thấy địa chỉ của bạn trên google map.';
-        }
+        
         if($post){
           $toLatitude = $post->lat;
           $toLongitude = $post->lng;
+        }
+        if($fromLatitude == '' || $fromLongitude == '' || $toLatitude == '' || $toLongitude == ''){
+          $message = 'Rất tiếc! Chúng tôi không tìm thấy địa chỉ của bạn trên google map.';
         }
         $htmlViewPart = new ViewModel();
         $htmlViewPart->setTemplate('travel/popup-map')
@@ -83,7 +84,8 @@ class TravelController extends AbstractActionController
             'fromLongitude' => $fromLongitude,
             'toLatitude' => $toLatitude,
             'toLongitude' => $toLongitude,
-            'message' => $message
+            'message' => $message,
+            'a' => $session->address
                 ]);
 
         return $jsonModel;
