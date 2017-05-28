@@ -282,6 +282,8 @@ return array(
           'Category\Controller\Taste' => Controller\TasteController::class,
           'Category\Controller\Video' => Controller\VideoController::class,
           'Category\Controller\Region' => Controller\RegionController::class,
+          'Category\Controller\Diary' => Controller\DiaryController::class,
+          'Category\Controller\Utilities' => Controller\UtilitiesController::class,
         ),
     ),
     'view_helpers'    => array(
@@ -313,24 +315,35 @@ return array(
             'tour/index'           => __DIR__ . '/../view/category/tour/index.phtml',
             'tour/detail'          => __DIR__ . '/../view/category/tour/detail.phtml',
             'tour/view'          => __DIR__ . '/../view/category/tour/view.phtml',
+            'tour/load-data-tour'          => __DIR__ . '/../view/category/tour/load-data-tour.phtml',
+            
             
             
             'layout/hotel'           => __DIR__ . '/../view/layout/layout-hotel.phtml',
             'hotel/index'           => __DIR__ . '/../view/category/hotel/index.phtml',
             'hotel/detail'           => __DIR__ . '/../view/category/hotel/detail.phtml',
             'hotel/view-room'           => __DIR__ . '/../view/category/hotel/view-room.phtml',
+            'hotel/load-data-hotel'           => __DIR__ . '/../view/category/hotel/load-data-hotel.phtml',
             
             
             'layout/taste'           => __DIR__ . '/../view/layout/layout-taste.phtml',
             'taste/index'           => __DIR__ . '/../view/category/taste/index.phtml',
             'taste/detail'           => __DIR__ . '/../view/category/taste/detail.phtml',
             'taste/taste-order'           => __DIR__ . '/../view/category/taste/order.phtml',
+            'taste/load-data-taste'           => __DIR__ . '/../view/category/taste/load-data-taste.phtml',
             
             'layout/video-detail'           => __DIR__ . '/../view/layout/layout-video-detail.phtml',
             'layout/video'           => __DIR__ . '/../view/layout/layout-video.phtml',
             'video/index'           => __DIR__ . '/../view/category/video/index.phtml',
             'video/detail'           => __DIR__ . '/../view/category/video/detail.phtml',
             
+            
+            'layout/utilities'           => __DIR__ . '/../view/layout/layout-utilities.phtml',
+            'utilities/index'           => __DIR__ . '/../view/category/utilities/index.phtml',
+            
+            
+            'layout/diary'           => __DIR__ . '/../view/layout/layout-diary.phtml',
+            'diary/index'           => __DIR__ . '/../view/category/diary/index.phtml',
             
             'region/province'           => __DIR__ . '/../view/category/region/province.phtml',
             

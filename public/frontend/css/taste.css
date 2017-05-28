@@ -440,29 +440,29 @@ a:hover {
 
 .province-container {
   padding: 10px; }
-  .province-container ul li {
+  .province-container ul.list-travel li {
     border-bottom: 1px solid #DDD;
     display: block;
     width: 100%;
     padding: 10px 0;
     float: left; }
-    .province-container ul li .province-item .province-img {
+    .province-container ul.list-travel li .province-item .province-img {
       width: 40%;
       float: left; }
-    .province-container ul li .province-item .province-content {
+    .province-container ul.list-travel li .province-item .province-content {
       width: 60%;
       float: left;
       padding-left: 10px; }
-      .province-container ul li .province-item .province-content h2 {
+      .province-container ul.list-travel li .province-item .province-content h2 {
         font-size: 14px;
         font-weight: bold; }
-      .province-container ul li .province-item .province-content .list-count-content {
+      .province-container ul.list-travel li .province-item .province-content .list-count-content {
         width: 100%; }
-        .province-container ul li .province-item .province-content .list-count-content .list-count-item {
+        .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item {
           width: 50%;
           float: left;
           padding: 5px 0; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p span {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p span {
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -472,18 +472,18 @@ a:hover {
             -ms-border-radius: 50%;
             position: relative;
             display: inline-block; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p strong {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p strong {
             padding-left: 12px;
             font-size: 16px; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p.tours span {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p.tours span {
             background: #183544; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p.hotel span {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p.hotel span {
             background: #b400ff; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p.park span {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p.park span {
             background: #6ceb35; }
-          .province-container ul li .province-item .province-content .list-count-content .list-count-item p.taste span {
+          .province-container ul.list-travel li .province-item .province-content .list-count-content .list-count-item p.taste span {
             background: #ff9000; }
-    .province-container ul li:last-child {
+    .province-container ul.list-travel li:last-child {
       border-bottom: none; }
 
 .list-search {

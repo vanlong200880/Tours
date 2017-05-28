@@ -5,14 +5,14 @@
             <div class="row">
               <div class="col-md-5">
                 <div class="item-img">
-                  <a href="javascript:void(0);" title="dam sen">
+                  <a href="javascript:void(0);" data-id="<?php echo $value->id; ?>" title="<?php echo $value->name; ?>">
                     <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
                     <div class="overlay_border"></div>
                   </a>
                 </div>
               </div>
               <div class="col-md-7">
-                <h2><a href="javascript:void(0);" title="dam sen"><?php echo $value->name; ?> - <?php echo $value->new; ?></a></h2>
+                <h2><a href="javascript:void(0);" data-id="<?php echo $value->id; ?>" title="<?php echo $value->name; ?>"><?php echo $value->name; ?> - <?php echo $value->new; ?></a></h2>
                 <p class="address">
                   <?php echo $value->address; ?>, 
                   <?php echo $value->ward_type; ?>  <?php echo $value->ward_name; ?>, 
@@ -29,7 +29,7 @@
                     <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
                     <li><p data-id="<?php echo $value->id; ?>" class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p></li>
                   </ul>
-                  <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  <a class="views" href="javascript:void(0);" data-id="<?php echo $value->id; ?>" title="Xem ngay">Xem ngay</a>
                 </div>
               </div>
             </div>

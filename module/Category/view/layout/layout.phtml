@@ -43,7 +43,7 @@
           <div class="map-content">
             <div style="width: 100%; height: 100%;" id="map"></div>
             <div class="shoppingcart">
-              <?php $this->cart() ?>
+              <?php $this->cart(); ?>
             </div>
           </div>
         </div>
@@ -134,41 +134,47 @@ var beaches = [
   ['t',10.781741,106.650057],
 ];
 
+
+
 function setMarkers(map, locations) {
+  // Icon Image Marker
+  var image = {
+      url: document.location.origin + '/assets/images/icon-tour.png',
+      // Kích cỡ hình
+      size: new google.maps.Size(50, 50),
+      // Gốc cho hình là oo
+      origin: new google.maps.Point(0, 0),
+      // Neo cho hình là 0, 32
+      anchor: new google.maps.Point(50, 50)
+  };
                  
-                // Icon Image Marker
-                var image = {
-                    url: 'https://www.zita.vn/images/numbers/number_1_gray.png',
-                    // Kích cỡ hình
-                    size: new google.maps.Size(50, 50),
-                    // Gốc cho hình là oo
-                    origin: new google.maps.Point(0, 0),
-                    // Neo cho hình là 0, 32
-                    anchor: new google.maps.Point(50, 50)
-                };
-                 
-                // Hình dạng
-                var shape = {
-                    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-                    type: 'poly'
-                };
-                 
-                // Lặp qua từng locations
-                for (var i = 0; i < locations.length; i++) 
-                {
-                    var beach = locations[i];
-                    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
-                    var marker = new google.maps.Marker({
-                        position: myLatLng,
-                        map: map,
-                        icon: image,
-                        shape: shape,
-                        title: beach[0],
-                        zIndex: beach[3]
-                    });
-                }
-            }
-            google.maps.event.addDomListener(window, 'load', initialize); 
+  // Hình dạng
+  var shape = {
+      coords: [1, 1, 1, 20, 18, 20, 18, 1],
+      type: 'poly'
+  };
+
+  // Lặp qua từng locations
+  for (var i = 0; i < locations.length; i++) 
+  {
+      var beach = locations[i];
+      var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+      var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: image,
+          shape: shape,
+          title: beach[0],
+          zIndex: beach[3]
+      });
+  }
+}
+var infowindow = new google.maps.InfoWindow(
+  { 
+    size: new google.maps.Size(150,50)
+  });
+
+google.maps.event.addDomListener(window, 'load', initialize); 
 
 
 
@@ -177,70 +183,70 @@ function setMarkers(map, locations) {
              <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>-->
             <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
         <script>
-          jQuery(document).ready(function($){
-            $("#view-data").on('click','.province-container ul.list-travel li .item a',function(){
-              var id = 'abc';
-              var url = 'http://localhost/tours/public/travel-view';
-              $.ajax({
-                  url : url,
-                  type : 'POST',
-                  dataType : "json",
-                  data: {id: id},
-                  beforeSend: function(){
-                    $(".popup-page").addClass('on');
-                    $(".popup-page").append('<div class="loading"></div>');
-                  },
-                  success : function (data){
-                    $( ".loading" ).remove();
-                    $(".popup-container").empty().append(data.html);
-                    $("#page-comment").empty().append(data.htmlComment);
-
-                    // call royalSlider
-                    var slider = $('.royalSlider').royalSlider({
-                    fullscreen: {
-                      enabled: true,
-                      nativeFS: true
-                    },
-                    controlNavigation: 'thumbnails',
-                    autoScaleSlider: true, 
-                    autoScaleSliderWidth: 725,
-                    autoScaleSliderHeight: 478,
-                    loop: false,
-                    imageScaleMode: 'none',
-                    navigateByClick: true,
-                    numImagesToPreload:2,
-                    arrowsNav:true,
-                    arrowsNavAutoHide: true,
-                    arrowsNavHideOnTouch: true,
-                    keyboardNavEnabled: true,
-                    fadeinLoadedSlide: true,
-                    globalCaption: false,
-                    globalCaptionInside: false,
-                    imageScalePadding: 0,
-                    slidesSpacing: 0,
-                    thumbs: {
-                      appendSpan: false,
-                      firstMargin: false,
-                      paddingBottom: 4
-                    }
-                    }).data('royalSlider');
-
-                    $('.rsFullscreenBtn').click(function(e){
-                      slider.enterFullscreen();
-                      e.preventDefault();
-                    });
-
-                    slider.ev.on("rsEnterFullscreen", function() {
-                      // enter fullscreen mode 
-                      $(".popup-page").css('position', 'relative');
-                    });
-                    slider.ev.on('rsExitFullscreen', function(event) {
-                      // exit fullscreen mode
-                      $(".popup-page").removeAttr('style');
-                    });
-                  }
-                });
-            });
+//          jQuery(document).ready(function($){
+//            $("#view-data").on('click','.province-container ul.list-travel li .item a',function(){
+//              var id = 'abc';
+//              var url = 'http://localhost/tours/public/travel-view';
+//              $.ajax({
+//                  url : url,
+//                  type : 'POST',
+//                  dataType : "json",
+//                  data: {id: id},
+//                  beforeSend: function(){
+//                    $(".popup-page").addClass('on');
+//                    $(".popup-page").append('<div class="loading"></div>');
+//                  },
+//                  success : function (data){
+//                    $( ".loading" ).remove();
+//                    $(".popup-container").empty().append(data.html);
+//                    $("#page-comment").empty().append(data.htmlComment);
+//
+//                    // call royalSlider
+//                    var slider = $('.royalSlider').royalSlider({
+//                    fullscreen: {
+//                      enabled: true,
+//                      nativeFS: true
+//                    },
+//                    controlNavigation: 'thumbnails',
+//                    autoScaleSlider: true, 
+//                    autoScaleSliderWidth: 725,
+//                    autoScaleSliderHeight: 478,
+//                    loop: false,
+//                    imageScaleMode: 'none',
+//                    navigateByClick: true,
+//                    numImagesToPreload:2,
+//                    arrowsNav:true,
+//                    arrowsNavAutoHide: true,
+//                    arrowsNavHideOnTouch: true,
+//                    keyboardNavEnabled: true,
+//                    fadeinLoadedSlide: true,
+//                    globalCaption: false,
+//                    globalCaptionInside: false,
+//                    imageScalePadding: 0,
+//                    slidesSpacing: 0,
+//                    thumbs: {
+//                      appendSpan: false,
+//                      firstMargin: false,
+//                      paddingBottom: 4
+//                    }
+//                    }).data('royalSlider');
+//
+//                    $('.rsFullscreenBtn').click(function(e){
+//                      slider.enterFullscreen();
+//                      e.preventDefault();
+//                    });
+//
+//                    slider.ev.on("rsEnterFullscreen", function() {
+//                      // enter fullscreen mode 
+//                      $(".popup-page").css('position', 'relative');
+//                    });
+//                    slider.ev.on('rsExitFullscreen', function(event) {
+//                      // exit fullscreen mode
+//                      $(".popup-page").removeAttr('style');
+//                    });
+//                  }
+//                });
+//            });
             // close popup
             $(".popup-page").on('click','.popup-close' ,function(){
               $(".popup-page").removeClass('on');

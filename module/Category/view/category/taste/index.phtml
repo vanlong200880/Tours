@@ -1,25 +1,619 @@
-<div class="search">
-  <div class="page-search">
-    <?php $this->searchTravel(); ?>
+<?php $this->meta(
+        $category->name . ' ' .$regionExists->name
+        ); ?>  
+<div class="list-container-view">
+  <?php $this->searchAdvance(); ?>
+  <div class="page-search-title">
+    <div class="item-title">
+      <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>
+    </div>
   </div>
-</div>
-<div id="container">
-  <div class="view">
-    <div class="list-container-view">
-      <div class="page-search-title">
-        <div class="item-title">
-          <h1><span class="icon icon-menu"></span> Điểm ăn uống</h1>
+  <div class="province-container">
+    <div class="province">
+      <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+    </div>
+    <div class="list-province-item">
+      <ul class="row load-post list-item">
+        
+      </ul>
+    </div>
+    
+<!--    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="paging">
+            <?php
+//            echo $this->paginationControl($paginator, 'Sliding', 'paginationAjax', array(
+//                $this->route,
+//                'category' => $category->slug,
+//                'province' => $province,
+//                'district' => $district,
+//                'nation' => $nation,
+//                'page' => $page
+//            ));
+            ?>
         </div>
       </div>
+    </div>-->
+  </div>
+  <div class="footer-travel">
+    <?php $this->footerTravel(); ?>
+  </div>
+</div>
+
+
+<!--<div id="container">
+  <div class="view">
+    <div class="list-container-view">
       <div class="list-cat">
-        <div class="filter">
-          <ul>
-            <li><a href="#">Mới khai trương <span class="icon icon-down-thin"></span></a></li>
-            <li><a href="#">Nổi bật <span class="icon icon-up-thin"></span></a></li>
-            <li><a href="#">Giá <span class="icon icon-up-thin"></span></a></li>
-            <li><a href="#">Khuyến mãi <span class="icon icon-up-thin"></span></a></li>
-          </ul>
-        </div>
+        <ul class="row list-item">
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="col-md-6">
+            <div class="item">
+              <div class="img">
+                <div class="star">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                  <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+                </div>
+                <div class="highlight"><span>HOT</span></div>
+                <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+                <div class="item-hover">
+                  <div class="item-voucher">
+                    Nhân voucher điện tử qua email/SMS
+                  </div>
+                  <div class="readmove">
+                    <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+                </div>
+                <div class="price">
+                  <p>
+                    <span class="cost">350,000 <var>đ</var></span>
+                    <span class="sale">-50%</span>
+                  </p>
+                </div>
+                <div class="view-user">
+                  <span class="price-sale">350,000</span>  <var>đ</var>
+                  <div class="pull-right">
+                    <span class="icon icon-user-profile"> 1124</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+        </ul>
+      </div>
+      <div class="footer-travel">
+        <?php $this->footerTravel(); ?>
+      </div>
+    </div>
+    
+  </div>
+  <div class="map-content">
+    <div style="width: 100%; height: 100%;" id="map"></div>
+  </div>
+</div>
+<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: -33.867, lng: 151.195};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>
+     
+     <script>
+  jQuery(document).ready(function($){
+    $(".list-cat .list-item li").on('click','a',function(){
+      var id = 'abc';
+      var url = 'http://localhost/tours/public/hotel-detail';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".popup-page").addClass('on');
+            $(".popup-page").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".popup-container").empty().append(data.html);
+            
+            // call royalSlider
+            var slider = $('.royalSlider').royalSlider({
+            fullscreen: {
+              enabled: true,
+              nativeFS: true
+            },
+            controlNavigation: 'thumbnails',
+            autoScaleSlider: true, 
+            autoScaleSliderWidth: 1024,
+            autoScaleSliderHeight: 614,
+            loop: false,
+            imageScaleMode: 'none',
+            navigateByClick: true,
+            numImagesToPreload:2,
+            arrowsNav:true,
+            arrowsNavAutoHide: true,
+            arrowsNavHideOnTouch: true,
+            keyboardNavEnabled: true,
+            fadeinLoadedSlide: true,
+            globalCaption: true,
+            globalCaptionInside: false,
+            imageScalePadding: 0,
+            slidesSpacing: 0,
+            thumbs: {
+              appendSpan: true,
+              firstMargin: true,
+              paddingBottom: 4
+            }
+            }).data('royalSlider');
+
+            $('.rsFullscreenBtn').click(function(e){
+              slider.enterFullscreen();
+              e.preventDefault();
+            });
+
+            slider.ev.on("rsEnterFullscreen", function() {
+              // enter fullscreen mode 
+              $(".popup-page").css('position', 'relative');
+            });
+            slider.ev.on('rsExitFullscreen', function(event) {
+              // exit fullscreen mode
+              $(".popup-page").removeAttr('style');
+            });
+            //hotel room hover
+            $(".list-hotel-room ul > li").hover(
+              function () {
+                $(this).addClass('active');
+              },
+              function () {
+                $(this).removeClass('active');
+              }
+            );
+    
+            // view room
+            $(".list-hotel-room ul li").on('click','.view-room-hotel', function(){
+              var current = $("#current-map").val();
+              var id = 'abc';
+              var url = 'http://localhost/tours/public/hotel-room';
+              $.ajax({
+                  url : url,
+                  type : 'POST',
+                  dataType : "json",
+                  data: {id: id},
+                  beforeSend: function(){
+                    $(".views-popup").addClass('view');
+                    $(".views-popup").append('<div class="loading"></div>');
+                  },
+                  success : function (data){
+                    $( ".loading" ).remove();
+                    $(".views-popup .views-container").empty().append(data.html);
+                    // call royalSlider
+                    var slider = $('.royalSlider').royalSlider({
+                    fullscreen: {
+                      enabled: true,
+                      nativeFS: true
+                    },
+                    controlNavigation: 'thumbnails',
+                    autoScaleSlider: true, 
+                    autoScaleSliderWidth: 1024,
+                    autoScaleSliderHeight: 614,
+                    loop: false,
+                    imageScaleMode: 'none',
+                    navigateByClick: true,
+                    numImagesToPreload:2,
+                    arrowsNav:true,
+                    arrowsNavAutoHide: true,
+                    arrowsNavHideOnTouch: true,
+                    keyboardNavEnabled: true,
+                    fadeinLoadedSlide: true,
+                    globalCaption: true,
+                    globalCaptionInside: false,
+                    imageScalePadding: 0,
+                    slidesSpacing: 0,
+                    thumbs: {
+                      appendSpan: true,
+                      firstMargin: true,
+                      paddingBottom: 4
+                    }
+                    }).data('royalSlider');
+
+                    $('.rsFullscreenBtn').click(function(e){
+                      slider.enterFullscreen();
+                      e.preventDefault();
+                    });
+
+                    slider.ev.on("rsEnterFullscreen", function() {
+                      // enter fullscreen mode 
+                      $(".popup-page").css('position', 'relative');
+                    });
+                    slider.ev.on('rsExitFullscreen', function(event) {
+                      // exit fullscreen mode
+                      $(".popup-page").removeAttr('style');
+                    });
+                    // view map popup
+                    $(".views-popup .views-container").addClass('open');
+                  }
+                });
+            });
+            
+            // close room
+            $(".views-popup").on('click','.views-close' ,function(){
+              $(".views-popup .views-container").removeClass('open');
+              setTimeout(function () {
+               $(".views-popup").removeClass('view');
+               $(".views-popup .views-container").empty();
+              }, 350);
+            });
+          }
+        });
+    });
+    // close popup
+    $(".popup-page").on('click','.popup-close' ,function(){
+      $(".popup-page").removeClass('on');
+      $(".popup-page .popup-container").empty();
+    });
+    
+   
+  });
+</script>
+
+<div class="popup-page">
+  <div class="popup-container tour">
+    
+  </div>
+</div>
+
+<div class="views-popup">
+  <div class="views-container">
+    
+  </div>
+</div>-->
+
+
+
+
+<!--<div id="container">
+  <div class="view">
+    <div class="list-container-view">
+      <div class="list-cat">
         <ul class="row list-item">
           <li class="col-md-6">
             <div class="item">
@@ -466,4 +1060,4 @@
 </div>
 <script>
 //  $('#modal-comment').modal('show');
-  </script>
+  </script>-->

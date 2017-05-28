@@ -85,7 +85,7 @@
         });
       }
       return urlString;
-  }
+  },
   $.fn.render = function(){
     $("body").on("change", "#country_id", function(e) {
     });
@@ -296,6 +296,79 @@
         $.fn.callMapSearchAddress(id, currentAddress);
       }
     });
+    
+    // Load detail page
+    $("body .view-data").on('click', 'ul.load-post > li a', function(){
+      var id = $(this).attr('data-id');
+      var url = '/travel-view';
+      $.ajax({
+          url : url,
+          type : 'POST',
+          dataType : "json",
+          data: {id: id},
+          beforeSend: function(){
+            $(".popup-page").addClass('on');
+            $(".popup-page").append('<div class="loading"></div>');
+          },
+          success : function (data){
+            $( ".loading" ).remove();
+            $(".popup-container").empty().append(data.html);
+            $("#page-comment").empty().append(data.htmlComment);
+            $.fn.callSliderRoyalSlider();
+          }
+        });
+    });
+    
+    // close popup
+    $("body .popup-page").on('click','.popup-close' ,function(){
+      $(".popup-page").removeClass('on');
+      $(".popup-page .popup-container").empty();
+    });
+  },
+  $.fn.callSliderRoyalSlider = function(){
+    // call royalSlider
+    var slider = $('.royalSlider').royalSlider({
+    fullscreen: {
+      enabled: true,
+      nativeFS: true
+    },
+    controlNavigation: 'thumbnails',
+    autoScaleSlider: true, 
+    autoScaleSliderWidth: 725,
+    autoScaleSliderHeight: 478,
+    loop: false,
+    imageScaleMode: 'none',
+    navigateByClick: true,
+    numImagesToPreload:2,
+    arrowsNav:true,
+    arrowsNavAutoHide: true,
+    arrowsNavHideOnTouch: true,
+    keyboardNavEnabled: true,
+    fadeinLoadedSlide: true,
+    globalCaption: false,
+    globalCaptionInside: false,
+    imageScalePadding: 0,
+    slidesSpacing: 0,
+    thumbs: {
+      appendSpan: false,
+      firstMargin: false,
+      paddingBottom: 4
+    }
+    }).data('royalSlider');
+
+    $('.rsFullscreenBtn').click(function(e){
+      slider.enterFullscreen();
+      e.preventDefault();
+    });
+
+    slider.ev.on("rsEnterFullscreen", function() {
+      // enter fullscreen mode 
+      $(".popup-page").css('position', 'relative');
+    });
+    slider.ev.on('rsExitFullscreen', function(event) {
+      // exit fullscreen mode
+      $(".popup-page").removeAttr('style');
+    });
   },
   $.fn.callMapSearchAddress = function(id, currentAddress){
     $.ajax({
@@ -372,7 +445,7 @@
         $(".view-loading").css('display','block');
       },
       success: function(data){
-//        console.log(data);
+        console.log(data);
         $(id).empty().append(data.html);
         $(".view-loading").css('display','none');
       }
@@ -397,7 +470,7 @@
   var max = $.fn.getUrlParam('max');
   var area = $.fn.getUrlParam('area');
   var keyword = $.fn.getUrlParam('keyword');
-  $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.list-travel', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page, filter, sort, star, min, max, area, keyword);
+  $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.load-post', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page, filter, sort, star, min, max, area, keyword);
   
   $.fn.render();
 //  var search = {

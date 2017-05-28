@@ -36,7 +36,8 @@ class Category extends AbstractTableGateway
       // Sắp Xếp
       $select->order('menu_order ASC');
       // Lấy danh sách thể loại gốc
-      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order', 'thumbnail'))->where(array('parent' => 0, 'status' => 1));
+      $select->columns(array('id', 'parent', 'type'))->where(array('parent' => 0, 'status' => 1));
+      $select->join('category_detail', 'category_detail.category_id = category.id', array('name', 'slug','menu_order', 'thumbnail'));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
       if($resultSet){
@@ -60,7 +61,8 @@ class Category extends AbstractTableGateway
       $select = new Select();
       $select->from($this->table);
       $select->order('menu_order ASC');
-      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order','thumbnail'))->where(array('parent' => $arrayParam['parent'], 'status' => 1));
+      $select->columns(array('id', 'parent', 'type'))->where(array('parent' => $arrayParam['parent'], 'status' => 1));
+      $select->join('category_detail', 'category_detail.category_id = category.id', array('name', 'slug','menu_order','thumbnail'));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
       return $resultSet;
@@ -72,7 +74,10 @@ class Category extends AbstractTableGateway
       $select = new Select();
       $select->from($this->table);
       $select->order('menu_order ASC');
-      $select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order'))->where(array('slug' => $arrayParam['slug'], 'status' => 1));
+      //$select->columns(array('id', 'name', 'slug', 'parent', 'type','menu_order'))->where(array('slug' => $arrayParam['slug'], 'status' => 1));
+      $select->columns(array('id', 'parent', 'type'));
+      $select->join('category_detail', 'category_detail.category_id = category.id', array('name', 'slug','menu_order','thumbnail'));
+      $select->where(array('category_detail.slug' => $arrayParam['slug'], 'category_detail.status' => 1));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->current();
       return $resultSet;

@@ -52,6 +52,38 @@ class CategoryController extends AbstractActionController
       define('CATEGORY', $categoryExists->id);
       define('CATEGORY_TYPE', $categoryExists->type);
     }
+    
+    switch ($categoryExists->type){
+      case 'travel':
+        $this->viewModel->setTemplate('travel/index');
+//        $htmlViewPart->setTemplate('travel/load-data-travel');
+        break;
+      case 'tour':
+        $this->layout('layout/tour');
+        $this->viewModel->setTemplate('tour/index');
+        break;
+      case 'hotel':
+        $this->layout('layout/hotel');
+        $this->viewModel->setTemplate('hotel/index');
+        break;
+      case 'taste':
+        $this->layout('layout/taste');
+        $this->viewModel->setTemplate('taste/index');
+        break;
+      case 'video':
+        $this->layout('layout/video');
+        $this->viewModel->setTemplate('video/index');
+        break;
+      case 'utilities':
+        $this->layout('layout/utilities');
+        $this->viewModel->setTemplate('utilities/index');
+        break;
+      case 'diary':
+        $this->layout('layout/diary');
+        $this->viewModel->setTemplate('diary/index');
+        break;
+    }
+    
     if(!$categoryExists){
       return $this->redirect()->toRoute('home');
     }
@@ -96,7 +128,6 @@ class CategoryController extends AbstractActionController
     $this->viewModel->setVariable('countPost', $countPostByParent);
     $this->viewModel->setVariable('regionExists', $regionExists);
     $this->viewModel->setVariable('currentPage', $page);
-    $this->viewModel->setTemplate('travel/index');
     // set category variable
     $this->viewModel->setVariable('category', $categoryExists);
     $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
@@ -145,7 +176,7 @@ class CategoryController extends AbstractActionController
   }
   
   public function loadDataAction(){
-    if($this->getRequest()->isXmlHttpRequest()){
+//    if($this->getRequest()->isXmlHttpRequest()){
       $slug = $this->params()->fromPost('category');
       $nationSlug = $this->params()->fromPost('nation');
       $provinceSlug = $this->params()->fromPost('province');
@@ -223,8 +254,26 @@ class CategoryController extends AbstractActionController
                 ->setItemCountPerPage(ITEM_PAGE)
                 ->setPageRange(PAGE_RAND);
       $htmlViewPart = new ViewModel();
-      $htmlViewPart->setTemplate('travel/load-data-travel')
-                   ->setTerminal(true)
+      switch ('travel'){
+        case 'travel':
+          $htmlViewPart->setTemplate('travel/load-data-travel');
+          break;
+        case 'tour':
+//          $this->layout('layout/tour');
+          $htmlViewPart->setTemplate('tour/load-data-tour');
+          break;
+        case 'hotel':
+          $htmlViewPart->setTemplate('hotel/load-data-hotel');
+          break;
+        case 'taste':
+          $htmlViewPart->setTemplate('taste/load-data-taste');
+          break;
+        case 'tour':
+          break;
+        case 'tour':
+          break;
+      }
+      $htmlViewPart->setTerminal(true)
                    ->setVariables([
                        'filter' => $filter,
                        'min' => $min,
@@ -244,9 +293,9 @@ class CategoryController extends AbstractActionController
       $jsonModel = new JsonModel();
       $jsonModel->setVariables(['html' => $htmlOutput]);
       return $jsonModel;
-    }else{
-      die('Forbidden access');
-    }
+//    }else{
+//      die('Forbidden access');
+//    }
   }
 
   public function detailAction(){

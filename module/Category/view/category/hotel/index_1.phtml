@@ -1,50 +1,21 @@
-<?php $this->meta(
-        $category->name . ' ' .$regionExists->name
-        ); ?>  
-<div class="list-container-view">
-  <?php $this->searchAdvance(); ?>
-  <div class="page-search-title">
-    <div class="item-title">
-      <h1><span class="icon icon-menu"></span> <?php echo ($category) ? $category->name: ''; ?> <?php echo ($regionExists) ? $regionExists->type .' '. $regionExists->name: ''; ?></h1>
-    </div>
+<div class="search">
+  <div class="page-search">
+    <?php $this->searchTravel(); ?>
   </div>
-  <div class="province-container">
-    <div class="province">
-      <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-    </div>
-    <div class="list-province-item">
-      <ul class="load-post list-item">
-        
-      </ul>
-    </div>
-    
-<!--    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="paging">
-            <?php
-//            echo $this->paginationControl($paginator, 'Sliding', 'paginationAjax', array(
-//                $this->route,
-//                'category' => $category->slug,
-//                'province' => $province,
-//                'district' => $district,
-//                'nation' => $nation,
-//                'page' => $page
-//            ));
-            ?>
-        </div>
-      </div>
-    </div>-->
-  </div>
-  <div class="footer-travel">
-    <?php $this->footerTravel(); ?>
-  </div>
+  
 </div>
-
-
-<!--<div id="container">
+<div id="container">
   <div class="view">
     <div class="list-container-view">
+      <div class="page-search-title">
+        <div class="item-title">
+          <h1><span class="icon icon-menu"></span> Khách sạn</h1>
+        </div>
+      </div>
       <div class="list-cat">
+        <div class="filter">
+          
+        </div>
         <ul class="row list-item">
           
           <li class="col-md-6">
@@ -435,7 +406,7 @@
       }
     </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
      
      <script>
   jQuery(document).ready(function($){
@@ -605,4 +576,4 @@
   <div class="views-container">
     
   </div>
-</div>-->
+</div>

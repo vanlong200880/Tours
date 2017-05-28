@@ -34,10 +34,16 @@ class Post extends AbstractTableGateway
    {
       $select = new Select();
       $select->from($this->table);
+//      $select ->join('category_detail', 'category.id = category_detail.category_id', array('slug'));
+//      $select ->join('post_detail', 'post.id = post_detail.post_id', array('slug', 'name'));
+//      $select->where(array('post_detail.status_id' => 1));
+//      
       $select->columns(array('totalPost' => new Expression('COUNT(category.type)')))
               ->join('category', 'category.id = post.category_id', array('type'))
+              ->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug'))
+              ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name'))
               ->group('category.type')
-              ->where(array('status_id' => 1))
+              ->where(array('post_detail.status_id' => 1))
               ->where->in('category.type', array('travel', 'tour', 'hotel', 'taste'));
       if($arrayParam['nation_id'] && $arrayParam['province_id'] && $arrayParam['district_id']){
         $select->where(array('district_id' => $arrayParam['district_id']));
@@ -57,41 +63,43 @@ class Post extends AbstractTableGateway
    public function getPostByCategory($arrayParam = null){
       $select = new Select();
       $select->from($this->table);
-      $select ->join('category', 'category.id = post.category_id', array('type'))
-              ->where(array('status_id' => 1));
+      $select ->join('category', 'category.id = post.category_id', array('type'));
+      $select ->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug'));
+      $select ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name'));
+      $select->where(array('post_detail.status_id' => 1));
       $arrId = array($arrayParam['CategoryIdCurrent']);
       if($arrayParam['categoryId']){
         foreach ($arrayParam['categoryId'] as $value){
           array_push($arrId, $value['id']);
         }
       }
-      $select->where->in('category_id', $arrId);
+      $select->where->in('post.category_id', $arrId);
       if($arrayParam['nationId']){
-        $select->where(array('post.nation_id' => $arrayParam['nationId']));
+        $select->where(array('post_detail.nation_id' => $arrayParam['nationId']));
       }
       if($arrayParam['provinceId']){
-        $select->where(array('post.province_id' => $arrayParam['provinceId']));
+        $select->where(array('post_detail.province_id' => $arrayParam['provinceId']));
       }
       if($arrayParam['districtId']){
-        $select->where(array('post.district_id' => $arrayParam['districtId']));
+        $select->where(array('post_detail.district_id' => $arrayParam['districtId']));
       }
       
       if($arrayParam['categoryType']){
         switch ($arrayParam['categoryType']){
         case 'travel':
           $select->columns(
-              array('id', 'name', 'slug', 'hot', 'new', 'sticky', 'address', 'lat', 'lng', 'menu_order'));
+              array('id'));
           if($arrayParam['filter'] == 'news'){
-            $select->order('new ASC');
+            $select->order('post_detail.new ASC');
           }
           if($arrayParam['filter'] == 'hot'){
-            $select->order('hot ASC');
+            $select->order('post_detail.hot ASC');
           }
           if($arrayParam['filter'] == 'view'){
-            $select->order('view DESC');
+            $select->order('post_detail.view DESC');
           }
-          $select->order('menu_order ASC');
-          $select->order('publish_date DESC');
+          $select->order('post_detail.menu_order ASC');
+          $select->order('post_detail.publish_date DESC');
           break;
         case 'tour':
           break;
@@ -107,10 +115,10 @@ class Post extends AbstractTableGateway
             break;
         }
       }
-      $select->join('nation', 'post.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
-      $select->join('province', 'post.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
-      $select->join('district', 'post.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
-      $select->join('ward', 'post.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+      $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
+      $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      $select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      $select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
       
       $resultSet = $this->selectWith($select);
       $resultSet->buffer()->toArray();
@@ -124,10 +132,10 @@ class Post extends AbstractTableGateway
       $select->columns(array('name', 'lng', 'lat'))
               ->join('category', 'category.id = post.category_id', array('type'))
               ->where(array('status_id' => 1, 'post.id' => $arrayParam['id']));
-      $select->join('nation', 'post.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
-      $select->join('province', 'post.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
-      $select->join('district', 'post.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
-      $select->join('ward', 'post.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+      $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
+      $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      $select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      $select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->current();
       return $resultSet;
