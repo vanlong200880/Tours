@@ -17,11 +17,13 @@ class CategoryController extends AbstractActionController
   protected $viewModel;
   protected $jsonModel;
   protected $serviceManager;
+  protected $language;
   public function __construct() {
-//    $this->serviceManager = $serviceManager;
+    $this->language = 'vi';
     $this->jsonModel = new JsonModel();
     $this->viewModel = new ViewModel();
   }
+
   public function indexAction()
   {
     $slug = $this->params()->fromRoute('category');

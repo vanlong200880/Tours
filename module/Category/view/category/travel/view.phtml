@@ -1,6 +1,11 @@
+<?php 
+//echo '<pre>';
+//var_dump($gallery)
+
+?>
 <div class="popup-content">
   <div class="popup-header">
-   <h2><span class="icon icon-location"></span> Đầm sen</h2>
+   <h2><span class="icon icon-location"></span> <?php echo $dataPost->name; ?></h2>
    <div class="close-zoom pull-right">
      <div class="zoom"><a href="<?php //echo $this->url('travel-detail', array('category' => 'category', 'slug' => 'detail-travel-expand', 'id' => '2324234')) ?>"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
      <div class="popup-close"><span class="icon icon-cancel-music"></span></div>
@@ -9,25 +14,17 @@
   <div class="popup-body">
     <div class="row">
       <div class="col-md-8">
+        <?php if($gallery): ?>
         <div class="col-md-12">
           <div class="slider">
             <div class="royalSlider rsDefault">
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-              <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+              <?php foreach ($gallery as $value): ?>
+              <img class="rsImg" src="<?php echo SERVER_IMAGE.'/'. $value['name']; ?>" data-rsTmb="<?php echo SERVER_IMAGE.'/100x80/'. $value['name']; ?>" alt="image description" />
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
+        <?php endif; ?>
         <div class="col-md-12">
           <div class="content-page-popup">
             <div class="row">
@@ -42,18 +39,7 @@
                 </ul>
                 <div class="content">
                   <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <?php echo $dataPost->about; ?>
                   </div>
                   
                   <div id="table-price" class="list-catelog">

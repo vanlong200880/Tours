@@ -5,6 +5,8 @@ define('TEMP_PATH', PUBLIC_PATH . '/tmp');
 define('FILES_PATH', PUBLIC_PATH . '/files');
 define('SCRIPTS_PATH',PUBLIC_PATH . '/scripts');
 define('CAPTCHA_PATH',PUBLIC_PATH . '/captcha');
+define('SERVER_IMAGE','http://gonow.dev/files');
+
 //Duong dan den thu muc /templates
 define('TEMPLATE_PATH', PUBLIC_PATH . '/templates');
 define('DATA_PATH', realpath(dirname(dirname(__FILE__))) . '/data');
@@ -55,5 +57,6 @@ define('URL_HOME', 'http://localhost/tours/public');
 define('IMAGE_DEFAULT', '');
 define('TYPE', '');
 define('FACEBOOK_ID', '131231231231');
+
  
 

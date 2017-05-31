@@ -7,19 +7,35 @@ use Zend\View\Model\JsonModel;
 use Category\Model\Post;
 use Zend\Session\Container;
 use Category\Util\MapGeoCode;
+use Category\Model\PostImage;
 
 class TravelController extends AbstractActionController
 {
-//    public function detailAction(){
-//      $this->layout('layout/detail-page');
-//      return new ViewModel();
-//    }
+  protected $language;
+  public function __construct() {
+    $this->language = 'vi';
+    $this->jsonModel = new JsonModel();
+    $this->viewModel = new ViewModel();
+  }
     public function viewAction(){
+      $id = $this->params()->fromPost('id');
       $htmlViewPart = new ViewModel();
       
+      // Kiểm tra post có tồn tại không
+      $post = new Post();
+      $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language));
+      $gallery = '';
+      if($dataPost){
+        $postImage = new PostImage();
+        $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
+      }
       $htmlViewPart->setTemplate('travel/popup-view')
                    ->setTerminal(true)
-                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+                   ->setVariables([
+                       'id' => $id,
+                       'dataPost' => $dataPost,
+                       'gallery' => $gallery
+                           ]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       
       // get comment
