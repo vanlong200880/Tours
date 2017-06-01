@@ -8,6 +8,8 @@ use Category\Model\Post;
 use Zend\Session\Container;
 use Category\Util\MapGeoCode;
 use Category\Model\PostImage;
+use Category\Model\EntertainmentType;
+use Category\Model\Entertainment;
 
 class TravelController extends AbstractActionController
 {
@@ -25,16 +27,66 @@ class TravelController extends AbstractActionController
       $post = new Post();
       $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language));
       $gallery = '';
+      $dataEntertainmentType = '';
       if($dataPost){
         $postImage = new PostImage();
         $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
+        
+        // Lấy ra danh sách loại bảng giá
+        $entertainmentType = new EntertainmentType();
+        $entertainment = new Entertainment();
+        $entertainmentTypeParentNull = $entertainmentType->getListEntertainmentByTravelId(array('parent' => 0, 'language' => $this->language));
+        if($entertainmentTypeParentNull){
+          foreach ($entertainmentTypeParentNull as $key => $value){
+            // Kiểm tra có child
+            $checkEntertainmentIsChild = $entertainmentType->getListEntertainmentByTravelId(array('parent' => $value['id'], 'language' => $this->language));
+            $dataEntertainmentType[$key] = array(
+              'id' => $value['id'],
+              'name' => $value['name'],
+              'description' => $value['description'],
+              'language' => $value['language'],
+              'status' => $value['status'],
+              'child' => '',
+              'dataChild' => ''
+            );
+            if($checkEntertainmentIsChild){
+              $dataEntertainmentType[$key]['child'] = $checkEntertainmentIsChild;
+              // Lấy danh sách trò chơi
+              if($dataEntertainmentType[$key]['child']){
+                foreach ($dataEntertainmentType[$key]['child'] as $k => $val){
+                  $dataEntertainmentType[$key]['child'] = array(
+                    'id' => $val['id'],
+                    'name' => $val['name'],
+                    'description' => $val['description'],
+                    'language' => $val['language'],
+                    'status' => $val['status'],
+                    'dataChild' => ''
+                  );
+                  $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $val['id'], 'language' => $this->language));
+                  if($dataEntertainmentChild){
+                    $dataEntertainmentType[$key]['child']['dataChild'] = $dataEntertainmentChild;
+                  }
+                }
+              }
+              
+            }else{
+              // Lấy danh sách trò chơi
+              $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $value['id'], 'language' => $this->language));
+              if($dataEntertainmentChild){
+                $dataEntertainmentType[$key]['dataChild'] = $dataEntertainmentChild;
+              }
+              
+            }
+          }
+        }
       }
       $htmlViewPart->setTemplate('travel/popup-view')
                    ->setTerminal(true)
                    ->setVariables([
                        'id' => $id,
                        'dataPost' => $dataPost,
-                       'gallery' => $gallery
+                       'gallery' => $gallery,
+                       'abc' => $dataEntertainmentType
                            ]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       

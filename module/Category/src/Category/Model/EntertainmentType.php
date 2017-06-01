@@ -20,6 +20,21 @@ class EntertainmentType extends AbstractTableGateway
     	$this->initialize();      
    }
    
+  // Lấy ra loại trò chơi
+  public function getListEntertainmentByTravelId($arrayParam = ''){
+    $select = new Select();
+    $select->from($this->table);
+    $select->columns(array('id'))
+          ->where(array('parent' => $arrayParam['parent']));
+    $select->join('entertaimment_type_detail', 'entertaimment_type_detail.entertainment_type_id = entertainment_type.id', array('name', 'description', 'language', 'status'));
+    $select->where(array('entertaimment_type_detail.status' => 1, 'language' => $arrayParam['language']));
+    $resultSet = $this->selectWith($select);
+      $resultset = $resultSet->toArray();
+    return $resultset;
+  }
+  
+
+
    public function getAllCategoryChildById($parent,$language){
       $select = new Select();
       $select->from($this->table);

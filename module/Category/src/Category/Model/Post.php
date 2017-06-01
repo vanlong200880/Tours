@@ -139,6 +139,7 @@ class Post extends AbstractTableGateway
       $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
       $select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
       $select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+      $select->join('travel', 'travel.post_id= post.id', array('travel_id' => 'id'));
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->current();
       return $resultSet;
