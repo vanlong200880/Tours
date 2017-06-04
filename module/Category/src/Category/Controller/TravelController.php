@@ -10,6 +10,8 @@ use Category\Util\MapGeoCode;
 use Category\Model\PostImage;
 use Category\Model\EntertainmentType;
 use Category\Model\Entertainment;
+use Category\Model\Vehicle;
+use Category\Model\PostVideo;
 
 class TravelController extends AbstractActionController
 {
@@ -28,6 +30,8 @@ class TravelController extends AbstractActionController
       $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language));
       $gallery = '';
       $dataEntertainmentType = '';
+      $dataVehicle = '';
+      $listVideo = '';
       if($dataPost){
         $postImage = new PostImage();
         $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
@@ -46,6 +50,7 @@ class TravelController extends AbstractActionController
               'description' => $value['description'],
               'language' => $value['language'],
               'status' => $value['status'],
+              'type' => $value['type'],
               'child' => '',
               'dataChild' => ''
             );
@@ -54,17 +59,18 @@ class TravelController extends AbstractActionController
               // Lấy danh sách trò chơi
               if($dataEntertainmentType[$key]['child']){
                 foreach ($dataEntertainmentType[$key]['child'] as $k => $val){
-                  $dataEntertainmentType[$key]['child'] = array(
+                  $dataEntertainmentType[$key]['child'][$k] = array(
                     'id' => $val['id'],
                     'name' => $val['name'],
                     'description' => $val['description'],
                     'language' => $val['language'],
                     'status' => $val['status'],
+                    'type' => $val['type'],
                     'dataChild' => ''
                   );
                   $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $val['id'], 'language' => $this->language));
                   if($dataEntertainmentChild){
-                    $dataEntertainmentType[$key]['child']['dataChild'] = $dataEntertainmentChild;
+                    $dataEntertainmentType[$key]['child'][$k]['dataChild'] = $dataEntertainmentChild;
                   }
                 }
               }
@@ -79,14 +85,26 @@ class TravelController extends AbstractActionController
             }
           }
         }
+        // Lấy danh sách phương tiện
+        $vehicle = new Vehicle();
+        $dataVehicle = $vehicle->getVehicleByTravelId(array('travel_id' => $dataPost->travel_id, 'language' => $this->language));
+        
+        // Lấy danh sách video
+        $video = new PostVideo();
+        $listVideo = $video->getListVideoByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id));
       }
+      
+      
+      
       $htmlViewPart->setTemplate('travel/popup-view')
                    ->setTerminal(true)
                    ->setVariables([
                        'id' => $id,
                        'dataPost' => $dataPost,
                        'gallery' => $gallery,
-                       'abc' => $dataEntertainmentType
+                       'dataEntertainment' => $dataEntertainmentType,
+                       'dataVehicle' => $dataVehicle,
+                       'listVideo' => $listVideo
                            ]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       
