@@ -201,55 +201,55 @@
                 </div>
             </div>
           </div>
-          
+          <?php if($dataPostContact): ?>
           <div class="support">
             <h2>Liên hệ đặt trực tuyến</h2>
             <ul>
+              <?php foreach ($dataPostContact as $cotnact): ?>
               <li>
                 <div class="item">
                   <div class="icon">
 
                   </div>
                   <div class="content-support">
-                    <p class="name">Pham Van Long</p>
-                    <p><a href="#">vanlong200880@gmail.com</a></p>
-                    <p class="hotline">Hotline: 1900 1248</p>
+                    <p class="name"><?php echo $cotnact['name']; ?></p>
+                    <p><a href="#"><?php echo $cotnact['email']; ?></a></p>
+                    <p class="hotline">Hotline: <?php echo $cotnact['hotline']; ?></p>
                   </div>
                 </div>
               </li>
-              <li>
-                <div class="item">
-                  <div class="icon">
-
-                  </div>
-                  <div class="content-support">
-                    <p class="name">Pham Van Long</p>
-                    <p><a href="#">vanlong200880@gmail.com</a></p>
-                    <p class="hotline">Hotline: 1900 1248</p>
-                  </div>
-                </div>
-              </li>
+              <?php endforeach; ?>
             </ul>
           </div>
+          <?php endif; ?>
         </div>
+        <?php 
+        if($dataPostRelated): ?>
         <div class="list-related list-province-item">
           <h2 class="title"><span>Địa điểm khác</span></h2>
           <ul class="list-travel">
+            <?php foreach ($dataPostRelated as $key => $value): ?>
             <li>
               <div class="item">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="item-img">
                       <a href="javascript:void(0);" title="dam sen">
-                        <img src="/tours/public/assets/demo/photo.jpg">
+                        <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
                         <div class="overlay_border"></div>
                       </a>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="item-des">
-                      <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                      <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
+                      <h2><a href="javascript:void(0);" title="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a></h2>
+                      <p class="address">
+                        <?php echo $value['address']; ?>, 
+                        <?php echo $value['ward_type']; ?>  <?php echo $value['ward_name']; ?>, 
+                        <?php echo $value['district_type']; ?> <?php echo $value['district_name']; ?>,
+                        <?php echo $value['province_type']; ?> <?php echo $value['province_name']; ?>, 
+                        <?php echo $value['nation_type']; ?> <?php echo $value['nation_name']; ?>
+                      </p>
                       <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
                       <div class="fs-game">
                         <ul class="list-game">
@@ -264,99 +264,10 @@
                 </div>
               </div>
             </li>
-            
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="/tours/public/assets/demo/photo.jpg">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="item-des">
-                      <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                      <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                      <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                      <div class="fs-game">
-                        <ul class="list-game">
-                          <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                          <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                          <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                        </ul>
-                        <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="/tours/public/assets/demo/photo.jpg">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="item-des">
-                      <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                      <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                      <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                      <div class="fs-game">
-                        <ul class="list-game">
-                          <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                          <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                          <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                        </ul>
-                        <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            
-            <li>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="item-img">
-                      <a href="javascript:void(0);" title="dam sen">
-                        <img src="/tours/public/assets/demo/photo.jpg">
-                        <div class="overlay_border"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="item-des">
-                      <h2><a href="javascript:void(0);" title="dam sen">Đầm sen</a></h2>
-                      <p class="address">Tầng 24 - 25, Tower, 76A Lê Lai, Quận 1, TP. HCM</p>
-                      <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
-                      <div class="fs-game">
-                        <ul class="list-game">
-                          <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                          <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                          <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
-                        </ul>
-                        <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            
+            <?php endforeach; ?>
           </ul>
         </div>
+        <?php endif; ?>
       </div>
     </div>
 

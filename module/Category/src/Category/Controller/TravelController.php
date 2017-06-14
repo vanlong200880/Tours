@@ -12,6 +12,7 @@ use Category\Model\EntertainmentType;
 use Category\Model\Entertainment;
 use Category\Model\Vehicle;
 use Category\Model\PostVideo;
+use Category\Model\PostContact;
 
 class TravelController extends AbstractActionController
 {
@@ -32,6 +33,8 @@ class TravelController extends AbstractActionController
       $dataEntertainmentType = '';
       $dataVehicle = '';
       $listVideo = '';
+      $dataPostContact = '';
+      $dataPostRelated = '';
       if($dataPost){
         $postImage = new PostImage();
         $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
@@ -92,6 +95,22 @@ class TravelController extends AbstractActionController
         // Lấy danh sách video
         $video = new PostVideo();
         $listVideo = $video->getListVideoByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id));
+        
+        // Lấy danh sách liên hệ
+        $contact = new PostContact();
+        $dataPostContact = $contact->getListContactByPostId(array('post_id' => $dataPost->id));
+        
+        // Lấy danh sách bài viết khác cùng chuyên mục
+        $dataPostRelated = $post->getPostRelatedByCategory(
+                array(
+                  'id' => $dataPost->id,
+                  'category_id' => $dataPost->category_id,
+                  'language' => $this->language,
+                  'nationId' => 1,
+                  'provinceId' => 1,
+                  'districtId' => 1,
+                  'limit' => 5
+                ));
       }
       
       
@@ -104,7 +123,9 @@ class TravelController extends AbstractActionController
                        'gallery' => $gallery,
                        'dataEntertainment' => $dataEntertainmentType,
                        'dataVehicle' => $dataVehicle,
-                       'listVideo' => $listVideo
+                       'listVideo' => $listVideo,
+                       'dataPostContact' => $dataPostContact,
+                       'dataPostRelated' => $dataPostRelated
                            ]);
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       
