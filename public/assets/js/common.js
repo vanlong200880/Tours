@@ -324,6 +324,34 @@
       $(".popup-page").removeClass('on');
       $(".popup-page .popup-container").empty();
     });
+    
+    // view gallery
+    $("body .popup-page").on('click','.game-entertainment tr td .history', function(){
+      var id = $(this).attr('data-id');
+      var url = 'http://gonow.dev/view-gallery';
+      $.fn.viewGallery(url, id);
+      
+    });
+  },
+  $.fn.viewGallery = function(url, id){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {id: id},
+      beforeSend: function(){
+        $(".views-popup").addClass('view');
+        $(".views-popup").append('<div class="loading"></div>');
+      },
+      success : function (data){
+        $( ".loading" ).remove();
+        $(".views-popup .views-container").empty().append(data.html);
+        // call royalSlider
+        $.fn.callSliderRoyalSlider();
+        // view map popup
+        $(".views-popup .views-container").addClass('open');
+      }
+    });
   },
   $.fn.callSliderRoyalSlider = function(){
     // call royalSlider
@@ -435,7 +463,8 @@
           
           }
         });
-  }
+  },
+  
   $.fn.loadData = function(url, id, category, nation, province, district, page, filter, sort, star, min, max, area, keyword){
     $.ajax({
       method: 'POST',

@@ -201,10 +201,13 @@ class TravelController extends AbstractActionController
       }
     }
     public function viewGalleryAction(){
+      $id = $this->params()->fromPost('id');
+      $entertainmentGallery = new \Category\Model\EntertainmentImage();
+      $listGallery = $entertainmentGallery->getListEntertainmentImage(array('entertainment_id' => $id));
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('travel/view-gallery')
                    ->setTerminal(true)
-                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+                   ->setVariables(['listGallery' => $listGallery]);
 
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
 

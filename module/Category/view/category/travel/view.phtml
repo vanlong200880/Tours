@@ -376,69 +376,69 @@
 //      $('.popup-page').animate({ scrollTop: h}, 800, 'swing');
     });
     // show detail gallery
-    $(".game-entertainment tr td").on('click','.history', function(){
-      var id = 'abc';
-      var url = 'http://localhost/tours/public/view-gallery';
-      $.ajax({
-          url : url,
-          type : 'POST',
-          dataType : "json",
-          data: {id: id},
-          beforeSend: function(){
-            $(".views-popup").addClass('view');
-            $(".views-popup").append('<div class="loading"></div>');
-          },
-          success : function (data){
-            $( ".loading" ).remove();
-            $(".views-popup .views-container").empty().append(data.html);
-            // call royalSlider
-            var slider = $('.royalSlider').royalSlider({
-            fullscreen: {
-              enabled: false,
-              nativeFS: false
-            },
-            controlNavigation: 'thumbnails',
-            autoScaleSlider: true, 
-            autoScaleSliderWidth: 725,
-            autoScaleSliderHeight: 478,
-            loop: false,
-            imageScaleMode: 'none',
-            navigateByClick: true,
-            numImagesToPreload:2,
-            arrowsNav:true,
-            arrowsNavAutoHide: true,
-            arrowsNavHideOnTouch: true,
-            keyboardNavEnabled: true,
-            fadeinLoadedSlide: true,
-            globalCaption: false,
-            globalCaptionInside: false,
-            imageScalePadding: 0,
-            slidesSpacing: 0,
-            thumbs: {
-              appendSpan: false,
-              firstMargin: false,
-              paddingBottom: 4
-            }
-            }).data('royalSlider');
-
-            $('.rsFullscreenBtn').click(function(e){
-              slider.enterFullscreen();
-              e.preventDefault();
-            });
-
-            slider.ev.on("rsEnterFullscreen", function() {
-              // enter fullscreen mode 
-              $(".popup-page").css('position', 'relative');
-            });
-            slider.ev.on('rsExitFullscreen', function(event) {
-              // exit fullscreen mode
-              $(".popup-page").removeAttr('style');
-            });
-            // view map popup
-            $(".views-popup .views-container").addClass('open');
-          }
-        });
-    });
+//    $(".game-entertainment tr td").on('click','.history', function(){
+//      var id = 'abc';
+//      var url = 'http://localhost/tours/public/view-gallery';
+//      $.ajax({
+//          url : url,
+//          type : 'POST',
+//          dataType : "json",
+//          data: {id: id},
+//          beforeSend: function(){
+//            $(".views-popup").addClass('view');
+//            $(".views-popup").append('<div class="loading"></div>');
+//          },
+//          success : function (data){
+//            $( ".loading" ).remove();
+//            $(".views-popup .views-container").empty().append(data.html);
+//            // call royalSlider
+//            var slider = $('.royalSlider').royalSlider({
+//            fullscreen: {
+//              enabled: false,
+//              nativeFS: false
+//            },
+//            controlNavigation: 'thumbnails',
+//            autoScaleSlider: true, 
+//            autoScaleSliderWidth: 725,
+//            autoScaleSliderHeight: 478,
+//            loop: false,
+//            imageScaleMode: 'none',
+//            navigateByClick: true,
+//            numImagesToPreload:2,
+//            arrowsNav:true,
+//            arrowsNavAutoHide: true,
+//            arrowsNavHideOnTouch: true,
+//            keyboardNavEnabled: true,
+//            fadeinLoadedSlide: true,
+//            globalCaption: false,
+//            globalCaptionInside: false,
+//            imageScalePadding: 0,
+//            slidesSpacing: 0,
+//            thumbs: {
+//              appendSpan: false,
+//              firstMargin: false,
+//              paddingBottom: 4
+//            }
+//            }).data('royalSlider');
+//
+//            $('.rsFullscreenBtn').click(function(e){
+//              slider.enterFullscreen();
+//              e.preventDefault();
+//            });
+//
+//            slider.ev.on("rsEnterFullscreen", function() {
+//              // enter fullscreen mode 
+//              $(".popup-page").css('position', 'relative');
+//            });
+//            slider.ev.on('rsExitFullscreen', function(event) {
+//              // exit fullscreen mode
+//              $(".popup-page").removeAttr('style');
+//            });
+//            // view map popup
+//            $(".views-popup .views-container").addClass('open');
+//          }
+//        });
+//    });
     
     // comment
     $(".comment ul.list-comment > li").on('click', '.fs-comment', function(){
