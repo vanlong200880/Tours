@@ -13,7 +13,7 @@ use Category\Model\Entertainment;
 use Category\Model\Vehicle;
 use Category\Model\PostVideo;
 use Category\Model\PostContact;
-
+use Category\Model\EntertainmentDetail;
 class TravelController extends AbstractActionController
 {
   protected $language;
@@ -204,10 +204,14 @@ class TravelController extends AbstractActionController
       $id = $this->params()->fromPost('id');
       $entertainmentGallery = new \Category\Model\EntertainmentImage();
       $listGallery = $entertainmentGallery->getListEntertainmentImage(array('entertainment_id' => $id));
+      
+      // get entertaiment detail
+      $entertainmentDetail = new EntertainmentDetail();
+      $dataEmtertainmentDetail = $entertainmentDetail->getEntertainmentDetailById(array('entertainment_id' => 4));
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('travel/view-gallery')
                    ->setTerminal(true)
-                   ->setVariables(['listGallery' => $listGallery]);
+                   ->setVariables(['listGallery' => $listGallery, 'entertaimentData' => $dataEmtertainmentDetail]);
 
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
 

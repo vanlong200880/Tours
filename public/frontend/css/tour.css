@@ -2962,7 +2962,9 @@ ul.connect li.youtube a:hover {
 .slider {
   background: #FFF;
   padding: 8px;
-  border: 1px solid #DDD; }
+  border: 1px solid #DDD;
+  display: inline-block;
+  width: 100%; }
 
 .description h2 {
   font-size: 14px;

@@ -24,9 +24,9 @@ class Entertainment extends AbstractTableGateway
     $select = new Select();
     $select->from($this->table);
     $select->columns(array('id'));
-    $select->join('entertaimment_detail', 'entertaimment_detail.entertainment_id = entertainment.id', array('name', 'description', 'language', 'status'));
+    $select->join('entertainment_detail', 'entertainment_detail.entertainment_id = entertainment.id', array('name', 'description', 'language', 'status'));
     $select->where(array('entertainment_type_id' => $arrayParam['entertainment_type_id']));
-    $select->where(array('entertaimment_detail.language' => $arrayParam['language'], 'entertaimment_detail.status' => 1));
+    $select->where(array('entertainment_detail.language' => $arrayParam['language'], 'entertainment_detail.status' => 1));
     $select->join('travel_price', 'travel_price.entertainment_id = entertainment.id', array('price_adult', 'price_child'));
     $resultSet = $this->selectWith($select);
     $resultSet = $resultSet->toArray();
