@@ -92,6 +92,20 @@ return array(
               ),
             ),
             
+            // Load comment
+            'load-comment' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/load-comment',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'loadComment',
+                ),
+              ),
+            ),
+            
             'region-province' => array(
               'type' => 'Segment',
               'options' => array(

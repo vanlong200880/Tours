@@ -313,7 +313,8 @@
           success : function (data){
             $( ".loading" ).remove();
             $(".popup-container").empty().append(data.html);
-            $("#page-comment").empty().append(data.htmlComment);
+//            $("#page-comment").empty().append(data.htmlComment);
+            $.fn.loadComment(defaults['url'] + '/load-comment', id, 1);
             $.fn.callSliderRoyalSlider();
           }
         });
@@ -331,6 +332,28 @@
       var url = 'http://gonow.dev/view-gallery';
       $.fn.viewGallery(url, id);
       
+    });
+  },
+  $.fn.loadComment = function(url, id, page){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {id: id},
+      beforeSend: function(){
+//        $(".views-popup").addClass('view');
+//        $(".views-popup").append('<div class="loading"></div>');
+      },
+      success : function (data){
+        $("#page-comment").empty().append(data.htmlComment);
+        console.log(data);
+//        $( ".loading" ).remove();
+//        $(".views-popup .views-container").empty().append(data.html);
+//        // call royalSlider
+//        $.fn.callSliderRoyalSlider();
+//        // view map popup
+//        $(".views-popup .views-container").addClass('open');
+      }
     });
   },
   $.fn.viewGallery = function(url, id){

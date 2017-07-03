@@ -130,13 +130,13 @@ class TravelController extends AbstractActionController
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       
       // get comment
-      $htmlCommentPart = new ViewModel();
-      $htmlCommentPart->setTemplate('view/comment')
-                   ->setTerminal(true)
-                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
-      $htmlCommentOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlCommentPart);
+//      $htmlCommentPart = new ViewModel();
+//      $htmlCommentPart->setTemplate('view/comment')
+//                   ->setTerminal(true)
+//                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
+//      $htmlCommentOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlCommentPart);
       $jsonModel = new JsonModel();
-      $jsonModel->setVariables(['html' => $htmlOutput, 'htmlComment' => $htmlCommentOutput]);
+      $jsonModel->setVariables(['html' => $htmlOutput]);
 
       return $jsonModel;
     }
