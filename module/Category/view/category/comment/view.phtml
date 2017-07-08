@@ -82,7 +82,9 @@
 </div>
 <div class="comment">
   <h2><span>Bình luận</span> <a class="buttom-comment pull-right" data-toggle="modal" data-target="#modal-comment">Bình luận</a></h2>
+  <?php if($dataComment): ?>
   <ul class="list-comment">
+    <?php foreach ($dataComment as $value): ?>
     <li>
       <div class="comment-item">
         <div class="avartar">
@@ -91,32 +93,42 @@
         <div class="comment-content">
           <div class="comment-info">
             <div class="user-comment-info">
-              <p><a href="#"><b>Pham Van Long</b></a></p>
-              <p><span class="icon icon-001-cell-phone"></span> Via Iphone <var>20/3/2017 21:32</var></p>
+              <p><a href="#"><b><?php echo $value['fullname']; ?></b></a></p>
+              <?php if($value['device']): ?>
+              <p><span class="icon icon-001-cell-phone"></span> Via <?php echo $value['device']; ?> <var><?php echo date('d/m/Y H:i:s', $value['created']); ?></var></p>
+              <?php endif; ?>
             </div>
-            <p><a href="#"><strong>Facebook for Developers</strong></a></p>
-            <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
+            <p><a href="#"><strong><?php echo $value['title']; ?></strong></a></p>
+            <p><?php echo $value['content']; ?></p>
             <div class="review-options">
               <ul>
-                <li><span>Số người: 4</span></li>
-                <li><span>Chi phí: 1,000,000đ</span></li>
-                <li><span>Muốn quay lại: Chắc chắn</span></li>
+                <?php if($value['persion']): ?>
+                <li><span>Số người: <?php echo $value['persion'] ?></span></li>
+                <?php endif; ?>
+                <?php if($value['total_bill']): ?>
+                <li><span>Chi phí: <?php echo number_format($value['total_bill'], 0, '.', '.'); ?>đ</span></li>
+                <?php endif; ?>
+                <?php if($value['come_back']): ?>
+                <li><span>Muốn quay lại: 
+                  <?php if($value['come_back'] == 1): ?>Chắc chắn
+                  <?php endif; ?>
+                  <?php if($value['come_back'] == 2): ?>Có thể
+                  <?php endif; ?>
+                  <?php if($value['come_back'] == 3): ?>Không
+                  <?php endif; ?>
+                  </span></li>
+                <?php endif; ?>
               </ul>
             </div>
+            <?php if($value['listImageComment']): ?>
             <div class="list-gallery">
+              <?php foreach ($value['listImageComment'] as $img): ?>
               <a href="#">
                 <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
               </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
+              <?php endforeach; ?>
             </div>
+            <?php endif; ?>
           </div>
           <div class="form-replies">
             <div class="view-replies">
@@ -124,7 +136,7 @@
                 Trả lời
               </div>
               <div class="fs-like icon icon-heart-1">
-                Thích (10)
+                Thích (<?php echo number_format($value['total_like'], 0, ',', ','); ?>)
               </div>
               <div class="fs-share">
                 Chia sẻ
@@ -140,88 +152,24 @@
                 </div>
               </div>
             </div>
-
-            <div class="comment-replies">
-              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
-              <div class="comment-content">
-                <p><strong><a href="#">Phạm Long </a></strong>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
-                <p><span class="icon icon-001-cell-phone"></span> Via Iphone <var>20/3/2017 21:32</var></p>
-              </div>
-            </div>
-
-            <div class="comment-form-replies">
-              <div class="icon">
-                <div class="avartar">
-                  <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-               </div>
-              </div>
-              <div class="replies">
-                <textarea class="form-control"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="comment-item">
-        <div class="avartar">
-           <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-        </div>
-        <div class="comment-content">
-          <div class="comment-info">
-            <div class="user-comment-info">
-              <p><a href="#"><b>Pham Van Long</b></a></p>
-              <p><span class="icon icon-001-cell-phone"></span> Via Iphone <var>20/3/2017 21:32</var></p>
-            </div>
-            <p><a href="#"><strong>Facebook for Developers</strong></a></p>
-            <p>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
-            <div class="list-gallery">
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-              <a href="#">
-                <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
-              </a>
-            </div>
-          </div>
-          <div class="form-replies">
-            <div class="view-replies">
-              <div class="fs-comment icon icon-comment">
-                Trả lời
-              </div>
-              <div class="fs-like icon icon-heart-1">
-                Thích (10)
-              </div>
-              <div class="fs-share">
-                Chia sẻ
-                <div class="share-page">
-                  <ul>
-                    <li>
-                      <span>Điểm đia chơi</span>
-                    </li>
-                    <li>
-                      <span>Chia sẻ lên Facebook</span>
-                    </li>
-                  </ul>
+            <?php if($value['commentChild']): ?>
+            <div class="list-comment-replies">
+              <?php foreach ($value['commentChild'] as $child): ?>
+              <div class="comment-replies">
+                <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+                <div class="comment-content">
+                  <p><strong><a href="#">
+                    <?php echo $value['fullname']; ?> </a></strong>
+                    <?php echo $value['content']; ?>
+                  </p>
+                  <?php if($value['device']): ?>
+              <p><span class="icon icon-001-cell-phone"></span> Via <?php echo $value['device']; ?> <var><?php echo date('d/m/Y H:i:s', $value['created']); ?></var></p>
+              <?php endif; ?>
                 </div>
               </div>
+              <?php endforeach; ?>
             </div>
-
-            <div class="comment-replies">
-              <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
-              <div class="comment-content">
-                <p><strong><a href="#">Phạm Long </a></strong>Hotdeal chào bạn! Hotdeal đã tiến hành kiểm tra thông tin, đơn hàng của bạn trong tình trạng đang giao hàng bạn nhé. Bạn sẽ nhận được voucher trong thời gian sớm nhất. Bạn vui lòng nghe điện thoại khi nhân viên giao hàng Hotdeal liên hệ nha. Cảm ơn bạn đã sử dụng dịch vụ của Hotdeal.</p>
-                <p><span class="icon icon-001-cell-phone"></span> Via Iphone <var>20/3/2017 21:32</var></p>
-              </div>
-            </div>
+            <?php endif; ?>
 
             <div class="comment-form-replies">
               <div class="icon">
@@ -237,13 +185,10 @@
         </div>
       </div>
     </li>
-
-
-
-
-
-
+    <?php endforeach; ?>
+    
   </ul>
+  <?php endif; ?>
   <div class="views-all">
     <a>Xem thêm</a>
   </div>

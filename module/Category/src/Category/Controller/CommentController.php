@@ -4,13 +4,48 @@ namespace Category\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
-
+use Category\Model\PostComment;
+use Category\Model\CommentImage;
 class CommentController extends AbstractActionController
 {
   public function loadCommentAction(){
 //    if($this->getRequest()->isXmlHttpRequest()){
 //      $category = new Post();
-//      $id = $this->params()->fromPost('id');
+      $postId = $this->params()->fromPost('id');
+      $page = $this->params()->fromPost('page');
+      $comment = new PostComment();
+      $parentComment = $comment->listCommentByPostId(array('post_id' => $postId));
+      $imageComment = new CommentImage();
+      $dataComment = array();
+      if($parentComment){
+        foreach ($parentComment as $key => $value){
+          $dataComment[$key] = array(
+              'id' => $value['id'], 
+              'post_id' => $value['post_id'],
+              'user_id' => $value['user_id'],
+              'title' => $value['title'],
+              'content' => $value['content'],
+              'parent' => $value['parent'],
+              'created' => $value['created'],
+              'status' => $value['status'],
+              'device' => $value['device'],
+              'fullname' => $value['username'],
+              'avatar' => $value['avatar'],
+              'come_back' => $value['come_back'],
+              'persion' => $value['persion'],
+              'total_bill' => $value['total_bill'],
+              'total_like' => $value['total_like'],
+              'commentChild' => '',
+              'listImageComment' => ''
+          );
+          $commentChild = $comment->listCommentChildByParent(array('parent' => $value['id']));
+          $dataComment[$key]['commentChild'] = $commentChild;
+          $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id']));
+          if($listImageComment){
+            $dataComment[$key]['listImageComment'] = $listImageComment;
+          }
+        }
+      }
 //      $post = $category->getPostById(array('id' => $id));
 //      $fromLatitude = '';
 //      $fromLongitude = '';
@@ -42,6 +77,8 @@ class CommentController extends AbstractActionController
       $htmlViewPart->setTemplate('view/comment')
                    ->setTerminal(true)
                    ->setVariables([
+                       'postId' => $postId,
+                       'dataComment' => $dataComment
 //                      'post' => $post,
 //                      'fromLatitude' => $fromLatitude,
 //                      'fromLongitude' => $fromLongitude,
