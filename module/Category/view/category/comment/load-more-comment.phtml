@@ -1,93 +1,9 @@
-<div id="rating" class="rating">
-  <h2>Khách hàng nhận xét</h2>
-  <ul>
-    <li class="summary-rating">
-      <p>Đánh Giá Trung Bình</p>
-      <p>3.5/5</p>
-      <p class="rating-post">
-        <span class="rating-box">
-          <i class="icon icon-star"></i>
-          <i class="icon icon-star"></i>
-          <i class="icon icon-star"></i>
-          <i class="icon icon-star"></i>
-          <i class="icon icon-star"></i>
-          <span>
-            <i class="icon icon-star"></i>
-            <i class="icon icon-star"></i>
-            <i class="icon icon-star"></i>
-            <i class="icon icon-star"></i>
-            <i class="icon icon-star"></i>
-          </span>
-        </span>
-      </p>
-      <p>(10 nhận xét)</p>
-    </li>
-    <li class="rating__row">
-      <div class="row-box">
-        <div class="rrow__label">Tốt</div>
-        <div class="rrow__percent">
-          <div class="progress-bar">
-            <div class="progress-bar__inner" style="width: 70%;"></div>
-          </div>
-        </div>
-        <div class="rrow__counting">14</div>
-        <div class="rrow__descr">đánh giá</div>
-      </div>
-
-      <div class="row-box">
-        <div class="rrow__label">Rất tốt</div>
-        <div class="rrow__percent">
-          <div class="progress-bar">
-            <div class="progress-bar__inner" style="width: 70%;"></div>
-          </div>
-        </div>
-        <div class="rrow__counting">14</div>
-        <div class="rrow__descr">đánh giá</div>
-      </div>
-
-      <div class="row-box">
-        <div class="rrow__label">Trung bình</div>
-        <div class="rrow__percent">
-          <div class="progress-bar">
-            <div class="progress-bar__inner" style="width: 70%;"></div>
-          </div>
-        </div>
-        <div class="rrow__counting">14</div>
-        <div class="rrow__descr">đánh giá</div>
-      </div>
-
-      <div class="row-box">
-        <div class="rrow__label">Không tốt</div>
-        <div class="rrow__percent">
-          <div class="progress-bar">
-            <div class="progress-bar__inner" style="width: 90%;"></div>
-          </div>
-        </div>
-        <div class="rrow__counting">14</div>
-        <div class="rrow__descr">đánh giá</div>
-      </div>
-
-      <div class="row-box">
-        <div class="rrow__label">Rất tệ</div>
-        <div class="rrow__percent">
-          <div class="progress-bar">
-            <div class="progress-bar__inner" style="width: 30%;"></div>
-          </div>
-        </div>
-        <div class="rrow__counting">14</div>
-        <div class="rrow__descr">đánh giá</div>
-      </div>
-    </li>
-  </ul>
-</div>
-<div class="comment">
-  <h2><span>Bình luận (<?php echo $totalRecord; ?>)</span> <a class="buttom-comment pull-right" data-toggle="modal" data-target="#modal-comment">Bình luận</a></h2>
-  <?php if($dataComment): ?>
-  <ul class="list-comment">
+<?php if($dataComment && $currentPage <= $totalPage): ?>
     <?php foreach ($dataComment as $value): ?>
     <li>
       <div class="comment-item">
         <div class="avartar">
+          <?php echo $currentPage; ?> - <?php echo $totalPage; ?>
            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
         </div>
         <div class="comment-content">
@@ -186,10 +102,4 @@
       </div>
     </li>
     <?php endforeach; ?>
-    
-  </ul>
   <?php endif; ?>
-  <div class="views-all">
-    <a ng-page="<?php echo $currentPage; ?>" data-id="<?php echo $postId; ?>">Xem thêm</a>
-  </div>
-  </div>

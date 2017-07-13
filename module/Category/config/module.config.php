@@ -106,6 +106,19 @@ return array(
               ),
             ),
             
+            'load-more-comment' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/load-more-comment',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'loadMoreComment',
+                ),
+              ),
+            ),
+            
             'region-province' => array(
               'type' => 'Segment',
               'options' => array(
@@ -324,6 +337,7 @@ return array(
             'travel/load-data-travel'           => __DIR__ . '/../view/category/travel/load-data-travel.phtml',
             
             'view/comment'           => __DIR__ . '/../view/category/comment/view.phtml',
+            'comment/load-more-comment'           => __DIR__ . '/../view/category/comment/load-more-comment.phtml',
             'view/comment-popup'           => __DIR__ . '/../view/category/comment/comment-popup.phtml',
             'layout/tour'           => __DIR__ . '/../view/layout/layout-tour.phtml',
             'tour/index'           => __DIR__ . '/../view/category/tour/index.phtml',

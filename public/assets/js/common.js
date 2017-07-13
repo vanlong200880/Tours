@@ -333,19 +333,55 @@
       $.fn.viewGallery(url, id);
       
     });
+    
+    // Loading comment
+    $("body").on('click', '.views-all a', function(e){
+      e.preventDefault();
+      var page = parseInt($(this).attr('ng-page'));
+      var id = $(this).attr('data-id');
+      $.fn.loadMoreComment(defaults['url'] + '/load-more-comment', id, page+1 );
+    });
   },
-  $.fn.loadComment = function(url, id, page){
+  
+  $.fn.loadMoreComment = function(url, id, page){
     $.ajax({
       url : url,
       type : 'POST',
       dataType : "json",
-      data: {id: id},
+      data: {id: id, page: page},
       beforeSend: function(){
 //        $(".views-popup").addClass('view');
 //        $(".views-popup").append('<div class="loading"></div>');
       },
       success : function (data){
-        $("#page-comment").empty().append(data.htmlComment);
+        $("body ul.list-comment").append(data.htmlComment);
+        $("body .views-all a").attr('ng-page', data.currentPage);
+        if(data.currentPage == data.totalPage){
+          $("body .views-all a").remove();
+        }
+//        console.log(data);
+//        $( ".loading" ).remove();
+//        $(".views-popup .views-container").empty().append(data.html);
+//        // call royalSlider
+//        $.fn.callSliderRoyalSlider();
+//        // view map popup
+//        $(".views-popup .views-container").addClass('open');
+      }
+    });
+  },
+  
+  $.fn.loadComment = function(url, id, page){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {id: id, page: page},
+      beforeSend: function(){
+//        $(".views-popup").addClass('view');
+//        $(".views-popup").append('<div class="loading"></div>');
+      },
+      success : function (data){
+        $("body #page-comment").empty().append(data.htmlComment);
         console.log(data);
 //        $( ".loading" ).remove();
 //        $(".views-popup .views-container").empty().append(data.html);

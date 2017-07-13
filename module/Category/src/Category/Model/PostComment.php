@@ -34,8 +34,23 @@ class PostComment extends AbstractTableGateway
       $select->order('created ASC');
       $select->columns(array('id', 'post_id', 'total_like', 'user_id', 'title', 'come_back', 'total_bill', 'content', 'persion', 'parent','created', 'status', 'device'))->where(array('post_id' => $arrayParam['post_id'], 'post_comment.status' => 1));
       $select->join('user', 'user.id = user_id', array('username' => 'fullname', 'avatar'));
+      $select->offset($arrayParam['offset']);
+      $select->limit($arrayParam['limit']);
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
+      return $resultSet;
+   }
+   // Đếm tổng số comment parent
+   public function countCommentByPostId($arrayParam = null)
+   {
+      $select = new Select();
+      $select->from($this->table);
+//      $select->order('created ASC');
+//      $select->columns(array('id', 'post_id', 'total_like', 'user_id', 'title', 'come_back', 'total_bill', 'content', 'persion', 'parent','created', 'status', 'device'))
+      $select->where(array('post_id' => $arrayParam['post_id'], 'post_comment.status' => 1));
+      $select->join('user', 'user.id = user_id', array('username' => 'fullname', 'avatar'));
+      $resultSet = $this->selectWith($select);
+      $resultSet = $resultSet->count();
       return $resultSet;
    }
    public function listCommentChildByParent($arrayParam = null)
