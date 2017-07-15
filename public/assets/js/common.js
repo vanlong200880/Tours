@@ -341,8 +341,101 @@
       var id = $(this).attr('data-id');
       $.fn.loadMoreComment(defaults['url'] + '/load-more-comment', id, page+1 );
     });
+    
+    // Loading comment child
+    $('body').on('click', 'ul.list-comment li .viewmore-child-comment',function(){
+      var postId = $(this).attr('ng-data');
+      var parentId = $(this).attr('data-parent');
+      var page = parseInt($(this).attr('ng-page'));
+      $.fn.loadMoreCommentChild(defaults['url'] + '/load-more-comment-child', postId, page+1, parentId);
+    });
+    
+    // Create comment
+    $("body").on('keypress','ul.list-comment li .replies textarea',function(e){
+//      e.preventDefault();
+      if (e.which == '13') {
+        var id = $(this).attr('id');
+        id = id.replace('data_comment_','');
+        var data = $(this).val();
+        var postId = $(this).attr('data-post');
+        if(data == ''){
+          $(this).addClass('empty');
+          return false;
+        }else{
+          $.fn.createComment(defaults['url'] + '/create-comment', id, postId, data);
+        }
+      }
+    });
+    
+    // Image detail
+    $("body").on('click', '.list-gallery a', function(){
+//      var url = 'http://localhost/tours/public/view-video-detail';
+      $.fn.loadImageDetail(defaults['url'] + '/image-detail', 1);
+    });
+    
+    $(".video-play").on('click', '.close-video', function(){
+      $(".video-play").empty().removeClass('on');
+    });
+  },
+  // Load image detail
+  $.fn.loadImageDetail = function(url, imageId){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {imageId: imageId},
+      beforeSend: function(){
+        $(".video-play").addClass('on').append('<div class="loading"></div>');
+      },
+      success : function (data){
+        $( ".loading" ).remove();
+        $(".video-play").empty().append(data.html);
+//        console.log(data);
+//        $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
+//      $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
+//        $("body ul.list-comment li#comment_"+commentId+" .replies textarea").val('');
+      }
+    });
+  },
+  // create comment
+  $.fn.createComment = function(url, commentId, postId, content){
+    console.log(commentId, postId, content);
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {id: commentId, postId: postId, content: content},
+      beforeSend: function(){
+      },
+      success : function (data){
+        console.log(data);
+        $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
+//      $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
+        $("body ul.list-comment li#comment_"+commentId+" .replies textarea").val('');
+      }
+    });
   },
   
+  // load more comment child
+  $.fn.loadMoreCommentChild = function(url, id, page, parent){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {id: id, page: page, parent: parent},
+      beforeSend: function(){
+      },
+      success : function (data){
+        $("body ul.list-comment").find("#comment_"+parent).find('.list-comment-replies').append(data.htmlComment);
+        $("body ul.list-comment").find("#comment_"+parent).find('.viewmore-child-comment').attr('ng-page', data.currentChildPage);
+        if(data.currentChildPage == data.totalChildPages){
+          $("body ul.list-comment").find("#comment_"+parent).find('.child-comment-readmore').remove();
+        }
+      }
+    });
+  },
+  
+  // load more comment
   $.fn.loadMoreComment = function(url, id, page){
     $.ajax({
       url : url,

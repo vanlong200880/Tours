@@ -1,0 +1,14 @@
+<?php if($createComment): ?>
+  <div class="comment-replies">
+    <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
+    <div class="comment-content">
+      <p><strong><a href="#">
+        <?php echo $createComment['username']; ?> </a></strong>
+        <?php echo $createComment['content']; ?>
+      </p>
+      <?php if($createComment['device']): ?>
+      <p><span class="icon icon-001-cell-phone"></span> Via <?php echo $createComment['device']; ?> <var><?php echo date('d/m/Y H:i:s', $createComment['created']); ?></var></p>
+  <?php endif; ?>
+    </div>
+  </div>
+  <?php endif; ?>

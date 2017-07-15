@@ -106,6 +106,7 @@ return array(
               ),
             ),
             
+            // load more comment
             'load-more-comment' => array(
               'type' => 'Segment',
               'options' => array(
@@ -115,6 +116,47 @@ return array(
                   '__NAMESPACE__' => 'Category\Controller',
                   'controller' => 'Category\Controller\Comment',
                   'action' => 'loadMoreComment',
+                ),
+              ),
+            ),
+            
+            // Load more comment child
+            'load-more-comment-child' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/load-more-comment-child',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'loadMoreCommentChild',
+                ),
+              ),
+            ),
+            
+            // create comment
+            'create-comment' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/create-comment',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'createComment',
+                ),
+              ),
+            ),
+            
+            'image-detail' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/image-detail',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'imageDetail',
                 ),
               ),
             ),
@@ -338,6 +380,11 @@ return array(
             
             'view/comment'           => __DIR__ . '/../view/category/comment/view.phtml',
             'comment/load-more-comment'           => __DIR__ . '/../view/category/comment/load-more-comment.phtml',
+            'comment/load-more-comment-child'           => __DIR__ . '/../view/category/comment/load-more-comment-child.phtml',
+            'comment/create-comment'           => __DIR__ . '/../view/category/comment/create-comment.phtml',
+            'image/image-detail'           => __DIR__ . '/../view/category/comment/image-detail.phtml',
+            
+            
             'view/comment-popup'           => __DIR__ . '/../view/category/comment/comment-popup.phtml',
             'layout/tour'           => __DIR__ . '/../view/layout/layout-tour.phtml',
             'tour/index'           => __DIR__ . '/../view/category/tour/index.phtml',

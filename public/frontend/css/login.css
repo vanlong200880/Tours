@@ -800,6 +800,13 @@ a:hover {
                     line-height: 24px; }
                     .comment .list-comment li .comment-item .comment-content .form-replies .view-replies div .share-page ul li:hover {
                       color: #232f3e; }
+          .comment .list-comment li .comment-item .comment-content .form-replies .child-comment-readmore {
+            padding-left: 40px; }
+            .comment .list-comment li .comment-item .comment-content .form-replies .child-comment-readmore .viewmore-child-comment {
+              display: inline-block;
+              cursor: pointer;
+              padding-top: 5px;
+              color: #365899; }
           .comment .list-comment li .comment-item .comment-content .form-replies .fs-share:hover .share-page {
             display: block; }
           .comment .list-comment li .comment-item .comment-content .form-replies .comment-form-replies {

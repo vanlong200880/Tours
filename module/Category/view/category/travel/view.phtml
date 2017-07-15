@@ -333,27 +333,27 @@
 <script>
   jQuery(document).ready(function($){
     // play video
-    $(".video ul").on('click', 'li', function(){
-      var url = 'http://localhost/tours/public/view-video-detail';
-      var id = '';
-      $.ajax({
-        url : url,
-        type : 'POST',
-        dataType : "json",
-        data: {id: id},
-        beforeSend: function(){
-          $(".video-play").addClass('on').append('<div class="loading"></div>');
-        },
-        success : function (data){
-          $( ".loading" ).remove();
-          $(".video-play").empty().append(data.html);
-        }
-      });
-    });
-    
-    $(".video-play").on('click', '.close-video', function(){
-      $(".video-play").empty().removeClass('on');
-    });
+//    $(".video ul").on('click', 'li', function(){
+//      var url = 'http://localhost/tours/public/view-video-detail';
+//      var id = '';
+//      $.ajax({
+//        url : url,
+//        type : 'POST',
+//        dataType : "json",
+//        data: {id: id},
+//        beforeSend: function(){
+//          $(".video-play").addClass('on').append('<div class="loading"></div>');
+//        },
+//        success : function (data){
+//          $( ".loading" ).remove();
+//          $(".video-play").empty().append(data.html);
+//        }
+//      });
+//    });
+//    
+//    $(".video-play").on('click', '.close-video', function(){
+//      $(".video-play").empty().removeClass('on');
+//    });
     // menu fixed 
 //    var topHeight = $(window).scrollTop();
     $(".popup-page.on").scroll(function(){

@@ -45,9 +45,13 @@ class CommentController extends AbstractActionController
               'total_bill' => $value['total_bill'],
               'total_like' => $value['total_like'],
               'commentChild' => '',
-              'listImageComment' => ''
+              'listImageComment' => '',
+              'countChildComment' => 0,
+              'currentChildPage' => 1
           );
-          $commentChild = $comment->listCommentChildByParent(array('parent' => $value['id']));
+          $countChildComment = $comment->countCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id']));
+          $dataComment[$key]['countChildComment'] = $countChildComment;
+          $commentChild = $comment->listCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id'], 'offset' => $start, 'limit' => LIMIT_COMMENT));
           $dataComment[$key]['commentChild'] = $commentChild;
           $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id']));
           if($listImageComment){
@@ -55,33 +59,7 @@ class CommentController extends AbstractActionController
           }
         }
       }
-//      $post = $category->getPostById(array('id' => $id));
-//      $fromLatitude = '';
-//      $fromLongitude = '';
-//      $toLatitude = '';
-//      $toLongitude = '';
-//      $message = '';
-//      // get address from ip
-//      $address = $this->params()->fromPost('address');
-//      $session = new Container('currentAddress');
-//      $session->address = $address;
-//      if($session->address){
-//        $geoCode = new MapGeoCode();
-//        $geoAddress = $geoCode->geocode($session->address);
-//        if($geoAddress){
-//          $fromLatitude = $geoAddress[0];
-//          $fromLongitude = $geoAddress[1];
-//        }
-//      }
-//
-//
-//      if($post){
-//        $toLatitude = $post->lat;
-//        $toLongitude = $post->lng;
-//      }
-//      if($fromLatitude == '' || $fromLongitude == '' || $toLatitude == '' || $toLongitude == ''){
-//        $message = 'Rất tiếc! Chúng tôi không tìm thấy địa chỉ của bạn trên google map.';
-//      }
+
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('view/comment')
                    ->setTerminal(true)
@@ -147,9 +125,13 @@ class CommentController extends AbstractActionController
               'total_bill' => $value['total_bill'],
               'total_like' => $value['total_like'],
               'commentChild' => '',
-              'listImageComment' => ''
+              'listImageComment' => '',
+              'countChildComment' => 0,
+              'currentChildPage' => 1
           );
-          $commentChild = $comment->listCommentChildByParent(array('parent' => $value['id']));
+          $countChildComment = $comment->countCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id']));
+          $dataComment[$key]['countChildComment'] = $countChildComment;
+          $commentChild = $comment->listCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id'], 'offset' => $start, 'limit' => LIMIT_COMMENT));
           $dataComment[$key]['commentChild'] = $commentChild;
           $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id']));
           if($listImageComment){
@@ -179,6 +161,161 @@ class CommentController extends AbstractActionController
           'postId' => $postId,
           'start' => $start,
           'totalPage' => $totalPages
+      ]);
+
+      return $jsonModel;
+//    }else{
+//      die('Forbidden access');
+//    }
+  }
+  
+  
+  public function loadMoreCommentChildAction(){
+    //    if($this->getRequest()->isXmlHttpRequest()){
+      $postId = $this->params()->fromPost('id');
+      $parentId = $this->params()->fromPost('parent');
+      $page = (int)$this->params()->fromPost('page', 1);
+      $comment = new PostComment();
+      $totalChildRecord = $countChildComment = $comment->countCommentChildByParent(array('post_id' => $postId, 'parent' => $parentId));
+      $totalChildPages = ceil($totalChildRecord / LIMIT_COMMENT);
+      if($page > $totalChildPages){
+        $page = $totalChildPages;
+      }
+      else if($page < 1){
+        $page = 1;
+      }
+      $start = ($page - 1) * LIMIT_COMMENT;
+      $commentChild = $comment->listCommentChildByParent(array('post_id' => $postId, 'parent' => $parentId, 'offset' => $start, 'limit' => LIMIT_COMMENT));
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('comment/load-more-comment-child')
+                   ->setTerminal(true)
+                   ->setVariables([
+                       'postId' => $postId,
+                       'dataCommentChild' => $commentChild,
+                       'totalChildRecord' => $totalChildRecord,
+                       'currentChildPage' => $page,
+                       'postId' => $postId,
+                       'start' => $start,
+                       'totalChildPages' => $totalChildPages
+                           ]);
+
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables([
+          'htmlComment' => $htmlOutput,
+          'currentChildPage' => $page,
+          'postId' => $postId,
+          'start' => $start,
+          'totalChildPages' => $totalChildPages
+      ]);
+
+      return $jsonModel;
+//    }else{
+//      die('Forbidden access');
+//    }
+  }
+  
+  public function createCommentAction(){
+    //    if($this->getRequest()->isXmlHttpRequest()){
+      $commentId = $this->params()->fromPost('id');
+//      $commentId = 1;
+      $commentContent = $this->params()->fromPost('content');
+//      $commentContent = 'adsa af';
+      $postId = $this->params()->fromPost('postId');
+//      $postId = 1;
+      $comment = new PostComment();
+      $createCommentId = '';
+      // Check comment 
+      $checkComment = $comment->checkCommentById(array('id' => $commentId));
+      if($checkComment){
+        // insert comment child
+        $data = array(
+          'post_id' => $postId,
+          'user_id' => 1,
+          'title' => '',
+          'content' => $commentContent,
+          'parent' => $commentId,
+          'created' => time(),
+          'status' => 1,
+          'device' => 'Iphone',
+          'persion' => 0,
+          'total_bill' => 0,
+          'come_back' => 0,
+          'total_like' => 0
+        );
+        $createCommentId = $comment->createComment($data);
+      }
+      $dataCreateComment = '';
+      if ($createCommentId){
+        $dataCreateComment = $comment->getCommentById(array('post_id' =>$postId, 'id' => $createCommentId));
+      }
+
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('comment/create-comment')
+                   ->setTerminal(true)
+                   ->setVariables([
+                       'createComment' => $dataCreateComment,
+                           ]);
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables([
+          'htmlCreateComment' => $htmlOutput,
+          'postId' => $postId,
+          'commentId' => $commentId,
+          'data' => $checkComment
+      ]);
+
+      return $jsonModel;
+//    }else{
+//      die('Forbidden access');
+//    }
+  }
+  
+  public function imageDetailAction(){
+    //    if($this->getRequest()->isXmlHttpRequest()){
+//      $commentId = $this->params()->fromPost('id');
+//      $commentContent = $this->params()->fromPost('content');
+//      $postId = $this->params()->fromPost('postId');
+//      $comment = new PostComment();
+//      $createCommentId = '';
+//      // Check comment 
+//      $checkComment = $comment->checkCommentById(array('id' => $commentId));
+//      if($checkComment){
+//        // insert comment child
+//        $data = array(
+//          'post_id' => $postId,
+//          'user_id' => 1,
+//          'title' => '',
+//          'content' => $commentContent,
+//          'parent' => $commentId,
+//          'created' => time(),
+//          'status' => 1,
+//          'device' => 'Iphone',
+//          'persion' => 0,
+//          'total_bill' => 0,
+//          'come_back' => 0,
+//          'total_like' => 0
+//        );
+//        $createCommentId = $comment->createComment($data);
+//      }
+//      $dataCreateComment = '';
+//      if ($createCommentId){
+//        $dataCreateComment = $comment->getCommentById(array('post_id' =>$postId, 'id' => $createCommentId));
+//      }
+
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('image/image-detail')
+                   ->setTerminal(true)
+                   ->setVariables([
+//                       'createComment' => $dataCreateComment,
+                           ]);
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables([
+          'html' => $htmlOutput,
+//          'postId' => $postId,
+//          'commentId' => $commentId,
+//          'data' => $checkComment
       ]);
 
       return $jsonModel;

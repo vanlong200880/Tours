@@ -1,6 +1,6 @@
 <?php if($dataComment && $currentPage <= $totalPage): ?>
     <?php foreach ($dataComment as $value): ?>
-    <li>
+    <li id="comment_<?php echo $value['id']; ?>">
       <div class="comment-item">
         <div class="avartar">
           <?php echo $currentPage; ?> - <?php echo $totalPage; ?>
@@ -49,7 +49,7 @@
           <div class="form-replies">
             <div class="view-replies">
               <div class="fs-comment icon icon-comment">
-                Trả lời
+                Bình luận
               </div>
               <div class="fs-like icon icon-heart-1">
                 Thích (<?php echo number_format($value['total_like'], 0, ',', ','); ?>)
@@ -68,8 +68,9 @@
                 </div>
               </div>
             </div>
-            <?php if($value['commentChild']): ?>
+            
             <div class="list-comment-replies">
+            <?php if($value['commentChild']): ?>
               <?php foreach ($value['commentChild'] as $child): ?>
               <div class="comment-replies">
                 <div class="avartar"><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></div>
@@ -84,9 +85,16 @@
                 </div>
               </div>
               <?php endforeach; ?>
+            <?php endif; ?>
+            </div>
+            <?php if($value['countChildComment'] > LIMIT_COMMENT): ?>
+            <div class="child-comment-readmore">
+              <div ng-page="<?php echo $value['currentChildPage']; ?>" ng-data="<?php echo $postId; ?>" data-parent="<?php echo $value['id']; ?>" class="viewmore-child-comment">
+                Xem thêm bình luận
+              </div>
             </div>
             <?php endif; ?>
-
+            
             <div class="comment-form-replies">
               <div class="icon">
                 <div class="avartar">
@@ -94,7 +102,10 @@
                </div>
               </div>
               <div class="replies">
-                <textarea class="form-control"></textarea>
+                <div class="replies">
+                  <textarea name="content" data-post="<?php echo $postId; ?>" class="form-control" placeholder="Viết bình luận" id="data_comment_<?php echo $value['id']; ?>"></textarea>
+                  <input type="hidden" class="mid_<?php echo $value['id']; ?>" value="<?php echo md5($value['id']); ?>">
+                </div>
               </div>
             </div>
           </div>

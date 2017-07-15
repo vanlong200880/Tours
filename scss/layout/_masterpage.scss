@@ -794,7 +794,15 @@
                 }
               }
             }
-
+            .child-comment-readmore{
+              padding-left: 40px;
+              .viewmore-child-comment{
+                display: inline-block;
+                cursor: pointer;
+                padding-top: 5px;
+                color: #365899;
+              }
+            }
             .fs-share{
               &:hover{
                 .share-page{
