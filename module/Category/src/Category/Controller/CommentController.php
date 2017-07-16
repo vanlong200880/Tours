@@ -46,6 +46,7 @@ class CommentController extends AbstractActionController
               'total_like' => $value['total_like'],
               'commentChild' => '',
               'listImageComment' => '',
+              'countImageComment' => 0,
               'countChildComment' => 0,
               'currentChildPage' => 1
           );
@@ -53,7 +54,11 @@ class CommentController extends AbstractActionController
           $dataComment[$key]['countChildComment'] = $countChildComment;
           $commentChild = $comment->listCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id'], 'offset' => $start, 'limit' => LIMIT_COMMENT));
           $dataComment[$key]['commentChild'] = $commentChild;
-          $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id']));
+          $countImage = $imageComment->countImageByCommentId(array('post_comment_id' => $value['id']));
+          if($countImage){
+            $dataComment[$key]['countImageComment'] = $countImage;
+          }
+          $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id'], 'limit' => 10));
           if($listImageComment){
             $dataComment[$key]['listImageComment'] = $listImageComment;
           }

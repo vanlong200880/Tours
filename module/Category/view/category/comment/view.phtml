@@ -88,7 +88,9 @@
     <li id="comment_<?php echo $value['id']; ?>">
       <div class="comment-item">
         <div class="avartar">
-           <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+          <a href="#">
+            <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
+          </a>
         </div>
         <div class="comment-content">
           <div class="comment-info">
@@ -122,11 +124,18 @@
             </div>
             <?php if($value['listImageComment']): ?>
             <div class="list-gallery">
-              <?php foreach ($value['listImageComment'] as $img): ?>
-              <a href="#">
+              <?php 
+              $count = 0;
+              foreach ($value['listImageComment'] as $img): ?>
+              <a href="javascript:void(0);" data-id="<?php echo $img['id']; ?>">
+                <?php if($value['countImageComment'] > 10 && $count == 9): ?>
+                <span class="image-viewmore">+<?php echo $value['countImageComment'];?></span>
+                <?php endif; ?>
                 <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
               </a>
-              <?php endforeach; ?>
+              <?php 
+              $count++;
+              endforeach; ?>
             </div>
             <?php endif; ?>
           </div>

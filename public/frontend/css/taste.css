@@ -1470,7 +1470,20 @@ ul.connect li.youtube a:hover {
             margin-bottom: 2px;
             float: left;
             padding-right: 1px;
-            padding-left: 1px; }
+            padding-left: 1px;
+            height: 126px;
+            position: relative; }
+            .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a span.image-viewmore {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              line-height: 126px;
+              text-align: center;
+              background: rgba(0, 0, 0, 0.3);
+              color: #FFF;
+              font-size: 14px; }
             .comment .list-comment li .comment-item .comment-content .comment-info .list-gallery a img {
               display: inline-block; }
         .comment .list-comment li .comment-item .comment-content .form-replies {

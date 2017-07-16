@@ -33,8 +33,19 @@ class CommentImage extends AbstractTableGateway
       $select->from($this->table);
       $select->order('id ASC');
       $select->columns(array('id', 'name', 'type', 'width', 'height', 'post_comment_id'))->where(array('post_comment_id' => $arrayParam['post_comment_id'], 'status' => 1));
+      $select->limit($arrayParam['limit']);
       $resultSet = $this->selectWith($select);
       $resultSet = $resultSet->toArray();
+      return $resultSet;
+   }
+   public function countImageByCommentId($arrayParam = null)
+   {
+      $select = new Select();
+      $select->from($this->table);
+      $select->order('id ASC');
+      $select->columns(array('id', 'name', 'type', 'width', 'height', 'post_comment_id'))->where(array('post_comment_id' => $arrayParam['post_comment_id'], 'status' => 1));
+      $resultSet = $this->selectWith($select);
+      $resultSet = $resultSet->count();
       return $resultSet;
    }
 }   
