@@ -676,14 +676,14 @@
         display: inline-block;
         width: 100%;
         .avartar{
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
           float: left;
           margin-right: 15px;
           img{
-            width: 48px;
-            height: 48px;
-            @include border-radius(5px);
+            width: 40px;
+            height: 40px;
+            @include border-radius(0);
           }
         }
         .comment-content{
@@ -757,121 +757,6 @@
               }
             }
           }
-          
-          .form-replies{
-            display: inline-block;
-            width: 100%;
-            .view-replies{
-              float: left;
-              display: inline-block;
-              width: 100%;
-              div{
-                padding: 1px 5px;
-                background: #FFF;
-                display: inline-block;
-                margin-right: 5px;
-                font-size: 12px;
-                cursor: pointer;
-                float: left;
-                position: relative;
-                .share-page{
-                  position: absolute;
-                  top: 20px;
-                  left: 0;
-                  padding: 0;
-                  margin: 0;
-                  display: none;
-                  &:before{
-                    content: "";
-                    border-bottom: 7px solid #DDD;
-                    border-left: 7px solid transparent;
-                    border-right: 7px solid transparent;
-                    position: absolute;
-                    top: -7px;
-                    left: 10px;
-                  }
-                  ul{
-                    padding: 5px;
-                    border: 1px solid #DDD;
-                    width: 150px;
-                    li{
-                      padding: 0;
-                      border: none;
-                      margin: 0;
-                      height: 24px;
-                      line-height: 24px;
-                      &:hover{
-                        color: $header;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .child-comment-readmore{
-              padding-left: 40px;
-              .viewmore-child-comment{
-                display: inline-block;
-                cursor: pointer;
-                padding-top: 5px;
-                color: #365899;
-              }
-            }
-            .fs-share{
-              &:hover{
-                .share-page{
-                  display: block;
-                }
-              }
-            }
-            .comment-form-replies{
-              margin-top: 10px;
-              display: block;
-              width: 100%;
-              padding: 0;
-              float: left;
-              .icon{
-                width: 6%;
-                float: left;
-                img{
-                  width: 30px;
-                  height: 30px;
-                }
-              }
-              .replies{
-                width: 94%;
-                float: left;
-                textarea{
-                  overflow: hidden;
-                  word-wrap: break-word; 
-                  resize: vertical; 
-                  height: 40px;
-                  outline: none;
-                  @include border-radius(0px);
-                  @include box-shadow(none);
-                }
-              }
-            }
-          }
-          .comment-replies{
-            border-top: 1px solid $color-border;
-            padding-top: 10px;
-            display: inline-block;
-            width: 100%;
-            .avartar{
-              width: 6%;
-              float: left;
-              margin-right: 0;
-              img{
-                width: 30px;
-                height: 30px;
-              }
-            }
-            .comment-content{
-              width: 94%;
-              float: left;
-            }
-          }
         }
       }
     }
@@ -886,6 +771,126 @@
       display: inline-block;
       cursor: pointer;
     }
+  }
+}
+.form-replies{
+  display: inline-block;
+  width: 100%;
+  .view-replies{
+    float: left;
+    display: inline-block;
+    width: 100%;
+    div{
+      padding: 1px 5px;
+      background: #FFF;
+      display: inline-block;
+      margin-right: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      float: left;
+      position: relative;
+      .share-page{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        display: none;
+        &:before{
+          content: "";
+          border-bottom: 7px solid #DDD;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          position: absolute;
+          top: -7px;
+          left: 10px;
+        }
+        ul{
+          padding: 5px;
+          border: 1px solid #DDD;
+          width: 150px;
+          li{
+            padding: 0;
+            border: none;
+            margin: 0;
+            height: 24px;
+            line-height: 24px;
+            &:hover{
+              color: $header;
+            }
+          }
+        }
+      }
+    }
+  }
+  .child-comment-readmore{
+    padding-left: 40px;
+    .viewmore-child-comment{
+      display: inline-block;
+      cursor: pointer;
+      padding-top: 5px;
+      color: #365899;
+    }
+  }
+  .fs-share{
+    &:hover{
+      .share-page{
+        display: block;
+      }
+    }
+  }
+}
+
+.comment-form-replies{
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  float: left;
+  .icon{
+    width: 40px;
+    height: 40px;
+    float: left;
+    img{
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .replies{
+    /*width: 94%;*/
+    /*float: left;*/
+    overflow: hidden;
+    padding-left: 8px;
+    textarea{
+      overflow: hidden;
+      word-wrap: break-word; 
+      resize: vertical; 
+      height: 40px;
+      outline: none;
+      @include border-radius(0px);
+      @include box-shadow(none);
+    }
+  }
+}
+.comment-replies{
+  border-top: 1px solid $color-border;
+  padding-top: 10px;
+  display: inline-block;
+  width: 100%;
+  .avartar{
+    width: 40px;
+    float: left;
+    margin-right: 0;
+    img{
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .comment-content{
+    /*width: 94%;*/
+    /*float: left;*/
+    overflow: hidden;
+    padding-left: 8px;
   }
 }
 .menu-order{
@@ -1355,7 +1360,7 @@
       cursor: pointer;
     }
     .content-video{
-      background: #f1f1f1;
+      background: #fff;
       padding: 8px;
     }
   }
@@ -1841,6 +1846,73 @@
   .filter-adv.open{
     top: 0;
     @include transition(top 0.3s ease-in-out 0s);
+  }
+}
+.list-image{
+  margin-top: 15px;
+  .user{
+    margin-top: 5px;
+    height: 30px;
+    overflow: hidden;
+    img{
+      @include border-radius(50%);
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.swiper-container{
+  .prev{
+    position: absolute;
+    top: 30%;
+    z-index: 9;
+    left: -100px;
+    @include transition(left 0.3s ease);
+    display: inline-block;
+    font-size: 24px;
+  }
+  .next{
+    position: absolute;
+    top: 30%;
+    z-index: 9;
+    right: -100px;
+    @include transition(right 0.3s ease);
+    display: inline-block;
+    font-size: 24px;
+  }
+  &:hover{
+    .prev{
+      left: 0;
+      @include transition(left 0.3s ease);
+    }
+    .next{
+      right: 0;
+      @include transition(right 0.3s ease-in);
+    }
+  }
+}
+.comment-image{
+  .user-info{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    .avatar{
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-right: 15px;
+      img{
+        width: 48px;
+        height: 48px;
+        @include border-radius(5px);
+      }
+    }
+    .comment-content{
+      overflow: hidden;
+    }
   }
 }
 

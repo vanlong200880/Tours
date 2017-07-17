@@ -390,6 +390,7 @@
       success : function (data){
         $( ".loading" ).remove();
         $(".video-play").empty().append(data.html);
+        $.fn.loadSwiper('.swiper-container', 6, 6, 4, 3);
 //        console.log(data);
 //        $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
 //      $("body ul.list-comment").find("#comment_"+commentId).find('.list-comment-replies').append(data.htmlCreateComment);
@@ -475,7 +476,6 @@
       },
       success : function (data){
         $("body #page-comment").empty().append(data.htmlComment);
-        console.log(data);
 //        $( ".loading" ).remove();
 //        $(".views-popup .views-container").empty().append(data.html);
 //        // call royalSlider
@@ -548,6 +548,33 @@
     slider.ev.on('rsExitFullscreen', function(event) {
       // exit fullscreen mode
       $(".popup-page").removeAttr('style');
+    });
+  },
+  $.fn.loadSwiper = function(id, slidesa, slidesb, slidesc, slidesd){
+    var swiper = new Swiper(id, {
+        nextButton: '.button-next',
+        prevButton: '.button-prev',
+        paginationClickable: true,
+        slidesPerView: slidesa,
+        spaceBetween: 10,
+        breakpoints: {
+            1024: {
+                slidesPerView: slidesb,
+                spaceBetween: 10
+            },
+            768: {
+                slidesPerView: slidesc,
+                spaceBetween: 10
+            },
+            640: {
+                slidesPerView: slidesd,
+                spaceBetween: 10
+            },
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
     });
   },
   $.fn.callMapSearchAddress = function(id, currentAddress){
