@@ -773,56 +773,56 @@
     }
   }
 }
-.form-replies{
+.view-replies{
+  float: left;
   display: inline-block;
   width: 100%;
-  .view-replies{
-    float: left;
+  div{
+    padding: 1px 5px;
+    background: #FFF;
     display: inline-block;
-    width: 100%;
-    div{
-      padding: 1px 5px;
-      background: #FFF;
-      display: inline-block;
-      margin-right: 5px;
-      font-size: 12px;
-      cursor: pointer;
-      float: left;
-      position: relative;
-      .share-page{
+    margin-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    .share-page{
+      position: absolute;
+      top: 20px;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      display: none;
+      &:before{
+        content: "";
+        border-bottom: 7px solid #DDD;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
         position: absolute;
-        top: 20px;
-        left: 0;
-        padding: 0;
-        margin: 0;
-        display: none;
-        &:before{
-          content: "";
-          border-bottom: 7px solid #DDD;
-          border-left: 7px solid transparent;
-          border-right: 7px solid transparent;
-          position: absolute;
-          top: -7px;
-          left: 10px;
-        }
-        ul{
-          padding: 5px;
-          border: 1px solid #DDD;
-          width: 150px;
-          li{
-            padding: 0;
-            border: none;
-            margin: 0;
-            height: 24px;
-            line-height: 24px;
-            &:hover{
-              color: $header;
-            }
+        top: -7px;
+        left: 10px;
+      }
+      ul{
+        padding: 5px;
+        border: 1px solid #DDD;
+        width: 150px;
+        li{
+          padding: 0;
+          border: none;
+          margin: 0;
+          height: 24px;
+          line-height: 24px;
+          &:hover{
+            color: $header;
           }
         }
       }
     }
   }
+}
+.form-replies{
+  display: inline-block;
+  width: 100%;
   .child-comment-readmore{
     padding-left: 40px;
     .viewmore-child-comment{
@@ -1871,6 +1871,7 @@
     @include transition(left 0.3s ease);
     display: inline-block;
     font-size: 24px;
+    cursor: pointer;
   }
   .next{
     position: absolute;
@@ -1880,6 +1881,7 @@
     @include transition(right 0.3s ease);
     display: inline-block;
     font-size: 24px;
+    cursor: pointer;
   }
   &:hover{
     .prev{
@@ -1913,6 +1915,23 @@
     .comment-content{
       overflow: hidden;
     }
+  }
+  .form-replies{
+    display: inline-block;
+    width: 100%;
+    background: #f6f7f9;
+    padding-bottom: 5px;
+  }
+  .view-replies{
+    padding-bottom: 5px;
+  }
+  .list-comment-replies{
+    display: inline-block;
+    width: 100%;
+  }
+  .comment-replies{
+    padding-bottom: 10px;
+    border-color: #f1f1f1;
   }
 }
 

@@ -97,6 +97,7 @@ class CommentController extends AbstractActionController
     //    if($this->getRequest()->isXmlHttpRequest()){
 //      $category = new Post();
       $postId = $this->params()->fromPost('id');
+      $postId = 1;
       $page = (int)$this->params()->fromPost('page', 1);
       $comment = new PostComment();
       $totalRecord = $comment->countCommentByPostId(array('post_id' => $postId));
@@ -138,7 +139,7 @@ class CommentController extends AbstractActionController
           $dataComment[$key]['countChildComment'] = $countChildComment;
           $commentChild = $comment->listCommentChildByParent(array('post_id' => $postId, 'parent' => $value['id'], 'offset' => $start, 'limit' => LIMIT_COMMENT));
           $dataComment[$key]['commentChild'] = $commentChild;
-          $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id']));
+          $listImageComment = $imageComment->listImageByCommentId(array('post_comment_id' => $value['id'], 'limit' => LIMIT_COMMENT));
           if($listImageComment){
             $dataComment[$key]['listImageComment'] = $listImageComment;
           }

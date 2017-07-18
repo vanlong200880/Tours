@@ -448,6 +448,7 @@
 //        $(".views-popup").append('<div class="loading"></div>');
       },
       success : function (data){
+        console.log('asdfsf');
         $("body ul.list-comment").append(data.htmlComment);
         $("body .views-all a").attr('ng-page', data.currentPage);
         if(data.currentPage == data.totalPage){
