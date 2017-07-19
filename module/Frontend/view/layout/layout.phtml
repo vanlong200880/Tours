@@ -23,7 +23,7 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()
-            ->prependFile($this->basePath('/frontend/js/common.js'))
+//            ->prependFile($this->basePath('/frontend/js/common.js'))
             ->prependFile($this->basePath('assets/Datepicker/js/jquery-ui.js'))
             ->prependFile($this->basePath('frontend/libs/Swiper/dist/js/swiper.min.js'))
 //            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
@@ -49,6 +49,7 @@
       <?php //echo $this->inlineScript(); ?>
       <?php
         echo $this->inlineScript()
+            ->prependFile($this->basePath('/frontend/js/common.js'))
             ->prependFile($this->basePath('frontend/js/search.js'));
     ?>
     </body>

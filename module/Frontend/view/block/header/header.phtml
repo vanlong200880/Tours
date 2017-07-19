@@ -46,22 +46,38 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="item-level">
-                          <?php foreach ($value['root'] as $val): 
+                          <?php $count = 1;
+                          foreach ($value['root'] as $val): 
                             ?>
                           <?php if($val['child']): ?>
                           <h2><a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>"><?php echo $val['name'] ?></a></h2>
                           <ul class="row">
-                            <?php foreach ($val['child'] as $v): ?>
-                            <li class="col-md-2">
-                              <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
-                                <img src="<?php echo $this->basePath('/defaults/'.$v['thumbnail']); ?>">
-                                <span><?php echo $v['name']; ?></span>
-                              </a>
+                            <li class="col-md-12">
+                              <div class="swiper-container sw-menu<?php echo $count; ?>">
+                                <div class="swiper-wrapper">
+                                  <?php foreach ($val['child'] as $v): ?>
+                                  <div class="swiper-slide">
+                                    <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
+                                      <img src="<?php echo $this->basePath('/defaults/'.$v['thumbnail']); ?>">
+                                      <span><?php echo $v['name']; ?></span>
+                                    </a>
+                                  </div>
+                                  <?php endforeach; ?>
+                                </div>
+                                <div class="prev"><span class="icon icon-left-chevron"></span></div>
+                                <div class="next"><span class="icon icon-right-chevron"></span></div>
+                              </div>
+                              
                             </li>
-                            <?php endforeach; ?>
+                            <?php //foreach ($val['child'] as $v): ?>
+<!--                            <li class="col-md-12">
+                              
+                            </li>-->
+                            <?php //endforeach; ?>
                           </ul>
                           <?php endif; ?>
-                          <?php endforeach; ?>
+                          <?php $count++; 
+                          endforeach; ?>
                         </div>
                       </div>
                     </div>
