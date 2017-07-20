@@ -94,6 +94,7 @@ return array(
           'headerDetail'        => 'Frontend\Block\headerDetail',
           'cart'        => 'Frontend\Block\cart',
           'searchTravel'        => 'Frontend\Block\searchTravel',
+          'menu'        => 'Frontend\Block\menu',
         ),
     ),
     'view_manager' => array(

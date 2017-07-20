@@ -21,16 +21,16 @@
   $.fn.render = function(){
     $("body #menu-top li").hover(function(){ 
       console.log('sd fs');
-      $.fn.loadSwiper('.sw-menu1', 6, 6, 4, 3);
-      $.fn.loadSwiper('.sw-menu2', 6, 6, 4, 3);
+      $.fn.loadSwiperHome('.sw-menu1', 6, 6, 4, 3);
+      $.fn.loadSwiperHome('.sw-menu2', 6, 6, 4, 3);
     });
-    $.fn.loadSwiper('.sw-album', 4, 4, 3, 3);
+    $.fn.loadSwiperHome('.sw-album', 4, 4, 3, 3);
   },
   
-  $.fn.loadSwiper = function(id, slidesa, slidesb, slidesc, slidesd){
+  $.fn.loadSwiperHome = function(id, slidesa, slidesb, slidesc, slidesd){
     var swiper = new Swiper(id, {
-        nextButton: '.button-next',
-        prevButton: '.button-prev',
+        nextButton: '.next',
+        prevButton: '.prev',
         paginationClickable: true,
         slidesPerView: slidesa,
         spaceBetween: 10,

@@ -256,7 +256,7 @@ class CategoryController extends AbstractActionController
                 ->setItemCountPerPage(ITEM_PAGE)
                 ->setPageRange(PAGE_RAND);
       $htmlViewPart = new ViewModel();
-      switch ('travel'){
+      switch ($categoryExists->type){
         case 'travel':
           $htmlViewPart->setTemplate('travel/load-data-travel');
           break;

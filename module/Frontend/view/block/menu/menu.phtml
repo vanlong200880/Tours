@@ -1,0 +1,195 @@
+<ul id="menu-top">
+  <?php if($listCategoryMenu): ?>
+  <?php foreach ($listCategoryMenu as $value): ?>
+  <?php 
+    switch ($value['type']){
+      case 'travel': ?>
+      <li>
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+        <?php if($value['root']): ?>
+        <div class="item-menu-level">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item-level">
+                  <ul class="row">
+                    <?php foreach ($value['root'] as $val): ?>
+                    <li class="col-md-2">
+                      <a href="<?php echo $this->url('category', array('category' => $val['slug'])); ?>">
+                        <img src="<?php echo $this->basePath('/defaults/'.$val['thumbnail']); ?>">
+                        <span><?php echo $val['name']; ?></span>
+                      </a>
+                    </li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </li>
+      <?php break; ?>
+      <?php case 'tour': ?>
+      <li>
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+        <?php if($value['root']): ?>
+        <div class="item-menu-level">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item-level">
+                  <?php $count = 1;
+                  foreach ($value['root'] as $val): 
+                    ?>
+                  <?php if($val['child']): ?>
+                  <h2><a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>"><?php echo $val['name'] ?></a></h2>
+                  <ul class="row">
+                    <li class="col-md-12">
+                      <div class="swiper-container sw-menu<?php echo $count; ?>">
+                        <div class="swiper-wrapper">
+                          <?php foreach ($val['child'] as $v): ?>
+                          <div class="swiper-slide">
+                            <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
+                              <img src="<?php echo $this->basePath('/defaults/'.$v['thumbnail']); ?>">
+                              <span><?php echo $v['name']; ?></span>
+                            </a>
+                          </div>
+                          <?php endforeach; ?>
+                        </div>
+                        <div class="prev"><span class="icon icon-left-chevron"></span></div>
+                        <div class="next"><span class="icon icon-right-chevron"></span></div>
+                      </div>
+
+                    </li>
+                    <?php //foreach ($val['child'] as $v): ?>
+<!--                            <li class="col-md-12">
+
+                    </li>-->
+                    <?php //endforeach; ?>
+                  </ul>
+                  <?php endif; ?>
+                  <?php $count++; 
+                  endforeach; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </li>
+      <?php break; ?>
+      <?php case 'hotel': ?>
+      <li>
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+        <?php if($value['root']): ?>
+        <div class="item-menu-level">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item-level">
+                  <ul class="row">
+                    <?php foreach ($value['root'] as $val): ?>
+                    <li class="col-md-2">
+                      <a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>">
+                        <img src="<?php echo $this->basePath('/defaults/'.$val['thumbnail']); ?>">
+                        <span><?php echo $val['name']; ?></span>
+                      </a>
+                    </li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </li>
+      <?php break; ?>
+      <?php case 'taste': ?>
+      <li class="taste">
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+        <?php if($value['root']): ?>
+        <div class="item-menu-level">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item-level">
+                  <ul class="row">
+                    <div class="col-md-8">
+                      <div class="row item-taste">
+                        <?php foreach ($value['root'] as $val): ?>
+                          <a class="col-md-3" href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>">
+                            <span></span> 
+                            <?php echo $val['name']; ?>
+                          </a>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <li class="col-md-12 four"><a href="#">Nhà Hàng</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </li>
+      <?php break; ?>
+      <?php case 'video': ?>
+      <li>
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+      </li>
+      <?php break; ?>
+      <?php case 'diary': ?>
+      <li>
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+      </li>
+      <?php break; ?>
+      <?php case 'utilities': ?>
+      <li class="service">
+        <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
+        <?php if($value['root']): ?>
+        <div class="item-menu-level">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="item-level">
+                  <ul class="row">
+                    <li class="col-md-12">
+                      <div class="row item-taste item-all">
+                        <?php foreach ($value['root'] as $val): ?>
+                        <?php if($val['child']): ?>
+                        <div class="col-md-2">
+                          <div class="service-item">
+                            <h2><a href="<?php echo $this->url('category', array('category' => $val['slug'])) ?>"><?php echo $val['name'] ?></a></h2>
+                            <?php foreach ($val['child'] as $v): ?>
+                            <a href="<?php echo $this->url('category', array('category' => $v['slug'])) ?>">
+                              <span></span> 
+                                <?php echo $v['name']; ?> 
+                              <var>120</var>
+                            </a>
+                            <?php endforeach; ?>
+                          </div>
+                        </div>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
+      </li>
+      <?php break; ?>
+  <?php } ?>
+  <?php endforeach; ?>
+  <?php endif; ?>
+</ul>

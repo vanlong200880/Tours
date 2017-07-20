@@ -175,7 +175,8 @@ a:hover {
 
 .header {
   height: 40px;
-  padding-left: 90px; }
+  padding-left: 90px;
+  background: #FFF; }
   .header .logo {
     width: 80px;
     height: 80px;
@@ -184,126 +185,142 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 99; }
-  .header #menu-top li {
-    display: inline-block;
-    position: relative; }
-    .header #menu-top li a {
-      height: 40px;
-      line-height: 40px;
-      margin-right: 30px;
-      font-size: 16px; }
-    .header #menu-top li .item-menu-level {
-      position: fixed;
-      top: 40px;
-      left: 0;
-      background: #e2eef9;
-      width: 100%;
-      z-index: 11;
-      display: none;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-      padding-top: 10px; }
-      .header #menu-top li .item-menu-level .item-level {
-        padding-left: 10px; }
-        .header #menu-top li .item-menu-level .item-level h2 {
-          text-transform: uppercase;
-          margin-left: 0px;
-          font-size: 14px;
-          color: #0074e4;
-          font-weight: bold;
-          border-bottom: 1px solid #f4f9fd;
-          padding: 10px 0 5px 0; }
-        .header #menu-top li .item-menu-level .item-level ul {
-          padding: 0 0 5px 0; }
-          .header #menu-top li .item-menu-level .item-level ul .lst-menu {
-            margin-right: -3px;
-            margin-left: -3px; }
-          .header #menu-top li .item-menu-level .item-level ul li {
-            /*height: 35px;*/
-            position: relative;
-            padding-right: 3px;
-            padding-left: 3px;
-            height: 100%; }
-            .header #menu-top li .item-menu-level .item-level ul li a {
-              width: 100%;
-              background: #FFF;
-              line-height: 30px;
-              overflow: hidden;
-              margin-bottom: 13px;
-              padding: 0;
-              position: relative;
-              display: inline-table;
-              border: 1px solid #fff; }
-              .header #menu-top li .item-menu-level .item-level ul li a img {
-                transition: all 0.4s ease-out;
-                -moz-transition: all 0.4s ease-out;
-                -webkit-transition: all 0.4s ease-out;
-                -ms-transition: all 0.4s ease-out;
-                -o-transition: all 0.4s ease-out; }
-              .header #menu-top li .item-menu-level .item-level ul li a span {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 9;
-                background: rgba(0, 0, 0, 0.5);
-                color: #FFF;
-                width: 100%;
-                display: inline-block;
-                padding-left: 5px; }
-              .header #menu-top li .item-menu-level .item-level ul li a:before {
-                display: none; }
-              .header #menu-top li .item-menu-level .item-level ul li a:hover {
-                border-color: #0ebcf2; }
-                .header #menu-top li .item-menu-level .item-level ul li a:hover img {
-                  webkit-transform: scale(1.2);
-                  -moz-transform: scale(1.2);
-                  -ms-transform: scale(1.2);
-                  -o-transform: scale(1.2);
-                  transform: scale(1.2); }
-                .header #menu-top li .item-menu-level .item-level ul li a:hover span {
-                  background: rgba(0, 0, 0, 0.4); }
-          .header #menu-top li .item-menu-level .item-level ul .item-taste a {
-            display: inline-block;
-            width: 25%;
-            float: left;
+  .header #menu-top {
+    padding-left: 0;
+    /*    li{
+          &:nth-child(4),
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3){
+            &:hover{
+              .item-menu-level{
+                display: block;
+              }
+              a{
+                &:before{
+                  content: " ";
+                  border-bottom: 10px solid $submenu;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  position: absolute;
+                  bottom: -1px;
+                  left: 30%;
+                  z-index: 999;
+                }
+              }
+            }
+          }
+        }*/ }
+    .header #menu-top li {
+      display: inline-block;
+      position: relative; }
+      .header #menu-top li a {
+        height: 40px;
+        line-height: 40px;
+        margin-right: 30px;
+        font-size: 16px;
+        color: #000; }
+      .header #menu-top li .item-menu-level {
+        position: fixed;
+        top: 40px;
+        left: 0;
+        background: #e2eef9;
+        width: 100%;
+        z-index: 11;
+        display: none;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+        -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+        -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+        padding-top: 10px; }
+        .header #menu-top li .item-menu-level .item-level {
+          padding-left: 10px; }
+          .header #menu-top li .item-menu-level .item-level h2 {
+            text-transform: uppercase;
+            margin-left: 0px;
             font-size: 14px;
-            overflow: hidden;
-            color: #000; }
-            .header #menu-top li .item-menu-level .item-level ul .item-taste a span {
-              display: inline-block;
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              -webkit-border-radius: 50%;
-              -moz-border-radius: 50%;
-              -o-border-radius: 50%;
-              -ms-border-radius: 50%;
-              background: #FFF;
+            color: #0074e4;
+            font-weight: bold;
+            /*border-bottom: 1px solid #f4f9fd;*/
+            padding: 10px 0 5px 0; }
+          .header #menu-top li .item-menu-level .item-level ul {
+            padding: 0 0 5px 0; }
+            .header #menu-top li .item-menu-level .item-level ul .lst-menu {
+              margin-right: -3px;
+              margin-left: -3px; }
+            .header #menu-top li .item-menu-level .item-level ul li {
+              /*height: 35px;*/
               position: relative;
-              top: 5px;
-              margin-right: 5px;
+              padding-right: 3px;
+              padding-left: 3px;
+              height: 100%; }
+              .header #menu-top li .item-menu-level .item-level ul li a {
+                width: 100%;
+                background: #FFF;
+                line-height: 30px;
+                overflow: hidden;
+                margin-bottom: 13px;
+                padding: 0;
+                position: relative;
+                display: inline-table;
+                border: 1px solid #fff; }
+                .header #menu-top li .item-menu-level .item-level ul li a img {
+                  transition: all 0.4s ease-out;
+                  -moz-transition: all 0.4s ease-out;
+                  -webkit-transition: all 0.4s ease-out;
+                  -ms-transition: all 0.4s ease-out;
+                  -o-transition: all 0.4s ease-out; }
+                .header #menu-top li .item-menu-level .item-level ul li a span {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 9;
+                  background: rgba(0, 0, 0, 0.5);
+                  color: #FFF;
+                  width: 100%;
+                  display: inline-block;
+                  padding-left: 5px; }
+                .header #menu-top li .item-menu-level .item-level ul li a:before {
+                  display: none; }
+                .header #menu-top li .item-menu-level .item-level ul li a:hover {
+                  border-color: #0ebcf2; }
+                  .header #menu-top li .item-menu-level .item-level ul li a:hover img {
+                    webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                    transform: scale(1.2); }
+                  .header #menu-top li .item-menu-level .item-level ul li a:hover span {
+                    background: rgba(0, 0, 0, 0.4); }
+            .header #menu-top li .item-menu-level .item-level ul .item-taste a {
+              display: inline-block;
+              width: 25%;
               float: left;
-              border: 1px solid transparent; }
-            .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover {
-              color: #fa501e; }
-              .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover span {
-                border: 1px solid #fa501e; }
-          .header #menu-top li .item-menu-level .item-level ul li.four a {
-            height: 252px; }
-  .header #menu-top li:nth-child(4):hover .item-menu-level, .header #menu-top li:nth-child(1):hover .item-menu-level, .header #menu-top li:nth-child(2):hover .item-menu-level, .header #menu-top li:nth-child(3):hover .item-menu-level {
-    display: block; }
-  .header #menu-top li:nth-child(4):hover a:before, .header #menu-top li:nth-child(1):hover a:before, .header #menu-top li:nth-child(2):hover a:before, .header #menu-top li:nth-child(3):hover a:before {
-    content: " ";
-    border-bottom: 10px solid #e2eef9;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    position: absolute;
-    bottom: -1px;
-    left: 30%;
-    z-index: 999; }
+              font-size: 14px;
+              overflow: hidden;
+              color: #000; }
+              .header #menu-top li .item-menu-level .item-level ul .item-taste a span {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -o-border-radius: 50%;
+                -ms-border-radius: 50%;
+                background: #FFF;
+                position: relative;
+                top: 5px;
+                margin-right: 5px;
+                float: left;
+                border: 1px solid transparent; }
+              .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover {
+                color: #fa501e; }
+                .header #menu-top li .item-menu-level .item-level ul .item-taste a:hover span {
+                  border: 1px solid #fa501e; }
+            .header #menu-top li .item-menu-level .item-level ul li.four a {
+              height: 252px; }
   .header #login li {
     display: inline-block; }
     .header #login li a {

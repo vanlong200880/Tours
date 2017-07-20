@@ -5,7 +5,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-9">
-        <ul id="menu-top">
+        <?php $this->menu(); ?>
+<!--        <ul id="menu-top">
           <li>
             <a href="<?php echo $this->url('category', array('category' => 'du-lich')); ?>">Địa điểm phượt</a>
             <div class="item-menu-level">
@@ -192,7 +193,7 @@
           <li>
             <a href="<?php echo $this->url('category', array('category' => 'diary')); ?>">Trải nghiệm</a>
           </li>
-        </ul>
+        </ul>-->
       </div>
       <div class="col-md-3">
         <u id="login" class="pull-right">

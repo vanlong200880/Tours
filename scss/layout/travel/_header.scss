@@ -87,6 +87,7 @@
 .header{
   height: 40px;
   padding-left: 90px;
+  background: #FFF;
   .logo{
     width: 80px;
     height: 80px;
@@ -97,6 +98,7 @@
     z-index: 99;
   }
   #menu-top{
+    padding-left: 0;
     li{
       display: inline-block;
       position: relative;
@@ -105,6 +107,7 @@
         line-height: 40px;
         margin-right: 30px;
         font-size: 16px;
+        color: #000;
       }
       .item-menu-level{
         position: fixed;
@@ -124,7 +127,7 @@
             font-size: 14px;
             color: #0074e4;
             font-weight: bold;
-            border-bottom: 1px solid #f4f9fd;
+            /*border-bottom: 1px solid #f4f9fd;*/
             padding: 10px 0 5px 0;
           }
           
@@ -146,6 +149,7 @@
                 line-height: 30px;
                 overflow: hidden;
                 margin-bottom: 13px;
+                
                 padding: 0;
                 position: relative;
                 display: inline-table;
@@ -216,7 +220,7 @@
         }
       }
     }
-    li{
+/*    li{
       &:nth-child(4),
       &:nth-child(1),
       &:nth-child(2),
@@ -239,7 +243,7 @@
           }
         }
       }
-    }
+    }*/
   }
   #login{
     li{
