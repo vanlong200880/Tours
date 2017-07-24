@@ -16,7 +16,7 @@ class CommentController extends AbstractActionController
       $comment = new PostComment();
       $totalRecord = $comment->countCommentByPostId(array('post_id' => $postId));
       $totalPages = ceil($totalRecord / LIMIT_COMMENT);
-      if($page > $totalPages){
+      if($page > $totalPages && $totalPages > 0){
         $page = $totalPages;
       }
       else if($page < 1){

@@ -2291,6 +2291,19 @@ a:hover {
   padding-bottom: 10px;
   border-color: #f1f1f1; }
 
+.comment-empty {
+  text-align: center;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #ececec;
+  padding: 30px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  margin-top: 15px; }
+
 .album {
   margin-bottom: 15px; }
   .album .swiper-container {

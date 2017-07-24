@@ -234,34 +234,58 @@ class CategoryController extends AbstractActionController
         $regionExists = $nation->currentNation(array('alias' => $nationSlug));
       }
       $post = new Post();
-      // Lấy danh sách bài viết
-      $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
-     $dataPost = $post->getPostByCategory(array(
-         'categoryType' => $categoryExists->type,
-         'CategoryIdCurrent' => $categoryExists->id,
-         'categoryId' => $listIdCatgory,
-         'nationId' => 1, 
-         'provinceId' => 1, 
-         'districtId' => 1,
-         'filter' => $filter,
-         'sort' => $sort,
-         'star' => $star,
-         'min' => $min,
-         'max' => $max,
-         'area' => $area,
-         'keyword' => $keyword
-         ));
-      $paginator = new Paginator(new paginatorIterator($dataPost));
-      $paginator->setCurrentPageNumber($page)
-                ->setItemCountPerPage(ITEM_PAGE)
-                ->setPageRange(PAGE_RAND);
       $htmlViewPart = new ViewModel();
       switch ($categoryExists->type){
         case 'travel':
+          
+          // Lấy danh sách bài viết travel
+          $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
+          $dataPost = $post->getPostByCategory(array(
+             'categoryType' => $categoryExists->type,
+             'CategoryIdCurrent' => $categoryExists->id,
+             'categoryId' => $listIdCatgory,
+             'nationId' => 1, 
+             'provinceId' => 1, 
+             'districtId' => 1,
+             'filter' => $filter,
+             'sort' => $sort,
+             'star' => $star,
+             'min' => $min,
+             'max' => $max,
+             'area' => $area,
+             'keyword' => $keyword,
+              'type' => $categoryExists->type
+             ));
+          $paginator = new Paginator(new paginatorIterator($dataPost));
+          $paginator->setCurrentPageNumber($page)
+                    ->setItemCountPerPage(ITEM_PAGE)
+                    ->setPageRange(PAGE_RAND);
           $htmlViewPart->setTemplate('travel/load-data-travel');
           break;
         case 'tour':
-//          $this->layout('layout/tour');
+          // Lấy danh sách bài viết tour
+          $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
+          $dataPost = $post->getPostByCategory(array(
+             'categoryType' => $categoryExists->type,
+             'CategoryIdCurrent' => $categoryExists->id,
+             'categoryId' => $listIdCatgory,
+             'nationId' => 1, 
+             'provinceId' => 1, 
+             'districtId' => 1,
+             'filter' => $filter,
+             'sort' => $sort,
+             'star' => $star,
+             'min' => $min,
+             'max' => $max,
+             'area' => $area,
+             'keyword' => $keyword,
+             'type' => $categoryExists->type,
+             'language' => $this->language
+             ));
+          $paginator = new Paginator(new paginatorIterator($dataPost));
+          $paginator->setCurrentPageNumber($page)
+                    ->setItemCountPerPage(ITEM_PAGE)
+                    ->setPageRange(PAGE_RAND);
           $htmlViewPart->setTemplate('tour/load-data-tour');
           break;
         case 'hotel':
@@ -269,10 +293,6 @@ class CategoryController extends AbstractActionController
           break;
         case 'taste':
           $htmlViewPart->setTemplate('taste/load-data-taste');
-          break;
-        case 'tour':
-          break;
-        case 'tour':
           break;
       }
       $htmlViewPart->setTerminal(true)

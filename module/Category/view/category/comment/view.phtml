@@ -205,10 +205,13 @@
       </div>
     </li>
     <?php endforeach; ?>
-    
+    <div class="views-all">
+      <a ng-page="<?php echo $currentPage; ?>" data-id="<?php echo $postId; ?>">Xem thêm</a>
+    </div>
   </ul>
-  <?php endif; ?>
-  <div class="views-all">
-    <a ng-page="<?php echo $currentPage; ?>" data-id="<?php echo $postId; ?>">Xem thêm</a>
+  <?php else: ?>
+  <div class="comment-empty">
+    Chưa có bình luận nào. Hãy là người đầu tiên!
   </div>
+  <?php endif; ?>
   </div>

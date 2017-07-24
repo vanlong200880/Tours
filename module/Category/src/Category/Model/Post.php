@@ -70,13 +70,17 @@ class Post extends AbstractTableGateway
       $arrId = array($arrayParam['CategoryIdCurrent']);
       
       $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
-      $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
-      $select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      $select->join('province', 'post_detail.province_id = province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      $select->join('district', 'post_detail.district_id = district.id', array('district_name' => 'name', 'district_type' => 'type'));
       $select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
       if($arrayParam['categoryId']){
         foreach ($arrayParam['categoryId'] as $value){
           array_push($arrId, $value['id']);
         }
+      }
+      if(isset($arrayParam['type']) == 'tour'){
+        $select->join('tour', 'post.id = tour.post_id', array('price', 'excerptTour' => 'excerpt', 'address', 'commitment', 'language'));
+        $select->where(array('tour.language' => $arrayParam['language']));
       }
       $select->where->in('post.category_id', $arrId);
       if($arrayParam['nationId']){
