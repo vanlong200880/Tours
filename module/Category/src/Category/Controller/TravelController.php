@@ -28,7 +28,7 @@ class TravelController extends AbstractActionController
       
       // Kiểm tra post có tồn tại không
       $post = new Post();
-      $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language));
+      $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language, 'type' => 'travel'));
       $gallery = '';
       $dataEntertainmentType = '';
       $dataVehicle = '';
@@ -145,7 +145,7 @@ class TravelController extends AbstractActionController
       if($this->getRequest()->isXmlHttpRequest()){
         $category = new Post();
         $id = $this->params()->fromPost('id');
-        $post = $category->getPostById(array('id' => $id));
+        $post = $category->getPostById(array('id' => $id, 'type' => ''));
         $fromLatitude = '';
         $fromLongitude = '';
         $toLatitude = '';

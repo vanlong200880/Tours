@@ -1,6 +1,6 @@
 <div class="popup-content">
   <div class="popup-header">
-   <h2><span class="icon icon-location"></span> Đầm sen</h2>
+   <h2><span class="icon icon-location"></span> <?php echo $dataPost->name; ?></h2>
    <div class="close-zoom pull-right">
      <div class="zoom"><a href="<?php //echo $this->url('tour-page-detail', array('slug' => 'chi-tiet-tour', 'id' => 1231231)) ?>"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
      <div class="popup-close"><span class="icon icon-cancel-music"></span></div>
@@ -10,28 +10,20 @@
     <div class="slider">
       <div class="row">
         <div class="col-md-8">
+          <?php if($gallery): ?>
           <div class="royalSlider rsDefault">
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
-             <img class="rsImg" src="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" data-rsTmb="<?php echo $this->basePath('/assets/demo/san-francisco.jpg'); ?>" alt="image description" />
+             <?php foreach ($gallery as $value): ?>
+              <img class="rsImg" src="<?php echo SERVER_IMAGE.'/'. $value['name']; ?>" data-rsTmb="<?php echo SERVER_IMAGE.'/100x80/'. $value['name']; ?>" alt="image description" />
+              <?php endforeach; ?>
            </div>
+          <?php endif; ?>
         </div>
         <div class="col-md-4">
           <div class="description">
              <h2>GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</h2>
-             <p class="expt">Tour Campuchia – Lào – Đông Bắc Thái Lan Đi Về Bằng Xe Dành Cho 01 Khách
-  – Chuyến Hành Trình 4 Ngày 3 Đêm Cực Kỳ Thú Vị Và Đặc Sắc. Voucher 
-  7.890.000 VNĐ, Còn 5.790.000 VNĐ, Giảm 27%.</p>
+             <p class="expt">
+               <?php echo $dataPost->excerpt; ?>
+             </p>
              <div class="item">
                <p class="cost">Giá gốc: 800,000<span>đ</span></p>
                <p class="price-sale">1,800,000<span>đ</span> <var>-50%</var></p>
@@ -247,38 +239,19 @@
     <div class="commitment">
       <div class="commitment-view">
         <div class="content">
+          <?php if($dataPost->excerpt_des): ?>
           <div class="col-md-7">
            <h2>ĐIỂM NỔI BẬT</h2>
-           <p>- Tour Campuchia – Lào – Đông Bắc Thái Lan trong 4N3Đ do Viet Kite Travel – đơn vị lữ hành giàu kinh nghiệm 
-             đứng ra tổ chức.</p><p>
-  - Tham gia vào chuyến hành trình, bạn sẽ được đặt chân đến nhiều địa danh khác nhau: Strung Treng 
-  (Campuchia), Pakse (Lào), Ubon Ratchathani (Thái Lan).</p><p>
-  - Ở mỗi vùng đất, bạn lại được mở rộng vốn hiểu biết về lối sống, phong tục tập quán của người dân nơi đó, 
-  được chiêm ngưỡng nhiều cảnh đẹp, nhiều công trình mang giá trị văn hóa, lịch sử, bao gồm: Thác Khone 
-  Phapheng – thác nước lớn nhất Đông Nam </p>
-           <p>- Tour Campuchia – Lào – Đông Bắc Thái Lan trong 4N3Đ do Viet Kite Travel – đơn vị lữ hành giàu kinh nghiệm 
-             đứng ra tổ chức.</p><p>
-  - Tham gia vào chuyến hành trình, bạn sẽ được đặt chân đến nhiều địa danh khác nhau: Strung Treng 
-  (Campuchia), Pakse (Lào), Ubon Ratchathani (Thái Lan).</p><p>
-  - Ở mỗi vùng đất, bạn lại được mở rộng vốn hiểu biết về lối sống, phong tục tập quán của người dân nơi đó, 
-  được chiêm ngưỡng nhiều cảnh đẹp, nhiều công trình mang giá trị văn hóa, lịch sử, bao gồm: Thác Khone 
-  Phapheng – thác nước lớn nhất Đông Nam </p>
+           <?php echo $dataPost->excerpt_des; ?>
+           
          </div>
+          <?php endif; ?>
+          <?php if($dataPost->commitment): ?>
          <div class="col-md-5">
-           <h2>Cam ket</h2>
-           <p>
-  - Ở mỗi vùng đất, bạn lại được mở rộng vốn hiểu biết về lối sống, phong tục tập quán của người dân nơi đó, 
-  được chiêm ngưỡng nhiều cảnh đẹp, nhiều công trình mang giá trị văn hóa, lịch sử, bao gồm: Thác Khone 
-  Phapheng – thác nước lớn nhất Đông Nam </p>
-           <p>
-  - Ở mỗi vùng đất, bạn lại được mở rộng vốn hiểu biết về lối sống, phong tục tập quán của người dân nơi đó, 
-  được chiêm ngưỡng nhiều cảnh đẹp, nhiều công trình mang giá trị văn hóa, lịch sử, bao gồm: Thác Khone 
-  Phapheng – thác nước lớn nhất Đông Nam </p>
-           <p>
-  - Ở mỗi vùng đất, bạn lại được mở rộng vốn hiểu biết về lối sống, phong tục tập quán của người dân nơi đó, 
-  được chiêm ngưỡng nhiều cảnh đẹp, nhiều công trình mang giá trị văn hóa, lịch sử, bao gồm: Thác Khone 
-  Phapheng – thác nước lớn nhất Đông Nam </p>
+           <h2>Cam kết</h2>
+           <?php echo $dataPost->commitment; ?>
          </div>
+          <?php endif; ?>
         </div>
       </div>
       <div class="col-md-12 readmove">
@@ -312,60 +285,8 @@
            </ul>
          </div>
          <div class="detail">
-           <h2>Giới thiệu</h2>
            <div class="description">
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         <p><img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>"></p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+             <?php echo $dataPost->content; ?>
            </div>
            <div  class="payment-now">
              <a href="#">Mua ngay</a>
