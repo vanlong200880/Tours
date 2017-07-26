@@ -19,8 +19,7 @@
   };
   
   $.fn.render = function(){
-    $("body #menu-top li").hover(function(){ 
-      console.log('sd fs');
+    $("body #menu-top li.tour").hover(function(){ 
       $.fn.loadSwiperHome('.sw-menu1', 6, 6, 4, 3);
       $.fn.loadSwiperHome('.sw-menu2', 6, 6, 4, 3);
     });

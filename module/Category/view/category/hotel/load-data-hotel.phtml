@@ -1,18 +1,24 @@
+<?php
+if($paginator):
+?>
+<?php foreach ($paginator as $value): ?>
 <li class="col-md-6">
   <div class="item">
     <div class="img">
       <div class="star">
+        <?php if($value->starValue > 0): ?>
+        <?php for($i = 0 ;$i < $value->starValue; $i++): ?>
         <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
+        <?php endfor; ?>
+        <?php endif; ?>
       </div>
       <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
+      <a href="javascript:void(0);" data-id="<?php echo $value->id; ?>" title="<?php echo $value->name; ?>">
+        <img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="<?php echo $value->name; ?>">
+      </a>
       <div class="item-hover">
         <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
+          E-Voucher
         </div>
         <div class="readmove">
           <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
@@ -21,7 +27,9 @@
     </div>
     <div class="item-content">
       <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
+        <a href="javascript:void(0);" data-id="<?php echo $value->id; ?>" title="<?php echo $value->name; ?>">
+          <?php echo $value->name; ?>
+        </a>
       </div>
       <div class="price">
         <p>
@@ -37,291 +45,27 @@
       </div>
     </div>
   </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
+</li>
+  <?php endforeach; ?>
+  <li>
+    <div class="paging">
+      <?php
+      echo $this->paginationControl($paginator, 'Sliding', 'paginationAjax', array(
+          $this->route,
+          'category' => $category->slug,
+          'province' => $province,
+          'district' => $district,
+          'nation' => $nation,
+          'page' => $page,
+          'filter' => $filter,
+          'sort' => $sort,
+          'star' => $star,
+          'min' => $min,
+          'max' => $max,
+          'area' => $area,
+          'keyword' => $keyword
+      ));
+      ?>
   </div>
   </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
-
-  <li class="col-md-6">
-  <div class="item">
-    <div class="img">
-      <div class="star">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-        <img src="<?php echo $this->basePath('/assets/star.png'); ?>">
-      </div>
-      <div class="highlight"><span>HOT</span></div>
-      <a href="javascript:void(0);"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>" title="sdfsdf"></a>
-      <div class="item-hover">
-        <div class="item-voucher">
-          Nhân voucher điện tử qua email/SMS
-        </div>
-        <div class="readmove">
-          <a href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
-        </div>
-      </div>
-    </div>
-    <div class="item-content">
-      <div class="title">
-        <a href="javascript:void(0);" title="">Khách sạn Liberty Central Saigon Centre</a>
-      </div>
-      <div class="price">
-        <p>
-          <span class="cost">350,000 <var>đ</var></span>
-          <span class="sale">-50%</span>
-        </p>
-      </div>
-      <div class="view-user">
-        <span class="price-sale">350,000</span>  <var>đ</var>
-        <div class="pull-right">
-          <span class="icon icon-user-profile"> 1124</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </li>
+<?php endif; ?>

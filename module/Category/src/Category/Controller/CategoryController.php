@@ -253,8 +253,7 @@ class CategoryController extends AbstractActionController
              'min' => $min,
              'max' => $max,
              'area' => $area,
-             'keyword' => $keyword,
-              'type' => $categoryExists->type
+             'keyword' => $keyword
              ));
           $paginator = new Paginator(new paginatorIterator($dataPost));
           $paginator->setCurrentPageNumber($page)
@@ -279,7 +278,6 @@ class CategoryController extends AbstractActionController
              'max' => $max,
              'area' => $area,
              'keyword' => $keyword,
-             'type' => $categoryExists->type,
              'language' => $this->language
              ));
           $paginator = new Paginator(new paginatorIterator($dataPost));
@@ -289,6 +287,28 @@ class CategoryController extends AbstractActionController
           $htmlViewPart->setTemplate('tour/load-data-tour');
           break;
         case 'hotel':
+          // Lấy danh sách bài viết hotel
+          $listIdCatgory = $category->getAllCategoryChildBySlug($categoryExists->id);
+          $dataPost = $post->getPostByCategory(array(
+             'categoryType' => $categoryExists->type,
+             'CategoryIdCurrent' => $categoryExists->id,
+             'categoryId' => $listIdCatgory,
+             'nationId' => 1, 
+             'provinceId' => 1, 
+             'districtId' => 1,
+             'filter' => $filter,
+             'sort' => $sort,
+             'star' => $star,
+             'min' => $min,
+             'max' => $max,
+             'area' => $area,
+             'keyword' => $keyword,
+             'language' => $this->language
+             ));
+          $paginator = new Paginator(new paginatorIterator($dataPost));
+          $paginator->setCurrentPageNumber($page)
+                    ->setItemCountPerPage(ITEM_PAGE)
+                    ->setPageRange(PAGE_RAND);
           $htmlViewPart->setTemplate('hotel/load-data-hotel');
           break;
         case 'taste':

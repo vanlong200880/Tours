@@ -24,7 +24,7 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()
-            
+            ->prependFile($this->basePath('frontend/libs/Swiper/dist/js/swiper.min.js'))
             ->prependFile($this->basePath('frontend/libs/royalSlider/jquery.royalslider.min.js'))
             ->prependFile($this->basePath('libs/bootstrapSelect/js/bootstrap-select.min.js'))
 //            ->prependFile($this->basePath('frontend/libs/carousel/owl.carousel.min.js'))
@@ -35,7 +35,7 @@
         ; ?>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&language=vi"></script>
     </head>
-    <body>
+    <body class="hotel">
       <div class="wrapper">
         <?php $this->headerCategory(); ?>
         <?php echo $this->searchCategory(); ?>
@@ -373,6 +373,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <!-- Scripts -->
         <?php echo $this->inlineScript()
             ->prependFile($this->basePath('frontend/js/common.js'))
+            ->prependFile($this->basePath('assets/js/hotel.js'))
             ->prependFile($this->basePath('assets/js/common.js')); ?>
     </body>
 </html>

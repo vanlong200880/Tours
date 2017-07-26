@@ -4,7 +4,7 @@
   <?php 
     switch ($value['type']){
       case 'travel': ?>
-      <li>
+  <li class="<?php echo $value['type']; ?>">
         <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
         <?php if($value['root']): ?>
         <div class="item-menu-level">
@@ -31,7 +31,7 @@
       </li>
       <?php break; ?>
       <?php case 'tour': ?>
-      <li>
+      <li class="<?php echo $value['type']; ?>">
         <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
         <?php if($value['root']): ?>
         <div class="item-menu-level">
@@ -80,7 +80,7 @@
       </li>
       <?php break; ?>
       <?php case 'hotel': ?>
-      <li>
+      <li class="<?php echo $value['type']; ?>">
         <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
         <?php if($value['root']): ?>
         <div class="item-menu-level">
@@ -141,12 +141,12 @@
       </li>
       <?php break; ?>
       <?php case 'video': ?>
-      <li>
+      <li <?php echo $value['type']; ?>>
         <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
       </li>
       <?php break; ?>
       <?php case 'diary': ?>
-      <li>
+      <li class="<?php echo $value['type']; ?>">
         <a href="<?php  echo $this->url('category', array('category' => $value['slug'])); ?>"><?php echo $value['name']; ?></a>
       </li>
       <?php break; ?>

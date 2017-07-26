@@ -78,10 +78,17 @@ class Post extends AbstractTableGateway
           array_push($arrId, $value['id']);
         }
       }
-      if(isset($arrayParam['type']) == 'tour'){
+      if(isset($arrayParam['categoryType']) && $arrayParam['categoryType'] == 'tour'){
         $select->join('tour', 'post.id = tour.post_id', array('price', 'excerptTour' => 'excerpt', 'address', 'commitment', 'language'));
         $select->where(array('tour.language' => $arrayParam['language']));
       }
+      
+      if(isset($arrayParam['categoryType']) && $arrayParam['categoryType'] == 'hotel'){
+        $select->join('hotel', 'post.id = hotel.post_id', array('min_price', 'max_price', 'address', 'highlight_excerpt', 'regulation'));
+        $select->join('hotel_type', 'hotel_type.id = hotel.hotel_type_id', array('starValue' => 'star_value'));
+//        $select->where(array('tour.language' => $arrayParam['language']));
+      }
+      
       $select->where->in('post.category_id', $arrId);
       if($arrayParam['nationId']){
         $select->where(array('post_detail.nation_id' => $arrayParam['nationId']));
