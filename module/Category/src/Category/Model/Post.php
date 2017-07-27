@@ -138,6 +138,19 @@ class Post extends AbstractTableGateway
       return $resultSet;
    }
    
+   // get list post travel by list id
+   public function getPostByListId($arrayParam = null){
+      $select = new Select();
+      $select->from($this->table);
+      $select ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name', 'hot', 'new', 'address'));
+      $select->where(array('post_detail.status_id' => 1));
+      
+      $select->where->in('post.category_id', $arrayParam['listId']);
+      $resultSet = $this->selectWith($select);
+      $resultSet->buffer()->toArray();
+      return $resultSet;
+   }
+   
    public function getPostById($arrayParam = null)
    {
       $select = new Select();
@@ -156,7 +169,7 @@ class Post extends AbstractTableGateway
       }
       
       if($arrayParam['type'] == 'tour'){
-        $select->join('tour', 'tour.post_id= post.id', array('excerpt_des' => 'excerpt', 'commitment', 'address', 'price'));
+        $select->join('tour', 'tour.post_id= post.id', array('tourId' => 'id','excerpt_des' => 'excerpt', 'commitment', 'address', 'price'));
       }
 
       $resultSet = $this->selectWith($select);

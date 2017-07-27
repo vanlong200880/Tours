@@ -13,6 +13,7 @@ use Category\Model\Entertainment;
 use Category\Model\Vehicle;
 use Category\Model\PostVideo;
 use Category\Model\PostContact;
+use Category\Model\TourDetail;
 use Category\Model\EntertainmentDetail;
 
 class TourController extends AbstractActionController
@@ -25,9 +26,8 @@ class TourController extends AbstractActionController
   }
   public function detailAction(){
     $id = $this->params()->fromPost('id');
-    $id = 7;
       $htmlViewPart = new ViewModel();
-      
+      $id = 7;
       // Kiểm tra post có tồn tại không
       $post = new Post();
       $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language, 'type' => 'tour'));
@@ -37,10 +37,26 @@ class TourController extends AbstractActionController
       $listVideo = '';
       $dataPostContact = '';
       $dataPostRelated = '';
+      $listTour = '';
       if($dataPost){
         $postImage = new PostImage();
         $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
         
+        // Lấy danh sách điểm tham quan trong tour
+        $tourDetail = new TourDetail();
+        $arrPostId = array();
+        $dataListId = $tourDetail->listTourDetail(array('tour_id' => $dataPost->tourId));
+        if($dataListId){
+          foreach ($dataListId as $value){
+            array_push($arrPostId, $value['post_id']);
+          }
+        }
+        
+        if($arrPostId){
+          // Lấy danh sách điểm du lịch trong tour
+          $listTour = $post->getPostByListId(array('listId' => $arrPostId));
+        }
+//        var_dump($listTour);
         // Lấy ra danh sách loại bảng giá
 //        $entertainmentType = new EntertainmentType();
 //        $entertainment = new Entertainment();
@@ -103,16 +119,16 @@ class TourController extends AbstractActionController
         $dataPostContact = $contact->getListContactByPostId(array('post_id' => $dataPost->id));
         
         // Lấy danh sách bài viết khác cùng chuyên mục
-//        $dataPostRelated = $post->getPostRelatedByCategory(
-//                array(
-//                  'id' => $dataPost->id,
-//                  'category_id' => $dataPost->category_id,
-//                  'language' => $this->language,
-//                  'nationId' => 1,
-//                  'provinceId' => 1,
-//                  'districtId' => 1,
-//                  'limit' => 5
-//                ));
+        $dataPostRelated = $post->getPostRelatedByCategory(
+                array(
+                  'id' => $dataPost->id,
+                  'category_id' => $dataPost->category_id,
+                  'language' => $this->language,
+                  'nationId' => '',
+                  'provinceId' => '',
+                  'districtId' => '',
+                  'limit' => 5
+                ));
       }
       
       
@@ -121,6 +137,7 @@ class TourController extends AbstractActionController
                    ->setTerminal(true)
                    ->setVariables([
                        'id' => $id,
+                       'listTour' => $listTour,
                        'dataPost' => $dataPost,
                        'gallery' => $gallery,
                        'dataEntertainment' => $dataEntertainmentType,

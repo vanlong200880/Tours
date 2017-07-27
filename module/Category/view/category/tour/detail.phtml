@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-4">
           <div class="description">
-             <h2>GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</h2>
+             <h2><?php echo $dataPost->name; ?></h2>
              <p class="expt">
                <?php echo $dataPost->excerpt; ?>
              </p>
@@ -47,195 +47,34 @@
         </div>
       </div>
    </div>
+    <?php if($listTour): ?>
     <div class="list-tours-related">
        <h2>Các điểm tham quan trong tour này</h2>
        <div class="swiper-container">
          <ul class="swiper-wrapper">
+           <?php foreach ($listTour as $value): ?>
            <li class="col-md-2 swiper-slide">
             <div class="item">
               <div class="photo">
                 15 Ảnh
               </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
+              <p class="img">
+                <a href="<?php //echo $this->url(); ?>">
+                  <img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>">
+                </a>
+              </p>
+               <p class="title">
+                 <a href="#"><?php echo $value['name']; ?></a>
+               </p>
             </div>
           </li>
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
-          <li class="col-md-2 swiper-slide">
-            <div class="item">
-              <div class="photo">
-                15 Ảnh
-              </div>
-              <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-               <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-            </div>
-          </li>
-
+          <?php endforeach; ?>
          </ul>
        </div>
        <div class="swiper-btn button-prev"><span class="icon icon-left-chevron"></span></div>
        <div class="swiper-btn button-next"><span class="icon icon-right-chevron"></span></div>
-  <!--               <ul class="swiper-wrapper">
-        <li class="col-md-2 swiper-slide">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-        <li class="col-md-2">
-          <div class="item">
-            <div class="photo">
-              15 Ảnh
-            </div>
-            <p class="img"><a href="#"><img src="<?php echo $this->basePath('/assets/demo/album.jpg'); ?>"></a></p>
-             <p class="title"><a href="#">Khu du lịch thác Giang Điền</a></p>
-          </div>
-        </li>
-      </ul>-->
     </div>
-
+    <?php endif; ?>
     <div class="commitment">
       <div class="commitment-view">
         <div class="content">
@@ -307,8 +146,10 @@
            <p>Điện thoại: 0873003799</p>
            <div class="map-position"></div>
          </div>
+         <?php if($dataPostRelated): ?>
          <div class="list-related">
            <ul class="row list-item">
+             <?php foreach ($dataPostRelated as $value): ?>
              <li class="col-md-12">
                <div class="item">
                  <div class="img">
@@ -316,7 +157,7 @@
                    <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
                    <div class="item-hover">
                      <div class="item-voucher">
-                       Nhân voucher điện tử qua email/SMS
+                       E-Voucher
                      </div>
                      <div class="readmove">
                        <a href="#">Xem ngay</a>
@@ -325,7 +166,7 @@
                  </div>
                  <div class="item-content">
                    <div class="title">
-                     <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
+                     <a href="#"><?php echo $value['name']; ?></a>
                    </div>
                    <div class="price">
                      <p>
@@ -342,146 +183,10 @@
                  </div>
                </div>
              </li>
-             <li class="col-md-12">
-               <div class="item">
-                 <div class="img">
-                   <div class="highlight"><span>HOT</span></div>
-                   <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
-                   <div class="item-hover">
-                     <div class="item-voucher">
-                       Nhân voucher điện tử qua email/SMS
-                     </div>
-                     <div class="readmove">
-                       <a href="#">Xem ngay</a>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="item-content">
-                   <div class="title">
-                     <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
-                   </div>
-                   <div class="price">
-                     <p>
-                       <span class="cost">350,000 <var>đ</var></span>
-                       <span class="sale">-50%</span>
-                     </p>
-                   </div>
-                   <div class="view-user">
-                     <span class="price-sale">350,000</span>  <var>đ</var>
-                     <div class="pull-right">
-                       <span class="icon icon-user-profile"> 1124</span>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </li>
-
-             <li class="col-md-12">
-               <div class="item">
-                 <div class="img">
-                   <div class="highlight"><span>HOT</span></div>
-                   <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
-                   <div class="item-hover">
-                     <div class="item-voucher">
-                       Nhân voucher điện tử qua email/SMS
-                     </div>
-                     <div class="readmove">
-                       <a href="#">Xem ngay</a>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="item-content">
-                   <div class="title">
-                     <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
-                   </div>
-                   <div class="price">
-                     <p>
-                       <span class="cost">350,000 <var>đ</var></span>
-                       <span class="sale">-50%</span>
-                     </p>
-                   </div>
-                   <div class="view-user">
-                     <span class="price-sale">350,000</span>  <var>đ</var>
-                     <div class="pull-right">
-                       <span class="icon icon-user-profile"> 1124</span>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </li>
-
-             <li class="col-md-12">
-               <div class="item">
-                 <div class="img">
-                   <div class="highlight"><span>HOT</span></div>
-                   <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
-                   <div class="item-hover">
-                     <div class="item-voucher">
-                       Nhân voucher điện tử qua email/SMS
-                     </div>
-                     <div class="readmove">
-                       <a href="#">Xem ngay</a>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="item-content">
-                   <div class="title">
-                     <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
-                   </div>
-                   <div class="price">
-                     <p>
-                       <span class="cost">350,000 <var>đ</var></span>
-                       <span class="sale">-50%</span>
-                     </p>
-                   </div>
-                   <div class="view-user">
-                     <span class="price-sale">350,000</span>  <var>đ</var>
-                     <div class="pull-right">
-                       <span class="icon icon-user-profile"> 1124</span>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </li>
-
-             <li class="col-md-12">
-               <div class="item">
-                 <div class="img">
-                   <div class="highlight"><span>HOT</span></div>
-                   <a href="#"><img src="<?php echo $this->basePath('/assets/demo/deal.jpg'); ?>"></a>
-                   <div class="item-hover">
-                     <div class="item-voucher">
-                       Nhân voucher điện tử qua email/SMS
-                     </div>
-                     <div class="readmove">
-                       <a href="#">Xem ngay</a>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="item-content">
-                   <div class="title">
-                     <a href="#">Tour Hà Nội - Bái Đính - KDL Tràng An Cổ - 01 Ngày - Dành Cho 01 Khách</a>
-                   </div>
-                   <div class="price">
-                     <p>
-                       <span class="cost">350,000 <var>đ</var></span>
-                       <span class="sale">-50%</span>
-                     </p>
-                   </div>
-                   <div class="view-user">
-                     <span class="price-sale">350,000</span>  <var>đ</var>
-                     <div class="pull-right">
-                       <span class="icon icon-user-profile"> 1124</span>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </li>
-
-
+             <?php endforeach; ?>
            </ul>
          </div>
-
+         <?php endif; ?>
        </div>
      </div>
    </div>
