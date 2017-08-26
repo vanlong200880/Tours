@@ -48,739 +48,296 @@
             </div>
           </div>
         </div>
-        
-        <script>
-//              var map;
-//              var infowindow;
+  <script>
+    jQuery(document).ready(function($){
+      //<![CDATA[
+      // this variable will collect the html which will eventually be placed in the side_bar 
+//      var side_bar_html = ""; 
+    
+      // arrays to hold copies of the markers and html used by the side_bar 
+      // because the function closure trick doesnt work there 
+//      var gmarkers = []; 
+//      var gicons = [];
+//     // global "map" variable
+//      var map = null;
+//gicons["red"] = new google.maps.MarkerImage("http://gonow.dev/assets/images/red.png",
+//      // This marker is 20 pixels wide by 34 pixels tall.
+//      new google.maps.Size(20, 34),
+//      // The origin for this image is 0,0.
+//      new google.maps.Point(0,0),
+//      // The anchor for this image is at 9,34.
+//      new google.maps.Point(9, 34));
+//  // Marker sizes are expressed as a Size of X,Y
+//  // where the origin of the image (0,0) is located
+//  // in the top left of the image.
+// 
+//  // Origins, anchor positions and coordinates of the marker
+//  // increase in the X direction to the right and in
+//  // the Y direction down.
 //
-//              function initMap() {
-//                var pyrmont = {lat: 16.1724728, lng: 107.182617};
-//
-//                map = new google.maps.Map(document.getElementById('map'), {
-//                  center: pyrmont,
-//                  zoom: 6
-//                });
-//
-//                infowindow = new google.maps.InfoWindow();
-//                var service = new google.maps.places.PlacesService(map);
-//                service.nearbySearch({
-//                  location: pyrmont,
-//                  radius: 500,
-//                  type: ['store']
-//                }, callback);
-//              }
-//
-//              function callback(results, status) {
-//                if (status === google.maps.places.PlacesServiceStatus.OK) {
-//                  for (var i = 0; i < results.length; i++) {
-//                    createMarker(results[i]);
-//                  }
-//                }
-//              }
-//
-//              function createMarker(place) {
-//                var data = 	[
-//                    {"latitude":"21.014199","longtitude":"105.848317"},
-//                    {"latitude":"21.001269","longtitude":"105.802404"},
-//                    {"latitude":"21.036927","longtitude":"105.780119"},
-//                    {"latitude":"21.019763","longtitude":"105.807979"},
-//                    {"latitude":"10.771929","longtitude":"106.653169"},
-//                    {"latitude":"10.770537","longtitude":"106.672307"},
-//                    {"latitude":"21.047366","longtitude":"105.807651"},
-//                    {"latitude":"20.995875","longtitude":"105.860988"},
-//                    {"latitude":"21.0211","longtitude":"105.826317"},
-//                    {"latitude":"21.046255","longtitude":"105.876507"},
-//                    {"latitude":"21.053855","longtitude":"105.73299"},
-//                    {"latitude":"21.001144","longtitude":"105.827103"},
-//                    {"latitude":"21.024973","longtitude":"105.819097"},
-//                    {"latitude":"20.982916","longtitude":"105.79102"},
-//                    {"latitude":"21.013083","longtitude":"105.835074"},
-//                    {"latitude":"10.781741","longtitude":"106.650057"},
-//                 ];
-//                var placeLoc = place.geometry.location;
-//                var marker = new google.maps.Marker({
-//                  map: map,
-//                  position: place.geometry.location
-//                });
-//
-//                google.maps.event.addListener(marker, 'click', function() {
-//                  infowindow.setContent(place.name);
-//                  infowindow.open(map, this);
-//                });
-//              }
-
-//function initialize() {
-//  var mapOptions = {
-//    zoom: 10,
-//    center: new google.maps.LatLng(21.033333300000000000, 105.850000000000020000)
-//  };
-//  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-//  setMarkers(map, beaches);
-//}
-//var beaches = [
-//  ['a',21.014199,105.848317],
-//  ['b',21.001269,105.802404],
-//  ['c',21.036927,105.780119],
-//  ['d',21.019763,105.807979],
-//  ['e',10.771929,106.653169],
-//  ['f',10.770537,106.672307],
-//  ['g',21.047366,105.807651],
-//  ['h',20.995875,105.860988],
-//  ['i',21.046255,105.876507],
-//  ['j',21.053855,105.73299],
-//  ['k',21.001144,105.827103],
-//  ['l',21.024973,105.819097],
-//  ['m',20.982916,105.79102],
-//  ['n',21.013083,105.835074],
-//  ['t',10.781741,106.650057],
-//];
-//
-//
-//
-//function setMarkers(map, locations) {
-//  // Icon Image Marker
-//  var image = {
-//      url: document.location.origin + '/assets/images/icon-tour.png',
-//      // Kích cỡ hình
-//      size: new google.maps.Size(50, 50),
-//      // Gốc cho hình là oo
-//      origin: new google.maps.Point(0, 0),
-//      // Neo cho hình là 0, 32
-//      anchor: new google.maps.Point(50, 50)
-//  };
-//                 
-//  // Hình dạng
-//  var shape = {
-//      coords: [1, 1, 1, 20, 18, 20, 18, 1],
+//  var iconImage = new google.maps.MarkerImage('http://gonow.dev/assets/images/red.png',
+//      // This marker is 20 pixels wide by 34 pixels tall.
+//      new google.maps.Size(20, 34),
+//      new google.maps.Point(0,0),
+//      // The anchor for this image is at 9,34.
+//      new google.maps.Point(9, 34));
+//  var iconShadow = new google.maps.MarkerImage('http://www.google.com/mapfiles/shadow50.png',
+//      // The shadow image is larger in the horizontal dimension
+//      // while the position and offset are the same as for the main image.
+//      new google.maps.Size(37, 34),
+//      new google.maps.Point(0,0),
+//      new google.maps.Point(9, 34));// The origin for this image is 0,0.
+//      new google.maps.Point(0,0),
+//      // The anchor for this image is at 9,34.
+//      new google.maps.Point(9, 34));
+//  var iconShadow = new google.maps.MarkerImage('http://www.google.com/mapfiles/shadow50.png',
+//      // The shadow image is larger in the horizontal dimension
+//      // while the position and offset are the same as for the main image.
+//      new google.maps.Size(37, 34),
+//      new google.maps.Point(0,0),
+//      new google.maps.Point(9, 34));
+      // Shapes define the clickable region of the icon.
+      // The type defines an HTML &lt;area&gt; element 'poly' which
+      // traces out a polygon as a series of X,Y points. The final
+      // coordinate closes the poly by connecting to the first
+      // coordinate.
+//  var iconShape = {
+//      coord: [9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,7,23,8,26,9,30,9,34,11,34,11,30,12,26,13,24,14,21,16,18,18,16,20,12,20,8,18,4,16,2,15,1,13,0],
 //      type: 'poly'
 //  };
-//
-//  // Lặp qua từng locations
-//  for (var i = 0; i < locations.length; i++) 
-//  {
-//      var beach = locations[i];
-//      var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
-//      var marker = new google.maps.Marker({
-//          position: myLatLng,
-//          map: map,
-//          icon: image,
-//          shape: shape,
-//          title: beach[0],
-//          zIndex: beach[3]
-//      });
+
+//function getMarkerImage(iconColor) {
+//   if ((typeof(iconColor)=="undefined") || (iconColor==null)) { 
+//      iconColor = "red"; 
+//   }
+//   if (!gicons[iconColor]) {
+//      gicons[iconColor] = new google.maps.MarkerImage("http://gonow.dev/assets/images/"+ iconColor +".png",
+//      // This marker is 20 pixels wide by 34 pixels tall.
+//      new google.maps.Size(20, 34),
+//      // The origin for this image is 0,0.
+//      new google.maps.Point(0,0),
+//      // The anchor for this image is at 6,20.
+//      new google.maps.Point(9, 34));
+//   } 
+//   return gicons[iconColor];
+
+//}
+
+//      gicons["blue"] = getMarkerImage("blue");
+//      gicons["green"] = getMarkerImage("green");
+//      gicons["yelow"] = getMarkerImage("yellow");
+//function toggleBounce() {
+//  if (marker.getAnimation() !== null) {
+//    marker.setAnimation(null);
+//  } else {
+//    marker.setAnimation(google.maps.Animation.BOUNCE);
 //  }
 //}
+// A function to create the marker and set up the event window function 
+//function createMarker(latlng,name,html,color) {
+//    var contentString = html;
+//    var marker = new google.maps.Marker({
+//        position: latlng,
+//        icon: gicons[color],
+//        shadow: iconShadow,
+//        map: map,
+//        title: name,
+//        draggable: true,
+//          animation: google.maps.Animation.DROP,
+//        zIndex: Math.round(latlng.lat()*-100000)<<5
+//        });
+//    google.maps.event.addListener(infowindow, 'domready', function(){
+//    });
+//    google.maps.event.addListener(marker, 'click', function() {
+////        infowindow.setContent(contentString); 
+////        infowindow.open(map,marker);
+////          console.log(marker);
+//          myclick(0);
+//        });
+//        
+//        google.maps.event.addListener(marker, 'mouseover', function() {
+//        infowindow.setContent(contentString); 
+//        infowindow.open(map,marker);
+//        });
+//        // Switch icon on marker mouseover and mouseout
+//        google.maps.event.addListener(marker, "mouseover", function() {
+//          marker.setIcon(gicons["green"]);
+//        });
+//        google.maps.event.addListener(marker, "mouseout", function() {
+//          marker.setIcon(gicons["red"]);
+//          infowindow.close();
+//        });
+//    gmarkers.push(marker);
+//}
+ 
+// This function picks up the click and opens the corresponding info window
+//function myclick(i) {
+////alert(i);
+// console.log(i);
+//  google.maps.event.trigger(gmarkers[i], "mouseover");
+//}
+
+//function mouseover(i){
+//  google.maps.event.trigger(gmarkers[i], "mouseover");
+//}
+//function mouseout(i){
+//  google.maps.event.trigger(gmarkers[i], "mouseout");
+//}
+
+//function initialize() {
+  // create the map
+ 
+//  var myOptions = {
+//    zoom: 12,
+//    center: new google.maps.LatLng(10.780068,106.705005),
+//    mapTypeControl: true,
+//    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+//    navigationControl: true,
+//    mapTypeId: google.maps.MapTypeId.ROADMAP
+//  }
+//  map = new google.maps.Map(document.getElementById("map"),
+//                                myOptions);
+// 
+//  google.maps.event.addListener(map, 'click', function() {
+//        infowindow.close();
+//        });
+      // Read the data from example.xml
+//      downloadUrl("example.xml", function(doc) {
+//        var xmlDoc = xmlParse(doc);
+//        var markers = xmlDoc.documentElement.getElementsByTagName("marker");
+//var markers = [
+//        ['a',10.770537,106.672307, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">'],
+//        ['b',10.779354,106.703907, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">'],
+//        ['b',21.001269,105.802404, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['c',21.036927,105.780119, 3, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['d',21.019763,105.807979, 4, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['e',10.771929,106.653169, 5, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['f',10.770537,106.672307, 6, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['g',21.047366,105.807651, 7, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['h',20.995875,105.860988, 8, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['i',21.046255,105.876507, 9, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['j',21.053855,105.73299, 10, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['k',21.001144,105.827103, 11, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['l',21.024973,105.819097, 12, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['m',20.982916,105.79102, 13, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['n',21.013083,105.835074, 14, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['t',10.781741,106.650057, 15, '<img src="http://gonow.dev/assets/demo/photo.jpg">']
+//      ];
+//        for (var i = 0; i < markers.length; i++) {
+//          console.log(i);
+//          // obtain the attribues of each marker
+//          var beach = markers[i];
+////          console.log(beach);
+//          var lat = parseFloat(beach[1]);
+//          var lng = parseFloat(beach[2]);
+//          var point = new google.maps.LatLng(lat,lng);
+////          var html = beach[4];
+//          var html = '<div id="iw-container">' + beach[4] +
+//                    
+//                  '</div>';
+//          var label = beach[0];
+//          // create the marker
+//          var marker = createMarker(point,label,html,"red");
+//        }
+        // put the assembled side_bar_html contents into the side_bar div
+//        document.getElementById("side_bar").innerHTML = side_bar_html;
+//      });
+//    }
+ 
 //var infowindow = new google.maps.InfoWindow(
 //  { 
-//    size: new google.maps.Size(150,50)
+//    size: new google.maps.Size(150,50),
+//     maxWidth: 160,
+//     pixelOffset: new google.maps.Size(0, 0) 
 //  });
-//
-//google.maps.event.addDomListener(window, 'load', initialize); 
-//
+    
+//initialize();
 
+//$("body .view-data").on('mouseover', 'ul li.item', function(event){
+//  var id = $(this).attr('data-id');
+//  event.preventDefault();
+//  console.log(id);
+//  mouseover(0);
+//});
+//$("body .view-data").on('mouseleave', 'ul li.item', function(event){
+//  var id = $(this).attr('data-id');
+//  event.preventDefault();
+//  console.log(id);
+//  mouseout(0);
+//});
+    // This Javascript is based on code provided by the
+    // Community Church Javascript Team
+    // http://www.bisphamchurch.org.uk/   
+    // http://econym.org.uk/gmap/
+    // from the v2 tutorial page at:
+    // http://econym.org.uk/gmap/basic3.htm 
+//]]>
 
-            </script>
-            
-             <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkgZsd36ZnWXJFh-NcongJgSegi3WA68o&libraries=places&callback=initMap" async defer></script>-->
-            <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgHX9P3ACD0mO_95u17KzWyQZRiZRP4q0&libraries=places&callback=initMap" async defer></script>-->
-        <script>
-          jQuery(document).ready(function($){
-//            $("#view-data").on('click','.province-container ul.list-travel li .item a',function(){
-//              var id = 'abc';
-//              var url = 'http://localhost/tours/public/travel-view';
-//              $.ajax({
-//                  url : url,
-//                  type : 'POST',
-//                  dataType : "json",
-//                  data: {id: id},
-//                  beforeSend: function(){
-//                    $(".popup-page").addClass('on');
-//                    $(".popup-page").append('<div class="loading"></div>');
-//                  },
-//                  success : function (data){
-//                    $( ".loading" ).remove();
-//                    $(".popup-container").empty().append(data.html);
-//                    $("#page-comment").empty().append(data.htmlComment);
-//
-//                    // call royalSlider
-//                    var slider = $('.royalSlider').royalSlider({
-//                    fullscreen: {
-//                      enabled: true,
-//                      nativeFS: true
-//                    },
-//                    controlNavigation: 'thumbnails',
-//                    autoScaleSlider: true, 
-//                    autoScaleSliderWidth: 725,
-//                    autoScaleSliderHeight: 478,
-//                    loop: false,
-//                    imageScaleMode: 'none',
-//                    navigateByClick: true,
-//                    numImagesToPreload:2,
-//                    arrowsNav:true,
-//                    arrowsNavAutoHide: true,
-//                    arrowsNavHideOnTouch: true,
-//                    keyboardNavEnabled: true,
-//                    fadeinLoadedSlide: true,
-//                    globalCaption: false,
-//                    globalCaptionInside: false,
-//                    imageScalePadding: 0,
-//                    slidesSpacing: 0,
-//                    thumbs: {
-//                      appendSpan: false,
-//                      firstMargin: false,
-//                      paddingBottom: 4
-//                    }
-//                    }).data('royalSlider');
-//
-//                    $('.rsFullscreenBtn').click(function(e){
-//                      slider.enterFullscreen();
-//                      e.preventDefault();
-//                    });
-//
-//                    slider.ev.on("rsEnterFullscreen", function() {
-//                      // enter fullscreen mode 
-//                      $(".popup-page").css('position', 'relative');
-//                    });
-//                    slider.ev.on('rsExitFullscreen', function(event) {
-//                      // exit fullscreen mode
-//                      $(".popup-page").removeAttr('style');
-//                    });
-//                  }
-//                });
-//            });
-            // close popup
-//            $(".popup-page").on('click','.popup-close' ,function(){
-//              $(".popup-page").removeClass('on');
-//              $(".popup-page .popup-container").empty();
-//            });
-
-            // view map
-//            $(".list-province-item ul > li").on('click','.strict-views', function(){
-//              var current = $("#current-map").val();
-//              var id = 'abc';
-//              var url = 'http://localhost/tours/public/view-map';
-//              $.ajax({
-//                  url : url,
-//                  type : 'POST',
-//                  dataType : "json",
-//                  data: {id: id},
-//                  beforeSend: function(){
-//                    $(".views-popup").addClass('view');
-//                    $(".views-popup").append('<div class="loading"></div>');
-//                  },
-//                  success : function (data){
-//                    $( ".loading" ).remove();
-//                    $(".views-popup .views-container").empty().append(data.html);
-//                    var pyrmont = {lat: -33.867, lng: 151.195};
-//                    // view google map
-//                    map = new google.maps.Map(document.getElementById('view-map'), {
-//                      center: pyrmont,
-//                      zoom: 15
-//                    });
-//
-//                    infowindow = new google.maps.InfoWindow();
-//                    var service = new google.maps.places.PlacesService(map);
-//                    service.nearbySearch({
-//                      location: pyrmont,
-//                      radius: 500,
-//                      type: ['store']
-//                    }, callback);
-//                    // view map popup
-//                    $(".views-popup .views-container").addClass('open');
-//                  }
-//                });
-//            });
-
-
-            // show detail gallery
-//            $(".game-entertainment tr td").on('click','.history', function(){
-//              alert('a');
-//              var id = 'abc';
-//              var url = 'http://localhost/tours/public/view-map';
-//              $.ajax({
-//                  url : url,
-//                  type : 'POST',
-//                  dataType : "json",
-//                  data: {id: id},
-//                  beforeSend: function(){
-//                    $(".views-popup").addClass('view');
-//                    $(".views-popup").append('<div class="loading"></div>');
-//                  },
-//                  success : function (data){
-//                    $( ".loading" ).remove();
-//                    $(".views-popup .views-container").empty().append(data.html);
-//                    var pyrmont = {lat: -33.867, lng: 151.195};
-//                    // view google map
-//                    map = new google.maps.Map(document.getElementById('view-map'), {
-//                      center: pyrmont,
-//                      zoom: 15
-//                    });
-//
-//                    infowindow = new google.maps.InfoWindow();
-//                    var service = new google.maps.places.PlacesService(map);
-//                    service.nearbySearch({
-//                      location: pyrmont,
-//                      radius: 500,
-//                      type: ['store']
-//                    }, callback);
-//                    // view map popup
-//                    $(".views-popup .views-container").addClass('open');
-//                  }
-//                });
-//            });
-
-            // view map popup close
-//            $(".views-popup").on('click','.views-close' ,function(){
-//              $(".views-popup .views-container").removeClass('open');
-//              setTimeout(function () {
-//               $(".views-popup").removeClass('view');
-//               $(".views-popup .views-container").empty();
-//              }, 350);
-//            });
-          });
-          $(document).ready(function() {
-            var map;
-             var infowindow;
-
-//             function initMap() {
-//               var pyrmont = {lat: 16.1724728, lng: 107.182617};
-//
-//               map = new google.maps.Map(document.getElementById('map'), {
-//                 center: pyrmont,
-//                 zoom: 6
-//               });
-//
-//               infowindow = new google.maps.InfoWindow();
-//               var service = new google.maps.places.PlacesService(map);
-//               service.nearbySearch({
-//                 location: pyrmont,
-//                 radius: 500,
-//                 type: ['store']
-//               }, callback);
-//             }
-
-//             function callback(results, status) {
-//               if (status === google.maps.places.PlacesServiceStatus.OK) {
-//                 for (var i = 0; i < results.length; i++) {
-//                   createMarker(results[i]);
-//                 }
-//               }
-//             }
-
-//             function createMarker(place) {
-//               var data = 	[
-//                   {"latitude":"21.014199","longtitude":"105.848317"},
-//                   {"latitude":"21.001269","longtitude":"105.802404"},
-//                   {"latitude":"21.036927","longtitude":"105.780119"},
-//                   {"latitude":"21.019763","longtitude":"105.807979"},
-//                   {"latitude":"10.771929","longtitude":"106.653169"},
-//                   {"latitude":"10.770537","longtitude":"106.672307"},
-//                   {"latitude":"21.047366","longtitude":"105.807651"},
-//                   {"latitude":"20.995875","longtitude":"105.860988"},
-//                   {"latitude":"21.0211","longtitude":"105.826317"},
-//                   {"latitude":"21.046255","longtitude":"105.876507"},
-//                   {"latitude":"21.053855","longtitude":"105.73299"},
-//                   {"latitude":"21.001144","longtitude":"105.827103"},
-//                   {"latitude":"21.024973","longtitude":"105.819097"},
-//                   {"latitude":"20.982916","longtitude":"105.79102"},
-//                   {"latitude":"21.013083","longtitude":"105.835074"},
-//                   {"latitude":"10.781741","longtitude":"106.650057"},
-//                ];
-//               var placeLoc = place.geometry.location;
-//               var marker = new google.maps.Marker({
-//                 map: map,
-//                 position: place.geometry.location
-//               });
-//
-//               google.maps.event.addListener(marker, 'click', function() {
-//                 infowindow.setContent(place.name);
-//                 infowindow.open(map, this);
-//               });
-//             }
-
-
-         
-            
-            
-            
-            
-            
-            
-      
-            
-function addInfoWindow(marker, message) {
-  var infoWindow = new google.maps.InfoWindow({
-    content: message,
-    maxWidth: 320,
-    pixelOffset: new google.maps.Size(0,0)
-  });
-  google.maps.event.addListener(marker, 'click', function () {
-    marker.setIcon(document.location.origin + '/assets/images/green.png');
-    infoWindow.open(map, marker);
-  });
-//  google.maps.event.addListener(marker, 'mouseout', function() 
-//  {
-//    marker.setIcon(document.location.origin + '/assets/images/red.png');
-////    this.setOptions({fillColor: '#ffffff'});
-//    infoWindow.close();
-////    jQuery(".show-map").css('display', 'none');
-//  });
-  
-  google.maps.event.addListener(infoWindow, 'domready', function() {
-
-    // Reference to the DIV that wraps the bottom of infowindow
-    var iwOuter = $('.gm-style-iw');
-
-    /* Since this div is in a position prior to .gm-div style-iw.
-     * We use jQuery and create a iwBackground variable,
-     * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
-    */
-    var iwBackground = iwOuter.prev();
-
-    // Removes background shadow DIV
-    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-
-    // Removes white background DIV
-    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-
-    // Moves the infowindow 115px to the right.
-//    iwOuter.parent().parent().css({left: '0px'});
-
-    // Moves the shadow of the arrow 76px to the left margin.
-//    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 0px !important;'});
-  console.log(iwBackground.children(1));
-  iwBackground.attr('style', function(i,s){ return s + 'left: 0px !important;'});
-    // Moves the arrow 76px to the left margin.
-//    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 0px !important;'});
-    iwBackground.children(0).first().css({display: 'none'});
-    // Changes the desired tail shadow color.
-    iwBackground.children(':nth-child(3)').find('div').css({height: '15px'});
-    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'none', 'z-index' : '1', height: '15px'});
-    iwBackground.children(':nth-child(3)').find('div').children().first().css({transform: 'skewX(35.6deg)'});
-    iwBackground.children(':nth-child(3)').find('div').children().last().css({transform: 'skewX(-35.6deg)'});
-//    iwBackground.children(':nth-child(2)').find('div').children().css({'box-shadow': 'none', 'z-index' : '1', height: '15px'});
-
-    // Reference to the div that groups the close button elements.
-    var iwCloseBtn = iwOuter.next();
-
-    // Apply the desired effect to the close button
-    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9', 'display': 'none'});
-
-    // If the content of infowindow not exceed the set maximum height, then the gradient is removed.
-    if($('.iw-content').height() < 140){
-      $('.iw-bottom-gradient').css({display: 'none'});
-    }
-
-    // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
-//    iwCloseBtn.mouseout(function(){
-//      $(this).css({opacity: '1'});
-//    });
-  });
-}             
-            
-function setMarkers(map, locations) {
-  // Icon Image Marker
-  var image = {
-    url: document.location.origin + '/assets/images/red.png',
-    // Kích cỡ hình
-//    size: new google.maps.Size(20, 20),
-//    // Gốc cho hình là oo
-//    origin: new google.maps.Point(0, 0),
-//    // Neo cho hình là 0, 32
-//    anchor: new google.maps.Point(20, 20)
-  };
-
-  // Hình dạng
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-
-  // Lặp qua từng locations
-  for (var i = 0; i < locations.length; i++) 
-  {
-    var beach = locations[i];
-    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image,
-        shape: shape,
-        title: beach[0],
-//        zIndex: beach[3]
+//      var beaches = [
+//        ['a',21.014199,105.848317, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['b',21.001269,105.802404, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['c',21.036927,105.780119, 3, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['d',21.019763,105.807979, 4, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['e',10.771929,106.653169, 5, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['f',10.770537,106.672307, 6, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['g',21.047366,105.807651, 7, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['h',20.995875,105.860988, 8, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['i',21.046255,105.876507, 9, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['j',21.053855,105.73299, 10, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['k',21.001144,105.827103, 11, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['l',21.024973,105.819097, 12, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['m',20.982916,105.79102, 13, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['n',21.013083,105.835074, 14, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+//        ['t',10.781741,106.650057, 15, '<img src="http://gonow.dev/assets/demo/photo.jpg">']
+//      ];
     });
-    var content = '<div id="iw-container">' +
-                    '<div class="iw-title">'+ beach[0] +
-                    '</div>' +
-                    '<div class="iw-content">' + beach[4] +
-                    
-                    '</div>' +
-                  '</div>';
-    addInfoWindow(marker,content);
-//      var infowindow = new google.maps.InfoWindow({
-//      content: beach[0]
-//    });
-//    var infoWindow = new google.maps.InfoWindow();
-//    google.maps.event.addListener(marker, 'click', function () {
-//        var markerContent = beach[0];
-//        infoWindow.setContent(markerContent);
-//        infoWindow.open(map, this);
-//    });
-//    marker.addListener('click', function() {
-//    infowindow.open(map, marker);
-//  });
-  }
-}
-    function initMap() {
-      var infowindow;
-      var beaches = [
-      ['a',21.014199,105.848317, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['b',21.001269,105.802404, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['c',21.036927,105.780119, 3, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['d',21.019763,105.807979, 4, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['e',10.771929,106.653169, 5, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['f',10.770537,106.672307, 6, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['g',21.047366,105.807651, 7, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['h',20.995875,105.860988, 8, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['i',21.046255,105.876507, 9, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['j',21.053855,105.73299, 10, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['k',21.001144,105.827103, 11, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['l',21.024973,105.819097, 12, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['m',20.982916,105.79102, 13, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['n',21.013083,105.835074, 14, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
-      ['t',10.781741,106.650057, 15, '<img src="http://gonow.dev/assets/demo/photo.jpg">']
-    ];
-
-      // Load map 
-      
-        /**
-         * Google Maps API
-         * Map > display an area
-         * Data layer > add custom data info on top of a map
-         *
-         * ONE map can has MANY layers
-         * layer combine (point, marker, info-window,..) into single-layer,
-         * then display it on top of map
-         *
-         * Data layer, loaded from geojson (standard json format),
-         * for sharing geometry info through internet
-         *
-         * create a data layer:
-         * Data layer < Feature < GeoJson Object
-         */
-        var default_zoom = 11;
-        var house_points = []; //store points from data, geojson
-        var map; //store Map object
-
-        /**
-         * Load points from data, geojson
-         */
-//        $.getJSON("https://gist.githubusercontent.com/hoanganh25991/603c575aa575645656ff/raw/877db1d0452fe3aa61a98ede5cdc05ccb2d3a731/map.geojson", function (data) {
-//            //get "features" out of data
-//            var features = data.features; 	//console.log(features.constructor);
-//            for (var i = 0; i < features.length; i++) {
-//                //get point from feature_geometry
-//                var point = features[i].geometry.coordinates;
-//                //create LatLng object
-//                //note: point from geometry (lng, lat), point as normal is (lat, lng)
-//                var latLng = new google.maps.LatLng(point[1], point[0]);
-//                //store points in house_points
-//                house_points.push(latLng); //console.log(latLng);
-//            }
-//        });
-
-        //Ho Chi Minh City center, location
-        var center_hoChiMinhCity = {
-            lat: 10.780068,
-            lng: 106.705005
-        };
-        //create map, with Ho Chi Minh City center
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: default_zoom,
-            center: center_hoChiMinhCity,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-
-        setMarkers(map, beaches);
-        /**
-         * Data layer: districts in Ho Chi Minh City
-         */
-        var layer_districts = new google.maps.Data();
-        //load "features" in geojon object into layer
-        layer_districts.loadGeoJson('http://gonow.dev/api/tp-ho-chi-minh/districts.json');
-        //style layer
-        layer_districts.setStyle({
-            fillColor: "#C1BCB2",
-            fillOpacity: 0.1,
-            strokeWeight: 0.5,
-            strokeColor: "#3d3627"
-        });
-        //add district-layer on top of map
-        layer_districts.setMap(map);
-
-
-        /**
-         * HANDLE CLICK EVENT ON DISTRICT LAYER
-         * 1. style district feature clicked
-         * 2. show house in this district
-         */
-        //remember the last house layer in last_house_layer
-        //remember the last district feature is clicked
-        var last_house_layer;
-        var last_district_feature;
-        
-        layer_districts.addListener('click', function (event) {
-            /**
-             * 1. STYLE DISTRICT FEATURE CLICKED
-             */
-            //get feature, which clicked from event
-            var feature = event.feature;
-            //toogle style on district feauture clicked and the last one
-            //if last one exist, remove style
-            if (last_district_feature) {
-                layer_districts.overrideStyle(last_district_feature, {
-                    fillColor: "#C1BCB2",
-                    fillOpacity: 0.1
-                });
-            }
-            //set this district feature is the last one
-            last_district_feature = feature;
-            //style this clicked district feature
-            layer_districts.overrideStyle(feature, {
-                fillColor: "#003100",
-                fillOpacity: 0.5
-            });
-
-
-            var geometry = feature.getGeometry(); //console.log(geometry.getType());
-
-            var data_polygon = geometry.getArray()[0];
-            //get out array of latLng object in data_polygon
-            var array_latLng = data_polygon.getArray()[0].getArray();
-
-
-            //move map_center to polygon_center,
-            //which disctrict user want to review
-            var bounds = new google.maps.LatLngBounds();
-            var i;
-            //loop through path of polygon
-            for (i = 0; i < array_latLng.length; i++) {
-                bounds.extend(array_latLng[i]);
-            }
-            //pan map to center base on bounds center
-            map.panTo(bounds.getCenter());
-            //increase zoom in, map
-            map.setZoom(default_zoom);
-            /**
-             * 2. SHOW HOUSE IN THIS DISTRICT
-             */
-            //create a "polygon" of this district, bcs
-            //polygon stored in geometry is DataPolygon object
-            //it is different from Polygon
-            var district_polygon = new google.maps.Polygon({
-                path: array_latLng
-            });
-            var house_points_in_district = []; //store house points
-            //loop through house points, get out which in district feature
-            for (var j = 0; j < house_points.length; j++) {
-                if (google.maps.geometry.poly.containsLocation(house_points[j], district_polygon)) {
-                    house_points_in_district.push(house_points[j]);
-                    console.log("add house point in district");
-                }
-            }
-
-            //get some info from district feature clicked
-            var district_local_name = feature.getProperty("localname"); console.log(district_local_name);
-            var infoWindowContent = "<h4>" + district_local_name + "</h4><hr>";
-            /**
-             * CREATE A LAYER for HOUSE POINTS
-             * then show it on map
-             */
-            var house_points_geojson = buildGeoJSONObject(house_points_in_district);
-            //toogle last district feature clicked and this current one
-            //by get last house layer out of map
-            if(last_house_layer){
-                //get out the last house layer from map
-                last_house_layer.setMap(null);
-            }
-            //create layer for these house points from geojson
-            var house_layer = new google.maps.Data();
-            house_layer.addGeoJson(house_points_geojson);
-            //icon for each house point
-            var icon = {
-                url: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678085-house-128.png",
-                scaledSize: new google.maps.Size(32, 32),
-                anchor: new google.maps.Point(0, 32)
-            };
-            //style layer
-            house_layer.setStyle({
-                icon: icon
-            });
-            //add house layer on map
-            house_layer.setMap(map);
-
-            //add info-window on each house point
-            //listen to mouseover, mouseout event
-            var infoWindow;
-            house_layer.addListener("mouseover", function(event){
-                //get clicked feature from event
-                var feature = event.feature;
-                var geometry = feature.getGeometry();
-                console.log(geometry.getType()); //POINT, wow, good
-                var latLng = geometry.get();
-                infoWindow = new google.maps.InfoWindow({
-                    position: latLng,
-                    content: infoWindowContent + "<p>" + event.latLng.lat() + "</p><p>" +event.latLng.lng() + "</p>"
-                });
-                infoWindow.open(map);
-            });
-            house_layer.addListener("mouseout", function(event){
-                //remove infoWindow from map
-                infoWindow.setMap(null);
-            });
-            //set this one is the last one
-            last_house_layer = house_layer;
-        });
-
-        // When the user hovers, tempt them to click by outlining the letters.
-        // Call revertStyle() to remove all overrides. This will use the style rules
-        // defined in the function passed to setStyle()
-        map.data.addListener('mouseover', function (event) {
-            map.data.overrideStyle(event.feature, {
-                strokeWeight: 4
-            });
-        });
-        map.data.addListener('mouseout', function (event) {
-            map.data.overrideStyle(event.feature, {
-                strokeWeight: 2
-            });
-        });
-    }
-
-        function buildGeoJSONObject(points) {
-            var geojson = {"type": "FeatureCollection", "features": []};
-//            console.log(geojson);
-            for (var i = 0; i < points.length; i++) {
-                var feature = {
-                    "type": "Feature",
-                    "properties": {},
-                    "geometry": {
-                        "type": "Point"
-                    }
-                };
-                feature.geometry.coordinates = [points[i].lng(), points[i].lat()];
-                geojson.features.push(feature);
-            }
-//            console.log(geojson);
-            return geojson;
-        }
-
-    initMap();
-});
         </script>
 
-
         <style>
+/*   .gm-style-iw {
+    width: 160px !important;
+    top: 15px !important;
+    left: 0px !important;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+    border: 1px solid rgba(72, 181, 233, 0.6);
+    border-radius: 2px 2px 10px 10px;
+}
+#iw-container {
+    margin-bottom: 10px;
+}*/
+/*#iw-container .iw-title {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #48b5e9;
+    color: white;
+    margin: 0;
+    border-radius: 2px 2px 0 0;
+}
+#iw-container .iw-content {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-right: 1px;
+    padding: 15px 5px 20px 15px;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}*/
+/*.iw-content img {
+    float: right;
+    margin: 0 5px 5px 10px; 
+}*/
+/*.iw-subTitle {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px 0;
+}*/
+
+        </style>
+<!--        <style>
           .gm-style-iw {
 	width: 320px !important;
 	top: 15px !important;
@@ -821,7 +378,7 @@ function setMarkers(map, locations) {
 	padding: 5px 0;
 }
 .iw-bottom-gradient {
-        </style>
+        </style>-->
 
         <div class="views-popup">
           <div class="views-container">
@@ -845,7 +402,7 @@ function setMarkers(map, locations) {
       <!-- Scripts -->
         <?php echo $this->inlineScript()
             ->prependFile($this->basePath('frontend/js/common.js'))
-            ->prependFile($this->basePath('assets/js/common.js')); ?>
+            ->prependFile($this->basePath('/assets/js/common.js')); ?>
     </body>
 </html>
 

@@ -15,6 +15,39 @@ var defaults = {
   locationType: $("body .filter-adv input.filter-location").val(),
   area: $("body .filter-adv input.filter-area").val()
 };
+var gmarkers = []; 
+var gicons = [];
+var map = null;
+gicons["red"] = new google.maps.MarkerImage("http://gonow.dev/assets/images/red.png",
+    // This marker is 20 pixels wide by 34 pixels tall.
+    new google.maps.Size(20, 34),
+    // The origin for this image is 0,0.
+    new google.maps.Point(0,0),
+    // The anchor for this image is at 9,34.
+    new google.maps.Point(9, 34));
+var iconImage = new google.maps.MarkerImage('http://gonow.dev/assets/images/red.png',
+    // This marker is 20 pixels wide by 34 pixels tall.
+    new google.maps.Size(20, 34),
+    // The origin for this image is 0,0.
+    new google.maps.Point(0,0),
+    // The anchor for this image is at 9,34.
+    new google.maps.Point(9, 34));
+var iconShadow = new google.maps.MarkerImage('http://www.google.com/mapfiles/shadow50.png',
+    // The shadow image is larger in the horizontal dimension
+    // while the position and offset are the same as for the main image.
+    new google.maps.Size(37, 34),
+    new google.maps.Point(0,0),
+    new google.maps.Point(9, 34));
+var iconShape = {
+    coord: [9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,7,23,8,26,9,30,9,34,11,34,11,30,12,26,13,24,14,21,16,18,18,16,20,12,20,8,18,4,16,2,15,1,13,0],
+    type: 'poly'
+};
+var infowindow = new google.maps.InfoWindow(
+{ 
+  size: new google.maps.Size(150,50),
+   maxWidth: 160,
+   pixelOffset: new google.maps.Size(0, 0) 
+});
 (function ($) { 
   "use strict";
   $.fn.callAjaxRegion = function(url, alias, id, idRemove){
@@ -375,6 +408,21 @@ var defaults = {
     $(".video-play").on('click', '.close-video', function(){
       $(".video-play").empty().removeClass('on');
     });
+    
+    // render google map
+    
+    gicons["green"] = $.fn.getMarkerImage("green");
+    gicons["yelow"] = $.fn.getMarkerImage("yellow");
+    $("body .view-data").on('mouseover', 'ul li', function(event){
+      var id = $(this).attr('data-id');
+      event.preventDefault();
+      $.fn.mouseover(id);
+    });
+    $("body .view-data").on('mouseleave', 'ul li', function(event){
+      var id = $(this).attr('data-id');
+      event.preventDefault();
+      $.fn.mouseout(id);
+    });
   },
   // Load image detail
   $.fn.loadImageDetail = function(url, imageId){
@@ -667,6 +715,111 @@ var defaults = {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
+  },
+  
+  // google map api
+  $.fn.createMarker = function(latlng,name,html,color, num){
+    var contentString = html;
+    var marker = new google.maps.Marker({
+        position: latlng,
+        icon: gicons[color],
+        shadow: iconShadow,
+        map: map,
+        title: name,
+        draggable: true,
+          animation: google.maps.Animation.DROP,
+        zIndex: Math.round(latlng.lat()*-100000)<<5
+        });
+    google.maps.event.addListener(infowindow, 'domready', function(){
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+//        infowindow.setContent(contentString); 
+//        infowindow.open(map,marker);
+//          console.log(marker);
+          $.fn.myClick(num);
+        });
+        
+        google.maps.event.addListener(marker, 'mouseover', function() {
+        infowindow.setContent(contentString); 
+        infowindow.open(map,marker);
+        });
+        // Switch icon on marker mouseover and mouseout
+        google.maps.event.addListener(marker, "mouseover", function() {
+          marker.setIcon(gicons["green"]);
+        });
+        google.maps.event.addListener(marker, "mouseout", function() {
+          marker.setIcon(gicons["red"]);
+          infowindow.close();
+        });
+    gmarkers.push(marker);
+  },
+  $.fn.toggleBounce = function(){
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  },
+  $.fn.getMarkerImage = function(iconColor){
+    if ((typeof(iconColor)=="undefined") || (iconColor==null)) { 
+      iconColor = "red"; 
+   }
+   if (!gicons[iconColor]) {
+      gicons[iconColor] = new google.maps.MarkerImage("http://gonow.dev/assets/images/"+ iconColor +".png",
+      // This marker is 20 pixels wide by 34 pixels tall.
+      new google.maps.Size(20, 34),
+      // The origin for this image is 0,0.
+      new google.maps.Point(0,0),
+      // The anchor for this image is at 6,20.
+      new google.maps.Point(9, 34));
+   } 
+   return gicons[iconColor];
+  },
+  $.fn.myClick = function(i){
+//    $("body.travel .view-data").on('click', 'ul.load-post > li a', function(){
+//    alert(i);
+    $('body.travel .view-data ul.load-post > li#key-map-'+ i + ' a').trigger('click');
+//    google.maps.event.trigger(gmarkers[i], "mouseover");÷
+  },
+  $.fn.mouseover = function(i){
+    google.maps.event.trigger(gmarkers[i], "mouseover");
+  },
+  $.fn.mouseout = function(i){
+    google.maps.event.trigger(gmarkers[i], "mouseout");
+  },
+  $.fn.initializeMap = function(){
+    var myOptions = {
+      zoom: 12,
+      center: new google.maps.LatLng(10.780068,106.705005),
+      mapTypeControl: true,
+      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+      navigationControl: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    map = new google.maps.Map(document.getElementById("map"),
+                                    myOptions);
+
+    google.maps.event.addListener(map, 'click', function() {
+        infowindow.close();
+    });
+    var markers = [
+        ['a',10.770537,106.672307, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">'],
+        ['b',10.779354,106.703907, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">']
+    ];
+    for (var i = 0; i < markers.length; i++) {
+//        console.log(i);
+        // obtain the attribues of each marker
+        var beach = markers[i];
+        var lat = parseFloat(beach[1]);
+        var lng = parseFloat(beach[2]);
+        var point = new google.maps.LatLng(lat,lng);
+        var html = '<div id="iw-container">' + beach[4] +
+
+                '</div>';
+        var label = beach[0];
+        // create the marker
+        var marker = $.fn.createMarker(point,label,html,"red", i);
+      }
   }
   ;
 //  $.fn.callAjaxRegion();
@@ -679,6 +832,6 @@ var defaults = {
   var area = $.fn.getUrlParam('area');
   var keyword = $.fn.getUrlParam('keyword');
   $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.load-post', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page, filter, sort, star, min, max, area, keyword);
-  
+  $.fn.initializeMap();
   $.fn.render();
 })(jQuery);
