@@ -157,7 +157,7 @@ class Post extends AbstractTableGateway
       $select->from($this->table);
       $select->columns(array('id', 'user_id', 'category_id'));
       $select->join('category', 'category.id = post.category_id', array('type'));
-      $select->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug', 'category_id' => 'category_id'));
+      $select->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug', 'category_id' => 'category_id', 'categoryName' => 'name'));
       $select ->join('post_detail', 'post_detail.post_id = post.id', array('post_detail_id' => 'id','post_slug' => 'slug', 'name', 'hot', 'new', 'address', 'about', 'slug', 'content', 'language', 'status_id', 'excerpt'));
       $select->where(array('post_detail.status_id' => 1, 'post.id' => $arrayParam['id'], 'post_detail.language' => $arrayParam['language'] ));
       $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
@@ -170,6 +170,10 @@ class Post extends AbstractTableGateway
       
       if($arrayParam['type'] == 'tour'){
         $select->join('tour', 'tour.post_id= post.id', array('tourId' => 'id','excerpt_des' => 'excerpt', 'commitment', 'address', 'price'));
+      }
+      
+      if($arrayParam['type'] == 'hotel'){
+        $select->join('hotel', 'hotel.post_id= post.id', array('hotelId' => 'id','highlight_excerpt', 'regulation', 'address', 'min_price', 'max_price'));
       }
 
       $resultSet = $this->selectWith($select);

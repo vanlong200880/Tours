@@ -27,7 +27,6 @@ class TourController extends AbstractActionController
   public function detailAction(){
     $id = $this->params()->fromPost('id');
       $htmlViewPart = new ViewModel();
-      $id = 7;
       // Kiểm tra post có tồn tại không
       $post = new Post();
       $dataPost = $post->getPostById(array('id' => $id, 'language' => $this->language, 'type' => 'tour'));
