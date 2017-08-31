@@ -338,6 +338,231 @@
 //              }, 350);
 //            });
           });
+          $(document).ready(function() {
+    function initMap() {
+        /**
+         * Google Maps API
+         * Map > display an area
+         * Data layer > add custom data info on top of a map
+         *
+         * ONE map can has MANY layers
+         * layer combine (point, marker, info-window,..) into single-layer,
+         * then display it on top of map
+         *
+         * Data layer, loaded from geojson (standard json format),
+         * for sharing geometry info through internet
+         *
+         * create a data layer:
+         * Data layer < Feature < GeoJson Object
+         */
+        var default_zoom = 11;
+        var house_points = []; //store points from data, geojson
+        var map; //store Map object
+
+        /**
+         * Load points from data, geojson
+         */
+        $.getJSON("https://gist.githubusercontent.com/hoanganh25991/603c575aa575645656ff/raw/877db1d0452fe3aa61a98ede5cdc05ccb2d3a731/map.geojson", function (data) {
+            //get "features" out of data
+            var features = data.features; 	//console.log(features.constructor);
+            for (var i = 0; i < features.length; i++) {
+                //get point from feature_geometry
+                var point = features[i].geometry.coordinates;
+                //create LatLng object
+                //note: point from geometry (lng, lat), point as normal is (lat, lng)
+                var latLng = new google.maps.LatLng(point[1], point[0]);
+                //store points in house_points
+                house_points.push(latLng); //console.log(latLng);
+            }
+        });
+
+        //Ho Chi Minh City center, location
+        var center_hoChiMinhCity = {
+            lat: 10.780068,
+            lng: 106.705005
+        };
+        //create map, with Ho Chi Minh City center
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: default_zoom,
+            center: center_hoChiMinhCity,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+
+        /**
+         * Data layer: districts in Ho Chi Minh City
+         */
+        var layer_districts = new google.maps.Data();
+        //load "features" in geojon object into layer
+        layer_districts.loadGeoJson('http://gonow.dev/api/tp-ho-chi-minh/districts.json');
+        //style layer
+        layer_districts.setStyle({
+            fillColor: "#C1BCB2",
+            fillOpacity: 0.1,
+            strokeWeight: 0.5,
+            strokeColor: "#3d3627"
+        });
+        //add district-layer on top of map
+        layer_districts.setMap(map);
+
+
+        /**
+         * HANDLE CLICK EVENT ON DISTRICT LAYER
+         * 1. style district feature clicked
+         * 2. show house in this district
+         */
+        //remember the last house layer in last_house_layer
+        //remember the last district feature is clicked
+        var last_house_layer;
+        var last_district_feature;
+        layer_districts.addListener('click', function (event) {
+            /**
+             * 1. STYLE DISTRICT FEATURE CLICKED
+             */
+            //get feature, which clicked from event
+            var feature = event.feature;
+            //toogle style on district feauture clicked and the last one
+            //if last one exist, remove style
+            if (last_district_feature) {
+                layer_districts.overrideStyle(last_district_feature, {
+                    fillColor: "#C1BCB2",
+                    fillOpacity: 0.1
+                });
+            }
+            //set this district feature is the last one
+            last_district_feature = feature;
+            //style this clicked district feature
+            layer_districts.overrideStyle(feature, {
+                fillColor: "#003100",
+                fillOpacity: 0.5
+            });
+
+
+            var geometry = feature.getGeometry(); //console.log(geometry.getType());
+
+            var data_polygon = geometry.getArray()[0];
+            //get out array of latLng object in data_polygon
+            var array_latLng = data_polygon.getArray()[0].getArray();
+
+
+            //move map_center to polygon_center,
+            //which disctrict user want to review
+            var bounds = new google.maps.LatLngBounds();
+            var i;
+            //loop through path of polygon
+            for (i = 0; i < array_latLng.length; i++) {
+                bounds.extend(array_latLng[i]);
+            }
+            //pan map to center base on bounds center
+            map.panTo(bounds.getCenter());
+            //increase zoom in, map
+            map.setZoom(default_zoom);
+            /**
+             * 2. SHOW HOUSE IN THIS DISTRICT
+             */
+            //create a "polygon" of this district, bcs
+            //polygon stored in geometry is DataPolygon object
+            //it is different from Polygon
+            var district_polygon = new google.maps.Polygon({
+                path: array_latLng
+            });
+            var house_points_in_district = []; //store house points
+            //loop through house points, get out which in district feature
+            for (var j = 0; j < house_points.length; j++) {
+                if (google.maps.geometry.poly.containsLocation(house_points[j], district_polygon)) {
+                    house_points_in_district.push(house_points[j]);
+                    console.log("add house point in district");
+                }
+            }
+
+            //get some info from district feature clicked
+            var district_local_name = feature.getProperty("localname"); console.log(district_local_name);
+            var infoWindowContent = "<h4>" + district_local_name + "</h4><hr>";
+            /**
+             * CREATE A LAYER for HOUSE POINTS
+             * then show it on map
+             */
+            var house_points_geojson = buildGeoJSONObject(house_points_in_district);
+            //toogle last district feature clicked and this current one
+            //by get last house layer out of map
+            if(last_house_layer){
+                //get out the last house layer from map
+                last_house_layer.setMap(null);
+            }
+            //create layer for these house points from geojson
+            var house_layer = new google.maps.Data();
+            house_layer.addGeoJson(house_points_geojson);
+            //icon for each house point
+            var icon = {
+                url: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678085-house-128.png",
+                scaledSize: new google.maps.Size(32, 32),
+                anchor: new google.maps.Point(0, 32)
+            };
+            //style layer
+            house_layer.setStyle({
+                icon: icon
+            });
+            //add house layer on map
+            house_layer.setMap(map);
+
+            //add info-window on each house point
+            //listen to mouseover, mouseout event
+            var infoWindow;
+            house_layer.addListener("mouseover", function(event){
+                //get clicked feature from event
+                var feature = event.feature;
+                var geometry = feature.getGeometry();
+                console.log(geometry.getType()); //POINT, wow, good
+                var latLng = geometry.get();
+                infoWindow = new google.maps.InfoWindow({
+                    position: latLng,
+                    content: infoWindowContent + "<p>" + event.latLng.lat() + "</p><p>" +event.latLng.lng() + "</p>"
+                });
+                infoWindow.open(map);
+            });
+            house_layer.addListener("mouseout", function(event){
+                //remove infoWindow from map
+                infoWindow.setMap(null);
+            });
+            //set this one is the last one
+            last_house_layer = house_layer;
+        });
+
+        // When the user hovers, tempt them to click by outlining the letters.
+        // Call revertStyle() to remove all overrides. This will use the style rules
+        // defined in the function passed to setStyle()
+        map.data.addListener('mouseover', function (event) {
+            map.data.overrideStyle(event.feature, {
+                strokeWeight: 4
+            });
+        });
+        map.data.addListener('mouseout', function (event) {
+            map.data.overrideStyle(event.feature, {
+                strokeWeight: 2
+            });
+        });
+    }
+
+        function buildGeoJSONObject(points) {
+            var geojson = {"type": "FeatureCollection", "features": []};
+//            console.log(geojson);
+            for (var i = 0; i < points.length; i++) {
+                var feature = {
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "Point"
+                    }
+                };
+                feature.geometry.coordinates = [points[i].lng(), points[i].lat()];
+                geojson.features.push(feature);
+            }
+//            console.log(geojson);
+            return geojson;
+        }
+
+    initMap();
+});
         </script>
 
 
