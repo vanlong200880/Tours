@@ -339,7 +339,162 @@
 //            });
           });
           $(document).ready(function() {
+            var map;
+             var infowindow;
+
+//             function initMap() {
+//               var pyrmont = {lat: 16.1724728, lng: 107.182617};
+//
+//               map = new google.maps.Map(document.getElementById('map'), {
+//                 center: pyrmont,
+//                 zoom: 6
+//               });
+//
+//               infowindow = new google.maps.InfoWindow();
+//               var service = new google.maps.places.PlacesService(map);
+//               service.nearbySearch({
+//                 location: pyrmont,
+//                 radius: 500,
+//                 type: ['store']
+//               }, callback);
+//             }
+
+//             function callback(results, status) {
+//               if (status === google.maps.places.PlacesServiceStatus.OK) {
+//                 for (var i = 0; i < results.length; i++) {
+//                   createMarker(results[i]);
+//                 }
+//               }
+//             }
+
+//             function createMarker(place) {
+//               var data = 	[
+//                   {"latitude":"21.014199","longtitude":"105.848317"},
+//                   {"latitude":"21.001269","longtitude":"105.802404"},
+//                   {"latitude":"21.036927","longtitude":"105.780119"},
+//                   {"latitude":"21.019763","longtitude":"105.807979"},
+//                   {"latitude":"10.771929","longtitude":"106.653169"},
+//                   {"latitude":"10.770537","longtitude":"106.672307"},
+//                   {"latitude":"21.047366","longtitude":"105.807651"},
+//                   {"latitude":"20.995875","longtitude":"105.860988"},
+//                   {"latitude":"21.0211","longtitude":"105.826317"},
+//                   {"latitude":"21.046255","longtitude":"105.876507"},
+//                   {"latitude":"21.053855","longtitude":"105.73299"},
+//                   {"latitude":"21.001144","longtitude":"105.827103"},
+//                   {"latitude":"21.024973","longtitude":"105.819097"},
+//                   {"latitude":"20.982916","longtitude":"105.79102"},
+//                   {"latitude":"21.013083","longtitude":"105.835074"},
+//                   {"latitude":"10.781741","longtitude":"106.650057"},
+//                ];
+//               var placeLoc = place.geometry.location;
+//               var marker = new google.maps.Marker({
+//                 map: map,
+//                 position: place.geometry.location
+//               });
+//
+//               google.maps.event.addListener(marker, 'click', function() {
+//                 infowindow.setContent(place.name);
+//                 infowindow.open(map, this);
+//               });
+//             }
+
+
+         
+            
+            
+            
+            
+            
+            
+            
+            
+function addInfoWindow(marker, message) {
+  var infoWindow = new google.maps.InfoWindow({
+    content: message,
+    maxWidth: 200,
+    pixelOffset: new google.maps.Size(0,0)
+  });
+  google.maps.event.addListener(marker, 'mouseover', function () {
+    marker.setIcon(document.location.origin + '/assets/images/green.png');
+    infoWindow.open(map, marker);
+  });
+  google.maps.event.addListener(marker, 'mouseout', function() 
+  {
+    marker.setIcon(document.location.origin + '/assets/images/red.png');
+//    this.setOptions({fillColor: '#ffffff'});
+    infoWindow.close();
+//    jQuery(".show-map").css('display', 'none');
+  });
+}             
+            
+function setMarkers(map, locations) {
+  // Icon Image Marker
+  var image = {
+    url: document.location.origin + '/assets/images/red.png',
+    // Kích cỡ hình
+//    size: new google.maps.Size(20, 20),
+//    // Gốc cho hình là oo
+//    origin: new google.maps.Point(0, 0),
+//    // Neo cho hình là 0, 32
+//    anchor: new google.maps.Point(20, 20)
+  };
+
+  // Hình dạng
+  var shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  };
+
+  // Lặp qua từng locations
+  for (var i = 0; i < locations.length; i++) 
+  {
+    var beach = locations[i];
+    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image,
+        shape: shape,
+        title: beach[0],
+        zIndex: beach[3]
+    });
+    addInfoWindow(marker,beach[0]);
+//      var infowindow = new google.maps.InfoWindow({
+//      content: beach[0]
+//    });
+//    var infoWindow = new google.maps.InfoWindow();
+//    google.maps.event.addListener(marker, 'click', function () {
+//        var markerContent = beach[0];
+//        infoWindow.setContent(markerContent);
+//        infoWindow.open(map, this);
+//    });
+//    marker.addListener('click', function() {
+//    infowindow.open(map, marker);
+//  });
+  }
+}
     function initMap() {
+      var infowindow;
+      var beaches = [
+      ['a',21.014199,105.848317],
+      ['b',21.001269,105.802404],
+      ['c',21.036927,105.780119],
+      ['d',21.019763,105.807979],
+      ['e',10.771929,106.653169],
+      ['f',10.770537,106.672307],
+      ['g',21.047366,105.807651],
+      ['h',20.995875,105.860988],
+      ['i',21.046255,105.876507],
+      ['j',21.053855,105.73299],
+      ['k',21.001144,105.827103],
+      ['l',21.024973,105.819097],
+      ['m',20.982916,105.79102],
+      ['n',21.013083,105.835074],
+      ['t',10.781741,106.650057],
+    ];
+
+      // Load map 
+      
         /**
          * Google Maps API
          * Map > display an area
@@ -362,19 +517,19 @@
         /**
          * Load points from data, geojson
          */
-        $.getJSON("https://gist.githubusercontent.com/hoanganh25991/603c575aa575645656ff/raw/877db1d0452fe3aa61a98ede5cdc05ccb2d3a731/map.geojson", function (data) {
-            //get "features" out of data
-            var features = data.features; 	//console.log(features.constructor);
-            for (var i = 0; i < features.length; i++) {
-                //get point from feature_geometry
-                var point = features[i].geometry.coordinates;
-                //create LatLng object
-                //note: point from geometry (lng, lat), point as normal is (lat, lng)
-                var latLng = new google.maps.LatLng(point[1], point[0]);
-                //store points in house_points
-                house_points.push(latLng); //console.log(latLng);
-            }
-        });
+//        $.getJSON("https://gist.githubusercontent.com/hoanganh25991/603c575aa575645656ff/raw/877db1d0452fe3aa61a98ede5cdc05ccb2d3a731/map.geojson", function (data) {
+//            //get "features" out of data
+//            var features = data.features; 	//console.log(features.constructor);
+//            for (var i = 0; i < features.length; i++) {
+//                //get point from feature_geometry
+//                var point = features[i].geometry.coordinates;
+//                //create LatLng object
+//                //note: point from geometry (lng, lat), point as normal is (lat, lng)
+//                var latLng = new google.maps.LatLng(point[1], point[0]);
+//                //store points in house_points
+//                house_points.push(latLng); //console.log(latLng);
+//            }
+//        });
 
         //Ho Chi Minh City center, location
         var center_hoChiMinhCity = {
@@ -388,7 +543,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
-
+        setMarkers(map, beaches);
         /**
          * Data layer: districts in Ho Chi Minh City
          */
@@ -415,6 +570,7 @@
         //remember the last district feature is clicked
         var last_house_layer;
         var last_district_feature;
+        
         layer_districts.addListener('click', function (event) {
             /**
              * 1. STYLE DISTRICT FEATURE CLICKED

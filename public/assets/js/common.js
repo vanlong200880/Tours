@@ -509,8 +509,8 @@ var defaults = {
     // call royalSlider
     var slider = $('.royalSlider').royalSlider({
     fullscreen: {
-      enabled: true,
-      nativeFS: true
+      enabled: false,
+      nativeFS: false
     },
     controlNavigation: 'thumbnails',
     autoScaleSlider: true, 
