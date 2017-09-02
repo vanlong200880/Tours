@@ -406,24 +406,75 @@
             
             
             
-            
+      
             
 function addInfoWindow(marker, message) {
   var infoWindow = new google.maps.InfoWindow({
     content: message,
-    maxWidth: 200,
+    maxWidth: 320,
     pixelOffset: new google.maps.Size(0,0)
   });
-  google.maps.event.addListener(marker, 'mouseover', function () {
+  google.maps.event.addListener(marker, 'click', function () {
     marker.setIcon(document.location.origin + '/assets/images/green.png');
     infoWindow.open(map, marker);
   });
-  google.maps.event.addListener(marker, 'mouseout', function() 
-  {
-    marker.setIcon(document.location.origin + '/assets/images/red.png');
-//    this.setOptions({fillColor: '#ffffff'});
-    infoWindow.close();
-//    jQuery(".show-map").css('display', 'none');
+//  google.maps.event.addListener(marker, 'mouseout', function() 
+//  {
+//    marker.setIcon(document.location.origin + '/assets/images/red.png');
+////    this.setOptions({fillColor: '#ffffff'});
+//    infoWindow.close();
+////    jQuery(".show-map").css('display', 'none');
+//  });
+  
+  google.maps.event.addListener(infoWindow, 'domready', function() {
+
+    // Reference to the DIV that wraps the bottom of infowindow
+    var iwOuter = $('.gm-style-iw');
+
+    /* Since this div is in a position prior to .gm-div style-iw.
+     * We use jQuery and create a iwBackground variable,
+     * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
+    */
+    var iwBackground = iwOuter.prev();
+
+    // Removes background shadow DIV
+    iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+
+    // Removes white background DIV
+    iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+    // Moves the infowindow 115px to the right.
+//    iwOuter.parent().parent().css({left: '0px'});
+
+    // Moves the shadow of the arrow 76px to the left margin.
+//    iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 0px !important;'});
+  console.log(iwBackground.children(1));
+  iwBackground.attr('style', function(i,s){ return s + 'left: 0px !important;'});
+    // Moves the arrow 76px to the left margin.
+//    iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 0px !important;'});
+    iwBackground.children(0).first().css({display: 'none'});
+    // Changes the desired tail shadow color.
+    iwBackground.children(':nth-child(3)').find('div').css({height: '15px'});
+    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'none', 'z-index' : '1', height: '15px'});
+    iwBackground.children(':nth-child(3)').find('div').children().first().css({transform: 'skewX(35.6deg)'});
+    iwBackground.children(':nth-child(3)').find('div').children().last().css({transform: 'skewX(-35.6deg)'});
+//    iwBackground.children(':nth-child(2)').find('div').children().css({'box-shadow': 'none', 'z-index' : '1', height: '15px'});
+
+    // Reference to the div that groups the close button elements.
+    var iwCloseBtn = iwOuter.next();
+
+    // Apply the desired effect to the close button
+    iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9', 'display': 'none'});
+
+    // If the content of infowindow not exceed the set maximum height, then the gradient is removed.
+    if($('.iw-content').height() < 140){
+      $('.iw-bottom-gradient').css({display: 'none'});
+    }
+
+    // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
+//    iwCloseBtn.mouseout(function(){
+//      $(this).css({opacity: '1'});
+//    });
   });
 }             
             
@@ -456,9 +507,16 @@ function setMarkers(map, locations) {
         icon: image,
         shape: shape,
         title: beach[0],
-        zIndex: beach[3]
+//        zIndex: beach[3]
     });
-    addInfoWindow(marker,beach[0]);
+    var content = '<div id="iw-container">' +
+                    '<div class="iw-title">'+ beach[0] +
+                    '</div>' +
+                    '<div class="iw-content">' + beach[4] +
+                    
+                    '</div>' +
+                  '</div>';
+    addInfoWindow(marker,content);
 //      var infowindow = new google.maps.InfoWindow({
 //      content: beach[0]
 //    });
@@ -476,21 +534,21 @@ function setMarkers(map, locations) {
     function initMap() {
       var infowindow;
       var beaches = [
-      ['a',21.014199,105.848317],
-      ['b',21.001269,105.802404],
-      ['c',21.036927,105.780119],
-      ['d',21.019763,105.807979],
-      ['e',10.771929,106.653169],
-      ['f',10.770537,106.672307],
-      ['g',21.047366,105.807651],
-      ['h',20.995875,105.860988],
-      ['i',21.046255,105.876507],
-      ['j',21.053855,105.73299],
-      ['k',21.001144,105.827103],
-      ['l',21.024973,105.819097],
-      ['m',20.982916,105.79102],
-      ['n',21.013083,105.835074],
-      ['t',10.781741,106.650057],
+      ['a',21.014199,105.848317, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['b',21.001269,105.802404, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['c',21.036927,105.780119, 3, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['d',21.019763,105.807979, 4, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['e',10.771929,106.653169, 5, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['f',10.770537,106.672307, 6, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['g',21.047366,105.807651, 7, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['h',20.995875,105.860988, 8, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['i',21.046255,105.876507, 9, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['j',21.053855,105.73299, 10, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['k',21.001144,105.827103, 11, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['l',21.024973,105.819097, 12, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['m',20.982916,105.79102, 13, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['n',21.013083,105.835074, 14, '<img src="http://gonow.dev/assets/demo/photo.jpg">'],
+      ['t',10.781741,106.650057, 15, '<img src="http://gonow.dev/assets/demo/photo.jpg">']
     ];
 
       // Load map 
@@ -722,7 +780,48 @@ function setMarkers(map, locations) {
         </script>
 
 
+        <style>
+          .gm-style-iw {
+	width: 320px !important;
+	top: 15px !important;
+	left: 30px !important;
+	background-color: #fff;
+	box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+	border: 1px solid #FFF;
+	border-radius: 0 0 10px 10px;
+}
+.gm-style-iw div{
+  width: 100%;
+  float: left;
+}
 
+#iw-container .iw-title {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #354558;
+  color: white;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#iw-container .iw-content {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+}
+.iw-content img {
+  max-width: 100%;
+
+}
+.iw-subTitle {
+	font-size: 16px;
+	font-weight: 700;
+	padding: 5px 0;
+}
+.iw-bottom-gradient {
+        </style>
 
         <div class="views-popup">
           <div class="views-container">
