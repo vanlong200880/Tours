@@ -1017,7 +1017,14 @@ ul.connect li.youtube a:hover {
         margin-top: 3px;
         padding-top: 5px; }
         .list-province-item ul.list-travel li .item p.hour-open span {
-          color: red; }
+          color: red;
+          display: inline-block;
+          width: 100%; }
+        .list-province-item ul.list-travel li .item p.hour-open var {
+          padding-top: 5px;
+          display: inline-block;
+          width: 100%;
+          padding-left: 15px; }
       .list-province-item ul.list-travel li .item .fs-game {
         display: inline-block;
         width: 100%;
@@ -2013,7 +2020,10 @@ ul.connect li.youtube a:hover {
   overflow-y: scroll;
   display: none; }
   .video-play .warpper-video {
-    overflow: auto; }
+    overflow: auto;
+    height: 100%; }
+    .video-play .warpper-video .container {
+      height: 100%; }
     .video-play .warpper-video .close-video {
       position: fixed;
       width: 40px;
@@ -2027,7 +2037,8 @@ ul.connect li.youtube a:hover {
       cursor: pointer; }
     .video-play .warpper-video .content-video {
       background: #fff;
-      padding: 8px; }
+      padding: 8px;
+      height: 100%; }
   .video-play .list-video ul li .video-item {
     margin-bottom: 15px;
     background: #FFF;
@@ -2885,7 +2896,8 @@ ul.connect li.youtube a:hover {
       .views-popup .views-container .views-header h2 {
         height: 40px;
         line-height: 40px;
-        font-size: 16px; }
+        font-size: 16px;
+        padding-left: 10px; }
         .views-popup .views-container .views-header h2 span {
           font-size: 14px; }
       .views-popup .views-container .views-header .views-close {

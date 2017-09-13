@@ -329,4 +329,57 @@ class CommentController extends AbstractActionController
 //      die('Forbidden access');
 //    }
   }
+  
+  public function renderCommentPostAction(){
+    //    if($this->getRequest()->isXmlHttpRequest()){
+      $commentId = $this->params()->fromPost('id');
+//      $commentContent = $this->params()->fromPost('content');
+//      $postId = $this->params()->fromPost('postId');
+//      $comment = new PostComment();
+//      $createCommentId = '';
+//      // Check comment 
+//      $checkComment = $comment->checkCommentById(array('id' => $commentId));
+//      if($checkComment){
+//        // insert comment child
+//        $data = array(
+//          'post_id' => $postId,
+//          'user_id' => 1,
+//          'title' => '',
+//          'content' => $commentContent,
+//          'parent' => $commentId,
+//          'created' => time(),
+//          'status' => 1,
+//          'device' => 'Iphone',
+//          'persion' => 0,
+//          'total_bill' => 0,
+//          'come_back' => 0,
+//          'total_like' => 0
+//        );
+//        $createCommentId = $comment->createComment($data);
+//      }
+//      $dataCreateComment = '';
+//      if ($createCommentId){
+//        $dataCreateComment = $comment->getCommentById(array('post_id' =>$postId, 'id' => $createCommentId));
+//      }
+
+      $htmlViewPart = new ViewModel();
+      $htmlViewPart->setTemplate('comment/render-comment-post')
+                   ->setTerminal(true)
+                   ->setVariables([
+//                       'createComment' => $dataCreateComment,
+                           ]);
+      $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
+      $jsonModel = new JsonModel();
+      $jsonModel->setVariables([
+          'html' => $htmlOutput,
+//          'postId' => $postId,
+//          'commentId' => $commentId,
+//          'data' => $checkComment
+      ]);
+
+      return $jsonModel;
+//    }else{
+//      die('Forbidden access');
+//    }
+  }
 }

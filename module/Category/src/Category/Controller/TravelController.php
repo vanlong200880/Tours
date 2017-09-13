@@ -35,6 +35,7 @@ class TravelController extends AbstractActionController
       $listVideo = '';
       $dataPostContact = '';
       $dataPostRelated = '';
+      $dataJson = array();
       if($dataPost){
         $postImage = new PostImage();
         $gallery = $postImage->getListGalleryByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'language' => $this->language));
@@ -71,7 +72,7 @@ class TravelController extends AbstractActionController
                     'type' => $val['type'],
                     'dataChild' => ''
                   );
-                  $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $val['id'], 'language' => $this->language));
+                  $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $val['id'], 'language' => $this->language, 'travel_id' => $id));
                   if($dataEntertainmentChild){
                     $dataEntertainmentType[$key]['child'][$k]['dataChild'] = $dataEntertainmentChild;
                   }
@@ -80,7 +81,7 @@ class TravelController extends AbstractActionController
               
             }else{
               // Lấy danh sách trò chơi
-              $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $value['id'], 'language' => $this->language));
+              $dataEntertainmentChild = $entertainment->getAllEntertainmentByTravel(array('entertainment_type_id' => $value['id'], 'language' => $this->language,  'travel_id' => $id));
               if($dataEntertainmentChild){
                 $dataEntertainmentType[$key]['dataChild'] = $dataEntertainmentChild;
               }
@@ -111,6 +112,34 @@ class TravelController extends AbstractActionController
                   'districtId' => 1,
                   'limit' => 5
                 ));
+        
+        // creared data json map post related page detail
+        $allPostRelated = $post->getAllRelatedPost(
+                array(
+                    'id' => $dataPost->id,
+                    'language' => $this->language,
+                    'listType' => array('hotel', 'taste', 'tour'),
+                    'limit' => 30
+                )
+            );
+        $dataJson[0] = array(
+                'title' => $dataPost->name,
+                'lat' => $dataPost->lat,
+                'lng' => $dataPost->lng,
+                'thumbnail' => $dataPost->thumbnail,
+                'type'  => $dataPost->type
+            );
+        if($allPostRelated){
+          foreach ($allPostRelated as $value){
+            array_push($dataJson, array(
+                'title' => $value['name'],
+                'lat' => $value['lat'],
+                'lng' => $value['lng'],
+                'thumbnail' => $value['thumbnail'],
+                'type' => $value['type']
+            ));
+          }
+        }
       }
       
       
@@ -120,6 +149,7 @@ class TravelController extends AbstractActionController
                    ->setVariables([
                        'id' => $id,
                        'dataPost' => $dataPost,
+                       'dataAllPost' => $dataJson,
                        'gallery' => $gallery,
                        'dataEntertainment' => $dataEntertainmentType,
                        'dataVehicle' => $dataVehicle,
@@ -136,7 +166,7 @@ class TravelController extends AbstractActionController
 //                   ->setVariables(['arrayVar' => ['a', 'b', 'c']]);
 //      $htmlCommentOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlCommentPart);
       $jsonModel = new JsonModel();
-      $jsonModel->setVariables(['html' => $htmlOutput]);
+      $jsonModel->setVariables(['html' => $htmlOutput , 'dataJson' => $dataJson]);
 
       return $jsonModel;
     }
@@ -207,7 +237,7 @@ class TravelController extends AbstractActionController
       
       // get entertaiment detail
       $entertainmentDetail = new EntertainmentDetail();
-      $dataEmtertainmentDetail = $entertainmentDetail->getEntertainmentDetailById(array('entertainment_id' => 4));
+      $dataEmtertainmentDetail = $entertainmentDetail->getEntertainmentDetailById(array('entertainment_id' => $id));
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('travel/view-gallery')
                    ->setTerminal(true)
@@ -220,7 +250,7 @@ class TravelController extends AbstractActionController
 
       return $jsonModel;
     }
-    
+     
     public function VideoDetailPopupAction(){
       $htmlViewPart = new ViewModel();
       $htmlViewPart->setTemplate('travel/video-detail-popup')

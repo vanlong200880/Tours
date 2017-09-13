@@ -208,6 +208,14 @@
           padding-top: 5px;
           span{
             color: red;
+            display: inline-block;
+            width: 100%;
+          }
+          var{
+            padding-top: 5px;
+            display: inline-block;
+            width: 100%;
+            padding-left: 15px;
           }
         }
         .fs-game{
@@ -1347,6 +1355,10 @@
   display: none;
   .warpper-video{
     overflow: auto;
+    height: 100%;
+    .container{
+      height: 100%;
+    }
     .close-video{
       position: fixed;
       width: 40px;
@@ -1362,6 +1374,7 @@
     .content-video{
       background: #fff;
       padding: 8px;
+      height: 100%;
     }
   }
   .list-video{

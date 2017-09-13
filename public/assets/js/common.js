@@ -15,23 +15,19 @@ var defaults = {
   locationType: $("body .filter-adv input.filter-location").val(),
   area: $("body .filter-adv input.filter-area").val()
 };
-var gmarkers = []; 
-var gicons = [];
-var map = null;
-gicons["red"] = new google.maps.MarkerImage("http://gonow.dev/assets/images/red.png",
-    // This marker is 20 pixels wide by 34 pixels tall.
-    new google.maps.Size(20, 34),
-    // The origin for this image is 0,0.
-    new google.maps.Point(0,0),
-    // The anchor for this image is at 9,34.
-    new google.maps.Point(9, 34));
-var iconImage = new google.maps.MarkerImage('http://gonow.dev/assets/images/red.png',
-    // This marker is 20 pixels wide by 34 pixels tall.
-    new google.maps.Size(20, 34),
-    // The origin for this image is 0,0.
-    new google.maps.Point(0,0),
-    // The anchor for this image is at 9,34.
-    new google.maps.Point(9, 34));
+var gmarkers = [], gicons = [], map = ''; 
+gicons["travel"] = new google.maps.MarkerImage(defaults['url'] +"/assets/images/travel.png", new google.maps.Size(20, 34),  new google.maps.Point(0,0), new google.maps.Point(9, 34));
+gicons["tour"] = new google.maps.MarkerImage(defaults['url'] +"/assets/images/tour.png", new google.maps.Size(20, 34),  new google.maps.Point(0,0), new google.maps.Point(9, 34));
+gicons["taste"] = new google.maps.MarkerImage(defaults['url'] +"/assets/images/taste.png", new google.maps.Size(20, 34),  new google.maps.Point(0,0), new google.maps.Point(9, 34));
+gicons["hotel"] = new google.maps.MarkerImage(defaults['url'] +"/assets/images/hotel.png", new google.maps.Size(20, 34),  new google.maps.Point(0,0), new google.maps.Point(9, 34));
+gicons["utilities"] = new google.maps.MarkerImage(defaults['url'] +"/assets/images/utilities.png", new google.maps.Size(20, 34),  new google.maps.Point(0,0), new google.maps.Point(9, 34));
+//var iconImage = new google.maps.MarkerImage('http://gonow.dev/assets/images/travel.png',
+//    // This marker is 20 pixels wide by 34 pixels tall.
+//    new google.maps.Size(20, 34),
+//    // The origin for this image is 0,0.
+//    new google.maps.Point(0,0),
+//    // The anchor for this image is at 9,34.
+//    new google.maps.Point(9, 34));
 var iconShadow = new google.maps.MarkerImage('http://www.google.com/mapfiles/shadow50.png',
     // The shadow image is larger in the horizontal dimension
     // while the position and offset are the same as for the main image.
@@ -57,7 +53,6 @@ var infowindow = new google.maps.InfoWindow(
       data: { alias: alias}
     })
     .done(function( data ) {
-//      console.log(data);
       $(id + " option[value!='']").each(function() {
         $(this).remove();
       });
@@ -187,6 +182,22 @@ var infowindow = new google.maps.InfoWindow(
       var page = $.fn.getUrlParam('page');
       var urlString = $.fn.getParamString(page, defaults['nation'], defaults['filterType'], defaults['sortType'], defaults['starType'], defaults['minValue'], defaults['maxValue'], defaults['area'], defaults['keyword']);
       history.pushState(null, null, url + '?' + urlString);
+      $.fn.loadData(
+                        defaults['url'] + '/load-data', 
+                        '#view-data ul.load-post', 
+                        defaults['categoryType'], 
+                        defaults['nation'], 
+                        defaults['province'], 
+                        defaults['district'], 
+                        1, 
+                        defaults['filterType'], 
+                        defaults['sortType'], 
+                        defaults['starType'], 
+                        defaults['minValue'],
+                        defaults['maxValue'], 
+                        defaults['area'], 
+                        defaults['keyword']
+                );
      });
      
      $("body").on('change', '#district', function(){
@@ -196,6 +207,22 @@ var infowindow = new google.maps.InfoWindow(
         url = url + '/' + defaults['province'] + '/' + defaults['district'] + ((defaults['param'])?'?' + defaults['param'] : '');
       }
       history.pushState(null, null, url);
+      $.fn.loadData(
+                        defaults['url'] + '/load-data', 
+                        '#view-data ul.load-post', 
+                        defaults['categoryType'], 
+                        defaults['nation'], 
+                        defaults['province'], 
+                        defaults['district'], 
+                        1, 
+                        defaults['filterType'], 
+                        defaults['sortType'], 
+                        defaults['starType'], 
+                        defaults['minValue'],
+                        defaults['maxValue'], 
+                        defaults['area'], 
+                        defaults['keyword']
+                );
      });
      
      $("body").on('change', '#province', function(){
@@ -206,6 +233,22 @@ var infowindow = new google.maps.InfoWindow(
       }
       history.pushState(null, null, url);
       $.fn.callAjaxRegion(defaults['url'] + '/district', defaults['province'], '#district', '');
+      $.fn.loadData(
+                        defaults['url'] + '/load-data', 
+                        '#view-data ul.load-post', 
+                        defaults['categoryType'], 
+                        defaults['nation'], 
+                        defaults['province'], 
+                        defaults['district'], 
+                        1, 
+                        defaults['filterType'], 
+                        defaults['sortType'], 
+                        defaults['starType'], 
+                        defaults['minValue'],
+                        defaults['maxValue'], 
+                        defaults['area'], 
+                        defaults['keyword']
+                );
      });
      
     $("body .view").on('click','.paging ul li a', function(e){
@@ -349,6 +392,9 @@ var infowindow = new google.maps.InfoWindow(
 //            $("#page-comment").empty().append(data.htmlComment);
             $.fn.loadComment(defaults['url'] + '/load-comment', id, 1);
             $.fn.callSliderRoyalSlider();
+            $.fn.initializeMap(data.dataJson, 'map-related', '', 12);
+            // Load map related
+            
           }
         });
     });
@@ -357,6 +403,12 @@ var infowindow = new google.maps.InfoWindow(
     $("body .popup-page").on('click','.popup-close' ,function(){
       $(".popup-page").removeClass('on');
       $(".popup-page .popup-container").empty();
+    });
+    
+    $("body .views-popup").on('click','.views-close' ,function(){
+      $(".views-popup .views-container").removeClass('open');
+      $(".views-popup").removeClass('view');
+      $(".views-popup .views-container").empty();
     });
     
     // view gallery
@@ -413,16 +465,45 @@ var infowindow = new google.maps.InfoWindow(
     
     gicons["green"] = $.fn.getMarkerImage("green");
     gicons["yelow"] = $.fn.getMarkerImage("yellow");
-    $("body .view-data").on('mouseover', 'ul li', function(event){
+    $("body .view-data").on('mouseover', 'ul > li.post', function(event){
       var id = $(this).attr('data-id');
-      event.preventDefault();
+      
       $.fn.mouseover(id);
-    });
-    $("body .view-data").on('mouseleave', 'ul li', function(event){
-      var id = $(this).attr('data-id');
       event.preventDefault();
-      $.fn.mouseout(id);
     });
+    $("body .view-data").on('mouseleave', 'ul > li.post', function(event){
+      var id = $(this).attr('data-id');
+      
+      $.fn.mouseout(id);
+      event.preventDefault();
+    });
+    
+    // scroll detail popup
+    $("body .popup-page").on('click', 'ul.tab-travel li', function(event){
+      if(this.hash !== ""){
+        event.preventDefault();
+        var id = $(this).attr('data-id');
+        var hash = this.hash;
+        $('.popup-page').animate({
+          scrollTop: $("#"+id).offset().top + 75
+      }, 1000, function(){
+        window.location.hash = hash;
+      });
+      }
+     
+//      console.log(id);
+    });
+    // render commen popup
+    $("body .popup-page").on('click','.buttom-comment',function(){
+       var id = $(this).attr('data-id');
+       $.fn.renerModalComment(id);
+       
+     });
+     
+//    $('#modal-comment').on('hide.bs.modal', function (e) {
+//      alert('aa');
+//      $("body #modal-comment").remove();
+//    }).modal('hide');
   },
   // Load image detail
   $.fn.loadImageDetail = function(url, imageId){
@@ -692,6 +773,37 @@ var infowindow = new google.maps.InfoWindow(
         });
   },
   
+  // render modal comment popup
+  $.fn.renerModalComment = function(id){
+      $.ajax({
+        url : '/render-comment-post',
+        type : 'POST',
+        dataType : "json",
+        data: {id: id},
+        beforeSend: function(){
+//          $(".views-popup").addClass('view');
+//          $(".views-popup").append('<div class="loading"></div>');
+        },
+        success : function (data){
+          console.log(data);
+          $("body #modal-comment").remove();
+          $("body").append(data.html);
+//          $('body #modal-comment').modal('show');
+          $('#modal-comment').on('show.bs.modal', function (e) {
+            }).modal('show');
+            $('body #modal-comment').on('hidden.bs.modal', function (e) {
+//        $(this).data('bs.modal', null);
+       $("body #modal-comment").remove();
+    });
+//          $( ".loading" ).remove();
+//          $(".views-popup .views-container").empty().append(data.html);
+//          // call royalSlider
+//          $.fn.callSliderRoyalSlider();
+//          // view map popup
+//          $(".views-popup .views-container").addClass('open');
+        }
+      });
+  },
   $.fn.loadData = function(url, id, category, nation, province, district, page, filter, sort, star, min, max, area, keyword){
     $.ajax({
       method: 'POST',
@@ -701,9 +813,11 @@ var infowindow = new google.maps.InfoWindow(
         $(".view-loading").css('display','block');
       },
       success: function(data){
-//        console.log(data);
+        console.log(data);
         $(id).empty().append(data.html);
+//        console.log(data.dataJson);
         $(".view-loading").css('display','none');
+        $.fn.initializeMap(data.dataJson, 'map', '');
       }
     });
   },
@@ -748,7 +862,7 @@ var infowindow = new google.maps.InfoWindow(
           marker.setIcon(gicons["green"]);
         });
         google.maps.event.addListener(marker, "mouseout", function() {
-          marker.setIcon(gicons["red"]);
+          marker.setIcon(gicons["travel"]);
           infowindow.close();
         });
     gmarkers.push(marker);
@@ -762,7 +876,7 @@ var infowindow = new google.maps.InfoWindow(
   },
   $.fn.getMarkerImage = function(iconColor){
     if ((typeof(iconColor)=="undefined") || (iconColor==null)) { 
-      iconColor = "red"; 
+      iconColor = "travel"; 
    }
    if (!gicons[iconColor]) {
       gicons[iconColor] = new google.maps.MarkerImage("http://gonow.dev/assets/images/"+ iconColor +".png",
@@ -787,38 +901,41 @@ var infowindow = new google.maps.InfoWindow(
   $.fn.mouseout = function(i){
     google.maps.event.trigger(gmarkers[i], "mouseout");
   },
-  $.fn.initializeMap = function(){
+  $.fn.initializeMap = function(dataJson, idStyle, type = '', zoom = 14){
+    var latLngCenter = [10.780068,106.705005];
+    if(dataJson.length){
+      var latLngCenter = [dataJson[0].lat, dataJson[0].lng];
+    }
     var myOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(10.780068,106.705005),
+      zoom: zoom,
+      center: new google.maps.LatLng(latLngCenter[0], latLngCenter[1]),
       mapTypeControl: true,
       mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
       navigationControl: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    map = new google.maps.Map(document.getElementById("map"),
-                                    myOptions);
+    map = new google.maps.Map(document.getElementById(idStyle), myOptions);
 
     google.maps.event.addListener(map, 'click', function() {
         infowindow.close();
     });
-    var markers = [
-        ['a',10.770537,106.672307, 1, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">'],
-        ['b',10.779354,106.703907, 2, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">']
-    ];
+    var markers = dataJson;
+//    var markers = [
+//        ['a',10.770537,106.672307, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">'],
+//        ['b',10.779354,106.703907, '<img src="http://gonow.dev/assets/demo/photo.jpg" width="160">']
+//    ];
     for (var i = 0; i < markers.length; i++) {
-//        console.log(i);
         // obtain the attribues of each marker
         var beach = markers[i];
-        var lat = parseFloat(beach[1]);
-        var lng = parseFloat(beach[2]);
+        var lat = parseFloat(beach.lat);
+        var lng = parseFloat(beach.lng);
         var point = new google.maps.LatLng(lat,lng);
-        var html = '<div id="iw-container">' + beach[4] +
+        var html = '<div id="iw-container"><img src="http://gonow.dev/assets/demo/photo.jpg" width="160">' + beach.thumbnail+
 
                 '</div>';
-        var label = beach[0];
+        var label = beach.title;
         // create the marker
-        var marker = $.fn.createMarker(point,label,html,"red", i);
+        var marker = $.fn.createMarker(point,label,html,beach.type, i);
       }
   }
   ;
@@ -832,6 +949,5 @@ var infowindow = new google.maps.InfoWindow(
   var area = $.fn.getUrlParam('area');
   var keyword = $.fn.getUrlParam('keyword');
   $.fn.loadData(defaults['url'] + '/load-data', '#view-data ul.load-post', defaults['categoryType'], defaults['nation'], defaults['province'], defaults['district'], page, filter, sort, star, min, max, area, keyword);
-  $.fn.initializeMap();
   $.fn.render();
 })(jQuery);

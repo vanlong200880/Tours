@@ -47,8 +47,8 @@ define('STAR', '', true);
 define('KEYWORD', '', true);
 define('SORT', 'asc', true);
 
-define('PAGE_RAND', 5);
-define('ITEM_PAGE', 2);
+define('PAGE_RAND', 3);
+define('ITEM_PAGE', 50);
 
 define('META_TITLE', 'meta title');
 define('META_KEYWORD', 'meta keyword');
@@ -58,7 +58,7 @@ define('IMAGE_DEFAULT', '');
 define('TYPE', '');
 define('FACEBOOK_ID', '131231231231');
 
-define('LIMIT_COMMENT', 2);
+define('LIMIT_COMMENT', 10);
 
  
 

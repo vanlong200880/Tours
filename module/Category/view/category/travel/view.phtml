@@ -1,6 +1,6 @@
 <?php 
 //echo '<pre>';
-//var_dump($dataVehicle)
+//var_dump($dataAllPost)
 
 ?>
 <div class="popup-content">
@@ -35,15 +35,19 @@
                   <li data-id="history"><h2>Lịch sử</h2></li>
                   <li data-id="video"><h2>Video</h2></li>
                   <li data-id="rating"><h2>Đánh giá</h2></li>
-                  <li data-id="rating"><h2 data-toggle="modal" data-target="#modal-comment"> Bình luận</h2></li>
+                  <li data-id="comment"><h2 data-toggle="modal" data-target="#modal-comment"> Bình luận</h2></li>
                 </ul>
                 <div class="content">
                   <div class="description">
                     <?php echo $dataPost->about; ?>
                   </div>
+                  <?php //echo '<pre>'; var_dump($dataEntertainment); ?>
                   <?php if($dataEntertainment): ?>
-                  <?php foreach ($dataEntertainment as $value): ?>
+                  <?php foreach ($dataEntertainment as $value): 
+//                    var_dump($value['type'] );
+                    ?>
                   <?php if((int)$value['type'] == 1): ?>
+                  <?php if($value['dataChild']): ?>
                   <div id="table-price" class="list-catelog">
                     <h2 class="title"><?php echo $value['name']; ?> 12</h2>
                     <table class="game-entertainment">
@@ -56,7 +60,7 @@
                           <th>Giá vé trẻ em</th>
                         </tr>
                       </thead>
-                      <?php if($value['dataChild']): ?>
+                      
                       <tbody>
                         <?php foreach ($value['dataChild'] as $k => $child): ?>
                         <tr>
@@ -68,12 +72,14 @@
                         </tr>
                         <?php endforeach;?>
                       </tbody>
-                      <?php endif; ?>
+                      
                     </table>
                   </div>
                   <?php endif; ?>
+                  <?php endif; ?>
                   
-                  <?php if((int)$value['type'] == 2): ?>
+                  <?php 
+                  if($value['type'] == 2): ?>
                   <?php if($value['child'] != ''): ?>
                   <div class="list-catelog">
                     <h2 class="title"><?php echo $value['name']; ?></h2>
@@ -105,7 +111,7 @@
                             $entertainmentImage = Category\Util\EntertainmentGallery::getListEntertainmentGallery(array('entertainment_id' => $r['id']));
                             if($entertainmentImage):
                             ?>
-                            <a data-id="<?php echo $v['id']; ?>" class="history" href="javascript:void(0);">
+                            <a data-id="<?php echo $r['id']; ?>" class="history" href="javascript:void(0);">
                               <div class="view-gallery">Xem album ảnh</div>
                               <i class="icon icon-picture-o"></i></a>
                             <?php endif; ?>
@@ -189,7 +195,7 @@
           <div class="map-content">
             <h2>Địa điểm khác gần Đầm sen</h2>
             <div class="related-item">
-              <div class="map-related"></div>
+              <div class="map-related" id="map-related"></div>
                 <div class="list-icon-support">
                   <ul>
                     <li class="current"><span></span> Địa điểm hiện tại</li>
@@ -228,7 +234,9 @@
         <div class="list-related list-province-item">
           <h2 class="title"><span>Địa điểm khác</span></h2>
           <ul class="list-travel">
-            <?php foreach ($dataPostRelated as $key => $value): ?>
+            <?php foreach ($dataPostRelated as $key => $value): 
+              $listTotal = \Category\Util\UtilEntertainment::getTotalEntertainmentByPost(array('post_id' => $value['id']));
+              ?>
             <li>
               <div class="item">
                 <div class="row">
@@ -253,9 +261,18 @@
                       <p class="hour-open"><span>Giờ mở cửa:</span> 08:00 AM - 20:00 PM</p>
                       <div class="fs-game">
                         <ul class="list-game">
-                          <li><span class="game icon icon-technology"></span> 150 trò chơi</li>
-                          <li><span class="restaurant icon icon-cutlery"></span> 150 nhà hàng</li>
-                          <li><span class="tours icon icon-photographer"></span> 15 điểm tham quan</li>
+                          <?php if($listTotal): ?>
+                          <?php foreach ($listTotal as $val): ?>
+                          <?php if($val['type'] == 1): ?>
+                          <li><span class="game icon icon-technology"></span> <?php echo $val['count']; ?> trò chơi</li>
+                          <?php endif; ?>
+
+                          <?php if($val['type'] == 2): ?>
+                          <li><span class="tours icon icon-photographer"></span> <?php echo $val['count']; ?> điểm tham quan</li>
+                          <?php endif; ?>
+                          <?php endforeach; ?>
+                          <?php endif; ?>
+                          <li><p data-id="<?php echo $value->id; ?>" class="strict-views"><span class="icon icon-person"></span> Bấm xem đường đi</p></li>
                         </ul>
                         <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
                       </div>

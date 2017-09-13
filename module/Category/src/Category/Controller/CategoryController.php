@@ -244,9 +244,9 @@ class CategoryController extends AbstractActionController
              'categoryType' => $categoryExists->type,
              'CategoryIdCurrent' => $categoryExists->id,
              'categoryId' => $listIdCatgory,
-             'nationId' => 1, 
-             'provinceId' => 1, 
-             'districtId' => 1,
+             'nationId' => $nationId, 
+             'provinceId' => $provinceId, 
+             'districtId' => $districtId,
              'filter' => $filter,
              'sort' => $sort,
              'star' => $star,
@@ -317,6 +317,7 @@ class CategoryController extends AbstractActionController
       }
       $htmlViewPart->setTerminal(true)
                    ->setVariables([
+                       'categoryExists' => $categoryExists,
                        'filter' => $filter,
                        'min' => $min,
                        'max' => $max,
@@ -331,9 +332,21 @@ class CategoryController extends AbstractActionController
                        'paginator' => $paginator,
                        'regionExists' => $regionExists,
                        'category' => $categoryExists]);
+      $dataJson = array();
+      if($paginator){
+        foreach ($paginator as $key => $value){
+          $dataJson[$key] = array(
+              'title' => $value->name,
+              'lat' => $value->lat,
+              'lng' => $value->lng,
+              'thumbnail' => $value->thumbnail,
+              'type' => $value->type
+          );
+        }
+      }
       $htmlOutput = $this->getServiceLocator()->get('viewrenderer')->render($htmlViewPart);
       $jsonModel = new JsonModel();
-      $jsonModel->setVariables(['html' => $htmlOutput]);
+      $jsonModel->setVariables(['html' => $htmlOutput, 'dataJson' => $dataJson, 'categoryExists' => $nationId]);
       return $jsonModel;
 //    }else{
 //      die('Forbidden access');

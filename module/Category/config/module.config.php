@@ -91,7 +91,19 @@ return array(
                 ),
               ),
             ),
-            
+            // render comment post
+            'render-comment-post' => array(
+              'type' => 'Segment',
+              'options' => array(
+                'route' => '/render-comment-post',
+
+                'defaults' => array(
+                  '__NAMESPACE__' => 'Category\Controller',
+                  'controller' => 'Category\Controller\Comment',
+                  'action' => 'renderCommentPost',
+                ),
+              ),
+            ),
             // Load comment
             'load-comment' => array(
               'type' => 'Segment',
@@ -383,6 +395,7 @@ return array(
             'comment/load-more-comment-child'           => __DIR__ . '/../view/category/comment/load-more-comment-child.phtml',
             'comment/create-comment'           => __DIR__ . '/../view/category/comment/create-comment.phtml',
             'image/image-detail'           => __DIR__ . '/../view/category/comment/image-detail.phtml',
+            'comment/render-comment-post' => __DIR__ . '/../view/category/comment/render-comment-post.phtml',
             
             
             'view/comment-popup'           => __DIR__ . '/../view/category/comment/comment-popup.phtml',

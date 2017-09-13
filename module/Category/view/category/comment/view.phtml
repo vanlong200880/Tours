@@ -80,8 +80,8 @@
     </li>
   </ul>
 </div>
-<div class="comment">
-  <h2><span>Bình luận (<?php echo $totalRecord; ?>)</span> <a class="buttom-comment pull-right" data-toggle="modal" data-target="#modal-comment">Viết bình luận</a></h2>
+<div class="comment" id="comment">
+  <h2><span>Bình luận (<?php echo $totalRecord; ?>)</span> <a  data-id="1" class="buttom-comment pull-right" data-toggle="modal" data-target="#modal-comment">Viết bình luận</a></h2>
   <?php if($dataComment): ?>
   <ul class="list-comment">
     <?php foreach ($dataComment as $value): ?>
@@ -205,10 +205,10 @@
       </div>
     </li>
     <?php endforeach; ?>
-    <div class="views-all">
+  </ul>
+  <div class="views-all">
       <a ng-page="<?php echo $currentPage; ?>" data-id="<?php echo $postId; ?>">Xem thêm</a>
     </div>
-  </ul>
   <?php else: ?>
   <div class="comment-empty">
     Chưa có bình luận nào. Hãy là người đầu tiên!

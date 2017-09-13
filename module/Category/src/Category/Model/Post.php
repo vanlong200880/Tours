@@ -65,7 +65,7 @@ class Post extends AbstractTableGateway
       $select->from($this->table);
       $select ->join('category', 'category.id = post.category_id', array('type'));
       $select ->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug'));
-      $select ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name', 'hot', 'new', 'address'));
+      $select ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name', 'hot', 'new', 'address','lat', 'lng', 'thumbnail'));
       $select->where(array('post_detail.status_id' => 1));
       $arrId = array($arrayParam['CategoryIdCurrent']);
       
@@ -158,7 +158,7 @@ class Post extends AbstractTableGateway
       $select->columns(array('id', 'user_id', 'category_id'));
       $select->join('category', 'category.id = post.category_id', array('type'));
       $select->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug', 'category_id' => 'category_id', 'categoryName' => 'name'));
-      $select ->join('post_detail', 'post_detail.post_id = post.id', array('post_detail_id' => 'id','post_slug' => 'slug', 'name', 'hot', 'new', 'address', 'about', 'slug', 'content', 'language', 'status_id', 'excerpt'));
+      $select ->join('post_detail', 'post_detail.post_id = post.id', array('post_detail_id' => 'id','post_slug' => 'slug', 'name', 'hot', 'new', 'address', 'about', 'slug', 'content', 'language', 'status_id', 'excerpt', 'lat', 'lng', 'thumbnail'));
       $select->where(array('post_detail.status_id' => 1, 'post.id' => $arrayParam['id'], 'post_detail.language' => $arrayParam['language'] ));
       $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
       $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
@@ -206,6 +206,30 @@ class Post extends AbstractTableGateway
         $select->where(array('post_detail.district_id' => $arrayParam['districtId']));
       }
       
+      $select->order('post_detail.publish_date DESC');
+      $select->limit($arrayParam['limit']);
+      
+      $resultSet = $this->selectWith($select);
+      $resultSet = $resultSet->toArray();
+      return $resultSet;
+   }
+   
+   // get all related post by list category
+   public function getAllRelatedPost($arrayParam = null){
+      $select = new Select();
+      $select->from($this->table);
+      $select ->join('category', 'category.id = post.category_id', array('type'));
+      $select ->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug'));
+      $select ->join('post_detail', 'post.id = post_detail.post_id', array('post_slug' => 'slug', 'name', 'hot', 'new', 'address','lat', 'lng', 'thumbnail'));
+      $select->where(array('post_detail.status_id' => 1, 'post_detail.language' => $arrayParam['language']));
+      
+      //$select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
+      //$select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      //$select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      //$select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+//      $select->where(array('post.category_id' => $arrayParam['category_id']));
+      $select->where->addPredicate(new \Zend\Db\Sql\Predicate\NotIn('post.id', array($arrayParam['id'])));
+      $select->where->addPredicate(new \Zend\Db\Sql\Predicate\In('category.type', $arrayParam['listType']));
       $select->order('post_detail.publish_date DESC');
       $select->limit($arrayParam['limit']);
       
