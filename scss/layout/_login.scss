@@ -5,7 +5,7 @@ body{
   background: url('../images/bg-login.png');
 }
 .header{
-  height: 50px;
+  height: 40px;
   background: $tours;
   .menu-header{
     a.logo{
@@ -17,8 +17,8 @@ body{
   ul{
     li{
       display: inline-block;
-      height: 50px;
-      line-height: 50px;
+      height: 40px;
+      line-height: 40px;
       font-size: 16px;
       a{
         padding: 0 25px;

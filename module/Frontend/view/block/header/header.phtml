@@ -8,12 +8,46 @@
         <?php $this->menu(); ?>
       </div>
       <div class="col-md-3">
-        <u id="login" class="pull-right">
-          <li>
+        <ul id="login" class="pull-right">
+<!--          <li>
             <a href="<?php echo $this->url('register', array('controller' => 'public', 'action' => 'register')); ?>">Đăng ký </a> /
             <a href="<?php echo $this->url('login', array('controller' => 'public', 'action' => 'login')); ?>">Đăng nhập </a>
+          </li>-->
+          <li>
+            <a href="#">
+              <span class="avatar"></span>
+              Pham Long</a>
           </li>
-        </u>
+          <li>
+              <a id="dLabel" class="views-profile" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <var class="icon icon-caret-down"></var>
+              </a>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li>
+                <div class="myprofile">
+                  <h2>My profile</h2>
+                  <a href="#">Tạo dấu chân</a>
+                  <a href="#">Dấu chân du lich</a>
+                </div>
+              </li>
+              <li>
+                <div class="manager">
+                  <a href="#">Đơn hàng</a>
+                  <a href="#">Quản lý tour</a>
+                  <a href="#">Quản lý hotel</a>
+                  <a href="#">Quản lý blog</a>
+                  <a href="#">Quản lý điểm du lịch</a>
+                </div>
+              </li>
+              <li>
+                <div class="manager">
+                  <a href="#">Cài đặt</a>
+                  <a href="#">Thoát</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

@@ -12,20 +12,11 @@ namespace User\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class TravelController extends AbstractActionController
+class MyTravelController extends AbstractActionController
 {
     public function indexAction()
     {
-      $this->layout('layout/user-admin');
+      $this->layout('layout/mytravel');
         return new ViewModel();
-    }
-    public function addAction(){
-      return new ViewModel();
-    }
-    public function orderAction(){
-      return new ViewModel();
-    }
-    public function commentAction(){
-      return new ViewModel();
     }
 }

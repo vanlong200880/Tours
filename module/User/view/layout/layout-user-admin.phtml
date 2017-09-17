@@ -1,0 +1,55 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+            ->prependStylesheet($this->basePath('frontend/css/login.css'))
+            ->prependStylesheet($this->basePath('frontend/css/main.css'))
+            ->prependStylesheet($this->basePath('frontend/css/fonts.css'))
+                        ->prependStylesheet($this->basePath('frontend/css/bootstrap.min.css')) ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('frontend/js/bootstrap.min.js'))
+            ->prependFile($this->basePath('frontend/js/jquery.min.js'))
+            ->prependFile($this->basePath('frontend/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('frontend/js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+    <body>
+      <?php $this->headerCategory(); ?>
+      
+      <div class="main">
+        <div class="admin">
+          
+          <div class="menuLeft">
+            <header class="admin-header">
+              Admin Home
+              
+            </header>
+            <?php $this->menuTravel(); ?>
+          </div>
+          <div class="adminBody">
+            <div class="content-header">a</div>
+            <div class="content">
+              <?php echo $this->content; ?>
+            </div>
+          </div>
+        </div>
+        <?php //echo $this->timeline(); ?>
+        
+      </div>
+      <?php //$this->footer(); ?>
+      <?php echo $this->inlineScript(); ?>
+    </body>
+</html>

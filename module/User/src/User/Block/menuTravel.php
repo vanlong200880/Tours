@@ -1,10 +1,10 @@
 <?php
 namespace User\Block;
 use Zend\View\Helper\AbstractHelper;
-class menuTours extends AbstractHelper
+class menuTravel extends AbstractHelper
 {    
     public function __invoke() {
-        $data = $this->view->partial('block/menuTours/menuTours.phtml');
+        $data = $this->view->partial('block/menuTravel/menuTravel.phtml');
         echo $data;
     }
 }

@@ -328,50 +328,7 @@
     }
   }
 }
-.list-table{
-  width: 100%;
-  thead{
-    th{
-      height: 40px;
-      line-height: 40px;
-      padding: 0 5px;
-      background: #f7f7f8;
-      text-transform: uppercase;
-    }
-  }
-  tbody{
-    tr{
-      td{
-        padding: 5px;
-        border-top: 1px solid #DDD;
-      }
-      .function{
-        a{
-          display: inline-block;
-          margin-right: 5px;
-          font-size: 15px;
-        }
-      }
-      td.order-id{
-        a{
-          color: $tours;
-          font-weight: bold;
-        }
-      }
-      &:nth-child(2n+2){
-        background: #f9f9f9;
-      }
-      &:hover{
-        background: #f7f7f7;
-      }
-    }
-    tr.active{
-      td{
-        font-weight: bold;
-      }
-    }
-  }
-}
+
 .timeline{
   padding-top: 15px;
   padding-bottom: 15px;

@@ -1,17 +1,12 @@
-<div class="user">
-  <div class="post">
-    <div class="container">
+
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <div class="post-container">
-            <div class="sidebar-left">
-              <?php $this->menuTours(); ?>
-            </div>
-            <div class="content">
               <div class="user-breadcrumb">
                 <ol class="breadcrumb">
                   <li>Trang chủ</li>
-                  <li class="active">Danh sách tours</li>
+                  <li class="active">Danh sách điểm du lịch</li>
                 </ol>
               </div>
               <div class="body-container">
@@ -20,243 +15,41 @@
                     <table class="list-table">
                       <thead>
                         <tr>
+                          <th><input type="checkbox" name="checkbox"></th>
                           <th>STT</th>
                           <th>Tên</th>
                           <th>Ngày đăng</th>
-                          <th>Trang thái</th>
+                          <th>Trạng thái</th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php for($i = 0; $i < 40; $i++): ?>
                         <tr>
-                          <td>1</td>
+                          <td><input type="checkbox" name="checkbox"></td>
+                          <td><?php echo $i; ?></td>
                           <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
                           <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
+                          <td class="status">
+                            <a href="#">
+                              <span class="icon <?php echo ($i%2== 0) ?'icon-check-circle': 'icon-minus-circle'; ?>"></span>
+                            </a>
+                            </td>
                           <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
+                            <a href="#" title="Sửa"><span class="icon icon-pencil-square-o"></span></a>
+                            <a href="#" title="Xóa"><span class="icon icon-trash"></span></a>
                             <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
+                            <a href="#" title="Xem"><span class="icon icon-eye"></span></a>
+                            <a href="#" title="Báo cáo"><span class="icon icon-calendar"></span></a>
                           </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>6</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>7</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>8</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>9</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>10</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>11</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>13</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>14</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>15</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>16</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>17</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>18</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>19</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>20</td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td>Đã đăng</td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-delete-garbage-streamline"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                          </td>
-                        </tr>
+                        <?php endfor; ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

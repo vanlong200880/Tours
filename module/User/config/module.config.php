@@ -65,6 +65,18 @@ return array(
                           ),
                       ),
                   ),
+                    
+                  'user-my-travel' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/my-travel',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'MyTravel',
+                            'action'        => 'index',
+                          ),
+                      ),
+                  ),
                   
                   'user-profile' => array(
                       'type'    => 'Segment',
@@ -74,6 +86,18 @@ return array(
                             '__NAMESPACE__' => 'User\Controller',
                             'controller'    => 'User',
                             'action'        => 'profile',
+                          ),
+                      ),
+                  ),
+                    
+                  'user-travel-admin' => array(
+                      'type'    => 'Segment',
+                      'options' => array(
+                          'route'    => '/travel-admin',
+                          'defaults' => array(
+                            '__NAMESPACE__' => 'User\Controller',
+                            'controller'    => 'Travel',
+                            'action'        => 'index',
                           ),
                       ),
                   ),
@@ -365,12 +389,13 @@ return array(
           'User\Controller\Taste' => Controller\TasteController::class,
           'User\Controller\Hotel' => Controller\HotelController::class,
           'User\Controller\Travel' => Controller\TravelController::class,
+          'User\Controller\MyTravel' => Controller\MyTravelController::class,
         ),
     ),
     'view_helpers'    => array(
         'invokables'  => array(
           'timeline'        => 'User\Block\timeline',
-          'menuTours'        => 'User\Block\menuTours',
+          'menuTravel'        => 'User\Block\menuTravel',
           'menuProfile'        => 'User\Block\menuProfile',
           'menuBlog'        => 'User\Block\menuBlog',
           'menuTaste'        => 'User\Block\menuTaste',
@@ -386,6 +411,8 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/user'           => __DIR__ . '/../view/layout/layout.phtml',
+             'layout/mytravel'           => __DIR__ . '/../view/layout/layout-my-travel.phtml',
+            'layout/user-admin'           => __DIR__ . '/../view/layout/layout-user-admin.phtml',
             'user/index/index' => __DIR__ . '/../view/user/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',

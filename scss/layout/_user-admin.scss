@@ -1,0 +1,144 @@
+.main{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+  .admin{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    .menuLeft{
+      width: 15%;
+      position: absolute;
+      height: 100%;
+      @include box-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+      top: 0;
+      .admin-header{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background: #4285F4;
+        padding: 0 5px;
+        color: #FFF;
+      }
+      ul{
+        li{
+          border-bottom: 1px solid #DDD;
+          position: relative;
+          a{
+            line-height: 30px;
+            padding: 0 5px;
+            height: 30px;
+            span{
+              font-size: 16px;
+              position: relative;
+              top: 3px;
+              margin-right: 5px;
+            }
+          }
+          span.show{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+            line-height: 30px;
+            var{
+              position: relative;
+              top: 2px;
+              font-size: 18px;
+            }
+          }
+          ul{
+            border-top: 1px solid #DDD;
+            li{
+              border-bottom: none;
+              a{
+                line-height: 30px;
+                padding: 0 5px 0 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .adminBody{
+      width: 85%;
+      position: absolute;
+      left: 15%;
+      top: 0;
+      height: 100%;
+      overflow: scroll;
+      padding-bottom: 30px;
+      .content-header{
+        @include box-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        width: 100%;
+        padding: 5px;
+      }
+      .content{
+        padding: 10px;
+        height: 100%;
+        .list-table{
+          width: 100%;
+          border: 1px solid #DDD;
+          thead{
+            th{
+              height: 40px;
+              line-height: 40px;
+              padding: 0 5px;
+              background: #f7f7f8;
+              text-transform: uppercase;
+            }
+          }
+          tbody{
+            tr{
+              td{
+                padding: 5px;
+                border-top: 1px solid #DDD;
+              }
+              .function{
+                  text-align: right;
+                a{
+                  display: inline-block;
+                  margin-right: 5px;
+                  font-size: 15px;
+                }
+              }
+              .status{
+                a{
+                  color: #000;
+                  .icon-check-circle{
+                    color: #4285F4;
+                  }
+                  .icon-minus-circle{
+                    color: #a51616;
+                  }
+                }
+              }
+              td.order-id{
+                a{
+                  color: $tours;
+                  font-weight: bold;
+                }
+              }
+              &:nth-child(2n+2){
+                background: #f9f9f9;
+              }
+              &:hover{
+                background: #f7f7f7;
+              }
+            }
+            tr.active{
+              td{
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

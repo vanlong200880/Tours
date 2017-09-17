@@ -1,0 +1,209 @@
+.my-travel{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 40px;
+  background: #FFF;
+  padding-bottom: 40px;
+  #map{
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+  .data{
+    position: absolute;
+    background: #FFF;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    .close-tab{
+      position: absolute;
+      width: 25px;
+      height: 40px;
+      right: -25px;
+      background: #FFF;
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      top: 5px; 
+      @include box-shadow(0px 1px 4px rgba(0, 0, 0, 0.3));
+      text-align: center;
+      line-height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      var{
+        position: relative;
+        top: 2px;
+        right: 2px;
+      }
+    }
+    .title{
+      height: 45px;
+      background: #4285F4;
+      color: #FFF;
+      padding: 5px;
+      .avatar{
+        width: 35px;
+        height: 35px;
+        background: #DDD;
+        @include border-radius(3px);
+        display: inline-block;
+        float: left;
+        margin-right: 5px;
+      }
+      div{
+        overflow: hidden;
+        h1{
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #FFF;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+    .create-share{
+      display: inline-block;
+      width: 100%;
+      margin-top: 15px;
+      border-bottom: 1px solid #DDD;
+      a{
+        color: #4285F4;
+      }
+      .item{
+        width: 33.3333333333%;
+        float: left;
+        height: 40px;
+        text-align: center;
+        margin-bottom: 5px;
+        var{
+          font-size: 18px;
+        }
+      }
+    }
+    .list-my-travel{
+      padding: 5px;
+      display: inline-block;
+      width: 100%;
+      margin-top: 15px;
+      overflow: scroll;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 100px;
+      padding-bottom: 150px;
+      ul{
+        li{
+          border-left: 1px solid #183544;
+          float: left;
+          width: 100%;
+          .item{
+            padding-left: 30px;
+            position: relative;
+            min-height: 100px;
+            float: left;
+            width: 100%;
+            margin-bottom: 15px;
+            &:before{
+              content: "";
+              width: 15px;
+              height: 1px;
+              background: #183544;
+              position: absolute;
+              left: 0;
+            }
+            &:after{
+              content: "";
+              width: 6px;
+              height: 6px;
+              background: #4285F4;
+              position: absolute;
+              @include border-radius(50%);
+              top: -3px;
+              left: 15px;
+            }
+            div{
+              display: inline-block;
+              width: 100%;
+              float: left;
+            }
+            .date{
+              position: relative;
+              margin-top: -8px;
+            }
+            .mytitle{
+              display: inline-block;
+              width: 100%;
+              margin-bottom: 5px;
+            }
+            .content{
+              ul{
+                li{
+                  width: 20%;
+                  float: left;
+                  padding: 1px;
+                  border-left: none;
+                  a{
+                    position: relative;
+                    display: inline-block;
+                    .add{
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      background: rgba(0,0,0,0.5);
+                      z-index: 9;
+                      var{
+                        color: #FFF;
+                        left: 30%;
+                        right: 50%;
+                        margin: 0 auto;
+                        bottom: 0;
+                        top: 35%;
+                        position: absolute;
+                        font-size: 18px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:last-child{
+            border-left: none;
+          }
+          
+        }
+      }
+    }
+  }
+}
+.header{
+  .logo{
+    height: 40px;
+  }
+}
+.header {
+  #menu-top {
+    li{
+      a{
+        color: #FFF;
+      }
+      ul{
+        li{
+          a{
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  #login {
+    li{
+      a{
+        color: #FFF;
+      }
+    }
+  }
+}

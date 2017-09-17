@@ -1,0 +1,35 @@
+<ul>
+  <li>
+    <a href="<?php echo $this->url('user/list-tours', array('controller' => 'tours', 'action' => 'index')) ?>">
+      <span class="icon icon-menu"></span>
+      Điểm du lịch</a>
+    <span class="show"><var class="icon icon-angle-down"></var></span>
+    <ul>
+      <li>
+        <a href="<?php echo $this->url('user/post', array('controller' => 'tours', 'action' => 'post')) ?>">
+          <span class="icon icon-gift"></span>
+          Tạo tour</a>
+      </li>
+      <li>
+        <a href="<?php echo $this->url('user/post', array('controller' => 'tours', 'action' => 'post')) ?>">
+          <span class="icon icon-gift"></span>
+           Tất cả</a>
+      </li>
+      <li>
+        <a href="<?php echo $this->url('user/tours-order', array('controller' => 'tours', 'action' => 'order')) ?>">
+          <span class="icon icon-gift"></span>
+          Đơn hàng</a>
+      </li>
+    </ul>
+  </li>
+ 
+  <li>
+    <a href="#"><span class="icon icon-user-1"></span>Thành viên</a>
+  </li>
+  <li>
+    <a href="#"><span class="icon icon-email-mail-streamline"></span>Email marketing</a>
+  </li>
+   <li>
+    <a href="#"><span class="icon icon-question"></span>Trợ giúp</a>
+  </li>
+</ul>

@@ -1848,14 +1848,14 @@ body {
   background: url("../images/bg-login.png"); }
 
 .header {
-  height: 50px;
+  height: 40px;
   background: #183544; }
   .header .menu-header a.logo img {
     width: 120px; }
   .header ul li {
     display: inline-block;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     font-size: 16px; }
     .header ul li a {
       padding: 0 25px;
@@ -2267,31 +2267,6 @@ body {
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
   -ms-border-radius: 3px; }
-
-.list-table {
-  width: 100%; }
-  .list-table thead th {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 5px;
-    background: #f7f7f8;
-    text-transform: uppercase; }
-  .list-table tbody tr td {
-    padding: 5px;
-    border-top: 1px solid #DDD; }
-  .list-table tbody tr .function a {
-    display: inline-block;
-    margin-right: 5px;
-    font-size: 15px; }
-  .list-table tbody tr td.order-id a {
-    color: #183544;
-    font-weight: bold; }
-  .list-table tbody tr:nth-child(2n+2) {
-    background: #f9f9f9; }
-  .list-table tbody tr:hover {
-    background: #f7f7f7; }
-  .list-table tbody tr.active td {
-    font-weight: bold; }
 
 .timeline {
   padding-top: 15px;

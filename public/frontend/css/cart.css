@@ -116,12 +116,104 @@ a:hover {
   top: 0;
   z-index: 9999; }
 #header #login li {
-  display: inline-block; }
+  display: inline-block;
+  line-height: 40px;
+  height: 40px;
+  position: relative;
+  float: left; }
   #header #login li a {
-    display: inline-block;
-    line-height: 40px;
-    height: 40px;
     color: #FFF; }
+    #header #login li a span {
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%;
+      background: #000;
+      vertical-align: middle;
+      overflow: hidden;
+      margin-right: 5px; }
+    #header #login li a var {
+      font-size: 18px;
+      position: relative;
+      top: 5px;
+      left: -4px; }
+  #header #login li a.views-profile {
+    margin-left: 20px; }
+  #header #login li ul {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    right: 0;
+    top: 40px;
+    min-height: 100px;
+    min-width: 220px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    left: auto;
+    z-index: 9;
+    padding: 0;
+    margin: 0; }
+    #header #login li ul:before {
+      content: "";
+      border-bottom: 7px solid #FFF;
+      top: -7px;
+      position: absolute;
+      right: 5px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent; }
+    #header #login li ul li {
+      display: inline-block;
+      width: 100%;
+      float: none; }
+      #header #login li ul li .myprofile {
+        display: inline-block;
+        width: 100%; }
+        #header #login li ul li .myprofile h2 {
+          color: #000;
+          font-size: 14px;
+          padding: 10px 10px 0 10px;
+          display: inline-block;
+          width: 100%;
+          float: left; }
+        #header #login li ul li .myprofile a {
+          color: #000;
+          padding-left: 15px;
+          line-height: 30px;
+          display: inline-block;
+          float: left;
+          height: 30px;
+          width: 100%;
+          padding-left: 25px; }
+          #header #login li ul li .myprofile a:hover {
+            background: #232f3e;
+            color: #FFF; }
+      #header #login li ul li .manager {
+        display: inline-block;
+        width: 100%;
+        border-top: 1px solid #DDD; }
+        #header #login li ul li .manager a {
+          line-height: 30px;
+          color: #000;
+          display: inline-block;
+          width: 100%;
+          padding-left: 30px;
+          height: 30px;
+          float: left; }
+          #header #login li ul li .manager a:hover {
+            background: #232f3e;
+            color: #FFF; }
 
 #menu-top {
   padding-left: 115px; }
