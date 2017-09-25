@@ -1,55 +1,54 @@
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="post-container">
-              <div class="user-breadcrumb">
-                <ol class="breadcrumb">
-                  <li>Trang chủ</li>
-                  <li class="active">Danh sách điểm du lịch</li>
-                </ol>
-              </div>
-              <div class="body-container">
-                <div class="body-content">
-                  <div class="list-tours">
-                    <table class="list-table">
-                      <thead>
-                        <tr>
-                          <th><input type="checkbox" name="checkbox"></th>
-                          <th>STT</th>
-                          <th>Tên</th>
-                          <th>Ngày đăng</th>
-                          <th>Trạng thái</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php for($i = 0; $i < 40; $i++): ?>
-                        <tr>
-                          <td><input type="checkbox" name="checkbox"></td>
-                          <td><?php echo $i; ?></td>
-                          <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
-                          <td>20-08-2016:15:30:15</td>
-                          <td class="status">
-                            <a href="#">
-                              <span class="icon <?php echo ($i%2== 0) ?'icon-check-circle': 'icon-minus-circle'; ?>"></span>
-                            </a>
-                            </td>
-                          <td class="function">
-                            <a href="#" title="Sửa"><span class="icon icon-pencil-square-o"></span></a>
-                            <a href="#" title="Xóa"><span class="icon icon-trash"></span></a>
-                            <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
-                            <a href="#" title="Xem"><span class="icon icon-eye"></span></a>
-                            <a href="#" title="Báo cáo"><span class="icon icon-calendar"></span></a>
-                          </td>
-                        </tr>
-                        <?php endfor; ?>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+<div class="content-header">
+  <div class="user-breadcrumb">
+    <ol class="breadcrumb">
+      <li>Trang chủ</li>
+      <li class="active">Tạo điểm du lịch</li>
+    </ol>
+  </div>
+</div>
+<div class="post">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-container">
+          <div class="box-body">
+            <table class="list-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" name="checkbox"></th>
+                  <th>STT</th>
+                  <th>Tên</th>
+                  <th>Ngày đăng</th>
+                  <th>Trạng thái</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php for ($i = 0; $i < 40; $i++): ?>
+                  <tr>
+                    <td><input type="checkbox" name="checkbox"></td>
+                    <td><?php echo $i; ?></td>
+                    <td><a href="#" target="_blank">GOLD HOTEL ĐÀ NẴNG 3 sao, gần Cầu Rồng + Buffet Sáng</a></td>
+                    <td>20-08-2016:15:30:15</td>
+                    <td class="status">
+                      <a href="#">
+                        <span class="icon <?php echo ($i % 2 == 0) ? 'icon-check-circle' : 'icon-minus-circle'; ?>"></span>
+                      </a>
+                    </td>
+                    <td class="function">
+                      <a href="#" title="Sửa"><span class="icon icon-pencil-square-o"></span></a>
+                      <a href="#" title="Xóa"><span class="icon icon-trash"></span></a>
+                      <a href="#" title="Làm mới"><span class="icon icon-refresh"></span></a>
+                      <a href="#" title="Xem"><span class="icon icon-eye"></span></a>
+                      <a href="#" title="Báo cáo"><span class="icon icon-calendar"></span></a>
+                    </td>
+                  </tr>
+                <?php endfor; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="content-header">
+    <div class="user-breadcrumb">
+      <ol class="breadcrumb">
+        <li>Trang chủ</li>
+        <li class="active">Tạo điểm du lịch</li>
+      </ol>
+    </div>
+</div>
+  <div class="post">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-container">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'edit', 'id' => '1')); ?>">Tổng quan</a></li>
+              <li role="presentation" class="active"><a href="<?php echo $this->url('user/travel', array('action' => 'gallery', 'id' => '1')); ?>">Thư viện ảnh</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainment', 'id' => '1')); ?>">Tạo trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentPromotion', 'id' => '1')); ?>" >Tạo bảng giá khuyến mãi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentGallery', 'id' => '1')); ?>">Ảnh trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'video', 'id' => '1')); ?>">Video</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'support', 'id' => '1')); ?>">Thông tin hỗ trợ</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'service', 'id' => '1')); ?>">Gói dịch vụ</a></li>
+            </ul>
+            
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="gallery">
+                  <div class="box-body">
+                    <div class="add-muilti-gallery">
+                    <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Chèn nhiều hình</a>
+                  </div>
+                  <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                    <thead>
+                      <tr role="row">
+                        <th>Hình ảnh</th>
+                        <th>Chọn ảnh đại diện</th>
+                        <th>Title</th>
+                        <th>Alt</th>
+                        <th class="status">Thứ tự</th>
+                        <th class="function"></th></tr>
+                      </thead>
+                      <tbody>
+                        <?php for($i = 0; $i< 5; $i++): ?>
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <div class="gallery-thumbnail">
+                              <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg') ?>">
+                            </div>
+                          </td>
+                          <td><input type="radio" value="" class="cbox" name="thumbnail"></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <a href="#"><i class=" icon icon-trash" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+                        <?php endfor; ?>
+                      </tbody>
+                      <tfoot>
+                          <tr class="image-row ui-sortable-handle">
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td class="menu-order"></td>
+                          <td class="function">
+                            <a href="#" class="add-gallery-js btn btn-info"><i class="icon icon-plus" aria-hidden="true"></i></a>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

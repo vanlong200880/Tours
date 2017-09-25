@@ -95,7 +95,7 @@ class TravelController extends AbstractActionController
         
         // Lấy danh sách video
         $video = new PostVideo();
-        $listVideo = $video->getListVideoByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id));
+        $listVideo = $video->getListVideoByDetailPostId(array('post_detail_id' => $dataPost->post_detail_id, 'offset' => 0, 'limit' => 2));
         
         // Lấy danh sách liên hệ
         $contact = new PostContact();

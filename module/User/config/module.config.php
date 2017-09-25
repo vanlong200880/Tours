@@ -24,21 +24,59 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'post-tour' => array(
+                    'index-travel' => array(
                       'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/post-travel/[:action]',
+                            'route'    => '/travel',
                             'defaults' => array(
                               '__NAMESPACE__' => 'User\Controller',
-                              'controller'    => 'Tours',
-                              'action'        => 'add',
+                              'controller'    => 'Travel',
+                              'action'        => 'index',
+                            ),
+                        ),
+                    ),
+                    'travel' => array(
+                      'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/travel/[:action][/id/:id]',
+                            'defaults' => array(
+                              '__NAMESPACE__' => 'User\Controller',
+                              'controller'    => 'Travel'
                             ),
                             'constraints' => array(
-                              'action' => '[a-zA-Z0-9_-]+'
+                              'action' => '[a-zA-Z0-9_-]+',
+                              'id'     	=> '[0-9]+',
                             ),
                         ),
                     ),
                     
+                    // end route travel ------------------------------
+                    'index-hotel' => array(
+                      'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/hotel',
+                            'defaults' => array(
+                              '__NAMESPACE__' => 'User\Controller',
+                              'controller'    => 'Hotel',
+                              'action'        => 'index',
+                            ),
+                        ),
+                    ),
+                    'hotel' => array(
+                      'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/hotel/[:action][/id/:id]',
+                            'defaults' => array(
+                              '__NAMESPACE__' => 'User\Controller',
+                              'controller'    => 'Hotel'
+                            ),
+                            'constraints' => array(
+                              'action' => '[a-zA-Z0-9_-]+',
+                              'id'     	=> '[0-9]+',
+                            ),
+                        ),
+                    ),
+                    // end route hotel ------------------------------
                     
                     
                     
@@ -412,7 +450,8 @@ return array(
         'template_map' => array(
             'layout/user'           => __DIR__ . '/../view/layout/layout.phtml',
              'layout/mytravel'           => __DIR__ . '/../view/layout/layout-my-travel.phtml',
-            'layout/user-admin'           => __DIR__ . '/../view/layout/layout-user-admin.phtml',
+            'layout/user-admin-travel'           => __DIR__ . '/../view/layout/layout-user-admin-travel.phtml',
+            'layout/user-admin-hotel'           => __DIR__ . '/../view/layout/layout-user-admin-hotel.phtml',
             'user/index/index' => __DIR__ . '/../view/user/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',

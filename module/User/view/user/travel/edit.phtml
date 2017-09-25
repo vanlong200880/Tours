@@ -12,14 +12,14 @@
         <div class="col-md-12">
           <div class="post-container">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#default" aria-controls="default" role="tab" data-toggle="tab">Tổng quan</a></li>
-              <li role="presentation"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">Thư viện ảnh</a></li>
-              <li role="presentation"><a href="#entertaiment" aria-controls="entertaiment" role="tab" data-toggle="tab">Tạo trò chơi</a></li>
-              <li role="presentation"><a href="#entertaiment-add-price" aria-controls="entertaiment-add-price" role="tab" data-toggle="tab">Tạo bảng giá khuyến mãi</a></li>
-              <li role="presentation"><a href="#entertaiment-gallery" aria-controls="entertaiment-gallery" role="tab" data-toggle="tab">Ảnh trò chơi</a></li>
-              <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video</a></li>
-              <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">Thông tin hỗ trợ</a></li>
-              <li role="presentation"><a href="#service-price" aria-controls="service-price" role="tab" data-toggle="tab">Gói dịch vụ</a></li>
+              <li role="presentation" class="active"><a href="<?php echo $this->url('user/travel', array('action' => 'edit', 'id' => '1')); ?>">Tổng quan</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'gallery', 'id' => '1')); ?>">Thư viện ảnh</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainment', 'id' => '1')); ?>">Tạo trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentPromotion', 'id' => '1')); ?>" >Tạo bảng giá khuyến mãi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentGallery', 'id' => '1')); ?>">Ảnh trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'video', 'id' => '1')); ?>">Video</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'support', 'id' => '1')); ?>">Thông tin hỗ trợ</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'service', 'id' => '1')); ?>">Gói dịch vụ</a></li>
             </ul>
             
             <div class="tab-content">

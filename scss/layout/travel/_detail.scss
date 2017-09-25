@@ -160,7 +160,7 @@
         }
       }
     }
-    
+
   }
 }
 .list-related{
@@ -181,7 +181,7 @@
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
-    
+
   }
   .map-related{
     height: 315px;
@@ -314,6 +314,16 @@
     .item{
       border: 1px solid #DDD;
       background: #FFF;
+      .fs-game{
+        padding-bottom: 5px;
+      }
+      .fs-game{
+        a.views{
+          position: relative;
+          top: auto;
+        }
+      }
+
     }
   }
   h2{

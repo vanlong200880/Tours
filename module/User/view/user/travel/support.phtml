@@ -1,0 +1,78 @@
+<div class="content-header">
+    <div class="user-breadcrumb">
+      <ol class="breadcrumb">
+        <li>Trang chủ</li>
+        <li class="active">Tạo điểm du lịch</li>
+      </ol>
+    </div>
+</div>
+  <div class="post">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-container">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'edit', 'id' => '1')); ?>">Tổng quan</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'gallery', 'id' => '1')); ?>">Thư viện ảnh</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainment', 'id' => '1')); ?>">Tạo trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentPromotion', 'id' => '1')); ?>" >Tạo bảng giá khuyến mãi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentGallery', 'id' => '1')); ?>">Ảnh trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'video', 'id' => '1')); ?>">Video</a></li>
+              <li role="presentation" class="active"><a href="<?php echo $this->url('user/travel', array('action' => 'support', 'id' => '1')); ?>">Thông tin hỗ trợ</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'service', 'id' => '1')); ?>">Gói dịch vụ</a></li>
+            </ul>
+            
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="support">
+                  <div class="box-body">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                      <thead>
+                      <tr role="row">
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                        <th>Hotline</th>
+                        <th class="status">Thứ tự</th>
+                        <th class="function"></th></tr>
+                      </thead>
+                      <tbody>
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            Phạm Văn Long
+                          </td>
+                          <td>vanlong200880@gmail.com</td>
+                          <td>096 666 0127</td>
+                          <td>1900 4545</td>
+                          <td>0</td>
+                          <td class="function">
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-pencil-square-o"></i></a>
+                          </td>
+                        </tr>
+                        
+
+
+                        <tr class="image-row ui-sortable-handle">
+                          <td>
+                            <input type="text" name="image-title" class="form-control"/>
+                          </td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-title" class="form-control"/></td>
+                          <td><input type="text" name="image-alt" class="form-control" /></td>
+                          <td class="menu-order"><input class="form-control" type="number" min="0" value="0" name="menu_order[]"></td>
+                          <td class="function">
+                            <div class="add-muilti-gallery">
+                              <a href="#" class="btn btn-info pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm hỗ trợ</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

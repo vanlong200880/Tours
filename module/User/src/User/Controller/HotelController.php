@@ -16,21 +16,27 @@ class HotelController extends AbstractActionController
 {
     public function indexAction()
     {
+      $this->layout('layout/user-admin-hotel');
         return new ViewModel();
     }
     public function createAction(){
+      $this->layout('layout/user-admin-hotel');
       return new ViewModel();
     }
     public function createMenuAction(){
+      $this->layout('layout/user-admin-hotel');
       return new ViewModel();
     }
     public function createRoomAction(){
+      $this->layout('layout/user-admin-hotel');
       return new ViewModel();
     }
     public function orderAction(){
+      $this->layout('layout/user-admin-hotel');
       return new ViewModel();
     }
     public function commentAction(){
+      $this->layout('layout/user-admin-hotel');
       return new ViewModel();
     }
 }

@@ -1,0 +1,178 @@
+<div class="content-header">
+    <div class="user-breadcrumb">
+      <ol class="breadcrumb">
+        <li>Trang chủ</li>
+        <li class="active">Tạo điểm du lịch</li>
+      </ol>
+    </div>
+</div>
+  <div class="post">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-container">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'edit', 'id' => '1')); ?>">Tổng quan</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'gallery', 'id' => '1')); ?>">Thư viện ảnh</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainment', 'id' => '1')); ?>">Tạo trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentPromotion', 'id' => '1')); ?>" >Tạo bảng giá khuyến mãi</a></li>
+              <li role="presentation" class="active"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentGallery', 'id' => '1')); ?>">Ảnh trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'video', 'id' => '1')); ?>">Video</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'support', 'id' => '1')); ?>">Thông tin hỗ trợ</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'service', 'id' => '1')); ?>">Gói dịch vụ</a></li>
+            </ul>
+            
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="entertaiment-gallery">
+                  <div class="box-body">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                      <thead>
+                        <tr role="row">
+                          <th>Mã</th>
+                          <th>Tên trò chơi</th>
+                          <th>Giá người lớn</th>
+                          <th>Giá trẻ em</th>
+                          <th>Thuộc nhóm</th>
+                          <th style="width: 20px;"></th></tr>
+                        </thead>
+                        <tbody>
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+                          <tr class="image-row ui-sortable-handle">
+                            <td>
+                              1
+                            </td>
+                            <td>Trượt tuyết</td>
+                            <td>1.500.000 đ</td>
+                            <td>1.500.000 đ</td>
+                            <td>Cảm giác mạnh</td>
+                            <td class="function">
+                              <a href="#" class="btn btn-info">
+                                <div class="info-help">Thêm ảnh</div>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="image-row ui-sortable-handle">
+                            <td colspan="5">
+                              <div class="list-entertaiment-gallery">
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                                <a href="#">
+                                  <span class="delete-image fa fa-times"></span>
+                                  <img src="<?php echo $this->basePath('/assets/demo/ta_10-100x100.jpg'); ?>">
+                                </a>
+                              </div>
+                            </td>
+                            <td class="function"></td>
+
+                          </tr>
+
+
+                        </tbody>
+                  </table>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

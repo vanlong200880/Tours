@@ -16,16 +16,51 @@ class TravelController extends AbstractActionController
 {
     public function indexAction()
     {
-      $this->layout('layout/user-admin');
+      $this->layout('layout/user-admin-travel');
         return new ViewModel();
     }
     public function addAction(){
+      $this->layout('layout/user-admin-travel');
       return new ViewModel();
     }
-    public function orderAction(){
+    public function editAction(){
+      $this->layout('layout/user-admin-travel');
       return new ViewModel();
     }
-    public function commentAction(){
+    public function galleryAction(){
+      $this->layout('layout/user-admin-travel');
       return new ViewModel();
     }
+    public function entertainmentAction(){
+      $this->layout('layout/user-admin-travel');
+      return new ViewModel();
+    }
+    public function entertainmentPromotionAction(){
+      $this->layout('layout/user-admin');
+      return new ViewModel();
+    }
+    
+    public function entertainmentGalleryAction(){
+      $this->layout('layout/user-admin-travel');
+      return new ViewModel();
+    }
+    public function videoAction(){
+      $this->layout('layout/user-admin-travel');
+      return new ViewModel();
+    }
+    public function supportAction(){
+      $this->layout('layout/user-admin-travel');
+      return new ViewModel();
+    }
+    
+    public function serviceAction(){
+      $this->layout('layout/user-admin-travel');
+      return new ViewModel();
+    }
+//    public function orderAction(){
+//      return new ViewModel();
+//    }
+//    public function commentAction(){
+//      return new ViewModel();
+//    }
 }

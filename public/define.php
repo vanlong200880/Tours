@@ -58,7 +58,8 @@ define('IMAGE_DEFAULT', '');
 define('TYPE', '');
 define('FACEBOOK_ID', '131231231231');
 
-define('LIMIT_COMMENT', 10);
+define('LIMIT_COMMENT', 2);
+define('LIMIT_LOAD_VIDEO', 3);
 
  
 

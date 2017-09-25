@@ -1,0 +1,209 @@
+<div class="content-header">
+    <div class="user-breadcrumb">
+      <ol class="breadcrumb">
+        <li>Trang chủ</li>
+        <li class="active">Tạo điểm du lịch</li>
+      </ol>
+    </div>
+</div>
+  <div class="post">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-container">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'edit', 'id' => '1')); ?>">Tổng quan</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'gallery', 'id' => '1')); ?>">Thư viện ảnh</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainment', 'id' => '1')); ?>">Tạo trò chơi</a></li>
+              <li role="presentation" class="active"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentPromotion', 'id' => '1')); ?>" >Tạo bảng giá khuyến mãi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'entertainmentGallery', 'id' => '1')); ?>">Ảnh trò chơi</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'video', 'id' => '1')); ?>">Video</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'support', 'id' => '1')); ?>">Thông tin hỗ trợ</a></li>
+              <li role="presentation"><a href="<?php echo $this->url('user/travel', array('action' => 'service', 'id' => '1')); ?>">Gói dịch vụ</a></li>
+            </ul>
+            
+            <div class="tab-content">
+  
+              
+                <div role="tabpanel" class="tab-pane active" id="entertaiment-add-price">
+                  <div class="box-body">
+                    <fieldset>
+                      <legend>
+                        <span>Vé trọn gói</span>
+                      </legend>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="form-group">
+                              <label for="category-name">Tên chương trình</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            <div class="form-group">
+                              <label for="category-name">Mã giảm giá</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            <div class="form-group">
+                              <label for="category-name">Ngày bắt đầu</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="category-name">Ngày kết thúc</label>
+                              <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          
+                          <div class="form-group">
+                            <label for="category-name">Số lượng</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                          <div class="form-group">
+                            <label for="category-name">Giá người lớn</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="category-name">Giá trẻ em</label>
+                            <input type="text" class="form-control" id="category-name" placeholder="Tên chuyên mục">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="box-footer">
+                            <button type="submit" class="btn btn-info">Lưu</button>
+                            <button type="submit" class="btn btn-default">Reset</button>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="box-body">
+                    <table id="data" class="table table-bordered table-striped dataTable ui-sortable">
+                    <thead>
+                    <tr role="row">
+                      <th>Tên chương trình</th>
+                      <th>Mã giảm giá</th>
+                      <th>Số lượng</th>
+                      <th>Giá người lớn</th>
+                      <th>Giá trẻ em</th>
+                      <th>Ngày bắt đầu</th>
+                      <th>Ngày kết thúc</th>
+                      <th style="width: 20px;"></th></tr>
+                    </thead>
+                    <tbody>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                      <tr class="image-row ui-sortable-handle">
+                        <td>
+                          Ngày 8/3
+                        </td>
+                        <td>DAY8-3</td>
+                        <td>200</td>
+                        <td>1.500.000 đ</td>
+                        <td>1.500.000 đ</td>
+                        <td>12/12/2017</td>
+                        <td>12/12/2017</td>
+                        <td class="function">
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+              </table>
+                  </div>
+                </div>
+              
+              
+
+            </div>
+              
+
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

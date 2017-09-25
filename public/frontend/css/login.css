@@ -287,6 +287,13 @@ a:hover {
           color: red;
           display: inline-block;
           width: 100%; }
+          .list-province-item ul.list-travel li .item p.hour-open span var {
+            display: inline-block;
+            width: auto;
+            padding-left: 0;
+            position: relative;
+            top: 2px;
+            color: #000; }
         .list-province-item ul.list-travel li .item p.hour-open var {
           padding-top: 5px;
           display: inline-block;
@@ -310,7 +317,9 @@ a:hover {
             .list-province-item ul.list-travel li .item .fs-game .list-game li span {
               font-size: 12px; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.game {
-              color: #ffa800; }
+              color: #000;
+              position: relative;
+              top: 2px; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.restaurant {
               color: #e400ff; }
             .list-province-item ul.list-travel li .item .fs-game .list-game li span.tours {
@@ -331,6 +340,8 @@ a:hover {
           text-align: center;
           float: right;
           right: 0; }
+          .list-province-item ul.list-travel li .item .fs-game .views:hover {
+            background: #28405f; }
       .list-province-item ul.list-travel li .item p.strict-views {
         font-style: italic;
         cursor: pointer; }
@@ -1171,20 +1182,17 @@ a:hover {
       .video ul li .item-video .video-content {
         padding: 5px; }
         .video ul li .item-video .video-content .title {
-          height: 40px;
+          height: 20px;
           line-height: 20px;
-          overflow: hidden; }
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
           .video ul li .item-video .video-content .title a {
             font-weight: bold; }
         .video ul li .item-video .video-content .view ul li {
           display: inline-block;
-          font-style: italic; }
-          .video ul li .item-video .video-content .view ul li:after {
-            content: "-";
-            position: relative;
-            margin: 0 5px; }
-          .video ul li .item-video .video-content .view ul li:last-child:after {
-            content: ""; }
+          font-style: italic;
+          margin-bottom: 0; }
       .video ul li .item-video:hover {
         border-color: #232f3e; }
         .video ul li .item-video:hover .author-view {
@@ -2117,126 +2125,6 @@ body {
             color: #FFF; }
         .user .banner-profile .profile-pic a:hover .change-avatar {
           bottom: 0; }
-
-.post .post-container {
-  background: #f3f3f3;
-  width: 100%;
-  display: inline-block;
-  border: 1px solid #DDD;
-  margin-top: 15px; }
-  .post .post-container .sidebar-left {
-    width: 20%;
-    float: left; }
-    .post .post-container .sidebar-left ul li a {
-      height: 40px;
-      line-height: 40px;
-      width: 100%;
-      display: inline-block;
-      border-bottom: 1px solid #DDD; }
-      .post .post-container .sidebar-left ul li a span {
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        line-height: 40px;
-        border-right: 1px solid #DDD;
-        display: inline-block;
-        float: left;
-        margin-right: 10px; }
-    .post .post-container .sidebar-left ul li:first-child a {
-      background: #f6f7f9; }
-  .post .post-container .content {
-    width: 80%;
-    float: left;
-    border-left: 1px solid #DDD; }
-    .post .post-container .content .user-breadcrumb {
-      height: 40px;
-      line-height: 40px;
-      border-bottom: 1px solid #DDD;
-      background: #f6f7f9;
-      padding-left: 15px; }
-      .post .post-container .content .user-breadcrumb .breadcrumb {
-        background: none;
-        margin: 0;
-        padding: 0; }
-    .post .post-container .content .body-container {
-      padding: 15px;
-      width: 100%; }
-      .post .post-container .content .body-container .body-content {
-        background: #FFF;
-        border: 1px solid #DDD;
-        min-height: 500px; }
-        .post .post-container .content .body-container .body-content h2 {
-          font-size: 16px;
-          height: 40px;
-          background: #f7f7f8;
-          line-height: 40px;
-          padding-left: 10px;
-          border-bottom: 1px solid #DDD; }
-        .post .post-container .content .body-container .body-content .page {
-          padding: 10px;
-          min-height: 500px; }
-          .post .post-container .content .body-container .body-content .page .form-control {
-            border-radius: 0px;
-            -webkit-border-radius: 0px;
-            -moz-border-radius: 0px;
-            -o-border-radius: 0px;
-            -ms-border-radius: 0px;
-            box-shadow: none;
-            -moz-box-shadow: none;
-            -webkit-box-shadow: none;
-            -ms-box-shadow: none;
-            -o-box-shadow: none; }
-          .post .post-container .content .body-container .body-content .page textarea.form-control {
-            height: 200px; }
-          .post .post-container .content .body-container .body-content .page .post-list-tour h2 {
-            font-size: 16px;
-            font-weight: bold;
-            border-bottom: 2px solid #DDD;
-            height: auto;
-            line-height: normal;
-            margin-bottom: 15px;
-            background: none;
-            padding-left: 0;
-            padding-bottom: 5px; }
-          .post .post-container .content .body-container .body-content .page .post-list-tour .post-search {
-            margin-bottom: 15px; }
-            .post .post-container .content .body-container .body-content .page .post-list-tour .post-search .btn-search {
-              height: 34px;
-              background: #183544;
-              line-height: 34px;
-              text-align: center;
-              display: inline-block;
-              width: 100%;
-              color: #FFF;
-              border-radius: 3px;
-              -webkit-border-radius: 3px;
-              -moz-border-radius: 3px;
-              -o-border-radius: 3px;
-              -ms-border-radius: 3px; }
-          .post .post-container .content .body-container .body-content .page .post-list-tour ul li {
-            margin-bottom: 15px; }
-            .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item {
-              border: 1px solid #DDD; }
-              .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img {
-                position: relative; }
-                .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img .item-checked {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  z-index: 9; }
-                  .post .post-container .content .body-container .body-content .page .post-list-tour ul li .item .img .item-checked input {
-                    margin: 0; }
-            .post .post-container .content .body-container .body-content .page .post-list-tour ul li .album-title {
-              height: 40px;
-              line-height: 20px;
-              overflow: hidden;
-              padding: 0 5px; }
-            .post .post-container .content .body-container .body-content .page .post-list-tour ul li:hover .item {
-              border-color: red; }
-          .post .post-container .content .body-container .body-content .page .utilities {
-            margin-top: 0;
-            margin-bottom: 15px;
-            padding: 0; }
 
 .user.album .post .post-container .content {
   width: 100%; }

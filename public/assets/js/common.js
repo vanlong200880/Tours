@@ -393,8 +393,8 @@ var infowindow = new google.maps.InfoWindow(
             $.fn.loadComment(defaults['url'] + '/load-comment', id, 1);
             $.fn.callSliderRoyalSlider();
             $.fn.initializeMap(data.dataJson, 'map-related', '', 12);
-            // Load map related
-            
+            // Load video by post id
+            $.fn.loadVideoByPostId(defaults['url'] + '/load-video-by-post-id', id, 1);
           }
         });
     });
@@ -490,8 +490,6 @@ var infowindow = new google.maps.InfoWindow(
         window.location.hash = hash;
       });
       }
-     
-//      console.log(id);
     });
     // render commen popup
     $("body .popup-page").on('click','.buttom-comment',function(){
@@ -500,10 +498,52 @@ var infowindow = new google.maps.InfoWindow(
        
      });
      
+     // Load more video
+     // Loading comment child
+    $("body").on('click', '.views-all-video a', function(e){
+      e.preventDefault();
+      var page = parseInt($(this).attr('ng-page'));
+      var id = $(this).attr('data-id');
+      $.fn.loadMoreVideoByPostId(defaults['url'] + '/load-more-video-by-post-id', id, page+1 );
+    });
+     
 //    $('#modal-comment').on('hide.bs.modal', function (e) {
 //      alert('aa');
 //      $("body #modal-comment").remove();
 //    }).modal('hide');
+  },
+    // Load video by post id
+   $.fn.loadVideoByPostId = function(url, postId, page = 1){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {postId: postId, page: page},
+      beforeSend: function(){
+      },
+      success : function (data){
+        $("#load-video").empty().append(data.htmlVideo);
+      }
+    });
+  },
+  
+    // load more comment
+  $.fn.loadMoreVideoByPostId = function(url, postId, page){
+    $.ajax({
+      url : url,
+      type : 'POST',
+      dataType : "json",
+      data: {postId: postId, page: page},
+      beforeSend: function(){
+      },
+      success : function (data){
+        $("body #load-video ul.list-data-video").append(data.htmlVideo);
+        $("body .views-all-video a").attr('ng-page', data.currentPage);
+        if(data.currentPage == data.totalPage){
+          $("body .views-all-video a").remove();
+        }
+      }
+    });
   },
   // Load image detail
   $.fn.loadImageDetail = function(url, imageId){
@@ -813,7 +853,6 @@ var infowindow = new google.maps.InfoWindow(
         $(".view-loading").css('display','block');
       },
       success: function(data){
-        console.log(data);
         $(id).empty().append(data.html);
 //        console.log(data.dataJson);
         $(".view-loading").css('display','none');
