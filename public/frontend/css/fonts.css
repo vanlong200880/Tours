@@ -408,3 +408,18 @@
 .icon-video-camera:before {
   content: "\22";
 }
+.icon-telephone:before {
+  content: "\23";
+}
+.icon-home:before {
+  content: "\24";
+}
+.icon-internet-1:before {
+  content: "\25";
+}
+.icon-location:before {
+  content: "\26";
+}
+.icon-facebook-circled:before {
+  content: "\27";
+}

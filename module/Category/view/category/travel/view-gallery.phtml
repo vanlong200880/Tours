@@ -1,34 +1,38 @@
 <div class="views-header">
-  <div class="row">
-    <div class="col-md-10">
-      <h2><span class="icon icon-picture-o"></span> <?php echo $entertaimentData['name']; ?></h2>
-    </div>
-    <div class="col-md-2">
-      <div class="views-close pull-right">
-        <span class="icon icon-cancel-music"></span>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <h2><span class="icon icon-picture-o"></span> <?php echo $entertaimentData['name']; ?></h2>
+      </div>
+      <div class="col-md-2">
+        <div class="views-close pull-right">
+          <span class="icon icon-cancel-music"></span>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="views-content">
   <div class="views-content-wp detail-gallery">
-    <div class="row">
-      <?php if($listGallery): ?>
-      <div class="col-md-12">
-        <div class="slider">
-          <div class="royalSlider rsDefault">
-            <?php foreach ($listGallery as $value): ?>
-            <img class="rsImg" src="<?php echo $this->basePath('/files/'.$value['name']); ?>" data-rsTmb="<?php echo $this->basePath('/files/'.$value['name']); ?>" alt="image description" />
-            <?php endforeach; ?>
-            
+    <div class="container-fluid">
+      <div class="row">
+        <?php if ($listGallery): ?>
+          <div class="col-md-12">
+            <div class="slider">
+              <div class="royalSlider rsDefault">
+                <?php foreach ($listGallery as $value): ?>
+                  <img class="rsImg" src="<?php echo $this->basePath('/files/' . $value['name']); ?>" data-rsTmb="<?php echo $this->basePath('/files/' . $value['name']); ?>" alt="image description" />
+                <?php endforeach; ?>
+
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <?php endif; ?>
-      <div class="col-md-12">
-        <div class="detail-hostory">
-          <h2 class="history"><span>Tiểu sử</span></h2>
-          <?php echo $entertaimentData['content']; ?>
+        <?php endif; ?>
+        <div class="col-md-12">
+          <div class="detail-hostory">
+            <h2 class="history"><span>Tiểu sử</span></h2>
+            <?php echo $entertaimentData['content']; ?>
+          </div>
         </div>
       </div>
     </div>

@@ -376,6 +376,9 @@ return array(
             'travel/view-gallery' => __DIR__ . '/../view/category/travel/view-gallery.phtml',
             'travel/video-detail-popup' => __DIR__ . '/../view/category/travel/video-detail-popup.phtml',
             'travel/load-data-travel' => __DIR__ . '/../view/category/travel/load-data-travel.phtml',
+            'travel/detail-full' => __DIR__ . '/../view/category/travel/detail-full.phtml',
+             'layout/travel-full-detail' => __DIR__ . '/../view/layout/layout-travel-full-detail.phtml',
+            
             'view/comment' => __DIR__ . '/../view/category/comment/view.phtml',
             'comment/load-more-comment' => __DIR__ . '/../view/category/comment/load-more-comment.phtml',
             'comment/load-more-comment-child' => __DIR__ . '/../view/category/comment/load-more-comment-child.phtml',

@@ -807,6 +807,11 @@ a:hover {
     bottom: -5px;
     left: 40px; }
 
+.popup-header h1#full-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0; }
+
 .footer-travel {
   float: left;
   width: 100%;
@@ -2018,7 +2023,8 @@ ul.connect li.youtube a:hover {
         .video ul li .item-video .video-content .view ul li {
           display: inline-block;
           font-style: italic;
-          margin-bottom: 0; }
+          margin-bottom: 0;
+          width: 100%; }
       .video ul li .item-video:hover {
         border-color: #232f3e; }
         .video ul li .item-video:hover .author-view {
@@ -2030,6 +2036,18 @@ ul.connect li.youtube a:hover {
           -o-transition: top 0.4s ease 0.1s; }
         .video ul li .item-video:hover .icon-video {
           display: block; }
+  .video .views-all-video {
+    text-align: center; }
+    .video .views-all-video a {
+      padding: 5px 10px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -o-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border: 1px solid #DDD;
+      background: #e2eef9;
+      cursor: pointer; }
 
 .rating {
   border: 1px solid #DDD;
@@ -2675,6 +2693,25 @@ ul.connect li.youtube a:hover {
   -ms-border-radius: 3px;
   margin-top: 15px; }
 
+.breadcrumb-page {
+  background: #e7e7e7; }
+  .breadcrumb-page .breadcrumb {
+    margin-bottom: 0;
+    padding: 7px 0;
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0; }
+    .breadcrumb-page .breadcrumb a var {
+      color: #000; }
+    .breadcrumb-page .breadcrumb var {
+      font-size: 18px;
+      display: inline-block;
+      position: relative;
+      top: 4px; }
+
 .list-cat {
   padding: 8px;
   background: #F8f8f8; }
@@ -2997,8 +3034,7 @@ ul.connect li.youtube a:hover {
       .views-popup .views-container .views-header h2 {
         height: 40px;
         line-height: 40px;
-        font-size: 16px;
-        padding-left: 10px; }
+        font-size: 16px; }
         .views-popup .views-container .views-header h2 span {
           font-size: 14px; }
       .views-popup .views-container .views-header .views-close {
@@ -3018,7 +3054,7 @@ ul.connect li.youtube a:hover {
       .views-popup .views-container .views-content .views-content-wp {
         overflow-y: scroll;
         height: 100%;
-        padding: 10px; }
+        padding: 10px 0; }
         .views-popup .views-container .views-content .views-content-wp h2 {
           font-size: 14px;
           text-transform: uppercase;

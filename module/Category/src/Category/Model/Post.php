@@ -181,6 +181,25 @@ class Post extends AbstractTableGateway
       return $resultSet;
    }
    
+   
+   // Kiem tra post detail page
+   public function checkPostDetailPageById($arrayParam = null)
+   {
+      $select = new Select();
+      $select->from($this->table);
+      $select->columns(array('id', 'user_id', 'category_id'));
+      $select->join('category', 'category.id = post.category_id', array('type'));
+      $select->join('category_detail', 'category.id = category_detail.category_id', array('category_slug' => 'slug', 'category_id' => 'category_id', 'categoryName' => 'name'));
+      $select ->join('post_detail', 'post_detail.post_id = post.id', array('post_detail_id' => 'id','post_slug' => 'slug', 'name', 'hot', 'new', 'address', 'about', 'slug', 'content', 'language', 'status_id', 'excerpt', 'lat', 'lng', 'thumbnail'));
+      $select->where(array('post_detail.status_id' => 1, 'post.id' => $arrayParam['id'], 'post_detail.language' => $arrayParam['language'] ));
+      $select->join('nation', 'post_detail.nation_id= nation.id', array('nation_name' => 'name', 'nation_type' => 'type'));
+      $select->join('province', 'post_detail.province_id= province.id', array('province_name' => 'name', 'province_type' => 'type'));
+      $select->join('district', 'post_detail.district_id= district.id', array('district_name' => 'name', 'district_type' => 'type'));
+      $select->join('ward', 'post_detail.ward_id= ward.id', array('ward_name' => 'name', 'ward_type' => 'type'));
+      $resultSet = $this->selectWith($select);
+      $resultSet = $resultSet->current();
+      return $resultSet;
+   }
    // Lấy post related
    public function getPostRelatedByCategory($arrayParam = null){
       $select = new Select();

@@ -1,12 +1,9 @@
-<?php
-//echo '<pre>';
-//var_dump($dataAllPost)
-?>
+
 <div class="popup-content">
   <div class="popup-header">
     <h2><span class="icon icon-location"></span> <?php echo $dataPost->name; ?></h2>
     <div class="close-zoom pull-right">
-      <div class="zoom"><a href="<?php //echo $this->url('travel-detail', array('category' => 'category', 'slug' => 'detail-travel-expand', 'id' => '2324234'))   ?>"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
+      <div class="zoom"><a target="_blank" href="<?php echo $this->url('detail', array('slug' => $dataPost->slug, 'id' => $dataPost->id))   ?>?mode=full"><span class="icon icon-full-screen-selector"></span> Xem rộng hơn</a></div>
       <div class="popup-close"><span class="icon icon-cancel-music"></span></div>
     </div>
   </div>
@@ -14,6 +11,7 @@
     <div class="row">
       <div class="col-md-8">
         <?php if ($gallery): ?>
+        <div class="row">
           <div class="col-md-12">
             <div class="slider">
               <div class="royalSlider rsDefault">
@@ -23,143 +21,147 @@
               </div>
             </div>
           </div>
+        </div>
         <?php endif; ?>
-        <div class="col-md-12">
-          <div class="content-page-popup">
-            <div class="row">
-              <div class="col-md-12 about">
-                <ul class="tab-travel">
-                  <li data-id="about" class="active"><h2>Giới thiệu</h2></li>
-                  <li data-id="table-price"><h2>Bảng giá</h2></li>
-                  <li data-id="history"><h2>Lịch sử</h2></li>
-                  <li data-id="video"><h2>Video</h2></li>
-                  <li data-id="rating"><h2>Đánh giá</h2></li>
-                  <li data-id="comment"><h2 data-toggle="modal" data-target="#modal-comment"> Bình luận</h2></li>
-                </ul>
-                <div class="content">
-                  <div class="description">
-                    <?php echo $dataPost->about; ?>
-                  </div>
-                  <?php //echo '<pre>'; var_dump($dataEntertainment);  ?>
-                  <?php if ($dataEntertainment): ?>
-                    <?php
-                    foreach ($dataEntertainment as $value):
-//                    var_dump($value['type'] );
-                      ?>
-                      <?php if ((int) $value['type'] == 1): ?>
-                        <?php if ($value['dataChild']): ?>
-                          <div id="table-price" class="list-catelog">
-                            <h2 class="title"><?php echo $value['name']; ?> 12</h2>
-                            <table class="game-entertainment">
-                              <thead>
-                                <tr>
-                                  <th class="no">STT</th>
-                                  <th class="name">Tên dịch vụ</th>
-                                  <th class="price">Mô tả</th>
-                                  <th>Giá vé người lớn</th>
-                                  <th>Giá vé trẻ em</th>
-                                </tr>
-                              </thead>
-
-                              <tbody>
-                                <?php foreach ($value['dataChild'] as $k => $child): ?>
-                                  <tr>
-                                    <td><?php echo $k + 1; ?></td>
-                                    <td><?php echo $child['name']; ?></td>
-                                    <td><?php echo $child['description']; ?></td>
-                                    <td><?php echo number_format($child['price_adult'], 0, '.', '.') ?>đ /1 người</td>
-                                    <td><?php echo number_format($child['price_child'], 0, '.', '.') ?>đ /1 người</td>
-                                  </tr>
-                                <?php endforeach; ?>
-                              </tbody>
-
-                            </table>
-                          </div>
-                        <?php endif; ?>
-                      <?php endif; ?>
-
-                      <?php if ($value['type'] == 2): ?>
-                        <?php if ($value['child'] != ''): ?>
-                          <div class="list-catelog">
-                            <h2 class="title"><?php echo $value['name']; ?></h2>
-                            <table class="game-entertainment">
-                              <thead>
-                                <tr>
-                                  <th class="no">STT</th>
-                                  <th class="name">Tên dịch vụ</th>
-                                  <th class="price">Giá người lớn</th>
-                                  <th class="price">Giá trẻ em</th>
-                                  <th class="price"></th>
-                                </tr>
-                              </thead>
-                              <?php foreach ($value['child'] as $v): ?>
-                                <?php if ($v['dataChild']): ?>
-                                  <tbody>
-                                    <tr>
-                                      <td colspan="5" class="colspan"><?php echo $v['name']; ?></td>
-                                    </tr>
-
-                                    <?php foreach ($v['dataChild'] as $i => $r): ?>
-                                      <tr>
-                                        <td><?php echo $i + 1; ?></td>
-                                        <td><?php echo $r['name']; ?></td>
-                                        <td><?php echo number_format($r['price_adult'], 0, '.', '.'); ?>đ /1 người</td>
-                                        <td><?php echo number_format($r['price_child'], 0, '.', '.'); ?>đ /1 người</td>
-                                        <td>
-                                          <?php
-                                          $entertainmentImage = Category\Util\EntertainmentGallery::getListEntertainmentGallery(array('entertainment_id' => $r['id']));
-                                          if ($entertainmentImage):
-                                            ?>
-                                            <a data-id="<?php echo $r['id']; ?>" class="history" href="javascript:void(0);">
-                                              <div class="view-gallery">Xem album ảnh</div>
-                                              <i class="icon icon-photo"></i></a>
-                                          <?php endif; ?>
-                                        </td>
-                                      </tr>
-                                    <?php endforeach; ?>
-                                  </tbody>
-                                <?php endif; ?>
-                              <?php endforeach; ?>
-                            </table>
-                          </div>
-                        <?php endif; ?>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                  <?php if ($dataVehicle): ?>
-                    <div class="list-catelog">
-                      <h2 class="title">Bảng giá phương tiện</h2>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th class="no">STT</th>
-                            <th class="name">Tên dịch vụ</th>
-                            <th style="width: 20%;">Giá vé</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php foreach ($dataVehicle as $k => $value): ?>
-                            <tr>
-                              <td><?php echo $k + 1; ?></td>
-                              <td><?php echo $value['name']; ?></td>
-                              <td class="price"><?php echo number_format($value['price'], 0, '.', '.'); ?> đ</td>
-                            </tr>
-                          <?php endforeach; ?>
-                        </tbody>
-                      </table>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content-page-popup">
+              <div class="row">
+                <div class="col-md-12 about">
+                  <ul class="tab-travel">
+                    <li data-id="about" class="active"><h2>Giới thiệu</h2></li>
+                    <li data-id="table-price"><h2>Bảng giá</h2></li>
+                    <li data-id="history"><h2>Lịch sử</h2></li>
+                    <li data-id="video"><h2>Video</h2></li>
+                    <li data-id="rating"><h2>Đánh giá</h2></li>
+                    <li data-id="comment"><h2 data-toggle="modal" data-target="#modal-comment"> Bình luận</h2></li>
+                  </ul>
+                  <div class="content">
+                    <div class="description">
+                      <?php echo $dataPost->about; ?>
                     </div>
-                  <?php endif; ?>
-                </div>
-                <div id="load-video">
-                  
-                </div>
+                    <?php //echo '<pre>'; var_dump($dataEntertainment);  ?>
+                    <?php if ($dataEntertainment): ?>
+                      <?php
+                      foreach ($dataEntertainment as $value):
+  //                    var_dump($value['type'] );
+                        ?>
+                        <?php if ((int) $value['type'] == 1): ?>
+                          <?php if ($value['dataChild']): ?>
+                            <div id="table-price" class="list-catelog">
+                              <h2 class="title"><?php echo $value['name']; ?> 12</h2>
+                              <table class="game-entertainment">
+                                <thead>
+                                  <tr>
+                                    <th class="no">STT</th>
+                                    <th class="name">Tên dịch vụ</th>
+                                    <th class="price">Mô tả</th>
+                                    <th>Giá vé người lớn</th>
+                                    <th>Giá vé trẻ em</th>
+                                  </tr>
+                                </thead>
 
-                <div id="page-comment">
+                                <tbody>
+                                  <?php foreach ($value['dataChild'] as $k => $child): ?>
+                                    <tr>
+                                      <td><?php echo $k + 1; ?></td>
+                                      <td><?php echo $child['name']; ?></td>
+                                      <td><?php echo $child['description']; ?></td>
+                                      <td><?php echo number_format($child['price_adult'], 0, '.', '.') ?>đ /1 người</td>
+                                      <td><?php echo number_format($child['price_child'], 0, '.', '.') ?>đ /1 người</td>
+                                    </tr>
+                                  <?php endforeach; ?>
+                                </tbody>
+
+                              </table>
+                            </div>
+                          <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if ($value['type'] == 2): ?>
+                          <?php if ($value['child'] != ''): ?>
+                            <div class="list-catelog">
+                              <h2 class="title"><?php echo $value['name']; ?></h2>
+                              <table class="game-entertainment">
+                                <thead>
+                                  <tr>
+                                    <th class="no">STT</th>
+                                    <th class="name">Tên dịch vụ</th>
+                                    <th class="price">Giá người lớn</th>
+                                    <th class="price">Giá trẻ em</th>
+                                    <th class="price"></th>
+                                  </tr>
+                                </thead>
+                                <?php foreach ($value['child'] as $v): ?>
+                                  <?php if ($v['dataChild']): ?>
+                                    <tbody>
+                                      <tr>
+                                        <td colspan="5" class="colspan"><?php echo $v['name']; ?></td>
+                                      </tr>
+
+                                      <?php foreach ($v['dataChild'] as $i => $r): ?>
+                                        <tr>
+                                          <td><?php echo $i + 1; ?></td>
+                                          <td><?php echo $r['name']; ?></td>
+                                          <td><?php echo number_format($r['price_adult'], 0, '.', '.'); ?>đ /1 người</td>
+                                          <td><?php echo number_format($r['price_child'], 0, '.', '.'); ?>đ /1 người</td>
+                                          <td>
+                                            <?php
+                                            $entertainmentImage = Category\Util\EntertainmentGallery::getListEntertainmentGallery(array('entertainment_id' => $r['id']));
+                                            if ($entertainmentImage):
+                                              ?>
+                                              <a data-id="<?php echo $r['id']; ?>" class="history" href="javascript:void(0);">
+                                                <div class="view-gallery">Xem album ảnh</div>
+                                                <i class="icon icon-photo"></i></a>
+                                            <?php endif; ?>
+                                          </td>
+                                        </tr>
+                                      <?php endforeach; ?>
+                                    </tbody>
+                                  <?php endif; ?>
+                                <?php endforeach; ?>
+                              </table>
+                            </div>
+                          <?php endif; ?>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if ($dataVehicle): ?>
+                      <div class="list-catelog">
+                        <h2 class="title">Bảng giá phương tiện</h2>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th class="no">STT</th>
+                              <th class="name">Tên dịch vụ</th>
+                              <th style="width: 20%;">Giá vé</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php foreach ($dataVehicle as $k => $value): ?>
+                              <tr>
+                                <td><?php echo $k + 1; ?></td>
+                                <td><?php echo $value['name']; ?></td>
+                                <td class="price"><?php echo number_format($value['price'], 0, '.', '.'); ?> đ</td>
+                              </tr>
+                            <?php endforeach; ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+                  <div id="load-video">
+
+                  </div>
+
+                  <div id="page-comment">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
       <div class="col-md-4">
         <div class="list-related">
@@ -213,7 +215,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="item-img">
-                          <a href="javascript:void(0);" title="dam sen">
+                          <a href="<?php echo $this->url('detail', array('slug' => $value['post_slug'], 'id' => $value['id']))   ?>" title="<?php echo $value['name'] ?>">
                             <img src="<?php echo $this->basePath('/assets/demo/photo.jpg'); ?>">
                             <div class="overlay_border"></div>
                           </a>
@@ -221,7 +223,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="item-des">
-                          <h2><a href="javascript:void(0);" title="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a></h2>
+                          <h2><a href="<?php echo $this->url('detail', array('slug' => $value['post_slug'], 'id' => $value['id']))   ?>" title="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a></h2>
                           <p class="address">
                             <?php echo $value['address']; ?>, 
                             <?php echo $value['ward_type']; ?>  <?php echo $value['ward_name']; ?>, 
@@ -251,7 +253,7 @@
                               </ul>
                             <?php endif; ?>
 
-                            <a class="views" href="javascript:void(0);" title="Xem ngay">Xem ngay</a>
+                            <a class="views" href="<?php echo $this->url('detail', array('slug' => $value['post_slug'], 'id' => $value['id']))   ?>" title="Xem ngay">Xem ngay</a>
                           </div>
                         </div>
                       </div>
@@ -267,63 +269,8 @@
 
   </div>
 </div>
+<?php $this->footer(); ?>
 
-<div class="poup-footer">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Công ty TNHH Smart Connector</h2>
-      <ul>
-        <li>294 Hòa bình, P. Hiệp Tân, Q. Tân Phú, TP.HCM</li>
-        <li>ĐT: 08.73055707 - Fax: 08.38666237</li>
-        <li><a href="#">sales@abc.vn</a></li>
-        <li>Mã số thuế: 0310955176 do Sở Kế hoạch đầu tư TP HCM 
-          cấp ngày 29/06/2011</li>
-      </ul>
-    </div>
-    <div class="col-md-2">
-      <h2>Về chúng tôi</h2>
-      <ul>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Quy định</a></li>
-        <li><a href="#">Trợ giúp</a></li>
-        <li><a href="#">Đăng ký quảng cáo</a></li>
-        <li><a href="#">Liên hệ</a></li>
-      </ul>
-    </div>
-    <div class="col-md-3">
-      <h2>Chăm sóc khách hàng</h2>
-      <ul class="support-footer">
-        <li><span class="hotline">HOTLINE</span> <span class="hotline-phone">08 7300 5757</span></li>
-        <li><a href="#">Chính sách giao hàng</a></li>
-        <li><a href="#">Chính sách đổi sản phẩm</a></li>
-        <li><a href="#">Chính sách bảo mật</a></li>
-      </ul>
-    </div>
-    <div class="col-md-3">
-      <h2>Chứng nhận</h2>
-      <ul>
-        <li><img src="/tours/public/frontend/images/bocongthuong.png"></li>
-      </ul>
-      <h2>Liên kết</h2>
-      <ul class="connect">
-        <li class="facebook"><a href="#"><span class="icon icon-facebook"></span></a></li>
-        <li class="twitter"><a href="#"><span class="icon icon-twitter"></span></a></li>
-        <li class="youtube"><a href="#"><span class="icon icon-youtube"></span></a></li>
-        <li class="googleplus"><a href="#"><span class="icon icon-googleplus"></span></a></li>
-        <li class="linkedin"><a href="#"><span class="icon icon-linkedin"></span></a></li>
-        <li class="pinterest"><a href="#"><span class="icon icon-pinterest"></span></a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="coppyright">
-  <div class="row">
-    <div class="col-md-12">
-      <p>Coppyright © 2015 Long.pham. All Rights Reserved</p>
-    </div>
-  </div>
-</div>
 <script>
   jQuery(document).ready(function ($) {
     // play video
@@ -369,71 +316,6 @@
 //      $('.popup-page').animate({scrollTop: $("#"+id).position().top}, 800, 'swing');
 //      $('.popup-page').animate({ scrollTop: h}, 800, 'swing');
     });
-    // show detail gallery
-//    $(".game-entertainment tr td").on('click','.history', function(){
-//      var id = 'abc';
-//      var url = 'http://localhost/tours/public/view-gallery';
-//      $.ajax({
-//          url : url,
-//          type : 'POST',
-//          dataType : "json",
-//          data: {id: id},
-//          beforeSend: function(){
-//            $(".views-popup").addClass('view');
-//            $(".views-popup").append('<div class="loading"></div>');
-//          },
-//          success : function (data){
-//            $( ".loading" ).remove();
-//            $(".views-popup .views-container").empty().append(data.html);
-//            // call royalSlider
-//            var slider = $('.royalSlider').royalSlider({
-//            fullscreen: {
-//              enabled: false,
-//              nativeFS: false
-//            },
-//            controlNavigation: 'thumbnails',
-//            autoScaleSlider: true, 
-//            autoScaleSliderWidth: 725,
-//            autoScaleSliderHeight: 478,
-//            loop: false,
-//            imageScaleMode: 'none',
-//            navigateByClick: true,
-//            numImagesToPreload:2,
-//            arrowsNav:true,
-//            arrowsNavAutoHide: true,
-//            arrowsNavHideOnTouch: true,
-//            keyboardNavEnabled: true,
-//            fadeinLoadedSlide: true,
-//            globalCaption: false,
-//            globalCaptionInside: false,
-//            imageScalePadding: 0,
-//            slidesSpacing: 0,
-//            thumbs: {
-//              appendSpan: false,
-//              firstMargin: false,
-//              paddingBottom: 4
-//            }
-//            }).data('royalSlider');
-//
-//            $('.rsFullscreenBtn').click(function(e){
-//              slider.enterFullscreen();
-//              e.preventDefault();
-//            });
-//
-//            slider.ev.on("rsEnterFullscreen", function() {
-//              // enter fullscreen mode 
-//              $(".popup-page").css('position', 'relative');
-//            });
-//            slider.ev.on('rsExitFullscreen', function(event) {
-//              // exit fullscreen mode
-//              $(".popup-page").removeAttr('style');
-//            });
-//            // view map popup
-//            $(".views-popup .views-container").addClass('open');
-//          }
-//        });
-//    });
-
     // comment
     $(".comment ul.list-comment > li").on('click', '.fs-comment', function () {
       var find = $(this);
